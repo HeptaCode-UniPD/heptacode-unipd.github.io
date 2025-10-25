@@ -1,3 +1,19 @@
+name: Deploy Jekyll with PDF compilation
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,11 +31,14 @@ jobs:
             echo "Compiling $typ_file to $pdf_file"
             typst compile "$typ_file" "$pdf_file"
           done
+          
+          echo "Generated PDFs:"
+          find ./docs -name "*.pdf" -type f
       
-      - name: Copy docs to WebSite for Jekyll
+      - name: Copy docs to WebSite for Jekyll processing
         run: |
-          cp -r ./docs ./WebSite/docs
-          echo "WebSite structure:"
+          # Copy the entire docs folder into WebSite so Jekyll can include it
+          cp -r ./docs ./WebSite/
           find ./WebSite -type f | sort
       
       - name: Setup Pages
@@ -33,3 +52,14 @@ jobs:
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
