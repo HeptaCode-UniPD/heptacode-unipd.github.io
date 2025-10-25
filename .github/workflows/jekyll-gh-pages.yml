@@ -40,6 +40,10 @@ jobs:
         with:
           source: ./WebSite
           destination: ./_site
+          additional_config: |
+            include:
+              - "../docs/esterni"
+              - "../docs/interni"
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
