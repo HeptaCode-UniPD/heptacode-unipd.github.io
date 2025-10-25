@@ -23,9 +23,6 @@ jobs:
             echo "Compiling $typ_file to $pdf_file"
             typst compile "$typ_file" "$pdf_file"
           done
-          
-      - name: List generated PDFs
-        run: find . -name "*.pdf" -type f | echo "Generated PDFs:" && find . -name "*.pdf" -type f
       
       - uses: actions/configure-pages@v4
       
