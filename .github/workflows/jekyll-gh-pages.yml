@@ -42,8 +42,7 @@ jobs:
           destination: ./_site
           additional_config: |
             include:
-              - "../docs/esterni"
-              - "../docs/interni"
+              - docs
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
