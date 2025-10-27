@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208.44 189.3">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2d00f7;
+      }
+
+      .cls-2 {
+        opacity: .3;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        isolation: isolate;
+      }
+
+      .cls-9 {
+        fill: #bc00dd;
+      }
+
+      .cls-3 {
+        opacity: .7;
+      }
+
+      .cls-4 {
+        opacity: .4;
+      }
+
+      .cls-5 {
+        opacity: .5;
+      }
+
+      .cls-6 {
+        opacity: .6;
+      }
+
+      .cls-7 {
+        opacity: .2;
+      }
+
+      .cls-8 {
+        opacity: .8;
+      }
+
+      .cls-10 {
+        fill: #f20089;
+      }
+
+      .cls-11 {
+        fill: #e500a4;
+      }
+
+      .cls-12 {
+        fill: #ffb600;
+      }
+
+      .cls-13 {
+        fill: #8900f2;
+      }
+
+      .cls-14 {
+        fill: #6a00f4;
+      }
+    </style>
+  </defs>
+  <g class="cls-7">
+    <polygon class="cls-12" points="20.09 122.16 103.8 173.61 187.51 122.16 103.8 70.71 20.09 122.16"/>
+  </g>
+  <g class="cls-2">
+    <polygon class="cls-10" points="20.09 113.78 103.8 165.23 187.51 113.78 103.8 62.33 20.09 113.78"/>
+  </g>
+  <g class="cls-4">
+    <polygon class="cls-11" points="20.09 105.79 103.8 157.24 187.51 105.79 103.8 54.34 20.09 105.79"/>
+  </g>
+  <g class="cls-5">
+    <polygon class="cls-9" points="20.09 97.42 103.8 148.87 187.51 97.42 103.8 45.97 20.09 97.42"/>
+  </g>
+  <g class="cls-6">
+    <polygon class="cls-13" points="20.09 89.05 103.8 140.5 187.51 89.05 103.8 37.6 20.09 89.05"/>
+  </g>
+  <g class="cls-3">
+    <polygon class="cls-14" points="20.09 80.68 103.8 132.13 187.51 80.68 103.8 29.23 20.09 80.68"/>
+  </g>
+  <g class="cls-8">
+    <polygon class="cls-1" points="20.09 72.31 103.8 123.76 187.51 72.31 103.8 20.86 20.09 72.31"/>
+  </g>
+</svg>
