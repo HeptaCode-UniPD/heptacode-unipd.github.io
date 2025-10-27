@@ -1,6 +1,6 @@
 #v(1fr)
 #align(center, [
-  #image("logo.svg")
+  #image("../../asset/logo.svg")
   
   #v(1.5cm)
   
