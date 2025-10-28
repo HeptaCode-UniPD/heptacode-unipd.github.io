@@ -9,13 +9,13 @@
   
   #v(1.5cm)
   
-  #text(size: 25pt, weight: "bold")[Valutazione Capitolati]
+  #text(size: 25pt, weight: "bold")[Dichiarazione degli impegni]
 
   #v(2.0cm)
   #align(center, text(size: 15pt, weight: "bold")[Contenuto del documento])
 
   #align(center,
-  [#text(12pt)[ Valutazione e analisi di ogni capitolato proposto con decisione finale
+  [#text(12pt)[ Stima dei costi, analisi dei ruoli, pianificazione scadenze e analisi dei rischi
   ]])
 ])
 #v(1fr)
@@ -31,16 +31,16 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
-  "1.0",
-  "2025/10/27",
+  "1.1",
+  "2025/10/28",
+  "Nicola Simionato",
   "Laura Venturini",
-  "Riccardo Baldin",
-  "Aggiunte e modifica della conclusione",
+  "Aggiunta analisi dei rischi",
   "0.1",
-  "2025/10/24",
-  "Angela Favaro",
+  "2025/10/27",
+  "Angela Canazza",
   "Laura Venturini",
-  "Scelta capitolato d'appalto"
+  "Dichiarazione degli impegni"
 )
 #counter(page).update(0)
 
@@ -126,3 +126,25 @@ Il totale ammonta a 12.845 €, corrispondenti a 92 ore di lavoro per ciascun me
     outer-label: (content: "%", radius: 120%)
   )
 })]
+
+== Analisi dei ruoli
+- *Amministratore*: deve selezionare e controllare le risorse informatiche a supporto del way of working. Pensiamo sia adeguato assegnargli un #underline[totale di 56 ore], cioè 8 ore a testa.
+- *Analista*: per l'analisi iniziale prevediamo di svolgere quasi il 15% del tempo totale, dunque #underline[91 ore totali] (13 a testa). Queste ore sono tutte concentrate nelle prime 7 settimane.
+- *Progettista*: tenendo conto che l'azienda si è messa a disposizione per fare assieme delle sessioni di design thinking, assegniamo a questo ruolo circa il 20% delle ore a disposizione, che corrisponde a #underline[126 ore] (18 a testa).
+- *Programmatore*: pensiamo che un quarto del lavoro totale consista nell'effettivo sviluppo del codice, quindi prevediamo #underline[161 ore] dedicate in totale a questo ruolo, cioè 23 a testa. 
+- *Verificatore*: consapevoli dell'importanza del ruolo abbiamo assegnato un quarto delle ore totali alle attività di controllo del codice e della documentazione relativa. Questo significa che per #underline[161 ore] lavoreremo come verificatori, svolgendo 23 ore a testa. 
+
+- *Responsabile*: la funzione principale è rappresentare il team e comunicare con l'azienda, quindi crediamo non necessiti di più di #underline[49 ore totali], quindi 7 a testa.
+
+
+
+== Rotazione dei ruoli.
+La rotazione dei ruoli verrà eseguita #underline[una volta a settimana per le prime 7 settimane], nella fase di Requirements and Technology Baseline, dopodiché avverrà #underline[una volta ogni due settimane]. In questo modo, ogni membro del gruppo avrà l'occasione di testare il ruolo di analista nelle prime settimane. 
+
+= Pianificazione scadenze
+HeptaCode si impegna a consegnare il progetto entro il 16/03/2026.\
+\
+Le 19 settimane previste sono divise in:
+- *Proof of Concept* (7 settimane)
+- *Minimum Viable Product* (12 settimane)
+
