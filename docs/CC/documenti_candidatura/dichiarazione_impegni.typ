@@ -141,6 +141,33 @@ Il totale ammonta a 12.845 €, corrispondenti a 92 ore di lavoro per ciascun me
 == Rotazione dei ruoli.
 La rotazione dei ruoli verrà eseguita #underline[una volta a settimana per le prime 7 settimane], nella fase di Requirements and Technology Baseline, dopodiché avverrà #underline[una volta ogni due settimane]. In questo modo, ogni membro del gruppo avrà l'occasione di testare il ruolo di analista nelle prime settimane. 
 
+= Analisi dei Rischi
+
+== Nuove Tecnologie
+
+Dal capitolato sono emerse diverse tecnologie, linguaggi di programmazione e database, consigliati dall'azienda proponente, e con cui dovremmo obbligatoriamente interfacciarci. Le competenze dei membri del gruppo riguardo tali strumenti è in gran parte ignota se non assente, date anche le diverse esperienze passate delle componenti del team.
+
+Tale problema potrebbe portare ad un iniziale rallentamento, dovendo prendere la mano con i diversi software e al contempo continuare l'avanzamento del progetto.
+
+La contromisura che è stata decisa, coerente anche alle dichiarazioni delle aziende, prevede nelle prime attività del gruppo un allineamento sugli strumenti che dovremmo usare, con anche la possibilità di essere affiancati dalla proponente in una serie di incontri verticalizzanti sulle tecnologie da apprendere.
+
+== Rispetto delle Tempistiche
+
+Essendo per tutti il nostro primo grande progetto basato su una richiesta di un'azienda proponente potrebbe essere molto facile imporre vincoli temporali, e milestone, non ponderate oppure sovrastimate. Questo potrebbe portare a un problema di rispetto delle tempistiche indicate negli obiettivo, potenzialmente dovendoci trovare con parecchio lavoro arretrato.
+
+Oltre a poter chiedere aiuto alla azienda che ci affiancherà una soluzione possibile è quella di stabilire una suddivisione efficace degli obiettivi, in base alla mole di lavoro potenzialmente richiesta e alla importanza per il prodotto finale. Di conseguenza è sensato eseguire spesso delle valutazioni sull'operato giornaliero e settimanale per confrontarlo con le scadenze fissateci in modo da capire se le nostre previsioni possono essere reali oppure troppo ottimistiche.
+
+Nel caso la situazione attuale sia diversa dalla stima delle scadenze, con controlli periodici e frequenti è possibile nella maggior parte dei casi ridistribuire la mole di lavoro, sempre in comunicazione con la proponente, oppure le tempistiche in modo da poter arrivare alla fine del tempo disponibile col prodotto atteso.
+
+== Soddisfacimento Aspettative Proponente
+
+Le richieste della proponente sono vaghe se ci si ferma solo alla presentazione dell'appalto. Basandosi solo su tale documento si potrebbe rischiare di non capire appieno le richieste dell'azienda e le caratteristiche che il prodotto finale dovrebbe rispettare.
+
+L'unica soluzione plausibile per questo problema è quello di una sostanziosa comunicazione con l'appaltatrice in modo da definire dettagliatamente gli obiettivi da raggiungere, potendoli definire anche in modo granulare. Logicamente ha senso spendere una grande quantità di energie sotto questo aspetto nelle prime settimane di lavoro, per un'analisi dei requisiti scrupolosa, così da poter procedere successivamente alla parte di progettazione senza dover tornare a modificare le richieste.
+
+Inoltre questo punto è complementare al precedente in quanto solo grazie a una buona visione della quantità di feature e lavoro da dovere fare è possibile una stima delle tempistica adeguata.
+
+
 = Pianificazione scadenze
 HeptaCode si impegna a consegnare il progetto entro il 16/03/2026.\
 \
