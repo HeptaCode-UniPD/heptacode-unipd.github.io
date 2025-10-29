@@ -34,6 +34,12 @@
   "Angela Canazza",
   "Riccardo Baldin",
   "Stesura del Way of Working: Introduzione",
+
+  "0.2",
+  "2025/10/29",
+  "Angela Favarp",
+  "Riccardo Baldin",
+  "Stesura del Way of Working: Strumenti di lavoro",
 )
 #counter(page).update(0)
 
@@ -66,3 +72,19 @@ _È possibile visionare tale documentazione nel sito ufficiale del team *#link("
 Nei verbali interni vengono riportati gli argomenti affrontati, i dubbi emersi, le decisioni prese, le conclusioni raggiunte e la pianificazione di azioni e riunioni future discusse dal solo team durante il meeting interno.
 === Verbali esterni
 Nei verbali esterni si tiene traccia di quanto discusso tra il gruppo e l’ente esterno dell’azienda di riferimento, includendo dubbi, le relative risposte,  aggiornamenti e progressi apportati dal gruppo al progetto. 
+
+= Strumenti di lavoro
+Questa sezione si occupa delle piattaforme e degli strumenti che verranno utilizzati dal gruppo per lo svolgimento di tutte le operazioni. 
+== Discord
+E' il canale di comunicazione utilizzato per tutte le riunioni ufficiali del gruppo in via telematica. Viene utilizzato unicamente per le chiamate e non avviene scambio di documenti o messaggi (che sono riservati ad altri strumenti).
+== GitHub
+Strumento utilizzato da tutto il gruppo per l'archiviazione di qualsiasi tipo di documento ufficiale. Tutti i componenti del gruppo sono in grado di utilizzare GitHub, è quindi stata la scelta più naturale per l'archivio. La repository presenta la seguente organizzazione:
+- Branch _main_: unico branch permanente, sempre aggiornato con le ultime versioni dei socumenti
+- Branch _docs_: branch che viene aperto dal redattore di un documento. E' un branch che verrà chiuso solo una volta che il verificatore ne avrà verificato la conformità.  
+== Telegram
+Canale di messaggistica utilizzato da noi componenti del gruppo. Questo canale viene utilizzato per lo scambio di messaggi quotidiani su eventuali dubbi o questioni aperte. \ Il gruppo Telegram è suddiviso in tre sottocanali:
+- _Organizzazione_: utile per organizzare i meeting ed eventuali incontri tra i componenti.
+- _Documenti_: per dubbi e organizzazione sulla stesura della documentazione.
+- _Generali_: per dubbi su questioni generali all'interno del gruppo.
+== Typst
+Linguaggio scelto per la redazione di ogni documento aggiunto nella repository GitHub ed in generale per ogni documento interno al gruppo. Come specificato nel paragrafo #link("GitHub")[_GitHub_].
