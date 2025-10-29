@@ -36,7 +36,7 @@
   "Nicola Simionato",
   "Laura Venturini",
   "Aggiunta analisi dei rischi",
-  "0.1",
+  "1.0",
   "2025/10/27",
   "Angela Canazza",
   "Laura Venturini",
@@ -145,33 +145,32 @@ La rotazione dei ruoli verrà eseguita #underline[una volta a settimana per le p
 
 == Nuove Tecnologie
 
-Dal capitolato sono emerse diverse tecnologie, linguaggi di programmazione e database, consigliati dall'azienda proponente, e con cui dovremmo obbligatoriamente interfacciarci. Le competenze dei membri del gruppo riguardo tali strumenti è in gran parte ignota se non assente, date anche le diverse esperienze passate delle componenti del team.
+Dal capitolato sono emerse diverse tecnologie, linguaggi di programmazione e database, consigliati dall'azienda proponente, con cui dovremmo obbligatoriamente interfacciarci. Le competenze dei membri del gruppo riguardo tali strumenti è in gran parte ignota se non assente, date anche le diverse esperienze passate dei componenti del team.
 
-Tale problema potrebbe portare ad un iniziale rallentamento, dovendo prendere la mano con i diversi software e al contempo continuare l'avanzamento del progetto.
+Questo problema potrebbe portare ad un iniziale rallentamento, dovendo prendere la mano con i diversi software e al contempo continuare l'avanzamento del progetto.
 
-La contromisura che è stata decisa, coerente anche alle dichiarazioni delle aziende, prevede nelle prime attività del gruppo un allineamento sugli strumenti che dovremmo usare, con anche la possibilità di essere affiancati dalla proponente in una serie di incontri verticalizzanti sulle tecnologie da apprendere.
+La contromisura che è stata decisa, coerente anche con le dichiarazioni delle aziende, prevede nelle prime attività del gruppo un allineamento degli strumenti che dovremmo usare, con anche la possibilità di essere affiancati dalla proponente in una serie di incontri verticalizzanti sulle tecnologie da apprendere.
 
 == Rispetto delle Tempistiche
 
-Essendo per tutti il nostro primo grande progetto basato su una richiesta di un'azienda proponente potrebbe essere molto facile imporre vincoli temporali, e milestone, non ponderate oppure sovrastimate. Questo potrebbe portare a un problema di rispetto delle tempistiche indicate negli obiettivo, potenzialmente dovendoci trovare con parecchio lavoro arretrato.
+Essendo il nostro primo grande progetto basato su una richiesta di un'azienda proponente potrebbe essere molto facile imporre vincoli temporali e milestone non ponderate oppure sovrastimate. Questo potrebbe portare a un problema di rispetto delle tempistiche indicate negli obiettivi, a cui conseguirebbe il rischio di trovarci con parecchio lavoro arretrato.
 
-Oltre a poter chiedere aiuto alla azienda che ci affiancherà una soluzione possibile è quella di stabilire una suddivisione efficace degli obiettivi, in base alla mole di lavoro potenzialmente richiesta e alla importanza per il prodotto finale. Di conseguenza è sensato eseguire spesso delle valutazioni sull'operato giornaliero e settimanale per confrontarlo con le scadenze fissateci in modo da capire se le nostre previsioni possono essere reali oppure troppo ottimistiche.
+Oltre a poter chiedere aiuto alla azienda che ci affiancherà, una soluzione possibile è quella di stabilire una suddivisione efficace degli obiettivi in base alla mole di lavoro potenzialmente richiesta e all'importanza per il prodotto finale. Di conseguenza è sensato eseguire spesso delle valutazioni sull'operato giornaliero e settimanale per confrontarlo con le scadenze fissateci, in modo da capire se le nostre previsioni possono essere reali oppure troppo ottimistiche.
 
-Nel caso la situazione attuale sia diversa dalla stima delle scadenze, con controlli periodici e frequenti è possibile nella maggior parte dei casi ridistribuire la mole di lavoro, sempre in comunicazione con la proponente, oppure le tempistiche in modo da poter arrivare alla fine del tempo disponibile col prodotto atteso.
+Nel caso la situazione attuale sia diversa dalla stima delle scadenze, con controlli periodici e frequenti è possibile nella maggior parte dei casi ridistribuire la mole di lavoro, sempre in comunicazione con la proponente, oppure cambiare le tempistiche in modo da poter consegnare il prodotto atteso entro la scadenza.
 
 == Soddisfacimento Aspettative Proponente
 
-Le richieste della proponente sono vaghe se ci si ferma solo alla presentazione dell'appalto. Basandosi solo su tale documento si potrebbe rischiare di non capire appieno le richieste dell'azienda e le caratteristiche che il prodotto finale dovrebbe rispettare.
+Le richieste della proponente sono vaghe se ci si fermasolo alla presentazione dell'appalto. Basandosi esclusivamente su tale documento si potrebbe rischiare di non capire appieno le caratteristiche che il prodotto finale dovrebbe rispettare.
 
 L'unica soluzione plausibile per questo problema è quello di una sostanziosa comunicazione con l'appaltatrice in modo da definire dettagliatamente gli obiettivi da raggiungere, potendoli definire anche in modo granulare. Logicamente ha senso spendere una grande quantità di energie sotto questo aspetto nelle prime settimane di lavoro, per un'analisi dei requisiti scrupolosa, così da poter procedere successivamente alla parte di progettazione senza dover tornare a modificare le richieste.
 
-Inoltre questo punto è complementare al precedente in quanto solo grazie a una buona visione della quantità di feature e lavoro da dovere fare è possibile una stima delle tempistica adeguata.
+Inoltre questo punto è complementare al precedente in quanto solo grazie a una buona visione della quantità di feature e del lavoro che si deve fare è possibile una stima delle tempistica adeguata.
 
 
 = Pianificazione scadenze
-HeptaCode si impegna a consegnare il progetto entro il 16/03/2026.\
-\
+HeptaCode si impegna a consegnare il progetto entro il 16/03/2026.
+
 Le 19 settimane previste sono divise in:
 - *Proof of Concept* (7 settimane)
 - *Minimum Viable Product* (12 settimane)
-
