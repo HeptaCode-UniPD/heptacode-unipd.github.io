@@ -48,7 +48,7 @@
 #set page(
   numbering: "1",
   header: [
-    #align(left)[HeptaCode #h(57%) Valutazione Capitolati 25-10-24]
+    #align(left)[HeptaCode #h(57%) Dichiarazione degli Impegni 25-10-27]
     #v(2pt)
     #line(length: 100%, stroke: black)
   ],
