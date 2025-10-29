@@ -6,7 +6,7 @@
 #v(1fr)
 #align(center, [
   #set text(lang: "it")
-  //#image("../../asset/logo.svg")
+  #image("../../asset/logo.svg")
   
   #v(1.5cm)
   
@@ -29,17 +29,23 @@
   table.header(
     [*Versione*], [*Data*], [*Redattore*], [*Verificatore*],[*Descrizione*]
   ),
+  "0.3",
+  "2025/10/29",
+  "Laura Venturini",
+  "Riccardo Baldin",
+  "Stesura del Way of Working: TIpologia di lavoro",
+  "0.2",
+  "2025/10/29",
+  "Angela Favaro",
+  "Riccardo Baldin",
+  "Stesura del Way of Working: Strumenti di lavoro",
   "0.1",
   "2025/10/29",
   "Angela Canazza",
   "Riccardo Baldin",
   "Stesura del Way of Working: Introduzione",
 
-  "0.2",
-  "2025/10/29",
-  "Angela Favarp",
-  "Riccardo Baldin",
-  "Stesura del Way of Working: Strumenti di lavoro",
+  
 )
 #counter(page).update(0)
 
@@ -64,7 +70,7 @@
 Il documento si impegna a descrivere la strumentazione e le metodologie di lavoro che vengono attuate nel progetto da parte di ogni membro del gruppo.
 == Glossario
 I termini tecnici utilizzati nella documentazione del progetto sono riportati nel *_#link("glossario.pdf","Glossario")_*, dove ne viene spiegato il significato per evitare ambiguità.
-== Documentazione
+= Documentazione
 Ad ogni riunione viene stilato un verbale da un membro del gruppo che svolge il ruolo di _redattore_, mentre un secondo componente ne fa la revisione, quest'ultimo prende il nome di _verificatore_. I verbali possono essere di due tipologie: interni ed esterni.
 
 _È possibile visionare tale documentazione nel sito ufficiale del team *#link("https://heptacode-unipd.github.io","HeptaCode")*._
@@ -76,11 +82,11 @@ Nei verbali esterni si tiene traccia di quanto discusso tra il gruppo e l’ente
 = Strumenti di lavoro
 Questa sezione si occupa delle piattaforme e degli strumenti che verranno utilizzati dal gruppo per lo svolgimento di tutte le operazioni. 
 == Discord
-E' il canale di comunicazione utilizzato per tutte le riunioni ufficiali del gruppo in via telematica. Viene utilizzato unicamente per le chiamate e non avviene scambio di documenti o messaggi (che sono riservati ad altri strumenti).
+È il canale di comunicazione utilizzato per tutte le riunioni ufficiali del gruppo in via telematica. Viene utilizzato unicamente per le chiamate e non avviene scambio di documenti o messaggi (che sono riservati ad altri strumenti).
 == GitHub
 Strumento utilizzato da tutto il gruppo per l'archiviazione di qualsiasi tipo di documento ufficiale. Tutti i componenti del gruppo sono in grado di utilizzare GitHub, è quindi stata la scelta più naturale per l'archivio. La repository presenta la seguente organizzazione:
-- Branch _main_: unico branch permanente, sempre aggiornato con le ultime versioni dei socumenti
-- Branch _docs_: branch che viene aperto dal redattore di un documento. E' un branch che verrà chiuso solo una volta che il verificatore ne avrà verificato la conformità.  
+- Branch _main_: unico branch permanente, sempre aggiornato con le ultime versioni dei documenti
+- Branch _docs_: branch che viene aperto dal redattore di un documento. È un branch che verrà chiuso solo una volta che il verificatore ne avrà verificato la conformità.  
 == Telegram
 Canale di messaggistica utilizzato da noi componenti del gruppo. Questo canale viene utilizzato per lo scambio di messaggi quotidiani su eventuali dubbi o questioni aperte. \ Il gruppo Telegram è suddiviso in tre sottocanali:
 - _Organizzazione_: utile per organizzare i meeting ed eventuali incontri tra i componenti.
@@ -88,3 +94,10 @@ Canale di messaggistica utilizzato da noi componenti del gruppo. Questo canale v
 - _Generali_: per dubbi su questioni generali all'interno del gruppo.
 == Typst
 Linguaggio scelto per la redazione di ogni documento aggiunto nella repository GitHub ed in generale per ogni documento interno al gruppo. Come specificato nel paragrafo #link("GitHub")[_GitHub_].
+= Tipologia di lavoro
+== Brainstorming
+
+Fin da subito il gruppo ha adottato la tecnica dello brainstorming: si sono raccolte le idee di ogni membro, le si sono confrontate fra loro e si è deciso assieme quali decisioni compiere. Essendosi rilevata una strategia produttiva, HeptaCode si impegna a mantenerla per tutta la durata del progetto nei meeting in cui ci sono argomenti da discutere.
+== Meeting Routine
+Nella fase embrionale del gruppo non sono stati stabiliti data e orari fissi per le riunioni, che sono sempre state organizzate solo con qualche giorno di anticipo. Crediamo che ciò non sia sostenibile a lungo termine e quindi abbiamo deciso di fissare l'incontro settimanale di lunedì alle 15:00, che in casi eccezionali può essere rimandato alle 14:00 di mercoledì. Questo orario può  essere usato anche per un eventuale secondo incontro, in caso di necessità. I meeting avranno una durata indicativa di un'ora e mezza e si terranno tramite la piattaforma Discord o di persona nelle aule universitarie.
+
