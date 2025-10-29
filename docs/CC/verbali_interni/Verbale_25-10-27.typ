@@ -114,7 +114,7 @@ La riunione è stata strutturata su tre punti:
 Inizialmente la riunione ha trattato il tema della gestione della repository. Abbiamo discusso sulle tipologie di repository più consone al lavoro attuale e anche a quello futuro. 
 Abbiamo optato per un sistema di branching come illustrato in @branches che è il più conosciuto da tutti noi membri ed anche l'unico che è stato usato da ognuno di noi almeno una volta.
 #figure(
-  image("gitBranching.png", width: 11cm),
+  image("../../asset/gitBranching.png", width: 11cm),
   caption: [struttura dei branch all'interno della repository]
 )<branches>
 \
