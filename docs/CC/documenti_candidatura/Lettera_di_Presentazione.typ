@@ -1,6 +1,6 @@
 #show link: it => text(fill: rgb("#6a00f4"), it)
 #set par(justify: true)
-#align(center + horizon, [#image("../../assets/logo.svg")])
+#align(center + horizon, [#image("../../asset/logo.svg")])
 
 #v(1.5cm)
 
