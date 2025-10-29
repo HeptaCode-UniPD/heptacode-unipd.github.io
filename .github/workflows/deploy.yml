@@ -2,7 +2,7 @@ name: Deploy Jekyll with PDF compilation
 
 on:
   push:
-    branches: ["main"]
+    branches: ["docs", "page", "action"]
   workflow_dispatch:
 
 permissions:
