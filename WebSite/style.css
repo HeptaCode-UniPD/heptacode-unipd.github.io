@@ -143,6 +143,18 @@ LINK
     font-weight: bold;
 }
 
+<<<<<<< HEAD
+=======
+main a{
+    color:var(--titlecolor);
+}
+
+main a:visited{
+    color:var(--hoverlink);
+}
+
+
+>>>>>>> b1859fbefed1f9136fc378a6553a1c448645abd7
 /*  
 ===============================
 MAIN    
