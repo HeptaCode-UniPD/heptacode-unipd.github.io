@@ -79,17 +79,6 @@ La scelta di questo progetto è stata in primo luogo dettata dall’interesse su
 
 All’interno della stessa sono presenti anche i verbali redatti a seguito delle riunioni private tra i membri del gruppo e degli incontri con i referenti delle aziende *Ergon* e *Var Group S.p.A.* 
 
-Verbali *interni*:
-
-- Primo incontro interno: #link("../verbali_interni/Verbale_25-10-16.pdf")[Verbale 25/10/16]
-- Secondo incontro interno: #link("../verbali_interni/Verbale_25-10-23.pdf")[Verbale 25/10/23]
-- Terzo incontro interno: #link("../verbali_interni/Verbale_25-10-27.pdf")[Verbale 25/10/27]
-
-Verbali *esterni*:
-
-- Incontro con Ergon: #link("../verbali_esterni/Verbale_Esterno_25-10-20.pdf")[Verbale Esterno 25/10/20]
-- Incontro con Var Group S.p.A. : #link("../verbali_esterni/Verbale_Esterno_25-10-21.pdf")[Verbale Esterno 25/10/21]
-
 = Analisi Preliminare e Dichiarazione d'impegno
 Il gruppo ha condotto, al fine di una pianificazione quanto più accurata possibile del progetto, un’analisi dei potenziali rischi che potrebbero insorgere ed uno studio preliminare della struttura che il progetto potrebbe assumere. 
 Nel seguente documento viene stilata una lista esaustiva e, per ciascuno di essi, vengono indicate le possibili strategie attuabili per mitigarli: #link("dichiarazione_impegni.pdf")[Dichiarazione degli impegni].
