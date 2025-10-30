@@ -29,6 +29,11 @@
   table.header(
     [*Versione*], [*Data*], [*Redattore*], [*Verificatore*],[*Descrizione*]
   ),
+  "1.0",
+  "2025/10/30",
+  "Angela Favaro",
+  "Riccardo Baldin",
+  "Correzioni prima versione documento",
   "0.3",
   "2025/10/29",
   "Laura Venturini",
@@ -85,7 +90,7 @@ Questa sezione si occupa delle piattaforme e degli strumenti che verranno utiliz
 È il canale di comunicazione utilizzato per tutte le riunioni ufficiali del gruppo in via telematica. Viene utilizzato unicamente per le chiamate e non avviene scambio di documenti o messaggi (che sono riservati ad altri strumenti).
 == GitHub
 Strumento utilizzato da tutto il gruppo per l'archiviazione di qualsiasi tipo di documento ufficiale. Tutti i componenti del gruppo sono in grado di utilizzare GitHub, è quindi stata la scelta più naturale per l'archivio. La repository presenta la seguente organizzazione:
-- Branch _main_: unico branch permanente, sempre aggiornato con le ultime versioni dei documenti
+- Branch _main_: unico branch permanente, sempre aggiornato con le ultime versioni dei documenti.
 - Branch _docs_: branch che viene aperto dal redattore di un documento. È un branch che verrà chiuso solo una volta che il verificatore ne avrà verificato la conformità.  
 == Telegram
 Canale di messaggistica utilizzato da noi componenti del gruppo. Questo canale viene utilizzato per lo scambio di messaggi quotidiani su eventuali dubbi o questioni aperte. \ Il gruppo Telegram è suddiviso in tre sottocanali:
@@ -93,11 +98,15 @@ Canale di messaggistica utilizzato da noi componenti del gruppo. Questo canale v
 - _Documenti_: per dubbi e organizzazione sulla stesura della documentazione.
 - _Generali_: per dubbi su questioni generali all'interno del gruppo.
 == Typst
-Linguaggio scelto per la redazione di ogni documento aggiunto nella repository GitHub ed in generale per ogni documento interno al gruppo. Come specificato nel paragrafo #link("GitHub")[_GitHub_].
+Linguaggio scelto per la redazione di ogni documento aggiunto nella repository GitHub ed in generale per ogni documento interno al gruppo.
 = Tipologia di lavoro
 == Brainstorming
 
-Fin da subito il gruppo ha adottato la tecnica dello brainstorming: si sono raccolte le idee di ogni membro, le si sono confrontate fra loro e si è deciso assieme quali decisioni compiere. Essendosi rilevata una strategia produttiva, HeptaCode si impegna a mantenerla per tutta la durata del progetto nei meeting in cui ci sono argomenti da discutere.
+Il gruppo ha deciso di adottare la tecnica del brainstorming: 
+1. si raccolgono le idee di ogni membro
+2. le si confrontano fra loro 
+3. si decide assieme quali decisioni compiere. 
+Essendosi rivelata una strategia produttiva, HeptaCode si impegna a mantenerla per tutta la durata del progetto nei meeting in cui ci sono argomenti da discutere.
 == Meeting Routine
-Nella fase embrionale del gruppo non sono stati stabiliti data e orari fissi per le riunioni, che sono sempre state organizzate solo con qualche giorno di anticipo. Crediamo che ciò non sia sostenibile a lungo termine e quindi abbiamo deciso di fissare l'incontro settimanale di lunedì alle 15:00, che in casi eccezionali può essere rimandato alle 14:00 di mercoledì. Questo orario può  essere usato anche per un eventuale secondo incontro, in caso di necessità. I meeting avranno una durata indicativa di un'ora e mezza e si terranno tramite la piattaforma Discord o di persona nelle aule universitarie.
+Nella fase embrionale dela strutturazione del gruppo non sono stati stabiliti data e orari fissi per le riunioni, sono solo state organizzate con qualche giorno di anticipo. Crediamo che ciò non sia sostenibile a lungo termine e quindi abbiamo deciso di fissare l'incontro settimanale di lunedì alle 15:00, in casi eccezionali può essere rimandato alle 14:00 di mercoledì. Questo orario può essere usato anche per un eventuale secondo incontro, in caso di necessità. \ I meeting avranno una durata indicativa di un'ora e mezza e si terranno tramite la piattaforma Discord o di persona nelle aule universitarie.
 
