@@ -30,7 +30,7 @@
   "0.1",
   "2025/10/27",
   "Nicola Simionato",
-  "Nome Cognome",
+  "Alberto Reginato",
   "Creazione documento e primi termini"
 )
 #counter(page).update(0)
@@ -67,7 +67,7 @@ Si tratta di ambienti di sviluppo diversi gli uni dagli altri, tra i quali si pu
 = C
 
 #heading(level: 2, outlined: false)[Commit]
-All'interno del VCS si tratta della registrazione di una modifica e quindi un versionamento di gruppi di file, di solito accompagnati da una breve descrizione. Quindi è possibile tornare a una versione o meglio commit precedente.
+Operazione che registra in modo permanente le modifiche apportate a uno o più file all'interno di un VCS. Ogni commit, solitamente accompagnato da una descrizione, crea un nuovo punto nella cronologia del progetto, permettendo di ripristinare una versione precedente.
 
 #pagebreak()
 
@@ -77,7 +77,7 @@ All'interno del VCS si tratta della registrazione di una modifica e quindi un ve
 Applicazione di messagistica istantanea, VoIP e di distribuzione digitale. Gli utenti possono interagire privatamente o in comunità che possono contenere canali sia testuali che vocali.
 
 #heading(level: 2, outlined: false)[Docs]
-Con questo termine ci si riferisce in generale alla documentazione del progetto, che viene gestita e salvata per l'appunto in una cartella denominata "docs".
+Abbreviazione per "documentazione". Indica l'insieme dei documenti relativi al progetto, solitamente raccolti e gestiti in una cartella denominata "docs" all'interno della repository.
 
 #pagebreak()
 
@@ -97,34 +97,34 @@ Sistema di automazione offerto da GitHub e personalizzabile. Permette, al trigge
 = P
 
 #heading(level: 2, outlined: false)[Pull]
-Comando usato per scaricare la versione più recente di un .ile o di un progetto dall'ambiente condiviso con il resto dei collaboratori.
+Comando usato per scaricare la versione più recente di un file o di un progetto dall'ambiente condiviso con il resto dei collaboratori.
 
 #heading(level: 2, outlined: false)[Push]
-Comando per caricare in un ambiente online, e condiviso dagli sviluppatori, ciò che è stato versionato fino a quel momento. Offero ciò di cui è stato effetuato il commit.
-
-#pagebreak()
-
-= V
-
-#heading(level: 2, outlined: false)[Version Control System (VCS)]
-Un sistema di controllo di versione permette di tenere traccia di tutte le modifiche sui file, compresa creazione ed eliminazione, nel tempo. Consentendo inoltre di poter tornare a versioni precedenti e permettendo la collaborazione di più persone nello stesso momento.
-
-#heading(level: 2, outlined: false)[Visual Studio Code (vscode)]
-Editor di testo e in particolare di codice sorgente. Offre una gamma di strumenti per facilitare lo sviluppo del codice, come quello di debugging o l'integrazione con Git, anche tramite estensioni.
+Comando usato per inviare i commit locali ad un repository remoto, condividendo così le proprie modifiche con il resto del team.
 
 #pagebreak()
 
 = R
 
 #heading(level: 2, outlined: false)[Repository (repo)]
-Ambiente digitale dove vengono salvati tutti i file riguardanti i progetti. Possono esisterne più di una in base alla suddivisione degli argomenti per cui vengono create.
+Ambiente digitale dove vengono salvati tutti i file riguardanti i progetti. Può esisterne più di una in base alla suddivisione degli argomenti per cui vengono create.
 
 #pagebreak()
 
 = T
 
 #heading(level: 2, outlined: false)[Telegram]
-Applicazione di messaggistica istantanea tra utenti e o gruppi. Permette in particolar modo di creare più chat all'interno di un gruppo per dividerne gli argomenti in modo netto. Consente infine l'invio di file di tipo testuale, visivo e audio.
+Applicazione di messaggistica istantanea tra utenti e o gruppi. Permette in particolar modo di creare diverse chat all'interno di un gruppo per isolare differenti tematiche in compartimenti separati. Consente infine l'invio di file di tipo testuale, visivo e audio.
+
+#pagebreak()
+
+= V
+
+#heading(level: 2, outlined: false)[Version Control System (VCS)]
+Un sistema di controllo di versione che permette di tenere traccia nel tempo di tutte le modifiche riguardanti un file, compresa la sua creazione ed eliminazione. Permette di registrare la cronologia delle revisioni, ripristinare versioni precedenti e facilitare la collaborazione simultanea di più persone.
+
+#heading(level: 2, outlined: false)[Visual Studio Code (vscode)]
+Editor di testo e in particolare di codice sorgente. Offre una gamma di strumenti per facilitare lo sviluppo del codice attraverso funzionalità integrate, come strumenti di debugging, controllo versione e un vasto ecosistema di estensioni.
 
 #pagebreak()
 
@@ -138,4 +138,4 @@ Insieme di regole, metodologie, strumentazione e processi atti ad un avanzamento
 = Z
 
 #heading(level: 2, outlined: false)[Zoom]
-Applicazione software, per computer e cellulari, che permette la creazione e gestione di conferenze online, condivisibili anche tramite calendario tramite pianificazione.
+Applicazione software, per computer e dispositivi mobili, che permette la creazione e gestione di conferenze online, condivisibili anche tramite calendario tramite pianificazione.
