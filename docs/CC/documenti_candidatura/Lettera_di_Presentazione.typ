@@ -92,12 +92,12 @@ Verbali *esterni*:
 
 = Analisi Preliminare e Dichiarazione d'impegno
 Il gruppo ha condotto, al fine di una pianificazione quanto più accurata possibile del progetto, un’analisi dei potenziali rischi che potrebbero insorgere ed uno studio preliminare della struttura che il progetto potrebbe assumere. 
-Nel seguente documento viene stilata una lista esaustiva e, per ciascuno di essi, vengono indicate le possibili strategie attuabili per mitigarli: #link("dichiarazione_impegni.pdf")[Dichiarazione d'impegni].
+Nel seguente documento viene stilata una lista esaustiva e, per ciascuno di essi, vengono indicate le possibili strategie attuabili per mitigarli: #link("dichiarazione_impegni.pdf")[Dichiarazione degli impegni].
 
 = Rendicontazione ore e costi
 Lo studio preliminare condotto ha portato a pianificare l’impegno di ciascun membro del gruppo  a 92 ore produttive, ruotando in maniera equa ed omogenea l’assunzione di tutti i ruoli coinvolti. Ogni componente di Hepta Code si impegna a ricoprire un unico ruolo per volta, al fine di sperimentare il nostro Way of Working da tutte le diverse prospettive.
 
-Il costo stimato del progetto è di *12845€* e la data di consegna è stata pianificata il *16 Marzo 2026*. Una dissertazione più approfondita di queste stime è consultabile all’interno del seguente documento: #link("dichiarazione_impegni.pdf")[Dichiarazione d'impegni].
+Il costo stimato del progetto è di *12845€* e la data di consegna è stata pianificata il *16 Marzo 2026*. Una dissertazione più approfondita di queste stime è consultabile all’interno del seguente documento: #link("dichiarazione_impegni.pdf")[Dichiarazione degli impegni].
 #place(bottom + right, "RingraziandoLa per la cortese attenzione 
 Le porgiamo cordiali saluti
 
