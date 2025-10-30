@@ -28,6 +28,12 @@
   ),
   
   "1.0",
+  "2025/10/17",
+  "Laura Venturini",
+  "Riccardo Baldin",
+  "Revisione documento",
+  
+  "0.1",
   "2025/10/16",
   "Riccardo Baldin",
   "Nicola Simionato",
@@ -119,8 +125,7 @@ Nessuno
 = Preparazione
 Nel momento di creazione del gruppo, dopo una breve conoscenza di persona, si sono decisi data e orario della riunione in questione.
 
-Fin da subito è stato chiesto ad ogni componente di pensare a un possibile nome per il Team e di stilare una classifica riguardante le prime impressioni riguardo ai diversi capitolati proposti in aula il
-14 ottobre 2025
+Fin da subito è stato chiesto ad ogni componente di pensare a un possibile nome per il Team e di stilare una classifica riguardante le prime impressioni riguardo ai diversi capitolati proposti in aula il 14 ottobre 2025.
 
 = Nome del gruppo
 Durante la riunione alcuni nomi erano già emersi, si è quindi optato di sceglierne uno tra i seguenti tre:
@@ -128,12 +133,12 @@ Durante la riunione alcuni nomi erano già emersi, si è quindi optato di scegli
 • HeptaCode
 • Team 111
 
-In primo luogo si era optato per l’adozione di 7brains come nome del gruppo, ma nel momento della creazione dell’indirizzo di posta elettronica non si è riuscito a trovare un dominio consono, e si è quindi ripiegato su HeptaCode, nome che richiama il numero di componenti oltre al numero del gruppo.
+In primo luogo si era optato per l’adozione di 7brains come nome del gruppo, ma nel momento della creazione dell’indirizzo di posta elettronica non si è riuscito a trovare un dominio consono e si è quindi ripiegato su HeptaCode, nome che richiama il numero di componenti oltre al numero del gruppo.
 
 Per la gestione e il versionamento del codice e dei file di documentazione è stata scelta la piattaforma “GitHub”, nella quale è stata creata la repository del progetto e sono stati aggiunti tutti i membri come collaboratori.
 
 = Analisi dei capitolati
-Dopo una analisi delle valutazioni personali espresse in precedenza dai singoli membri riguardo ai diversi progetti proposti dalle aziende, si è discusso dei PRO e dei CONTRO che erano emersi al fine di condividere con gli altri le proprie preferenze.
+Dopo un'analisi delle valutazioni personali espresse in precedenza dai singoli membri riguardo ai diversi progetti proposti dalle aziende, si è discusso dei PRO e dei CONTRO che erano emersi al fine di condividere con gli altri le proprie preferenze.
 
 La classifica finale delle aziende è risultata essere:
 1. Vimar
