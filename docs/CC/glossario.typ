@@ -57,7 +57,7 @@
 #pagebreak()
 
 = Scopo del Documento
-Il fine di questo documento è tenere traccia di tutti i termini, ambigui o meno, che possono apparire all'interno della documentazione o anche durante i meeting e darne una definizione quanto più precisa in modo che le risorse e i discorsi fatti possano essere compresi facilmente.
+Il fine di questo documento è tenere traccia di tutti i termini, ambigui o meno, che possono apparire all'interno della documentazione o nei meeting e darne una definizione quanto più precisa, in modo che le risorse e i discorsi fatti possano essere compresi facilmente.
 
 #pagebreak()
 
@@ -129,7 +129,7 @@ Ambiente digitale dove vengono salvati tutti i file riguardanti i progetti. Può
 = T
 
 #heading(level: 2, outlined: false)[Telegram]
-Applicazione di messaggistica istantanea tra utenti e o gruppi. Permette in particolar modo di creare diverse chat all'interno di un gruppo per isolare differenti tematiche in compartimenti separati. Consente infine l'invio di file di tipo testuale, visivo e audio.
+Applicazione di messaggistica istantanea tra utenti e/o gruppi. Permette in particolar modo di creare sottocategorie all'interno di un gruppo, per isolare differenti tematiche in compartimenti separati. Consente inoltre l'invio di file di tipo testuale, visivo e audio.
 
 #pagebreak()
 
