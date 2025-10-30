@@ -28,6 +28,11 @@
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
   
+  "1.0",
+  "2025/10/29",
+  "Angela Favaro",
+  "Angela Canazza",
+  "Accettazione verbale proposto",
   "0.1",
   "2025/10/29",
   "Angela Favaro",
@@ -121,25 +126,26 @@ L'argomento principale dell'incontro è stata la revisione della documentazione 
 In un secondo momento abbiamo ridiscusso alcuni punti della _Way of Working_ apportando dei cambiamenti.
 = Svolgimento
 == Revisione ultima documentazione prodotta
-Abbiamo revisionato assieme le parti di documentazione prodotte; ciò ha aperto uno spazio nel discutere le carenze che i documenti finora redatti potessero avere. \ A seguito della discussione ogni componente che avesse prodotto materiale da cambiare ha cambiato sul momento le parti discusse.
+Abbiamo revisionato assieme le parti di documentazione prodotte; ciò ha aperto uno spazio nel discutere le carenze che i documenti finora redatti potessero avere. \ A seguito della discussione ogni componente che avesse prodotto materiale da cambiare, ha modificato le parti interessate.
 
 == Redazione _Glossario_ e _Way of Working_
 É stata riconosciuta una scarsa attenzione verso due punti fondamentali della documentazione:
 - Way of Working.
 - Glossario.
-Come contromisura alla carenza rilevata abbiamo deciso di stilare due documenti; abbiamo, in primo luogo, discusso assieme i contenuti. In un secondo momento, abbiamo diviso tra i membri il lavoro di stesura.
+Come contromisura alla carenza rilevata abbiamo deciso di stilare i due documenti. In primo luogo, abbiamo discusso assieme i contenuti; mentre, in un secondo momento, abbiamo diviso tra i membri il lavoro di stesura.
 == Ricomposizione repository GitHub
-Come ultima questione abbiamo notato che, a seguito dei primi utilizzi della repository, la nostra iniziale organizzazione non era abbastanza efficiente. Non supportava al meglio il lavoro di versionamento. \ L'organizzazione della repository è stata cambiata nel seguente modo:
-- Sono stati chiusi tutti i branch aperti (ad eccezione del _main_).
+Come ultima attività, abbiamo riscontrato che la struttura iniziale della repository non era sufficientemente efficiente per supportare il lavoro di versionamento. In una fase iniziale, infatti, era stata adottata una configurazione “standard” di tipo scolastico, senza adattarla alle effettive esigenze del progetto.
+Per questo motivo, l’organizzazione della repository è stata rivista: sono stati chiusi tutti i branch aperti (ad eccezione del _main_) e successivamente si è proceduto alla definizione di una nuova struttura.
+
 *Nuovo assetto repository GitHub:*
 - La repository ora in funzione deve gestire al meglio la documentazione; pertanto non è sensato aprire branch di sviluppo di alcun tipo. Rimane l'idea comune di utilizzare in futuro un sistema di branch di tipo Gitflow.
-- Il main è il branch dove ci sono tutte le versioni ufficiali dei documenti.
+- Il main rimane il branch dove ospita tutte le versioni ufficiali dei documenti e che, in futuro, conterrà le versioni ufficiali del codice inerente al progetto.
 - Nel momento in cui un nuovo documento è in fase di redazione:
   1. Si apre un branch (es. branch _Verbale_) dove si lavora al doumento.
   2. Se il verificatore ritiene il documento conforme fa il merge con il branch main; di conseguenza, chiude il branch aperto in precedenza. 
-  3. Nel caso in cui il verificatore ritenga il documento non conforme rigetta il merge con il main; si passa alla redazione di una nuova versione del documento.
+  3. Nel caso in cui il verificatore ritenga il documento non conforme, rigetta il merge con il main e comunica le modifiche da fare al redattore.
 = Conclusione
-Abbiamo concluso la riunione suddividendoci le ultime cose da fare prima di sottoscrivere ufficialmente la richiesta di candidatura che sono:
+Abbiamo concluso la riunione suddividendoci le ultime cose da fare prima di sottoscrivere ufficialmente la richiesta di candidatura, tali attività sono:
 - Concludere la stesura del _Glossario_.
 - Concludere la stesura della _Way of Working_.
 Una volta eseguiti questi due passaggi il gruppo ritiene di poter presentare la candidatura al progetto _C2 - Code Guardian_. Pone Venerdì 31 Ottobre come termine ultimo di completamento di questi documenti finali.
