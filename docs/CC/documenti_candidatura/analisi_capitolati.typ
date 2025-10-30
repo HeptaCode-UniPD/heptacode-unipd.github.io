@@ -11,7 +11,7 @@
   #align(center, text(size: 15pt, weight: "bold")[Contenuto del documento])
 
   #align(center,
-  [#text(12pt)[ Valutazione e analisi di ogni capitolato proposto con decisione finale
+  [#text(12pt)[ Valutazione e analisi di ogni capitolato proposto e decisione finale
   ]])
 ])
 #v(1fr)
@@ -44,7 +44,7 @@
 #set page(
   numbering: "1",
   header: [
-    #align(left)[HeptaCode #h(57%) Valutazione Capitolati 25-10-24]
+    #align(left)[HeptaCode #h(57%) Valutazione Capitolati]
     #v(2pt)
     #line(length: 100%, stroke: black)
   ],
@@ -64,12 +64,12 @@ Il gruppo _Hepta Code_ non ha esperienza pregressa con sviluppo software a livel
 Verranno ora riportate le valutazioni e considerazioni, fatte durante le riunioni del gruppo sui nove capitolati d'appalto proposti. \ Per ogni capitolato d'interesse sono stati analizzati pregi e difetti.
 
 = Prime valutazioni
-Nella prima riunione ufficiale abbiamo sommariamente parlato delle prime impressioni avute da ogni membro sui capitolati, così da procedere con una prima secrematura e capire verso quali aziende orientarci nel chiarire i nostri dubbi. Abbiamo individuato quindi le tre aziende che meno rientravano negli interessi comuni. \ Le aziende che sono state scartate in seguito a questo incontro sono:
+Nella prima riunione ufficiale abbiamo sommariamente parlato delle prime impressioni avute da ogni membro sui capitolati, così da procedere con una secrematura e capire verso quali aziende orientarci nel chiarire i nostri dubbi. Abbiamo quindi individuato le tre aziende che meno rientravano negli interessi comuni. \ Le aziende che sono state scartate in seguito a questo incontro sono:
 - _DIPReader_ dell'azienda _San Marco Informatica_ 
 - _Second Brain_ dell'azienda _Zucchetti_
 - _Sistema di acquisizione dati da sensori_ dell'azienda _M31_
 
-La preferenza principale al primo incontro è stata per il capitolato _View4Life_ del gruppo _Vimar_. La scelta della preferenza l'abbiamo fatta raggruppando le preferenze personali e stilandone una classifica. Altri progetti che sono rientrati in classifica e quindi abbiamo deciso di analizzare e approfondire sono: 
+La preferenza principale al primo incontro è stata per il capitolato _View4Life_ del gruppo _Vimar_. La scelta iniziale è stata presa raggruppando le preferenze personali e stilandone una classifica. Gli altri progetti che sono rientrati in classifica e quindi abbiamo analizzato e approfondito sono: 
 - _Automated EN18031 Compliance Verification_ di _Bluewind_
 - _Code Guardian_ dell'azienda _Vargroup_
 - _L'app che Protegge e Trasforma_ dell'azienda _Miriade_
@@ -100,9 +100,9 @@ Capitolato presentato dall'azienda _Miriade_. Richiede la progettazione e lo svi
 
 In questo caso il capitolato presentato dall'azienda ci è sembrato molto generico, abbiamo quindi ritenuto opportuno porre dei quesiti tramite mail.
 === Pro
-L'argomento è molto attuale ed importante, inoltre l'idea ci è sembrata stimolante e utile da un punto di vista etico. \ Può essere interessante analizzare lo studio di tutte le funzionalità richieste ed il modo di integrarle nel modo più consono in un contesto così importante e delicato. Inoltre è un prodotto potenzialmente concreto e che quindi può avere un impatto più 'visibile'.
+L'argomento è molto attuale ed importante, inoltre l'idea ci è sembrata stimolante e utile da un punto di vista etico. \ Può essere interessante analizzare lo studio di tutte le funzionalità richieste e l'integrazione delle stesse nel modo più consono in un contesto così importante e delicato. Inoltre è un prodotto potenzialmente concreto e che quindi può avere un impatto (a noi) più 'visibile'.
 === Contro
-Abbiamo ritenuto opportuno contattare l'azienda riguardo ad alcuni dubbi insorti durante una riunione del gruppo, in primis sul carico di lavoro richiesto. Sono infatti specificate molte funzionalità e la nostra preoccupazione era di non essere in grado di implementarle tutte al meglio. C'erano inoltre molti ambiti da analizzare (sicurezza, intelligienza artificiale, approfondimenti sui temi di privacy e approfondimenti sul tema della violenza di genere). Abbiamo deciso di avere più informazioni sul progetto e sul lavoro da svolgere contattando l'azienda per mail; nonostante le risposte cordiali ed esaustive abbiamo comunque deciso di orientarci verso altri progetti.  
+Abbiamo ritenuto opportuno contattare l'azienda riguardo ad alcuni dubbi insorti durante una riunione del gruppo, in primis sul carico di lavoro richiesto. Sono infatti specificate molte funzionalità e la nostra preoccupazione era di non essere in grado di implementarle tutte al meglio. C'erano inoltre molti ambiti da analizzare (sicurezza, intelligienza artificiale, approfondimenti sui temi di privacy e approfondimenti sul tema della violenza di genere). Nonostante le risposte cordiali ed esaustive che l'azienda ci ha fornito abbiamo comunque deciso di orientarci verso altri progetti.  
 
 == C5: NEXUM
 Capitolato presentato dall'azienda _Eggon_. Richiede l'integrazione con il progetto _NEXUM_ già attivo e funzionante. Si tratta di aggiungere funzionalità a una piattaforma di comunicazione e gestione HR evoluta, in grado di connettere aziende, collaboratori e studi dei Consulenti del Lavoro in un unico ecosistema digitale.  
@@ -118,7 +118,7 @@ Il gruppo ha deciso di approfondire l'argomento del capitolato tramite richieden
 === Pro
 Ci ha inizialmente interessato l'utilizzo delle tecnologie LLM proposte per diverse tipologie di input. Abbiamo pensato che potesse essere molto utile imparare a manipolare audio, video e testo.\ Inoltre, l'azienda ha dato da subito una misura chiara della disponibilità che avrebbe fornito agli studenti.
 === Contro
-La manipolazione di varie tipologie di dati ci è sembrato inizialmente complesso volevamo comprendere con quale tipo di tecnologie e in quali modalità i dati sarebbero stati manipolati. L'azienda è stata collaborativa nelle risposte, ma a parità di interesse con altri progetti non abbiamo ritenuto di proseguire con l'approfondimento. 
+La manipolazione di varie tipologie di dati ci sembrava complessa, volevamo comprendere con quale tipo di tecnologie e in quali modalità i dati sarebbero stati manipolati. L'azienda è stata collaborativa nelle risposte, ma a parità di interesse con altri progetti non abbiamo ritenuto di proseguire con l'approfondimento. 
 
 == C9: View4Life
 Capitolato presentato dall'azienda _Vimar_. Il progetto richiede lo sviluppo di un'applicazione web per la gestione completa degli impianti Smart nelle residenze protette. Deve essere usufruibile via browser da smartphone, tablet e computer.
@@ -128,14 +128,14 @@ Il capitolato è chiaro e il progetto è sembrato formativo e stimolante a tutti
 === Contro
 È mancato il contatto diretto con l'azienda, in quanto ha richiesto che le domande di tutti i gruppi fossero mandati da una singola persona. 
 
-Il fatto che non richiede funzionalità relative all'intelligenza artificiale è stato giudicato come un positivamente da alcuni membri e negativamente da altri.
+Il fatto che non richiede funzionalità relative all'intelligenza artificiale è stato giudicato positivamente da alcuni membri e negativamente da altri.
 
 = Conclusioni
 In una riunione conclusiva sono stati valutati tutti i colloqui fatti con le aziende di maggiore interesse. 
-In questa conversazione è emerso un cambiamento nella preferenza comune; l'azienda (e di conseguenza il progetto) che più ha convinto tutti noi è stata _VarGroup_. 
+In questa conversazione è emerso un cambiamento nella preferenza comune; l'azienda più ha convinto tutti noi è stata infine _VarGroup_. 
 
 
-La decisione finale non è dovuta a una particolare preferenza nei confronti del loro capitolato, che per noi è a pari merito con altri, bensì alla disponibilità e la volontà di collaborazione che abbiamo percepito dall'azienda. Queste sono state dimostrate dai  diversi strumenti che si sono offerti di metterci a disposizione, quali mentorign nel design thinking e aiuti nella manipolazione di nuovi linguaggi e tecnologie da noi poco conosciute.
+La decisione finale non è dovuta a una spiccata preferenza nei confronti del loro capitolato, che per noi era a pari merito con _View4Life_, bensì alla disponibilità e la volontà di collaborazione che abbiamo percepito dall'azienda. Queste sono state dimostrate dai diversi strumenti che hanno offerto di metterci a disposizione, quali mentorign nel design thinking e aiuti nella manipolazione di nuovi linguaggi e tecnologie da noi poco conosciute.
 
 Dichiariamo quindi che la nostra scelta finale è il capitolato *C2: Code Guardian*.
 
