@@ -48,11 +48,22 @@
 #set page(
   numbering: "1",
   header: [
-    #align(left)[HeptaCode #h(57%) Dichiarazione degli Impegni 25-10-27]
-    #v(2pt)
+    #set table(
+      stroke: none,
+    )
+    #table(
+      columns: 3,
+      [Hepta Code],
+      [#rect(
+        width: 100%, 
+        height: 1pt, 
+        fill: white,
+        stroke: none
+      )],
+      [Dichiarazione degli impegni],
+    )
     #line(length: 100%, stroke: black)
   ],
-  
 )
 
 #outline(title: "Indice")
