@@ -27,6 +27,11 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
+  "1.0",
+  "2025/10/30",
+  "Angela Favaro",
+  "Angela Canazza",
+  "Revisione documento con nuove terminologie",
   "0.1",
   "2025/10/27",
   "Nicola Simionato",
@@ -92,15 +97,25 @@ Servizio web basato su git. Permette il versionamento dei file di un progetto on
 #heading(level: 2, outlined: false)[GitHub Action (GHA)]
 Sistema di automazione offerto da GitHub e personalizzabile. Permette, al trigger di determinati eventi, di eseguire script ad esempio per la compilazione di file sorgenti oppure testare il software.
 
+#heading(level: 2, outlined: false)[Google Meet]
+Servizio di videoconferenze che permette di organizzare e partecipare a riunioni online tramite video e audio in tempo reale.
+
+#pagebreak()
+
+= M
+
+#heading(level: 2, outlined: false)[Mail]
+Messaggio digitale che viene inviato e ricevuto tramite internet. Strumento di comunicazione scritto che permette di scambiare informazioni rapidamente tra persone o gruppi.
+
 #pagebreak()
 
 = P
 
 #heading(level: 2, outlined: false)[Pull]
-Comando usato per scaricare la versione più recente di un file o di un progetto dall'ambiente condiviso con il resto dei collaboratori.
+Comando di Git usato per scaricare la versione più recente di un file o di un progetto dall'ambiente condiviso con il resto dei collaboratori.
 
 #heading(level: 2, outlined: false)[Push]
-Comando usato per inviare i commit locali ad un repository remoto, condividendo così le proprie modifiche con il resto del team.
+Comando di Git usato per inviare i commit locali ad un repository remoto, condividendo così le proprie modifiche con il resto del team.
 
 #pagebreak()
 
