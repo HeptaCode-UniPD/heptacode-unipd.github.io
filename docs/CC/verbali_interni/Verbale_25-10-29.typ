@@ -29,9 +29,9 @@
   ),
   
   "1.0",
-  "2025/10/29",
-  "Angela Favaro",
-  "Angela Canazza",
+  "2025/10/30",
+  "Laura Venturini",
+  "Riccardo Baldin",
   "Accettazione verbale proposto",
   "0.1",
   "2025/10/29",
@@ -126,7 +126,7 @@ L'argomento principale dell'incontro è stata la revisione della documentazione 
 In un secondo momento abbiamo ridiscusso alcuni punti della _Way of Working_ apportando dei cambiamenti.
 = Svolgimento
 == Revisione ultima documentazione prodotta
-Abbiamo revisionato assieme le parti di documentazione prodotte; ciò ha aperto uno spazio nel discutere le carenze che i documenti finora redatti potessero avere. \ A seguito della discussione ogni componente che avesse prodotto materiale da cambiare, ha modificato le parti interessate.
+Abbiamo revisionato assieme le parti di documentazione prodotte; ciò ha aperto una discussione sulle carenze che i documenti finora redatti potessero avere. \ A seguito del confronto, ogni componente che aveva prodotto materiale da cambiare ha modificato le parti interessate.
 
 == Redazione _Glossario_ e _Way of Working_
 É stata riconosciuta una scarsa attenzione verso due punti fondamentali della documentazione:
@@ -139,10 +139,10 @@ Per questo motivo, l’organizzazione della repository è stata rivista: sono st
 
 *Nuovo assetto repository GitHub:*
 - La repository ora in funzione deve gestire al meglio la documentazione; pertanto non è sensato aprire branch di sviluppo di alcun tipo. Rimane l'idea comune di utilizzare in futuro un sistema di branch di tipo Gitflow.
-- Il main rimane il branch dove ospita tutte le versioni ufficiali dei documenti e che, in futuro, conterrà le versioni ufficiali del codice inerente al progetto.
+- Il main rimane il branch che ospita tutte le versioni ufficiali dei documenti e che, in futuro, conterrà le versioni ufficiali del codice inerente al progetto.
 - Nel momento in cui un nuovo documento è in fase di redazione:
   1. Si apre un branch (es. branch _Verbale_) dove si lavora al doumento.
-  2. Se il verificatore ritiene il documento conforme fa il merge con il branch main; di conseguenza, chiude il branch aperto in precedenza. 
+  2. Se il verificatore ritiene il documento conforme fa il merge con il branch main chiudendo il branch aperto in precedenza. 
   3. Nel caso in cui il verificatore ritenga il documento non conforme, rigetta il merge con il main e comunica le modifiche da fare al redattore.
 = Conclusione
 Abbiamo concluso la riunione suddividendoci le ultime cose da fare prima di sottoscrivere ufficialmente la richiesta di candidatura, tali attività sono:
