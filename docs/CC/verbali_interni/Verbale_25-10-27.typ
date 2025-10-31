@@ -19,7 +19,7 @@
 #counter(page).update(0)
 
 #pagebreak()
-
+#text(size: 17pt, weight: "bold")[Registro delle modifiche:]
 #table(
   columns: (auto, auto, auto, auto, auto),
   inset: 9pt,
@@ -27,8 +27,13 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
-  
   "1.0",
+  "2025/10/30",
+  "Laura Venturini",
+  "Riccardo Baldin",
+  "Revisione documentazione candidatura",
+  
+  "0.1",
   "2025/10/27",
   "Angela Favaro",
   "Alberto Reginato",
@@ -136,7 +141,7 @@ Oltre a questi branch abbiamo deciso di aprirne altri utili a:
 - gestione e sviluppo del sito web (branch _pages_)
 == Preparazione documenti per la candidatura
 Siamo poi passati all'argomento che ha impiegato più tempo: la domanda di candidatura del capitolato d'appalto scelto (C2 - Code Guardian). \
-Qui abbiamo svolto assieme le previsioni sul monte ore totale per lo svolgimento del progetto e abbiamo scelto come ruotare i ruoli durante l'attività. Come ultimo abbiamo fatto la stima di fine progetto.\ Il tutto è riassunto nel documento '_Dichiarazione_di_impegno_' all'interno della repository. 
+Qui abbiamo svolto assieme le previsioni sul monte ore totale per lo svolgimento del progetto e abbiamo scelto come ruotare i ruoli durante l'attività. Infine abbiamo fatto la stima di fine progetto.\ Il tutto è riassunto nel documento '_Dichiarazione_di_impegno_' all'interno della repository. 
 == Comprensione e primi passi verso la costituzione del _Way of Working_
 Dopo aver svolto questi due punti abbiamo discusso sulle decisioni appena prese; che di fatto vanno a costituire un primo abbozzo di way of working (cioè: turni, ruoli e metodo di versionamento che ci daremo durante il progetto).\ Questa discussione finale ha dato a tutti i membri una visione più ampia di come il gruppo andrà a strutturarsi ed ha ufficializzato le prime regole fisse interne (sopra elencate).  
 = Conclusione
