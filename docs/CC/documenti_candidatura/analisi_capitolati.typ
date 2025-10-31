@@ -19,6 +19,7 @@
 #counter(page).update(1)
 
 #pagebreak()
+#text(size: 17pt, weight: "bold")[Registro delle modifiche:]
 #set text(size: 11pt, lang: "it")
 #table(
   columns: (auto, auto, auto, auto, auto),
