@@ -27,6 +27,12 @@
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
   
+  "2.0",
+  "2025/10/31",
+  "Riccardo Baldin",
+  "Angela Favaro",
+  "Aggiunto titolo a registro modifiche",  
+
   "1.0",
   "2025/10/17",
   "Laura Venturini",
