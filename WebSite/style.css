@@ -207,4 +207,6 @@ footer{
     padding: 0.5em;
 }
 
-
+footer p {
+    margin-bottom: 1em;
+}
