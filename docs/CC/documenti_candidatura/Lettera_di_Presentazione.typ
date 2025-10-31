@@ -11,7 +11,7 @@ Alla cortese attenzione del professore Tullio Vardanega.
 #place(right, "Hepta Code
 Team di sviluppo per il progetto del corso 'Ingegneria del Software'
 Indirizzo mail: heptacode7@gmail.com
-Repository di gruppo: " + link(""https://github.com/HeptaCode-UniPD/heptacode-unipd.github.io/tree/main", "heptacode-unipd"))
+Repository di gruppo: " + link("https://github.com/HeptaCode-UniPD/heptacode-unipd.github.io/tree/main", "heptacode-unipd"))
 \
 \
 \
