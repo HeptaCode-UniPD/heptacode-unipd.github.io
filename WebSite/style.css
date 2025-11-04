@@ -164,12 +164,20 @@ article{
     padding: 0.5em;
 }
 
+#lettera{
+    background-color: var(--bgarticle);
+    border-radius: 2em;
+    padding: 0.5em;
+}
+
 article section{
     background-color: var(--bgsection);
     border-radius: 1.5em;
     margin: 1em;
     padding: 0.5em;
 }
+
+
 
 section ul{
     margin:0.5em 3em;
@@ -209,4 +217,8 @@ footer{
 
 footer p {
     margin-bottom: 1em;
+}
+
+footer a:link{
+    color:var(--linkbgcolor);
 }
