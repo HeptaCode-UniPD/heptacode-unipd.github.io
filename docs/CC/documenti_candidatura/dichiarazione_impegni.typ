@@ -32,6 +32,11 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
+  "3.0",
+  "2025/11/06",
+  "Alberto Reginato",
+  "-",
+  "Integrazione tabella ripartizione ore/persona",
   "2.0",
   "2025/10/28",
   "Nicola Simionato",
@@ -152,6 +157,33 @@ Il totale ammonta a 12.845 €, corrispondenti a 92 ore di lavoro per ciascun me
 
 == Rotazione dei ruoli.
 La rotazione dei ruoli verrà eseguita #underline[una volta a settimana per le prime 7 settimane], nella fase di Requirements and Technology Baseline, dopodiché avverrà #underline[una volta ogni due settimane]. In questo modo, ogni membro del gruppo avrà l'occasione di testare il ruolo di analista nelle prime settimane. 
+
+Riassumendo, ciascun membro del gruppo svolgerà per ogni ruolo le seguenti ore:
+
+#set table(stroke: 1pt + rgb("#1e90ff"), align: center)
+#align(center)[
+  #table(
+  columns: 7,
+  fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },  
+  stroke: 0.5pt + gray,
+  align: center,
+    [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
+    [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
+    [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
+    [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
+    [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
+    [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
+    [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
+
+  [Riccardo Baldin], [7], [8], [13], [18], [23], [23],
+  [Angela Canazza], [7], [8], [13], [18], [23], [23],
+  [Angela Favaro], [7], [8], [13], [18], [23], [23],
+  [Alberto Reginato], [7], [8], [13], [18], [23], [23],
+  [Nicola Simionato], [7], [8], [13], [18], [23], [23],
+  [Amerigo Vegliante], [7], [8], [13], [18], [23], [23],
+  [Laura Venturini], [7], [8], [13], [18], [23], [23],
+)
+]
 
 = Analisi dei Rischi
 
