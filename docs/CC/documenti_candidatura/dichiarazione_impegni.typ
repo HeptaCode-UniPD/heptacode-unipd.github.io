@@ -35,7 +35,7 @@
   "3.0",
   "2025/11/06",
   "Alberto Reginato",
-  "-",
+  "Angela Favaro",
   "Integrazione tabella ripartizione ore/persona",
   "2.0",
   "2025/10/28",
