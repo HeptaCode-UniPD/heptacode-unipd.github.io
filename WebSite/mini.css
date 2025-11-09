@@ -1,5 +1,9 @@
 header h1{
-    font-size: 20em;
+    font-size: 22em;
+}
+
+body,footer{
+    font-size: 1em;
 }
 
 body h2{
@@ -11,7 +15,7 @@ summary{
 }
 
 details{
-    font-size: 1.8em;
+    font-size: 2em;
 }
 
 article label{
