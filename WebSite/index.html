@@ -6,6 +6,7 @@
     <meta name="description" content="Pagina dedicata al progetto del team HeptaCode.">
     <title>HeptaCode</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="mini.css" media="screen and (max-width:800px)">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
@@ -24,7 +25,7 @@
     </h2>
 
     <p id="descrizione">
-        Benvenuti nel sito ufficiale della documentazione di HeptaCode. Qui è presente tutta la documentazione del nostro progetto di Ingegneria del Software con riferimenti ai singoli documenti divisi per sezione.
+        Benvenuti nel sito ufficiale della documentazione di HeptaCode. Qui è presente tutta la documentazione del nostro progetto di Ingegneria del Software: <strong>Code Guardian</strong> presso l'azienda <strong>Var Group S.p.A.</strong> con riferimenti ai singoli documenti divisi per sezione.
     </p>
 
     <main>
@@ -32,51 +33,62 @@
             <a href="https://github.com/HeptaCode-UniPD/heptacode-unipd.github.io/tree/main" target="_blank">Repository</a>
         </nav>
 
-        <!-- <nav id="menu">
-            <a href="#PB"> PB</a>
-            <a href="#RBT"> RTB</a>
-            <a href="#CC">CC</a>
-        </nav> -->
+        <div>
+            <!-- <span class="docs"><h3 id="PB"> PB </h3></span> -->
 
-        <article>
-            <!-- <span class="docs"><h3 id="PB"> PB </h3></span>
-
-
-            <span class="docs"><h3 id="RBT"> RTB </h3></span> -->
-
-
-            <span class="docs"><h3 id="CC"> Candidatura Capitolato </h3></span>
+            <details>
+                <summary><h3 id="RTB">RTB </h3></summary>
             <section>
-                <label>Lettera di Presentazione</label>
-                <ul>
-                    <li><a href="../docs/CC/documenti_candidatura/Lettera_di_Presentazione.pdf" target="_blank">Lettera di Presentazione</a></li>
-                </ul>
-                <label>Documenti</label>
-                <ul>
-                    <li><a href="../docs/CC/documenti_candidatura/analisi_capitolati.pdf" target="_blank">Analisi dei Capitolati</a></li>
-                    <li><a href="../docs/CC/documenti_candidatura/dichiarazione_impegni.pdf" target="_blank">Dichiarazione degli Impegni</a></li>
-                    <li><a href="../docs/CC/WoW.pdf" target="_blank">Way of Working</a></li>
-                    <li><a href="../docs/CC/glossario.pdf" target="_blank">Glossario</a></li>
-                </ul>
+                <article>
+                    <label>Verbali Esterni</label>
+                    <ul>
+                        
+                    </ul>
+                </article>
+                <article>
+                    <label>Verbali Interni</label>
+                    <ul>
+                        </ul>
+                </article>
             </section>
-            <section>
-                <label>Verbali Esterni</label>
-                <ul>
-                    <li> <a href="../docs/CC/verbali_esterni/Verbale_Esterno_25-10-21.pdf" target="_blank">Verbale 25-10-21 ~ VarGroup</a></li>
-                    <li> <a href="../docs/CC/verbali_esterni/Verbale_Esterno_25-10-20.pdf" target="_blank">Verbale 25-10-20 ~ Ergon</a></li>
+            </details>
 
-                </ul>
-            </section>
+            <details>
+                <summary><h3 id="CC">Candidatura Capitolato </h3></summary>
             <section>
-                <label>Verbali Interni</label>
-                <ul>
-                    <li> <a href="../docs/CC/verbali_interni/Verbale_25-10-29.pdf" target="_blank">Verbale 25-10-29</a></li>
-                    <li> <a href="../docs/CC/verbali_interni/Verbale_25-10-27.pdf" target="_blank">Verbale 25-10-27</a></li>
-                    <li> <a href="../docs/CC/verbali_interni/Verbale_25-10-23.pdf" target="_blank">Verbale 25-10-23</a></li>
-                    <li> <a href="../docs/CC/verbali_interni/Verbale_25-10-16.pdf" target="_blank">Verbale 25-10-16</a></li>
-                </ul>
+                <article>
+                    <label>Lettera di Presentazione</label>
+                    <ul>
+                        <li><a href="../docs/CC/documenti_candidatura/Lettera_di_Presentazione.pdf" target="_blank">Lettera di Presentazione</a></li>
+                    </ul>
+                    <label>Documenti</label>
+                    <ul>
+                        <li><a href="../docs/CC/documenti_candidatura/analisi_capitolati.pdf" target="_blank">Analisi dei Capitolati</a></li>
+                        <li><a href="../docs/CC/documenti_candidatura/dichiarazione_impegni.pdf" target="_blank">Dichiarazione degli Impegni</a></li>
+                        <li><a href="../docs/CC/WoW.pdf" target="_blank">Way of Working</a></li>
+                        <li><a href="../docs/CC/glossario.pdf" target="_blank">Glossario</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <label>Verbali Esterni</label>
+                    <ul>
+                        <li> <a href="../docs/CC/verbali_esterni/Verbale_Esterno_25-10-21.pdf" target="_blank">Verbale 25-10-21 ~ VarGroup</a></li>
+                        <li> <a href="../docs/CC/verbali_esterni/Verbale_Esterno_25-10-20.pdf" target="_blank">Verbale 25-10-20 ~ Ergon</a></li>
+
+                    </ul>
+                </article>
+                <article>
+                    <label>Verbali Interni</label>
+                    <ul>
+                        <li> <a href="../docs/CC/verbali_interni/Verbale_25-10-29.pdf" target="_blank">Verbale 25-10-29</a></li>
+                        <li> <a href="../docs/CC/verbali_interni/Verbale_25-10-27.pdf" target="_blank">Verbale 25-10-27</a></li>
+                        <li> <a href="../docs/CC/verbali_interni/Verbale_25-10-23.pdf" target="_blank">Verbale 25-10-23</a></li>
+                        <li> <a href="../docs/CC/verbali_interni/Verbale_25-10-16.pdf" target="_blank">Verbale 25-10-16</a></li>
+                    </ul>
+                </article>
             </section>
-        </article>
+            </details>
+        </div>
     </main>
 
     <footer>

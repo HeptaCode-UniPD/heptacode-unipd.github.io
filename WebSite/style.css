@@ -20,8 +20,8 @@ GLOBALI
     --bglogo: #fff;
     --bordercolor:#400093;
     --articlecolor:#7c51b3;
-    --bgsection:#ede9f0;
-    --bgarticle:#e4dde8;
+    --bgarticle:#ede9f0;
+    --bgsection:#e4dde8;
 
 }
 
@@ -114,35 +114,6 @@ LINK
     background-color:var(--hoverlink);
 }
 
-#menu{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    font-size: 0.9em;
-    margin: 0.5em 0em;
-    background-color: var(--bgarticle);
-    border-radius: 5em;
-}
-
-#menu a{
-    transition-duration: 0.4s;
-    background-color: transparent;
-    padding: 0.2em 0.5em;
-    border-radius: 5em;
-    width: 100%;
-}
-
-#menu a:link,
-#menu a:active{
-    color:var(--txtcolor);
-}
-
-#menu a:hover{
-    color: var(--colorlink);
-    background-color: var(--hoverlink);
-    font-weight: bold;
-}
-
 li a{
     color:var(--titlecolor);
 }
@@ -158,20 +129,46 @@ MAIN
 ===============================
 */
 
-article{
-    background-color: var(--bgarticle);
+summary {
+    cursor: pointer;
+    color: var(--articlecolor);
+    font-size: 1.5em;
+    margin: 0em 1.5em;
+    padding: 0.4em 0em;
+    border-bottom: solid var(--bordercolor) 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+summary::before{
+    content: "▶";
+    font-size: 12px;
+    color: #5a2d90;
+    transition-duration: 0.4s;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+    max-height: 400px;
+}
+
+details{
+    background-color: var(--bgsection);
     border-radius: 2em;
     padding: 0.5em;
+    margin-bottom: 0.8em;
 }
+
 
 #lettera{
-    background-color: var(--bgarticle);
+    background-color: var(--bgsection);
     border-radius: 2em;
     padding: 0.5em;
 }
 
-article section{
-    background-color: var(--bgsection);
+details article{
+    background-color: var(--bgarticle);
     border-radius: 1.5em;
     margin: 1em;
     padding: 0.5em;
@@ -179,30 +176,17 @@ article section{
 
 
 
-section ul{
+article ul{
     margin:0.5em 3em;
 }
 
-section label{
+article label{
     margin:0em 1.5em;
     font-size: 1.2em;
     font-weight: bold;
     color: var(--articlecolor);
 }
 
-.docs{
-    border-bottom: solid var(--bordercolor) 0.1em;
-    display: block;
-    margin-left: 1.2em;
-    margin-right: 1.2em;
-}
-
-.docs h3{
-    color: var(--articlecolor);
-    font-size: 1.5em;
-    margin: 0em 1.5em;
-    padding: 0.4em 0em;
-}
 
 /*  
 ===============================
