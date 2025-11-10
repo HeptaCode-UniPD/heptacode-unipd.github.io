@@ -1,6 +1,6 @@
 #v(1fr)
 #align(center, [
-  #image("../../asset/logo.svg")
+  #image("../asset/logo.svg")
   #set text(lang: "it")
   
   #v(1.5cm)
@@ -28,11 +28,15 @@
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
   
- 
+   "1.0",
+  "2025/11/05",
+  "Laura Venturini",
+  "Angela Canazza",
+  "Controllo e approvazione verbale",
   "0.1",
   "2025/11/05",
   "Laura Venturini",
-  "-",
+  "",
   "Stesura verbale"
 )
 
@@ -52,7 +56,7 @@
         fill: white,
         stroke: none
       )],
-      [Verbale Interno 2025-11-05],
+      [Verbale Interno 2025-11-09],
     )
     #line(length: 100%, stroke: black)
   ],
@@ -63,7 +67,7 @@
 
 #text(size: 17pt, weight: "bold")[Luogo e Orario:]
 
-La riunione si è tenuta  per via telematica tramite la piattaforma Discord dalle *9:00* alle *9:30*. \ È stata posticipata rispetto agli orari concordati nel Way of Working perché abbiamo atteso di avere una risposta dall'azienda alla mail mandata per chiedere il da farsi.
+La riunione si è tenuta in modalità telematica tramite la piattaforma Discord dalle *9:00* alle *9:30* del 9 novembre 2025. Tale meeting ha subito una posticipazione rispetto agli orari concordati nel Way of Working, poiché si è atteso prima un riscontro alla mail inviata all’azienda per chiedere come procedere.
 
 #text(size: 17pt, weight: "bold")[Partecipanti interni al Team:]
 
@@ -88,7 +92,7 @@ La riunione si è tenuta  per via telematica tramite la piattaforma Discord dall
   "Presente",
 
   "Alberto Reginato",
-  "Responsabilee",
+  "Responsabile",
   "Presente",
 
   "Amerigo Vegliante",
@@ -120,13 +124,13 @@ Nessuno
 = Argomenti trattati
 Gli argomenti discussi nell'incontro sono stati due:
 - la preparazione del diario di bordo;
-- l'organizzazione per quanto riguarda la sessione di design thinking.
+- l'organizzazione riguardante la sessione di design thinking.
 = Svolgimento
 == Diario di Bordo
-Abbiamo raccolto i dubbi e le difficoltà incontrate in queste ultime due settimane, le abbiamo poi inserite nelle slide per la presentazione del diario di bordo che esporremo il 10 novembre.
+Abbiamo raccolto i dubbi e le difficoltà riscontrate in queste ultime due settimane, le abbiamo poi inserite nelle slide per la presentazione del diario di bordo che esporremo il 10 novembre 2025.
 
 == Sessione di design thinking
-Sono state discusse le date che l'azienda ha fornito per la sessione di design thinking. Il primo slot utile in cui tutti i membri hanno la disponibilità di partecipare è risultato quello del *20 novembre dalle 9 alle 12*, quindi è stato deciso di richiederlo.\ Inoltre, per non sprecare i 10 giorni fra il giorno di questa riunione e l'incontro con l'azienda, abbiamo deciso di imparare da autodidatti le basi delle tecnologie esplicitate nel capitolato.
+Sono state discusse le date che l'azienda ha proposto per la sessione di design thinking. Il primo slot utile in cui tutti i membri hanno disponibilità di partecipare è risultato quello del *20 novembre 2025 dalle ore 9:00 alle ore 12:00*; si è pertanto deciso di richiederlo.\ Inoltre, al fine di ottimizzare i tempi intercorrenti tra la presente riunione e l’incontro con l’azienda, il gruppo ha concordato di approfondire in modo asincrono le basi delle tecnologie indicate nel capitolato.
 
 = Conclusione
-Abbiamo concluso che, durante l'attesa, le uniche due cose da fare sono contattare gli altri gruppi che si sono aggiudicati il capitolato C2 per assicurarci lo slot di design thinking del 20 novembre e iniziare a studiare le tecnologie richieste dall'azienda.
+Il gruppo ha stabilito che, durante il periodo di attesa, verranno contattati gli altri due gruppi che si sono aggiudicati il capitolato C2, al fine di assicurarsi lo slot di design thinking del 20 novembre e iniziare lo studio delle tecnologie richieste dall’azienda. Il prossimo incontro è fissato per il giorno 21 novembre 2025.
