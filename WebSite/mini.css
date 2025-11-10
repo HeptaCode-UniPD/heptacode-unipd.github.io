@@ -1,42 +1,54 @@
 header h1{
-    font-size: 22em;
+    font-size: 8em;
 }
 
-body,footer{
-    font-size: 1em;
-}
-
-body h2{
-    font-size:2.5em;
+#github a{
+    font-size: 1.1em;
 }
 
 summary{
-    font-size: 1em;
-}
-
-details{
-    font-size: 3em;
-}
-
-article label{
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
     font-size: 0.9em;
 }
 
-article li{
+details section{
     font-size: 0.7em;
-    margin-bottom: 0.3em;
+    line-height: 1.8em;
 }
 
-article ul{
-    margin-left:2em;
+footer{
+    font-size: 0.8em;
+    line-height: 0.9em;
 }
 
-#github a:link{
-    border-radius: 3em;
-    padding: 1.2em 2.4em;
-    font-size: 1.2em;
+#collab{
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1em;
 }
 
-#github{
-    margin:3.5em;
+.cards { 
+    margin: 0 -10px; 
+    padding: 0; 
+    list-style: none; 
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+
+.cards li { 
+    flex: 1 1 calc(50% - 17em);
+    font-size: 0.9em;
+    border:none;
+}
+
+
+.pic{
+    height: 5em;
+    width: 5em;
+}
+
+#collab{
+    font-size: 1.3em;
 }
