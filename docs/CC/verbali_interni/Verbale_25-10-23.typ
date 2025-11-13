@@ -11,7 +11,7 @@
   #align(center, text(size: 15pt, weight: "bold")[Ordine del Giorno])
   
   #align(center,
-  [#text(12pt)[ Incontro per la decisione definitiva sull’azienda a cui proporci e pianificazione dei prossimi eventi
+  [#text(12pt)[ Incontro per la decisione definitiva sull'azienda a cui proporci e pianificazione dei prossimi eventi
   ]])
 ])
 #v(1fr)

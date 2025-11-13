@@ -67,7 +67,7 @@
 
 #text(size: 17pt, weight: "bold")[Luogo e Orario:]
 
-La riunione si è tenuta in modalità telematica tramite la piattaforma Discord dalle *9:00* alle *9:30* del 9 novembre 2025. Tale meeting ha subito una posticipazione rispetto agli orari concordati nel Way of Working, poiché si è atteso prima un riscontro alla mail inviata all’azienda per chiedere come procedere.
+La riunione si è tenuta in modalità telematica tramite la piattaforma Discord dalle *9:00* alle *9:30* del 9 novembre 2025. Tale meeting ha subito una posticipazione rispetto agli orari concordati nel Way of Working, poiché si è atteso prima un riscontro alla mail inviata all'azienda per chiedere come procedere.
 
 #text(size: 17pt, weight: "bold")[Partecipanti interni al Team:]
 
@@ -133,4 +133,4 @@ Abbiamo raccolto i dubbi e le difficoltà riscontrate in queste ultime due setti
 Sono state discusse le date che l'azienda ha proposto per la sessione di design thinking. Il primo slot utile in cui tutti i membri hanno disponibilità di partecipare è risultato quello del *20 novembre 2025 dalle ore 9:00 alle ore 12:00*; si è pertanto deciso di richiederlo.\ Inoltre, al fine di ottimizzare i tempi intercorrenti tra la presente riunione e l’incontro con l’azienda, il gruppo ha concordato di approfondire in modo asincrono le basi delle tecnologie indicate nel capitolato.
 
 = Conclusione
-Il gruppo ha stabilito che, durante il periodo di attesa, verranno contattati gli altri due gruppi che si sono aggiudicati il capitolato C2, al fine di assicurarsi lo slot di design thinking del 20 novembre e iniziare lo studio delle tecnologie richieste dall’azienda. Il prossimo incontro è fissato per il giorno 21 novembre 2025.
+Il gruppo ha stabilito che, durante il periodo di attesa, verranno contattati gli altri due gruppi che si sono aggiudicati il capitolato C2, al fine di assicurarsi lo slot di design thinking del 20 novembre e iniziare lo studio delle tecnologie richieste dall'azienda. Il prossimo incontro è fissato per il giorno 21 novembre 2025.

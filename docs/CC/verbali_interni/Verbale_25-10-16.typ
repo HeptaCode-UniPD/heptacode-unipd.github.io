@@ -11,7 +11,7 @@
   #align(center, text(size: 15pt, weight: "bold")[Ordine del Giorno])
   
   #align(center,
-  [#text(12pt)[ Conoscenza dei colleghi, creazione dell’identità del gruppo e discussione riguardo ai capitolati d’appalto.
+  [#text(12pt)[ Conoscenza dei colleghi, creazione dell'identità del gruppo e discussione riguardo ai capitolati d’appalto.
   ]])
 ])
 #v(1fr)
@@ -164,4 +164,4 @@ Riguardo ai capitolati più dubbi, ovvero i numeri 5 e 6, sono emerse delle doma
 Per le aziende invece in cima alla classifica si è deciso di chiedere inizialmente se preferiscano una comunicazione asincrona tramite scambio di e-mail, o attraverso incontri on-line o in presenza tra il gruppo e coloro che verranno ad esso affiancati in azienda per avere un feedback diretto.
 
 = Conclusioni e Obiettivi per il futuro
-Infine si è deciso cosa fare nei giorni successivi, ovvero studiare come scrivere una documentazione adeguata, imaparare ad usare GitHub-pages e GitHub-actions per automatizzare il sito del team, proporre dei loghi e pensare ad ulteriori dubbi sui vari progetti non ancora considerati.
+Infine si è deciso cosa fare nei giorni successivi, ovvero studiare come scrivere una documentazione adeguata, imparare ad usare GitHub-pages e GitHub-actions per automatizzare il sito del team, proporre dei loghi e pensare ad ulteriori dubbi sui vari progetti non ancora considerati.

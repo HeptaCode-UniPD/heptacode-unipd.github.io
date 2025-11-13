@@ -141,7 +141,7 @@ Per questo motivo, l’organizzazione della repository è stata rivista: sono st
 - La repository ora in funzione deve gestire al meglio la documentazione; pertanto non è sensato aprire branch di sviluppo di alcun tipo. Rimane l'idea comune di utilizzare in futuro un sistema di branch di tipo Gitflow.
 - Il main rimane il branch che ospita tutte le versioni ufficiali dei documenti e che, in futuro, conterrà le versioni ufficiali del codice inerente al progetto.
 - Nel momento in cui un nuovo documento è in fase di redazione:
-  1. Si apre un branch (es. branch _Verbale_) dove si lavora al doumento.
+  1. Si apre un branch (es. branch _Verbale_) dove si lavora al documento.
   2. Se il verificatore ritiene il documento conforme fa il merge con il branch main chiudendo il branch aperto in precedenza. 
   3. Nel caso in cui il verificatore ritenga il documento non conforme, rigetta il merge con il main e comunica le modifiche da fare al redattore.
 = Conclusione

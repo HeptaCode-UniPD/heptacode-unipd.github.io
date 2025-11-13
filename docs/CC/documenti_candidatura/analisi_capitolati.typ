@@ -65,7 +65,7 @@ Il gruppo _Hepta Code_ non ha esperienza pregressa con sviluppo software a livel
 Verranno ora riportate le valutazioni e considerazioni, fatte durante le riunioni del gruppo sui nove capitolati d'appalto proposti. \ Per ogni capitolato d'interesse sono stati analizzati pregi e difetti.
 
 = Prime valutazioni
-Nella prima riunione ufficiale abbiamo sommariamente parlato delle prime impressioni avute da ogni membro sui capitolati, così da procedere con una secrematura e capire verso quali aziende orientarci nel chiarire i nostri dubbi. Abbiamo quindi individuato le tre aziende che meno rientravano negli interessi comuni. \ Le aziende che sono state scartate in seguito a questo incontro sono:
+Nella prima riunione ufficiale abbiamo sommariamente parlato delle prime impressioni avute da ogni membro sui capitolati, così da procedere con una scrematura e capire verso quali aziende orientarci nel chiarire i nostri dubbi. Abbiamo quindi individuato le tre aziende che meno rientravano negli interessi comuni. \ Le aziende che sono state scartate in seguito a questo incontro sono:
 - _DIPReader_ dell'azienda _San Marco Informatica_ 
 - _Second Brain_ dell'azienda _Zucchetti_
 - _Sistema di acquisizione dati da sensori_ dell'azienda _M31_
@@ -92,7 +92,7 @@ Capitolato presentato dall'azienda _VarGroup_. Questo progetto sommariamente ric
 
 In questo caso i dubbi sul progetto erano più consistenti quindi abbiamo ritenuto opportuno un contatto tramite chiamata sulla piattaforma _Google Meet_.
 === Pro
-Il progetto ci è sembrato da subito interessante, sia dal punto di vista tecnico (didatticamente stimolante) sia a livello di gusti personali. \ I dubbi sulle specifiche sono stati chiariti in modo esaustivo e hanno confermato la buona impressione generale che avevamo del progetto. L'azienda si è resa disponibile anche riguardo sessioni di mentoring futuro sulle teconolgie nelle quali non ci sentiamo sicuri. 
+Il progetto ci è sembrato da subito interessante, sia dal punto di vista tecnico (didatticamente stimolante) sia a livello di gusti personali. \ I dubbi sulle specifiche sono stati chiariti in modo esaustivo e hanno confermato la buona impressione generale che avevamo del progetto. L'azienda si è resa disponibile anche riguardo sessioni di mentoring futuro sulle tecnologie nelle quali non ci sentiamo sicuri. 
 === Contro
 Inizialmente non era stato compreso lo scopo preciso del progetto (non avendo esperienza nell'utilizzo ed uso di agenti a livello di sviluppo software), ritenevamo quindi che fosse un elemento di difficoltà il fatto di non conoscere questo tipo di tecnologie. 
 
@@ -103,7 +103,7 @@ In questo caso il capitolato presentato dall'azienda ci è sembrato molto generi
 === Pro
 L'argomento è molto attuale ed importante, inoltre l'idea ci è sembrata stimolante e utile da un punto di vista etico. \ Può essere interessante analizzare lo studio di tutte le funzionalità richieste e l'integrazione delle stesse nel modo più consono in un contesto così importante e delicato. Inoltre è un prodotto potenzialmente concreto e che quindi può avere un impatto (a noi) più 'visibile'.
 === Contro
-Abbiamo ritenuto opportuno contattare l'azienda riguardo ad alcuni dubbi insorti durante una riunione del gruppo, in primis sul carico di lavoro richiesto. Sono infatti specificate molte funzionalità e la nostra preoccupazione era di non essere in grado di implementarle tutte al meglio. C'erano inoltre molti ambiti da analizzare (sicurezza, intelligienza artificiale, approfondimenti sui temi di privacy e approfondimenti sul tema della violenza di genere). Nonostante le risposte cordiali ed esaustive che l'azienda ci ha fornito abbiamo comunque deciso di orientarci verso altri progetti.  
+Abbiamo ritenuto opportuno contattare l'azienda riguardo ad alcuni dubbi insorti durante una riunione del gruppo, in primis sul carico di lavoro richiesto. Sono infatti specificate molte funzionalità e la nostra preoccupazione era di non essere in grado di implementarle tutte al meglio. C'erano inoltre molti ambiti da analizzare (sicurezza, intelligenza artificiale, approfondimenti sui temi di privacy e approfondimenti sul tema della violenza di genere). Nonostante le risposte cordiali ed esaustive che l'azienda ci ha fornito abbiamo comunque deciso di orientarci verso altri progetti.  
 
 == C5: NEXUM
 Capitolato presentato dall'azienda _Eggon_. Richiede l'integrazione con il progetto _NEXUM_ già attivo e funzionante. Si tratta di aggiungere funzionalità a una piattaforma di comunicazione e gestione HR evoluta, in grado di connettere aziende, collaboratori e studi dei Consulenti del Lavoro in un unico ecosistema digitale.  
@@ -136,7 +136,7 @@ In una riunione conclusiva sono stati valutati tutti i colloqui fatti con le azi
 In questa conversazione è emerso un cambiamento nella preferenza comune; l'azienda più ha convinto tutti noi è stata infine _VarGroup_. 
 
 
-La decisione finale non è dovuta a una spiccata preferenza nei confronti del loro capitolato, che per noi era a pari merito con _View4Life_, bensì alla disponibilità e la volontà di collaborazione che abbiamo percepito dall'azienda. Queste sono state dimostrate dai diversi strumenti che hanno offerto di metterci a disposizione, quali mentorign nel design thinking e aiuti nella manipolazione di nuovi linguaggi e tecnologie da noi poco conosciute.
+La decisione finale non è dovuta a una spiccata preferenza nei confronti del loro capitolato, che per noi era a pari merito con _View4Life_, bensì alla disponibilità e la volontà di collaborazione che abbiamo percepito dall'azienda. Queste sono state dimostrate dai diversi strumenti che hanno offerto di metterci a disposizione, quali mentoring nel design thinking e aiuti nella manipolazione di nuovi linguaggi e tecnologie da noi poco conosciute.
 
 Dichiariamo quindi che la nostra scelta finale è il capitolato *C2: Code Guardian*.
 

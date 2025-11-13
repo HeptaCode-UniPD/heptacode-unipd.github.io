@@ -75,7 +75,7 @@ Il gruppo *Hepta Code* è composto dai 7 seguenti membri:
 ]
 = Motivazioni
 
-La scelta di questo progetto è stata in primo luogo dettata dall’interesse suscitato dai temi trattati e dalle tecnologie coinvolte, in maniera condivisa tra tutti i membri del gruppo. In secondo luogo ha inciso in maniera significativa anche la disponibilità dimostrata dal referente aziendale nel chiarire i nostri dubbi e, di conseguenza, da quanto riteniamo che la comunicazione tra le due parti possa avvenire agevolmente ed in maniera chiara. È possibile consultare una valutazione più approfondita riguardante ciascun capitolato nel documento: #link("https://heptacode-unipd.github.io/docs/CC/documenti_candidatura/analisi_capitolati.pdf")[Analisi capitolati].
+La scelta di questo progetto è stata in primo luogo dettata dall'interesse suscitato dai temi trattati e dalle tecnologie coinvolte, in maniera condivisa tra tutti i membri del gruppo. In secondo luogo ha inciso in maniera significativa anche la disponibilità dimostrata dal referente aziendale nel chiarire i nostri dubbi e, di conseguenza, da quanto riteniamo che la comunicazione tra le due parti possa avvenire agevolmente ed in maniera chiara. È possibile consultare una valutazione più approfondita riguardante ciascun capitolato nel documento: #link("https://heptacode-unipd.github.io/docs/CC/documenti_candidatura/analisi_capitolati.pdf")[Analisi capitolati].
 
 All’interno della repository sono presenti anche i verbali redatti a seguito delle riunioni private tra i membri del gruppo e degli incontri con i referenti delle aziende *Ergon* e *Var Group S.p.A.* 
 
