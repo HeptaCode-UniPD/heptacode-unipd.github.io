@@ -38,8 +38,8 @@ jobs:
       - name: Copy docs to WebSite for Jekyll processing
         run: |
           # Copy the entire docs folder into WebSite so Jekyll can include it
-          cp -r ./docs ./WebSite/
-          find ./WebSite -type f | sort
+          cp -r ./docs ./website/
+          find ./website -type f | sort
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -47,7 +47,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./WebSite
+          source: ./website
           destination: ./_site
       
       - name: Upload artifact
