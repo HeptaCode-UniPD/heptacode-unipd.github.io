@@ -46,3 +46,10 @@ odg
 typ
 semver
 codeguardian
+cov
+demandabile
+metadati
+owasp
+readme
+salboro
+dindo
