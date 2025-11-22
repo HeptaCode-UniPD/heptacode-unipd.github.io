@@ -147,7 +147,7 @@ Autocratico e Democratico, arrivando alla conclusione che nel contesto di CodeGu
     "Riprende il modello usato in un team", "Orchestratore pensato male causa danni più gravi",
     "Maggiore divisione ruoli", "Aggiornamento sottoposti deve essere considerato",
     "Mantiene coerenza del codice", "Perdita di informazioni nella comunicazione tra i livelli",
-    "C'è un monitoraggio dall'alto", "Se cade l'orchestratore il sistena non è utilizzabile"
+    "C'è un monitoraggio dall'alto", "Se cade l'orchestratore il sistema non è utilizzabile"
     )],
     [  #table(
     columns: (50%, 50%),
