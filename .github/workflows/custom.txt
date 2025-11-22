@@ -39,3 +39,10 @@ gitflow
 dall
 hepta
 cetz
+bowser
+pagebreak
+svg
+odg
+typ
+semver
+codeguardian
