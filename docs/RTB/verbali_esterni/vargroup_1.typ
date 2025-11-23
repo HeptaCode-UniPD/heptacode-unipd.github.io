@@ -17,7 +17,8 @@
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
   ("0.1.0", "2025-11-20", "Riccardo Baldin", "Alberto Reginato", "Prima stesura documento",
-  "0.2.0", "2025-11-20", "Alberto Reginato", "", "Conclusioni documento")
+  "0.2.0", "2025-11-21", "Alberto Reginato", "Riccardo Baldin", "Conclusioni documento",
+  "0.3.0", "2025-11-21", "Alberto Reginato", "", "Aggiunta conclusioni documento")
 )
 
 // switchare in 'true' SSE l'incontro si è tenuto online
@@ -221,5 +222,6 @@ repo in un branch specifico facendo le modifiche accettate dall'utente.
 = Conclusione
 L'incontro con la proponente si è rivelato fondamentale per delineare i prossimi passi da intraprendere con il progetto. \
 Il confronto diretto, supportato dalla metodologia del Design Thinking, ha permesso al gruppo Hepta Code di trasformare le vaghe ipotesi iniziali in requisiti molto più concreti.
-La sessione è stata fondamentale per chiarire dubbi architetturali e funzionali, permettendo al team di acquisire una consapevolezza più concreta riguardo la direzione da intraprendere e gli obiettivi da raggiungere con _CodeGuardian_.
-
+La sessione è stata fondamentale per chiarire dubbi architetturali e funzionali, permettendo al team di acquisire una consapevolezza più concreta riguardo la direzione da intraprendere e gli obiettivi da raggiungere con _CodeGuardian_.\
+In chiusura, sono state pianificate le future interazioni con la proponente: è stato concordato uno _stand-up meeting_ settimanale e una _sprint review_ a cadenza bisettimanale, mantenendo flessibilità in base all'avanzamento effettivo dei lavori. 
+Uno dei temi principali su cui verterà la prossima discussione sarà inerente lo stack tecnologico scelto dal gruppo per l'esecuzione del progetto e, conseguentemente, all'eventuale possibilità di fornire sessioni di mentoring tecnico da parte dell'azienda.
