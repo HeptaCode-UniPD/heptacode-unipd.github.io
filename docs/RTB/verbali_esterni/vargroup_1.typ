@@ -18,7 +18,7 @@
 #let modifiche = (
   ("0.1.0", "2025-11-20", "Riccardo Baldin", "Alberto Reginato", "Prima stesura documento",
   "0.2.0", "2025-11-21", "Alberto Reginato", "Riccardo Baldin", "Conclusioni documento",
-  "0.3.0", "2025-11-21", "Alberto Reginato", "", "Aggiunta conclusioni documento")
+  "1.0.0", "2025-11-21", "Alberto Reginato", "Riccardo Baldin", "Aggiunta conclusioni documento")
 )
 
 // switchare in 'true' SSE l'incontro si è tenuto online
@@ -50,24 +50,9 @@
 #let fine = "12:00"
 
 
-#show: doc => template(doc,
-    data: giorno,
-    ordine_del_giorno: odg,
-    lista_versioni: modifiche,
-    on-line: distanza,
-    new-luogo: luogo, 
-    ora_inizio: inizio,
-    ora_fine: fine,
-    ruoli-presenza: lista-ruoli
-)
 
 
-
-
-
-
-
-= Argomenti trattati
+#let corpo = [= Argomenti trattati
 Gli argomenti discussi nell'incontro sono stati:
 - Analisi e brainstorming riguardo all'utilizzatore della piattaforma
 - Politica degli Agenti
@@ -225,3 +210,18 @@ Il confronto diretto, supportato dalla metodologia del Design Thinking, ha perme
 La sessione è stata fondamentale per chiarire dubbi architetturali e funzionali, permettendo al team di acquisire una consapevolezza più concreta riguardo la direzione da intraprendere e gli obiettivi da raggiungere con _CodeGuardian_.\
 In chiusura, sono state pianificate le future interazioni con la proponente: è stato concordato uno _stand-up meeting_ settimanale e una _sprint review_ a cadenza bisettimanale, mantenendo flessibilità in base all'avanzamento effettivo dei lavori. 
 Uno dei temi principali su cui verterà la prossima discussione sarà inerente lo stack tecnologico scelto dal gruppo per l'esecuzione del progetto e, conseguentemente, all'eventuale possibilità di fornire sessioni di mentoring tecnico da parte dell'azienda.
+]
+
+
+
+#show: doc => template(doc,
+    data: giorno,
+    ordine_del_giorno: odg,
+    lista_versioni: modifiche,
+    on-line: distanza,
+    new-luogo: luogo, 
+    ora_inizio: inizio,
+    ora_fine: fine,
+    ruoli-presenza: lista-ruoli,
+    testo: corpo
+)

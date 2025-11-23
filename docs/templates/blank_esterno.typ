@@ -47,10 +47,16 @@
 #let fine = ""
 
 
+#let corpo = [= Argomenti trattati
+Gli argomenti discussi nell'incontro sono stati:
 
+= Svolgimento
 
+= Conclusione
+Il gruppo ha stabilito che nel corso delle settimana avrebbe: 
 
-
+Il prossimo incontro è fissato per il giorno #next-meeting
+]
 
 
 #show: doc => template(doc,
@@ -61,18 +67,6 @@
     new-luogo: luogo, 
     ora_inizio: inizio,
     ora_fine: fine,
-    ruoli-presenza: lista-ruoli
+    ruoli-presenza: lista-ruoli,
+    testo: corpo
 )
-
-
-
-
-= Argomenti trattati
-Gli argomenti discussi nell'incontro sono stati:
-
-= Svolgimento
-
-= Conclusione
-Il gruppo ha stabilito che nel corso delle settimana avrebbe: 
-
-Il prossimo incontro è fissato per il giorno #next-meeting

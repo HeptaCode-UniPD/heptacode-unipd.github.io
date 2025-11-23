@@ -7,7 +7,7 @@
   ora_inizio: "00:00",
   ora_fine: "00:00",
   ruoli-presenza: (),
-  presenza: ()
+  testo: ""
 ) = {
   v(1fr)
   align(center,image("../asset/logo.svg"))
@@ -142,5 +142,16 @@
 
   pagebreak()
 
-  [#doc]
+  [#testo]
+
+  pagebreak()
+
+  v(0.1fr)
+  align(center)[
+    Data:
+    #align(right)[ #line(start: (0%,-1.5%), length: 7cm, stroke: .4pt) ]
+    #v(.3cm)
+    Firma:
+    #align(right)[ #line(start: (0%,-1.5%), length: 7cm, stroke: .4pt) ]
+  ]
 }
