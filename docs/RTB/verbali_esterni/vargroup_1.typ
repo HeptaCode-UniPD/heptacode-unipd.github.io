@@ -214,7 +214,7 @@ Uno dei temi principali su cui verterà la prossima discussione sarà inerente l
 
 // decisione azione
 #let decisione-azione = ((
-  "Scegliere quali teconologie utilizzare per sviluppare l'applicativo","Studiare individualmente le tecnologie al fine di proporle a VarGroup per ricevere del mentoring tecnico a riguardo",
+  "Scegliere quali tecnologie utilizzare per sviluppare l'applicativo","Studiare individualmente le tecnologie al fine di proporle a VarGroup per ricevere del mentoring tecnico a riguardo",
   "Individuate le personas e gli utenti della piattaforma","Analizzare nel dettaglio le interazioni degli utenti con il sito per studiarne i casi d'uso"
 )
 )
