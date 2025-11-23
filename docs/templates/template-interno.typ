@@ -7,7 +7,8 @@
   ora_inizio: "00:00",
   ora_fine: "00:00",
   ruoli-presenza: (),
-  presenza: ()
+  testo: "",
+  lista_decisioni: (("",""))
 ) = {
   v(1fr)
   align(center,image("../asset/logo.svg"))
@@ -127,5 +128,15 @@
 
   pagebreak()
 
-  [#doc]
+  [#testo]
+
+  table(
+  columns: (auto, auto),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Decisione*], [*Azione*]
+    ),
+    ..lista_decisioni,
+  )
 }

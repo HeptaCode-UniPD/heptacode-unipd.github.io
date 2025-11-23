@@ -59,6 +59,12 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 ]
 
 
+#let decisione-azione = ((
+  "",""
+)
+)
+
+
 #show: doc => template(doc,
     data: giorno,
     ordine_del_giorno: odg,
@@ -68,5 +74,6 @@ Il prossimo incontro è fissato per il giorno #next-meeting
     ora_inizio: inizio,
     ora_fine: fine,
     ruoli-presenza: lista-ruoli,
-    testo: corpo
+    testo: corpo,
+    lista_decisioni: decisione-azione
 )

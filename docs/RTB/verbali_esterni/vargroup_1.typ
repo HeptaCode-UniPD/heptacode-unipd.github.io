@@ -212,7 +212,12 @@ In chiusura, sono state pianificate le future interazioni con la proponente: è 
 Uno dei temi principali su cui verterà la prossima discussione sarà inerente lo stack tecnologico scelto dal gruppo per l'esecuzione del progetto e, conseguentemente, all'eventuale possibilità di fornire sessioni di mentoring tecnico da parte dell'azienda.
 ]
 
-
+// decisione azione
+#let decisione-azione = ((
+  "Scegliere quali teconologie utilizzare per sviluppare l'applicativo","Studiare individualmente le tecnologie al fine di proporle a VarGroup per ricevere del mentoring tecnico a riguardo",
+  "Individuate le personas e gli utenti della piattaforma","Analizzare nel dettaglio le interazioni degli utenti con il sito per studiarne i casi d'uso"
+)
+)
 
 #show: doc => template(doc,
     data: giorno,
@@ -223,5 +228,6 @@ Uno dei temi principali su cui verterà la prossima discussione sarà inerente l
     ora_inizio: inizio,
     ora_fine: fine,
     ruoli-presenza: lista-ruoli,
-    testo: corpo
+    testo: corpo,
+    lista_decisioni: decisione-azione
 )

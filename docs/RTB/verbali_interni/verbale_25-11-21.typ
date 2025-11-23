@@ -34,7 +34,7 @@
     "Redattore",   "Presente", //Angela Favaro
     "Amministratore",   "Presente", //Angela Canazza
     "Amministratore",   "Presente", //Riccardo Baldin
-    "Responsabile",   "", //Alberto Reginato
+    "Responsabile",   "Presente", //Alberto Reginato
     "Amministratore",   "Presente", //Amerigo Vegliante
     "Amministratore",   "Presente", //Nicola Simionato
     "Verificatore",   "Presente" //Laura Venturini
@@ -47,27 +47,7 @@
 #let fine = "18:10"
 
 
-
-
-
-
-
-
-#show: doc => template(doc,
-    data: giorno,
-    ordine_del_giorno: odg,
-    lista_versioni: modifiche,
-    on-line: distanza,
-    new-luogo: luogo, 
-    ora_inizio: inizio,
-    ora_fine: fine,
-    ruoli-presenza: lista-ruoli
-)
-
-
-
-
-= Argomenti trattati
+#let corpo = [= Argomenti trattati
 Gli argomenti discussi nell'incontro sono stati:
 - Resoconto riunione del 20 Novembre con Var Group
 - Discussione sulle possibili tecnologie da utilizzare per il progetto
@@ -111,7 +91,8 @@ columns: (auto, auto, auto),
     "PIANO DI QUALIFICA", "Angela Canazza e Nicola Simionato", "Verrà discussa ad ogni riunione lo stato di avanzamento del documento ed eventuali problematiche.",
     "PIANO DI PROGETTO", "Angela Favaro e Laura Venturini", "Verrà discussa ad ogni riunione lo stato di avanzamento del documento ed eventuali problematiche.",
     "NORME DI PROGETTO", "Amerigo Vegliante e Riccardo Baldin", "Verrà discussa ad ogni riunione lo stato di avanzamento del documento ed eventuali problematiche.",
-    "ANALISI DEI REQUISITI", "Alberto Reginato e il team al completo", "Ogni riunione si concentrerà nel comprendere e produrre contenuti per l’Analisi dei Requisiti da parte di tutto il team. \ 
+    "ANALISI DEI REQUISITI", "Alberto Reginato e il team al completo", "Ogni riunione si concentrerà nel comprendere e produrre contenuti per l’Analisi dei Requisiti da parte di tutto il team.
+
     Alberto si occuperà di redarre il documento sulla base di quanto pattuito agli incontri."
 )
 
@@ -121,3 +102,29 @@ Il gruppo ha stabilito che nel corso delle settimana avrebbe:
 - cominciato ad approcciare l’Analisi dei Requisiti al prossimo incontro che si svolgerà. 
 
 Il prossimo incontro è fissato per il giorno #next-meeting
+]
+
+
+
+// decisione azione
+#let decisione-azione = ((
+  "Scegliere le tecnologie adatte allo svolgimento del progetto","Informarsi singolarmente riguardo a varie tecnologie per poi discuterne assieme",
+  "Approcciarsi all'analisi dei requisiti","Ragionare sui casi d'uso per discuterne in gruppo al prossimo incontro"
+)
+)
+
+
+
+
+#show: doc => template(doc,
+    data: giorno,
+    ordine_del_giorno: odg,
+    lista_versioni: modifiche,
+    on-line: distanza,
+    new-luogo: luogo, 
+    ora_inizio: inizio,
+    ora_fine: fine,
+    ruoli-presenza: lista-ruoli,
+    testo: corpo,
+    lista_decisioni: decisione-azione
+)
