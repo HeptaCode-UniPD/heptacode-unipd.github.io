@@ -16,7 +16,8 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("0.1.0", "2025-11-20", "Riccardo Baldin", "", "Prima stesura documento")
+  ("0.1.0", "2025-11-20", "Riccardo Baldin", "Alberto Reginato", "Prima stesura documento",
+  "0.2.0", "2025-11-20", "Alberto Reginato", "", "Conclusioni documento")
 )
 
 // switchare in 'true' SSE l'incontro si è tenuto online
@@ -218,4 +219,7 @@ repo in un branch specifico facendo le modifiche accettate dall'utente.
 
 #pagebreak()
 = Conclusione
+L'incontro con la proponente si è rivelato fondamentale per delineare i prossimi passi da intraprendere con il progetto. \
+Il confronto diretto, supportato dalla metodologia del Design Thinking, ha permesso al gruppo Hepta Code di trasformare le vaghe ipotesi iniziali in requisiti molto più concreti.
+La sessione è stata fondamentale per chiarire dubbi architetturali e funzionali, permettendo al team di acquisire una consapevolezza più concreta riguardo la direzione da intraprendere e gli obiettivi da raggiungere con _CodeGuardian_.
 
