@@ -3,7 +3,7 @@
   ordine_del_giorno: "!!!! INSERIRE ORDINE DEL GIORNO !!!!",
   lista_versioni: (("0.0","0000/00/00","Mario","Luigi","Combattimento con Bowser")),
   on-line: false,
-  new-luogo: "la _Quiet Room_ del complesso Paolotti",
+  new-luogo: "la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD",
   ora_inizio: "00:00",
   ora_fine: "00:00",
   ruoli-presenza: (),
@@ -70,10 +70,10 @@
   v(0.2cm)
 
   if on-line{
-    [La riunione si è tenuta in modalità telematica tramite la piattaforma Discord dalle *#ora_inizio* alle *#ora_fine*]
+    [La riunione si è tenuta in modalità telematica tramite la piattaforma Google Meet dalle *#ora_inizio* alle *#ora_fine*]
   }else{
     [La riunione si è tenuta in presenza presso ] 
-    if new-luogo != "la _Quiet Room_ del complesso Paolotti"{ [#new-luogo ] } else { [la _Quiet Room_ del complesso Paolotti ] } 
+    if new-luogo != "la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD "{ [#new-luogo ] } else { [la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD ] } 
     [dalle *#ora_inizio* alle *#ora_fine*]
   }
 
@@ -120,6 +120,21 @@
     ruoli-presenza.at(13),
   )
 
+  v(0.5cm)  
+
+  text(size: 17pt, weight: "bold")[Partecipanti esterni al Team:]
+
+  table(
+    columns: (auto, auto),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Nome*], [*Ruolo*]
+    ),
+    
+    "Stefano Dindo",
+    "Rappresentante VarGroup"
+  )
  
   pagebreak()
 
@@ -139,4 +154,15 @@
     ),
     ..lista_decisioni,
   )
+
+  pagebreak()
+
+  v(0.1fr)
+  align(center)[
+    Data:
+    #align(right)[ #line(start: (0%,-1.5%), length: 7cm, stroke: .4pt) ]
+    #v(.3cm)
+    Firma:
+    #align(right)[ #line(start: (0%,-1.5%), length: 7cm, stroke: .4pt) ]
+  ]
 }

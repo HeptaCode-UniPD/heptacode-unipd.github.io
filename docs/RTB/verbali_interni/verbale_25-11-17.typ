@@ -54,18 +54,8 @@
 
 
 
-#show: doc => template(doc,
-    data: giorno,
-    ordine_del_giorno: odg,
-    lista_versioni: modifiche,
-    on-line: distanza,
-    new-luogo: luogo, 
-    ora_inizio: inizio,
-    ora_fine: fine,
-    ruoli-presenza: lista-ruoli
-)
 
-= Argomenti trattati
+#let corpo = [= Argomenti trattati
 Gli argomenti discussi nell'incontro sono stati:
 - Modifiche sulla stesura dei verbali 
 - Brainstorming sugli use cases del progetto CodeGuardian
@@ -90,21 +80,27 @@ Il gruppo ha stabilito che nel corso delle settimana avrebbe:
 - Continuato il lavoro sugli use cases in modo asincrono
 
 Il prossimo incontro è fissato per il giorno #next-meeting, dopo l'incontro con la proponente.
+]
 
-#table(
-columns: (auto, auto),
-  inset: 9pt,
-  align: horizon,
-  table.header(
-    [*Decisione*], [*Azione*]
-  ),
-  
-    "velocizzare la stesura dei verbali",
-    "creazione di template in typst",
-    "migliorare la comprensione dei verbali",
-    "inserzione di una tabella riassuntiva di decisione-azione",
-    "migliorare il versionamento dei verbali",
-    "implementazione del modello SEMVER",
-    "stilare gli use cases",
-    "brainstorming e attività asincrone durante la settimana"
+
+// decisione azione
+#let decisione-azione = ((
+  "velocizzare la stesura dei verbali","creazione di template in typst",
+  "migliorare la comprensione dei verbali","inserzione di una tabella riassuntiva di decisione-azione",
+  "migliorare il versionamento dei verbali","implementazione del modello SEMVER",
+  "stilare gli use cases","brainstorming e attività asincrone durante la settimana"
+)
+)
+
+#show: doc => template(doc,
+    data: giorno,
+    ordine_del_giorno: odg,
+    lista_versioni: modifiche,
+    on-line: distanza,
+    new-luogo: luogo, 
+    ora_inizio: inizio,
+    ora_fine: fine,
+    ruoli-presenza: lista-ruoli,
+    testo: corpo,
+    lista_decisioni: decisione-azione
 )

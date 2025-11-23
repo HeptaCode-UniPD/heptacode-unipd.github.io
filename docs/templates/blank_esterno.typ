@@ -1,4 +1,4 @@
-#import "../../templates/template-interno.typ": template
+#import "../../templates/template-esterno.typ": template
 
 // giorno in formato AAAA-MM-GG
 #let giorno = ""
@@ -19,13 +19,13 @@
   ("0.1.0", "", "", "", "")
 )
 
-// switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
+// switchare in 'true' SE E SOLO SE l'incontro si è tenuto online
 #let distanza = false
 
 
 // modificare SE E SOLO SE non si è fatto in modalità telematica
-//NB: se non è in Quiet Room scrivere il nuovo luogo comprendendo l'articolo
-#let luogo = "la _Quiet Room_ del complesso Paolotti"
+//NB: se non è nella loro sede capolinea tram scrivere il nuovo luogo comprendendo l'articolo
+#let luogo = "la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD"
 
 
 // ruolo e presenza abbastanza intuitivo
@@ -45,7 +45,6 @@
 
 // ora di fine dell'incontro
 #let fine = ""
-
 
 
 #let corpo = [= Argomenti trattati
