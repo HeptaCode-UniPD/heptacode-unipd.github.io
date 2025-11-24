@@ -3,6 +3,8 @@
 // giorno in formato AAAA-MM-GG
 #let giorno = "2025-11-20"
 
+Cioanvnbiefbksjdfje
+
 // data del prossimo incontro nello stesso formato
 #let next-meeting = "2025-11-21"
 
