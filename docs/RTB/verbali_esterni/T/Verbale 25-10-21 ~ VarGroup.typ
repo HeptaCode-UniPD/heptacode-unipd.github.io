@@ -1,9 +1,6 @@
-#import "../../templates/template-esterno.typ": template
-
 // giorno in formato AAAA-MM-GG
 #let giorno = "2025-11-20"
 
-Cioanvnbiefbksjdfje
 
 // data del prossimo incontro nello stesso formato
 #let next-meeting = "2025-11-21"
@@ -190,7 +187,7 @@ Il brainstorming finale inerente alle azioni che pianifichiamo di fare avvenire
 durante il flusso di lavoro dell'applicativo ha portato al seguente schema.
 
 #figure(
-  image("../../asset/flusso.pdf", width: 50%),
+  image("../../../asset/flusso.pdf", width: 50%),
   caption: [
     Prima idea del flusso di lavoro dell'applicativo.
   ],
@@ -219,17 +216,4 @@ Uno dei temi principali su cui verterà la prossima discussione sarà inerente l
   "Scegliere quali tecnologie utilizzare per sviluppare l'applicativo","Studiare individualmente le tecnologie al fine di proporle a VarGroup per ricevere del mentoring tecnico a riguardo",
   "Individuate le personas e gli utenti della piattaforma","Analizzare nel dettaglio le interazioni degli utenti con il sito per studiarne i casi d'uso"
 )
-)
-
-#show: doc => template(doc,
-    data: giorno,
-    ordine_del_giorno: odg,
-    lista_versioni: modifiche,
-    on-line: distanza,
-    new-luogo: luogo, 
-    ora_inizio: inizio,
-    ora_fine: fine,
-    ruoli-presenza: lista-ruoli,
-    testo: corpo,
-    lista_decisioni: decisione-azione
 )

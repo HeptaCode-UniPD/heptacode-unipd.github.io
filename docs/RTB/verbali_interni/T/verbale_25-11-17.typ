@@ -1,5 +1,3 @@
-#import "../../templates/template-interno.typ": template
-
 // giorno in formato AAAA-MM-GG
 #let giorno = "2025-11-17"
 
@@ -90,17 +88,4 @@ Il prossimo incontro è fissato per il giorno #next-meeting, dopo l'incontro con
   "migliorare il versionamento dei verbali","implementazione del modello SEMVER",
   "stilare gli use cases","brainstorming e attività asincrone durante la settimana"
 )
-)
-
-#show: doc => template(doc,
-    data: giorno,
-    ordine_del_giorno: odg,
-    lista_versioni: modifiche,
-    on-line: distanza,
-    new-luogo: luogo, 
-    ora_inizio: inizio,
-    ora_fine: fine,
-    ruoli-presenza: lista-ruoli,
-    testo: corpo,
-    lista_decisioni: decisione-azione
 )
