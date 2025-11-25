@@ -84,5 +84,4 @@ process_directory "$DOCS_ROOT/RTB/verbali_esterni" "template-esterno.typ"
 process_directory "$DOCS_ROOT/RTB/verbali_interni" "template-interno.typ"
 
 
-echo "--- Compilazione completata ---"
-find "$DOCS_ROOT" -name "*.pdf" -type f
+echo "---------------- Compilazione completata ----------------"

@@ -15,7 +15,7 @@
   set text(lang: "it")
   v(1.5cm)
 
-  align(center,text(size: 25pt, weight: "bold")[Verbale Interno #data])
+  align(center,text(size: 25pt, weight: "bold")[Verbale Esterno #data])
 
   v(2.0cm)
 
