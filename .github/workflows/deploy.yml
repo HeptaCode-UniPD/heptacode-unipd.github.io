@@ -24,16 +24,22 @@ jobs:
       - name: Install typst
         run: sudo snap install typst
       
-      - name: Compile .typ files to PDF
+      - name: Compile Legacy .typ files to PDF (Phase 1)
+        # Compila i vecchi file .typ completi, escludendo 'templates' e le nuove cartelle 'T'
         run: |
-          find ./docs -name "*.typ" -type f -not -path "*/templates/*" | while read typ_file; do
+          find ./docs -name "*.typ" -type f \
+          -not -path "*/templates/*" \
+          -not -path "*/T/*" | while read typ_file; do
             pdf_file="${typ_file%.typ}.pdf"
-            echo "Compiling: $typ_file to $pdf_file"
+            echo "Compiling LEGACY: $typ_file to $pdf_file"
             typst compile --root docs "$typ_file" "$pdf_file"
           done
-          
-          echo "Generated PDFs:"
-          find ./docs -name "*.pdf" -type f
+                
+      - name: Compile Templatized Files (Phase 2)
+        # Esegue lo script Bash per compilare i file di dati in /T/ usando i template.
+        run: |
+          chmod +x ./scripts/template_compile.sh
+          ./scripts/template_compile.sh
       
       - name: Copy docs to WebSite for Jekyll processing
         run: |
