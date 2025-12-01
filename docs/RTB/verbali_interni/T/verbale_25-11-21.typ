@@ -1,5 +1,3 @@
-#import "../../templates/template-interno.typ": template
-
 // giorno in formato AAAA-MM-GG
 #let giorno = "2025-11-21"
 
@@ -56,7 +54,7 @@ Gli argomenti discussi nell'incontro sono stati:
 == Resoconto riunione del 20 Novembre con Var Group
 Analizzando le bozze prodotte ieri grazie al Design Thinking fatto insieme al referente di var Group abbiamo accordato di prendere il modello in @fig:struttura come riferimento embrionale del progetto. 
 #figure(
-  image("../../asset/struttura_progetto_vargroup.png", height: 70%),
+  image("../../../asset/struttura_progetto_vargroup.png", height: 70%),
   caption: "Struttura del progetto creata con Var Group.",
 ) <fig:struttura>
 == Discussione sulle possibili tecnologie da utilizzare per il progetto
@@ -111,20 +109,4 @@ Il prossimo incontro è fissato per il giorno #next-meeting
   "Scegliere le tecnologie adatte allo svolgimento del progetto","Informarsi singolarmente riguardo a varie tecnologie per poi discuterne assieme",
   "Approcciarsi all'analisi dei requisiti","Ragionare sui casi d'uso per discuterne in gruppo al prossimo incontro"
 )
-)
-
-
-
-
-#show: doc => template(doc,
-    data: giorno,
-    ordine_del_giorno: odg,
-    lista_versioni: modifiche,
-    on-line: distanza,
-    new-luogo: luogo, 
-    ora_inizio: inizio,
-    ora_fine: fine,
-    ruoli-presenza: lista-ruoli,
-    testo: corpo,
-    lista_decisioni: decisione-azione
 )
