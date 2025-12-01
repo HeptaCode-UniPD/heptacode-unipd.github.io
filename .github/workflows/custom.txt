@@ -58,3 +58,5 @@ backend
 frontend
 js
 rtb
+dall'ai
+dell'ai

@@ -56,11 +56,11 @@ Sono state esposte le diverse tecnologie emerse nella scorsa riunione e si sono 
 - Frontend: Svelte
 - Database: MongoDB
 *Scelte delle tecnologie:*
-- #underline[MongoDB]. \ Dovrebbe poter fornire scalabilità per l'implementazionedi nuovi agenti.
-- #underline[Svelte con Typescript e Tailwind]. \ Svelte ha performance migliori e assieme a Typescript semplifica la scrittura del codice. Tailwind va a sostituire il css per semplificare lo strato di preentazione.
+- #underline[MongoDB]. \ Dovrebbe poter fornire scalabilità per l'implementazione di nuovi agenti.
+- #underline[Svelte con Typescript e Tailwind]. \ Svelte ha performance migliori e assieme a Typescript semplifica la scrittura del codice. Tailwind va a sostituire il css per semplificare lo strato di presentazione.
 Ultimo motivo è anche quello di scoprire nuove tecnologie non ancora sperimentate dal team.
 == Casi d'uso
-Discussione del comportamento dei vari utenti, identificati nella riunone con la proponente.
+Discussione del comportamento dei vari utenti, identificati nella riunione con la proponente.
 Sono stati stesi dei casi d'uso ipotetici in gruppo discutendone la correttezza.
 Ci si è accorti di aver confuso i casi d'uso assieme ai diagrammi di sequenza e allora sono stati riscritti cercando di seguire degli esempi lasciati dal professore.
 Una discussione ha portato a definire il comportamento dell'AI nei confronti di GitHub. In particolare se un push è stato fatto dall'AI allora l'orchestratore non si deve attivare.
