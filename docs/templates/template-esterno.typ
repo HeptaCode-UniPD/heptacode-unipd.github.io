@@ -55,7 +55,7 @@
           fill: white,
           stroke: none
         )],
-        [Verbale Interno #data],
+        [Verbale Esterno #data],
       )
       #line(length: 100%, stroke: black)
     ],
