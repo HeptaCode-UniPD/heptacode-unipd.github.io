@@ -223,7 +223,7 @@ Termini tecnici e ambiguità sono chiariti nel documento _glossario.pdf_, ogni t
 
 === Codice di Versionamento
 
-=== Tecnologie Addottate
+=== Tecnologie Adottate
 
 === Repository
 
