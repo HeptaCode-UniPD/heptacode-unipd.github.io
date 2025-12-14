@@ -88,7 +88,7 @@ Abbreviazione per "documentazione". Indica l'insieme dei documenti relativi al p
 
 = F
 #heading(level: 2, outlined: false)[Fail fast]
-Metodologia che mira ad idenficare rapidamente un malfunzionamento all'interno di un progetto, in modo da poterlo correggere prima che questo porti a un accumulo di problemi di difficile gestione.
+Metodologia che mira ad identificare rapidamente un malfunzionamento all'interno di un progetto, in modo da poterlo correggere prima che questo porti a un accumulo di problemi di difficile gestione.
 #pagebreak()
 = G
 
