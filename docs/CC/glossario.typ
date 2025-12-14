@@ -19,7 +19,6 @@
 #counter(page).update(1)
 
 #pagebreak()
-#text(size: 17pt, weight: "bold")[Registro delle modifiche:]
 #set text(size: 11pt, lang: "it")
 #table(
   columns: (auto, auto, auto, auto, auto),
@@ -80,13 +79,17 @@ Operazione che registra in modo permanente le modifiche apportate a uno o più f
 = D
 
 #heading(level: 2, outlined: false)[Discord]
-Applicazione di messaggistica istantanea, VoIP e di distribuzione digitale. Gli utenti possono interagire privatamente o in comunità che possono contenere canali sia testuali che vocali.
+Applicazione di messagistica istantanea, VoIP e di distribuzione digitale. Gli utenti possono interagire privatamente o in comunità che possono contenere canali sia testuali che vocali.
 
 #heading(level: 2, outlined: false)[Docs]
 Abbreviazione per "documentazione". Indica l'insieme dei documenti relativi al progetto, solitamente raccolti e gestiti in una cartella denominata "docs" all'interno della repository.
 
 #pagebreak()
 
+= F
+#heading(level: 2, outlined: false)[Fail fast]
+Metodologia che mira ad idenficare rapidamente un malfunzionamento all'interno di un progetto, in modo da poterlo correggere prima che questo porti a un accumulo di problemi di difficile gestione.
+#pagebreak()
 = G
 
 #heading(level: 2, outlined: false)[Git]
@@ -126,7 +129,11 @@ Comando di Git usato per inviare i commit locali ad un repository remoto, condiv
 Ambiente digitale dove vengono salvati tutti i file riguardanti i progetti. Può esisterne più di una in base alla suddivisione degli argomenti per cui vengono create.
 
 #pagebreak()
+= S
+#heading(level: 2, outlined: false)[Stakeholder]
+Qualsiasi individuo, gruppo o organizzazione che possa essere direttamente o indirettamente coinvolto dalle attività, dalle decisioni o dai risultati di un'azienda.
 
+#pagebreak()
 = T
 
 #heading(level: 2, outlined: false)[Telegram]
