@@ -27,11 +27,11 @@
   "0.2",
   "2025/12/14",
   "Angela Canazza",
-  "Nicola Simonato",
+  "Nicola Simionato",
   "Stesura iniziale di: qualità di processo, di prodotto e dei metodi di testing",
   "0.1",
   "2025/12/12",
-  "Nicola Simonato",
+  "Nicola Simionato",
   "Angela Canazza",
   "Stesura dell'introduzione"
 )
