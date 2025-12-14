@@ -24,7 +24,11 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
-  
+  "0.2",
+  "2025/12/14",
+  "Angela Canazza",
+  "Nicola Simonato",
+  "Stesura iniziale di: qualità di processo, di prodotto e dei metodi di testing",
   "0.1",
   "2025/12/12",
   "Nicola Simonato",
@@ -37,8 +41,16 @@
 #set text(size: 11pt, lang: "it")
 #show figure.caption: set text(9pt)
 
+//Indice capitoli
 #outline(title: "Indice")
 #set heading(numbering: "1.")
+#pagebreak()
+
+#outline(
+  title: "Indice delle tabelle",
+  target: figure.where(kind: table)
+)
+
 #pagebreak()
 
 #set page(
@@ -81,4 +93,90 @@ Nello specifico, è richiesto l'utilizzo di LLM (Large Language Models) per anal
   - #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T09.pdf","Verifica e Validazione: introduzione")] 
   - #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T10.pdf","Verifica e Validazione: analisi statica")] 
   - #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T11.pdf","Verifica e Validazione: analisi dinamica aka testing")] 
+= Qualità di processo
+La qualità di processo è considerata un prerequisito fondamentale per ottenere la qualità del prodotto finale. L'approccio adottato dal gruppo si basa sull'assunto che un processo rigoroso e controllato sia l'unica garanzia per ottenere un output conforme alle aspettative e allo stato dell'arte. 
 
+A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a un controllo continuo, sono quindi necessari:
+
+- Sensori (Metriche): Strumenti di misurazione oggettiva che rilevano lo stato attuale del processo. Questi indicatori forniscono dati quantitativi sull'andamento delle attività.
+
+- Attuatori (Azioni Correttive): Meccanismi decisionali e regole che permettono di intervenire sull'implementazione del processo. Se i sensori rilevano una deviazione rispetto alla pianificazione, gli attuatori modificano la direzione del lavoro per riportarlo ai risultati attesi.
+== Processi primari
+// qui andranno inserite le tabelle contenenti le metriche con i valori accettabili decisi, non avendoli ancora decisi, lascio vuoto
+== Processi di supporto
+#figure(
+  table(
+    columns: (auto, auto, auto, auto),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+    ),
+    
+    "MCO", //Metrica Correttezza Ortografica
+    "Correttezza Ortografica",
+    "0",
+    "0"
+  ),
+  caption: [Metriche processi di supporto],
+  kind: table
+)
+== Processi organizzativi
+
+= Qualità di prodotto
+La qualità del prodotto software viene intesa, in conformità con la normativa ISO, come l'insieme delle caratteristiche che permettono al sistema di soddisfare le esigenze implicite ed esplicite degli stakeholder. Poiché la valutazione della qualità dipende dalla prospettiva di osservazione, è necessario un confronto oggettivo tra i risultati ottenuti e gli obiettivi iniziali.
+
+Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre elementi:
+
+- Definizione degli obiettivi specifici nel Piano di Qualifica.
+- Verifica puntuale del soddisfacimento dei requisiti.
+- Miglioramento continuo tramite l'Analisi dei rischi e l'ottimizzazione dei processi iterazione dopo iterazione. L'approccio operativo segue il principio del "fail fast".
+== Funzionalità
+#figure(
+  table(
+    columns: (auto, auto, auto, auto),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+    ),
+    
+    "MROS", 
+    "Requisiti obbligatori soddisfatti",
+    "100%",
+    "100%",
+    "MROS", 
+    "Requisiti desiderabili soddisfatti",
+    "≥0%",
+    "da decidere",
+    "MROS", 
+    "Requisiti opzionali soddisfatti ",
+    "≥0%",
+    "da decidere"
+  ),
+  caption: [Metriche funzionalità del prodotto],
+  kind: table
+)
+//altre tabelle da fare sono
+//usabilità
+//manutenibilità
+//affidabilità
+//efficienza
+
+= Metodi di testing
+Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_progetto.pdf","Norme di Progetto")], i test utilizzati per la verifica del codice saranno:
+
+- *Test di Unità*: Viene verificato che le singole attività atomiche e indipendenti, che compongono il sistema, funzionino correttamente;
+
+- *Test di Integrazione*: Viene verificato che le singole attività lavorino correttamente tra di loro al fine di svolgere un certo compito. Vengono effettuati dopo i test di unità;
+
+- *Test di Sistema*: Viene verificato il funzionamento dell'intero sistema, il quale deve soddisfare tutti i requisiti indicati nell'analisi dei requisiti;
+
+- *Test di Regressione*: a seguito di un test andato male e di una relativa correzione,ci si accerta che la correzione non causi errori nelle parti del sistema che dipendono da essa;
+
+- *Test di Accettazione*: Validazione esterna con il committente rispetto al Capitolato.
+//indicare nei paragrafi successivi tutti i test per ogni tipologia che verranno utilizzati nel progetto. nell'rtb si può decidere di trattaerne solo alcuni, ma lo si specifica prima delle tabelle
+
+//si indicano ulteriori scelte di test prese dal gruppo (esempio: analisi statica tramite Walkthrough  o Inspection)
+
+//infine negli ultimi due capitoli si parla dei risultati di valutazione e di prospettive di automiglioramento
