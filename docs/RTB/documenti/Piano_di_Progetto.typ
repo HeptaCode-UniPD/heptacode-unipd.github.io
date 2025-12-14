@@ -47,7 +47,13 @@
   "2025/12/08",
   "Angela Favaro",
   "Laura Venturini",
-  "Calcolo deo costi",
+  "Calcolo dei costi",
+
+  "0.3",
+  "2025/12/08",
+  "Angela Favaro",
+  "Laura Venturini",
+  "Aggiunta diagrammi PERTT",
 )
 
 #pagebreak()
@@ -90,7 +96,7 @@
 = Introduzione
 Questo è un documento utile per avere una linea guida da seguire durante tutto lo svolgimento del progetto. \
 Il Piano di Progetto ha lo scopo di definire in modo chiaro, strutturato e verificabile come il progetto _Code Guardian_ dovrà essere realizzato. 
-Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e per aggiornare contenuti errati o inprecisi.
+Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e per aggiornare contenuti errati o imprecisi.
 == Ambito del progetto
 In questa prima parte del documento è presente una breve introduzione al progetto di cui si farà riferimento in ogni paragrafo. Non vuole essere una spiegazione esplicativa e dettagliata dello stesso; per quello si può consultare il documento di _Analisi dei requisiti_ presente nel #link("https://heptacode-unipd.github.io", "sito del team Hepta Code"). \
 *Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l'intero ciclo di vita dei progetti che l'utente realizzerà all'interno di un'organizzazione. \ Verranno utilizzati degli agenti che consentono l'analisi della documentazione e del codice del progetto che si trova in una repository _GitHub_. Ogni agente avrà un diverso ruolo all'interno della piattaforma. \ 
@@ -119,12 +125,12 @@ Per ognuno dei tre verrà fornita un'interfaccia consona alle funzioni che più 
 In questo documento è presente una suddivisione temporale in *_sprint_* del tempo a disposizione; 
 ad ogni suddivisione viene esplicitato l'ammontare delle ore che ogni membro dovrà impiegare produttivamente in un determinato ruolo. \\
 Sono definite in totale 5 *_milestones_*:
-- _UCB (User Cases Baseline)_
-- _RTB (Requirements and Technology Baseline)_
-- _PAB (Progettazione & Analisi Baseline)_
-- _PB (Product Baseline)_
+- _UCB (User Cases Baseline)_.
+- _RTB (Requirements and Technology Baseline)_.
+- _PAB (Progettazione & Analisi Baseline)_.
+- _PB (Product Baseline)_.
 ogni _milestone_ è accompagnata dal relativo diagramma di GNATT che ne definisce tempistiche, dipendenze e percorsi. \\
-Ci riferiamo al sotto-paragrafo *_Preventivo a finire_* come il paragrafo organizzatore di tutte le azioni che il team attuerà durante il progetto. \
+Ci riferiamo al sotto-paragrafo *_Preventivo a finire_* per l'organizzazione di tutte le azioni che il team attuerà durante il progetto. \
 Verrà utilizzato come linea guida ad ogni sprint ed anche come riferimento per tutte le retrospettive e dovrà essere periodicamente aggiornato. \\
 *_Retrospettive_*: verranno effettuate alla fine di ogni sprint. I risultati di ogni sprint potranno essere visualizzate nel sotto-paragrafo *_Trascorso_*. Nel trascorso sarà visualizzabile una fotografia attuale di ciò che realmente è accaduto durante ogni sprint. \ 
 Ad ogni sprint analizzato nel trascorso verranno visualizzate inoltre:
@@ -133,14 +139,14 @@ Ad ogni sprint analizzato nel trascorso verranno visualizzate inoltre:
 - _Diagrammi di PERTT_ con un consuntivo dei tempi previsti e tempi effettivi. 
 
 == Ruoli interni al documento
-Questo documento dovrà periodicamente essere aggiornato dal _Resopnsabile di Progetto_ e validato dal _Verificatore_.  \
+Questo documento dovrà periodicamente essere aggiornato dal _Responsabile di Progetto_ e validato dal _Verificatore_.  \
 Ad ogni _Sprint Retrospective_ si aggiornerà il _Trascorso_ con:
-- tutto un riassunto di ciò che è accaduto durante lo sprint, diviso per punti; 
-- le problematiche incontrtate; 
+- un riassunto di ciò che è accaduto durante lo sprint, diviso per punti; 
+- le problematiche incontrate; 
 - le misure di mitigazione attuate; 
 - gli eventuali aggiornamenti all'_Analisi dei rischi_; 
 - i diagrammi di PERTT utili alla comprensione immediata dell'avanzamento del progetto.
-Verrà conseguentemente aggiornata l'_Analisi dei Rischi_ con tutti i nuovi rischi incontrabili e/o incontrati e le misure di mitigazione attuabili e/o da attuare.
+Verrà conseguentemente aggiornata l'_Analisi dei Rischi_ con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
 #pagebreak()
 
 = Organizzazione del team
@@ -215,7 +221,7 @@ Nel grafico in figura @fig:torta vengono analizzate le percentuali della riparti
 = Pianificazione temporale
 Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel corso del tempo.\ I periodi di lavoro vengono denominati _sprint_ e ne sono stati calcolati in totale _*tredici*_. \ La divisione del paragrafo in due sotto-paragrafi riporta:
 1. *Preventivo a finire:* pianificazione del lavoro ideale, secondo tempistiche ritenute ottimali.
-2. *Tascorso:* ciò che realmente è accaduto durante gli sprint.
+2. *trascorso:* ciò che realmente è accaduto durante gli sprint.
 
 == Calendario di massima
 #figure(
@@ -225,7 +231,7 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
 ]
 == Milestones programmate
 1. _UCB (User Cases Baseline)_:
-    - Conclusione stesura degli Use Case.
+    - Conclusione stesura degli User Case.
 2. _RTB (Requirements and Technology Baseline)_:
    - [guardo che cacchio dobbiamo fare precisamente]
 3. _PAB (Progettazione & Analisi Baseline)_:
@@ -237,9 +243,9 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
 Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all'interno del team. In questo sotto-paragrafo verranno esplicitati:
 - Le attività che si dovranno svolgere ad ogni sprint.
 - I ruoli che ogni membro dovrà rappresentare. \ 
-Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c'è qualcosa che non blocca il lavoro.
+Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c'è qualcosa che blocca il lavoro.
 === UCB - _User Cases Baseline_
-#underline[La data di inizio attività] per il conseguimento della prima milestone (_RTB_) è *24 Novembre 2025*. La suddetta data è stata scelta insieme all'azienda appaltante a seguito del nostro primo incontro in data _20 Novembre 2025_. \ #underline[La data ultima prevista] per gli sprint dell'RTB è *25 Gennaio 2025*.
+#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 Novembre 2025*. La suddetta data è stata scelta insieme all'azienda appaltante a seguito del nostro primo incontro in data _20 Novembre 2025_. \ #underline[La data ultima] per il conseguimento della milestone è prevista in data *28 Dicembre 2025*
 
 ==== Sprint 1
 #table(
@@ -255,7 +261,7 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Attività previste_], 
   [
     Inizio dell'attività di lavoro seguito del primo incontro con il committente.
-    - Studio in preparazione dell'attività di analisi dei requisiti.
+    - Studio in preparazione dell'attività di Analisi dei Requisiti.
     - Primo approccio di gruppo all'analisi (tramite incontri interni organizzati come brainstorming).
     - Studio della documentazione adeguata al progetto.
     - Attività di analisi dei Casi d'Uso preliminare.
@@ -375,7 +381,7 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
    - Attività di formazione su Backend da parte dell'azienda committente.
    - Continuazione da parte del team completo sull'Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
-   - Avanzamento stesura dei documenti per la prima milestone (RTB).
+   - Avanzamento stesura dei documenti per milestone RTB.
    - Studio individuale sulle tecnologie discusse dal team.
   ]
 )
@@ -490,9 +496,9 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Scelta definitiva delle tecnologie da utilizzare per il progetto.
     - Inizio studio delle tecnologie scelte.
     - Continuazione dell'attività di Analisi dei Requisiti.
-    - Continuazione stsura dei documenti.
-    _Milestone "UC":_ 
-    Aver completato i casi d'Uso. 
+    - Continuazione stesura dei documenti.
+    _Milestone "UCB":_ 
+    Aver completato i Casi d'Uso. 
   ]
 )
 #figure(
@@ -533,6 +539,8 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 680€ \ #underline[Spesa totale]: *2.780€*
 
 === RTB - _Requirements and Technology Baseline_
+#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *29 Dicembre 2025*. 
+\ #underline[La data ultima] per il conseguimento della milestone; quindi per la presentazione di ciò che è stato prodotto ai professori Cardin e Vardanega è prevista in data *25 Gennaio 2026*.
 ==== Sprint 6
 #table(
   columns: (auto, auto),
@@ -548,7 +556,7 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     - Inizio attività di produzione del _Proof of Concept (PoC)_.
     - Continuazione stesura della documentazione.
-    - Continuazione attivit' di Analisi dei Requisiti.
+    - Continuazione attività di Analisi dei Requisiti.
     - Inizio dell'attività di Progettazione.
     - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
   ]
@@ -659,11 +667,11 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_], 
   [
-    Ultimo sprint pervisto prima della consegna del _PoC_. 
+    Ultimo sprint previsto prima della consegna del _PoC_. 
     - #underline("Conclusione dello sviluppo e della verifica del PoC.")
     - Continuazione attività di Progettazione.
     - Revisione e validazione dei documenti prodotti per la milestone RTB.
-    - Colloquio conclusivo per la revisione del progetto con i professori referenti. 
+    - Colloquio conclusivo per la revisione del progetto con i professori. 
     - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.")  
   ]
 )
@@ -704,7 +712,7 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
 #underline[Spese della settimana]: 1.200€ \ #underline[Spesa totale]: *5.935*
 === PAB - _Progettazione & Analisi Baseline_
-#underline[La data di inizio attività] per il conseguimento della seconda milestone (_PB_) è *26 Gennaio 2026*, a seguito del colloqui con i professori (in ordine cronologico) Cardin Riccardo e Vardanega Tullio, per la conferma del superamento dei requisiti della prima malisteone. \ #underline[La data ultima prevista] per gli sprint dell'PB e quindi per la consegna del progetto è *15 Marzo 2026*.
+#underline[La data di inizio attività] per il conseguimento della terza milestone (_PAB_) è *26 Gennaio 2026*, a seguito dei colloqui con i professori per la conferma del superamento dei requisiti della milestone RTB. \ #underline[La data ultima prevista] per gli sprint del PAB è *22 Febbraio 2026*.
 
 ==== Sprint 9
 #table(
@@ -770,7 +778,7 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], 
-  [9 Febbraio 2026 - 22 Febbario 2026],
+  [9 Febbraio 2026 - 22 - 2026],
   
   [_Giorni di sprint_], 
   [14],
@@ -782,7 +790,7 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Sviluppo Backend e verifica del codice prodotto.
     - Sviluppo Frontend e verifica del codice prodotto.
     - Training degli agenti.
-    _Milestone "(PA)"_:
+    _Milestone "(PAB)"_:
     Conclusione attività di Progettazione ed Analisi.
   ],
 )
@@ -824,6 +832,7 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *8.812,5€*
 
 === PB - _Product Baseline_
+#underline[La data di inizio attività] per il conseguimento dell ultima milestone (_PAB_) è *23 Febbraio 2026*. \ #underline[La data ultima prevista] per il conseguimento della milestone PB e, di conseguenza, per la consegna del progetto è il *15 Marzo 2026*.
 ==== Sprint 11
 #table(
   columns: (auto, auto),
@@ -894,8 +903,8 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Attività previste_], 
   [
     - Valutazione di aggiunta requisiti opzionali valutati in sede di analisi. 
-    - Sviluppo Backend della seconda verisione e verifica del codice.
-    - Sviluppo Frontend della seconda versione e verifica del codice.
+    - Sviluppo Backend e verifica del codice.
+    - Sviluppo Frontend e verifica del codice.
     - Continuazione sviluppo documentazione. 
   ],
 )
@@ -952,7 +961,7 @@ Qeusto è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     Ultimo sprint previsto.
     - Conclusione attività di sviluppo e validazione Frontend e Backend.
     - Conclusione stesura documentazione adeguata alla consegna del progetto.
-    - Validazione dei risultati prodotti durante gli sprint. 
+    - Validazione dei risultati prodotti durante gli Sprint. 
     - #underline("Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
     - *Consegna del progetto previsto in data 15 Marzo 2026*.
   ],
