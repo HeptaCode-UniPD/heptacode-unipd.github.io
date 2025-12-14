@@ -28,32 +28,32 @@
   "0.1",
   "2025/12/01",
   "Angela Favaro",
-  "Laura Venturini",
+  "Alberto Reginato",
   "Prima stesura di struttura generale",
 
   "0.2",
   "2025/12/02",
   "Angela Favaro",
-  "Laura Venturini",
+  "Alberto Reginato",
   "Suddivisione e stesura sprint per RTB",
 
   "0.2",
-  "2025/12/02",
+  "2025/12/03",
   "Angela Favaro",
-  "Laura Venturini",
+  "Alberto Reginato",
   "Suddivisione e stesura sprint per PB",
 
   "0.3",
   "2025/12/08",
   "Angela Favaro",
-  "Laura Venturini",
+  "Nicola Simionato",
   "Calcolo dei costi",
 
-  "0.3",
-  "2025/12/08",
+  "0.4",
+  "2025/12/14",
   "Angela Favaro",
-  "Laura Venturini",
-  "Aggiunta diagrammi PERTT",
+  "Nicola Simionato",
+  "Aggiunta diagrammi PERTT e correzione analisi Sprint",
 )
 
 #pagebreak()
@@ -134,7 +134,7 @@ Ci riferiamo al sotto-paragrafo *_Preventivo a finire_* per l'organizzazione di 
 Verrà utilizzato come linea guida ad ogni sprint ed anche come riferimento per tutte le retrospettive e dovrà essere periodicamente aggiornato. \\
 *_Retrospettive_*: verranno effettuate alla fine di ogni sprint. I risultati di ogni sprint potranno essere visualizzate nel sotto-paragrafo *_Trascorso_*. Nel trascorso sarà visualizzabile una fotografia attuale di ciò che realmente è accaduto durante ogni sprint. \ 
 Ad ogni sprint analizzato nel trascorso verranno visualizzate inoltre:
-- Aggiornamenti effettuati nell'analisi dei rischi. 
+- Aggiornamenti effettuati nell'Analisi dei Rischi. 
 - Azioni mitigative attuate all'insorgere di un problema.
 - _Diagrammi di PERTT_ con un consuntivo dei tempi previsti e tempi effettivi. 
 
@@ -150,7 +150,7 @@ Verrà conseguentemente aggiornata l'_Analisi dei Rischi_ con tutti i nuovi risc
 #pagebreak()
 
 = Organizzazione del team
-Ad ogni suddivisione di periodo (denominato _sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione invernale d'esami che si svolgerà dal _19 Gennaio 2026_ al _21 Febbraio 2026_. \ \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un'intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ L'opzione ritenuta più consona è quella di avvicinare tutti i membri ad un'uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
+Ad ogni suddivisione di periodo (denominato _sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d'esami invernale che si svolgerà dal _19 Gennaio 2026_ al _21 Febbraio 2026_. \ \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un'intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ L'opzione ritenuta più consona è quella di avvicinare tutti i membri ad un'uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
 #figure(
   caption: [Stima delle ore individuali per ruolo in totale.],
   kind: table,
@@ -730,7 +730,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Continuazione dell'attività di Progettazione.
     - Ultime fasi di attività di Analisi dei Requisiti.
     Inoltre, in ordine cronologico:
-    1. Modifiche o migliorie della documentazione prodotta per l'RTB a seguito dei suggerimenti proposti dopo la prima milestone.
+    1. Modifiche o migliorie della documentazione prodotta per la milestone RTB a seguito dei suggerimenti proposti dopo la prima milestone.
     2. #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
     3. Allineamento di tutti i componenti del gruppo sulle attività che sono state svolte e che verranno svolte; chi ha avuto maggiore esperienza chiarirà i dubbi a chi ne ha avuta meno nei diversi ambiti (Analisi, Progettazione, Sviluppo e Verifica).
   ],
