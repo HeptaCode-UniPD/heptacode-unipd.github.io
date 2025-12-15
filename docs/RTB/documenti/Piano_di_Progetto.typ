@@ -63,13 +63,21 @@
 
 #outline(title: "Indice")
 #set heading(numbering: "1.")
-#pagebreak()
-
-#title("Indice delle tabelle")
 
 #pagebreak()
+#outline(
+  title: "Indice delle tabelle",
+  target: figure.where(
+    label: l => l.starts-with("tab:")
+  )
+)
 
-#title("Indice delle figure")
+
+#pagebreak()
+#outline(
+  title: "Indice delle figure",
+  target: figure.where(label: l => l.starts-with("fig:") )
+)
 
 #pagebreak()
 #set page(
@@ -99,17 +107,17 @@ Il Piano di Progetto ha lo scopo di definire in modo chiaro, strutturato e verif
 Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e per aggiornare contenuti errati o imprecisi.
 == Ambito del progetto
 In questa prima parte del documento è presente una breve introduzione al progetto di cui si farà riferimento in ogni paragrafo. Non vuole essere una spiegazione esplicativa e dettagliata dello stesso; per quello si può consultare il documento di _Analisi dei requisiti_ presente nel #link("https://heptacode-unipd.github.io", "sito del team Hepta Code"). \
-*Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l'intero ciclo di vita dei progetti che l'utente realizzerà all'interno di un'organizzazione. \ Verranno utilizzati degli agenti che consentono l'analisi della documentazione e del codice del progetto che si trova in una repository _GitHub_. Ogni agente avrà un diverso ruolo all'interno della piattaforma. \ 
+*Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un'organizzazione. \ Verranno utilizzati degli agenti che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository _GitHub_. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \ 
 Gli agenti fino ad ora pensati per _Code Guardian_ sono:
 1. Agente per il controllo del codice.
 2. Agente per il controllo della documentazione.
 3. Agente per il controllo delle prime 10 linee guida OWASP.
-\ Gli utenti / attori presi in esame per la creazione del progetto sono di tre tipi (lavoreranno insieme all'interno di uno stesso progetto):
+\ Gli utenti / attori presi in esame per la creazione del progetto sono di tre tipi (lavoreranno insieme all’interno di uno stesso progetto):
 - Business Owner;
 - Project Manager;
 - Sviluppatore.
 Per ognuno dei tre verrà fornita un'interfaccia consona alle funzioni che più possono interessare loro riguardo lo stato di uno o più progetti di sviluppo. \
-\ Grazie a meccanismi _AI_ e _LLM_, in base al dominio dell'utente, verranno:
+\ Grazie a meccanismi _AI_ e _LLM_, in base al dominio dell’utente, verranno:
 - visualizzati gli errori rilevati; 
 - forniti suggerimenti agli errori rilevati;
 - forniti suggerimenti per il miglioramento del progetto;
@@ -123,19 +131,19 @@ Per ognuno dei tre verrà fornita un'interfaccia consona alle funzioni che più 
 == Organizzazione del documento
 [_La Laura scriva cosa fa c'è nella sua parte_] \\
 In questo documento è presente una suddivisione temporale in *_sprint_* del tempo a disposizione; 
-ad ogni suddivisione viene esplicitato l'ammontare delle ore che ogni membro dovrà impiegare produttivamente in un determinato ruolo. \\
+ad ogni suddivisione viene esplicitato l’ammontare delle ore che ogni membro dovrà impiegare produttivamente in un determinato ruolo. \\
 Sono definite in totale 5 *_milestones_*:
 - _UCB (User Cases Baseline)_.
 - _RTB (Requirements and Technology Baseline)_.
 - _PAB (Progettazione & Analisi Baseline)_.
 - _PB (Product Baseline)_.
 ogni _milestone_ è accompagnata dal relativo diagramma di GNATT che ne definisce tempistiche, dipendenze e percorsi. \\
-Ci riferiamo al sotto-paragrafo *_Preventivo a finire_* per l'organizzazione di tutte le azioni che il team attuerà durante il progetto. \
+Ci riferiamo al sotto-paragrafo *_Preventivo a finire_* per l’organizzazione di tutte le azioni che il team attuerà durante il progetto. \
 Verrà utilizzato come linea guida ad ogni sprint ed anche come riferimento per tutte le retrospettive e dovrà essere periodicamente aggiornato. \\
 *_Retrospettive_*: verranno effettuate alla fine di ogni sprint. I risultati di ogni sprint potranno essere visualizzate nel sotto-paragrafo *_Trascorso_*. Nel trascorso sarà visualizzabile una fotografia attuale di ciò che realmente è accaduto durante ogni sprint. \ 
 Ad ogni sprint analizzato nel trascorso verranno visualizzate inoltre:
-- Aggiornamenti effettuati nell'Analisi dei Rischi. 
-- Azioni mitigative attuate all'insorgere di un problema.
+- Aggiornamenti effettuati nell’Analisi dei Rischi. 
+- Azioni mitigative attuate all’insorgere di un problema.
 - _Diagrammi di PERTT_ con un consuntivo dei tempi previsti e tempi effettivi. 
 
 == Ruoli interni al documento
@@ -144,13 +152,13 @@ Ad ogni _Sprint Retrospective_ si aggiornerà il _Trascorso_ con:
 - un riassunto di ciò che è accaduto durante lo sprint, diviso per punti; 
 - le problematiche incontrate; 
 - le misure di mitigazione attuate; 
-- gli eventuali aggiornamenti all'_Analisi dei rischi_; 
-- i diagrammi di PERTT utili alla comprensione immediata dell'avanzamento del progetto.
-Verrà conseguentemente aggiornata l'_Analisi dei Rischi_ con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
+- gli eventuali aggiornamenti all’_Analisi dei rischi_; 
+- i diagrammi di PERTT utili alla comprensione immediata dell’avanzamento del progetto.
+Verrà conseguentemente aggiornata l’_Analisi dei Rischi_ con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
 #pagebreak()
 
 = Organizzazione del team
-Ad ogni suddivisione di periodo (denominato _sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d'esami invernale che si svolgerà dal _19 Gennaio 2026_ al _21 Febbraio 2026_. \ \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un'intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ L'opzione ritenuta più consona è quella di avvicinare tutti i membri ad un'uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
+Ad ogni suddivisione di periodo (denominato _sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 Gennaio 2026_ al _21 Febbraio 2026_. \ \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un'intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un'uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
 #figure(
   caption: [Stima delle ore individuali per ruolo in totale.],
   kind: table,
@@ -228,7 +236,7 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
   caption: [Tappe principali del calendario di progetto],
 )[
   #image("../../asset/timeline_generale.png"),
-]
+]<fig:CalendarioProgetto>
 == Milestones programmate
 1. _UCB (User Cases Baseline)_:
     - Conclusione stesura degli User Case.
@@ -240,12 +248,17 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
 4. _PB (Product Baseline)_:
    - Consegna del progetto validato.
 == Preventivo a finire
-Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all'interno del team. In questo sotto-paragrafo verranno esplicitati:
+Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team. In questo sotto-paragrafo verranno esplicitati:
 - Le attività che si dovranno svolgere ad ogni sprint.
 - I ruoli che ogni membro dovrà rappresentare. \ 
 Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c'è qualcosa che blocca il lavoro.
 === UCB - _User Cases Baseline_
-#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 Novembre 2025*. La suddetta data è stata scelta insieme all'azienda appaltante a seguito del nostro primo incontro in data _20 Novembre 2025_. \ #underline[La data ultima] per il conseguimento della milestone è prevista in data *28 Dicembre 2025*
+#figure(
+  caption: [Diagramma di PERT della mileston UCB],
+)[
+  #image("../../asset/PERT-UCB.png"),
+]<PERT-UCB>
+#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 Novembre 2025*. La suddetta data è stata scelta insieme all’azienda appaltante a seguito del nostro primo incontro in data _20 Novembre 2025_. \ #underline[La data ultima] per il conseguimento della milestone è prevista in data *28 Dicembre 2025*
 
 ==== Sprint 1
 #table(
@@ -260,9 +273,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   
   [_Attività previste_], 
   [
-    Inizio dell'attività di lavoro seguito del primo incontro con il committente.
-    - Studio in preparazione dell'attività di Analisi dei Requisiti.
-    - Primo approccio di gruppo all'analisi (tramite incontri interni organizzati come brainstorming).
+    Inizio dell’attività di lavoro seguito del primo incontro con il committente.
+    - Studio in preparazione dell’attività di Analisi dei Requisiti.
+    - Primo approccio di gruppo all’analisi (tramite incontri interni organizzati come brainstorming).
     - Studio della documentazione adeguata al progetto.
     - Attività di analisi dei Casi d'Uso preliminare.
   ]
@@ -318,8 +331,8 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   
   [_Attività previste_], 
   [
-    - Studio individuale della sintassi e l'utilizzo dei Casi d'Uso.
-    - Continuazione e intensificazione dell'attività di Analisi dei Requisiti in gruppo.
+    - Studio individuale della sintassi e l’utilizzo dei Casi d'Uso.
+    - Continuazione e intensificazione dell’attività di Analisi dei Requisiti in gruppo.
     - Divisione dei compiti per una prima stesura dei documenti tra:
       - Piano di Progetto (PdP).
       - Piano di Qualifica (PdQ).
@@ -379,8 +392,8 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   
   [_Attività previste_], 
   [
-   - Attività di formazione su Backend da parte dell'azienda committente.
-   - Continuazione da parte del team completo sull'Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
+   - Attività di formazione su Backend da parte dell’azienda committente.
+   - Continuazione da parte del team completo sull’Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
    - Avanzamento stesura dei documenti per milestone RTB.
    - Studio individuale sulle tecnologie discusse dal team.
   ]
@@ -434,7 +447,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_], 
   [
-    - Attività di formazione su Frontend, AWS ed introduzione alla parte AI da parte dell'azienda committente.
+    - Attività di formazione su Frontend, AWS ed introduzione alla parte AI da parte dell’azienda committente.
     - Continuazione di:
       - Analisi dei Requisiti.
       - Stesura della documentazione.
@@ -495,7 +508,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     - Scelta definitiva delle tecnologie da utilizzare per il progetto.
     - Inizio studio delle tecnologie scelte.
-    - Continuazione dell'attività di Analisi dei Requisiti.
+    - Continuazione dell’attività di Analisi dei Requisiti.
     - Continuazione stesura dei documenti.
     _Milestone "UCB":_ 
     Aver completato i Casi d'Uso. 
@@ -557,7 +570,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Inizio attività di produzione del _Proof of Concept (PoC)_.
     - Continuazione stesura della documentazione.
     - Continuazione attività di Analisi dei Requisiti.
-    - Inizio dell'attività di Progettazione.
+    - Inizio dell’attività di Progettazione.
     - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
   ]
 )
@@ -727,7 +740,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_], 
   [
-    - Continuazione dell'attività di Progettazione.
+    - Continuazione dell’attività di Progettazione.
     - Ultime fasi di attività di Analisi dei Requisiti.
     Inoltre, in ordine cronologico:
     1. Modifiche o migliorie della documentazione prodotta per la milestone RTB a seguito dei suggerimenti proposti dopo la prima milestone.
