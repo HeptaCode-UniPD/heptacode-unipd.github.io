@@ -106,6 +106,13 @@ Servizio di videoconferenze che permette di organizzare e partecipare a riunioni
 
 #pagebreak()
 
+= I
+
+#heading(level: 2, outlined: false)[Issue]
+Elemento atto a: pianificare, discutere e tracciare lavoro, bug, idee o nuove funzionalità all'interno di un repository di codice nella piattaforma di Github. Ad essa è possibile assegnare: un progetto, una Milestone, dei responsabili e delle etichette per rappresentarla all'interno di determinate categorie e facilitarne l'utilizzo e la ricerca.
+
+#pagebreak()
+
 = M
 
 #heading(level: 2, outlined: false)[Mail]
