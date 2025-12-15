@@ -72,12 +72,10 @@
 
 #pagebreak()
 #outline(
-  title: "Indice delle tabelle",
-  target: figure.where(
-    label: l => l.starts-with("tab:")
-  )
-)
 
+title: "Indice delle tabelle",
+  target: figure.where(kind: table)
+)
 
 #pagebreak()
 #outline(
@@ -1471,7 +1469,10 @@ Successivamente verranno illustrati:
 == Analisi dei rischi
 Ogni rischio ha una determinata probabilità di avverarsi, che può essere bassa, media o alta e un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch'esso basso, medio o alto. Inoltre, abbiamo elaborato un piano di mitigazione e un piano di contingenza per ogni rischio individuato.
 === Rischi legati ai requisiti
-
+#figure(
+  caption: [Rischio Comprensione errata dei requisiti],
+  kind: table,
+)[
 #table(
   columns: 2,
    fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },  
@@ -1487,8 +1488,12 @@ table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Comprensione 
 align(left)[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli user cases per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
 [ *Piano di contingenza*],
 align(left)[Convocare una riunione immediata per identificare i requisiti sbagliati, capire fino a che punto sono errati e se si può mantenere parte del codice sviluppato, calcolare le ore necessarie per sistemarli e l’eventuale impatto sul budget. ]
-)
+)]
 \
+#figure(
+  caption: [Rischio Assenza di priorità dei requisiti],
+  kind: table,
+)[
 #table(
   columns: 2,
    fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
@@ -1506,9 +1511,13 @@ align(left)[Convocare una riunione immediata per identificare i requisiti sbagli
 [ *Piano di contingenza*],
  align(left)[Bloccare immediatamente lo sviluppo dei requisiti se si rivelano non di secondaria importanza per dedicarsi a quelli di massima priorità. Convocare una riunione per discutere nuovamente e rivalutare i livelli di priorità assegnati ai requisiti, ]
 
-)
+)]
 \
 === Rischi tecnici
+#figure(
+  caption: [Rischio Strumenti e tecnologie sconosciute],
+  kind: table,
+)[
 #table(
   columns: 2,
    fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
@@ -1524,7 +1533,11 @@ align(left)[Convocare una riunione immediata per identificare i requisiti sbagli
 align(left)[Durante la pianificazione degli sprint, verranno tenuti in considerazione i tempi necessari per imparare a utilizzare i nuovi strumenti e i rallentamenti che possono comportare. \ Inoltre, ogni membro dovrà imparare da autodidatta come si usano e le best practices delle tecnologie utilizzate *prima* di iniziare ad utilizzarle per il codice.   ],
 [ *Piano di contingenza*],
 align(left)[In caso il problema si verifichi nelle fasi iniziali dell’utilizzo del nuovo strumento, si può chiamare un meeting e valutare un eventuale cambio di tecnologia. Se avviene nelle fasi successive, interrompere lo sviluppo del progetto per approfondire il funzionamento delle nuove tecnologie. ]
-)
+)]
+#figure(
+  caption: [Rischio Problemi di integrazione fra componenti],
+  kind: table,
+)[
 \ #table(
   columns: 2,
    fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
@@ -1540,7 +1553,7 @@ align(left)[In caso il problema si verifichi nelle fasi iniziali dell’utilizzo
 align(left)[Documentare le API e i formati dei dati fra tutti i componenti. \ Implementare il processo di Integrazione Continua.],
 [ *Piano di contingenza*],
 align(left)[]
-)
+)]
 \
 #table(
   columns: 2,
