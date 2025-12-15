@@ -25,35 +25,36 @@
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
   
-  "0.1",
-  "2025/12/01",
-  "Riccardo Baldin",
-  "Alberto Reginato",
-  "Prima stesura di struttura generale",
+  "0.5",
+  "2025/12/14",
+  "Angela Favaro",
+  "Nicola Simionato",
+  "Aggiunta diagrammi PERT e correzione analisi Sprint",
 
-  "0.2",
-  "2025/12/02",
-  "Riccardo Baldin",
-  "Alberto Reginato",
-  "Suddivisione e stesura sprint per RTB",
-
-  "0.2",
-  "2025/12/03",
-  "Riccardo Baldin",
-  "Alberto Reginato",
-  "Suddivisione e stesura sprint per PB",
-
-  "0.3",
+  "0.4",
   "2025/12/08",
-  "Riccardo Baldin",
+  "Angela Favaro",
   "Nicola Simionato",
   "Calcolo dei costi",
 
-  "0.4",
-  "2025/12/14",
-  "Riccardo Baldin",
-  "Nicola Simionato",
-  "Aggiunta diagrammi PERTT e correzione analisi Sprint",
+  "0.3",
+  "2025/12/03",
+  "Angela Favaro",
+  "Alberto Reginato",
+  "Suddivisione e stesura sprint per PB",
+
+  "0.2",
+  "2025/12/02",
+  "Angela Favaro",
+  "Alberto Reginato",
+  "Suddivisione e stesura sprint per RTB",
+
+  "0.1",
+  "2025/12/01",
+  "Angela Favaro",
+  "Alberto Reginato",
+  "Prima stesura di struttura generale",
+
 )
 
 #pagebreak()
@@ -1018,6 +1019,354 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
 == Trascorso
 === Sprint 1
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 2
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 3
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 4
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 5
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 6
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 7
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 8
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 9
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 10
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 11
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 12
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], 
+  [24 Novembre 2025 – 30 Novembre 2025],
+  
+  [_Giorni di sprint_], 
+  [7],
+  
+  [_Attività Svolte_], 
+  [
+    
+  ],
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+  [_Mitigazione_],
+  [
+    1.
+  ],
+  [_PERTT Diagram_],
+  [
+    [_Inserire immagine_]
+  ]
+)
+
+=== Sprint 13
 #table(
   columns: (auto, auto),
   align: horizon,
