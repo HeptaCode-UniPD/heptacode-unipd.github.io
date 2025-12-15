@@ -107,7 +107,7 @@ Il Piano di Progetto ha lo scopo di definire in modo chiaro, strutturato e verif
 Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e per aggiornare contenuti errati o imprecisi.
 == Ambito del progetto
 In questa prima parte del documento è presente una breve introduzione al progetto di cui si farà riferimento in ogni paragrafo. Non vuole essere una spiegazione esplicativa e dettagliata dello stesso; per quello si può consultare il documento di _Analisi dei requisiti_ presente nel #link("https://heptacode-unipd.github.io", "sito del team Hepta Code"). \
-*Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un'organizzazione. \ Verranno utilizzati degli agenti che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository _GitHub_. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \ 
+*Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un’organizzazione. \ Verranno utilizzati degli agenti che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository _GitHub_. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \ 
 Gli agenti fino ad ora pensati per _Code Guardian_ sono:
 1. Agente per il controllo del codice.
 2. Agente per il controllo della documentazione.
@@ -116,7 +116,7 @@ Gli agenti fino ad ora pensati per _Code Guardian_ sono:
 - Business Owner;
 - Project Manager;
 - Sviluppatore.
-Per ognuno dei tre verrà fornita un'interfaccia consona alle funzioni che più possono interessare loro riguardo lo stato di uno o più progetti di sviluppo. \
+Per ognuno dei tre verrà fornita un’interfaccia consona alle funzioni che più possono interessare loro riguardo lo stato di uno o più progetti di sviluppo. \
 \ Grazie a meccanismi _AI_ e _LLM_, in base al dominio dell’utente, verranno:
 - visualizzati gli errori rilevati; 
 - forniti suggerimenti agli errori rilevati;
@@ -129,7 +129,7 @@ Per ognuno dei tre verrà fornita un'interfaccia consona alle funzioni che più 
 
 [Aggiunta dei linguaggi e tecnologie che andremo ad utilizzare]
 == Organizzazione del documento
-[_La Laura scriva cosa fa c'è nella sua parte_] \\
+[_La Laura scriva cosa fa c’è nella sua parte_] \\
 In questo documento è presente una suddivisione temporale in *_sprint_* del tempo a disposizione; 
 ad ogni suddivisione viene esplicitato l’ammontare delle ore che ogni membro dovrà impiegare produttivamente in un determinato ruolo. \\
 Sono definite in totale 5 *_milestones_*:
@@ -158,7 +158,7 @@ Verrà conseguentemente aggiornata l’_Analisi dei Rischi_ con tutti i nuovi ri
 #pagebreak()
 
 = Organizzazione del team
-Ad ogni suddivisione di periodo (denominato _sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 Gennaio 2026_ al _21 Febbraio 2026_. \ \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un'intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un'uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
+Ad ogni suddivisione di periodo (denominato _sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 Gennaio 2026_ al _21 Febbraio 2026_. \ \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
 #figure(
   caption: [Stima delle ore individuali per ruolo in totale.],
   kind: table,
@@ -251,7 +251,7 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
 Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team. In questo sotto-paragrafo verranno esplicitati:
 - Le attività che si dovranno svolgere ad ogni sprint.
 - I ruoli che ogni membro dovrà rappresentare. \ 
-Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c'è qualcosa che blocca il lavoro.
+Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro.
 === UCB - _User Cases Baseline_
 #figure(
   caption: [Diagramma di PERT della mileston UCB],
@@ -277,7 +277,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Studio in preparazione dell’attività di Analisi dei Requisiti.
     - Primo approccio di gruppo all’analisi (tramite incontri interni organizzati come brainstorming).
     - Studio della documentazione adeguata al progetto.
-    - Attività di analisi dei Casi d'Uso preliminare.
+    - Attività di analisi dei Casi d’Uso preliminare.
   ]
 )
 #figure(
@@ -331,7 +331,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   
   [_Attività previste_], 
   [
-    - Studio individuale della sintassi e l’utilizzo dei Casi d'Uso.
+    - Studio individuale della sintassi e l’utilizzo dei Casi d’Uso.
     - Continuazione e intensificazione dell’attività di Analisi dei Requisiti in gruppo.
     - Divisione dei compiti per una prima stesura dei documenti tra:
       - Piano di Progetto (PdP).
@@ -511,7 +511,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Continuazione dell’attività di Analisi dei Requisiti.
     - Continuazione stesura dei documenti.
     _Milestone "UCB":_ 
-    Aver completato i Casi d'Uso. 
+    Aver completato i Casi d’Uso. 
   ]
 )
 #figure(
