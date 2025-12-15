@@ -79,7 +79,7 @@ Operazione che registra in modo permanente le modifiche apportate a uno o più f
 = D
 
 #heading(level: 2, outlined: false)[Discord]
-Applicazione di messagistica istantanea, VoIP e di distribuzione digitale. Gli utenti possono interagire privatamente o in comunità che possono contenere canali sia testuali che vocali.
+Applicazione di messaggistica istantanea, VoIP e di distribuzione digitale. Gli utenti possono interagire privatamente o in comunità che possono contenere canali sia testuali che vocali.
 
 #heading(level: 2, outlined: false)[Docs]
 Abbreviazione per "documentazione". Indica l'insieme dei documenti relativi al progetto, solitamente raccolti e gestiti in una cartella denominata "docs" all'interno della repository.
