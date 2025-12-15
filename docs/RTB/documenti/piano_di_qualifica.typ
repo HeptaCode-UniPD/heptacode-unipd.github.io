@@ -1,6 +1,17 @@
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3": chart
 
+#import "../../CC/glossario_termini.typ": applica-glossario
+
+#show: applica-glossario
+
+
+= Analisi dei Requisiti
+
+Abbiamo riscontrato un problema con la Repository e le Github Action.
+Anche la fase di Commit è stata lenta.
+
+
 #v(1fr)
 #align(center, [
   #image("../../asset/logo.svg")
@@ -84,7 +95,7 @@
 Il presente documento, Piano di Qualifica, descrive in dettaglio le strategie di verifica e validazione adottate per garantire la qualità del prodotto finale e dei processi realizzativi.\
 Il documento sarà soggetto ad aggiornamenti costanti per tutta la durata del progetto; questo permetterà di monitorare i risultati delle verifiche e di intervenire tempestivamente sulla risoluzione di eventuali anomalie o metriche non conformi.
 == Scopo del capitolato
-Il capitolato per il progetto CodeGuardian ha come oggetto lo sviluppo di una piattaforma web per il monitoraggio e l'analisi di repository GitHub#super[G]. Il sistema dovrà permettere a diverse tipologie di utenti aziendali di accedere ai report di revisione delle proprie repository e progetti in relazione alla tipologia di utente che lo visualizza.\
+Il capitolato per il progetto CodeGuardian ha come oggetto lo sviluppo di una piattaforma web per il monitoraggio e l'analisi di repository GitHub. Il sistema dovrà permettere a diverse tipologie di utenti aziendali di accedere ai report di revisione delle proprie repository e progetti in relazione alla tipologia di utente che lo visualizza.\
 Nello specifico, è richiesto l'utilizzo di LLM#super[G] (Large Language Models) per analizzare tre componenti fondamentali: la documentazione, il codice sorgente (tramite analisi statica e dinamica) e la conformità agli standard di sicurezza OWASP#super[G].
 == Riferimenti
 === Riferimenti normativi
