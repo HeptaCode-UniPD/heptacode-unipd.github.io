@@ -393,7 +393,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Attività previste_], 
   [
    - Attività di formazione su Backend da parte dell’azienda committente.
-   - Continuazione da parte del team completo sull’Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
+   - Continuazione da parte del team completo dell’Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
    - Avanzamento stesura dei documenti per milestone RTB.
    - Studio individuale sulle tecnologie discusse dal team.
   ]
