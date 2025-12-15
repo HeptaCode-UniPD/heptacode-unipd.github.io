@@ -126,6 +126,17 @@ Messaggio digitale che viene inviato e ricevuto tramite internet. Strumento di c
 
 #pagebreak()
 
+= N
+#heading(level: 2, outlined: false)[Normativa ISO]
+Standard tecnico volontario internazionale sviluppato dall'International Organization for Standardization (ISO) per definire requisiti, linee guida o specifiche che assicurano qualità, sicurezza, efficienza e interoperabilità di prodotti, processi e servizi, creando un linguaggio e un framework comuni riconosciuti a livello globale, che le organizzazioni possono adottare e certificare.
+
+#pagebreak()
+
+= O
+#heading(level: 2, outlined: false)[OWASP]
+Acronimo per Open Worldwide Application Security Project, una fondazione no-profit e una comunità globale aperta che si dedica a migliorare la sicurezza delle applicazioni software rendendo disponibili gratuitamente strumenti, documentazione e best practice per sviluppatori e organizzazioni, al fine di educare e guidare nella creazione di software più sicuri. 
+
+#pagebreak()
 = P
 
 #heading(level: 2, outlined: false)[Pull]
