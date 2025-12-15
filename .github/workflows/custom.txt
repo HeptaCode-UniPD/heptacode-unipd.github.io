@@ -75,3 +75,5 @@ ucb
 verif
 amm
 calendarioprogetto
+colspan
+gmail

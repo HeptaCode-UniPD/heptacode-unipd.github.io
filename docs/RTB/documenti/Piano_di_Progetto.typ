@@ -31,7 +31,7 @@
   "2025/12/14",
   "Laura Venturini",
   "Nicola Simionato",
-  "Aggiunti capitoli 'Processi e metodologie', 'Risorse e strumenti' e 'Analisi e gestione dei rischi'",
+  "Aggiunti capitoli ’Processi e metodologie’, ’Risorse e strumenti’ e ’Analisi e gestione dei rischi’",
 
 
   "0.4",
@@ -164,19 +164,19 @@ Verrà conseguentemente aggiornata l’_Analisi dei Rischi_ con tutti i nuovi ri
 
 = Processi e metodologie
 == Modello di processo scelto
-Abbiamo scelto di lavorare al progetto utilizzando l'approccio *Agile* basato sul framework *Scrum*. È stato scelto tale modello per le seguenti ragioni:
-- Grazie a questo metodo si possono limitare gli sprechi di risorse: con la suddivisione di task molto granulari, l'introduzione di un errore è più facilmente individuabile e quindi è meno frequente che l'errore si propaghi in grosse parti del progetto.
-- Lo stato del progetto, la suddivisione delle task da fare, le ore a disposizone e gli aspetti migliorabili sono chiari a tutti grazie allo Sprint Review, allo Sprint Retrospective e allo Sprint Planning.
-- Grazie allo Sprint Retrospective si può migliorare l'efficacia del team durante lo svolgimento del progetto e capire in quali aspetti è lacunoso.
+Abbiamo scelto di lavorare al progetto utilizzando l’approccio *Agile* basato sul framework *Scrum*. È stato scelto tale modello per le seguenti ragioni:
+- Grazie a questo metodo si possono limitare gli sprechi di risorse: con la suddivisione di task molto granulari, l’introduzione di un errore è più facilmente individuabile e quindi è meno frequente che l’errore si propaghi in grosse parti del progetto.
+- Lo stato del progetto, la suddivisione delle task da fare, le ore a disposizione e gli aspetti migliorabili sono chiari a tutti grazie allo Sprint Review, allo Sprint Retrospective e allo Sprint Planning.
+- Grazie allo Sprint Retrospective si può migliorare l’efficacia del team durante lo svolgimento del progetto e capire in quali aspetti è lacunoso.
 - Permette una gestione dei rischi più facile e il loro continuo monitoraggio, diminuendo la probabilità che si verifichino. 
-- Il rilascio incrementale permette all'azienda cliente di vedere come sta avanzando il progetto.
-- Feedback più veloce: questo metodo impone un contatto più frequente con l'azienda proponente, permettendo di avere un riscontro sull'adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
+- Il rilascio incrementale permette all’azienda cliente di vedere come sta avanzando il progetto.
+- Feedback più veloce: questo metodo impone un contatto più frequente con l’azienda proponente, permettendo di avere un riscontro sull’adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
 == Struttura del ciclo di vita
-Dato che utlizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all'11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; saranno invece di due settimane durante il periodo di sessione d'esami che va dal 12 gennaio al 22 febbraio 2026. Per ogni Sprint, sono previsti:
+Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all’11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; saranno invece di due settimane durante il periodo di sessione d’esami che va dal 12 gennaio al 22 febbraio 2026. Per ogni Sprint, sono previsti:
 - uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi, che vengono scritti nello *Sprint Backlog*;
 - uno *Sprint Review*, in cui si esamina il lavoro completato dopo uno Sprint e si raccoglie feedback e si aggiorna il *Product Backlog*, che contiene tutte le task da completare per completare il progetto; 
 - uno *Sprint Retrospective*, in cui il team ragiona su ciò che può essere migliorato in confronto allo Sprint appena finito.
-Non sono previsti Daily Scrum, in quanto riteniamo che sia sufficiente misurare il progresso dell'avanzamento durante lo Sprint Review. 
+Non sono previsti Daily Scrum, in quanto riteniamo che sia sufficiente misurare il progresso dell’avanzamento durante lo Sprint Review. 
 #pagebreak()
 
 = Risorse e strumenti
@@ -184,20 +184,20 @@ Questa sezione si occupa di descrivere quali sono e come vengono gestiti gli str
 == Risorse umane
 La gestione delle ore fra i membri del progetto è spiegata nella @Organizzazione (Organizzazione team).
 == Risorse materiali
-Ogni membro del team userà il proprio computer per lavorare al progetto. Inoltre, in caso di necessità, il team potrà usare i computer messi a disposizione dall'Università di Padova nelle aule informatiche. 
+Ogni membro del team userà il proprio computer per lavorare al progetto. Inoltre, in caso di necessità, il team potrà usare i computer messi a disposizione dall’Università di Padova nelle aule informatiche. 
 == Strumenti Software
 Gli strumenti di sviluppo che abbiamo deciso di usare sono:
 - *React* per la parte Frontend;
 - *Node.js* per la parte Backend;
 - *MongoDB* per il Database;
-- *AWS* per l'architettura Cloud.
+- *AWS* per l’architettura Cloud.
 Per il controllo della versione usiamo *GitHub*.\
 Per implementare la Continuous Integration e la Continuous Delivery usiamo *GitHub Actions*.\ \
 Per la redazione dei documenti il linguaggio scelto è *Typst*.\ \
 Gli strumenti per la comunicazione sono invece:
 - *Discord* per le riunioni telematiche;
 - *Telegram* per avere un canale di comunicazione asincrona fra i  membri del team;
-- *Slack* e *Gmail* per comunicare con l'azienda proponente.
+- *Slack* e *Gmail* per comunicare con l’azienda proponente.
 #pagebreak()
 
 = Organizzazione del team
@@ -1110,7 +1110,7 @@ Successivamente verranno illustrati:
 
 *Rischi organizzativi*:\
 - Mancato rispetto delle tempistiche;
-- Rallentamento dovuto ad altri impegni personali o universitarii;
+- Rallentamento dovuto ad altri impegni personali o universitari;
 - Distribuzione dei compiti non equilibrata;
 - Scarso coordinamento del team;
 - Mancanza di monitoraggio dello stato di avanzamento;
@@ -1119,7 +1119,7 @@ Successivamente verranno illustrati:
 
 
 == Analisi dei rischi
-Ogni rischio ha una determinatà probabilità di avverarsi, che può essere bassa, media o alta e un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch'esso basso, medio o alto. Inoltre, abbiamo elaborato un piano di mitigazione e un piano di contingenza per ogni rischio individuato.
+Ogni rischio ha una determinata probabilità di avverarsi, che può essere bassa, media o alta e un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch’esso basso, medio o alto. Inoltre, abbiamo elaborato un piano di mitigazione e un piano di contingenza per ogni rischio individuato.
 === Rischi legati ai requisiti
 
 #table(
@@ -1128,15 +1128,15 @@ Ogni rischio ha una determinatà probabilità di avverarsi, che può essere bass
   align: (left, center),
 table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Comprensione errata dei requisiti* ]],
   [ *Descrizione*  ],
-   align(left)[ Il team potrebbe non comprendere in pieno o addirittura individuare in maniera errata i requisiti richiesti dall'azienda con il rischio di avere poi discrepanze fra quello che il cliente aveva richiesto e ciò che è stato effettivamente svuluppato.],
+   align(left)[ Il team potrebbe non comprendere in pieno o addirittura individuare in maniera errata i requisiti richiesti dall’azienda con il rischio di avere poi discrepanze fra quello che il cliente aveva richiesto e ciò che è stato effettivamente sviluppato.],
   [ *Probabilità*  ],
   [ Bassa  ],
 [ *Impatto*],
 [Alto],
 [ *Piano di mitigazione*],
-align(left)[Il team ha avuto un meeting iniziale con l'azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli user cases per evitare linguaggio ambiguo e a mantenere il contatto con l'azienda per confronti riguardanti i requisiti.],
+align(left)[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli user cases per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
 [ *Piano di contingenza*],
-align(left)[Convocare una riunione immediata per identificare i requisiti sbagliati, capire fino a che punto sono errati e se si può mantenere parte del codice sviluppato, calcolare le ore necessarie per sistemarli e l'eventuale impatto sul badget. ]
+align(left)[Convocare una riunione immediata per identificare i requisiti sbagliati, capire fino a che punto sono errati e se si può mantenere parte del codice sviluppato, calcolare le ore necessarie per sistemarli e l’eventuale impatto sul budget. ]
 )
 \
 #table(
@@ -1173,7 +1173,7 @@ align(left)[Convocare una riunione immediata per identificare i requisiti sbagli
 [ *Piano di mitigazione*],
 align(left)[Durante la pianificazione degli sprint, verranno tenuti in considerazione i tempi necessari per imparare a utilizzare i nuovi strumenti e i rallentamenti che possono comportare. \ Inoltre, ogni membro dovrà imparare da autodidatta come si usano e le best practices delle tecnologie utilizzate *prima* di iniziare ad utilizzarle per il codice.   ],
 [ *Piano di contingenza*],
-align(left)[In caso il problema si verifichi nelle fasi iniziali dell'utilizzo del nuovo strumento, si può chiamare un meeting e valutare un eventuale cambio di tecnologia. Se avviene nelle fasi successive, interrompere lo sviluppo del progetto per approfondire il funzionamento delle nuove tecnologie. ]
+align(left)[In caso il problema si verifichi nelle fasi iniziali dell’utilizzo del nuovo strumento, si può chiamare un meeting e valutare un eventuale cambio di tecnologia. Se avviene nelle fasi successive, interrompere lo sviluppo del progetto per approfondire il funzionamento delle nuove tecnologie. ]
 )
 \ #table(
   columns: 2,
@@ -1204,9 +1204,9 @@ align(left)[]
 [ *Impatto*],
 [Alto],
 [ *Piano di mitigazione*],
-align(left)[Il codice prodotto da un membro del team deve essere revisionato da almeno un altro membro del team e devono essere integrati strumenti per l'analisi statica del codice. La maggior parte del codice deve essere coperto da test. Inoltre, prima di usare nuovi linguaggi di programmazione, i membri dovranno studiare le loro best practices. ],
+align(left)[Il codice prodotto da un membro del team deve essere revisionato da almeno un altro membro del team e devono essere integrati strumenti per l’analisi statica del codice. La maggior parte del codice deve essere coperto da test. Inoltre, prima di usare nuovi linguaggi di programmazione, i membri dovranno studiare le loro best practices. ],
 [ *Piano di contingenza*],
-align(left)[Interrompere lo sviluppo dell'area del progetto coinvolta finché non si è identificato il problema e portato a un livello sufficente la qualità del codice.]
+align(left)[Interrompere lo sviluppo dell’area del progetto coinvolta finché non si è identificato il problema e portato a un livello sufficiente la qualità del codice.]
 
 )
 \
@@ -1216,7 +1216,7 @@ align(left)[Interrompere lo sviluppo dell'area del progetto coinvolta finché no
   align: (left, center),
   table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Codice poco comprensibile* ]],
   [ *Descrizione*  ],
-  align(left)[ La maniera in cui è scritto il codice nerende difficile la sua lettura, la sua modifica e ne influenza negativamente la manutenibilità. Ciò può essere causato da assenza di documentazione, nomenclatura incoerente o insensata o da eccessiva complessità ],
+  align(left)[ La maniera in cui è scritto il codice ne rende difficile la sua lettura, la sua modifica e ne influenza negativamente la manutenibilità. Ciò può essere causato da assenza di documentazione, nomenclatura incoerente o insensata o da eccessiva complessità ],
   [ *Probabilità*  ],
   [  Media ],
 [ *Impatto*],
@@ -1224,7 +1224,7 @@ align(left)[Interrompere lo sviluppo dell'area del progetto coinvolta finché no
 [ *Piano di \mitigazione*],
 align(left)[Concordare prima di iniziare a stendere codice quali sono le regole riguardanti lo stile, la nomenclatura e la documentazione riguardante il codice. Far sì che il codice scritto da un membro venga revisionato da almeno un altro membro.],
 [ *Piano di contingenza*],
-align(left)[Bloccare lo sviluppo di codice relativo alla parte illegibile per dedicarsi alla riscrittura di tale codice seguendo le regole di stile e nomenclatura stabilite in precedenza. Se le regole sono state seguite ma il codice è lo stesso poco comprensibile, chiamare un meeting per rivalutare le regole scelte.]
+align(left)[Bloccare lo sviluppo di codice relativo alla parte illeggibile per dedicarsi alla riscrittura di tale codice seguendo le regole di stile e nomenclatura stabilite in precedenza. Se le regole sono state seguite ma il codice è lo stesso poco comprensibile, chiamare un meeting per rivalutare le regole scelte.]
 )
 \
 #table(
@@ -1233,13 +1233,13 @@ align(left)[Bloccare lo sviluppo di codice relativo alla parte illegibile per de
   align: (left, center),
  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Test insufficienti* ]],
   [ *Descrizione*  ],
-  align(left)[ Il testing è inadeguato o incompleto, di conseguenza c'è il rischio di rilasciare codice difettoso e un sistema instabile. ],
+  align(left)[ Il testing è inadeguato o incompleto, di conseguenza c’è il rischio di rilasciare codice difettoso e un sistema instabile. ],
   [ *Probabilità*  ],
   [  Media ],
 [ *Impatto*],
 [Alto],
 [ *Piano di mitigazione*],
-align(left)[Stabilire a priori e monitorare in fase si sviluppo le metriche di copertura e qualità del codice. \ Adottare il Test-Driven Developmente, scrivendo i test *prima* del codice da testare],
+align(left)[Stabilire a priori e monitorare in fase si sviluppo le metriche di copertura e qualità del codice. \ Adottare il Test-Driven Development, scrivendo i test *prima* del codice da testare],
 [ *Piano di contingenza*],
 align(left)[Bloccare lo sviluppo del codice per cui non sono stati creati i test per dedicarsi alla loro implementazione.]
 )
@@ -1259,7 +1259,7 @@ align(left)[Bloccare lo sviluppo del codice per cui non sono stati creati i test
 [ *Piano di mitigazione*],
 align(left)[Verificare che le librerie utilizzate non contengano vulnerabilità. \ Far sì che la maggior parte del codice sia coperto da test di sicurezza. Assicurarsi che il codice prodotto rispetti almeno la top 10 delle norme OWASP. Aggiungere criteri di revisione del codice relativi alla verifica della presenza di potenziali vulnerabilità. ],
 [ *Piano di contingenza*],
-align(left)[Identificare la parte di codice che presenta la vulnerabilitàe  interromperne lo sviluppo finché non è sistemata.]
+align(left)[Identificare la parte di codice che presenta la vulnerabilità e interromperne lo sviluppo finché non è sistemata.]
 )
 \
 === Rischi organizzativi
@@ -1295,9 +1295,9 @@ align(left)[Chiamare una riunione per valutare le cause del ritardo, se i compit
 [ *Impatto*],
 [Medio],
 [ *Piano di mitigazione*],
-align(left)[Avverire gli altri membri se si è a conoscenza di periodi futuri in cui si è poco disponibili. \ Tenere conto dei periodi in cui la produttività rischia di essere bassa a causa degli esami universitari e pianificare attività meno intensa nei loro sprint. \ Aggiungere dei "periodi cuscinetto" nella pianificazione temporale. ],
+align(left)[Avvertire gli altri membri se si è a conoscenza di periodi futuri in cui si è poco disponibili. \ Tenere conto dei periodi in cui la produttività rischia di essere bassa a causa degli esami universitari e pianificare attività meno intensa nei loro sprint. \ Aggiungere dei "periodi cuscinetto" nella pianificazione temporale. ],
 [ *Piano di contingenza*],
-align(left)[Riassegnare le attività critiche e/o urgenti dei membri non disponibili a membri con più disponibilità temporale, mettendo in pausa lo sviluppo di codice meno importante.\ In caso di troppi ritardi accumulati, concvocare un meeting per capire se ci sono dei requisiti non obbligatori a cui si può rinunciare.\ Aumentare la frequenza delle riuonioni per rilevare subito eventuali ulteriori problemi. ]
+align(left)[Riassegnare le attività critiche e/o urgenti dei membri non disponibili a membri con più disponibilità temporale, mettendo in pausa lo sviluppo di codice meno importante.\ In caso di troppi ritardi accumulati, convocare un meeting per capire se ci sono dei requisiti non obbligatori a cui si può rinunciare.\ Aumentare la frequenza delle riunioni per rilevare subito eventuali ulteriori problemi. ]
 
 )
 \
@@ -1308,13 +1308,13 @@ align(left)[Riassegnare le attività critiche e/o urgenti dei membri non disponi
   align: (left, center),
   table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Distribuzione dei compiti non equilibrata*]],
   [ *Descrizione*  ],
-  align(left)[ Vengono commessi errori di distribuzione dei compiti a causa dell'inesperienza nel valutare le tempistiche relative alle tasks dei membri del team e della sottovalutazione o sopravvalutazione del tempo necessario per finire alcuni compiti. Questo può portare i membri con un carico maggiore a non riuscire a rispettare le tempistiche o a presentare codice di qualità inferiore. ],
+  align(left)[ Vengono commessi errori di distribuzione dei compiti a causa dell’inesperienza nel valutare le tempistiche relative alle tasks dei membri del team e della sottovalutazione o sopravvalutazione del tempo necessario per finire alcuni compiti. Questo può portare i membri con un carico maggiore a non riuscire a rispettare le tempistiche o a presentare codice di qualità inferiore. ],
   [ *Probabilità*  ],
   [ Bassa  ],
 [ *Impatto*],
 [Basso],
 [ *Piano di mitigazione*],
-align(left)[Fare le stime del tempo necessario insieme e non assegnare questo compito a un'unica persona. \ Imporre un limite al numero di attività che una persona può svolgere nello stesso sprint. \ Confrontarsi nelle riunioni settimanali riguardo la mole di lavoro portata a termine e il tempo impiegato per farlo.],
+align(left)[Fare le stime del tempo necessario insieme e non assegnare questo compito a un’unica persona. \ Imporre un limite al numero di attività che una persona può svolgere nello stesso sprint. \ Confrontarsi nelle riunioni settimanali riguardo la mole di lavoro portata a termine e il tempo impiegato per farlo.],
 [ *Piano di contingenza*],
 align(left)[Controllare la qualità del codice prodotto da membri sovraccaricati. \ Convocare una riunione per cambiare la distribuzione dei compiti dello sprint attuale ed eventualmente quelli successivi in modo da renderla più equa, assegnando meno compiti a chi ha già quelli che impiegano più tempo. ]
 )
@@ -1326,7 +1326,7 @@ align(left)[Controllare la qualità del codice prodotto da membri sovraccaricati
   align: (left, center),
   table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Scarso coordinamento del team*]],
   [ *Descrizione*  ],
-  align(left)[ Il team non è organizzato adeguatamente, non c'è una assegnazione chiara dei compiti o delle date da rispettare per le scadenze. Ci sono comunicazione e coordinazione non sufficienti. ],
+  align(left)[ Il team non è organizzato adeguatamente, non c’è una assegnazione chiara dei compiti o delle date da rispettare per le scadenze. Ci sono comunicazione e coordinazione non sufficienti. ],
   [ *Probabilità*  ],
   [ Bassa ],
 [ *Impatto*],
@@ -1345,7 +1345,7 @@ align(left)[Aumentare la frequenza delle riunioni per aumentare il controllo e i
   align: (left, center),
   table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Mancanza di monitoraggio dello stato di avanzamento*]],
   [ *Descrizione*  ],
-  align(left)[  I membri non vengono chiamati a rendere conto del loro progresso e del loro rendimento. Questo porta all'individuazione tardiva di problemi ed errori e può portare i membri a progredire più lentamente e ai ritardi individuali di accumularsi. ],
+  align(left)[  I membri non vengono chiamati a rendere conto del loro progresso e del loro rendimento. Questo porta all’individuazione tardiva di problemi ed errori e può portare i membri a progredire più lentamente e ai ritardi individuali di accumularsi. ],
   [ *Probabilità*  ],
   [Media],
 [ *Impatto*],
@@ -1370,7 +1370,7 @@ align(left)[]
 [ *Impatto*],
 [Medio],
 [ *Piano di mitigazione*],
-align(left)[Il responsabile ha il compito di tenere aggiornata la documentazione e di scriverci ogni decisione presa dal team. \ Un compito non viene considerato completato finché la documentazione non è stata aggioranta adeguatamente.],
+align(left)[Il responsabile ha il compito di tenere aggiornata la documentazione e di scriverci ogni decisione presa dal team. \ Un compito non viene considerato completato finché la documentazione non è stata aggiornata adeguatamente.],
 [ *Piano di contingenza*],
 align(left)[Individuare tutta la documentazione obsoleta e bloccare lo svolgimento dei compiti non urgenti per dedicarsi al suo aggiornamento. ]
 
@@ -1394,8 +1394,8 @@ align(left)[Per le decisioni non compiute entro il tempo massimo, viene indetta 
 )
 
 == Monitoraggio dei rischi
-Il *responsabile* monitora lo stato di tutti i rischi; i *programmatori* e i *revisori* hanno parziale responsabilità nell'individuazione di rischi tecnici. \
-Per assicurarsi di individuare l'avveramento di un rischio il prima possibile si eseguiranno le seguenti attività:
-- *Riunioni periodiche* bimensili in cui si verifica lo stato dei rischi individuati, si discute se i piani di mitigazione e di contingenza sono efficaci ed eventualmente si individuano nuovi rischi, dopo delle quali si aggiorna l'analisi dei rischi del Piano di Progetto. In sostanza, si fa una rivalutazione periodica dei rischi.
+Il *responsabile* monitora lo stato di tutti i rischi; i *programmatori* e i *revisori* hanno parziale responsabilità nell’individuazione di rischi tecnici. \
+Per assicurarsi di individuare l’avveramento di un rischio il prima possibile si eseguiranno le seguenti attività:
+- *Riunioni periodiche* bimensili in cui si verifica lo stato dei rischi individuati, si discute se i piani di mitigazione e di contingenza sono efficaci ed eventualmente si individuano nuovi rischi, dopo delle quali si aggiorna l’analisi dei rischi del Piano di Progetto. In sostanza, si fa una rivalutazione periodica dei rischi.
 - Un continuo *aggiornamento del registro dei rischi*, dove vengono documentati tutti i rischi che si concretizzano durante lo svolgimento del progetto.
-- Il *Test Driven Development* permette una più rapida individuazione dell'avveramento dei rischi tecnici, il che causa danni molto più contenuti rispetto a un'individuazine tardiva.
+- Il *Test Driven Development* permette una più rapida individuazione dell’avveramento dei rischi tecnici, il che causa danni molto più contenuti rispetto a un’individuazione tardiva.
