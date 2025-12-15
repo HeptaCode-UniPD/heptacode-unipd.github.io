@@ -113,6 +113,12 @@ Elemento atto a: pianificare, discutere e tracciare lavoro, bug, idee o nuove fu
 
 #pagebreak()
 
+= L
+#heading(level: 2, outlined: false)[LLM]
+L'acronimo sta per Large Language Model, un tipo di intelligenza artificiale addestrato su enormi quantità di dati testuali per comprendere, generare e elaborare il linguaggio umano in modo simile a un essere umano, Esso è capace di compiti come la scrittura, la traduzione, il riassunto di testi e la conversazione, basandosi su architetture di deep learning, i quali gli permettono di cogliere contesti complessi. 
+
+#pagebreak()
+
 = M
 
 #heading(level: 2, outlined: false)[Mail]
@@ -145,6 +151,9 @@ Qualsiasi individuo, gruppo o organizzazione che possa essere direttamente o ind
 
 #heading(level: 2, outlined: false)[Telegram]
 Applicazione di messaggistica istantanea tra utenti e/o gruppi. Permette in particolar modo di creare sottocategorie all'interno di un gruppo, per isolare differenti tematiche in compartimenti separati. Consente inoltre l'invio di file di tipo testuale, visivo e audio.
+
+#heading(level: 2, outlined: false)[Typst]
+Sistema di preparazione documenti basato su un linguaggio di markup leggero, progettato per essere un'alternativa moderna e più semplice a LaTeX, ma più potente di Word o Google Docs.
 
 #pagebreak()
 
