@@ -170,7 +170,7 @@ Abbiamo scelto di lavorare al progetto utilizzando l’approccio *Agile* basato 
 - Grazie allo Sprint Retrospective si può migliorare l’efficacia del team durante lo svolgimento del progetto e capire in quali aspetti è lacunoso.
 - Permette una gestione dei rischi più facile e il loro continuo monitoraggio, diminuendo la probabilità che si verifichino. 
 - Il rilascio incrementale permette all’azienda cliente di vedere come sta avanzando il progetto.
-- Feedback più veloce: questo metodo impone un contatto più frequente con l’azienda proponente, permettendo di avere un riscontro sull’adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
+- Feedback più veloce: questo metodo impone un contatto più frequente con l’azienda proponente, permettendo di avere un riscontro sull'adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
 == Struttura del ciclo di vita
 Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all’11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; saranno invece di due settimane durante il periodo di sessione d’esami che va dal 12 gennaio al 22 febbraio 2026. Per ogni Sprint, sono previsti:
 - uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi, che vengono scritti nello *Sprint Backlog*;
@@ -1119,7 +1119,7 @@ Successivamente verranno illustrati:
 
 
 == Analisi dei rischi
-Ogni rischio ha una determinata probabilità di avverarsi, che può essere bassa, media o alta e un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch’esso basso, medio o alto. Inoltre, abbiamo elaborato un piano di mitigazione e un piano di contingenza per ogni rischio individuato.
+Ogni rischio ha una determinata probabilità di avverarsi, che può essere bassa, media o alta e un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch'esso basso, medio o alto. Inoltre, abbiamo elaborato un piano di mitigazione e un piano di contingenza per ogni rischio individuato.
 === Rischi legati ai requisiti
 
 #table(
