@@ -195,7 +195,7 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
 = Valutazione lavoro
 
 = Iniziative di miglioramento
-La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durente lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
+La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durante lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
 
 == Valutazione organizzativa
 #figure(
@@ -204,7 +204,7 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Problema*], [*Conromisura*]
+      [*Problema*], [*Contromisura*]
     ),
     [Eccessivo lavoro svolto in locale non conforme agli standard condivisi dal gruppo], 
     [Scomposizione dei compiti complessi in issue#super[G] granulari, gestite e assegnate tramite la Project Board di GitHub#super[G]],
