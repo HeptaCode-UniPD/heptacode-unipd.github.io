@@ -76,10 +76,16 @@ Termini tecnici e ambiguità sono chiariti nel documento _glossario.pdf_, ogni t
 
 === Riferimenti Normativi
 
-- Capitolato d'appalto C2 _Vargroup S.p.a._ - Code Guardian:\ 
-  #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")
+- Capitolato d'appalto C2 _Vargroup S.p.a._ - Code Guardian: \
+#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")
+
+- Standard ISO/IEC 12207:1995 - Processi di Ciclo di Vita del Software:
+#linke("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 
 === Riferimenti Informativi
+
+- Documentazione Typst: \
+#link("https://typst.app/docs/")
 
 = Processi Primari
 
@@ -87,7 +93,11 @@ Termini tecnici e ambiguità sono chiariti nel documento _glossario.pdf_, ogni t
 
 === Scopo
 
+Il processo di fornitura, secondo lo standard ISO/IEC 12207:1995, comprende le attività e le risorse necessarie al fornitore per realizzare il progetto. Esso monitora l'avanzamento delle operazioni del gruppo _HeptaCode_, confrontando il lavoro completato con le richieste del proponente. Questo processo inizia dopo lo Studio di Fattibilità, quando le esigenze del committente sono chiare. Il fornitore stipula un contratto che definisce i requisiti e la data di consegna. Solo dopo l'accordo si passa alla fase esecutiva con la redazione del Piano di Progetto.
+
 ==== Fasi della Fornitura
+
+
 
 === Descrizione
 
