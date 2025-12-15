@@ -24,36 +24,41 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
-  
+  "0.6",
+  "2025/12/14",
+  "Laura Venturini",
+  "Nicola Simionato",
+  "Aggiunti capitoli ’Processi e metodologie’, ’Risorse e strumenti’ e ’Analisi e gestione dei rischi’",
+
+
   "0.5",
   "2025/12/14",
   "Angela Favaro",
   "Nicola Simionato",
-  "Aggiunta diagrammi PERT e correzione analisi Sprint",
+  "Aggiunta diagrammi PERTT e correzione analisi Sprint",
 
-  "0.4",
+  "0.3",
   "2025/12/08",
   "Angela Favaro",
   "Nicola Simionato",
   "Calcolo dei costi",
 
-  "0.3",
+  "0.2",
   "2025/12/03",
   "Angela Favaro",
   "Alberto Reginato",
   "Suddivisione e stesura sprint per PB",
-
   "0.2",
   "2025/12/02",
-  "Angela Favaro",
+  "Riccardo Baldin",
   "Alberto Reginato",
   "Suddivisione e stesura sprint per RTB",
-
-  "0.1",
+    "0.1",
   "2025/12/01",
   "Angela Favaro",
   "Alberto Reginato",
   "Prima stesura di struttura generale",
+  
 
 )
 
@@ -158,7 +163,47 @@ Ad ogni _Sprint Retrospective_ si aggiornerà il _Trascorso_ con:
 Verrà conseguentemente aggiornata l’_Analisi dei Rischi_ con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
 #pagebreak()
 
+
+= Processi e metodologie
+== Modello di processo scelto
+Abbiamo scelto di lavorare al progetto utilizzando l’approccio *Agile* basato sul framework *Scrum*. È stato scelto tale modello per le seguenti ragioni:
+- Grazie a questo metodo si possono limitare gli sprechi di risorse: con la suddivisione di task molto granulari, l’introduzione di un errore è più facilmente individuabile e quindi è meno frequente che l’errore si propaghi in grosse parti del progetto.
+- Lo stato del progetto, la suddivisione delle task da fare, le ore a disposizione e gli aspetti migliorabili sono chiari a tutti grazie allo Sprint Review, allo Sprint Retrospective e allo Sprint Planning.
+- Grazie allo Sprint Retrospective si può migliorare l’efficacia del team durante lo svolgimento del progetto e capire in quali aspetti è lacunoso.
+- Permette una gestione dei rischi più facile e il loro continuo monitoraggio, diminuendo la probabilità che si verifichino. 
+- Il rilascio incrementale permette all’azienda cliente di vedere come sta avanzando il progetto.
+- Feedback più veloce: questo metodo impone un contatto più frequente con l’azienda proponente, permettendo di avere un riscontro sull'adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
+== Struttura del ciclo di vita
+Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all’11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; saranno invece di due settimane durante il periodo di sessione d’esami che va dal 12 gennaio al 22 febbraio 2026. Per ogni Sprint, sono previsti:
+- uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi, che vengono scritti nello *Sprint Backlog*;
+- uno *Sprint Review*, in cui si esamina il lavoro completato dopo uno Sprint e si raccoglie feedback e si aggiorna il *Product Backlog*, che contiene tutte le task da completare per completare il progetto; 
+- uno *Sprint Retrospective*, in cui il team ragiona su ciò che può essere migliorato in confronto allo Sprint appena finito.
+Non sono previsti Daily Scrum, in quanto riteniamo che sia sufficiente misurare il progresso dell’avanzamento durante lo Sprint Review. 
+#pagebreak()
+
+= Risorse e strumenti
+Questa sezione si occupa di descrivere quali sono e come vengono gestiti gli strumenti e le risorse necessari per realizzare il progetto.
+== Risorse umane
+La gestione delle ore fra i membri del progetto è spiegata nella @Organizzazione (Organizzazione team).
+== Risorse materiali
+Ogni membro del team userà il proprio computer per lavorare al progetto. Inoltre, in caso di necessità, il team potrà usare i computer messi a disposizione dall’Università di Padova nelle aule informatiche. 
+== Strumenti Software
+Gli strumenti di sviluppo che abbiamo deciso di usare sono:
+- *React* per la parte Frontend;
+- *Node.js* per la parte Backend;
+- *MongoDB* per il Database;
+- *AWS* per l’architettura Cloud.
+Per il controllo della versione usiamo *GitHub*.\
+Per implementare la Continuous Integration e la Continuous Delivery usiamo *GitHub Actions*.\ \
+Per la redazione dei documenti il linguaggio scelto è *Typst*.\ \
+Gli strumenti per la comunicazione sono invece:
+- *Discord* per le riunioni telematiche;
+- *Telegram* per avere un canale di comunicazione asincrona fra i  membri del team;
+- *Slack* e *Gmail* per comunicare con l’azienda proponente.
+#pagebreak()
+
 = Organizzazione del team
+#label("Organizzazione")
 Ad ogni suddivisione di periodo (denominato _sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 Gennaio 2026_ al _21 Febbraio 2026_. \ \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
 #figure(
   caption: [Stima delle ore individuali per ruolo in totale.],
@@ -180,9 +225,9 @@ Ad ogni suddivisione di periodo (denominato _sprint_) i membri turneranno; in qu
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Totale*]]],
 
-  [_Angela Favaro_], [7], [10], [15], [16], [21], [23], [*92*],
+  [_Riccardo Baldin_], [7], [10], [15], [16], [21], [23], [*92*],
   [_Angela Canazza_], [9], [6], [15], [15], [21,5], [25,5], [*92*],
-  [_Riccardo Baldin_], [4], [8], [17], [15], [22], [26], [92],
+  [_Angela Favaro_], [4], [8], [17], [15], [22], [26], [92],
   [_Alberto Reginato_], [7], [8], [16], [17], [17,5], [26,5], [*92*],
   [_Nicola Simionato_], [7], [8], [15,5], [12], [22], [27,5], [*92*],
   [_Amerigo Vegliante_], [8], [8], [17], [16], [21], [22], [*92*],
@@ -307,9 +352,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [], [], [1], [], [], [], [25€],
-  [_Angela Canazza_], [], [], [1], [], [], [], [25€],
   [_Riccardo Baldin_], [], [], [1], [], [], [], [25€],
+  [_Angela Canazza_], [], [], [1], [], [], [], [25€],
+  [_Angela Favaro_], [], [], [1], [], [], [], [25€],
   [_Alberto Reginato_], [], [], [1], [], [], [], [25€],
   [_Nicola Simionato_], [1], [], [1], [], [], [], [55€],
   [_Amerigo Vegliante_], [], [], [1], [], [], [0,5], [32,5€],
@@ -369,9 +414,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
 
-  [_Angela Favaro_], [], [], [2], [], [], [], [50€],
+  [_Riccardo Baldin_], [], [], [2], [], [], [], [50€],
   [_Angela Canazza_], [], [], [2], [], [], [], [50€],
-  [_Riccardo Baldin_], [], [], [2], [], [], [1], [65€],
+  [_Angela Favaro_], [], [], [2], [], [], [1], [65€],
   [_Alberto Reginato_], [], [2], [2], [], [], [], [90€],
   [_Nicola Simionato_], [], [], [2], [], [], [], [50€],
   [_Amerigo Vegliante_], [], [], [2], [], [], [], [50€],
@@ -424,9 +469,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [], [], [4], [], [], [], [100€],
-  [_Angela Canazza_], [], [], [4], [], [], [], [100€],
   [_Riccardo Baldin_], [], [], [4], [], [], [], [100€],
+  [_Angela Canazza_], [], [], [4], [], [], [], [100€],
+  [_Angela Favaro_], [], [], [4], [], [], [], [100€],
   [_Alberto Reginato_], [3], [], [], [], [], [1,5], [112,5€],
   [_Nicola Simionato_], [], [3], [], [], [], [], [60€],
   [_Amerigo Vegliante_], [], [], [4], [], [], [], [100€],
@@ -483,9 +528,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [3], [], [], [], [], [], [90€],
+  [_Riccardo Baldin_], [3], [], [], [], [], [], [90€],
   [_Angela Canazza_], [], [], [4], [], [], [1,5], [122,5€],
-  [_Riccardo Baldin_], [], [], [6], [], [], [], [150€],
+  [_Angela Favaro_], [], [], [6], [], [], [], [150€],
   [_Alberto Reginato_], [], [], [5], [], [], [], [125€],
   [_Nicola Simionato_], [], [], [2], [], [], [], [50€],
   [_Amerigo Vegliante_], [], [4], [], [], [], [1,5], [102,5€],
@@ -541,9 +586,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [], [], [4], [], [], [], [100€],
+  [_Riccardo Baldin_], [], [], [4], [], [], [], [100€],
   [_Angela Canazza_], [], [], [4], [], [], [], [100€],
-  [_Riccardo Baldin_], [], [4], [], [], [], [], [80€],
+  [_Angela Favaro_], [], [4], [], [], [], [], [80€],
   [_Alberto Reginato_], [], [], [4], [], [], [], [100€],
   [_Nicola Simionato_], [], [], [4], [], [], [], [100€],
   [_Amerigo Vegliante_], [3], [], [], [], [], [2], [120€],
@@ -601,9 +646,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [], [4], [], [1], [], [], [105€],
+  [_Riccardo Baldin_], [], [4], [], [1], [], [], [105€],
   [_Angela Canazza_], [3], [], [], [1], [], [], [115€],
-  [_Riccardo Baldin_], [], [], [4], [1], [], [], [125€],
+  [_Angela Favaro_], [], [], [4], [1], [], [], [125€],
   [_Alberto Reginato_], [], [], [4], [1], [], [], [125€],
   [_Nicola Simionato_], [], [], [], [4], [], [2], [130€],
   [_Amerigo Vegliante_], [], [], [6], [1], [], [2], [205€],
@@ -657,9 +702,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [], [], [4], [2], [], [], [150€],
+  [_Riccardo Baldin_], [], [], [4], [2], [], [], [150€],
   [_Angela Canazza_], [], [6], [], [], [], [], [120€],
-  [_Riccardo Baldin_], [4], [], [], [], [], [], [120€],
+  [_Angela Favaro_], [4], [], [], [], [], [], [120€],
   [_Alberto Reginato_], [], [], [], [6], [2], [], [180€],
   [_Nicola Simionato_], [], [], [3], [], [], [2.5], [112,5€],
   [_Amerigo Vegliante_], [], [], [], [7], [2], [], [205€],
@@ -715,9 +760,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [], [], [], [5], [], [3], [170€],
+  [_Riccardo Baldin_], [], [], [], [5], [], [3], [170€],
   [_Angela Canazza_], [], [], [], [6], [2], [], [180€],
-  [_Riccardo Baldin_], [], [], [], [6], [2], [], [180€],
+  [_Angela Favaro_], [], [], [], [6], [2], [], [180€],
   [_Alberto Reginato_], [], [], [], [6], [], [3], [195€],
   [_Nicola Simionato_], [6], [], [], [], [], [], [180€],
   [_Amerigo Vegliante_], [], [], [4], [3], [], [], [175€],
@@ -775,9 +820,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [], [], [], [8], [], [], [200€],
-  [_Angela Canazza_], [], [], [], [8], [], [], [200€],
   [_Riccardo Baldin_], [], [], [], [8], [], [], [200€],
+  [_Angela Canazza_], [], [], [], [8], [], [], [200€],
+  [_Angela Favaro_], [], [], [], [8], [], [], [200€],
   [_Alberto Reginato_], [], [], [], [4], [], [1,5], [122,5€],
   [_Nicola Simionato_], [], [5], [3,5], [], [], [], [187,5€],
   [_Amerigo Vegliante_], [], [], [], [5], [], [2], [155€],
@@ -834,9 +879,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [], [], [], [], [11], [5], [240€],
+  [_Riccardo Baldin_], [], [], [], [], [11], [5], [240€],
   [_Angela Canazza_], [], [], [], [], [], [10], [150€],
-  [_Riccardo Baldin_], [], [], [], [], [9], [5], [210€],
+  [_Angela Favaro_], [], [], [], [], [9], [5], [210€],
   [_Alberto Reginato_], [4], [], [], [], [], [5], [195€],
   [_Nicola Simionato_], [], [], [], [8], [8], [], [320€],
   [_Amerigo Vegliante_], [], [4], [], [], [], [7], [185€],
@@ -892,9 +937,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [4], [], [], [], [], [], [120€],
+  [_Riccardo Baldin_], [4], [], [], [], [], [], [120€],
   [_Angela Canazza_], [], [], [], [], [], [14], [210€],
-  [_Riccardo Baldin_], [], [4], [], [], [], [], [80€],
+  [_Angela Favaro_], [], [4], [], [], [], [], [80€],
   [_Alberto Reginato_], [], [], [], [], [15,5], [], [232,5€],
   [_Nicola Simionato_], [], [], [], [], [9], [], [135€],
   [_Amerigo Vegliante_], [], [], [], [], [10], [], [150€],
@@ -948,9 +993,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [], [6], [], [], [], [5], [195€],
+  [_Riccardo Baldin_], [], [6], [], [], [], [5], [195€],
   [_Angela Canazza_], [], [], [], [], [19.5], [], [292,5€],
-  [_Riccardo Baldin_], [], [], [], [], [], [15], [225€],
+  [_Angela Favaro_], [], [], [], [], [], [15], [225€],
   [_Alberto Reginato_], [], [], [], [], [], [15.5], [232,5€],
   [_Nicola Simionato_], [], [], [], [], [5], [10], [225€],
   [_Amerigo Vegliante_], [5], [], [], [], [], [], [150€],
@@ -1006,9 +1051,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
     [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-  [_Angela Favaro_], [], [], [], [], [10], [10], [300€],
+  [_Riccardo Baldin_], [], [], [], [], [10], [10], [300€],
   [_Angela Canazza_], [6], [], [], [], [], [], [180€],
-  [_Riccardo Baldin_], [], [], [], [], [11], [5], [240€],
+  [_Angela Favaro_], [], [], [], [], [11], [5], [240€],
   [_Alberto Reginato_], [], [6], [], [], [], [], [120€],
   [_Nicola Simionato_], [], [], [], [], [], [13], [195€],
   [_Amerigo Vegliante_], [], [], [], [], [9], [7], [240€],
@@ -1394,3 +1439,313 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     [_Inserire immagine_]
   ]
 )
+#pagebreak()
+= Analisi e gestione dei rischi
+Successivamente verranno illustrati:
+- i rischi rilevati per il progetto;
+- come pensiamo di prevenire tali rischi;
+- come pensiamo di gestirli in caso si avverino.
+== Identificazione dei rischi 
+*Rischi legati ai requisiti*: \
+- Comprensione errata dei requisiti;
+- Assenza di priorità dei requisiti.
+
+*Rischi tecnici*: \
+- Strumenti e tecnologie sconosciute;
+- Problemi di integrazione fra componenti;
+- Qualità insufficiente del codice;
+- Codice poco comprensibile;
+- Test insufficienti;
+- Gestione inadeguata della sicurezza.
+
+*Rischi organizzativi*:\
+- Mancato rispetto delle tempistiche;
+- Rallentamento dovuto ad altri impegni personali o universitari;
+- Distribuzione dei compiti non equilibrata;
+- Scarso coordinamento del team;
+- Mancanza di monitoraggio dello stato di avanzamento;
+- Documentazione non aggiornata;
+- Opinioni divergenti su decisioni da prendere.
+
+
+== Analisi dei rischi
+Ogni rischio ha una determinata probabilità di avverarsi, che può essere bassa, media o alta e un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch'esso basso, medio o alto. Inoltre, abbiamo elaborato un piano di mitigazione e un piano di contingenza per ogni rischio individuato.
+=== Rischi legati ai requisiti
+
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },  
+  align: (left, center),
+table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Comprensione errata dei requisiti* ]],
+  [ *Descrizione*  ],
+   align(left)[ Il team potrebbe non comprendere in pieno o addirittura individuare in maniera errata i requisiti richiesti dall’azienda con il rischio di avere poi discrepanze fra quello che il cliente aveva richiesto e ciò che è stato effettivamente sviluppato.],
+  [ *Probabilità*  ],
+  [ Bassa  ],
+[ *Impatto*],
+[Alto],
+[ *Piano di mitigazione*],
+align(left)[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli user cases per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
+[ *Piano di contingenza*],
+align(left)[Convocare una riunione immediata per identificare i requisiti sbagliati, capire fino a che punto sono errati e se si può mantenere parte del codice sviluppato, calcolare le ore necessarie per sistemarli e l’eventuale impatto sul budget. ]
+)
+\
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[* Assenza di priorità dei requisiti* ]],
+  [ *Descrizione*  ],
+  align(left)[  
+ Ai requisiti potrebbe non essere assegnato, o essere assegnato erroneamente, un livello di priorità basato sulla loro importanza e la loro urgenza. Questo può portare a dare la precedenza a requisiti non fondamentali e di conseguenza essere causa di ritardi e sforamenti di budget. ],
+  [ *Probabilità*  ],
+  [Bassa  ],
+[ *Impatto*],
+[Medio],
+[ *Piano di mitigazione*],
+ align(left)[I membri del team discuteranno assieme in maniera approfondita il livello di priorità dei requisiti, per decidere a quali dare la precedenza],
+[ *Piano di contingenza*],
+ align(left)[Bloccare immediatamente lo sviluppo dei requisiti se si rivelano non di secondaria importanza per dedicarsi a quelli di massima priorità. Convocare una riunione per discutere nuovamente e rivalutare i livelli di priorità assegnati ai requisiti, ]
+
+)
+\
+=== Rischi tecnici
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Strumenti e tecnologie sconosciute*]],
+  [ *Descrizione*  ],
+    align(left)[ La maggior parte delle tecnologie necessarie per realizzare il progetto non sono mai state utilizzate dai membri del team e ciò comporta un importante rallentamento dovuto al tempo necessario per imparare a maneggiare i nuovi strumenti e a stime non totalmente accurate delle ore necessarie. ],
+  [ *Probabilità*  ],
+  [  Alta ],
+[ *Impatto*],
+[Medio],
+[ *Piano di mitigazione*],
+align(left)[Durante la pianificazione degli sprint, verranno tenuti in considerazione i tempi necessari per imparare a utilizzare i nuovi strumenti e i rallentamenti che possono comportare. \ Inoltre, ogni membro dovrà imparare da autodidatta come si usano e le best practices delle tecnologie utilizzate *prima* di iniziare ad utilizzarle per il codice.   ],
+[ *Piano di contingenza*],
+align(left)[In caso il problema si verifichi nelle fasi iniziali dell’utilizzo del nuovo strumento, si può chiamare un meeting e valutare un eventuale cambio di tecnologia. Se avviene nelle fasi successive, interrompere lo sviluppo del progetto per approfondire il funzionamento delle nuove tecnologie. ]
+)
+\ #table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[ *Problemi di integrazione fra componenti * ]],
+  [ *Descrizione*  ],
+    align(left)[ Le componenti sviluppate utilizzando tecnologie diverse potrebbero avere problemi di comunicazione causati da versioni diverse di librerie, mancanza di interfacce chiare o di consistenza di dati e altre discrepanze. Ciò potrebbe portare a malfunzionamenti o instabilità del sistema. ],
+  [ *Probabilità*  ],
+  [Media ],
+[ *Impatto*],
+[Alto],
+[ *Piano di mitigazione*],
+align(left)[Documentare le API e i formati dei dati fra tutti i componenti. \ Implementare il processo di Integrazione Continua.],
+[ *Piano di contingenza*],
+align(left)[]
+)
+\
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[* Qualità insufficiente del codice*] ],
+  [ *Descrizione*  ],
+  align(left)[ Il codice prodotto non rispetta gli standard concordati dal team, è inefficiente o inaffidabile ],
+  [ *Probabilità*  ],
+  [ Media  ],
+[ *Impatto*],
+[Alto],
+[ *Piano di mitigazione*],
+align(left)[Il codice prodotto da un membro del team deve essere revisionato da almeno un altro membro del team e devono essere integrati strumenti per l’analisi statica del codice. La maggior parte del codice deve essere coperto da test. Inoltre, prima di usare nuovi linguaggi di programmazione, i membri dovranno studiare le loro best practices. ],
+[ *Piano di contingenza*],
+align(left)[Interrompere lo sviluppo dell’area del progetto coinvolta finché non si è identificato il problema e portato a un livello sufficiente la qualità del codice.]
+
+)
+\
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Codice poco comprensibile* ]],
+  [ *Descrizione*  ],
+  align(left)[ La maniera in cui è scritto il codice ne rende difficile la sua lettura, la sua modifica e ne influenza negativamente la manutenibilità. Ciò può essere causato da assenza di documentazione, nomenclatura incoerente o insensata o da eccessiva complessità ],
+  [ *Probabilità*  ],
+  [  Media ],
+[ *Impatto*],
+[Alto],
+[ *Piano di \mitigazione*],
+align(left)[Concordare prima di iniziare a stendere codice quali sono le regole riguardanti lo stile, la nomenclatura e la documentazione riguardante il codice. Far sì che il codice scritto da un membro venga revisionato da almeno un altro membro.],
+[ *Piano di contingenza*],
+align(left)[Bloccare lo sviluppo di codice relativo alla parte illeggibile per dedicarsi alla riscrittura di tale codice seguendo le regole di stile e nomenclatura stabilite in precedenza. Se le regole sono state seguite ma il codice è lo stesso poco comprensibile, chiamare un meeting per rivalutare le regole scelte.]
+)
+\
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+ table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Test insufficienti* ]],
+  [ *Descrizione*  ],
+  align(left)[ Il testing è inadeguato o incompleto, di conseguenza c’è il rischio di rilasciare codice difettoso e un sistema instabile. ],
+  [ *Probabilità*  ],
+  [  Media ],
+[ *Impatto*],
+[Alto],
+[ *Piano di mitigazione*],
+align(left)[Stabilire a priori e monitorare in fase si sviluppo le metriche di copertura e qualità del codice. \ Adottare il Test-Driven Development, scrivendo i test *prima* del codice da testare],
+[ *Piano di contingenza*],
+align(left)[Bloccare lo sviluppo del codice per cui non sono stati creati i test per dedicarsi alla loro implementazione.]
+)
+\
+
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Gestione inadeguata della sicurezza *]],
+  [ *Descrizione*  ],
+  align(left)[  Il codice prodotto presenta vulnerabilità della sicurezza, che possono essere sfruttate da utenti malevoli. ],
+  [ *Probabilità*  ],
+  [  Media ],
+[ *Impatto*],
+[Alto],
+[ *Piano di mitigazione*],
+align(left)[Verificare che le librerie utilizzate non contengano vulnerabilità. \ Far sì che la maggior parte del codice sia coperto da test di sicurezza. Assicurarsi che il codice prodotto rispetti almeno la top 10 delle norme OWASP. Aggiungere criteri di revisione del codice relativi alla verifica della presenza di potenziali vulnerabilità. ],
+[ *Piano di contingenza*],
+align(left)[Identificare la parte di codice che presenta la vulnerabilità e interromperne lo sviluppo finché non è sistemata.]
+)
+\
+=== Rischi organizzativi
+
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Mancato rispetto delle tempistiche *]],
+  [ *Descrizione*  ],
+  align(left)[Uno o più membri non riescono a finire i compiti a loro assegnati nei tempi prestabiliti, causando ritardi nello sviluppo del codice e nel raggiungimento delle milestones.  ],
+  [ *Probabilità*  ],
+  [Alta],
+[ *Impatto*],
+[Medio],
+[ *Piano di mitigazione*],
+align(left)[Aggiungere dei "periodi cuscinetto" nella pianificazione temporale degli sprint. Avvertire gli altri membri del gruppo in caso di rallentamenti e confrontarsi se si presentano difficoltà. ],
+[ *Piano di contingenza*],
+align(left)[Chiamare una riunione per valutare le cause del ritardo, se i compiti assegnati sono realistici e, in caso di troppi ritardi accumulati, per capire se ci sono dei requisiti non obbligatori a cui si può rinunciare .]
+
+)
+\
+
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Rallentamento dovuto ad altri impegni personali o universitari*] ],
+  [ *Descrizione*  ],
+  align(left)[ Uno o più membri potrebbero non riuscire a rispettare le tempistiche prestabilite a causa di impegni di natura personale o universitaria, portando a ritardi nello sviluppo del codice e nel raggiungimento delle milestones.  ],
+  [ *Probabilità*  ],
+  [  Alta ],
+[ *Impatto*],
+[Medio],
+[ *Piano di mitigazione*],
+align(left)[Avvertire gli altri membri se si è a conoscenza di periodi futuri in cui si è poco disponibili. \ Tenere conto dei periodi in cui la produttività rischia di essere bassa a causa degli esami universitari e pianificare attività meno intensa nei loro sprint. \ Aggiungere dei "periodi cuscinetto" nella pianificazione temporale. ],
+[ *Piano di contingenza*],
+align(left)[Riassegnare le attività critiche e/o urgenti dei membri non disponibili a membri con più disponibilità temporale, mettendo in pausa lo sviluppo di codice meno importante.\ In caso di troppi ritardi accumulati, convocare un meeting per capire se ci sono dei requisiti non obbligatori a cui si può rinunciare.\ Aumentare la frequenza delle riunioni per rilevare subito eventuali ulteriori problemi. ]
+
+)
+\
+
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Distribuzione dei compiti non equilibrata*]],
+  [ *Descrizione*  ],
+  align(left)[ Vengono commessi errori di distribuzione dei compiti a causa dell’inesperienza nel valutare le tempistiche relative alle tasks dei membri del team e della sottovalutazione o sopravvalutazione del tempo necessario per finire alcuni compiti. Questo può portare i membri con un carico maggiore a non riuscire a rispettare le tempistiche o a presentare codice di qualità inferiore. ],
+  [ *Probabilità*  ],
+  [ Bassa  ],
+[ *Impatto*],
+[Basso],
+[ *Piano di mitigazione*],
+align(left)[Fare le stime del tempo necessario insieme e non assegnare questo compito a un’unica persona. \ Imporre un limite al numero di attività che una persona può svolgere nello stesso sprint. \ Confrontarsi nelle riunioni settimanali riguardo la mole di lavoro portata a termine e il tempo impiegato per farlo.],
+[ *Piano di contingenza*],
+align(left)[Controllare la qualità del codice prodotto da membri sovraccaricati. \ Convocare una riunione per cambiare la distribuzione dei compiti dello sprint attuale ed eventualmente quelli successivi in modo da renderla più equa, assegnando meno compiti a chi ha già quelli che impiegano più tempo. ]
+)
+\
+
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Scarso coordinamento del team*]],
+  [ *Descrizione*  ],
+  align(left)[ Il team non è organizzato adeguatamente, non c’è una assegnazione chiara dei compiti o delle date da rispettare per le scadenze. Ci sono comunicazione e coordinazione non sufficienti. ],
+  [ *Probabilità*  ],
+  [ Bassa ],
+[ *Impatto*],
+[Alto],
+[ *Piano di mitigazione*],
+align(left)[Pianificare fin da subito gli incontri settimanali (in giorni e  orari prestabiliti) e stabilire le piattaforme di comunicazione dove tenersi aggiornati sui progressi, i dubbi e gli argomenti da discutere relativi al progetto.   ],
+[ *Piano di contingenza*],
+align(left)[Aumentare la frequenza delle riunioni per aumentare il controllo e il coordinamento dei membri del team. \ Stabilire scadenze precise per i vari compiti.]
+
+)
+\
+
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Mancanza di monitoraggio dello stato di avanzamento*]],
+  [ *Descrizione*  ],
+  align(left)[  I membri non vengono chiamati a rendere conto del loro progresso e del loro rendimento. Questo porta all’individuazione tardiva di problemi ed errori e può portare i membri a progredire più lentamente e ai ritardi individuali di accumularsi. ],
+  [ *Probabilità*  ],
+  [Media],
+[ *Impatto*],
+[Alto],
+[ *Piano di mitigazione*],
+align(left)[ Pianificare minimo una riunione a settimana in cui i membri aggiornano gli altri sul proprio stato di avanzamento. ],
+[ *Piano di contingenza*],
+align(left)[]
+
+)
+
+\
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Documentazione non aggiornata*]],
+  [ *Descrizione*  ],
+  align(left)[ La documentazione viene trascurata. non viene aggiornata con le decisioni prese dal team e di conseguenza non rappresenta lo stato attuale del progetto. In questa maniera, il team potrebbe perdere tempo a discutere nuovamente aspetti già decisi in precedenza che dovrebbero essere stati scritti nella documentazione o utilizzare strumenti, nomenclatura, metodi di revisione, ecc. diversi da quelli concordati.  ],
+  [ *Probabilità*  ],
+  [ Bassa  ],
+[ *Impatto*],
+[Medio],
+[ *Piano di mitigazione*],
+align(left)[Il responsabile ha il compito di tenere aggiornata la documentazione e di scriverci ogni decisione presa dal team. \ Un compito non viene considerato completato finché la documentazione non è stata aggiornata adeguatamente.],
+[ *Piano di contingenza*],
+align(left)[Individuare tutta la documentazione obsoleta e bloccare lo svolgimento dei compiti non urgenti per dedicarsi al suo aggiornamento. ]
+
+)
+\
+#table(
+  columns: 2,
+   fill: (row, col) => if col == 0 { rgb("#9856D8")} else { none },
+  align: (left, center),
+  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Opinioni divergenti su decisioni da prendere* ]],
+  [ *Descrizione*  ],
+  align(left)[ I membri del team non concordano su determinate decisioni da prendere, come gli strumenti da utilizzare, le regole e best practices da seguire, il modo in cui implementare alcune funzioni. Questo può portare a un impiego eccessivo di risorse per la discussione su che decisioni prendere e causare ritardi.],
+  [ *Probabilità*  ],
+  [  Media ],
+[ *Impatto*],
+[Basso],
+[ *Piano di mitigazione*],
+align(left)[Stabilire un tempo massimo per le discussioni relative a decisioni complicate da prendere. Se non si riesce a giungere a una decisione unanime nel tempo prestabilito, la scelta viene presa con una votazione o dal membro più esperto.],
+[ *Piano di contingenza*],
+align(left)[Per le decisioni non compiute entro il tempo massimo, viene indetta una votazione: la scelta votata dalla maggioranza andrà presa. Se un membro è più esperto nel campo di cui si sta discutendo, il resto del gruppo può decidere di far valere di più il suo voto o di lasciar prendere direttamente a questa persona la decisione.]
+)
+
+== Monitoraggio dei rischi
+Il *responsabile* monitora lo stato di tutti i rischi; i *programmatori* e i *revisori* hanno parziale responsabilità nell’individuazione di rischi tecnici. \
+Per assicurarsi di individuare l’avveramento di un rischio il prima possibile si eseguiranno le seguenti attività:
+- *Riunioni periodiche* bimensili in cui si verifica lo stato dei rischi individuati, si discute se i piani di mitigazione e di contingenza sono efficaci ed eventualmente si individuano nuovi rischi, dopo delle quali si aggiorna l’analisi dei rischi del Piano di Progetto. In sostanza, si fa una rivalutazione periodica dei rischi.
+- Un continuo *aggiornamento del registro dei rischi*, dove vengono documentati tutti i rischi che si concretizzano durante lo svolgimento del progetto.
+- Il *Test Driven Development* permette una più rapida individuazione dell’avveramento dei rischi tecnici, il che causa danni molto più contenuti rispetto a un’individuazione tardiva.
