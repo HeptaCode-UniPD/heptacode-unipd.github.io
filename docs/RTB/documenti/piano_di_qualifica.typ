@@ -84,8 +84,8 @@
 Il presente documento, Piano di Qualifica, descrive in dettaglio le strategie di verifica e validazione adottate per garantire la qualità del prodotto finale e dei processi realizzativi.\
 Il documento sarà soggetto ad aggiornamenti costanti per tutta la durata del progetto; questo permetterà di monitorare i risultati delle verifiche e di intervenire tempestivamente sulla risoluzione di eventuali anomalie o metriche non conformi.
 == Scopo del capitolato
-Il capitolato per il progetto CodeGuardian ha come oggetto lo sviluppo di una piattaforma web per il monitoraggio e l'analisi di repository GitHub. Il sistema dovrà permettere a diverse tipologie di utenti aziendali di accedere ai report di revisione delle proprie repository e progetti in relazione alla tipologia di utente che lo visualizza.\
-Nello specifico, è richiesto l'utilizzo di LLM (Large Language Models) per analizzare tre componenti fondamentali: la documentazione, il codice sorgente (tramite analisi statica e dinamica) e la conformità agli standard di sicurezza OWASP.
+Il capitolato per il progetto CodeGuardian ha come oggetto lo sviluppo di una piattaforma web per il monitoraggio e l'analisi di repository GitHub#super[G]. Il sistema dovrà permettere a diverse tipologie di utenti aziendali di accedere ai report di revisione delle proprie repository e progetti in relazione alla tipologia di utente che lo visualizza.\
+Nello specifico, è richiesto l'utilizzo di LLM#super[G] (Large Language Models) per analizzare tre componenti fondamentali: la documentazione, il codice sorgente (tramite analisi statica e dinamica) e la conformità agli standard di sicurezza OWASP#super[G].
 == Riferimenti
 === Riferimenti normativi
 - #underline[#link("norme_di_progetto.pdf","Norme di progetto")]
@@ -129,13 +129,13 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
 == Processi organizzativi
 
 = Qualità di prodotto
-La qualità del prodotto software viene intesa, in conformità con la normativa ISO, come l'insieme delle caratteristiche che permettono al sistema di soddisfare le esigenze implicite ed esplicite degli stakeholder. Poiché la valutazione della qualità dipende dalla prospettiva di osservazione, è necessario un confronto oggettivo tra i risultati ottenuti e gli obiettivi iniziali.
+La qualità del prodotto software viene intesa, in conformità con la normativa ISO#super[G], come l'insieme delle caratteristiche che permettono al sistema di soddisfare le esigenze implicite ed esplicite degli stakeholder#super[G]. Poiché la valutazione della qualità dipende dalla prospettiva di osservazione, è necessario un confronto oggettivo tra i risultati ottenuti e gli obiettivi iniziali.
 
 Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre elementi:
 
 - Definizione degli obiettivi specifici nel Piano di Qualifica.
 - Verifica puntuale del soddisfacimento dei requisiti.
-- Miglioramento continuo tramite l'Analisi dei rischi e l'ottimizzazione dei processi iterazione dopo iterazione. L'approccio operativo segue il principio del "fail fast".
+- Miglioramento continuo tramite l'Analisi dei rischi e l'ottimizzazione dei processi iterazione dopo iterazione. L'approccio operativo segue il principio del "fail fast"#super[G].
 == Funzionalità
 #figure(
   table(
@@ -195,10 +195,10 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
     table.header(
       [*Problema*], [*Conromisura*]
     ),
-    "Eccessivo lavoro svolto in locale non conforme agli standard condivisi dal gruppo", 
-    "Scomposizione dei compiti complessi in issue granulari, gestite e assegnate tramite la Project Board di GitHub",
-    "Mancata coerenza grafica e stilistica nella documentazione",
-    "Sviluppo di template standardizzati in Typst per garantire uniformità visiva",
+    [Eccessivo lavoro svolto in locale non conforme agli standard condivisi dal gruppo], 
+    [Scomposizione dei compiti complessi in issue#super[G] granulari, gestite e assegnate tramite la Project Board di GitHub#super[G]],
+    [Mancata coerenza grafica e stilistica nella documentazione],
+    [Sviluppo di template standardizzati in Typst#super[G] per garantire uniformità visiva],
   ),
   caption: [Contromisure adottate al fine di migliorare il lavoro],
   kind: table
