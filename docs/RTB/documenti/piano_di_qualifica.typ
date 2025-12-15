@@ -24,6 +24,11 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
+  "0.3",
+  "2025/12/15",
+  "Alberico Vegliante",
+  "Angela Canazza",
+  "Stesura iniziale del capitolo 6 - Iniziative di miglioramento",
   "0.2",
   "2025/12/14",
   "Angela Canazza",
@@ -148,11 +153,11 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     "MROS", 
     "Requisiti desiderabili soddisfatti",
     "≥0%",
-    "da decidere",
+    "≥60%",
     "MROS", 
     "Requisiti opzionali soddisfatti ",
     "≥0%",
-    "da decidere"
+    "≥30%"
   ),
   caption: [Metriche funzionalità del prodotto],
   kind: table
@@ -175,6 +180,51 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
 - *Test di Regressione*: a seguito di un test andato male e di una relativa correzione,ci si accerta che la correzione non causi errori nelle parti del sistema che dipendono da essa;
 
 - *Test di Accettazione*: Validazione esterna con il committente rispetto al Capitolato.
+
+= Valutazione lavoro
+
+= Iniziative di miglioramento
+La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durente lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
+
+== Valutazione organizzativa
+#figure(
+  table(
+    columns: (auto, auto),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Problema*], [*Conromisura*]
+    ),
+    "Eccessivo lavoro svolto in locale non conforme agli standard condivisi dal gruppo", 
+    "Scomposizione dei compiti complessi in issue granulari, gestite e assegnate tramite la Project Board di GitHub",
+    "Mancata coerenza grafica e stilistica nella documentazione",
+    "Sviluppo di template standardizzati in Typst per garantire uniformità visiva",
+  ),
+  caption: [Contromisure adottate al fine di migliorare il lavoro],
+  kind: table
+)
+
+
+//attualmente non utilizzata, penso che lo faremo con il poc
+
+ == Valutazione tecnologica
+//  #figure(
+//   table(
+//     columns: (auto, auto, auto),
+//     inset: 9pt,
+//     align: horizon,
+//     table.header(
+//       [*Tecnologia*], [*Problema*], [*Conromisura*],
+//       "Esepio: Typst",
+//       "non lo sappiamo usare",
+//       "guardato dei tutorial"
+//     ),
+//   ),
+//   caption: [Contromisure adottate al fine di migliorare l'utilizzo delle tecnologie],
+//   kind: table
+// )
+ == Considerazioni finali
+
 //indicare nei paragrafi successivi tutti i test per ogni tipologia che verranno utilizzati nel progetto. nell'rtb si può decidere di trattaerne solo alcuni, ma lo si specifica prima delle tabelle
 
 //si indicano ulteriori scelte di test prese dal gruppo (esempio: analisi statica tramite Walkthrough  o Inspection)
