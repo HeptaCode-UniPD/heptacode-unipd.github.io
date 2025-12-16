@@ -1,3 +1,6 @@
+#import "glossario_termini.typ": applica-glossario
+#show: applica-glossario
+
 #let template(doc,
   data: "0000-00-00",
   ordine_del_giorno: "!!!! INSERIRE ORDINE DEL GIORNO !!!!",
