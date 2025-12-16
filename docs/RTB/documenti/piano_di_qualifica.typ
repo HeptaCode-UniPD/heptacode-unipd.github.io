@@ -1,7 +1,7 @@
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3": chart
 
-#import "../../CC/glossario_termini.typ": applica-glossario
+#import "../../templates/glossario_termini.typ": applica-glossario
 
 #show: applica-glossario
 
