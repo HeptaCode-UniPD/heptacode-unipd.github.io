@@ -16,10 +16,10 @@ generate_typ_content() {
     cat << EOF
 #import "../../../templates/$template_name": template
 // Importa i dati (percorso relativo al file temporaneo)
-#import "$data_path" as dati
+#import "$data_path" as dati 
 
 #import "../../../templates/glossario_termini.typ": applica-glossario 
-#show: applica-glossario  
+#show: applica-glossario 
 
 #show: doc => template(doc,
     data: dati.giorno,
