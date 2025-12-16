@@ -29,7 +29,7 @@ generate_typ_content() {
     ora_inizio: dati.inizio,
     ora_fine: dati.fine,
     ruoli-presenza: dati.lista-ruoli,
-    testo: dati.corpo,
+    testo: applica-glossario(dati.corpo),
     lista_decisioni: dati.decisione-azione
 )
 EOF
