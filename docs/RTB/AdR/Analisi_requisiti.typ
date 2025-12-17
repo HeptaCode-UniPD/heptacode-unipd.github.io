@@ -16,7 +16,8 @@
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("0.1.0", "2025-12-15", "A. Reginato", "A. Canazza", "Creazione struttura del documento e prima bozza"),
+  ("0.0.2", "2025-12-15", "A. Reginato", "A. Canazza", "Rimodellazione UC fino UC1.4"),
+  ("0.0.1", "2025-12-15", "A. Reginato", "A. Canazza", "Creazione struttura del documento e prima bozza"),
 )
 
 #let versione = storia_modifiche.first().at(0)
@@ -160,7 +161,7 @@ Il sistema esegue un'analisi approfondita del codice sorgente ogni volta che vie
 === 2.1.2 Scansione di Sicurezza e Vulnerabilità
 Per garantire la robustezza del software, il sistema integra strumenti di controllo specifici per la _security_:
 - *Rilevamento Credenziali*: Identificazione di chiavi API, password o token involontariamente committati nel codice (_secret scanning_).
-- *Analisi delle Dipendenze*: Verifica delle librerie di terze parti per individuare versioni obsolete o affette da vulnerabilità note (CVE).
+- *Analisi delle Dipendenze*: Verifica delle librerie di terze parti per individuare versioni obsolete o affette da vulnerabilità note.
 - *Compliance OWASP*: Controllo della conformità agli standard di sicurezza web (es. _OWASP Top 10_).
 
 === 2.1.3 Validazione della Documentazione
@@ -175,10 +176,10 @@ A differenza dei semplici strumenti di reportistica, _Code Guardian_ agisce atti
 
 === 2.1.5 Monitoraggio e Dashboard
 Il sistema fornisce un punto di accesso centralizzato per la consultazione dello stato di salute dei progetti:
-- *Visione Aggregata*: Visualizzazione di metriche chiave e KPI di qualità per singoli _repository_ o per interi gruppi di progetti.
+- *Visione Aggregata*: Visualizzazione di metriche chiave indicatori relativi qualità del codice per singoli _repository_ o per interi gruppi di progetti.
 - *Storico Analisi*: Consultazione dei report passati per valutare l'evoluzione della qualità del software nel tempo.
 
-== 2.2 Utenti e Stakeholder (Personas)
+== 2.2 Utenti e Stakeholder (Personas) <Cap2.2>
 Per creare un prodotto realmente utile è fondamentale in prima istanza comprendere le reali esigenze e necessità degli utenti finali a cui la piattaforma è destinata a rivolgersi. \
 L'analisi condotta durante la sessione di _Design Thinking_ ha permesso di identificare e definire *tre profili utente principali*, ciascuno con obiettivi e necessità specifiche. Le funzionalità della piattaforma sono state progettate per rispondere in modo mirato alle aspettative di queste _personas_.
 
@@ -283,13 +284,13 @@ Il paragrafo successivo andrà ad indentificare invece gli attori che interagira
 
 == 3.2 Attori
 
-Gli attori rappresentano le entità, umane o sistemiche, che interagiscono con la piattaforma _Code Guardian_ per eseguire operazioni o ricevere informazioni. La loro definizione deriva direttamente dall'analisi delle "Personas" condotta durante la sessione di _Design Thinking_, come documentato nel Capitolo 2, che ha permesso di identificare i ruoli chiave e le loro specifiche esigenze.
+Gli attori rappresentano le entità, umane o sistemiche, che interagiscono con la piattaforma _Code Guardian_ per eseguire operazioni o ricevere informazioni. La loro definizione deriva direttamente dall'analisi delle "Personas" condotta durante la sessione di _Design Thinking_, come documentato nel #link(<Cap2.2>)[Capitolo 2.2] , che ha permesso di identificare i ruoli chiave e le loro specifiche esigenze.
 
 #v(0.5cm)
 
 #figure(
   image("../../asset/Diagramma_utenti.png", width: 35%),
-  caption: [Gerarchia degli attori: Developer, Project Manager e Business Owner come specializzazioni dell'Utente generico.],
+  caption: [Gerarchia degli attori: Developer, Project Manager e Business Owner come specializzazioni dell'Utente generico.], 
 ) <fig-attori>
 
 #v(1.5cm)
@@ -330,53 +331,54 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore secondario:* GitHub.
 
-- *Descrizione:* L’utente accede a _Code Guardian_ utilizzando la propria identità digitale gestita da un provider esterno (GitHub). Il sistema gestisce sia l'accesso di utenti già registrati che la creazione di nuovi profili al primo accesso.
-
-- *Precondizioni:* Il Sistema è operativo e l’utente non ha ancora effettuato l’accesso.
+- *Descrizione:* L’utente accede a _Code Guardian_ delegando l'autenticazione al provider esterno (GitHub).
 
 - *Trigger:* L’utente interagisce con la funzionalità di login nella pagina iniziale.
 
+- *Precondizioni:* L’utente non ha ancora effettuato l’accesso.
+
 - *Scenario principale:*
   + L’utente esprime la volontà di accedere tramite il provider GitHub.
-  + Il Sistema delega la verifica dell’identità al provider esterno (*<\<include>>* #link(<UC1.1>)[[UC1.1]]).
-  + Il Sistema riceve la conferma dell’identità e verifica se l'utente sia già registrato.
-  + Il Sistema recupera il profilo dell'utente dagli archivi.
-  + Il Sistema aggiorna le informazioni relative all'ultimo accesso.
+  + L’utente viene reindirizzato verso la piattaforma esterna.
+  + L'utente completa la procedura di autenticazione sul sito del provider e concede i permessi necessari.
+  + L'utente viene riportato sulla piattaforma _Code Guardian_.
+  + L'utente accede alla propria dashboard personale.
 
 - *Scenario secondario:*
-  + Al passo 3. dello scenario principale, il Sistema rileva che l'identità verificata non è associata ad alcun utente locale.
-  + Il Sistema avvia la procedura di prima registrazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]).
-  + Il Sistema riprende il flusso al passo 5 dello scenario principale (attivazione sessione).
+  + Al passo 3, se l'utente annulla l'operazione o ha negato i consensi necessari (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]) o il provider segnala un errore (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]), l'utente viene riportato sulla piattaforma visualizzando un messaggio di mancato accesso.
+  + Al passo 4, se è il primo accesso assoluto, l'utente viene reindirizzato alla procedura di prima registrazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]).
 
-- *Postcondizioni:* L’utente è autenticato nel Sistema, il profilo è aggiornato e viene visualizzata la Dashboard.
+- *Postcondizioni:* L’utente è autenticato e visualizza la Dashboard.
 
-- *Inclusioni:* #link(<UC1.1>)[[UC1.1]].
-
-- *Estensioni:* #link(<UC1.2>)[[UC1.2]].
+- *Estensioni:* #link(<UC1.2>)[[UC1.2]], #link(<UC1.3>)[[UC1.3]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.2 UC1.1: Verifica Identità presso Provider <UC1.1>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== 3.3.2 UC1.1: Reindirizzamento al Provider di Identità <UC1.1>
 
 - *Attore principale:* Utente.
 
 - *Attore secondario:* GitHub.
 
-- *Descrizione:* Il Sistema richiede al provider esterno (GitHub) di confermare l’identità dell’utente e fornire i dati anagrafici.
-
-- *Precondizioni:* Il servizio del provider esterno è raggiungibile.
+- *Descrizione:* Gestisce il trasferimento dell'utente verso il provider di identità esterno e la gestione del rientro sulla piattaforma.
 
 - *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC1>)[[UC1]].
 
+- *Precondizioni:* La connessione internet è attiva.
+
 - *Scenario principale:*
   + Il Sistema reindirizza l’utente verso la pagina di autenticazione del provider esterno.
-  + L’utente conferma la propria identità e autorizza l'accesso ai dati.
-  + Il provider esterno reindirizza l'utente al Sistema fornendo un token di conferma.
+  + L'utente viene reindirizzato nuovamente verso la piattaforma _Code Guardian_ con l'esito positivo della procedura esterna.
 
-- *Scenario secondario*: 
- Se l'utente nega l'autorizzazione o si verifica un errore di comunicazione con il provider durante il passo 2 o 3, il sistema attiva l'estensione (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
+- *Scenari alternativi:* 
+  + + Al passo 2, l'utente rientra nella piattaforma visualizzando una notifica di accesso annullato o fallito (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
+  + In qualsiasi momento del flusso, si verifica un fallimento tecnico nella comunicazione con il provider (es. timeout, servizio non raggiungibile) (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]).
 
-- *Estensioni:* #link(<UC1.3>)[[UC1.3]].
+- *Postcondizioni:* L'utente si trova nuovamente nell'ambiente della piattaforma.
+
+- *Estensioni:* #link(<UC1.3>)[[UC1.3]], #link(<UC1.4>)[[UC1.4]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -384,42 +386,57 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Utente.
 
-- *Attore secondario:* GitHub.
+- *Descrizione:* L'utente completa la creazione del proprio profilo al primo accesso, selezionando il ruolo con cui operare all'interno della piattaforma.
 
-- *Descrizione:* Il Sistema gestisce la creazione di un nuovo profilo utente quando viene rilevato un primo accesso tramite la piattaforma esterna. Il sistema acquisisce i dati necessari dal provider e assegna il ruolo predefinito.
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1>)[[UC1]] (primo accesso rilevato).
 
-- *Precondizioni:* L'identità dell'utente è stata verificata con successo presso il provider (#link(<UC1.1>)[[UC1.1]]) e l'utente non risulta registrato.
-
-- *Trigger:* Il Sistema ha verificato che l'identità confermata dal provider esterno non corrisponde ad alcun utente già presente negli archivi.
+- *Precondizioni:* L'utente ha completato con successo l'autenticazione presso il provider esterno.
 
 - *Scenario principale:*
-    1. Il Sistema richiede e acquisisce i dati anagrafici obbligatori forniti dal provider (GitHub username, email primaria).
-    2. Il Sistema crea un nuovo profilo utente assegnando il ruolo di Developer (utente di default).
-    3. Il Sistema notifica a schermo l'avvenuta creazione dell'account.
+    + L'utente visualizza la schermata di completamento profilo con i dati anagrafici (username, email) importati dal provider.
+    + L'utente seleziona il ruolo desiderato tra quelli disponibili (Developer, Project Manager o Business Owner).
+    + L'utente conferma la registrazione.
+    + L'utente visualizza una notifica di avvenuta creazione dell'account.
 
-- *Postcondizioni:* Il nuovo utente è registrato nel database del Sistema con i dati importati da GitHub ed è pronto per l'attivazione della sessione.
+- *Postcondizioni:* Il nuovo utente è registrato e la sessione è attiva nel ruolo selezionato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.5 UC1.3: Gestione Accesso Negato <UC1.3>
+=== 3.3.5 UC1.3: Annullamento Autenticazione <UC1.3>
+
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'utente prende atto del mancato accesso dovuto a una sua scelta esplicita (annullamento) o per la negazione dei i consensi.
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1.1>)[[UC1.1]].
+
+- *Precondizioni:* L'utente ha selezionato "Annulla" o ha negato i consensi sull'interfaccia del provider durante la procedura di accesso.
+
+- *Scenario principale:*
+  + L'utente visualizza un messaggio che conferma l'annullamento dell'operazione di login.
+  + L’utente si ritrova nella schermata iniziale di login, pronta per un nuovo tentativo.
+
+- *Postcondizioni:* L’utente non è autenticato e si trova nella pagina di login.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== 3.3.6 UC1.4: Errore Tecnico di Comunicazione <UC1.4>
 
 - *Attore principale:* Utente.
 
 - *Attore secondario:* GitHub.
 
-- *Descrizione:* Gestisce il fallimento della procedura di autenticazione presso il provider, dovuto a rifiuto dell'utente o errore tecnico.
+- *Descrizione:* L'utente riscontra un disservizio tecnico che impedisce il completamento del flusso di autenticazione.
 
-- *Precondizioni:* È in corso l'esecuzione di #link(<UC1.1>)[[UC1.1]].
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1.1>)[[UC1.1]].
 
-- *Trigger:* L'utente annulla l'operazione sul sito del provider oppure il provider restituisce un codice di errore al Sistema.
+- *Precondizioni:* Il servizio esterno non è raggiungibile o si è verificato un errore di rete.
 
 - *Scenario principale:*
-  + Il Sistema riceve la notifica di fallimento dal provider (invece del token di conferma).
-  + Il Sistema identifica la causa dell'errore (annullamento o disservizio).
-  + Il Sistema mostra un messaggio di errore contestuale all'utente.
-  + L’utente viene riportato alla schermata iniziale di login.
+  + L'utente visualizza una schermata o un messaggio di avviso relativo a problemi di comunicazione con il servizio esterno (es. "Servizio non disponibile").
+  + L'utente visualizza le opzioni per riprovare la connessione.
 
-- *Postcondizioni:* L’utente non è autenticato e visualizza il messaggio di errore. La procedura #link(<UC1.1>)[[UC1.1]] termina con insuccesso.
+- *Postcondizioni:* L’utente non è autenticato e visualizza l'avviso di errore.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -429,7 +446,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Consente al Developer di registrare un nuovo repository GitHub nella piattaforma per avviare il processo di analisi.
+- *Descrizione:* Consente al Developer di registrare un nuovo repository _GitHub_ nella piattaforma per avviare il processo di analisi.
 
 - *Precondizioni:* Il Developer è autenticato e ha accesso alla dashboard della piattaforma _Code Guardian_.
 
@@ -437,12 +454,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il sistema presenta un'interfaccia per l'inserimento dei dati del repository.
-  + Il Developer inserisce l'URL del repository GitHub che desidera analizzare (*<\<include>>*#link(<UC2.1>)[[UC2.1]]).
+  + Il Developer inserisce l'URL del repository _GitHub_ che desidera analizzare (*<\<include>>*#link(<UC2.1>)[[UC2.1]]).
   + Il Developer conferma l'operazione.
   + Il sistema verifica la validità dell'URL e la raggiungibilità del repository.
   + Il sistema aggiunge il repository alla lista dei progetti del Developer, impostando il suo stato iniziale.
 
-- *Scenari alternativi:* Il sistema rileva che l'URL fornito non è valido, il repository è privato o non accessibile (*<\<extend>>* #link(<UC3>)[[UC3]]).
+- *Scenari alternativi:* Il sistema rileva che l'URL fornito non è valido o è relativo ad un repository privato o inaccessibile (*<\<extend>>* #link(<UC3>)[[UC3]]).
 
 - *Postcondizioni:* Il repository è stato validato con successo, è registrato nel sistema ed è visibile nella lista dei progetti del Developer, pronto per essere analizzato.
 
@@ -461,7 +478,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC2>)[[UC2]].
 
-- *Scenario principale:* Il Developer digita o incolla l'URL del repository GitHub nel campo di testo apposito e clicca sul bottone "Conferma".
+- *Scenario principale:* Il Developer digita o incolla l'URL del repository _GitHub_ nel campo di testo apposito e clicca sul bottone "Conferma".
 
 - *Postcondizioni:* Il sistema riceve la stringa corrispondente all'URL del repository.
 
