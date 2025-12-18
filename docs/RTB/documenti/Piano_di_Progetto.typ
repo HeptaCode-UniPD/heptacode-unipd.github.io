@@ -42,7 +42,7 @@
   "2025/12/14",
   "Angela Favaro",
   "Nicola Simionato",
-  "Aggiunta diagrammi PERTT e correzione analisi Sprint",
+  "Aggiunta diagrammi PERT e correzione analisi Sprint",
 
   "0.0.4",
   "2025/12/08",
