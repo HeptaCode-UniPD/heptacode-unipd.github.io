@@ -11,7 +11,7 @@
 #show figure.caption: set text(size: 12pt)
 
 #show outline.entry.where(level: 1): it => {
-  text(weight: "bold", it.body, size: 17pt)
+  text(weight: "bold", it, size: 17pt)
 }
 
 #let storia_modifiche = (
@@ -45,7 +45,7 @@
       #line(length: 100%)
       #counter(page).display("1")
       di
-      #counter(page).final(here()).first()
+      #counter(page).final().first()
     ]
   ]
 )
@@ -97,7 +97,7 @@
 
 
 
-#outline(title: "Indice dei contenuti", indent: true)
+#outline(title: "Indice dei contenuti")
 
 #pagebreak()
 
@@ -405,7 +405,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Utente.
 
-- *Descrizione:* L'utente prende atto del mancato accesso dovuto a una sua scelta esplicita (annullamento) o per la negazione dei i consensi.
+- *Descrizione:* L'utente prende atto del mancato accesso dovuto a una sua scelta esplicita (annullamento) o per la negazione dei consensi.
 
 - *Precondizioni:* L'utente ha selezionato "Annulla" o ha negato i consensi sull'interfaccia del provider durante la procedura di accesso.
 
