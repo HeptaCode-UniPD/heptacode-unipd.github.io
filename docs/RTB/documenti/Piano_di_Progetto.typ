@@ -178,7 +178,7 @@ Ogni membro del team userà il proprio computer per lavorare al progetto. Inoltr
 - _LabP036_ e _LabP140_ presso il _Complesso Paolotti_.
 - _LabTA_ presso _Torre Archimede_. 
 == Strumenti Software
-[Da aggiornare con Glossario quando saranno definiri]
+[Da aggiornare con Glossario quando saranno definire]
 Gli strumenti di sviluppo che abbiamo deciso di usare sono:
 - *React* per la parte Frontend;
 - *Node.js* per la parte Backend;
@@ -291,7 +291,7 @@ Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’i
 Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro.
 === UCB - _User Case Baseline_
 #figure(
-  caption: [$text("Diagramma di PERT")_G$ della mileston UCB],
+  caption: [$text("Diagramma di PERT")_G$ della milestone UCB],
 )[
   #image("../../asset/PERT-UCB.png"),
 ]<PERT-UCB>
