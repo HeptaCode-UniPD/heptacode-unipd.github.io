@@ -122,7 +122,6 @@ Il gruppo ha stabilito che nel corso delle settimana avrebbe:
 Il prossimo incontro è fissato per il giorno #next-meeting
 ]
 
-
 #let decisione-azione = ((
   "Inserire la giustificazione delle tecnologie che verranno utilizzate.","Scrivere al prof. Vardanega per il chiarimento riguardo a dove riportarlo.",
   "Redazione delle Norme di Progetto.", "Accorpamento del Way of Working all'interno delle Norme di Progetto.",
