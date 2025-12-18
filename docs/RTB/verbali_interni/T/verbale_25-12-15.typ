@@ -14,7 +14,8 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ( "0.1.2", "2025-12-18", "Angela Favaro", "Angela Canazza", "Correzioni errori sintattici",
+  ( "1.0.0", "2025-12-18", "Angela Favaro", "Angela Canazza", "Versione del verbale approvata",
+    "0.1.2", "2025-12-18", "Angela Favaro", "Angela Canazza", "Correzioni errori sintattici",
     "0.1.1", "2025-12-18", "Angela Favaro", "Angela Canazza", "Correzioni errori sintattici e grammaticali",
     "0.1.0", "2025-12-15", "Angela Favaro", "Angela Canazza", "Creazione e stesura documento",)
 )
