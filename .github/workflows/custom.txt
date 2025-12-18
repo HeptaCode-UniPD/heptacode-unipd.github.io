@@ -63,3 +63,9 @@ dell'ai
 mros
 mco
 messaggistica
+gantt
+nomedocumento
+nomegruppo
+pdp
+poc
+txt
