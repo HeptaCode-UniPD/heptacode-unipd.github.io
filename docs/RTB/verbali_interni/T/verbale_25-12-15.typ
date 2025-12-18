@@ -88,7 +88,7 @@ columns: (auto, auto),
   ),
   
     "Utilizzo di Git Hub per il PoC","Apriamo una repository su cui lavoreremo al PoC.",
-    "Branch nella repository aperti e non utilizzati", "Coloro che hanno aperto template che non servono più devono sempre chiuderli.",
+    "Branch nella repository aperti e non utilizzati", "Coloro che hanno aperto branch che non servono più devono sempre chiuderli.",
     "Utilizzo di un dizionario personalizzato per automation sul controllo ortografico.", "Nel documento ‘custom.txt’ (presente nella repository al path: .github/workflows/custom.txt) si aggiungeranno eventuali parole non presenti nella libreria usata per il controllo ortografico. Si lavora nel proprio branch e poi le modifiche al custom.txt verranno sistemate in fase di merge nel branch ‘main’.",
     "Come importare nel PdP i diagrammi di GANTT.", "Il responsabile deve cercare una piattaforma in grado di creare ed esportare i diagrammi da utilizzare per ogni sprint.",
     "Dubbi da chiedere al committente riguardo: trattamento di repository private all'interno del nostro progetto e come gestiamo le viste in base all'attore che utilizza il programma.", "All'incontro del 16 Dicembre li esporremo al referente di VarGroup o li contatteremo tramite piattaforma Slack.",
