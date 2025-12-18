@@ -63,6 +63,7 @@ dell'ai
 all'audit
 all'url
 dell'url
+l'url
 ciclomatica
 committati
 gmail
@@ -73,7 +74,9 @@ openapi
 postcondizioni
 prioritizzare
 proattiva
+reindirizzamento
 reportistica
+rimodellazione
 tracciabilità
 uc
 ucx

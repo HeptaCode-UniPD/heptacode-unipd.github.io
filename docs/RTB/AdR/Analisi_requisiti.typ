@@ -16,7 +16,8 @@
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("0.0.2", "2025-12-15", "A. Reginato", "A. Canazza", "Rimodellazione UC fino UC1.4"),
+  ("0.0.3", "2025-12-18", "A. Reginato", "A. Canazza", "Rimodellazione UC fino UC2.3"),
+  ("0.0.2", "2025-12-17", "A. Reginato", "A. Canazza", "Rimodellazione UC fino UC1.4"),
   ("0.0.1", "2025-12-15", "A. Reginato", "A. Canazza", "Creazione struttura del documento e prima bozza"),
 )
 
@@ -139,9 +140,9 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
 - [Altro ...]
 
 === 1.4.2 Riferimenti Informativi
-- #link("https://heptacode-unipd.github.io/docs/RTB/verbali_esterni/vargroup_1.pdf")[ Verbale Interno: Primo Incontro di Design Thinking]
-- #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[Analisi dei requisiti]
-- #link("https://heptacode-unipd.github.io/docs/CC/glossario.pdf")[Glossario]
+- Verbale Interno: #link("https://heptacode-unipd.github.io/docs/RTB/verbali_esterni/vargroup_1.pdf")[Primo Incontro di Design Thinking]
+- Slide di lezione: #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[Analisi dei requisiti]
+- Documento interno: #link("https://heptacode-unipd.github.io/docs/CC/glossario.pdf")[Glossario]
 - [Altro ...]
 Questa introduzione delinea il contesto e gli scopi del progetto. Il capitolo seguente procederà con una descrizione dettagliata del prodotto, delle sue funzionalità e dei vincoli che ne guideranno la realizzazione.
 
@@ -322,7 +323,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-== 3.3 Elenco dei casi d'uso
+== 3.3 Specifica dei casi d'uso
 
 === 3.3.1 UC1: Accesso tramite Piattaforma Esterna <UC1>
 // #figure(image("diagramma_uc1.png"), caption: [Diagramma del caso d'uso UC1])
@@ -333,9 +334,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* L’utente accede a _Code Guardian_ delegando l'autenticazione al provider esterno (GitHub).
 
-- *Trigger:* L’utente interagisce con la funzionalità di login nella pagina iniziale.
-
 - *Precondizioni:* L’utente non ha ancora effettuato l’accesso.
+
+- *Trigger:* L’utente interagisce con la funzionalità di login nella pagina iniziale.
 
 - *Scenario principale:*
   + L’utente esprime la volontà di accedere tramite il provider GitHub.
@@ -354,8 +355,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-#line(length: 100%, stroke: 0.5pt + gray)
-
 === 3.3.2 UC1.1: Reindirizzamento al Provider di Identità <UC1.1>
 
 - *Attore principale:* Utente.
@@ -364,16 +363,16 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Gestisce il trasferimento dell'utente verso il provider di identità esterno e la gestione del rientro sulla piattaforma.
 
-- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC1>)[[UC1]].
-
 - *Precondizioni:* La connessione internet è attiva.
 
+- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC1>)[[UC1]].
+
 - *Scenario principale:*
-  + Il Sistema reindirizza l’utente verso la pagina di autenticazione del provider esterno.
+  + L’utente viene reindirizzato verso la pagina di autenticazione del provider esterno.
   + L'utente viene reindirizzato nuovamente verso la piattaforma _Code Guardian_ con l'esito positivo della procedura esterna.
 
 - *Scenari alternativi:* 
-  + + Al passo 2, l'utente rientra nella piattaforma visualizzando una notifica di accesso annullato o fallito (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
+  + Al passo 2, l'utente rientra nella piattaforma visualizzando una notifica di accesso annullato o fallito (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
   + In qualsiasi momento del flusso, si verifica un fallimento tecnico nella comunicazione con il provider (es. timeout, servizio non raggiungibile) (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]).
 
 - *Postcondizioni:* L'utente si trova nuovamente nell'ambiente della piattaforma.
@@ -388,9 +387,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* L'utente completa la creazione del proprio profilo al primo accesso, selezionando il ruolo con cui operare all'interno della piattaforma.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1>)[[UC1]] (primo accesso rilevato).
-
 - *Precondizioni:* L'utente ha completato con successo l'autenticazione presso il provider esterno.
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1>)[[UC1]] (primo accesso rilevato).
 
 - *Scenario principale:*
     + L'utente visualizza la schermata di completamento profilo con i dati anagrafici (username, email) importati dal provider.
@@ -408,9 +407,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* L'utente prende atto del mancato accesso dovuto a una sua scelta esplicita (annullamento) o per la negazione dei i consensi.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1.1>)[[UC1.1]].
-
 - *Precondizioni:* L'utente ha selezionato "Annulla" o ha negato i consensi sull'interfaccia del provider durante la procedura di accesso.
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1.1>)[[UC1.1]].
 
 - *Scenario principale:*
   + L'utente visualizza un messaggio che conferma l'annullamento dell'operazione di login.
@@ -424,19 +423,19 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Utente.
 
-- *Attore secondario:* GitHub.
+- *Attore secondario:* _GitHub_.
 
 - *Descrizione:* L'utente riscontra un disservizio tecnico che impedisce il completamento del flusso di autenticazione.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1.1>)[[UC1.1]].
+- *Precondizioni:* Il servizio esterno (_GitHub_) non è raggiungibile o si è verificato un errore di rete.
 
-- *Precondizioni:* Il servizio esterno non è raggiungibile o si è verificato un errore di rete.
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1.1>)[[UC1.1]].
 
 - *Scenario principale:*
   + L'utente visualizza una schermata o un messaggio di avviso relativo a problemi di comunicazione con il servizio esterno (es. "Servizio non disponibile").
-  + L'utente visualizza le opzioni per riprovare la connessione.
+  + L'utente visualizza l'opzione per riprovare la connessione.
 
-- *Postcondizioni:* L’utente non è autenticato e visualizza l'avviso di errore.
+- *Postcondizioni:* L’utente non è autenticato e visualizza l'avviso di errore e l'opzione per riprovare la connessione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -448,23 +447,24 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Consente al Developer di registrare un nuovo repository _GitHub_ nella piattaforma per avviare il processo di analisi.
 
-- *Precondizioni:* Il Developer è autenticato e ha accesso alla dashboard della piattaforma _Code Guardian_.
+- *Precondizioni:* Il Developer è autenticato e ha accesso alla dashboard.
 
-- *Trigger:* Il Developer desidera sottoporre un nuovo progetto software all'audit di _Code Guardian_ e seleziona l'opzione per aggiungere un nuovo repository dalla dashboard.
+- *Trigger:* Il Developer seleziona l'opzione per aggiungere un nuovo repository dalla dashboard.
 
 - *Scenario principale:*
-  + Il sistema presenta un'interfaccia per l'inserimento dei dati del repository.
-  + Il Developer inserisce l'URL del repository _GitHub_ che desidera analizzare (*<\<include>>*#link(<UC2.1>)[[UC2.1]]).
+  + Il Developer visualizza l'interfaccia per l'inserimento dei dati del repository.
+  + Il Developer inserisce l'URL del repository _GitHub_ che desidera analizzare (*<\<include>>* #link(<UC2.1>)[[UC2.1]]).
   + Il Developer conferma l'operazione.
-  + Il sistema verifica la validità dell'URL e la raggiungibilità del repository.
-  + Il sistema aggiunge il repository alla lista dei progetti del Developer, impostando il suo stato iniziale.
+  + Il Developer visualizza il nuovo repository aggiunto correttamente alla lista dei suoi progetti.
 
-- *Scenari alternativi:* Il sistema rileva che l'URL fornito non è valido o è relativo ad un repository privato o inaccessibile (*<\<extend>>* #link(<UC3>)[[UC3]]).
+- *Scenari alternativi:* 
+  + Al passo 3, il Developer visualizza un messaggio di errore relativo all'invalidità dell'URL o all'inesistenza del repository (*<\<extend>>* #link(<UC2.2>)[[UC2.2]]).
+  + Al passo 3, il Developer visualizza una richiesta di autenticazione aggiuntiva poiché il repository risulta privato (*<\<extend>>* #link(<UC2.3>)[[UC2.3]]).
 
-- *Postcondizioni:* Il repository è stato validato con successo, è registrato nel sistema ed è visibile nella lista dei progetti del Developer, pronto per essere analizzato.
+- *Postcondizioni:* Il repository è visibile nella lista dei progetti del Developer.
 
-- *Inclusioni:* #link(<UC2.1>)[[UC2.1]]. \
-- *Estensioni:* #link(<UC3>)[[UC3]].
+- *Inclusioni:* #link(<UC2.1>)[[UC2.1]].
+- *Estensioni:* #link(<UC2.2>)[[UC2.2]], #link(<UC2.3>)[[UC2.3]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -472,33 +472,54 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Rappresenta l'azione atomica del Developer di inserire l'URL del repository nel sistema.
+- *Descrizione:* Il Developer compila il campo relativo all'URL del repository.
 
-- *Precondizioni:* Il sistema ha richiesto al Developer di fornire l'URL di un repository.
+- *Precondizioni:* L'interfaccia di aggiunta repository è attiva.
 
 - *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC2>)[[UC2]].
 
-- *Scenario principale:* Il Developer digita o incolla l'URL del repository _GitHub_ nel campo di testo apposito e clicca sul bottone "Conferma".
+- *Scenario principale:* Il Developer digita o incolla l'URL del repository _GitHub_ nel campo di testo apposito.
 
-- *Postcondizioni:* Il sistema riceve la stringa corrispondente all'URL del repository.
+- *Postcondizioni:* Il campo di input contiene l'URL specificato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.8 UC3: URL non valido o repository inaccessibile <UC3>
+=== 3.3.8 UC2.2: Errore di Validazione Repository <UC2.2>
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Gestisce il fallimento della procedura di aggiunta del repository dovuto a URL non valido o permessi di accesso insufficienti.
+- *Descrizione:* L'utente prende visione dell'impossibilità di aggiungere il repository dovuta a un formato dell'URL non valido o al mancato raggiungimento della risorsa (es. inesistente).
 
-- *Precondizioni:* Il developer ha tentato di aggiungere un repository #link(<UC2>)[[UC2]] e il sistema non è riuscito a validare l'URL o ad accedere al repository specificato.
+- *Precondizioni:* Il Developer ha confermato l'inserimento e la verifica automatica ha dato esito negativo.
 
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC2>)[[UC2]].
 
 - *Scenario principale:*
-  + Il sistema notifica al Developer che l'URL non è corretto o che il repository non è accessibile (es. privato o inesistente).
-  + Il developer prende visione dell'errore.
+  + Il Developer visualizza un messaggio di errore che specifica la natura del problema (es. "Il formato dell'url è errato o il repository non è stato trovato").
+  + Il Developer modifica l'URL nel campo di input per correggere l'errore.
 
-- *Postcondizioni:* L'operazione di aggiunta del repository viene annullata e il sistema, ancora nella dashboard principale, mostra un messaggio di errore chiaro e informativo al developer.
+- *Postcondizioni:* L'utente si trova nuovamente nella condizione di poter confermare l'inserimento.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== 3.3.9 UC2.3: Repository Privato (Richiesta Token) <UC2.3>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Gestisce il caso in cui il repository sia raggiungibile ma richieda permessi di accesso (repository privato).
+
+- *Precondizioni:* Il repository indicato è esistente ma protetto.
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC2>)[[UC2]].
+
+- *Scenario principale:*
+  + Il Developer visualizza un avviso che il repository è privato e un campo per l'inserimento del Personal Access Token (PAT).
+  + Il Developer inserisce il token richiesto e conferma nuovamente l'operazione.
+  + Il flusso riprende dalla verifica del repository (rientro in #link(<UC2>)[[UC2]]).
+
+- *Scenari alternativi:* Il Developer annulla l'operazione se non possiede il token.
+
+- *Postcondizioni:* Il sistema dispone delle credenziali per accedere al repository privato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
