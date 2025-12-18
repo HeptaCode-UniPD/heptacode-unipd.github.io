@@ -90,7 +90,7 @@ columns: (auto, auto),
     "Template nella repository aperti e non utilizzati", "Coloro che hanno aperto template che non servono più devono sempre chiuderli.",
     "Utilizzo di un dizionario personalizzato per automation sul controllo ortografico.", "Nel documento 'custom.txt' (presente nella repository al path: .github/workflows/custom.txt) si aggiungeranno eventuali parole non presenti nella libreria usata per il controllo ortografico. Si lavora nel proprio branch e poi le modifiche al custom.txt verranno sistemate in fase di merge nel branch 'main'.",
     "Come importare nel PdP i diagrammi di GANTT.", "Il responsabile deve cercare una piattaforma in grado di creare ed esportare i diagrammi da utilizzare per ogni sprint.",
-    "Dubbi da chiedere al committente riguardo: trattamento di repository private all'interno del nostro progetto e come gestiamo le viste in base all'attore che utilizza il programma.", "All'intcontro del 16 Dicembre li esporremo al referente di VarGroup o li contatteremo tramite piattaforma Slack.",
+    "Dubbi da chiedere al committente riguardo: trattamento di repository private all'interno del nostro progetto e come gestiamo le viste in base all'attore che utilizza il programma.", "All'incontro del 16 Dicembre li esporremo al referente di VarGroup o li contatteremo tramite piattaforma Slack.",
 )
 == Struttura documentazione
 Ci siamo accorti che non era stata definita una chiara struttura per i Documenti che non fossero i verbali. Di fatto ogni documento presentato in riunione aveva alcune significative differenze. \
@@ -105,7 +105,7 @@ columns: (auto, auto),
   
     "Versionamento.", "Sistema 'x.y.z. La y cambia solo a seguito dell'approvazione del verificatore; altrimenti si cambia la z. La x serve solo a documentare le versioni ufficiali.",
     "Header delle pagine.", "Saranno scritti: NomeGruppo, NomeDocumento, Versione.",
-    "Standard per il numero di pagina.", "Sarà scritto nella forma 'x di X' (si inizia a contare le pagine dopo gli indici).",
+    "Standard per il numero di pagina.", "Sarà scritto nella forma 'x di x' (si inizia a contare le pagine dopo gli indici).",
     "Nome dei 3 indici.", "'Indice dei contenuti', 'Indice delle tabelle', 'Indice delle immagini', senza parole in grassetto al loro interno.",
     "Dimensione del font.", "Si mantengono le dimensioni che sono utilizzate nei Verbali.",
     "Tabelle dei documenti (non verbali).", "A colori alternati: bianco-viola(#A36EE8); non si utilizza la griglia.",
@@ -116,7 +116,7 @@ columns: (auto, auto),
 Il gruppo ha stabilito che nel corso delle settimana avrebbe: 
 - Continuato l'attività di Analisi e di documentazione (tutti).
 - Aperto une repository _Git Hub_ per l'attività di Programmazione del Proof of Concept (Amministratore).
-- Cercato una modalità adatta di redazione dei diagrammi GNATT (Responsabile).
+- Cercato una modalità adatta di redazione dei diagrammi GANTT (Responsabile).
 
 Il prossimo incontro è fissato per il giorno #next-meeting
 ]
