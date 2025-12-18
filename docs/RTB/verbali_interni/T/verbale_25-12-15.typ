@@ -14,8 +14,9 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("0.1.0", "2025-12-15", "Angela Favaro", "Angela Canazza", "Creazione e stesura documento",
-   "0.1.1", "2025-12-18", "Angela Favaro", "Angela Canazza", "Correzioni errori sintattici e grammaticali")
+  ( "0.1.2", "2025-12-18", "Angela Favaro", "Angela Canazza", "Correzioni errori sintattici",
+    "0.1.1", "2025-12-18", "Angela Favaro", "Angela Canazza", "Correzioni errori sintattici e grammaticali",
+    "0.1.0", "2025-12-15", "Angela Favaro", "Angela Canazza", "Creazione e stesura documento",)
 )
 
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
@@ -57,7 +58,7 @@ Gli argomenti discussi nell'incontro sono stati:
 = Svolgimento
 == Ruoli all'interno del gruppo
 A seguito delle prime settimane di sprint abbiamo chiarito la definizione dei ruoli. \
-Ancora non erano seguiti correttamente dai membri e quindi, da questo sprint, inizieremo ad adottare più rigidamente i ruoli assegnati per ogni periodo (consultabili al _Piano di Periodo_). \ 
+Ancora non erano seguiti correttamente dai membri e quindi, da questo sprint, inizieremo ad adottare più rigidamente i ruoli assegnati per ogni periodo (consultabili al _Piano di Progetto_). \ 
 Ad ogni ruolo è stata assegnata una specifica documentazione di cui occuparsi:
 #table(
 columns: (auto, auto),
@@ -106,7 +107,7 @@ columns: (auto, auto),
   
     "Versionamento.", "Sistema x.y.z. La y cambia solo a seguito dell'approvazione del verificatore; altrimenti si cambia la z. La x serve solo a documentare le versioni ufficiali.",
     "Header delle pagine.", "Saranno scritti: NomeGruppo, NomeDocumento, Versione.",
-    "Standard per il numero di pagina.", "Sarà scritto nella forma ‘x di x’ (si inizia a contare le pagine dopo gli indici).",
+    "Standard per il numero di pagina.", "Sarà scritto nella forma ‘x di y’ (si inizia a contare le pagine dopo gli indici).",
     "Nome dei 3 indici.", "‘Indice dei contenuti’, ‘Indice delle tabelle’, ‘Indice delle immagini’, senza parole in grassetto al loro interno.",
     "Dimensione del font.", "Si mantengono le dimensioni che sono utilizzate nei Verbali.",
     "Tabelle dei documenti (non verbali).", "A colori alternati: bianco-viola(#A36EE8); non si utilizza la griglia.",
