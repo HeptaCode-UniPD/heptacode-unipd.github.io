@@ -14,7 +14,8 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("0.1.0", "2025-12-15", "Angela Favaro", "Angela Canazza", "Creazione e stesura documento")
+  ("0.1.0", "2025-12-15", "Angela Favaro", "Angela Canazza", "Creazione e stesura documento",
+   "0.1.1", "2025-12-18", "Angela Favaro", "Angela Canazza", "Correzioni errori sintattici e grammaticali")
 )
 
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
@@ -75,7 +76,7 @@ columns: (auto, auto),
 Il gruppo ha deciso di accorpare il documento _Way of Working_ nel documento _Norme di Progetto_ la cui redazione è assegnata all'amministratore.
 == Allineamento documentazione e dubbi
 Come specificato nel #link("https://heptacode-unipd.github.io/docs/RTB/verbali_interni/verbale_25-11-21.pdf")[_Verbale interno del 21 Novembre 2025_] i documenti erano stati assegnati su base personale e non di ruolo. \ 
-Dopo la riunione di oggi i documenti sono assegnati in base al ruolo (consultare la sotto-sezione precedente.  \
+Dopo la riunione di oggi i documenti sono assegnati in base al ruolo (consultare la sotto-sezione precedente).  \
 Ogni assegnatario ha condiviso con il gruppo il punto a cui era arrivato fino ad ora per la documentazione. \
 Sono stati anche esposti i dubbi di ognuno e nella tabella sottostante verranno elencati assieme alle relative soluzioni trovate.
 #table(
@@ -87,8 +88,8 @@ columns: (auto, auto),
   ),
   
     "Utilizzo di Git Hub per il PoC","Apriamo una repository su cui lavoreremo al PoC.",
-    "Template nella repository aperti e non utilizzati", "Coloro che hanno aperto template che non servono più devono sempre chiuderli.",
-    "Utilizzo di un dizionario personalizzato per automation sul controllo ortografico.", "Nel documento ’custom.txt’ (presente nella repository al path: .github/workflows/custom.txt) si aggiungeranno eventuali parole non presenti nella libreria usata per il controllo ortografico. Si lavora nel proprio branch e poi le modifiche al custom.txt verranno sistemate in fase di merge nel branch ’main’.",
+    "Branch nella repository aperti e non utilizzati", "Coloro che hanno aperto template che non servono più devono sempre chiuderli.",
+    "Utilizzo di un dizionario personalizzato per automation sul controllo ortografico.", "Nel documento ‘custom.txt’ (presente nella repository al path: .github/workflows/custom.txt) si aggiungeranno eventuali parole non presenti nella libreria usata per il controllo ortografico. Si lavora nel proprio branch e poi le modifiche al custom.txt verranno sistemate in fase di merge nel branch ‘main’.",
     "Come importare nel PdP i diagrammi di GANTT.", "Il responsabile deve cercare una piattaforma in grado di creare ed esportare i diagrammi da utilizzare per ogni sprint.",
     "Dubbi da chiedere al committente riguardo: trattamento di repository private all'interno del nostro progetto e come gestiamo le viste in base all'attore che utilizza il programma.", "All'incontro del 16 Dicembre li esporremo al referente di VarGroup o li contatteremo tramite piattaforma Slack.",
 )
@@ -103,10 +104,10 @@ columns: (auto, auto),
     [*Sezione*], [*Standard adottato*]
   ),
   
-    "Versionamento.", "Sistema ’x.y.z. La y cambia solo a seguito dell'approvazione del verificatore; altrimenti si cambia la z. La x serve solo a documentare le versioni ufficiali.",
+    "Versionamento.", "Sistema x.y.z. La y cambia solo a seguito dell'approvazione del verificatore; altrimenti si cambia la z. La x serve solo a documentare le versioni ufficiali.",
     "Header delle pagine.", "Saranno scritti: NomeGruppo, NomeDocumento, Versione.",
-    "Standard per il numero di pagina.", "Sarà scritto nella forma ’x di x’ (si inizia a contare le pagine dopo gli indici).",
-    "Nome dei 3 indici.", "’Indice dei contenuti’, ’Indice delle tabelle’, ’Indice delle immagini’, senza parole in grassetto al loro interno.",
+    "Standard per il numero di pagina.", "Sarà scritto nella forma ‘x di x’ (si inizia a contare le pagine dopo gli indici).",
+    "Nome dei 3 indici.", "‘Indice dei contenuti’, ‘Indice delle tabelle’, ‘Indice delle immagini’, senza parole in grassetto al loro interno.",
     "Dimensione del font.", "Si mantengono le dimensioni che sono utilizzate nei Verbali.",
     "Tabelle dei documenti (non verbali).", "A colori alternati: bianco-viola(#A36EE8); non si utilizza la griglia.",
     "Informazioni prima pagina del documento.", "La prima pagina conterrà: email e link al sito del gruppo, oltre alle informazioni relative a: Redattori, Verificatori e Versione.",
