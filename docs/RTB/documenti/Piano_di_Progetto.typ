@@ -122,7 +122,7 @@ In questa prima parte del documento è presente una breve introduzione al proget
 Gli agenti fino ad ora pensati per _Code Guardian_ sono:
 1. Agente per il controllo del codice.
 2. Agente per il controllo della documentazione.
-3. Agente per il controllo delle prime 10 linee guida OWASP.
+3. Agente per il controllo delle prime 10 linee guida $text("OWASP")_G$.
 \ Gli utenti / $text("attori")_G$ presi in esame per la creazione del progetto sono di tre tipi (lavoreranno insieme all’interno di uno stesso progetto):
 - $text("Business Owner")_G$;
 - $text("Project Manager")_G$;
@@ -147,7 +147,7 @@ Ad ogni $text("Sprint Retrospective")_G$ si aggiornerà il _Trascorso_ con:
 - le problematiche incontrate; 
 - le misure di mitigazione attuate; 
 - gli eventuali aggiornamenti all’_Analisi dei rischi_; 
-- i $text("Diagrammi di PERTT")_G$ utili alla comprensione immediata dell’avanzamento del progetto.
+- i $text("Diagrammi di GANTT")_G$ utili alla comprensione immediata dell’avanzamento del progetto.
 Verrà conseguentemente aggiornata l’_Analisi dei Rischi_ con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
 #pagebreak()
 
@@ -291,7 +291,7 @@ Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’i
 Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro.
 === UCB - _User Case Baseline_
 #figure(
-  caption: [Diagramma di PERT della mileston UCB],
+  caption: [$text("Diagramma di PERT")_G$ della mileston UCB],
 )[
   #image("../../asset/PERT-UCB.png"),
 ]<PERT-UCB>
@@ -314,7 +314,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Studio in preparazione dell’attività di Analisi dei Requisiti.
     - Primo approccio di gruppo all’analisi (tramite incontri interni organizzati come brainstorming).
     - Studio della documentazione adeguata al progetto.
-    - Attività di analisi dei Casi d’Uso preliminare.
+    - Attività di analisi dei $text("Casi d'uso")_G$ preliminare.
   ]
 )
 #figure(
@@ -429,7 +429,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   
   [_Attività previste_], 
   [
-   - Attività di formazione su Backend da parte dell’azienda committente.
+   - Attività di formazione su $text("Backend")_G$ da parte dell’azienda committente.
    - Continuazione da parte del team completo dell’Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
    - Avanzamento stesura dei documenti per milestone RTB.
    - Studio individuale sulle tecnologie discusse dal team.
@@ -484,13 +484,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_], 
   [
-    - Attività di formazione su Frontend, AWS ed introduzione alla parte AI da parte dell’azienda committente.
+    - Attività di formazione su $text("Frontend")_G$, AWS ed introduzione alla parte AI da parte dell’azienda committente.
     - Continuazione di:
       - Analisi dei Requisiti.
       - Stesura della documentazione.
     - Revisione sulle decisioni prese riguardo alle tecnologie adatte al progetto.
-    - Continuazione stesura di User Case.
-    - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
+    - Continuazione stesura di $text("Use Case")_G$.
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ]
 )
 #figure(
@@ -604,11 +604,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_], 
   [
-    - Inizio attività di produzione del _Proof of Concept (PoC)_.
+    - Inizio attività di produzione del _$text("Proof of Concept (PoC)")_G$_.
     - Continuazione stesura della documentazione.
     - Continuazione attività di Analisi dei Requisiti.
     - Inizio dell’attività di Progettazione.
-    - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ]
 )
 #figure(
@@ -718,11 +718,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Attività previste_], 
   [
     Ultimo sprint previsto prima della consegna del _PoC_. 
-    - #underline("Conclusione dello sviluppo e della verifica del PoC.")
+    - Conclusione dello sviluppo e della verifica del PoC.
     - Continuazione attività di Progettazione.
     - Revisione e validazione dei documenti prodotti per la milestone RTB.
     - Colloquio conclusivo per la revisione del progetto con i professori. 
-    - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.")  
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ]
 )
 #figure(
@@ -781,7 +781,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Ultime fasi di attività di Analisi dei Requisiti.
     Inoltre, in ordine cronologico:
     1. Modifiche o migliorie della documentazione prodotta per la milestone RTB a seguito dei suggerimenti proposti dopo la prima milestone.
-    2. #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
+    2. Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
     3. Allineamento di tutti i componenti del gruppo sulle attività che sono state svolte e che verranno svolte; chi ha avuto maggiore esperienza chiarirà i dubbi a chi ne ha avuta meno nei diversi ambiti (Analisi, Progettazione, Sviluppo e Verifica).
   ],
 )
@@ -835,11 +835,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_], 
   [
-    - *Conclusione attività di Analisi e Progettazione.*
+    - Conclusione attività di Analisi e Progettazione.
     - Studio della documentazione necessaria per la prossima milestone _PB_.
     - Sviluppo Backend e verifica del codice prodotto.
     - Sviluppo Frontend e verifica del codice prodotto.
-    - Training degli agenti.
+    - $text("Training degli agenti")_G$.
     _Milestone "(PAB)"_:
     Conclusione attività di Progettazione ed Analisi.
   ],
@@ -899,7 +899,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Sviluppo della documentazione per la milestone _PB_.
     - Sviluppo Backend e verifica del codice prodotto.
     - Sviluppo Frontend e verifica del codice prodotto.  
-    - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ],
 )
 #figure(
@@ -1012,7 +1012,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Conclusione attività di sviluppo e validazione Frontend e Backend.
     - Conclusione stesura documentazione adeguata alla consegna del progetto.
     - Validazione dei risultati prodotti durante gli Sprint. 
-    - #underline("Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
+    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
     - *Consegna del progetto previsto in data 15 Marzo 2026*.
   ],
 )
@@ -1077,7 +1077,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1106,7 +1106,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1135,7 +1135,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1164,7 +1164,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1193,7 +1193,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1222,7 +1222,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1251,7 +1251,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1280,7 +1280,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1309,7 +1309,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1338,7 +1338,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1367,7 +1367,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1396,7 +1396,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1425,17 +1425,18 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
 )
 #pagebreak()
-= Analisi e gestione dei rischi
+= Analisi e gestione dei $text("rischi")_G$
 Successivamente verranno illustrati:
 - i rischi rilevati per il progetto;
 - come pensiamo di prevenire tali rischi;
 - come pensiamo di gestirli in caso si avverino.
+  
 == Identificazione dei rischi 
 *Rischi legati ai requisiti*: \
 - Comprensione errata dei requisiti;
@@ -1460,7 +1461,10 @@ Successivamente verranno illustrati:
 
 
 == Analisi dei rischi
-Ogni rischio ha una determinata probabilità di avverarsi, che può essere bassa, media o alta e un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch'esso basso, medio o alto. Inoltre, abbiamo elaborato un piano di mitigazione e un piano di contingenza per ogni rischio individuato.
+Ogni rischio ha:
+- una determinata probabilità di avverarsi, che può essere bassa, media o alta;
+- un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch'esso basso, medio o alto. 
+Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $text("contingenza")_G$_ per ogni rischio individuato.
 === Rischi legati ai requisiti
 #figure(
   caption: [Rischio Comprensione errata dei requisiti],
@@ -1475,13 +1479,13 @@ table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Comprensione 
    align(left)[ Il team potrebbe non comprendere in pieno o addirittura individuare in maniera errata i requisiti richiesti dall’azienda con il rischio di avere poi discrepanze fra quello che il cliente aveva richiesto e ciò che è stato effettivamente sviluppato.],
   [ *Probabilità*  ],
   [ Bassa  ],
-[ *Impatto*],
-[Alto],
-[ *Piano di mitigazione*],
-align(left)[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli user cases per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
-[ *Piano di contingenza*],
-align(left)[Convocare una riunione immediata per identificare i requisiti sbagliati, capire fino a che punto sono errati e se si può mantenere parte del codice sviluppato, calcolare le ore necessarie per sistemarli e l’eventuale impatto sul budget. ]
-)]
+  [ *Impatto*],
+  [Alto],
+  [ *Piano di mitigazione*],
+  align(left)[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli user cases per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
+  [ *Piano di contingenza*],
+  align(left)[Convocare una riunione immediata per identificare i requisiti sbagliati, capire fino a che punto sono errati e se si può mantenere parte del codice sviluppato, calcolare le ore necessarie per sistemarli e l’eventuale impatto sul budget. ]
+  )]
 \
 #figure(
   caption: [Rischio Assenza di priorità dei requisiti],
@@ -1497,12 +1501,12 @@ align(left)[Convocare una riunione immediata per identificare i requisiti sbagli
  Ai requisiti potrebbe non essere assegnato, o essere assegnato erroneamente, un livello di priorità basato sulla loro importanza e la loro urgenza. Questo può portare a dare la precedenza a requisiti non fondamentali e di conseguenza essere causa di ritardi e sforamenti di budget. ],
   [ *Probabilità*  ],
   [Bassa  ],
-[ *Impatto*],
-[Medio],
-[ *Piano di mitigazione*],
- align(left)[I membri del team discuteranno assieme in maniera approfondita il livello di priorità dei requisiti, per decidere a quali dare la precedenza],
-[ *Piano di contingenza*],
- align(left)[Bloccare immediatamente lo sviluppo dei requisiti se si rivelano non di secondaria importanza per dedicarsi a quelli di massima priorità. Convocare una riunione per discutere nuovamente e rivalutare i livelli di priorità assegnati ai requisiti, ]
+  [ *Impatto*],
+  [Medio],
+  [ *Piano di mitigazione*],
+  align(left)[I membri del team discuteranno assieme in maniera approfondita il livello di priorità dei requisiti, per decidere a quali dare la precedenza],
+  [ *Piano di contingenza*],
+  align(left)[Bloccare immediatamente lo sviluppo dei requisiti se si rivelano di secondaria importanza per dedicarsi a quelli di massima priorità. Convocare una riunione per discutere nuovamente e rivalutare i livelli di priorità assegnati ai requisiti, ]
 
 )]
 \
@@ -1520,12 +1524,12 @@ align(left)[Convocare una riunione immediata per identificare i requisiti sbagli
     align(left)[ La maggior parte delle tecnologie necessarie per realizzare il progetto non sono mai state utilizzate dai membri del team e ciò comporta un importante rallentamento dovuto al tempo necessario per imparare a maneggiare i nuovi strumenti e a stime non totalmente accurate delle ore necessarie. ],
   [ *Probabilità*  ],
   [  Alta ],
-[ *Impatto*],
-[Medio],
-[ *Piano di mitigazione*],
-align(left)[Durante la pianificazione degli sprint, verranno tenuti in considerazione i tempi necessari per imparare a utilizzare i nuovi strumenti e i rallentamenti che possono comportare. \ Inoltre, ogni membro dovrà imparare da autodidatta come si usano e le best practices delle tecnologie utilizzate *prima* di iniziare ad utilizzarle per il codice.   ],
-[ *Piano di contingenza*],
-align(left)[In caso il problema si verifichi nelle fasi iniziali dell’utilizzo del nuovo strumento, si può chiamare un meeting e valutare un eventuale cambio di tecnologia. Se avviene nelle fasi successive, interrompere lo sviluppo del progetto per approfondire il funzionamento delle nuove tecnologie. ]
+  [ *Impatto*],
+  [Medio],
+  [ *Piano di mitigazione*],
+  align(left)[Durante la pianificazione degli sprint, verranno tenuti in considerazione i tempi necessari per imparare a utilizzare i nuovi strumenti e i rallentamenti che possono comportare. \ Inoltre, ogni membro dovrà imparare da autodidatta come si usano e le best practices delle tecnologie utilizzate *prima* di iniziare ad utilizzarle per il codice.   ],
+  [ *Piano di contingenza*],
+  align(left)[In caso il problema si verifichi nelle fasi iniziali dell’utilizzo del nuovo strumento, si può chiamare un meeting e valutare un eventuale cambio di tecnologia. Se avviene nelle fasi successive, interrompere lo sviluppo del progetto per approfondire il funzionamento delle nuove tecnologie. ]
 )]
 #figure(
   caption: [Rischio Problemi di integrazione fra componenti],
@@ -1540,12 +1544,12 @@ align(left)[In caso il problema si verifichi nelle fasi iniziali dell’utilizzo
     align(left)[ Le componenti sviluppate utilizzando tecnologie diverse potrebbero avere problemi di comunicazione causati da versioni diverse di librerie, mancanza di interfacce chiare o di consistenza di dati e altre discrepanze. Ciò potrebbe portare a malfunzionamenti o instabilità del sistema. ],
   [ *Probabilità*  ],
   [Media ],
-[ *Impatto*],
-[Alto],
-[ *Piano di mitigazione*],
-align(left)[Documentare le API e i formati dei dati fra tutti i componenti. \ Implementare il processo di Integrazione Continua.],
-[ *Piano di contingenza*],
-align(left)[]
+  [ *Impatto*],
+  [Alto],
+  [ *Piano di mitigazione*],
+  align(left)[Documentare le API e i formati dei dati fra tutti i componenti. \ Implementare il processo di Integrazione Continua.],
+  [ *Piano di contingenza*],
+  align(left)[]
 )]
 \
 #table(
@@ -1557,12 +1561,12 @@ align(left)[]
   align(left)[ Il codice prodotto non rispetta gli standard concordati dal team, è inefficiente o inaffidabile ],
   [ *Probabilità*  ],
   [ Media  ],
-[ *Impatto*],
-[Alto],
-[ *Piano di mitigazione*],
-align(left)[Il codice prodotto da un membro del team deve essere revisionato da almeno un altro membro del team e devono essere integrati strumenti per l’analisi statica del codice. La maggior parte del codice deve essere coperto da test. Inoltre, prima di usare nuovi linguaggi di programmazione, i membri dovranno studiare le loro best practices. ],
-[ *Piano di contingenza*],
-align(left)[Interrompere lo sviluppo dell’area del progetto coinvolta finché non si è identificato il problema e portato a un livello sufficiente la qualità del codice.]
+  [ *Impatto*],
+  [Alto],
+  [ *Piano di mitigazione*],
+  align(left)[Il codice prodotto da un membro del team deve essere revisionato da almeno un altro membro del team e devono essere integrati strumenti per l’analisi statica del codice. La maggior parte del codice deve essere coperto da test. Inoltre, prima di usare nuovi linguaggi di programmazione, i membri dovranno studiare le loro best practices. ],
+  [ *Piano di contingenza*],
+  align(left)[Interrompere lo sviluppo dell’area del progetto coinvolta finché non si è identificato il problema e portato a un livello sufficiente la qualità del codice.]
 
 )
 \
@@ -1575,12 +1579,12 @@ align(left)[Interrompere lo sviluppo dell’area del progetto coinvolta finché 
   align(left)[ La maniera in cui è scritto il codice ne rende difficile la sua lettura, la sua modifica e ne influenza negativamente la manutenibilità. Ciò può essere causato da assenza di documentazione, nomenclatura incoerente o insensata o da eccessiva complessità ],
   [ *Probabilità*  ],
   [  Media ],
-[ *Impatto*],
-[Alto],
-[ *Piano di \mitigazione*],
-align(left)[Concordare prima di iniziare a stendere codice quali sono le regole riguardanti lo stile, la nomenclatura e la documentazione riguardante il codice. Far sì che il codice scritto da un membro venga revisionato da almeno un altro membro.],
-[ *Piano di contingenza*],
-align(left)[Bloccare lo sviluppo di codice relativo alla parte illeggibile per dedicarsi alla riscrittura di tale codice seguendo le regole di stile e nomenclatura stabilite in precedenza. Se le regole sono state seguite ma il codice è lo stesso poco comprensibile, chiamare un meeting per rivalutare le regole scelte.]
+  [ *Impatto*],
+  [Alto],
+  [ *Piano di \mitigazione*],
+  align(left)[Concordare prima di iniziare a stendere codice quali sono le regole riguardanti lo stile, la nomenclatura e la documentazione riguardante il codice. Far sì che il codice scritto da un membro venga revisionato da almeno un altro membro.],
+  [ *Piano di contingenza*],
+  align(left)[Bloccare lo sviluppo di codice relativo alla parte illeggibile per dedicarsi alla riscrittura di tale codice seguendo le regole di stile e nomenclatura stabilite in precedenza. Se le regole sono state seguite ma il codice è lo stesso poco comprensibile, chiamare un meeting per rivalutare le regole scelte.]
 )
 \
 #table(
@@ -1592,12 +1596,12 @@ align(left)[Bloccare lo sviluppo di codice relativo alla parte illeggibile per d
   align(left)[ Il testing è inadeguato o incompleto, di conseguenza c’è il rischio di rilasciare codice difettoso e un sistema instabile. ],
   [ *Probabilità*  ],
   [  Media ],
-[ *Impatto*],
-[Alto],
-[ *Piano di mitigazione*],
-align(left)[Stabilire a priori e monitorare in fase si sviluppo le metriche di copertura e qualità del codice. \ Adottare il Test-Driven Development, scrivendo i test *prima* del codice da testare],
-[ *Piano di contingenza*],
-align(left)[Bloccare lo sviluppo del codice per cui non sono stati creati i test per dedicarsi alla loro implementazione.]
+  [ *Impatto*],
+  [Alto],
+  [ *Piano di mitigazione*],
+  align(left)[Stabilire a priori e monitorare in fase si sviluppo le metriche di copertura e qualità del codice. \ Adottare il Test-Driven Development, scrivendo i test *prima* del codice da testare],
+  [ *Piano di contingenza*],
+  align(left)[Bloccare lo sviluppo del codice per cui non sono stati creati i test per dedicarsi alla loro implementazione.]
 )
 \
 
@@ -1610,12 +1614,12 @@ align(left)[Bloccare lo sviluppo del codice per cui non sono stati creati i test
   align(left)[  Il codice prodotto presenta vulnerabilità della sicurezza, che possono essere sfruttate da utenti malevoli. ],
   [ *Probabilità*  ],
   [  Media ],
-[ *Impatto*],
-[Alto],
-[ *Piano di mitigazione*],
-align(left)[Verificare che le librerie utilizzate non contengano vulnerabilità. \ Far sì che la maggior parte del codice sia coperto da test di sicurezza. Assicurarsi che il codice prodotto rispetti almeno la top 10 delle norme OWASP. Aggiungere criteri di revisione del codice relativi alla verifica della presenza di potenziali vulnerabilità. ],
-[ *Piano di contingenza*],
-align(left)[Identificare la parte di codice che presenta la vulnerabilità e interromperne lo sviluppo finché non è sistemata.]
+  [ *Impatto*],
+  [Alto],
+  [ *Piano di mitigazione*],
+  align(left)[Verificare che le librerie utilizzate non contengano vulnerabilità. \ Far sì che la maggior parte del codice sia coperto da test di sicurezza. Assicurarsi che il codice prodotto rispetti almeno la top 10 delle norme OWASP. Aggiungere criteri di revisione del codice relativi alla verifica della presenza di potenziali vulnerabilità. ],
+  [ *Piano di contingenza*],
+  align(left)[Identificare la parte di codice che presenta la vulnerabilità e interromperne lo sviluppo finché non è sistemata.]
 )
 \
 === Rischi organizzativi
@@ -1629,12 +1633,12 @@ table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*Mancato rispe
   align(left)[Uno o più membri non riescono a finire i compiti a loro assegnati nei tempi prestabiliti, causando ritardi nello sviluppo del codice e nel raggiungimento delle milestones.  ],
   [ *Probabilità*  ],
   [Alta],
-[ *Impatto*],
-[Medio],
-[ *Piano di mitigazione*],
-align(left)[Aggiungere dei "periodi cuscinetto" nella pianificazione temporale degli sprint. Avvertire gli altri membri del gruppo in caso di rallentamenti e confrontarsi se si presentano difficoltà. ],
-[ *Piano di contingenza*],
-align(left)[Chiamare una riunione per valutare le cause del ritardo, se i compiti assegnati sono realistici e, in caso di troppi ritardi accumulati, per capire se ci sono dei requisiti non obbligatori a cui si può rinunciare .]
+  [ *Impatto*],
+  [Medio],
+  [ *Piano di mitigazione*],
+  align(left)[Aggiungere dei "periodi cuscinetto" nella pianificazione temporale degli sprint. Avvertire gli altri membri del gruppo in caso di rallentamenti e confrontarsi se si presentano difficoltà. ],
+  [ *Piano di contingenza*],
+  align(left)[Chiamare una riunione per valutare le cause del ritardo, se i compiti assegnati sono realistici e, in caso di troppi ritardi accumulati, per capire se ci sono dei requisiti non obbligatori a cui si può rinunciare .]
 
 )
 \
@@ -1648,12 +1652,12 @@ align(left)[Chiamare una riunione per valutare le cause del ritardo, se i compit
   align(left)[ Uno o più membri potrebbero non riuscire a rispettare le tempistiche prestabilite a causa di impegni di natura personale o universitaria, portando a ritardi nello sviluppo del codice e nel raggiungimento delle milestones.  ],
   [ *Probabilità*  ],
   [  Alta ],
-[ *Impatto*],
-[Medio],
-[ *Piano di mitigazione*],
-align(left)[Avvertire gli altri membri se si è a conoscenza di periodi futuri in cui si è poco disponibili. \ Tenere conto dei periodi in cui la produttività rischia di essere bassa a causa degli esami universitari e pianificare attività meno intensa nei loro sprint. \ Aggiungere dei "periodi cuscinetto" nella pianificazione temporale. ],
-[ *Piano di contingenza*],
-align(left)[Riassegnare le attività critiche e/o urgenti dei membri non disponibili a membri con più disponibilità temporale, mettendo in pausa lo sviluppo di codice meno importante.\ In caso di troppi ritardi accumulati, convocare un meeting per capire se ci sono dei requisiti non obbligatori a cui si può rinunciare.\ Aumentare la frequenza delle riunioni per rilevare subito eventuali ulteriori problemi. ]
+  [ *Impatto*],
+  [Medio],
+  [ *Piano di mitigazione*],
+  align(left)[Avvertire gli altri membri se si è a conoscenza di periodi futuri in cui si è poco disponibili. \ Tenere conto dei periodi in cui la produttività rischia di essere bassa a causa degli esami universitari e pianificare attività meno intensa nei loro sprint. \ Aggiungere dei "periodi cuscinetto" nella pianificazione temporale. ],
+  [ *Piano di contingenza*],
+  align(left)[Riassegnare le attività critiche e/o urgenti dei membri non disponibili a membri con più disponibilità temporale, mettendo in pausa lo sviluppo di codice meno importante.\ In caso di troppi ritardi accumulati, convocare un meeting per capire se ci sono dei requisiti non obbligatori a cui si può rinunciare.\ Aumentare la frequenza delle riunioni per rilevare subito eventuali ulteriori problemi. ]
 
 )
 \
@@ -1667,12 +1671,12 @@ align(left)[Riassegnare le attività critiche e/o urgenti dei membri non disponi
   align(left)[ Vengono commessi errori di distribuzione dei compiti a causa dell’inesperienza nel valutare le tempistiche relative alle tasks dei membri del team e della sottovalutazione o sopravvalutazione del tempo necessario per finire alcuni compiti. Questo può portare i membri con un carico maggiore a non riuscire a rispettare le tempistiche o a presentare codice di qualità inferiore. ],
   [ *Probabilità*  ],
   [ Bassa  ],
-[ *Impatto*],
-[Basso],
-[ *Piano di mitigazione*],
-align(left)[Fare le stime del tempo necessario insieme e non assegnare questo compito a un’unica persona. \ Imporre un limite al numero di attività che una persona può svolgere nello stesso sprint. \ Confrontarsi nelle riunioni settimanali riguardo la mole di lavoro portata a termine e il tempo impiegato per farlo.],
-[ *Piano di contingenza*],
-align(left)[Controllare la qualità del codice prodotto da membri sovraccaricati. \ Convocare una riunione per cambiare la distribuzione dei compiti dello sprint attuale ed eventualmente quelli successivi in modo da renderla più equa, assegnando meno compiti a chi ha già quelli che impiegano più tempo. ]
+  [ *Impatto*],
+  [Basso],
+  [ *Piano di mitigazione*],
+  align(left)[Fare le stime del tempo necessario insieme e non assegnare questo compito a un’unica persona. \ Imporre un limite al numero di attività che una persona può svolgere nello stesso sprint. \ Confrontarsi nelle riunioni settimanali riguardo la mole di lavoro portata a termine e il tempo impiegato per farlo.],
+  [ *Piano di contingenza*],
+  align(left)[Controllare la qualità del codice prodotto da membri sovraccaricati. \ Convocare una riunione per cambiare la distribuzione dei compiti dello sprint attuale ed eventualmente quelli successivi in modo da renderla più equa, assegnando meno compiti a chi ha già quelli che impiegano più tempo. ]
 )
 \
 
@@ -1685,14 +1689,14 @@ align(left)[Controllare la qualità del codice prodotto da membri sovraccaricati
   align(left)[ Il team non è organizzato adeguatamente, non c’è una assegnazione chiara dei compiti o delle date da rispettare per le scadenze. Ci sono comunicazione e coordinazione non sufficienti. ],
   [ *Probabilità*  ],
   [ Bassa ],
-[ *Impatto*],
-[Alto],
-[ *Piano di mitigazione*],
-align(left)[Pianificare fin da subito gli incontri settimanali (in giorni e  orari prestabiliti) e stabilire le piattaforme di comunicazione dove tenersi aggiornati sui progressi, i dubbi e gli argomenti da discutere relativi al progetto.   ],
-[ *Piano di contingenza*],
-align(left)[Aumentare la frequenza delle riunioni per aumentare il controllo e il coordinamento dei membri del team. \ Stabilire scadenze precise per i vari compiti.]
+  [ *Impatto*],
+  [Alto],
+  [ *Piano di mitigazione*],
+  align(left)[Pianificare fin da subito gli incontri settimanali (in giorni e  orari prestabiliti) e stabilire le piattaforme di comunicazione dove tenersi aggiornati sui progressi, i dubbi e gli argomenti da discutere relativi al progetto.   ],
+  [ *Piano di contingenza*],
+  align(left)[Aumentare la frequenza delle riunioni per aumentare il controllo e il coordinamento dei membri del team. \ Stabilire scadenze precise per i vari compiti.]
 
-)
+  )
 \
 
 #table(
@@ -1704,12 +1708,12 @@ align(left)[Aumentare la frequenza delle riunioni per aumentare il controllo e i
   align(left)[  I membri non vengono chiamati a rendere conto del loro progresso e del loro rendimento. Questo porta all’individuazione tardiva di problemi ed errori e può portare i membri a progredire più lentamente e ai ritardi individuali di accumularsi. ],
   [ *Probabilità*  ],
   [Media],
-[ *Impatto*],
-[Alto],
-[ *Piano di mitigazione*],
-align(left)[ Pianificare minimo una riunione a settimana in cui i membri aggiornano gli altri sul proprio stato di avanzamento. ],
-[ *Piano di contingenza*],
-align(left)[]
+  [ *Impatto*],
+  [Alto],
+  [ *Piano di mitigazione*],
+  align(left)[ Pianificare minimo una riunione a settimana in cui i membri aggiornano gli altri sul proprio stato di avanzamento. ],
+  [ *Piano di contingenza*],
+  align(left)[]
 
 )
 
@@ -1723,12 +1727,12 @@ align(left)[]
   align(left)[ La documentazione viene trascurata. non viene aggiornata con le decisioni prese dal team e di conseguenza non rappresenta lo stato attuale del progetto. In questa maniera, il team potrebbe perdere tempo a discutere nuovamente aspetti già decisi in precedenza che dovrebbero essere stati scritti nella documentazione o utilizzare strumenti, nomenclatura, metodi di revisione, ecc. diversi da quelli concordati.  ],
   [ *Probabilità*  ],
   [ Bassa  ],
-[ *Impatto*],
-[Medio],
-[ *Piano di mitigazione*],
-align(left)[Il responsabile ha il compito di tenere aggiornata la documentazione e di scriverci ogni decisione presa dal team. \ Un compito non viene considerato completato finché la documentazione non è stata aggiornata adeguatamente.],
-[ *Piano di contingenza*],
-align(left)[Individuare tutta la documentazione obsoleta e bloccare lo svolgimento dei compiti non urgenti per dedicarsi al suo aggiornamento. ]
+  [ *Impatto*],
+  [Medio],
+  [ *Piano di mitigazione*],
+  align(left)[Il responsabile ha il compito di tenere aggiornata la documentazione e di scriverci ogni decisione presa dal team. \ Un compito non viene considerato completato finché la documentazione non è stata aggiornata adeguatamente.],
+  [ *Piano di contingenza*],
+  align(left)[Individuare tutta la documentazione obsoleta e bloccare lo svolgimento dei compiti non urgenti per dedicarsi al suo aggiornamento. ]
 
 )
 \
@@ -1741,12 +1745,12 @@ align(left)[Individuare tutta la documentazione obsoleta e bloccare lo svolgimen
   align(left)[ I membri del team non concordano su determinate decisioni da prendere, come gli strumenti da utilizzare, le regole e best practices da seguire, il modo in cui implementare alcune funzioni. Questo può portare a un impiego eccessivo di risorse per la discussione su che decisioni prendere e causare ritardi.],
   [ *Probabilità*  ],
   [  Media ],
-[ *Impatto*],
-[Basso],
-[ *Piano di mitigazione*],
-align(left)[Stabilire un tempo massimo per le discussioni relative a decisioni complicate da prendere. Se non si riesce a giungere a una decisione unanime nel tempo prestabilito, la scelta viene presa con una votazione o dal membro più esperto.],
-[ *Piano di contingenza*],
-align(left)[Per le decisioni non compiute entro il tempo massimo, viene indetta una votazione: la scelta votata dalla maggioranza andrà presa. Se un membro è più esperto nel campo di cui si sta discutendo, il resto del gruppo può decidere di far valere di più il suo voto o di lasciar prendere direttamente a questa persona la decisione.]
+  [ *Impatto*],
+  [Basso],
+  [ *Piano di mitigazione*],
+  align(left)[Stabilire un tempo massimo per le discussioni relative a decisioni complicate da prendere. Se non si riesce a giungere a una decisione unanime nel tempo prestabilito, la scelta viene presa con una votazione o dal membro più esperto.],
+  [ *Piano di contingenza*],
+  align(left)[Per le decisioni non compiute entro il tempo massimo, viene indetta una votazione: la scelta votata dalla maggioranza andrà presa. Se un membro è più esperto nel campo di cui si sta discutendo, il resto del gruppo può decidere di far valere di più il suo voto o di lasciar prendere direttamente a questa persona la decisione.]
 )
 
 == Monitoraggio dei rischi
@@ -1754,4 +1758,3 @@ Il *responsabile* monitora lo stato di tutti i rischi; i *programmatori* e i *re
 Per assicurarsi di individuare l’avveramento di un rischio il prima possibile si eseguiranno le seguenti attività:
 - *Riunioni periodiche* bimensili in cui si verifica lo stato dei rischi individuati, si discute se i piani di mitigazione e di contingenza sono efficaci ed eventualmente si individuano nuovi rischi, dopo delle quali si aggiorna l’analisi dei rischi del Piano di Progetto. In sostanza, si fa una rivalutazione periodica dei rischi.
 - Un continuo *aggiornamento del registro dei rischi*, dove vengono documentati tutti i rischi che si concretizzano durante lo svolgimento del progetto.
-- Il *Test Driven Development* permette una più rapida individuazione dell’avveramento dei rischi tecnici, il che causa danni molto più contenuti rispetto a un’individuazione tardiva.
