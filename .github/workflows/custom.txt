@@ -60,9 +60,9 @@ js
 rtb
 dall'ai
 dell'ai
-gnatt
+gantt
 pdp
-pertt
+pert
 poc
 uc
 versionato
@@ -77,3 +77,6 @@ amm
 calendarioprogetto
 colspan
 gmail
+labta
+labp
+milestone

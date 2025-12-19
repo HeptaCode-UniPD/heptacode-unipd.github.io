@@ -8,7 +8,7 @@
   
   #v(1.5cm)
   
-  #text(size: 37.5pt, weight: "bold")[Piano di Progetto]
+  #text(size: 25pt, weight: "bold")[Piano di Progetto]
   
   #v(2.0cm)
 ])
@@ -24,38 +24,45 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
-  "0.6",
+
+  "0.1.1",
+  "2025/12/14",
+  "Angela Favaro",
+  "Amerigo Vegliante",
+  "Uniformazione documento allo standard del gruppo",
+
+  "0.1.0",
   "2025/12/14",
   "Laura Venturini",
   "Nicola Simionato",
   "Aggiunti capitoli ’Processi e metodologie’, ’Risorse e strumenti’ e ’Analisi e gestione dei rischi’",
 
 
-  "0.5",
+  "0.0.5",
   "2025/12/14",
   "Angela Favaro",
   "Nicola Simionato",
-  "Aggiunta diagrammi PERTT e correzione analisi Sprint",
+  "Aggiunta diagrammi PERT e correzione analisi Sprint",
 
-  "0.4",
+  "0.0.4",
   "2025/12/08",
   "Angela Favaro",
   "Nicola Simionato",
   "Calcolo dei costi",
 
-  "0.3",
+  "0.0.3",
   "2025/12/03",
   "Angela Favaro",
   "Alberto Reginato",
   "Suddivisione e stesura sprint per PB",
 
-  "0.2",
+  "0.0.2",
   "2025/12/02",
   "Angela Favaro",
   "Alberto Reginato",
   "Suddivisione e stesura sprint per RTB",
 
-  "0.1",
+  "0.0.1",
   "2025/12/01",
   "Angela Favaro",
   "Alberto Reginato",
@@ -73,14 +80,14 @@
 #pagebreak()
 #outline(
 
-title: "Indice delle tabelle",
+  title: "Indice delle tabelle",
   target: figure.where(kind: table)
 )
 
 #pagebreak()
 #outline(
   title: "Indice delle figure",
-  target: figure.where(label: l => l.starts-with("fig:") )
+
 )
 
 #pagebreak()
@@ -99,7 +106,7 @@ title: "Indice delle tabelle",
         fill: white,
         stroke: none
       )],
-      [Piano di Progetto],
+      [Piano di Progetto v. 0.1.1],
     )
     #line(length: 100%, stroke: black)
   ],
@@ -111,17 +118,17 @@ Il Piano di Progetto ha lo scopo di definire in modo chiaro, strutturato e verif
 Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e per aggiornare contenuti errati o imprecisi.
 == Ambito del progetto
 In questa prima parte del documento è presente una breve introduzione al progetto di cui si farà riferimento in ogni paragrafo. Non vuole essere una spiegazione esplicativa e dettagliata dello stesso; per quello si può consultare il documento di _Analisi dei requisiti_ presente nel #link("https://heptacode-unipd.github.io", "sito del team Hepta Code"). \
-*Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un’organizzazione. \ Verranno utilizzati degli agenti che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository _GitHub_. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \ 
+*Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un’organizzazione. \ Verranno utilizzati degli $text("agenti")_G$ che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository $text("Git Hub")_G$. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \ 
 Gli agenti fino ad ora pensati per _Code Guardian_ sono:
 1. Agente per il controllo del codice.
 2. Agente per il controllo della documentazione.
-3. Agente per il controllo delle prime 10 linee guida OWASP.
-\ Gli utenti / attori presi in esame per la creazione del progetto sono di tre tipi (lavoreranno insieme all’interno di uno stesso progetto):
-- Business Owner;
-- Project Manager;
-- Sviluppatore.
+3. Agente per il controllo delle prime 10 linee guida $text("OWASP")_G$.
+\ Gli utenti / $text("attori")_G$ presi in esame per la creazione del progetto sono di tre tipi (lavoreranno insieme all’interno di uno stesso progetto):
+- $text("Business Owner")_G$;
+- $text("Project Manager")_G$;
+- $text("Sviluppatore")_G$
 Per ognuno dei tre verrà fornita un’interfaccia consona alle funzioni che più possono interessare loro riguardo lo stato di uno o più progetti di sviluppo. \
-\ Grazie a meccanismi _AI_ e _LLM_, in base al dominio dell’utente, verranno:
+\ Grazie a meccanismi $text("AI")_G$ e $text("LLM")_G$ , in base al dominio dell’utente, verranno:
 - visualizzati gli errori rilevati; 
 - forniti suggerimenti agli errori rilevati;
 - forniti suggerimenti per il miglioramento del progetto;
@@ -129,52 +136,35 @@ Per ognuno dei tre verrà fornita un’interfaccia consona alle funzioni che pi�
 \ 
 #underline[Gli ambiti tecnici di progetto sono quindi:]
 - implementazione e addestramento di agenti tramite utilizzo di _AI_ e _LLM_;
-- implementazione di una web-app.
+- implementazione di una $text("web-app")_G$.
 
 [Aggiunta dei linguaggi e tecnologie che andremo ad utilizzare]
-== Organizzazione del documento
-[_La Laura scriva cosa fa c’è nella sua parte_] \\
-In questo documento è presente una suddivisione temporale in *_sprint_* del tempo a disposizione; 
-ad ogni suddivisione viene esplicitato l’ammontare delle ore che ogni membro dovrà impiegare produttivamente in un determinato ruolo. \\
-Sono definite in totale 5 *_milestones_*:
-- _UCB (User Cases Baseline)_.
-- _RTB (Requirements and Technology Baseline)_.
-- _PAB (Progettazione & Analisi Baseline)_.
-- _PB (Product Baseline)_.
-ogni _milestone_ è accompagnata dal relativo diagramma di GNATT che ne definisce tempistiche, dipendenze e percorsi. \\
-Ci riferiamo al sotto-paragrafo *_Preventivo a finire_* per l’organizzazione di tutte le azioni che il team attuerà durante il progetto. \
-Verrà utilizzato come linea guida ad ogni sprint ed anche come riferimento per tutte le retrospettive e dovrà essere periodicamente aggiornato. \\
-*_Retrospettive_*: verranno effettuate alla fine di ogni sprint. I risultati di ogni sprint potranno essere visualizzate nel sotto-paragrafo *_Trascorso_*. Nel trascorso sarà visualizzabile una fotografia attuale di ciò che realmente è accaduto durante ogni sprint. \ 
-Ad ogni sprint analizzato nel trascorso verranno visualizzate inoltre:
-- Aggiornamenti effettuati nell’Analisi dei Rischi. 
-- Azioni mitigative attuate all’insorgere di un problema.
-- _Diagrammi di PERTT_ con un consuntivo dei tempi previsti e tempi effettivi. 
 
 == Ruoli interni al documento
-Questo documento dovrà periodicamente essere aggiornato dal _Responsabile di Progetto_ e validato dal _Verificatore_.  \
-Ad ogni _Sprint Retrospective_ si aggiornerà il _Trascorso_ con:
-- un riassunto di ciò che è accaduto durante lo sprint, diviso per punti; 
+Questo documento dovrà periodicamente essere aggiornato dal $text("Responsabile")_G$ e validato dal $text("Verificatore")_G$.  \
+Ad ogni $text("Sprint Retrospective")_G$ si aggiornerà il _Trascorso_ con:
+- un riassunto di ciò che è accaduto durante lo $text("sprint")_G$, diviso per punti; 
 - le problematiche incontrate; 
 - le misure di mitigazione attuate; 
 - gli eventuali aggiornamenti all’_Analisi dei rischi_; 
-- i diagrammi di PERTT utili alla comprensione immediata dell’avanzamento del progetto.
+- i $text("Diagrammi di GANTT")_G$ utili alla comprensione immediata dell’avanzamento del progetto.
 Verrà conseguentemente aggiornata l’_Analisi dei Rischi_ con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
 #pagebreak()
 
 
 = Processi e metodologie
 == Modello di processo scelto
-Abbiamo scelto di lavorare al progetto utilizzando l’approccio *Agile* basato sul framework *Scrum*. È stato scelto tale modello per le seguenti ragioni:
+Abbiamo scelto di lavorare al progetto utilizzando l’approccio $text("Agile")_G$ basato sul framework $text("Scrum")_G$. È stato scelto tale modello per le seguenti ragioni:
 - Grazie a questo metodo si possono limitare gli sprechi di risorse: con la suddivisione di task molto granulari, l’introduzione di un errore è più facilmente individuabile e quindi è meno frequente che l’errore si propaghi in grosse parti del progetto.
-- Lo stato del progetto, la suddivisione delle task da fare, le ore a disposizione e gli aspetti migliorabili sono chiari a tutti grazie allo Sprint Review, allo Sprint Retrospective e allo Sprint Planning.
+- Lo stato del progetto, la suddivisione dei task da fare, le ore a disposizione e gli aspetti migliorabili sono chiari a tutti grazie alla $text("Sprint Review")_G$, allo Sprint Retrospective e allo $text("Sprint Planning")_G$.
 - Grazie allo Sprint Retrospective si può migliorare l’efficacia del team durante lo svolgimento del progetto e capire in quali aspetti è lacunoso.
 - Permette una gestione dei rischi più facile e il loro continuo monitoraggio, diminuendo la probabilità che si verifichino. 
 - Il rilascio incrementale permette all’azienda cliente di vedere come sta avanzando il progetto.
 - Feedback più veloce: questo metodo impone un contatto più frequente con l’azienda proponente, permettendo di avere un riscontro sull'adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
 == Struttura del ciclo di vita
-Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all’11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; saranno invece di due settimane durante il periodo di sessione d’esami che va dal 12 gennaio al 22 febbraio 2026. Per ogni Sprint, sono previsti:
-- uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi, che vengono scritti nello *Sprint Backlog*;
-- uno *Sprint Review*, in cui si esamina il lavoro completato dopo uno Sprint e si raccoglie feedback e si aggiorna il *Product Backlog*, che contiene tutte le task da completare per completare il progetto; 
+Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all’11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; sarà invece di due settimane durante il periodo di sessione d’esami che va dal 12 gennaio al 22 febbraio 2026. \ Per ogni Sprint, sono previsti:
+- uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi, che vengono scritti nello *$text("Sprint Backlog")_G$*;
+- uno *Sprint Review*, in cui si esamina il lavoro completato dopo uno Sprint e si raccoglie feedback e si aggiorna il *$text("Product Backlog")_G$*, che contiene tutte le task da completare per completare il progetto; 
 - uno *Sprint Retrospective*, in cui il team ragiona su ciò che può essere migliorato in confronto allo Sprint appena finito.
 - un  aggiornamento asincrono via Telegram ogni tre giorni al posto del Daily Scrum per monitorare l’avanzamento del lavoro.
 
@@ -185,25 +175,28 @@ Questa sezione si occupa di descrivere quali sono e come vengono gestiti gli str
 == Risorse umane
 La gestione delle ore fra i membri del progetto è spiegata nella @Organizzazione (Organizzazione team).
 == Risorse materiali
-Ogni membro del team userà il proprio computer per lavorare al progetto. Inoltre, in caso di necessità, il team potrà usare i computer messi a disposizione dall’Università di Padova nelle aule informatiche. 
+Ogni membro del team userà il proprio computer per lavorare al progetto. Inoltre, in caso di necessità, il team potrà usare i computer messi a disposizione dall’Università di Padova nelle aule informatiche:
+- _LabP036_ e _LabP140_ presso il _Complesso Paolotti_.
+- _LabTA_ presso _Torre Archimede_. 
 == Strumenti Software
+[Da aggiornare con Glossario quando saranno definire]
 Gli strumenti di sviluppo che abbiamo deciso di usare sono:
 - *React* e *Typescript* per la parte Frontend;
 - *Node.js* per la parte Backend;
-- *MongoDB* per il Database;
-- *AWS* per l’architettura Cloud.
+- *$text("MongoDB")_G$* per il Database;
+- *$text("AWS")_G$* per l’architettura Cloud.
 Per il controllo della versione usiamo *GitHub*.\
 Per implementare la Continuous Integration e la Continuous Delivery usiamo *GitHub Actions*.\ \
 Per la redazione dei documenti il linguaggio scelto è *Typst*.\ \
 Gli strumenti per la comunicazione sono invece:
-- *Discord* per le riunioni telematiche;
-- *Telegram* per avere un canale di comunicazione asincrona fra i  membri del team;
-- *Slack* e *Gmail* per comunicare con l’azienda proponente.
+- *$text("Discord")_G$* per le riunioni telematiche;
+- *$text("Telegram")_G$* per avere un canale di comunicazione asincrona fra i  membri del team;
+- *$text("Slack")_G$* e *$text("Gmail")_G$* per comunicare con l’azienda proponente.
 #pagebreak()
 
 = Organizzazione del team
 #label("Organizzazione")
-Ad ogni suddivisione di periodo (denominato _sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 Gennaio 2026_ al _21 Febbraio 2026_. \ \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
+Ad ogni suddivisione di periodo (_sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 Gennaio 2026_ al _21 Febbraio 2026_. \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
 #figure(
   caption: [Stima delle ore individuali per ruolo in totale.],
   kind: table,
@@ -272,9 +265,9 @@ Nel grafico in figura @fig:torta vengono analizzate le percentuali della riparti
 #pagebreak()
 
 = Pianificazione temporale
-Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel corso del tempo.\ I periodi di lavoro vengono denominati _sprint_ e ne sono stati calcolati in totale _*tredici*_. \ La divisione del paragrafo in due sotto-paragrafi riporta:
+Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel corso del tempo.\ Sono stati calcolati un totale di _*tredici*_ sprint. \ La divisione del paragrafo in due sotto-paragrafi riporta:
 1. *Preventivo a finire:* pianificazione del lavoro ideale, secondo tempistiche ritenute ottimali.
-2. *trascorso:* ciò che realmente è accaduto durante gli sprint.
+2. *Trascorso:* ciò che realmente è accaduto durante gli sprint.
 
 == Calendario di massima
 #figure(
@@ -282,24 +275,24 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
 )[
   #image("../../asset/timeline_generale.png"),
 ]<fig:CalendarioProgetto>
-== Milestones programmate
-1. _UCB (User Cases Baseline)_:
+== $text("Milestones")_G$ programmate
+1. _$text("UCB (User Case Baseline)")_G$_:
     - Conclusione stesura degli User Case.
-2. _RTB (Requirements and Technology Baseline)_:
+2. _$text("RTB (Requirements & Technology Baseline)")_G$_:
    - [guardo che cacchio dobbiamo fare precisamente]
-3. _PAB (Progettazione & Analisi Baseline)_:
+3. _$text("PAB (Progettazione & Analisi Baseline)")_G$_:
    - Conclusione attività di progettazione.
    - Conclusione stesura definitiva _Analisi dei requisiti_.
-4. _PB (Product Baseline)_:
+4. _$text("PB (Product Baseline)")_G$_:
    - Consegna del progetto validato.
 == Preventivo a finire
 Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team. In questo sotto-paragrafo verranno esplicitati:
 - Le attività che si dovranno svolgere ad ogni sprint.
 - I ruoli che ogni membro dovrà rappresentare. \ 
 Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro.
-=== UCB - _User Cases Baseline_
+=== UCB - _User Case Baseline_
 #figure(
-  caption: [Diagramma di PERT della mileston UCB],
+  caption: [$text("Diagramma di PERT")_G$ della milestone UCB],
 )[
   #image("../../asset/PERT-UCB.png"),
 ]<PERT-UCB>
@@ -322,7 +315,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Studio in preparazione dell’attività di Analisi dei Requisiti.
     - Primo approccio di gruppo all’analisi (tramite incontri interni organizzati come brainstorming).
     - Studio della documentazione adeguata al progetto.
-    - Attività di analisi dei Casi d’Uso preliminare.
+    - Attività di analisi dei $text("Casi d'uso")_G$ preliminare.
   ]
 )
 #figure(
@@ -437,7 +430,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   
   [_Attività previste_], 
   [
-   - Attività di formazione su Backend da parte dell’azienda committente.
+   - Attività di formazione su $text("Backend")_G$ da parte dell’azienda committente.
    - Continuazione da parte del team completo dell’Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
    - Avanzamento stesura dei documenti per milestone RTB.
    - Studio individuale sulle tecnologie discusse dal team.
@@ -492,13 +485,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_], 
   [
-    - Attività di formazione su Frontend, AWS ed introduzione alla parte AI da parte dell’azienda committente.
+    - Attività di formazione su $text("Frontend")_G$, AWS ed introduzione alla parte AI da parte dell’azienda committente.
     - Continuazione di:
       - Analisi dei Requisiti.
       - Stesura della documentazione.
     - Revisione sulle decisioni prese riguardo alle tecnologie adatte al progetto.
-    - Continuazione stesura di User Case.
-    - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
+    - Continuazione stesura di $text("Use Case")_G$.
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ]
 )
 #figure(
@@ -612,11 +605,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_], 
   [
-    - Inizio attività di produzione del _Proof of Concept (PoC)_.
+    - Inizio attività di produzione del _$text("Proof of Concept (PoC)")_G$_.
     - Continuazione stesura della documentazione.
     - Continuazione attività di Analisi dei Requisiti.
     - Inizio dell’attività di Progettazione.
-    - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ]
 )
 #figure(
@@ -726,11 +719,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Attività previste_], 
   [
     Ultimo sprint previsto prima della consegna del _PoC_. 
-    - #underline("Conclusione dello sviluppo e della verifica del PoC.")
+    - Conclusione dello sviluppo e della verifica del PoC.
     - Continuazione attività di Progettazione.
     - Revisione e validazione dei documenti prodotti per la milestone RTB.
     - Colloquio conclusivo per la revisione del progetto con i professori. 
-    - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.")  
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ]
 )
 #figure(
@@ -789,7 +782,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Ultime fasi di attività di Analisi dei Requisiti.
     Inoltre, in ordine cronologico:
     1. Modifiche o migliorie della documentazione prodotta per la milestone RTB a seguito dei suggerimenti proposti dopo la prima milestone.
-    2. #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
+    2. Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
     3. Allineamento di tutti i componenti del gruppo sulle attività che sono state svolte e che verranno svolte; chi ha avuto maggiore esperienza chiarirà i dubbi a chi ne ha avuta meno nei diversi ambiti (Analisi, Progettazione, Sviluppo e Verifica).
   ],
 )
@@ -843,11 +836,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_], 
   [
-    - *Conclusione attività di Analisi e Progettazione.*
+    - Conclusione attività di Analisi e Progettazione.
     - Studio della documentazione necessaria per la prossima milestone _PB_.
     - Sviluppo Backend e verifica del codice prodotto.
     - Sviluppo Frontend e verifica del codice prodotto.
-    - Training degli agenti.
+    - $text("Training degli agenti")_G$.
     _Milestone "(PAB)"_:
     Conclusione attività di Progettazione ed Analisi.
   ],
@@ -907,7 +900,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Sviluppo della documentazione per la milestone _PB_.
     - Sviluppo Backend e verifica del codice prodotto.
     - Sviluppo Frontend e verifica del codice prodotto.  
-    - #underline("Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ],
 )
 #figure(
@@ -1020,7 +1013,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Conclusione attività di sviluppo e validazione Frontend e Backend.
     - Conclusione stesura documentazione adeguata alla consegna del progetto.
     - Validazione dei risultati prodotti durante gli Sprint. 
-    - #underline("Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.") 
+    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
     - *Consegna del progetto previsto in data 15 Marzo 2026*.
   ],
 )
@@ -1085,7 +1078,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1114,7 +1107,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1143,7 +1136,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1172,7 +1165,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1201,7 +1194,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1230,7 +1223,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1259,7 +1252,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1288,7 +1281,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1317,7 +1310,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1346,7 +1339,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1375,7 +1368,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1404,7 +1397,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
@@ -1433,17 +1426,18 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1.
   ],
-  [_PERTT Diagram_],
+  [_GANTT Diagram_],
   [
     [_Inserire immagine_]
   ]
 )
 #pagebreak()
-= Analisi e gestione dei rischi
+= Analisi e gestione dei $text("rischi")_G$
 Successivamente verranno illustrati:
 - i rischi rilevati per il progetto;
 - come pensiamo di prevenire tali rischi;
 - come pensiamo di gestirli in caso si avverino.
+  
 == Identificazione dei rischi 
 *Rischi legati ai requisiti*: \
 - Comprensione errata dei requisiti;
@@ -1468,7 +1462,10 @@ Successivamente verranno illustrati:
 
 
 == Analisi dei rischi
-Ogni rischio ha una determinata probabilità di avverarsi, che può essere bassa, media o alta e un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch'esso basso, medio o alto. Inoltre, abbiamo elaborato un piano di mitigazione e un piano di contingenza per ogni rischio individuato.
+Ogni rischio ha:
+- una determinata probabilità di avverarsi, che può essere bassa, media o alta;
+- un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch'esso basso, medio o alto. 
+Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $text("contingenza")_G$_ per ogni rischio individuato.
 === Rischi legati ai requisiti
 #figure(
   caption: [Rischio Comprensione errata dei requisiti],
@@ -1724,7 +1721,7 @@ align(left)[Pianificare fin da subito gli incontri settimanali (in giorni e  ora
 [ *Piano di contingenza*],
 align(left)[Aumentare la frequenza delle riunioni per aumentare il controllo e il coordinamento dei membri del team. \ Stabilire scadenze precise per i vari compiti.]
 
-)
+  )
 \
 
 #table(
