@@ -27,7 +27,7 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
-  "1.0.1",
+  "1.1.0",
   "2025/10/30",
   "Angela Favaro",
   "Amerigo Vegliante",
