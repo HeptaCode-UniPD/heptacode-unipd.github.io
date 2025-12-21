@@ -137,7 +137,7 @@ Il sistema assicura che il progetto mantenga un alto livello di manutenibilità 
 === 2.1.4 Remediation Proattiva
 A differenza dei semplici strumenti di reportistica, _Code Guardian_ agisce attivamente per risolvere i problemi:
 - *Suggerimenti di Correzione*: Il sistema non si limita a segnalare l'errore, ma genera proposte concrete di codice correttivo.
-- *Creazione Pull Request*: Se l'utente approva un suggerimento, il sistema crea automaticamente un _branch_ dedicato e una _Pull Request_ (o _Merge Request_) pronta per la revisione, senza richiedere intervento manuale per la scrittura del codice.
+- *Creazione Pull Request*: Se l'utente approva un suggerimento, il sistema crea automaticamente un _branch_ dedicato e una _Pull Request_ pronta per la revisione, senza richiedere intervento manuale per la scrittura del codice.
 
 === 2.1.5 Monitoraggio e Dashboard
 Il sistema fornisce un punto di accesso centralizzato per la consultazione dello stato di salute dei progetti:
