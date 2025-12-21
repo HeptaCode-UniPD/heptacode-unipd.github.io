@@ -81,7 +81,11 @@ Sistema software capace di percepire l'ambiente circostante, ragionare su ciò c
 #heading(level: 2, outlined: false)[Agile]
 Approccio filosofico e culturale alla gestione dei progetti. Si basa sullo sviluppo iterativo, sulla consegna continua di valore e sulla capacità di rispondere rapidamente ai cambiamenti, invece di seguire un piano rigido e lineare.
 
-#heading(level: 2, outlined: false)[Artificial Intelligence - AI]
+#heading(level: 2, outlined: false)[Amazon Web Services (AWS)]
+Piattaforma di Cloud Computing più completa e utilizzata al mondo, offerta da Amazon. Invece di acquistare, possedere e gestire server fisici e centri dati (Data Center) di proprietà, un'azienda può noleggiare potenza di calcolo, spazio di archiviazione, database e altre tecnologie direttamente dai server di Amazon, pagando solo per ciò che consuma.
+
+
+#heading(level: 2, outlined: false)[Artificial Intelligence (AI)]
 Branca dell'informatica che si occupa di creare sistemi hardware e software capaci di simulare processi cognitivi umani. In termini semplici, è la capacità di una macchina di mostrare abilità umane come il ragionamento, l'apprendimento, la pianificazione e la creatività.
 
 #heading(level: 2, outlined: false)[Asset Software]
@@ -92,9 +96,6 @@ Ruolo svolto da un'entità esterna che interagisce con il sistema. Non è la per
 
 #heading(level: 2, outlined: false)[Audit]
 Revisione sistematica e indipendente del codice, dei processi o della sicurezza del sistema. Serve a verificare la conformità a standard specifici, normative o best practice e a identificare eventuali vulnerabilità o inefficienze.
-
-#heading(level: 2, outlined: false)[Amazon Web Services -  AWS]
-Piattaforma di Cloud Computing più completa e utilizzata al mondo, offerta da Amazon. Invece di acquistare, possedere e gestire server fisici e centri dati (Data Center) di proprietà, un'azienda può noleggiare potenza di calcolo, spazio di archiviazione, database e altre tecnologie direttamente dai server di Amazon, pagando solo per ciò che consuma.
 
 #pagebreak()
 
@@ -137,10 +138,10 @@ Caratteristica del codice sorgente che, pur non essendo tecnicamente un errore (
 #heading(level: 2, outlined: false)[Commit]
 Operazione che registra in modo permanente le modifiche apportate a uno o più file all'interno di un VCS. Ogni commit, solitamente accompagnato da una descrizione, crea un nuovo punto nella cronologia del progetto, permettendo di ripristinare una versione precedente.
 
-#heading(level: 2, outlined: false)[Continuous Delivery - CD]
+#heading(level: 2, outlined: false)[Continuous Delivery (CD)]
 Pratica di sviluppo software in cui le modifiche al codice vengono preparate automaticamente per il rilascio in produzione. È l'estensione della Continuous Integration e garantisce che il software sia sempre in uno stato rilasciabile.
 
-#heading(level: 2, outlined: false)[Continuous Integration - CI]
+#heading(level: 2, outlined: false)[Continuous Integration (CI)]
 Pratica che consiste nell'unire frequentemente le copie di lavoro di tutti gli sviluppatori in una linea principale condivisa (mainline), diverse volte al giorno. Ogni integrazione è verificata da una build automatica e da test per rilevare errori il più rapidamente possibile.
 
 #pagebreak()
@@ -158,7 +159,7 @@ Professionista che progetta, scrive, testa e mantiene il codice sorgente di prog
 #heading(level: 2, outlined: false)[Diagrammi di PERTT]
 Strumento di project management utilizzato per pianificare, organizzare e coordinare i compiti all'interno di un progetto. Rappresentazione grafica reticolare che si concentra sulle relazioni di precedenza tra le attività.
 
-#heading(level: 2, outlined: false)[Disco Rigido - HDD]
+#heading(level: 2, outlined: false)[Disco Rigido (HDD)]
 Dispositivo di archiviazione principale di un computer, utilizzato per conservare i dati in modo permanente.
 
 #heading(level: 2, outlined: false)[Discord]
@@ -188,7 +189,7 @@ Software di versionamento distribuito dei file di una cartella, utilizzabile da 
 #heading(level: 2, outlined: false)[GitHub]
 Servizio web basato su git. Permette il versionamento dei file di un progetto online, aprendo quindi la collaborazione di più persone sui file. Offre inoltre diversi altri servizi come l'Issue Tracking System, la possibilità di gestire organizzazioni oppure hostare siti web.
 
-#heading(level: 2, outlined: false)[GitHub Action - GHA]
+#heading(level: 2, outlined: false)[GitHub Action (GHA)]
 Sistema di automazione offerto da GitHub e personalizzabile. Permette, al trigger di determinati eventi, di eseguire script ad esempio per la compilazione di file sorgenti oppure testare il software.
 
 #heading(level: 2, outlined: false)[Google Meet]
@@ -211,7 +212,7 @@ Elemento atto a: pianificare, discutere e tracciare lavoro, bug, idee o nuove fu
 #pagebreak()
 
 = L
-#heading(level: 2, outlined: false)[Large Language Model - LLM]
+#heading(level: 2, outlined: false)[Large Language Model (LLM)]
 Tipo di AI addestrato su enormi quantità di dati testuali per comprendere, generare e elaborare il linguaggio umano in modo simile a un essere umano, Esso è capace di compiti come la scrittura, la traduzione, il riassunto di testi e la conversazione, basandosi su architetture di deep learning, i quali gli permettono di cogliere contesti complessi. 
 
 #pagebreak()
@@ -249,13 +250,13 @@ Acronimo per Open Worldwide Application Security Project, una fondazione no-prof
 #pagebreak()
 = P
 
-#heading(level: 2, outlined: false)[PAB - Progettazione & Analisi Baseline]
+#heading(level: 2, outlined: false)[Progettazione & Analisi Baseline (PAB)]
 Milestone interna al gruppo che richiede la conclusione dell'attività di Analisi e di Progettazione per essere completata.
 
-#heading(level: 2, outlined: false)[Personas]
+#heading(level: 2, outlined: false)[Personas utente (Personas)]
 Rappresentazioni fittizie ma realistiche dei gruppi di utenti target, basate su dati e ricerche. Aiutano il team di sviluppo a comprendere i bisogni, le esperienze, i comportamenti e gli obiettivi degli utenti reali per cui stanno progettando il prodotto.
 
-#heading(level: 2, outlined: false)[PB - Product Baseline]
+#heading(level: 2, outlined: false)[Product Baseline (PB)]
 Milestone che richiede la consegna del prodotto e l'accettazione da parte dei professori per essere superata.
 
 #heading(level: 2, outlined: false)[Piano di Contingenza]
@@ -276,7 +277,7 @@ Indica un'entità o un fornitore che eroga un servizio (es. AWS per l'infrastrut
 #heading(level: 2, outlined: false)[Pull]
 Comando di Git usato per scaricare la versione più recente di un file o di un progetto dall'ambiente condiviso con il resto dei collaboratori.
 
-#heading(level: 2, outlined: false)[Pull Request - PR]
+#heading(level: 2, outlined: false)[Pull Request (PR)]
 Meccanismo utilizzato nei tool di versionamento per notificare ai membri del team che una funzionalità o una modifica è stata completata su un branch secondario e si richiede la revisione del codice prima di unirla al ramo principale.
 
 #heading(level: 2, outlined: false)[Push]
@@ -295,7 +296,7 @@ Libreria JavaScript open-source utilizzata per creare interfacce utente (UI). Pe
 #heading(level: 2, outlined: false)[Remediation]
 Processo di correzione delle vulnerabilità, dei difetti o delle non conformità identificate durante un Audit o un test di sicurezza atto a ripristinare la sicurezza e l'integrità del sistema.
 
-#heading(level: 2, outlined: false)[Repository - Repo]
+#heading(level: 2, outlined: false)[Repository (Repo)]
 Ambiente digitale dove vengono salvati tutti i file riguardanti i progetti. Può esisterne più di una in base alla suddivisione degli argomenti per cui vengono create.
 
 #heading(level: 2, outlined: false)[Responsabile]
@@ -304,7 +305,7 @@ Figura professionale incaricata di guidare un team tecnico nella realizzazione d
 #heading(level: 2, outlined: false)[Rischio]
 Evento o una condizione incerta che, se si verifica, ha un effetto (positivo o negativo) sugli obiettivi del progetto, come i tempi, i costi, l'ambito o la qualità.
 
-#heading(level: 2, outlined: false)[RTB - Requirements & Technology Baseline]
+#heading(level: 2, outlined: false)[Requirements & Technology Baseline (RTB)]
 Milestone che fissa i requisiti da soddisfare, in accordo con il proponente; nel documento Analisi dei Requisiti motiva le tecnologie, i framework, le librerie adottate, e ne
 dimostra adeguatezza e interoperabilità. Tramite Proof of Concept (demo eseguibile) rappresentativa delle richieste del capitolato. Il PoC viene posto in repo accessibile a committente e proponente.
 
@@ -320,7 +321,7 @@ Framework Agile più utilizzato al mondo per la gestione dello sviluppo di prodo
 #heading(level: 2, outlined: false)[Secret Scanning]
 Processo automatizzato che analizza il codice sorgente, i log e altri file alla ricerca di credenziali esposte accidentalmente, come password, chiavi API o token privati, per prevenire accessi non autorizzati.
 
-#heading(level: 2, outlined: false)[Single Page Application - SPA]
+#heading(level: 2, outlined: false)[Single Page Application (SPA)]
 Applicazione web o sito che interagisce con l'utente riscrivendo dinamicamente la pagina corrente con nuovi dati dal server, anziché caricare intere nuove pagine. Questo rende l'esperienza utente più fluida e simile a un'applicazione desktop.
 
 #heading(level: 2, outlined: false)[Slack]
@@ -374,13 +375,13 @@ Sistema di preparazione documenti basato su un linguaggio di markup leggero, pro
 #pagebreak()
 = U 
 
-#heading(level: 2, outlined: false)[Use Case] <UseCase>
+#heading(level: 2, outlined: false)[Use Case (UC)] <UseCase>
 Vedi definizione di #link(<CasoUso>, ['Caso d\'uso']).
 
 #heading(level: 2, outlined: false)[UCB - Use Case Baseline]
 Milestone interna al gruppo che richiede la conclusione della stesura di tutti gli Use Case del progetto per essere completata. Fondamentale per definire i requisiti funzionali del software.
 
-#heading(level: 2, outlined: false)[User Interface - UI]
+#heading(level: 2, outlined: false)[User Interface (UI)]
 Insieme di tutti gli elementi visivi e interattivi attraverso i quali un essere umano comunica con un software, un'applicazione o un dispositivo Hardware.
 
 #pagebreak()
@@ -390,17 +391,17 @@ Insieme di tutti gli elementi visivi e interattivi attraverso i quali un essere 
 #heading(level: 2, outlined: false)[Verificatore]
 Figura professionale responsabile di esaminare un prodotto software per identificare difetti, errori (bug) o mancanze rispetto ai requisiti iniziali.
 
-#heading(level: 2, outlined: false)[Version Control System - VCS]
+#heading(level: 2, outlined: false)[Version Control System (VCS)]
 Un sistema di controllo di versione che permette di tenere traccia nel tempo di tutte le modifiche riguardanti un file, compresa la sua creazione ed eliminazione. Permette di registrare la cronologia delle revisioni, ripristinare versioni precedenti e facilitare la collaborazione simultanea di più persone.
 
-#heading(level: 2, outlined: false)[Visual Studio Code - VScode]
+#heading(level: 2, outlined: false)[Visual Studio Code (VScode)]
 Editor di testo e in particolare di codice sorgente. Offre una gamma di strumenti per facilitare lo sviluppo del codice attraverso funzionalità integrate, come strumenti di debugging, controllo versione e un vasto ecosistema di estensioni.
 
 #pagebreak()
 
 = W
 
-#heading(level: 2, outlined: false)[Way of Working - WoW]
+#heading(level: 2, outlined: false)[Way of Working (WoW)]
 Insieme di regole, metodologie, strumentazione e processi atti ad un avanzamento del progetto secondo modi concordati e accettati dai membri del gruppo.
 
 #heading(level: 2, outlined: false)[Web App]
