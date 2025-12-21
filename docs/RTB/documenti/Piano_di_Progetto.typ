@@ -23,6 +23,8 @@
   align: horizon,
   table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
 
+  "0.1.2", "2025/12/21", "Alberto Reginato", "Amerigo Vegliante", "Aggiornamento sprint trascorso",
+
   "0.1.1", "2025/12/14", "Angela Favaro", "Amerigo Vegliante", "Uniformazione documento allo standard del gruppo",
 
   "0.1.0",
@@ -1067,23 +1069,30 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [8 Dicembre 2025 - 14 Dicembre 2025],
 
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
   [
+    1. Fromazione con l'azienda proponente su backend;
+    2. Inizio stesura prime bozza per PdP, AdR e NdP;
+    3. Aggiornamento WoW, Glossario e sito;
+    4. Organizzazione milestones e Project Board.
 
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. Modellazione errata degli Use Case;
+    2. Mancanza di monitoraggio dello stato di avanzamento.
+    3. Strutturare in modo scorretto la documentazione. 
   ],
 
   [_Mitigazione_],
   [
-    1.
+    1. Consultazione con il professore per chiarire i dubbi riguardanti la documentazione;
+    2. Creazione Project Board ed issues per monitorare lo stato di avanzamento dei membri del team.
   ],
 
   [_GANTT Diagram_],
