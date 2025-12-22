@@ -23,15 +23,29 @@
   align: horizon,
   table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
 
-  "0.1.2", "2025/12/21", "Alberto Reginato", "Amerigo Vegliante", "Aggiornamento sprint trascorso",
+  "0.1.3", 
+  "2025/12/22", 
+  "Angela Favaro", 
+  "Amerigo Vegliante", 
+  "Conclusione capitolo ‘Analisi e gestione dei rischi’",
 
-  "0.1.1", "2025/12/14", "Angela Favaro", "Amerigo Vegliante", "Uniformazione documento allo standard del gruppo",
+  "0.1.2", 
+  "2025/12/21", 
+  "Alberto Reginato", 
+  "Amerigo Vegliante", 
+  "Aggiornamento sprint trascorso",
+
+  "0.1.1", 
+  "2025/12/17", 
+  "Angela Favaro", 
+  "Amerigo Vegliante", 
+  "Uniformazione documento allo standard del gruppo",
 
   "0.1.0",
   "2025/12/14",
   "Laura Venturini",
   "Nicola Simionato",
-  "Aggiunti capitoli ’Processi e metodologie’, ’Risorse e strumenti’ e ’Analisi e gestione dei rischi’",
+  "Aggiunti capitoli ‘Processi e metodologie’, ‘Risorse e strumenti’ e ‘Analisi e gestione dei rischi’",
 
   "0.0.5", "2025/12/14", "Angela Favaro", "Nicola Simionato", "Aggiunta diagrammi PERT e correzione analisi Sprint",
 
@@ -1074,7 +1088,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [
-    1. Fromazione con l'azienda proponente su backend;
+    1. formazione con l'azienda proponente su backend;
     2. Inizio stesura prime bozza per PdP, AdR e NdP;
     3. Aggiornamento WoW, Glossario e sito;
     4. Organizzazione milestones e Project Board.
@@ -1754,7 +1768,7 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Fare le stime del tempo necessario insieme e non assegnare questo compito a un’unica persona. \ Imporre un limite al numero di attività che una persona può svolgere nello stesso sprint. \ Confrontarsi nelle riunioni settimanali riguardo la mole di lavoro portata a termine e il tempo impiegato per farlo.],
   [*Rilevamento*],
-  align(left)[Analisi del carico di lavoro durante le riunioni di coordinamento. Il rischio è rilevato se si nota un accumulo di task in stato "in progress" o "in review" assegnati alla stessa persona all'interon della _Project Board_, o se emergono 'colli di bottiglia' che bloccano l'avanzamento degli altri membri.],
+  align(left)[Analisi del carico di lavoro durante le riunioni di coordinamento. Il rischio è rilevato se si nota un accumulo di task in stato "in progress" o "in review" assegnati alla stessa persona all'interno della _Project Board_, o se emergono colli di bottiglia che bloccano l'avanzamento degli altri membri.],
   [ *Piano di contingenza*],
   align(
     left,

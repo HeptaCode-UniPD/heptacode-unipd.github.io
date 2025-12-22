@@ -80,3 +80,6 @@ gmail
 labta
 labp
 milestone
+kpi
+ndp
+ro
