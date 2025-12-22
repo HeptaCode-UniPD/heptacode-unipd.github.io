@@ -124,7 +124,7 @@ Nel contesto aziendale e dello sviluppo prodotto (specialmente in ambiti Agile e
 Descrizione di una sequenza di azioni che un sistema compie per fornire un risultato di valore a un determinato utente, chiamato Attore.
 
 #heading(level: 2, outlined: false)[Chiavi API]
-Codice univoco (spesso una stringa alfanumerica) utilizzato per identificare e autenticare un'applicazione o un utente che richiede l'accesso a un'API. Funziona come una password per i programmi.
+Codice univoco (spesso una stringa alfanumerica) utilizzato per identificare e autenticare un'applicazione o un utente che richiede l'accesso ad un'API. Funziona come una password per i programmi.
 
 #heading(level: 2, outlined: false)[Cloud]
 Modello di fornitura di servizi informatici (come server, archiviazione, database, rete, software) tramite Internet. Permette l'accesso on-demand alle risorse senza la necessità di gestire fisicamente l'infrastruttura.
@@ -375,7 +375,7 @@ Sistema di preparazione documenti basato su un linguaggio di markup leggero, pro
 #pagebreak()
 = U 
 
-#heading(level: 2, outlined: false)[Use Case (UC)] <UseCase>
+#heading(level: 2, outlined: false)[Use Case (UC)]
 Vedi definizione di #link(<CasoUso>, ['Caso d\'uso']).
 
 #heading(level: 2, outlined: false)[UCB - Use Case Baseline]
