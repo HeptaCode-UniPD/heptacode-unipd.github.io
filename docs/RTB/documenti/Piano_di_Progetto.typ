@@ -47,15 +47,35 @@
   "Nicola Simionato",
   "Aggiunti capitoli ‘Processi e metodologie’, ‘Risorse e strumenti’ e ‘Analisi e gestione dei rischi’",
 
-  "0.0.5", "2025/12/14", "Angela Favaro", "Nicola Simionato", "Aggiunta diagrammi PERT e correzione analisi Sprint",
+  "0.0.5", 
+  "2025/12/14", 
+  "Angela Favaro", 
+  "Nicola Simionato", 
+  "Aggiunta diagrammi PERT e correzione analisi Sprint",
 
-  "0.0.4", "2025/12/08", "Angela Favaro", "Nicola Simionato", "Calcolo dei costi",
+  "0.0.4", 
+  "2025/12/08", 
+  "Angela Favaro", 
+  "Nicola Simionato", 
+  "Calcolo dei costi",
 
-  "0.0.3", "2025/12/03", "Angela Favaro", "Alberto Reginato", "Suddivisione e stesura sprint per PB",
+  "0.0.3", 
+  "2025/12/03", 
+  "Angela Favaro", 
+  "Alberto Reginato", 
+  "Suddivisione e stesura sprint per PB",
 
-  "0.0.2", "2025/12/02", "Angela Favaro", "Alberto Reginato", "Suddivisione e stesura sprint per RTB",
+  "0.0.2", 
+  "2025/12/02", 
+  "Angela Favaro", 
+  "Alberto Reginato", 
+  "Suddivisione e stesura sprint per RTB",
 
-  "0.0.1", "2025/12/01", "Angela Favaro", "Alberto Reginato", "Prima stesura di struttura generale",
+  "0.0.1", 
+  "2025/12/01", 
+  "Angela Favaro", 
+  "Alberto Reginato", 
+  "Prima stesura di struttura generale",
 )
 
 #pagebreak()
@@ -465,12 +485,12 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Attività di formazione su $text("Frontend")_G$, AWS ed introduzione alla parte AI da parte dell’azienda committente.
+    - Attività di formazione su Frontend, AWS ed introduzione alla parte AI da parte dell’azienda committente.
     - Continuazione di:
       - Analisi dei Requisiti.
       - Stesura della documentazione.
     - Revisione sulle decisioni prese riguardo alle tecnologie adatte al progetto.
-    - Continuazione stesura di $text("Use Case")_G$.
+    - Continuazione stesura di Use Case.
     - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ],
 )
