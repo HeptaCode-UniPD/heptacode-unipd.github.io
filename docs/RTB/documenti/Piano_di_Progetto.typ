@@ -59,9 +59,8 @@
 )
 
 #pagebreak()
-#outline(
-  title: "Indice delle figure",
-)
+
+Indice delle figure
 
 #pagebreak()
 #set page(
@@ -250,8 +249,8 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
 ]<fig:CalendarioProgetto>
 == $text("Milestones")_G$ programmate
 Di seguito elencate le milestone con i punti da considerare per poterle ritenere concluse.
-1. _$text("UCB (User Case Baseline)")_G$_:
-  - Conclusione stesura degli User Case.
+1. _$text("UCB (Use Case Baseline)")_G$_:
+  - Conclusione stesura degli Use Case.
 2. _$text("RTB (Requirements & Technology Baseline)")_G$_:
   - Documento _Analisi dei Requisiti_ (tecnologie, i framework, le librerie adottate, e ne dimostra adeguatezza e interoperabilità).
   - _$text("Proof of Concept")_G$_, demo eseguibile.
@@ -265,7 +264,7 @@ Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’i
 - Le attività che si dovranno svolgere ad ogni sprint.
 - I ruoli che ogni membro dovrà rappresentare. \
 Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro.
-=== UCB - _User Case Baseline_
+=== UCB - _Use Case Baseline_
 #figure(
   caption: [$text("Diagramma di PERT")_G$ della milestone UCB],
 )[
@@ -1409,25 +1408,26 @@ Successivamente verranno illustrati:
 
 == Identificazione dei rischi
 *Rischi legati ai requisiti*: \
-- Comprensione errata dei requisiti.
-- Assenza di priorità dei requisiti.
+- RR1 - Comprensione errata dei requisiti (@tab:RR1).
+- RR2 - Assenza di priorità dei requisiti (@tab:RR2).
 
 *Rischi tecnici*: \
-- Strumenti e tecnologie sconosciute.
-- Problemi di integrazione fra componenti.
-- Qualità insufficiente del codice.
-- Codice poco comprensibile.
-- Test insufficienti.
-- Gestione inadeguata della sicurezza.
+- RT1 - Strumenti e tecnologie sconosciute (@tab:RT1).
+- RT2 - Problemi di integrazione fra componenti (@tab:RT2).
+- RT3 - Qualità insufficiente del codice (@tab:RT3).
+- RT4 - Codice poco comprensibile (@tab:RT4).
+- RT5 - Test insufficienti (@tab:RT5).
+- RT6 - Gestione inadeguata della sicurezza (@tab:RT6).
 
 *Rischi organizzativi*:\
-- Mancato rispetto delle tempistiche.
-- Rallentamento dovuto ad altri impegni personali o universitari.
-- Distribuzione dei compiti non equilibrata.
-- Scarso coordinamento del team.
-- Mancanza di monitoraggio dello stato di avanzamento.
-- Documentazione non aggiornata.
-- Opinioni divergenti su decisioni da prendere.
+- RO1 - Mancato rispetto delle tempistiche (@tab:RO1).
+- RO2 - Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2).
+- RO3 - Distribuzione dei compiti non equilibrata (@tab:RO3).
+- RO4 - Scarso coordinamento del team (@tab:RO4).
+- RO5 - Mancanza di monitoraggio dello stato di avanzamento (@tab:RO5).
+- RO6 - Documentazione non aggiornata (@tab:RO6).
+- RO7 - Opinioni divergenti su decisioni da prendere (@tab:RO7).
+- RO8 - Mancanza di confronto con l'azienda (@tab:RO8).
 
 
 == Analisi dei rischi
@@ -1456,14 +1456,14 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     [ *Piano di mitigazione*],
     align(
       left,
-    )[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli user cases per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
+    )[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli Use Cases per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
     [*Rilevamento*],
     [ ],
     [ *Piano di contingenza*],
     align(
       left,
     )[Convocare una riunione immediata per identificare i requisiti sbagliati, capire fino a che punto sono errati e se si può mantenere parte del codice sviluppato, calcolare le ore necessarie per sistemarli e l’eventuale impatto sul budget. ],
-  )]
+  )] <tab:RR1>
 \
 #figure(
   caption: [Rischio Assenza di priorità dei requisiti],
@@ -1487,12 +1487,14 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
       left,
     )[I membri del team discuteranno assieme in maniera approfondita il livello di priorità dei requisiti, per decidere a quali dare la precedenza],
     [*Rilevamento*],
-    [],
+    align(left)[Il rischio viene individuato durante le riunioni di avanzamento e le revisioni dei requisiti, quando emergono ritardi, 
+      conflitti tra attività o frequenti cambi di focus nello sviluppo. 
+      Ulteriori segnali sono l’assenza di una chiara classificazione delle priorità nella documentazione dei requisiti o _difficoltà del team nel decidere quali requisiti implementare per primi_.],
     [ *Piano di contingenza*],
     align(
       left,
     )[Bloccare immediatamente lo sviluppo dei requisiti se si rivelano non di secondaria importanza per dedicarsi a quelli di massima priorità. Convocare una riunione per discutere nuovamente e rivalutare i livelli di priorità assegnati ai requisiti, ],
-  )]
+  )]<tab:RR2>
 \
 === Rischi tecnici
 #figure(
@@ -1517,12 +1519,12 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
       left,
     )[Durante la pianificazione degli sprint, verranno tenuti in considerazione i tempi necessari per imparare a utilizzare i nuovi strumenti e i rallentamenti che possono comportare. \ Inoltre, ogni membro dovrà imparare da autodidatta come si usano e le best practices delle tecnologie utilizzate *prima* di iniziare ad utilizzarle per il codice.   ],
     [*Rilevamento*],
-    [],
+    align(left)[Il rischio è individuabile durante le review degli sprint e le riunioni di avanzamento, osservando ritardi, errori frequenti o difficoltà operative legate all’uso delle nuove tecnologie.],
     [ *Piano di contingenza*],
     align(
       left,
     )[In caso il problema si verifichi nelle fasi iniziali dell’utilizzo del nuovo strumento, si può chiamare un meeting e valutare un eventuale cambio di tecnologia. Se avviene nelle fasi successive, interrompere lo sviluppo del progetto per approfondire il funzionamento delle nuove tecnologie. ],
-  )]
+  )]<tab:RT1>
 
 #figure(
   caption: [Rischio Problemi di integrazione fra componenti],
@@ -1548,11 +1550,16 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
       left,
     )[Documentare le API e i formati dei dati fra tutti i componenti. \ Implementare il processo di Integrazione Continua.],
     [*Rilevamento*],
-    [],
+    align(left)[Il rischio viene rilevato durante le fasi di integrazione e di test, in particolare tramite l’esecuzione di test di integrazione automatizzati e manuali, l’analisi dei log di errore e il fallimento delle pipeline di Integrazione Continua.],
     [*Piano di contingenza*],
-    align(left)[],
-  )]
+    align(left)[In caso di problemi di integrazione, sospendere temporaneamente l’implementazione di nuove funzionalità e dedicare il team 
+      di sviluppo alla risoluzione delle incompatibilità. Effettuare un allineamento delle versioni delle librerie, correggere o ridefinire le interfacce tra i componenti.],
+  )]<tab:RT2>
 
+#figure(
+  caption: [Rischio Qualit' insufficiente del codice],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1569,13 +1576,17 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Il codice prodotto da un membro del team deve essere revisionato da almeno un altro membro del team e devono essere integrati strumenti per l’analisi statica del codice. La maggior parte del codice deve essere coperto da test. Inoltre, prima di usare nuovi linguaggi di programmazione, i membri dovranno studiare le loro best practices. ],
   [*Rilevamento*],
-  [],
+  align(left)[Il rischio viene rilevato attraverso il monitoraggio dei KPI e dei parametri di soglia definiti nel Piano di Qualifica. Nello specifico, si monitorano i report dei tool di analisi statica, l'esito delle procedure di code review e le metriche di copertura dei test (code coverage). Il superamento delle soglie di guardia identificate nel Piano di Qualifica attiva immediatamente lo stato di allerta.],
   [ *Piano di contingenza*],
   align(
     left,
   )[Interrompere lo sviluppo dell’area del progetto coinvolta finché non si è identificato il problema e portato a un livello sufficiente la qualità del codice.],
-)
+)]<tab:RT3>
 \
+#figure(
+  caption: [Rischio Codice poco comprensibile],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1594,13 +1605,17 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Concordare prima di iniziare a stendere codice quali sono le regole riguardanti lo stile, la nomenclatura e la documentazione riguardante il codice. Far sì che il codice scritto da un membro venga revisionato da almeno un altro membro.],
   [*Rilevamento*],
-  [],
+  align(left)[Il rischio viene rilevato tramite l'esito negativo delle revisioni del codice effettuate tra i membri del team. Parallelamente, vengono monitorati i tool di analisi statica per verificare che gli indici di complessità e leggibilità rientrino nelle soglie stabilite nel Piano di Qualifica.],
   [ *Piano di contingenza*],
   align(
     left,
   )[Bloccare lo sviluppo di codice relativo alla parte illeggibile per dedicarsi alla riscrittura di tale codice seguendo le regole di stile e nomenclatura stabilite in precedenza. Se le regole sono state seguite ma il codice è lo stesso poco comprensibile, chiamare un meeting per rivalutare le regole scelte.],
-)
+)]<tab:RT4>
 \
+#figure(
+  caption: [Rischio Test insufficienti],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1617,16 +1632,19 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
   [ *Piano di mitigazione*],
   align(
     left,
-  )[Stabilire a priori e monitorare in fase si sviluppo le metriche di copertura e qualità del codice. \ Adottare il Test-Driven Development, scrivendo i test *prima* del codice da testare],
+  )[Stabilire a priori e monitorare in fase si sviluppo le metriche di copertura e qualità del codice.],
   [*Rilevamento*],
-  [],
+  align(left)[Utilizzo di strumenti di code coverage per monitorare la percentuale di codice coperto da test. Il rischio è rilevato quando i report automatici mostrano valori inferiori ai parametri di qualità minimi indicati nel Piano di Qualifica.],
   [ *Piano di contingenza*],
   align(
     left,
   )[Bloccare lo sviluppo del codice per cui non sono stati creati i test per dedicarsi alla loro implementazione.],
-)
+)]<tab:RT5>
 \
-
+#figure(
+  caption: [Rischio Gestione inadeguata della sicurezza],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1645,15 +1663,19 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Verificare che le librerie utilizzate non contengano vulnerabilità. \ Far sì che la maggior parte del codice sia coperto da test di sicurezza. Assicurarsi che il codice prodotto rispetti almeno la top 10 delle norme OWASP. Aggiungere criteri di revisione del codice relativi alla verifica della presenza di potenziali vulnerabilità. ],
   [*Rilevamento*],
-  [],
+  align(left)[Scansione automatica delle dipendenze per individuare vulnerabilità note nelle librerie. Il rilevamento avviene anche tramite l'esito di test di sicurezza specifici e la verifica manuale della conformità alle norme OWASP citate nel Piano di Qualifica.],
   [ *Piano di contingenza*],
   align(
     left,
   )[Identificare la parte di codice che presenta la vulnerabilità e interromperne lo sviluppo finché non è sistemata.],
-)
+)]<tab:RT6>
 \
 === Rischi organizzativi
 
+#figure(
+  caption: [Rischio Mancato rispetto delle tempistiche],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1672,14 +1694,17 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Aggiungere dei "periodi cuscinetto" nella pianificazione temporale degli sprint. Avvertire gli altri membri del gruppo in caso di rallentamenti e confrontarsi se si presentano difficoltà. ],
   [*Rilevamento*],
-  [],
+  align(left)[Monitoraggio costante dello stato di avanzamento dei task tramite GitHub Dashboard. Il rischio viene rilevato quando il tempo residuo stimato per un task supera la data di scadenza prevista nella pianificazione degli sprint.],
   [ *Piano di contingenza*],
   align(
     left,
   )[Chiamare una riunione per valutare le cause del ritardo, se i compiti assegnati sono realistici e, in caso di troppi ritardi accumulati, per capire se ci sono dei requisiti non obbligatori a cui si può rinunciare .],
-)
+)]<tab:RO1>
 \
-
+#figure(
+  caption: [Rischio Rallentamento dovuto ad altri impegni personali o universitari],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1700,14 +1725,17 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Avvertire gli altri membri se si è a conoscenza di periodi futuri in cui si è poco disponibili. \ Tenere conto dei periodi in cui la produttività rischia di essere bassa a causa degli esami universitari e pianificare attività meno intensa nei loro sprint. \ Aggiungere dei "periodi cuscinetto" nella pianificazione temporale. ],
   [*Rilevamento*],
-  [],
+  align(left)[Comunicazione tempestiva da parte dei membri del team tramite comunicazione asincrona riguardo a imprevisti personali. Il rischio viene rilevato anche osservando un calo nella velocità del team o il mancato completamento dei task assegnati nel singolo sprint nonostante la pianificazione iniziale.],
   [ *Piano di contingenza*],
   align(
     left,
   )[Riassegnare le attività critiche e/o urgenti dei membri non disponibili a membri con più disponibilità temporale, mettendo in pausa lo sviluppo di codice meno importante.\ In caso di troppi ritardi accumulati, convocare un meeting per capire se ci sono dei requisiti non obbligatori a cui si può rinunciare.\ Aumentare la frequenza delle riunioni per rilevare subito eventuali ulteriori problemi. ],
-)
+)]<tab:RO2>
 \
-
+#figure(
+  caption: [Rischio Distribuzione dei compiti non equilibrata],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1726,14 +1754,17 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Fare le stime del tempo necessario insieme e non assegnare questo compito a un’unica persona. \ Imporre un limite al numero di attività che una persona può svolgere nello stesso sprint. \ Confrontarsi nelle riunioni settimanali riguardo la mole di lavoro portata a termine e il tempo impiegato per farlo.],
   [*Rilevamento*],
-  [],
+  align(left)[Analisi del carico di lavoro durante le riunioni di coordinamento. Il rischio è rilevato se si nota un accumulo di task in stato "in progress" o "in review" assegnati alla stessa persona all'interon della _Project Board_, o se emergono 'colli di bottiglia' che bloccano l'avanzamento degli altri membri.],
   [ *Piano di contingenza*],
   align(
     left,
   )[Controllare la qualità del codice prodotto da membri sovraccaricati. \ Convocare una riunione per cambiare la distribuzione dei compiti dello sprint attuale ed eventualmente quelli successivi in modo da renderla più equa, assegnando meno compiti a chi ha già quelli che impiegano più tempo. ],
-)
+)]<tab:RO3>
 \
-
+#figure(
+  caption: [Rischio Scarso coordinamento del team],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1752,14 +1783,17 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Pianificare fin da subito gli incontri settimanali (in giorni e  orari prestabiliti) e stabilire le piattaforme di comunicazione dove tenersi aggiornati sui progressi, i dubbi e gli argomenti da discutere relativi al progetto.   ],
   [*Rilevamento*],
-  [],
+  align(left)[Monitoraggio della partecipazione e dell'efficacia degli incontri settimanali. Il rischio viene rilevato quando emergono dubbi frequenti su responsabilità già assegnate, quando i canali di comunicazione ufficiali rimangono inattivi o quando si verificano sovrapposizioni di lavoro (due persone che lavorano sulla stessa cosa senza saperlo).],
   [ *Piano di contingenza*],
   align(
     left,
   )[Aumentare la frequenza delle riunioni per aumentare il controllo e il coordinamento dei membri del team. \ Stabilire scadenze precise per i vari compiti.],
-)
+)]<tab:RO4>
 \
-
+#figure(
+  caption: [Rischio Mancanza di monitoraggio dello stato di avanzamento],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1780,12 +1814,16 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[ Pianificare minimo una riunione a settimana in cui i membri aggiornano gli altri sul proprio stato di avanzamento. ],
   [*Rilevamento*],
-  [],
+  align(left)[Il rischio viene rilevato durante i meeting periodici qualora emergano discrepanze significative tra quanto dichiarato dai membri e lo stato reale dei task sugli strumenti di tracciamento (Project Board). Altri segnali sono l'assenza di aggiornamenti costanti sulla piattaforma di comunicazione asincrona o il superamento delle date di scadenza intermedie senza preavviso.],
   [ *Piano di contingenza*],
-  align(left)[],
-)
+  align(left)[Inasprire le modalità di controllo aumentando la frequenza dei momenti di confronto. Imporre l'obbligo aggiornamento immediato del tool di gestione task ad ogni avanzamento significativo.  \ 
+  Se il problema persiste, assegnare a un membro specifico il ruolo di supervisore per monitorare attivamente i progressi dei singoli.],
+)]<tab:RO5>
 
-\
+#figure(
+  caption: [Rischio Documentazione non aggiornata],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1804,13 +1842,17 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Il responsabile ha il compito di tenere aggiornata la documentazione e di scriverci ogni decisione presa dal team. \ Un compito non viene considerato completato finché la documentazione non è stata aggiornata adeguatamente.],
   [*Rilevamento*],
-  [],
+  align(left)[Viene rilevato durante le fasi di coordinamento quando i membri riscontrano informazioni ufficiali che non corrispondono alle ultime decisioni collettive, o quando si nota che qualcuno sta utilizzando metodi diversi da quelli concordati perché non documentati correttamente.],
   [ *Piano di contingenza*],
   align(
     left,
   )[Individuare tutta la documentazione obsoleta e bloccare lo svolgimento dei compiti non urgenti per dedicarsi al suo aggiornamento. ],
-)
+)]<tab:RO6>
 \
+#figure(
+  caption: [Rischio Opinioni divergenti su decisioni da prendere],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1831,13 +1873,17 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Stabilire un tempo massimo per le discussioni relative a decisioni complicate da prendere. Se non si riesce a giungere a una decisione unanime nel tempo prestabilito, la scelta viene presa con una votazione o dal membro più esperto.],
   [*Rilevamento*],
-  [],
+  align(left)[Il rischio si manifesta chiaramente quando una discussione supera il tempo massimo prestabilito o quando il team si trova in una fase di stallo senza riuscire a raggiungere un'unanimità o un compromesso operativo.],
   [ *Piano di contingenza*],
   align(
     left,
   )[Per le decisioni non compiute entro il tempo massimo, viene indetta una votazione: la scelta votata dalla maggioranza andrà presa. Se un membro è più esperto nel campo di cui si sta discutendo, il resto del gruppo può decidere di far valere di più il suo voto o di lasciar prendere direttamente a questa persona la decisione.],
-)
-\
+)]<tab:RO7>
+
+#figure(
+  caption: [Rischio Mancanza di confronto con l'azienda],
+  kind: table,
+)[
 #table(
   columns: 2,
   fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
@@ -1856,15 +1902,15 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
     left,
   )[Stabilire un incontro periodico con l'azienda. \ Contattare l'azienda in caso sorgano dubbi si requisiti o si incontrino problemi di un certo spessore. ],
   [*Rilevamento*],
-  [],
+  align(left)[Il rischio viene rilevato dall'assenza di feedback regolari o quando sorgono dubbi sui requisiti che non trovano risposta nell'arco tempistico settimanale a causa della mancanza di incontri programmati.],
   [ *Piano di contingenza*],
   align(
     left,
   )[Contattare l'azienda il prima possibile per chiarire i dubbi e riallinearsi sulle aspettative. \ Valutare l'impatto sul progetto e pianificare le modifiche necessarie per soddisfare le richieste dell'azienda. ],
-)
+)]<tab:RO8>
 == Monitoraggio dei rischi
 Il *responsabile* monitora lo stato di tutti i rischi; i *programmatori* e i *revisori* hanno parziale responsabilità nell’individuazione di rischi tecnici. \
 Per assicurarsi di individuare l’avveramento di un rischio il prima possibile si eseguiranno le seguenti attività:
 - *Riunioni periodiche* bimensili in cui si verifica lo stato dei rischi individuati, si discute se i piani di mitigazione e di contingenza sono efficaci ed eventualmente si individuano nuovi rischi, dopo delle quali si aggiorna l’analisi dei rischi del Piano di Progetto. In sostanza, si fa una rivalutazione periodica dei rischi.
 
-- Nel Piano di Qualifica verranno documentati  tutti i rischi che si concretizzano durante lo svolgimento del progetto.
+- Nel *Piano di Qualifica* verranno documentati  tutti i rischi che si concretizzano durante lo svolgimento del progetto.
