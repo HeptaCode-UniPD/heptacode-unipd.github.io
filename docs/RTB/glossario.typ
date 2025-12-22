@@ -34,7 +34,7 @@
   "Aggiunta terminologie per AdR",
 
   "1.1.0",
-  "2025/10/30",
+  "2025/12/20",
   "Angela Favaro",
   "Amerigo Vegliante",
   "Aggiunta terminologie per RTB",
