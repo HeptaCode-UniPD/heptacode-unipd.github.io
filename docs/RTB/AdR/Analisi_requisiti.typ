@@ -4,10 +4,11 @@
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("0.0.4", "2025-12-21", "Alberto Reginato", "Angela Canazza", "Modellazione UC da UC2.3.1 a UC7"),
-  ("0.0.3", "2025-12-18", "Alberto Reginato", "Angela Canazza", "Rimodellazione UC fino UC2.3"),
-  ("0.0.2", "2025-12-17", "Alberto Reginato", "Angela Canazza", "Rimodellazione UC fino UC1.4"),
-  ("0.0.1", "2025-12-15", "Alberto Reginato", "Angela Canazza", "Creazione struttura del documento e prima bozza"),
+  ("0.3.0", "2025-12-23", "Alberto Reginato", "Angela Canazza", "Aggiunta UC2.4 e fix"),
+  ("0.2.0", "2025-12-21", "Alberto Reginato", "Angela Canazza", "Modellazione UC da UC2.3.1 a UC7"),
+  ("0.1.2", "2025-12-18", "Alberto Reginato", "Angela Canazza", "Rimodellazione UC fino UC2.3"),
+  ("0.1.1", "2025-12-17", "Alberto Reginato", "Angela Canazza", "Rimodellazione UC fino UC1.4"),
+  ("0.1.0", "2025-12-15", "Alberto Reginato", "Angela Canazza", "Creazione struttura del documento e prima bozza"),
 )
 
 #let versione = storia_modifiche.first().at(0)
@@ -25,6 +26,8 @@
     ]
   ]
 )
+
+#set heading(numbering: "1.1")
 
 \
 
@@ -65,14 +68,14 @@
 
 #pagebreak()
 
-= 1. Introduzione
-== 1.1 Scopo del Documento
+= Introduzione
+== Scopo del Documento
 
 Nel ciclo di vita dello sviluppo software, un'analisi dei requisiti accurata e condivisa rappresenta il fondamento per il successo di un progetto. Questo documento ha l'obiettivo di formalizzare le specifiche funzionali, non funzionali e i vincoli del progetto "_Code Guardian_". Agisce come una fonte di verità unica (_single source of truth_) per il team di sviluppo e per tutti gli stakeholder di VarGroup, con l'obiettivo primario di garantire una comprensione comune e ridurre al minimo le ambiguità che potrebbero emergere nelle fasi successive.\
 
 La struttura del documento è pensata per guidare il lettore attraverso un percorso logico, partendo da una descrizione generale del prodotto e dei suoi utenti, per poi approfondire i requisiti specifici e i modelli di interazione attraverso i casi d'uso. Infine, una matrice di tracciabilità evidenzierà la coerenza tra le funzionalità richieste e le interazioni utente definite.
 
-== 1.2 Scopo del Prodotto
+== Scopo del Prodotto
 
 In un contesto caratterizzato dalla crescente complessità dei progetti software, la necessità di automatizzare i processi di audit e di miglioramento della qualità del codice è diventata un fattore d'importanza critica. Il progetto "_Code Guardian_" nasce per rispondere a questa esigenza, realizzando una piattaforma web intelligente basata su un sistema ad agenti software.
 
@@ -84,7 +87,7 @@ Gli obiettivi principali della piattaforma sono:
 
 _Code Guardian_ mira quindi ad automatizzare e ottimizzare i processi di audit e miglioramento continuo del codice. Tutto ciò ha lo scopo di semplificare compiti ripetitivi e liberare tempo prezioso agli sviluppatori, permettendo loro di concentrarsi su attività a maggior valore aggiunto e, in secondo luogo, fornire a _Project Manager_ e _Product Owner_ strumenti efficaci per la _governance_ e il monitoraggio qualitativo dei progetti software.
 
-== 1.3 Definizioni, acronimi e abbreviazioni
+== Definizioni, acronimi e abbreviazioni
 
 La stesura del presente documento fa uso di una terminologia specifica, legata sia al dominio applicativo del progetto "_Code Guardian_" che agli standard dell'Ingegneria del Software. Per facilitare la lettura e assicurare che ogni concetto sia compreso in modo uniforme da tutti i destinatari (team di sviluppo, committente e proponente), è stato redatto un documento di supporto dedicato.
 
@@ -95,15 +98,15 @@ Si faccia pertanto riferimento al #link("https://heptacode-unipd.github.io/docs/
 
 L'uso del glossario è raccomandato per garantire la piena coerenza semantica durante tutte le fasi del ciclo di vita del progetto.
 
-== 1.4 Riferimenti
+== Riferimenti
 Questa sezione elenca i documenti utilizzati come base per la stesura della presente analisi.
 
-=== 1.4.1 Riferimenti Normativi
+=== Riferimenti Normativi
 - _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato])
 - _Norme di Progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("...")[Norme di Progetto]).
 - [Altro ...]
 
-=== 1.4.2 Riferimenti Informativi
+=== Riferimenti Informativi
 - Verbale Interno: #link("https://heptacode-unipd.github.io/docs/RTB/verbali_esterni/vargroup_1.pdf")[Primo Incontro di Design Thinking]
 - Slide di lezione: #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[Analisi dei requisiti]
 - Documento interno: #link("https://heptacode-unipd.github.io/docs/CC/glossario.pdf")[Glossario]
@@ -112,43 +115,43 @@ Questa introduzione delinea il contesto e gli scopi del progetto. Il capitolo se
 
 #pagebreak()
 
-= 2. Descrizione del prodotto
+= Descrizione del prodotto
 Per definire correttamente i requisiti di un sistema è fondamentale comprendere il suo contesto operativo, gli utenti a cui si rivolge e le scelte architetturali di alto livello che ne influenzeranno lo sviluppo. Questa sezione fornisce una *visione d'insieme della piattaforma Code Guardian, delineandone gli obiettivi specifici* che il prodotto si propone di raggiungere, le tipologie di *personas utente* a cui è destinato, le loro esigenze e, infine, verranno elencati i *vincoli tecnici* e di progetto che governeranno il processo di sviluppo.
 
-== 2.1 Funzionalità del Prodotto
+== Funzionalità del Prodotto
 Il sistema _Code Guardian_ è concepito per automatizzare il controllo di qualità e sicurezza del software, riducendo il carico cognitivo sugli sviluppatori. Di seguito sono elencate le macro-funzionalità principali che il sistema offre agli utenti, indipendentemente dalla sua implementazione interna.
 
-=== 2.1.1 Audit Automatico del Codice
+=== Audit Automatico del Codice
 Il sistema esegue un'analisi approfondita del codice sorgente ogni volta che viene rilevata una modifica nel _repository_ (evento di `PUSH`).
 - *Analisi Statica*: Rilevamento automatico di _code smell_, bug potenziali e violazioni delle convenzioni di stile.
 - *Verifica dei Test*: Controllo della copertura dei test (_code coverage_) per garantire che le nuove funzionalità siano adeguatamente verificate.
 
-=== 2.1.2 Scansione di Sicurezza e Vulnerabilità
+=== Scansione di Sicurezza e Vulnerabilità
 Per garantire la robustezza del software, il sistema integra strumenti di controllo specifici per la _security_:
 - *Rilevamento Credenziali*: Identificazione di chiavi API, password o token involontariamente committati nel codice (_secret scanning_).
 - *Analisi delle Dipendenze*: Verifica delle librerie di terze parti per individuare versioni obsolete o affette da vulnerabilità note.
 - *Compliance OWASP*: Controllo della conformità agli standard di sicurezza web (es. _OWASP Top 10_).
 
-=== 2.1.3 Validazione della Documentazione
+=== Validazione della Documentazione
 Il sistema assicura che il progetto mantenga un alto livello di manutenibilità verificando la presenza e la qualità della documentazione:
 - *Check Strutturale*: Verifica della presenza di file essenziali (es. `README.md`).
 - *Coerenza API*: Controllo della corrispondenza tra il codice implementato e la documentazione delle interfacce (es. specifiche _OpenAPI/Swagger_).
 
-=== 2.1.4 Remediation Proattiva
+=== Remediation Proattiva
 A differenza dei semplici strumenti di reportistica, _Code Guardian_ agisce attivamente per risolvere i problemi:
 - *Suggerimenti di Correzione*: Il sistema non si limita a segnalare l'errore, ma genera proposte concrete di codice correttivo.
 - *Creazione Pull Request*: Se l'utente approva un suggerimento, il sistema crea automaticamente un _branch_ dedicato e una _Pull Request_ pronta per la revisione, senza richiedere intervento manuale per la scrittura del codice.
 
-=== 2.1.5 Monitoraggio e Dashboard
+=== Monitoraggio e Dashboard
 Il sistema fornisce un punto di accesso centralizzato per la consultazione dello stato di salute dei progetti:
 - *Visione Aggregata*: Visualizzazione di metriche chiave indicatori relativi qualità del codice per singoli _repository_ o per interi gruppi di progetti.
 - *Storico Analisi*: Consultazione dei report passati per valutare l'evoluzione della qualità del software nel tempo.
 
-== 2.2 Utenti e Stakeholder (Personas) <Cap2.2>
+== Utenti e Stakeholder (Personas) <Cap2.2>
 Per creare un prodotto realmente utile è fondamentale in prima istanza comprendere le reali esigenze e necessità degli utenti finali a cui la piattaforma è destinata a rivolgersi. \
 L'analisi condotta durante la sessione di _Design Thinking_ ha permesso di identificare e definire *tre profili utente principali*, ciascuno con obiettivi e necessità specifiche. Le funzionalità della piattaforma sono state progettate per rispondere in modo mirato alle aspettative di queste _personas_.
 
-=== 2.2.1 Developer
+=== Developer
 Il _Developer_ è l'utente tecnico primario del sistema. Interagisce quotidianamente con i _repository_ di codice e ha bisogno di strumenti che lo supportino nel migliorare la qualità del suo lavoro in modo rapido ed efficiente.
 
 *Esigenze principali:*
@@ -158,7 +161,7 @@ Il _Developer_ è l'utente tecnico primario del sistema. Interagisce quotidianam
 - Avere una visione chiara e dettagliata delle *metriche di codice*, come la copertura dei test (code coverage) e la complessità ciclomatica.
 - Verificare la *conformità del codice agli standard di sicurezza* aziendali e alle _best practice_ del settore (es. _OWASP_).
 
-=== 2.2.2 Project Manager
+=== Project Manager
 Il _Project Manager_ ha la responsabilità di supervisionare l'avanzamento di uno o più progetti. Necessita di una visione d'insieme che gli consenta di monitorare lo stato di salute dei _repository_, la produttività del team e la conformità agli standard qualitativi.
 
 *Esigenze principali:*
@@ -168,7 +171,7 @@ Il _Project Manager_ ha la responsabilità di supervisionare l'avanzamento di un
 - Mappare le tecnologie utilizzate all'interno dei team per una migliore pianificazione delle risorse.
 - Visualizzare i risultati aggregati dei test e delle analisi di sicurezza (OWASP).
 
-=== 2.2.3 Business Owner
+=== Business Owner
 Il _Business Owner_ è lo _stakeholder_ con una visione strategica. Il principale _focus_ per questa figura sono non tanto i dettagli tecnici, quanto indicatori aggregati che gli permettano di valutare la qualità complessiva dei progetti di proprio interesse e l'efficienza dei team di sviluppo.
 
 *Esigenze principali:*
@@ -181,15 +184,15 @@ Il _Business Owner_ è lo _stakeholder_ con una visione strategica. Il principal
 
 L'architettura e l'interfaccia utente di _Code Guardian_ sono state ideate per servire trasversalmente le esigenze di questi tre profili. Tuttavia, come verrà esposto in maniera più dettagliata nel capitolo #link(<Cap2.4>)[2.4, Limiti del sistema], l'implementazione corrente del prototipo si concentra verticalmente sulla _persona_ del *Developer*.
 
-== 2.3 Vincoli del Prodotto
+== Vincoli del Prodotto
 Lo sviluppo del progetto dovrà sottostare ad una serie di vincoli tecnici ed architetturali definiti dalla committente per garantire la qualità, la manutenibilità e la corretta consegna del prodotto finale.
 
-=== 2.3.1 Vincoli di Progetto
+=== Vincoli di Progetto
 - *Copertura dei test*: Il codice sorgente della piattaforma dovrà essere coperto per un minimo del *70%* da test di unità automatizzati.
 - *Modularità*: L'applicativo dovrà essere progettato e realizzato con un'architettura modulare, per facilitare l'estensione futura delle sue funzionalità (ad esempio, con nuovi agenti).
 - [Altro ...]
 
-=== 2.3.2 Tecnologie di Sviluppo
+=== Tecnologie di Sviluppo
 In accordo con le linee guida fornite dal proponente _VarGroup_, il team ha definito uno _stack_ tecnologico mirato a garantire modularità e scalabilità.
 
 La logica _core_ della piattaforma, costituita dall'architettura multi-agente e dai flussi di orchestrazione, sarà sviluppata adottando un approccio ibrido basato su *Node.js* e *Python*. Questa scelta permette di coniugare l'efficienza nella gestione asincrona degli eventi (tipica di Node.js) con le potenti capacità di analisi dati e _machine learning_ offerte dall'ecosistema Python, fondamentali per gli agenti di _audit_.
@@ -200,7 +203,7 @@ Per quanto riguarda la persistenza dei dati, la scelta è ricaduta su *MongoDB*.
 
 Infine, l'infrastruttura operativa sarà fortemente integrata con l'ecosistema *GitHub*: le *GitHub Actions* gestiranno i flussi di _CI/CD_ e l'innesco degli agenti, mentre l'architettura _cloud_ sottostante sarà ospitata sui servizi *AWS* (_Amazon Web Services_), garantendo la disponibilità e le risorse computazionali necessarie per l'esecuzione parallela degli agenti.
 
-== 2.4 Limiti del Sistema <Cap2.4>
+== Limiti del Sistema <Cap2.4>
 Per garantire la fattibilità del progetto entro le scadenze accademiche e focalizzare lo sviluppo sul valore _core_, sono stati definiti i seguenti confini operativi che delimitano il perimetro del prototipo realizzato:
 
 - *Focalizzazione sul profilo Developer:* l'implementazione corrente supporta verticalmente le funzionalità operative dedicate al _Developer_. Le *dashboard* strategiche, le metriche di costo e le viste aggregate dedicate ai profili _Project Manager_ e _Business Owner_ sono considerate sviluppi futuri e non sono incluse in questa versione.
@@ -215,9 +218,9 @@ Per garantire la fattibilità del progetto entro le scadenze accademiche e focal
 
 #pagebreak()
 
-= 3. Casi d'uso
+= Casi d'uso
 
-== 3.1 Introduzione
+== Introduzione
 
 I Casi d'Uso rappresentano un elemento fondamentale all'interno del ciclo di vita dello sviluppo software in quanto definiscono in modo formale e non ambiguo le interazioni tra gli utenti (attori) e il sistema. Questo capitolo ha lo scopo di tradurre i bisogni di business, emersi durante la sessione di Design Thinking, in requisiti funzionali specifici per la piattaforma _Code Guardian_. 
 
@@ -252,7 +255,7 @@ Per garantire chiarezza e coerenza, vengono definiti nella seguente tabella i te
 
 Il paragrafo successivo andrà ad indentificare invece gli attori che interagiranno con il sistema.
 
-== 3.2 Attori
+== Attori
 
 Gli attori rappresentano le entità, umane o sistemiche, che interagiscono con la piattaforma _Code Guardian_ per eseguire operazioni o ricevere informazioni. La loro definizione deriva direttamente dall'analisi delle "Personas" condotta durante la sessione di _Design Thinking_, come documentato nel #link(<Cap2.2>)[Capitolo 2.2] , che ha permesso di identificare i ruoli chiave e le loro specifiche esigenze.
 
@@ -292,9 +295,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-== 3.3 Specifica dei casi d'uso
+== Specifica dei casi d'uso
 
-=== 3.3.1 UC1: Accesso tramite Piattaforma Esterna <UC1>
+=== UC1: Accesso tramite Piattaforma Esterna <UC1>
 // #figure(image("diagramma_uc1.png"), caption: [Diagramma del caso d'uso UC1])
 
 - *Attore principale:* Utente.
@@ -309,48 +312,47 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + L’utente esprime la volontà di accedere tramite il provider GitHub.
-  + L’utente viene reindirizzato verso la piattaforma esterna.
-  + L'utente completa la procedura di autenticazione sul sito del provider e concede i permessi necessari.
-  + L'utente viene riportato sulla piattaforma _Code Guardian_.
+  + L'utente completa la procedura di autenticazione esterna (*<\<include>>* #link(<UC1.1>)[[UC1.1]]).
   + L'utente accede alla propria dashboard personale.
 
-- *Scenario secondario:*
-  + Al passo 3, se l'utente annulla l'operazione o ha negato i consensi necessari (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]) o il provider segnala un errore (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]), l'utente viene riportato sulla piattaforma visualizzando un messaggio di mancato accesso.
-  + Al passo 4, se è il primo accesso assoluto, l'utente viene reindirizzato alla procedura di prima registrazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]).
+- *Scenari alternativi:*
+  + Al passo 3, se il sistema rileva che è il primo accesso assoluto, l'utente viene reindirizzato alla procedura di prima registrazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]).
 
 - *Postcondizioni:* L’utente è autenticato e visualizza la Dashboard.
 
-- *Estensioni:* #link(<UC1.2>)[[UC1.2]], #link(<UC1.3>)[[UC1.3]].
+- *Inclusioni:* #link(<UC1.1>)[[UC1.1]].
+- *Estensioni:* #link(<UC1.2>)[[UC1.2]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.2 UC1.1: Reindirizzamento al Provider di Identità <UC1.1>
+=== UC1.1: Reindirizzamento al Provider di Identità <UC1.1>
 
 - *Attore principale:* Utente.
 
 - *Attore secondario:* GitHub.
 
-- *Descrizione:* Gestisce il trasferimento dell'utente verso il provider di identità esterno e la gestione del rientro sulla piattaforma.
+- *Descrizione:* Gestisce il trasferimento dell'utente verso il provider di identità esterno, l'interazione remota e il rientro sulla piattaforma.
 
 - *Precondizioni:* La connessione internet è attiva.
 
 - *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC1>)[[UC1]].
 
 - *Scenario principale:*
-  + L’utente viene reindirizzato verso la pagina di autenticazione del provider esterno.
-  + L'utente viene reindirizzato nuovamente verso la piattaforma _Code Guardian_ con l'esito positivo della procedura esterna.
+  + L’utente visualizza la pagina di autenticazione del provider esterno.
+  + L'utente concede i permessi necessari e conferma l'operazione.
+  + L'utente viene reindirizzato nuovamente verso la piattaforma _Code Guardian_ con l'esito positivo.
 
 - *Scenari alternativi:* 
-  + Al passo 2, l'utente rientra nella piattaforma visualizzando una notifica di accesso annullato o fallito (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
-  + In qualsiasi momento del flusso, si verifica un fallimento tecnico nella comunicazione con il provider (es. timeout, servizio non raggiungibile) (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]).
+  + Al passo 2, l'utente nega i consensi o annulla l'operazione sul provider (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
+  + In qualsiasi momento del flusso, si verifica un fallimento tecnico nella comunicazione (es. timeout, servizio non raggiungibile) (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]).
 
-- *Postcondizioni:* L'utente si trova nuovamente nell'ambiente della piattaforma.
+- *Postcondizioni:* L'utente si trova nuovamente nell'ambiente della piattaforma con un token di sessione valido.
 
 - *Estensioni:* #link(<UC1.3>)[[UC1.3]], #link(<UC1.4>)[[UC1.4]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.3 UC1.2: Registrazione Primo Accesso <UC1.2>
+=== UC1.2: Registrazione Primo Accesso <UC1.2>
 
 - *Attore principale:* Utente.
 
@@ -358,11 +360,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* L'utente ha completato con successo l'autenticazione presso il provider esterno.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1>)[[UC1]] (primo accesso rilevato).
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1>)[[UC1]] (primo accesso rilevato al rientro dall'autenticazione).
 
 - *Scenario principale:*
     + L'utente visualizza la schermata di completamento profilo con i dati anagrafici (username, email) importati dal provider.
-    + L'utente seleziona il ruolo desiderato tra quelli disponibili (Developer, Project Manager o Business Owner).
+    + L'utente seleziona il ruolo desiderato con cui il profilo sarà inizializzato tra quelli disponibili (Developer, Project Manager o Business Owner).
     + L'utente conferma la registrazione.
     + L'utente visualizza una notifica di avvenuta creazione dell'account.
 
@@ -370,13 +372,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.4 UC1.3: Annullamento Autenticazione <UC1.3>
+=== UC1.3: Annullamento Autenticazione <UC1.3>
 
 - *Attore principale:* Utente.
 
 - *Descrizione:* L'utente prende atto del mancato accesso dovuto a una sua scelta esplicita (annullamento) o per la negazione dei consensi.
 
-- *Precondizioni:* L'utente ha selezionato "Annulla" o ha negato i consensi sull'interfaccia del provider durante la procedura di accesso.
+- *Precondizioni:* L'utente ha selezionato "Annulla" o ha negato i consensi sull'interfaccia del provider.
 
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC1.1>)[[UC1.1]].
 
@@ -384,11 +386,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + L'utente visualizza un messaggio che conferma l'annullamento dell'operazione di login.
   + L’utente si ritrova nella schermata iniziale di login, pronta per un nuovo tentativo.
 
-- *Postcondizioni:* L’utente non è autenticato e si trova nella pagina di login.
+- *Postcondizioni:* L’utente non è autenticato, si trova nella pagina di login e visualizza un messaggio che conferma l'annullamento dell'operazione di accesso.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.5 UC1.4: Errore Tecnico di Comunicazione <UC1.4>
+=== UC1.4: Errore Tecnico di Comunicazione <UC1.4>
 
 - *Attore principale:* Utente.
 
@@ -404,11 +406,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + L'utente visualizza una schermata o un messaggio di avviso relativo a problemi di comunicazione con il servizio esterno (es. "Servizio non disponibile").
   + L'utente visualizza l'opzione per riprovare la connessione.
 
-- *Postcondizioni:* L’utente non è autenticato e visualizza l'avviso di errore e l'opzione per riprovare la connessione.
+- *Postcondizioni:* L’utente non è autenticato, si trova nella pagina di login, visualizza l'avviso di errore e l'opzione per riprovare la connessione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.6 UC2: Aggiunta di un repository per l'analisi <UC2>
+=== UC2: Aggiunta di un repository per l'analisi <UC2>
 
 // #figure(image("diagramma_uc2.png"), caption: [Diagramma del caso d'uso UC2])
 
@@ -427,17 +429,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza il nuovo repository aggiunto correttamente alla lista dei suoi progetti.
 
 - *Scenari alternativi:* 
+  + Prima della conferma (passo 3), il Developer decide di annullare l'operazione e seleziona il tasto "Annulla" (*<\<extend>>* #link(<UC2.4>)[[UC2.4]]).
   + Al passo 3, il Developer visualizza un messaggio di errore relativo all'invalidità dell'URL o all'inesistenza del repository (*<\<extend>>* #link(<UC2.2>)[[UC2.2]]).
   + Al passo 3, il Developer visualizza una richiesta di autenticazione aggiuntiva poiché il repository risulta privato (*<\<extend>>* #link(<UC2.3>)[[UC2.3]]).
 
-- *Postcondizioni:* Il repository è visibile nella lista dei progetti del Developer.
+- *Postcondizioni:* Il repository è visibile nella lista dei progetti del Developer. 
 
 - *Inclusioni:* #link(<UC2.1>)[[UC2.1]].
-- *Estensioni:* #link(<UC2.2>)[[UC2.2]], #link(<UC2.3>)[[UC2.3]].
+- *Estensioni:* #link(<UC2.2>)[[UC2.2]], #link(<UC2.3>)[[UC2.3]], #link(<UC2.4>)[[UC2.4]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.7 UC2.1: Inserimento URL repository <UC2.1>
+=== UC2.1: Inserimento URL repository <UC2.1>
 
 - *Attore principale:* Developer.
 
@@ -453,7 +456,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.8 UC2.2: Errore di Validazione Repository <UC2.2>
+=== UC2.2: Errore di Validazione Repository <UC2.2>
 
 - *Attore principale:* Developer.
 
@@ -471,7 +474,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.9 UC2.3: Repository Privato (Richiesta Token) <UC2.3>
+=== UC2.3: Repository Privato (Richiesta Token) <UC2.3>
 
 - *Attore principale:* Developer.
 
@@ -495,7 +498,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.10 UC2.3.1: Inserimento Token di Accesso <UC2.3.1>
+=== UC2.3.1: Inserimento Token di Accesso <UC2.3.1>
 
 - *Attore principale:* Developer.
 
@@ -513,9 +516,25 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.11 UC3: Accesso alla Dashboard del Repository <UC3>
+=== UC2.4: Annullamento aggiunta repository <UC2.4>
 
+- *Attore principale:* Developer.
 
+- *Descrizione:* Gestisce il caso in cui il Developer decida di annullare l'operazione di aggiunta di un repository nel proprio profilo.
+
+- *Precondizioni:* Il Developer è autenticato e visualizza l'interfaccia per l'inserimento dei dati del repository.
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC2>)[[UC2]] (l'utente seleziona il tasto "Annulla").
+
+- *Scenario principale:* 
++ Il Developer viene reindirizzato alla dashboard principale della piattaforma _Code Guardian_.
++ Il Developer visualizza a schermo il messaggio che conferma l'annullamento della procedura.
+
+- *Postcondizioni:* L'utente si trova nuovamente nella dashboard senza aver aggiunto il repository.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC3: Accesso alla Dashboard del Repository <UC3>
 
 - *Attore principale:* Developer.
 
@@ -541,7 +560,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.12 UC3.1: Visualizzazione Sezione di Sintesi <UC3.1>
+=== UC3.1: Visualizzazione Sezione di Sintesi <UC3.1>
 
 - *Attore principale:* Developer.
 
@@ -562,7 +581,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.13 UC3.1.1: Visualizzazione Widget Test <UC3.1.1>
+=== UC3.1.1: Visualizzazione Widget Test <UC3.1.1>
 
 - *Attore principale:* Developer.
 
@@ -588,7 +607,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.14 UC3.1.2: Visualizzazione Widget Sicurezza <UC3.1.2>
+=== UC3.1.2: Visualizzazione Widget Sicurezza <UC3.1.2>
 
 - *Attore principale:* Developer.
 
@@ -614,7 +633,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.15 UC3.1.3: Visualizzazione Widget Documentazione <UC3.1.3>
+=== UC3.1.3: Visualizzazione Widget Documentazione <UC3.1.3>
 
 - *Attore principale:* Developer.
 
@@ -640,7 +659,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.16 UC3.2: Visualizzazione Widget Vuoto <UC3.2>
+=== UC3.2: Visualizzazione Widget Vuoto <UC3.2>
 
 - *Attore principale:* Developer.
 
@@ -659,7 +678,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.17 UC3.3: Visualizzazione Dettagli Analisi Test <UC3.3>
+=== UC3.3: Visualizzazione Dettagli Analisi Test <UC3.3>
 
 - *Attore principale:* Developer.
 
@@ -679,7 +698,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.18 UC3.4: Visualizzazione Dettagli Analisi Sicurezza <UC3.4>
+=== UC3.4: Visualizzazione Dettagli Analisi Sicurezza <UC3.4>
 
 - *Attore principale:* Developer.
 
@@ -699,7 +718,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.19 UC3.5: Visualizzazione Dettagli Analisi Documentazione <UC3.5>
+=== UC3.5: Visualizzazione Dettagli Analisi Documentazione <UC3.5>
 
 - *Attore principale:* Developer.
 
@@ -719,7 +738,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.20 UC4: Avvio di un'analisi on-demand <UC4>
+=== UC4: Avvio di un'analisi on-demand <UC4>
 
 // #figure(image("diagramma_uc4.png"), caption: [Diagramma del caso d'uso UC4])
 
@@ -746,7 +765,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.21 UC4.1: Selezione Tipologia Analisi <UC4.1>
+=== UC4.1: Selezione Tipologia Analisi <UC4.1>
 
 - *Attore principale:* Developer.
 
@@ -765,7 +784,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.22 UC4.2: Conflitto Tipologia Analisi <UC4.2>
+=== UC4.2: Conflitto Tipologia Analisi <UC4.2>
 
 - *Attore principale:* Developer.
 
@@ -784,7 +803,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.23 UC5: Accesso al Menù Utente <UC5>
+=== UC5: Accesso al Menù Utente <UC5>
 
 - *Attore principale:* Utente.
 
@@ -808,7 +827,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.24 UC6: Cambio Ruolo Operativo (Context Switch) <UC6>
+=== UC6: Cambio Ruolo Operativo (Context Switch) <UC6>
 
 - *Attore principale:* Utente.
 
@@ -827,7 +846,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== 3.3.25 UC7: Logout <UC7>
+=== UC7: Logout <UC7>
 
 - *Attore principale:* Utente.
 
