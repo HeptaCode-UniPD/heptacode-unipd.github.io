@@ -766,7 +766,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi*
   + Il Developer seleziona l'analisi più recente (*<\<extend>>* #link(<UC3.3>)[[UC3.3]])
-  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository *<\<extend>>* #link(<UC3>)[[UC3]]).
+  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository.
 
 - *Postcondizioni:* L'utente visualizza il dettaglio dell'analisi selezionata.
 
@@ -792,7 +792,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi*
   + Il Developer seleziona l'analisi più recente (*<\<extend>>* #link(<UC3.4>)[[UC3.4]])
-  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository *<\<extend>>* #link(<UC3>)[[UC3]]).
+  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository.
 
 - *Postcondizioni:* L'utente visualizza il dettaglio dell'analisi selezionata.
 
@@ -818,7 +818,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi*
   + Il Developer seleziona l'analisi più recente (*<\<extend>>* #link(<UC3.5>)[[UC3.5]])
-  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository *<\<extend>>* #link(<UC3>)[[UC3]]).
+  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository.
 
 - *Postcondizioni:* L'utente visualizza il dettaglio dell'analisi selezionata.
 
