@@ -4,8 +4,9 @@
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("0.4.0", "2025-12-23", "Alberto Reginato", "Angela Canazza", "Aggiunta UC da UC3.6 a UC3.9, da UC6 a UC6.4 e fix"),
   ("0.3.0", "2025-12-23", "Alberto Reginato", "Angela Canazza", "Aggiunta UC2.4 e fix"),
-  ("0.2.0", "2025-12-21", "Alberto Reginato", "Angela Canazza", "Modellazione UC da UC2.3.1 a UC7"),
+  ("0.2.0", "2025-12-21", "Alberto Reginato", "Angela Canazza", "Modellazione UC da UC2.3.1 a UC5.2"),
   ("0.1.2", "2025-12-18", "Alberto Reginato", "Angela Canazza", "Rimodellazione UC fino UC2.3"),
   ("0.1.1", "2025-12-17", "Alberto Reginato", "Angela Canazza", "Rimodellazione UC fino UC1.4"),
   ("0.1.0", "2025-12-15", "Alberto Reginato", "Angela Canazza", "Creazione struttura del documento e prima bozza"),
@@ -208,7 +209,7 @@ Per garantire la fattibilità del progetto entro le scadenze accademiche e focal
 
 - *Focalizzazione sul profilo Developer:* l'implementazione corrente supporta verticalmente le funzionalità operative dedicate al _Developer_. Le *dashboard* strategiche, le metriche di costo e le viste aggregate dedicate ai profili _Project Manager_ e _Business Owner_ sono considerate sviluppi futuri e non sono incluse in questa versione.
 
-- *Integrazione esclusiva GitHub:* Il sistema supporta unicamente _repository_ ospitati sulla piattaforma _GitHub_, utilizzando le sue API specifiche per l'autenticazione e la gestione del codice. Non sono previste integrazioni con altri provider (es. _GitLab_, _Bitbucket_) in questa fase.
+- *Integrazione esclusiva GitHub:* Il sistema supporta unicamente _repository_ ospitati sulla piattaforma _GitHub_, utilizzando le sue API specifiche per l'autenticazione e la gestione del codice. Non sono previste integrazioni con altri provider in questa fase.
 
 - *Remediation semi-automatica:* Per motivi di sicurezza e affidabilità, le azioni di correzione del codice proposte dagli agenti non verranno mai applicate automaticamente sul _branch_ principale. Il sistema si limita a generare _Pull Request_ o _snippet_ di codice che richiedono la revisione e l'approvazione umana.
 
@@ -240,7 +241,7 @@ Per garantire chiarezza e coerenza, vengono definiti nella seguente tabella i te
      [*Campo*], [*Descrizione*],
   ),
 
-  [*Identificatore*],[È un codice univoco, strutturato secondo la notazione gerarchica UCx.y (o UCx.y.z per sottocasi specifici),, che viene assegnato a ogni singolo Caso d'Uso per individuarlo in modo inequivocabile all'interno dell'intera documentazione di progetto. La sua funzione primaria è quella di garantire una rapida rintracciabilità dei requisiti lungo tutto il ciclo di vita del software senza ambiguità.],
+  [*Identificatore*],[È un codice univoco, strutturato secondo la notazione gerarchica UCx.y (o UCx.y.z per casi specifici),, che viene assegnato a ogni singolo Caso d'Uso per individuarlo in modo inequivocabile all'interno dell'intera documentazione di progetto. La sua funzione primaria è quella di garantire una rapida rintracciabilità dei requisiti lungo tutto il ciclo di vita del software senza ambiguità.],
    [*Scenario \ principale*], [È il flusso ideale (_Happy Path_). Descrive cosa succede quando l'interazione tra l'attore e il sistema procede linearmente verso il successo senza intoppi],
   [*Scenario \ secondario*], [Comprende tutti i percorsi alternativi o le gestioni delle eccezioni che si discostano dal flusso principale. Descrive come il sistema deve comportarsi quando si verificano errori o quando l'utente effettua scelte opzionali diverse da quelle standard.],
   [*Precondizioni*], [Definiscono lo stato in cui devono trovarsi obbligatoriamente il sistema e l'ambiente circostante prima che il Caso d'Uso possa essere eseguito. Rappresentano i vincoli e i requisiti indispensabili che si assumono come veri all'inizio dell'interazione.],
@@ -316,7 +317,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + L'utente accede alla propria dashboard personale.
 
 - *Scenari alternativi:*
-  + Al passo 3, se il sistema rileva che è il primo accesso assoluto, l'utente viene reindirizzato alla procedura di prima registrazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]).
++ Al passo 2, se l'esecuzione di #link(<UC1.1>)[[UC1.1]] termina con esito negativo l'utente rimane sulla pagina di login.
++ Al passo 3, se il sistema rileva che è il primo accesso assoluto, l'utente viene reindirizzato alla procedura di prima registrazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]).
 
 - *Postcondizioni:* L’utente è autenticato e visualizza la Dashboard.
 
@@ -339,6 +341,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + L’utente visualizza la pagina di autenticazione del provider esterno.
+  // Dal momento che questi passaggi avvengono all'esterno della piattaforma non so se lasciarli
   + L'utente concede i permessi necessari e conferma l'operazione.
   + L'utente viene reindirizzato nuovamente verso la piattaforma _Code Guardian_ con l'esito positivo.
 
@@ -346,7 +349,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Al passo 2, l'utente nega i consensi o annulla l'operazione sul provider (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
   + In qualsiasi momento del flusso, si verifica un fallimento tecnico nella comunicazione (es. timeout, servizio non raggiungibile) (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]).
 
-- *Postcondizioni:* L'utente si trova nuovamente nell'ambiente della piattaforma con un token di sessione valido.
+- *Postcondizioni:* L'utente si trova nuovamente nella piattaforma _Code Guardian_ nella pagina di accesso.
 
 - *Estensioni:* #link(<UC1.3>)[[UC1.3]], #link(<UC1.4>)[[UC1.4]].
 
@@ -363,7 +366,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC1>)[[UC1]] (primo accesso rilevato al rientro dall'autenticazione).
 
 - *Scenario principale:*
-    + L'utente visualizza la schermata di completamento profilo con i dati anagrafici (username, email) importati dal provider.
+    + L'utente visualizza la schermata di completamento profilo con i dati importati dal provider (username, email).
     + L'utente seleziona il ruolo desiderato con cui il profilo sarà inizializzato tra quelli disponibili (Developer, Project Manager o Business Owner).
     + L'utente conferma la registrazione.
     + L'utente visualizza una notifica di avvenuta creazione dell'account.
@@ -424,35 +427,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza l'interfaccia per l'inserimento dei dati del repository.
-  + Il Developer inserisce l'URL del repository _GitHub_ che desidera analizzare (*<\<include>>* #link(<UC2.1>)[[UC2.1]]).
+  + Il Developer digita o copia l'URL del repository _GitHub_ che desidera analizzare nel relativo campo di testo.
   + Il Developer conferma l'operazione.
   + Il Developer visualizza il nuovo repository aggiunto correttamente alla lista dei suoi progetti.
 
 - *Scenari alternativi:* 
-  + Prima della conferma (passo 3), il Developer decide di annullare l'operazione e seleziona il tasto "Annulla" (*<\<extend>>* #link(<UC2.4>)[[UC2.4]]).
-  + Al passo 3, il Developer visualizza un messaggio di errore relativo all'invalidità dell'URL o all'inesistenza del repository (*<\<extend>>* #link(<UC2.2>)[[UC2.2]]).
+  + Al passo 3, il Developer visualizza un messaggio di errore relativo all'invalidità dell'URL (*<\<extend>>* #link(<UC2.2>)[[UC2.2]]).
   + Al passo 3, il Developer visualizza una richiesta di autenticazione aggiuntiva poiché il repository risulta privato (*<\<extend>>* #link(<UC2.3>)[[UC2.3]]).
+  + Prima della conferma (passo 3), il Developer decide di annullare l'operazione e seleziona il tasto "Annulla" (*<\<extend>>* #link(<UC2.4>)[[UC2.4]]).
 
 - *Postcondizioni:* Il repository è visibile nella lista dei progetti del Developer. 
 
-- *Inclusioni:* #link(<UC2.1>)[[UC2.1]].
 - *Estensioni:* #link(<UC2.2>)[[UC2.2]], #link(<UC2.3>)[[UC2.3]], #link(<UC2.4>)[[UC2.4]].
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC2.1: Inserimento URL repository <UC2.1>
-
-- *Attore principale:* Developer.
-
-- *Descrizione:* Il Developer compila il campo relativo all'URL del repository.
-
-- *Precondizioni:* L'interfaccia di aggiunta repository è attiva.
-
-- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC2>)[[UC2]].
-
-- *Scenario principale:* Il Developer digita o incolla l'URL del repository _GitHub_ nel campo di testo apposito.
-
-- *Postcondizioni:* Il campo di input contiene l'URL specificato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -502,7 +488,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Rappresenta l'azione del Developer di inserire il Personal Access Token (PAT) in modo sicuro, gestendo la visibilità del dato sensibile.
+- *Descrizione:* Rappresenta l'azione del Developer di inserire il Personal Access Token in modo sicuro, gestendo la visibilità del dato sensibile.
 
 - *Precondizioni:* Il sistema ha richiesto al Developer di fornire un token di autenticazione.
 
@@ -547,16 +533,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Developer visualizza la struttura generale della dashboard.
   + Il Developer visualizza la sezione di sintesi composta dai widget per le tre aree di analisi (*<\<include>>* #link(<UC3.1>)[[UC3.1]]).
-  + Il Developer visualizza il pulsante per avviare una nuova analisi (*<\<extend>>* #link(<UC4>)[[UC4]]).
+  + Il Developer visualizza il pulsante "Nuova Analisi", su cui può cliccare per avviare un nuovo ciclo di controllo (*<\<extend>>* #link(<UC4>)[[UC4]]).
 
 - *Postcondizioni:* L'utente visualizza lo stato attuale del repository e le azioni disponibili.
 
 - *Inclusioni:* #link(<UC3.1>)[[UC3.1]].
-- *Estensioni:*
-  - #link(<UC3.3>)[[UC3.3]]: Se l'utente seleziona "Dettagli Test".
-  - #link(<UC3.4>)[[UC3.4]]: Se l'utente seleziona "Dettagli Sicurezza".
-  - #link(<UC3.5>)[[UC3.5]]: Se l'utente seleziona "Dettagli Documentazione".
-  - #link(<UC4>)[[UC4]]: Se l'utente seleziona "Avvia Analisi".
+- *Estensioni:* #link(<UC4>)[[UC4]]: Se l'utente seleziona "Avvia Analisi".
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -571,7 +553,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC3>)[[UC3]].
 
 - *Scenario principale:*
-  + Il Developer visualizza il widget relativo alla qualità del software (*<\<include>>* #link(<UC3.1.1>)[[UC3.1.1]]).
+  + Il Developer visualizza il widget relativo ai test (*<\<include>>* #link(<UC3.1.1>)[[UC3.1.1]]).
   + Il Developer visualizza il widget relativo alla sicurezza (*<\<include>>* #link(<UC3.1.2>)[[UC3.1.2]]).
   + Il Developer visualizza il widget relativo alla documentazione (*<\<include>>* #link(<UC3.1.3>)[[UC3.1.3]]).
 
@@ -595,7 +577,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza il titolo della sezione "Test".
   + Il Developer visualizza la percentuale aggregata di Code Coverage.
   + Il Developer visualizza il numero di test passati/falliti.
-  + Il Developer può selezionare il pulsante "Dettagli" per approfondire le analisi avviate per l'area Test (*<\<extend>>* #link(<UC3.3>)[[UC3.3]]).
+  + Il Developer può selezionare il pulsante "Dettagli" per approfondire l'ultima analisi terminata per l'area Test (*<\<extend>>* #link(<UC3.3>)[[UC3.3]]).
+  + Il Developer può selezionare il pulsante "Storico", in stato attivo se per il repository sono state eseguite almeno due analisi per l'area Test, per consultare la lista delle analisi condotte nell'area Test (*<\<extend>>* #link(<UC3.6>)[[UC3.6]]).
   + [Altro...]
 
 - *Scenari alternativi:* In assenza di dati sui test, il Developer visualizza lo stato vuoto (*<\<include>>* #link(<UC3.2>)[[UC3.2]]).
@@ -603,7 +586,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il widget Test è visualizzato.
 
 - *Inclusioni:* #link(<UC3.2>)[[UC3.2]].
-- *Estensioni:* #link(<UC3.3>)[[UC3.3]].
+- *Estensioni:* 
+  - #link(<UC3.3>)[[UC3.3]] se il Developer clicca su "Dettagli".
+  - #link(<UC3.6>)[[UC3.6]] se il Developer clicca su "Storico".
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -621,7 +606,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza il titolo "Sicurezza".
   + Il Developer visualizza il contatore totale delle vulnerabilità rilevate.
   + Il Developer visualizza la ripartizione per gravità (Alta, Media, Bassa).
-  + Il Developer può selezionare il pulsante "Dettagli" per approfondire le analisi avviate per l'area Sicurezza (*<\<extend>>* #link(<UC3.4>)[[UC3.4]]).
+  + Il Developer può selezionare il pulsante "Dettagli" per approfondire l'ultima analisi terminata per l'area Sicurezza (*<\<extend>>* #link(<UC3.4>)[[UC3.4]]).
+  + Il Developer può selezionare il pulsante "Storico", in stato attivo se per il repository sono state eseguite almeno due analisi per l'area Sicurezza, per consultare la lista delle analisi condotte nell'area Sicurezza (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
   + [Altro...]
 
 - *Scenari alternativi:* In assenza di dati di sicurezza, il Developer visualizza lo stato vuoto (*<\<include>>* #link(<UC3.2>)[[UC3.2]]).
@@ -629,7 +615,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il widget Sicurezza è visualizzato.
 
 - *Inclusioni:* #link(<UC3.2>)[[UC3.2]].
-- *Estensioni:* #link(<UC3.4>)[[UC3.4]].
+- *Estensioni:* 
+  - #link(<UC3.4>)[[UC3.4]] se il Developer clicca su "Dettagli".
+  - #link(<UC3.7>)[[UC3.7]] se il Developer clicca su "Storico".
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -647,7 +635,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza il titolo "Documentazione".
   + Il Developer visualizza il rating qualitativo (es. punteggio %).
   + Il Developer visualizza la checklist dei file essenziali presenti.
-  + Il Developer può selezionare il pulsante "Dettagli" per approfondire le analisi avviate per l'area Documentazione (*<\<extend>>* #link(<UC3.5>)[[UC3.5]]).
+  + Il Developer può selezionare il pulsante "Dettagli" per approfondire l'ultima analisi terminata per l'area Documentazione (*<\<extend>>* #link(<UC3.5>)[[UC3.5]]).
+  + Il Developer può selezionare il pulsante "Storico", in stato attivo se per il repository sono state eseguite almeno due analisi per l'area Documentazione, per consultare la lista delle analisi condotte nell'area Documentazione (*<\<extend>>* #link(<UC3.8>)[[UC3.8]]).
   + [Altro...]
 
 - *Scenari alternativi:* In assenza di dati sulla documentazione, il Developer visualizza lo stato vuoto (*<\<include>>* #link(<UC3.2>)[[UC3.2]]).
@@ -655,7 +644,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il widget Documentazione è visualizzato.
 
 - *Inclusioni:* #link(<UC3.2>)[[UC3.2]].
-- *Estensioni:* #link(<UC3.5>)[[UC3.5]].
+- *Estensioni:* 
+  - #link(<UC3.5>)[[UC3.5]] se il Developer clicca su "Dettagli".
+  - #link(<UC3.8>)[[UC3.8]] se il Developer clicca su "Storico".
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -682,19 +673,27 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer consulta i risultati approfonditi relativi alla qualità del codice e ai test, identificando le aree a maggior rischio.
+- *Descrizione:* Il Developer consulta i risultati approfonditi relativi alla qualità del codice e ai test.
 
-- *Precondizioni:* Sono presenti risultati validi relativi all'analisi dei test.
+- *Precondizioni:* Sono presenti risultati relativi all'analisi dei test.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC3>)[[UC3]].
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC3.1.1>)[[UC3.1.1]].
 
 - *Scenario principale:*
-  + Il Developer visualizza il grafico di copertura del codice (Code Coverage) interattivo, suddiviso per moduli.
-  + Il Developer consulta l'elenco dei file specifici che presentano una bassa copertura o test falliti.
-  + Il Developer visualizza le metriche di complessità ciclomatica per valutare la manutenibilità del codice.
-  + [Altro...]
+  + Il Developer visualizza il grafico di copertura del codice (Code Coverage).
+  + Il Developer consulta l'elenco dei file che presentano bassa copertura o test falliti.
+  //Da qui in poi non so se modellare un sotto-UC
+  + Il Developer espande o seleziona una specifica voce critica. 
+  + Il Developer visualizza il dettaglio dell'errore.
+  + Il Developer visualizza il comando "Risolvi", su cui può cliccare per valutare la soluzione proposta (*<\<extend>>* #link(<UC6>)[[UC6]]).
 
-- *Postcondizioni:* Il Developer ha acquisito le metriche granulari sui test.
+- *Scenari alternativi:* 
+  + In assenza di criticità, il Developer visualizza lo stato "Passato" e nessuna azione è disponibile.
+  + Se l'analisi visualizzata è già stata oggetto di remediation il Developer visualizza lo stato "Processato", il comando "Risolvi" è disabilitato, impedendo ulteriori modifiche sulla stessa analisi.
+
+- *Postcondizioni:* Il Developer ha analizzato il dettaglio dei test e avviato la gestione delle segnalazioni.
+
+- *Estensioni:* #link(<UC6>)[[UC6]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -702,19 +701,25 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer consulta l'elenco delle vulnerabilità rilevate nel codice e nelle dipendenze per prioritizzare gli interventi di bonifica.
+- *Descrizione:* Il Developer consulta l'elenco delle vulnerabilità rilevate.
 
-- *Precondizioni:* Sono presenti risultati validi relativi all'analisi di sicurezza (es. OWASP).
+- *Precondizioni:* Sono presenti risultati relativi all'analisi di sicurezza.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC3>)[[UC3]].
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC3.1.2>)[[UC.1.2]].
 
 - *Scenario principale:*
-  + Il Developer visualizza la lista delle vulnerabilità rilevate, raggruppate per livello di rischio (Critico, Alto, Medio, Basso).
-  + Il Developer espande una vulnerabilità specifica visualizzando i dettagli tecnici (file coinvolto, riga di codice, descrizione CVE).
-  + Il Developer visualizza eventuali segnalazioni relative a "segreti" (chiavi API, token) esposti accidentalmente nel codice.
-  + [Altro...]
+  + Il Developer visualizza la lista delle vulnerabilità raggruppate per livello di rischio.
+  //Da qui in poi non so se modellare un sotto-UC
+  + Il Developer seleziona una vulnerabilità specifica per visualizzarne i dettagli tecnici.
+  + Il Developer visualizza il comando "Risolvi", su cui può cliccare per valutare la strategia di mitigazione proposta (*<\<extend>>* #link(<UC6>)[[UC6]]).
 
-- *Postcondizioni:* Il Developer ha preso visione dell'elenco delle falle di sicurezza e della loro gravità.
+- *Scenari alternativi:* 
+  + In assenza di vulnerabilità, il Developer visualizza lo stato "Passato" e nessuna azione è disponibile.
+  + Se l'analisi visualizzata è già stata oggetto di remediation il Developer visualizza lo stato "Processato", il comando "Risolvi" è disabilitato, impedendo ulteriori modifiche sulla stessa analisi.
+
+- *Postcondizioni:* Il Developer ha preso visione del dettaglio di sicurezza e avviato la gestione delle vulnerabilità.
+
+- *Estensioni:* #link(<UC6>)[[UC6]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -722,19 +727,119 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer analizza la completezza della documentazione di progetto e la conformità agli standard.
+- *Descrizione:* Il Developer analizza le lacune nella documentazione.
 
-- *Precondizioni:* Sono presenti risultati validi relativi all'analisi della documentazione.
+- *Precondizioni:* Sono presenti risultati relativi all'analisi della documentazione.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC3>)[[UC3]].
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC3.1.3>)[[UC3.1.3]].
 
 - *Scenario principale:*
-  + Il Developer visualizza una checklist che indica la presenza o assenza dei file essenziali (es. `README.md`).
-  + Il Developer visualizza un punteggio qualitativo relativo alla leggibilità, correttezza o completezza dei file.
-  + Il Developer prende visione delle segnalazioni su eventuali incongruenze o sezioni mancanti nella documentazione delle API.
-  + [Altro...]
+  + Il Developer visualizza le segnalazioni relative alla documentazione del repository, relative ad elementi mancanti o incompleti.
+  + Il Developer visualizza il comando "Risolvi", su cui può cliccare per visualizzare la bozza di documentazione generata dall'IA (<<extend>> #link(<UC6>)[[UC6]]).
 
-- *Postcondizioni:* Il Developer è informato sullo stato della documentazione e sulle parti mancanti.
+- *Scenari alternativi:* 
+  + In caso di documentazione completa, il Developer visualizza lo stato "Passato" e nessuna azione è disponibile.
+  + Se l'analisi visualizzata è già stata oggetto di remediation il Developer visualizza lo stato "Processato", il comando "Risolvi" è disabilitato, impedendo ulteriori modifiche sulla stessa analisi.
+
+- *Postcondizioni:* Il Developer ha verificato lo stato della documentazione e avviato la gestione delle mancanze.
+
+- *Estensioni:* #link(<UC6>)[[UC6]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC3.6: Visualizzazione Storico Test <UC3.6>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Visualizza l'elenco cronologico delle analisi effettuate per l'area di Testing, permettendo la consultazione dei dettagli o il ritorno alla dashboard.
+
+- *Precondizioni:* Il repository ha subito almeno due analisi dei test nel tempo.
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC3.1.1>)[[UC3.1.1]] (L'utente seleziona "Storico").
+
+- *Scenario principale:*
+  + Il Developer visualizza la lista delle analisi test passate (ordinate dalla più recente alla più datata).
+  + Il Developer può selezionare l'analisi più recente (*<\<extend>>* #link(<UC3.3>)[[UC3.3]]) o un'analisi passata (*<\<extend>>* #link(<UC3.9>)[[UC3.9]]).
+
+- *Scenari alternativi*
+  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository *<\<extend>>* #link(<UC3>)[[UC3]]).
+
+- *Postcondizioni:* L'utente visualizza il dettaglio dell'analisi selezionata.
+
+- *Estensioni:*
+  + #link(<UC3.3>)[[UC3.3]]: Se l'utente seleziona l'analisi più recente.
+  + #link(<UC3.9>)[[UC3.9]]: Se l'utente seleziona un'analisi passata (non l'ultima).
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC3.7: Visualizzazione Storico Sicurezza <UC3.7>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Visualizza l'elenco cronologico delle analisi di sicurezza.
+
+- *Precondizioni:* Il repository ha subito almeno due analisi di sicurezza nel tempo.
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC3.1.2>)[[UC3.1.2]] (L'utente seleziona "Storico").
+
+- *Scenario principale:*
+  + Il Developer visualizza la lista delle analisi sicurezza passate (ordinate dalla più recente alla più datata).
+  + Il Developer può selezionare l'analisi più recente (*<\<extend>>* #link(<UC3.4>)[[UC3.4]]) o un'analisi passata (*<\<extend>>* #link(<UC3.9>)[[UC3.9]]).
+
+- *Scenari alternativi*
+  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository *<\<extend>>* #link(<UC3>)[[UC3]]).
+
+- *Postcondizioni:* L'utente visualizza il dettaglio dell'analisi selezionata.
+
+- *Estensioni:*
+  + #link(<UC3.4>)[[UC3.4]]: Se l'utente seleziona l'analisi più recente.
+  + #link(<UC3.9>)[[UC3.9]]: Se l'utente seleziona un'analisi passata (non l'ultima).
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC3.8: Visualizzazione Storico Documentazione <UC3.8>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Visualizza l'elenco cronologico delle analisi sulla documentazione.
+
+- *Precondizioni:* Il repository ha subito almeno due analisi della documentazione nel tempo.
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC3.1.3>)[[UC3.1.3]] (L'utente seleziona "Storico").
+
+- *Scenario principale:*
+  + Il Developer visualizza la lista delle analisi documentali passate(ordinate dalla più recente alla più datata).
+  + Il Developer può selezionare l'analisi più recente (*<\<extend>>* #link(<UC3.4>)[[UC3.4]]) o un'analisi passata (*<\<extend>>* #link(<UC3.9>)[[UC3.9]]).
+
+- *Scenari alternativi*
+  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository *<\<extend>>* #link(<UC3>)[[UC3]]).
+
+- *Postcondizioni:* L'utente visualizza il dettaglio dell'analisi selezionata.
+
+- *Estensioni:*
+  + #link(<UC3.5>)[[UC3.5]]: Se l'utente seleziona l'analisi più recente.
+  + #link(<UC3.9>)[[UC3.9]]: Se l'utente seleziona un'analisi passata (non l'ultima).
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC3.9: Consultazione Dettaglio Analisi Archiviata (Read-Only) <UC3.9>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Visualizzazione in sola lettura dei risultati di un'analisi passata.
+
+- *Precondizioni:* L'utente ha selezionato un'analisi storica (diversa dall'ultima) da una delle liste di storico.
+
+- *Trigger:* Condizione di estensione dei casi d'uso #link(<UC3.6>)[[UC3.6]], #link(<UC3.7>)[[UC3.7]] o #link(<UC3.8>)[[UC3.8]].
+
+- *Scenario principale:*
+  + Il Developer visualizza l'intestazione con i metadati storici (Data esecuzione, Autore, Commit ID).
+  + Il sistema renderizza il contenuto specifico dell'analisi archiviata in base all'area di provenienza.
+  + Il Developer può espandere le singole voci per leggere i dettagli tecnici.
+  + Il Developer visualizza il pulsante "Indietro".
+  + Il Developer seleziona "Indietro" per ritornare alla lista dello storico.
+
+- *Postcondizioni:* L'utente ritorna alla lista delle analisi storiche.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -816,43 +921,44 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + L'utente visualizza il pannello a comparsa del menu utente.
   + L'utente visualizza il riepilogo delle proprie informazioni (Nome, Email, Ruolo attuale).
-  + L'utente visualizza le opzioni di gestione disponibili (es. "Cambia Ruolo", "Logout").
-  + L'utente può selezionare una delle voci per procedere con l'azione desiderata (*<\<extend>>* #link(<UC6>)[[UC6]], #link(<UC7>)[[UC7]]).
+  + L'utente visualizza il pulsante "Cambia Ruolo", su cui può cliccare per cambiare il ruolo operativo (*<\<extend>>* #link(<UC5.1>)[[UC5.1]]).
+  + L'utente visualizza il pulsante "Logout", su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extend>>* #link(<UC5.2>)[[UC5.2]]).
 
 - *Postcondizioni:* Il menu utente è attivo e le opzioni sono selezionabili.
 
 - *Estensioni:*
-  - #link(<UC6>)[[UC6]]: Se l'utente seleziona l'opzione "Cambia Ruolo".
-  - #link(<UC7>)[[UC7]]: Se l'utente seleziona l'opzione "Logout".
+  + #link(<UC5.1>)[[UC5.1]]: Se l'utente seleziona l'opzione "Cambia Ruolo".
+  + #link(<UC5.2>)[[UC5.2]]: Se l'utente seleziona l'opzione "Logout".
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC6: Cambio Ruolo Operativo (Context Switch) <UC6>
+=== UC5.1: Cambio Ruolo Operativo (Context Switch) <UC5.1>
 
 - *Attore principale:* Utente.
 
 - *Descrizione:* Permette all'utente di cambiare il proprio ruolo attivo all'interno della sessione corrente, aggiornando l'interfaccia e i contenuti visibili in base alle _repository_ precedentemente collegate al ruolo.
 
-- *Precondizioni:* Il menu utente (#link(<UC5>)[[UC5]]) è aperto.
+- *Precondizioni:* Il menu utente è aperto.
 
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC5>)[[UC5]] (L'utente seleziona la voce "Cambia Ruolo").
 
 - *Scenario principale:*
   + L'utente visualizza l'elenco dei ruoli disponibili per il proprio account (es. se attualmente nel ruolo Developer i ruoli selezionabili saranno Project Manager e Business Owner).
   + L'utente seleziona il nuovo ruolo desiderato.
-  + La piattaforma ricarica l'ambiente di lavoro applicando le configurazioni e le viste.
+  + La piattaforma ricarica l'ambiente di lavoro visualizzando i repository e le configurazioni associate al ruolo selezionato (o lo stato iniziale vuoto nel caso di primo utilizzo).
+  + L’utente visualizza il messaggio di avvenuto cambio ruolo operativo.
 
 - *Postcondizioni:* L'interfaccia è aggiornata coerentemente con il nuovo ruolo selezionato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC7: Logout <UC7>
+=== UC5.2: Logout <UC5.2>
 
 - *Attore principale:* Utente.
 
 - *Descrizione:* Permette all'utente di terminare la sessione di lavoro corrente.
 
-- *Precondizioni:* Il menu utente (#link(<UC5>)[[UC5]]) è aperto.
+- *Precondizioni:* Il menu utente è aperto.
 
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC5>)[[UC5]] (L'utente seleziona la voce "Logout").
 
@@ -862,5 +968,139 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + L'utente visualizza il messaggio di avvenuta disconnessione.
 
 - *Postcondizioni:* La sessione utente è terminata e si trova nella pagina iniziale non autenticato dove può effettuare nuovamente l'accesso.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC6: Gestione Proposta di Remediation <UC6>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer analizza la soluzione proposta dall'IA. Il caso d'uso coordina la revisione dei singoli artefatti, la selezione parziale delle componenti da applicare e la decisione finale.
+
+- *Precondizioni:* L'utente ha selezionato il comando "Risolvi" da uno dei dettagli di analisi.
+
+- *Trigger:* Condizione di estensione dai casi d'uso di dettaglio (#link(<UC3.3>)[[UC3.3]], #link(<UC3.4>)[[UC3.4]], #link(<UC3.5>)[[UC3.5]]).
+
+- *Scenario principale:*
+  + Il Developer visualizza l'elenco dei file coinvolti nella soluzione proposta, ciascuno affiancato da una checkbox di selezione.
+  + Il Developer può espandere i singoli file per visualizzare il confronto delle modifiche (*<\<extend>>* #link(<UC6.1>)[[UC6.1]]) o le anteprime dei nuovi file creati (*<\<extend>>* #link(<UC6.2>)[[UC6.2]]).
+  + Il Developer seleziona tramite checkbox uno o più file da includere nel fix.
+  + Il Developer approva la selezione cliccando su "Applica Fix", avviando la procedura di creazione della _Pull Request_ per tutte le modifiche selezionate (*<\<include>>* #link(<UC6.3>)[[UC6.3]]).
+
+- *Scenari alternativi:* Il Developer ritiene la soluzione interamente non valida e decide di scartare la segnalazione (*<\<extend>>* #link(<UC6.4>)[[UC6.4]]).
+
+- *Postcondizioni:* La segnalazione viene risolta (PR creata) o ignorata.
+
+- *Inclusioni:* #link(<UC6.3>)[[UC6.3]].
+- *Estensioni:* #link(<UC6.1>)[[UC6.1]], #link(<UC6.2>)[[UC6.2]], #link(<UC6.4>)[[UC6.4]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC6.1: Visualizzazione modifiche (Diff) <UC6.1>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* L'utente visualizza le modifiche suggerite dall'IA su un documento o file di codice già esistente nel repository al momento dell'analisi.
+
+- *Precondizioni:* L'artefatto selezionato in #link(<UC6>)[[UC6]] è un file esistente nel repository quando l'analisi è stata avviata.
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC6>)[[UC6]].
+
+- *Scenario principale:*
+  + Il Developer visualizza un'interfaccia di confronto che presenta in rosso le righe rimosse e in verde le righe aggiunte o modificate.
+  + Il Developer analizza le differenze per validare la correttezza della logica della modifica.
+
+- *Postcondizioni:* Il Developer ha verificato le modifiche proposte al file esistente.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC6.2: Visualizzazione Nuovo Documento <UC6.2>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* L'utente visualizza l'anteprima completa di un nuovo file (es. nuova classe di test, file di documentazione mancante) generato dall'IA.
+
+- *Precondizioni:* L'artefatto selezionato in #link(<UC6>)[[UC6]] è un nuovo file non presente nel repository quando l'analisi è stata avviata.
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC6>)[[UC6]].
+
+- *Scenario principale:*
+  + Il Developer visualizza l'anteprima del contenuto del file generato.
+  + Il Developer visualizza la proposta di percorso di destinazione (path) per il contenuto generato.
+  + Il Developer può modificare la proposta di percorso di destinazione cliccando sul tasto "Modifica Percorso" (*<\<extend>>* #link(<UC6.2.1>)[[UC6.2.1]]).
+  + Il Developer legge il contenuto per verificarne la completezza e la correttezza.
+
+- *Postcondizioni:* Il Developer ha verificato il contenuto del nuovo file proposto.
+
+- *Estensioni:* #link(<UC6.2.1>)[[UC6.2.1]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC6.2.1: Selezione Percorso di Destinazione <UC6.2.1>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Permette al Developer di modificare la cartella in cui verrà salvato il nuovo file.
+
+- *Precondizioni:* Il Developer sta visualizzando l'anteprima di un nuovo file in #link(<UC6.2>)[[UC6.2]].
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC6.2>)[[UC6.2]] (L'utente seleziona "Modifica Percorso").
+
+- *Scenario principale:*
+  + Il Developer visualizza una finestra contenente l'albero delle directory del repository corrente.
+  + Il Developer naviga tra le cartelle esistenti.
+  + Il Developer seleziona la cartella di destinazione desiderata.
+  + Il Developer conferma la selezione cliccando sul tasto "Conferma".
+  + Il sistema aggiorna il percorso di salvataggio del nuovo file nella schermata di anteprima.
+
+- *Scenari alternativi:* Il Developer annulla la modifica premendo sul tasto "Annulla", mantenendo il percorso originale suggerito.
+
+- *Postcondizioni:* L'utente viene riportato all'interfaccia di visualizzazione del nuovo file, a cui è stato associato il percorso di destinazione desiderato.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC6.3: Creazione _Pull Request_ di Fix <UC6.3>
+
+- *Attore principale:* Developer.
+- *Attore secondario:* GitHub.
+
+- *Descrizione:* Il Developer finalizza la procedura di correzione ricevendo dal sistema il riscontro dell'avvenuta pubblicazione delle modifiche sulla piattaforma esterna.
+
+- *Precondizioni:* Il Developer ha confermato l'applicazione del fix in #link(<UC6>)[[UC6]].
+
+- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC6>)[[UC6]] (L'utente clicca su "Applica Fix").
+
+- *Scenario principale:*
+  + Il Developer visualizza un indicatore di elaborazione in corso (es. "Creazione PR in corso...").
+  + Il Developer visualizza una notifica di successo che conferma la creazione della Pull Request.
+  + Il Developer visualizza il link diretto per accedere alla _Pull Request_ sulla piattaforma _GitHub_.
+
+- *Scenari alternativi:* 
+  + Il Developer visualizza un messaggio di errore se la comunicazione con _GitHub_ fallisce (es. conflitto di merge o errore di rete).
+  + Il Developer si trova nuovamente nella schermata di visualizzazione della proposta di remediation #link(<UC6>)[[UC6]], in condizione di tentare nuovamente l'accettazione delle modifiche o annullare l'operazione.
+
+- *Postcondizioni:* La _Pull Request_ è creata su GitHub e l'analisi di partenza viene marcata come "Processata", inibendo la possibilità di generare ulteriori fix dalla stessa analisi.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC6.4: Ignora Remediation <UC6.4>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer interagisce con il sistema per classificare una segnalazione come non pertinente, rimuovendola dalla vista operativa.
+
+- *Precondizioni:* Il Developer sta analizzando la proposta in #link(<UC6>)[[UC6]].
+
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC6>)[[UC6]] (L'utente seleziona "Ignora").
+
+- *Scenario principale:*
+  + Il Developer visualizza una finestra di dialogo che chiede la conferma dell'operazione.
+  + Il Developer conferma l'operazione.
+  + Il Developer visualizza un messaggio di conferma dell'avvenuta archiviazione.
+  + Il Developer viene riportato alla lista degli errori e segnalazioni del repository, dove la voce appena gestita appare marcata come ignorata.
+
+- *Scenari alternativi:* Al passo 2 il Developer annulla l'operazione e ritorna nella schermata di visualizzazione della proposta di remediation #link(<UC6>)[[UC6]].
+
+- *Postcondizioni:* L'utente visualizza l'elenco delle segnalazioni con l'elemento appena consultato marcato come ignorato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
