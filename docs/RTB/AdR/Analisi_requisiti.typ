@@ -583,7 +583,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza il titolo della sezione "Test".
   + Il Developer visualizza la percentuale aggregata di Code Coverage.
   + Il Developer visualizza il numero di test passati/falliti.
-  + Il Developer può seleziona il pulsante "Dettagli" per approfondire l'ultima analisi terminata per l'area Test (*<\<include>>* #link(<UC3.3>)[[UC3.3]]).
+  + Il Developer seleziona il pulsante "Dettagli" per approfondire l'ultima analisi terminata per l'area Test (*<\<include>>* #link(<UC3.3>)[[UC3.3]]).
   + [Altro...]
 
 - *Scenari alternativi:* 
@@ -704,11 +704,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer analizza l'ultima analisi per per l'area Sicurezza.
+- *Descrizione:* Il Developer analizza l'ultima analisi per l'area Sicurezza.
 
 - *Precondizioni:* Il Developer sta visualizzando il widget relativo alla Sicurezza e sono presenti risultati relativi all'analisi di sicurezza.
 
-- *Trigger:* Il Developer clicca sul pulsante "Dettagli" in #link(<UC3.1.2>)[[UC.1.2]].
+- *Trigger:* Il Developer clicca sul pulsante "Dettagli" in #link(<UC3.1.2>)[[UC3.1.2]].
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle vulnerabilità raggruppate per livello di rischio.
@@ -762,7 +762,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi test passate (ordinate dalla più recente alla più datata).
-  + Il Developer seleziona l'analisi un'analisi passata (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
+  + Il Developer seleziona un'analisi passata (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
 
 - *Scenari alternativi*
   + Il Developer seleziona l'analisi più recente (*<\<extend>>* #link(<UC3.3>)[[UC3.3]])
@@ -996,7 +996,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:* 
   + Il Developer ritiene la soluzione interamente non valida e decide di scartare la segnalazione (*<\<extend>>* #link(<UC6.4>)[[UC6.4]]).
-  + Il Developer annulla l'operazione e torna alla schermata precedente premendo sul pulsante "Annulla"
+  + Il Developer annulla l'operazione e torna alla schermata precedente premendo sul pulsante "Annulla".
 
 - *Postcondizioni:* Le soluzioni proposte vengono accettate (PR creata) o ignorate.
 
@@ -1018,7 +1018,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Developer visualizza un'interfaccia di confronto che presenta in rosso le righe rimosse e in verde le righe aggiunte o modificate.
   + Il Developer analizza le differenze per validare la correttezza della logica della modifica.
-  + Dopo aver cosultato le modifiche proposte per lo specifico documento, il Developer preme il pulsante "X" per tronare alla schermata precedente.
+  + Dopo aver consultato le modifiche proposte per lo specifico documento, il Developer preme il pulsante "X" per tornare alla schermata precedente.
 
 - *Postcondizioni:* Il Developer ha verificato le modifiche proposte al file esistente.
 
