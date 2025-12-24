@@ -478,7 +478,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza un avviso che il repository è privato e un campo per l'inserimento del Personal Access Token.
-  + Il Developer inserisce il token richiesto (*<\<include>>* #link(<UC2.3.1>)[[UC2.3.1]]).
+  + Il Developer inserisce il token richiesto, per concedere i permessi alla repo sia di lettura che di scrittura (*<\<include>>* #link(<UC2.3.1>)[[UC2.3.1]]).
   + Il Developer conferma nuovamente l'operazione.
   + Il flusso riprende dalla verifica del repository.
 
@@ -530,301 +530,169 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole accedere all'area dedicata a uno specifico repository per visualizzare le metriche di sintesi.
+- *Descrizione:* Il Developer accede alla schermata principale di un progetto per consultare, in un'unica vista aggregata, lo stato di salute del codice relativamente a Test, Sicurezza e Documentazione.
 
 - *Precondizioni:* Il Developer è autenticato e visualizza la lista dei propri progetti.
 
-- *Trigger:* Il Developer seleziona un repository dalla lista progetti.
+- *Trigger:* Il Developer seleziona un repository specifico dalla lista progetti.
 
 - *Scenario principale:*
-  + Il Developer visualizza la struttura generale della dashboard.
-  + Il Developer visualizza la sezione di sintesi composta dai widget per le tre aree di analisi (*<\<include>>* #link(<UC3.1>)[[UC3.1]]).
-  + Il Developer visualizza il pulsante "Nuova Analisi" per avviare un nuovo ciclo di controllo (*<\<extend>>* #link(<UC4>)[[UC4]]).
+  + Il Developer visualizza l'intestazione del progetto (Nome repository, Branch analizzato).
+  + Il Developer visualizza il widget di sintesi per l'area *Test*, contenente la percentuale di copertura e il rapporto passati/falliti.
+  + Il Developer visualizza il widget di sintesi per l'area *Sicurezza*, contenente il conteggio delle vulnerabilità per gravità.
+  + Il Developer visualizza il widget di sintesi per l'area *Documentazione*, contenente il rating qualitativo.
+  + Il Developer visualizza il pulsante "Nuova Analisi" per avviare un aggiornamento dei dati (*<\<extend>>* #link(<UC4>)[[UC4]]).
 
-- *Postcondizioni:* L'utente visualizza lo stato attuale del repository e le azioni disponibili.
+- *Scenari alternativi:*
+  + Al passo 2, 3 o 4, se non sono presenti dati storici per una specifica area (mai analizzata), il Developer visualizza un placeholder "Nessun dato disponibile" nel relativo widget.
+  + Il Developer seleziona "Dettagli" nel widget Test (*<\<extend>>* #link(<UC3.1>)[[UC3.1]]).
+  + Il Developer seleziona "Dettagli" nel widget Sicurezza (*<\<extend>>* #link(<UC3.2>)[[UC3.2]]).
+  + Il Developer seleziona "Dettagli" nel widget Documentazione (*<\<extend>>* #link(<UC3.3>)[[UC3.3]]).
 
-- *Inclusioni:* #link(<UC3.1>)[[UC3.1]].
-- *Estensioni:* #link(<UC4>)[[UC4]]: Se l'utente seleziona "Avvia Analisi".
+- *Postcondizioni:* L'utente visualizza i KPI (Key Performance Indicators) attuali del repository.
+
+- *Estensioni:* 
+  + #link(<UC3.1>)[[UC3.1]], #link(<UC3.2>)[[UC3.2]], #link(<UC3.3>)[[UC3.3]]: Per l'approfondimento delle singole aree.
+  + #link(<UC4>)[[UC4]]: Se l'utente seleziona "Avvia Analisi".
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC3.1: Visualizzazione Sezione di Sintesi <UC3.1>
+=== UC3.1: Consultazione Dettagli Test <UC3.1>
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il developer visualizza i widget specifici per le tre aree di analisi (Test, Sicurezza, Documentazione) in una visione d'insieme.
+- *Descrizione:* Il Developer vuole approfondire le criticità identificate nell'area test dall'ultima analisi condotta.
 
-- *Precondizioni:* La dashboard è in caricamento.
+- *Precondizioni:* Il Developer si trova sulla Dashboard del repository (#link(<UC3>)[[UC3]]) e sono presenti dati relativi ai test.
 
-- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC3>)[[UC3]].
-
-- *Scenario principale:*
-  + Il Developer visualizza il widget relativo ai test (*<\<include>>* #link(<UC3.1.1>)[[UC3.1.1]]).
-  + Il Developer visualizza il widget relativo alla sicurezza (*<\<include>>* #link(<UC3.1.2>)[[UC3.1.2]]).
-  + Il Developer visualizza il widget relativo alla documentazione (*<\<include>>* #link(<UC3.1.3>)[[UC3.1.3]]).
-
-- *Postcondizioni:* I tre widget sono renderizzati a schermo.
-
-- *Inclusioni:* #link(<UC3.1.1>)[[UC3.1.1]], #link(<UC3.1.2>)[[UC3.1.2]], #link(<UC3.1.3>)[[UC3.1.3]].
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC3.1.1: Visualizzazione Widget Test <UC3.1.1>
-
-- *Attore principale:* Developer.
-
-- *Descrizione:* Il Developer consulta i dati di sintesi per l'area Testing e vuole visualizzare l'ultima analisi disponibile per questa sezione.
-
-- *Precondizioni:* La sezione Test della dashboard è in caricamento.
-
-- *Trigger:* La sezione widget della dashboard di un repository è in caricamento #link(<UC3.1>)[[UC3.1]].
+- *Trigger:* Il Developer clicca sul pulsante "Dettagli" nel widget dell'area Test.
 
 - *Scenario principale:*
-  + Il Developer visualizza il titolo della sezione "Test".
-  + Il Developer visualizza la percentuale aggregata di Code Coverage.
-  + Il Developer visualizza il numero di test passati/falliti.
-  + Il Developer seleziona il pulsante "Dettagli" per approfondire l'ultima analisi terminata per l'area Test (*<\<include>>* #link(<UC3.3>)[[UC3.3]]).
-  + [Altro...]
+  + Il Developer visualizza il grafico dettagliato della Code Coverage.
+  + Il Developer consulta l'elenco dei file critici (es. copertura inferiore alla soglia o test falliti).
+  + Il Developer espande una voce specifica per visualizzare il dettaglio dell'errore o della mancanza.
+  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extend>>* #link(<UC6>)[[UC6]]).
 
 - *Scenari alternativi:* 
-+ In assenza di dati sui test, il Developer visualizza lo stato vuoto (*<\<include>>* #link(<UC3.2>)[[UC3.2]]).
-+ Il Developer seleziona il pulsante "Storico", in stato attivo se per il repository sono state eseguite almeno due analisi per l'area Test, per consultare la lista delle analisi condotte nell'area Test (*<\<extend>>* #link(<UC3.6>)[[UC3.6]]).
+  + Se l'analisi visualizzata è etichettata come "Processata" o "Scartata" il comando "Risolvi" è disabilitato.
+  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extend>>* #link(<UC3.4>)[[UC3.4]]).
+  + Il Developer seleziona il pulsante "Indietro" per tornare alla Dashboard (#link(<UC3>)[[UC3]]).
 
-- *Postcondizioni:* Il widget Test è visualizzato.
+- *Postcondizioni:* Il Developer visualizza i dettagli tecnici delle problematiche di testing.
 
-- *Inclusioni:* #link(<UC3.2>)[[UC3.2]], #link(<UC3.3>)[[UC3.3]].
-- *Estensioni:* #link(<UC3.6>)[[UC3.6]].
+- *Estensioni:* #link(<UC6>)[[UC6]], #link(<UC3.4>)[[UC3.4]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC3.1.2: Visualizzazione Widget Sicurezza <UC3.1.2>
+=== UC3.2: Consultazione Dettagli Sicurezza <UC3.2>
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer consulta i dati di sintesi per l'area Sicurezza e vuole visualizzare l'ultima analisi disponibile per questa sezione.
+- *Descrizione:* Il Developer vuole esaminare le vulnerabilità di sicurezza rilevate nel codice e nelle dipendenze dall'ultima analisi condotta.
 
-- *Precondizioni:* La sezione Sicurezza della dashboard è in caricamento.
+- *Precondizioni:* Il Developer si trova sulla Dashboard del repository (#link(<UC3>)[[UC3]]) e sono presenti dati relativi alla sicurezza.
 
-- *Trigger:* La sezione widget della dashboard di un repository è in caricamento #link(<UC3.1>)[[UC3.1]].
+- *Trigger:* Il Developer clicca sul pulsante "Dettagli" nel widget dell'area Sicurezza.
 
 - *Scenario principale:*
-  + Il Developer visualizza il titolo "Sicurezza".
-  + Il Developer visualizza il contatore totale delle vulnerabilità rilevate.
-  + Il Developer visualizza la ripartizione per gravità (Alta, Media, Bassa).
-  + Il Developer seleziona il pulsante "Dettagli" per approfondire l'ultima analisi terminata per l'area Sicurezza (*<\<include>>* #link(<UC3.4>)[[UC3.4]]).
-  + [Altro...]
+  + Il Developer visualizza la lista delle vulnerabilità (es. Secret esposti) raggruppate per livello di rischio (Alto, Medio, Basso).
+  + Il Developer seleziona una vulnerabilità specifica per leggerne la descrizione tecnica e l'impatto.
+  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extend>>* #link(<UC6>)[[UC6]]).
 
 - *Scenari alternativi:* 
-+ In assenza di dati di sicurezza, il Developer visualizza lo stato vuoto (*<\<include>>* #link(<UC3.2>)[[UC3.2]]).
-+ Il Developer seleziona il pulsante "Storico", in stato attivo se per il repository sono state eseguite almeno due analisi per l'area Sicurezza, per consultare la lista delle analisi condotte nell'area Sicurezza (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
+  + Se l'analisi visualizzata è etichettata come "Processata" o "Scartata" il comando "Risolvi" è disabilitato. 
+  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extend>>* #link(<UC3.5>)[[UC3.5]]).
+  + Il Developer seleziona il pulsante "Indietro" per tornare alla Dashboard (#link(<UC3>)[[UC3]]).
 
-- *Postcondizioni:* Il widget Sicurezza è visualizzato.
+- *Postcondizioni:* Il Developer visualizza i dettagli tecnici delle falle di sicurezza.
 
-- *Inclusioni:* #link(<UC3.2>)[[UC3.2]],#link(<UC3.4>)[[UC3.4]].
-- *Estensioni:* #link(<UC3.7>)[[UC3.7]].
+- *Estensioni:* #link(<UC6>)[[UC6]], #link(<UC3.5>)[[UC3.5]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC3.1.3: Visualizzazione Widget Documentazione <UC3.1.3>
+=== UC3.3: Consultazione Dettagli Documentazione <UC3.3>
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer consulta i dati di sintesi per l'area Documentazione e vuole visualizzare l'ultima analisi disponibile per questa sezione.
+- *Descrizione:* Il Developer verifica la completezza e la qualità della documentazione del progetto in base all'ultima analisi condotta.
 
-- *Precondizioni:* La sezione Documentazione della dashboard è in caricamento.
+- *Precondizioni:* Il Developer si trova sulla Dashboard del repository (#link(<UC3>)[[UC3]]) e sono presenti dati relativi alla documentazione.
 
-- *Trigger:* La sezione widget della dashboard di un repository è in caricamento #link(<UC3.1>)[[UC3.1]].
+- *Trigger:* Il Developer clicca sul pulsante "Dettagli" nel widget dell'area Documentazione.
 
 - *Scenario principale:*
-  + Il Developer visualizza il titolo "Documentazione".
-  + Il Developer visualizza il rating qualitativo (es. punteggio %).
-  + Il Developer visualizza la checklist dei file essenziali presenti.
-  + Il Developer seleziona il pulsante "Dettagli" per approfondire l'ultima analisi terminata per l'area Documentazione (*<\<include>>* #link(<UC3.5>)[[UC3.5]]).
-  + [Altro...]
+  + Il Developer visualizza la checklist degli artefatti documentali (es. README).
+  + Il Developer identifica le voci segnalate come mancanti o incomplete.
+  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extend>>* #link(<UC6>)[[UC6]]).
 
 - *Scenari alternativi:* 
-+ In assenza di dati sulla documentazione, il Developer visualizza lo stato vuoto (*<\<include>>* #link(<UC3.2>)[[UC3.2]]).
-+ Il Developer seleziona il pulsante "Storico", in stato attivo se per il repository sono state eseguite almeno due analisi per l'area Documentazione, per consultare la lista delle analisi condotte nell'area Documentazione (*<\<extend>>* #link(<UC3.8>)[[UC3.8]]).
+  + Se l'analisi visualizzata è etichettata come "Processata" o "Scartata" il comando "Risolvi" è disabilitato.
+  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extend>>* #link(<UC3.6>)[[UC3.6]]).
+  + Il Developer seleziona il pulsante "Indietro" per tornare alla Dashboard (#link(<UC3>)[[UC3]]).
 
-- *Postcondizioni:* Il widget Documentazione è visualizzato.
+- *Postcondizioni:* Il Developer visualizza lo stato di conformità della documentazione.
 
-- *Inclusioni:* #link(<UC3.2>)[[UC3.2]], #link(<UC3.5>)[[UC3.5]].
-- *Estensioni:* #link(<UC3.8>)[[UC3.8]].
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC3.2: Visualizzazione Widget Vuoto <UC3.2>
-
-- *Attore principale:* Developer.
-
-- *Descrizione:* Il Developer vuole visualizzare i dati di sintesi di un'area per cui non sono state avviate analisi in precedenza.
-
-- *Precondizioni:* L'area di analisi specifica non possiede dati storici.
-
-- *Trigger:* Condizione d'inclusione da parte dei widget specifici (#link(<UC3.1.1>)[[UC3.1.1]], #link(<UC3.1.2>)[[UC3.1.2]], #link(<UC3.1.3>)[[UC3.1.3]]).
-
-- *Scenario principale:*
-  + Il Developer visualizza il titolo dell'area di riferimento (es. "Sicurezza").
-  + Il Developer visualizza un indicatore visivo di stato vuoto (es. "N/D", "--" o icona placeholder).
-  + Il Developer visualizza un messaggio o un'icona che suggerisce la necessità di avviare l'analisi per questa sezione.
-
-- *Postcondizioni:* Il widget è visualizzato in modalità placeholder.
+- *Estensioni:* #link(<UC6>)[[UC6]], #link(<UC3.6>)[[UC3.6]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC3.3: Visualizzazione Dettagli Analisi Test <UC3.3>
+=== UC3.4: Consultazione Storico Test <UC3.4>
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer analizza l'ultima analisi per l'area Test.
+- *Descrizione:* Il Developer vuole consultare un'analisi archiviata relativa all'area Testing.
 
-- *Precondizioni:* Il Developer sta visualizzando il widget relativo ai Test e sono presenti risultati relativi all'analisi dei test.
+- *Precondizioni:* Esistono almeno due analisi storiche per l'area Test.
 
-- *Trigger:* Il Developer clicca sul pulsante "Dettagli" in #link(<UC3.1.1>)[[UC3.1.1]].
+- *Trigger:* Il Developer clicca su "Storico" dalla vista di dettaglio Test (#link(<UC3.1>)[[UC3.1]]).
 
 - *Scenario principale:*
-  + Il Developer visualizza il grafico di copertura del codice (Code Coverage).
-  + Il Developer consulta l'elenco dei file che presentano bassa copertura o test falliti.
-  //Da qui in poi non so se modellare un sotto-UC
-  + Il Developer espande o seleziona una specifica voce critica. 
-  + Il Developer visualizza il dettaglio dell'errore.
-  + Il Developer visualizza il comando "Risolvi", su cui può cliccare per valutare la soluzione proposta (*<\<extend>>* #link(<UC6>)[[UC6]]).
+  + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
+  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
 
-- *Scenari alternativi:* 
-  + In assenza di criticità, il Developer visualizza lo stato "Passato" e nessuna azione è disponibile.
-  + Se l'analisi visualizzata è già stata oggetto di remediation il Developer visualizza lo stato "Processato", il comando "Risolvi" è disabilitato, impedendo ulteriori modifiche sulla stessa analisi.
+- *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.1>)[[UC3.1]]).
 
-- *Postcondizioni:* Il Developer ha analizzato il dettaglio dei test e avviato la gestione delle segnalazioni.
-
-- *Estensioni:* #link(<UC6>)[[UC6]].
+- *Postcondizioni:* Il Developer seleziona e apre un report passato tra le analisi archiviate per l'area Test.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC3.4: Visualizzazione Dettagli Analisi Sicurezza <UC3.4>
+=== UC3.5: Consultazione Storico Sicurezza <UC3.5>
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer analizza l'ultima analisi per l'area Sicurezza.
+- *Descrizione:* Il Developer vuole consultare un'analisi archiviata relativa all'area Sicurezza.
 
-- *Precondizioni:* Il Developer sta visualizzando il widget relativo alla Sicurezza e sono presenti risultati relativi all'analisi di sicurezza.
+- *Precondizioni:* Esistono almeno due analisi storiche per l'area Sicurezza.
 
-- *Trigger:* Il Developer clicca sul pulsante "Dettagli" in #link(<UC3.1.2>)[[UC3.1.2]].
+- *Trigger:* Il Developer clicca su "Storico" dalla vista di dettaglio Sicurezza (#link(<UC3.2>)[[UC3.2]]).
 
 - *Scenario principale:*
-  + Il Developer visualizza la lista delle vulnerabilità raggruppate per livello di rischio.
-  //Da qui in poi non so se modellare un sotto-UC
-  + Il Developer seleziona una vulnerabilità specifica per visualizzarne i dettagli tecnici.
-  + Il Developer visualizza il comando "Risolvi", su cui può cliccare per valutare la strategia di mitigazione proposta (*<\<extend>>* #link(<UC6>)[[UC6]]).
+  + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
+  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
 
-- *Scenari alternativi:* 
-  + In assenza di vulnerabilità, il Developer visualizza lo stato "Passato" e nessuna azione è disponibile.
-  + Se l'analisi visualizzata è già stata oggetto di remediation il Developer visualizza lo stato "Processato", il comando "Risolvi" è disabilitato, impedendo ulteriori modifiche sulla stessa analisi.
+- *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.2>)[[UC3.2]]).
 
-- *Postcondizioni:* Il Developer ha preso visione del dettaglio di sicurezza e avviato la gestione delle vulnerabilità.
-
-- *Estensioni:* #link(<UC6>)[[UC6]].
+- *Postcondizioni:* Il Developer seleziona e apre un report passato tra le analisi archiviate per l'area Sicurezza.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC3.5: Visualizzazione Dettagli Analisi Documentazione <UC3.5>
+=== UC3.6: Consultazione Storico Documentazione <UC3.6>
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer analizza l'ultima analisi per l'area documentazione.
+- *Descrizione:* Il Developer vuole consultare un'analisi archiviata relativa all'area Documentazione.
 
-- *Precondizioni:* Il Developer sta visualizzando il widget relativo alla Documentazione e sono presenti risultati relativi all'analisi della documentazione.
+- *Precondizioni:* Esistono almeno due analisi storiche per l'area Documentazione.
 
-- *Trigger:* Il Developer clicca sul pulsante "Dettagli" in #link(<UC3.1.3>)[[UC3.1.3]].
-
-- *Scenario principale:*
-  + Il Developer visualizza le segnalazioni relative alla documentazione del repository, relative ad elementi mancanti o incompleti.
-  + Il Developer visualizza il comando "Risolvi", su cui può cliccare per visualizzare la bozza di documentazione generata dall'IA (<<extend>> #link(<UC6>)[[UC6]]).
-
-- *Scenari alternativi:* 
-  + In caso di documentazione completa, il Developer visualizza lo stato "Passato" e nessuna azione è disponibile.
-  + Se l'analisi visualizzata è già stata oggetto di remediation il Developer visualizza lo stato "Processato", il comando "Risolvi" è disabilitato, impedendo ulteriori modifiche sulla stessa analisi.
-
-- *Postcondizioni:* Il Developer ha verificato lo stato della documentazione e avviato la gestione delle mancanze.
-
-- *Estensioni:* #link(<UC6>)[[UC6]].
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC3.6: Visualizzazione Storico Test <UC3.6>
-
-- *Attore principale:* Developer.
-
-- *Descrizione:* Il Developer vuole visualizzare l'elenco cronologico delle analisi effettuate per l'area di Testing per consultare i dettagli di un'analisi passata.
-
-- *Precondizioni:* Il repository ha subito almeno due analisi dei test nel tempo.
-
-- *Trigger:* L'utente seleziona "Storico" in #link(<UC3.1.1>)[[UC3.1.1]].
+- *Trigger:* Il Developer clicca su "Storico" dalla vista di dettaglio Documentazione (#link(<UC3.3>)[[UC3.3]]).
 
 - *Scenario principale:*
-  + Il Developer visualizza la lista delle analisi test passate (ordinate dalla più recente alla più datata).
-  + Il Developer seleziona un'analisi passata (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
+  + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
+  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
 
-- *Scenari alternativi*
-  + Il Developer seleziona l'analisi più recente (*<\<extend>>* #link(<UC3.3>)[[UC3.3]])
-  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository.
+- *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.3>)[[UC3.3]]).
 
-- *Postcondizioni:* L'utente visualizza il dettaglio dell'analisi selezionata.
-
-- *Inclusioni:* #link(<UC3.9>)[[UC3.9]].
-
-- *Estensioni:* #link(<UC3.3>)[[UC3.3]],  #link(<UC3>)[[UC3]].
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC3.7: Visualizzazione Storico Sicurezza <UC3.7>
-
-- *Attore principale:* Developer.
-
-- *Descrizione:* Il Developer vuole visualizzare l'elenco cronologico delle analisi di sicurezza per consultare i dettagli di un'analisi passata.
-
-- *Precondizioni:* Il repository ha subito almeno due analisi di sicurezza nel tempo.
-
-- *Trigger:* L'utente seleziona "Storico" in #link(<UC3.1.2>)[[UC3.1.2]].
-
-- *Scenario principale:*
-  + Il Developer visualizza la lista delle analisi test passate (ordinate dalla più recente alla più datata).
-  + Il Developer seleziona l'analisi un'analisi passata (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
-
-- *Scenari alternativi*
-  + Il Developer seleziona l'analisi più recente (*<\<extend>>* #link(<UC3.4>)[[UC3.4]])
-  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository.
-
-- *Postcondizioni:* L'utente visualizza il dettaglio dell'analisi selezionata.
-
-- *Inclusioni:* #link(<UC3.9>)[[UC3.9]].
-
-- *Estensioni:* #link(<UC3.4>)[[UC3.4]],  #link(<UC3>)[[UC3]].
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC3.8: Visualizzazione Storico Documentazione <UC3.8>
-
-- *Attore principale:* Developer.
-
-- *Descrizione:* Il Developer vuole visualizzare l'elenco cronologico delle analisi sulla documentazione per consultare i dettagli di un'analisi passata.
-
-- *Precondizioni:* Il repository ha subito almeno due analisi della documentazione nel tempo.
-
-- *Trigger:* L'utente seleziona "Storico" in #link(<UC3.1.3>)[[UC3.1.3]].
-
-- *Scenario principale:*
-  + Il Developer visualizza la lista delle analisi test passate (ordinate dalla più recente alla più datata).
-  + Il Developer seleziona l'analisi un'analisi passata (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
-
-- *Scenari alternativi*
-  + Il Developer seleziona l'analisi più recente (*<\<extend>>* #link(<UC3.5>)[[UC3.5]])
-  + Il Developer seleziona il pulsante "Indietro" per ritornare alla dashboard del repository.
-
-- *Postcondizioni:* L'utente visualizza il dettaglio dell'analisi selezionata.
-
-- *Inclusioni:* #link(<UC3.9>)[[UC3.9]].
-
-- *Estensioni:* #link(<UC3.5>)[[UC3.5]],  #link(<UC3>)[[UC3]].
+- *Postcondizioni:* Il Developer seleziona e apre un report passato tra le analisi archiviate per l'area Documentazione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -834,9 +702,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer vuole visualizzare i risultati di un'analisi passata.
 
-- *Precondizioni:* L'utente ha selezionato un'analisi storica (diversa dall'ultima) da una delle liste di storico.
+- *Precondizioni:* L'utente ha selezionato un'analisi storica da una delle liste di storico.
 
-- *Trigger:* Condizione di estensione dei casi d'uso #link(<UC3.6>)[[UC3.6]], #link(<UC3.7>)[[UC3.7]] o #link(<UC3.8>)[[UC3.8]].
+- *Trigger:* Il Developer seleziona un report dallo storico analisi (#link(<UC3.4>)[[UC3.4]], #link(<UC3.5>)[[UC3.5]] o #link(<UC3.6>)[[UC3.6]]).
 
 - *Scenario principale:*
   + Il Developer visualizza l'intestazione con i metadati storici (Data esecuzione, Autore, Commit ID).
@@ -845,7 +713,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer espande le singole voci per leggere i dettagli tecnici.
   + Il Developer seleziona "Indietro" per ritornare alla lista dello storico.
 
-- *Postcondizioni:* L'utente ritorna alla lista delle analisi storiche.
+- *Postcondizioni:* L'utente dopo aver visualizzato i risultati di un'analisi passata ritorna alla lista delle analisi storiche.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -986,7 +854,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* L'utente ha selezionato il comando "Risolvi" da uno dei dettagli di analisi.
 
-- *Trigger:* Condizione di estensione dai casi d'uso di dettaglio (#link(<UC3.3>)[[UC3.3]], #link(<UC3.4>)[[UC3.4]], #link(<UC3.5>)[[UC3.5]]).
+- *Trigger:* Condizione di estensione dai casi d'uso di dettaglio (#link(<UC3.1>)[[UC3.1]], #link(<UC3.2>)[[UC3.2]], #link(<UC3.3>)[[UC3.3]]).
 
 - *Scenario principale:*
   + Il Developer visualizza l'elenco dei file coinvolti nella soluzione proposta, ciascuno affiancato da una checkbox di selezione.
@@ -1087,7 +955,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:* Il Developer visualizza un messaggio di errore se la comunicazione con _GitHub_ fallisce (es. conflitto di merge o errore di rete) e si trova nuovamente nella schermata di visualizzazione della proposta di remediation #link(<UC6>)[[UC6]], in condizione di tentare nuovamente l'accettazione delle modifiche o annullare l'operazione.
 
-- *Postcondizioni:* La _Pull Request_ è creata su GitHub e l'analisi di partenza viene marcata come "Processata", inibendo la possibilità di generare ulteriori fix dalla stessa analisi.
+- *Postcondizioni:* La _Pull Request_ è creata su GitHub e l'analisi di partenza viene etichettata come "Processata", inibendo la possibilità di generare ulteriori fix dalla stessa analisi.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1105,10 +973,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza una finestra di dialogo che chiede la conferma dell'operazione.
   + Il Developer conferma l'operazione.
   + Il Developer visualizza un messaggio di conferma dell'avvenuta archiviazione.
-  + Il Developer viene riportato alla dashboard principale del repository.
+  + Il Developer viene riportato alla schermata di dettaglio dell'analisi da cui era partito.
 
 - *Scenari alternativi:* Al passo 2 il Developer annulla l'operazione e ritorna nella schermata di visualizzazione della proposta di remediation #link(<UC6>)[[UC6]].
 
-- *Postcondizioni:* Il Developer visualizza la dashboard della repository su cui stava lavorando e l'analisi appena consultata viene marcata "Scartata".
-
+- *Postcondizioni:* Il Developer visualizza nuovamente il dettaglio dell'analisi (#link(<UC3.1>)[[UC3.1]], #link(<UC3.2>)[[UC3.2]] o #link(<UC3.3>)[[UC3.3]]) e la segnalazione corrente viene marcata "Scartata".
 #line(length: 100%, stroke: 0.5pt + gray)
