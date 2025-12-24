@@ -1,3 +1,9 @@
+/*Domande per Cardin sul file:
+1) Se ho una situazione in cui è possibile aprire un menù, completare un'azione dopodichè il sistema riporta alla schermata precedente è corretto inserire un include per l'UC della finestra precedente? (es UC6.2.1)
+2) In 6.3, ad esempio, è formalmente corretto fare riferimento ad una situazione precedente linkando l'UC a cui ci si riferisce o è meglio descrivere nuovamente la situazione?
+*/
+
+
 #show link: it => text(fill: rgb("#6a00f4"), it)
 
 #show table.cell: block.with(breakable: false)
@@ -419,7 +425,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Consente al Developer di registrare un nuovo repository _GitHub_ nella piattaforma per avviare il processo di analisi.
+- *Descrizione:* Il Developer vuole registrare un nuovo repository _GitHub_ nella piattaforma.
 
 - *Precondizioni:* Il Developer è autenticato e ha accesso alla dashboard.
 
@@ -471,10 +477,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC2>)[[UC2]].
 
 - *Scenario principale:*
-  + Il Developer visualizza un avviso che il repository è privato e un campo per l'inserimento del Personal Access Token (PAT).
+  + Il Developer visualizza un avviso che il repository è privato e un campo per l'inserimento del Personal Access Token.
   + Il Developer inserisce il token richiesto (*<\<include>>* #link(<UC2.3.1>)[[UC2.3.1]]).
   + Il Developer conferma nuovamente l'operazione.
-  + Il flusso riprende dalla verifica del repository (rientro in #link(<UC2>)[[UC2]]).
+  + Il flusso riprende dalla verifica del repository.
 
 - *Scenari alternativi:* Il Developer annulla l'operazione se non possiede il token o non desidera fornirlo.
 
@@ -524,7 +530,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer accede all'area dedicata a uno specifico repository. La pagina contiene le metriche di sintesi ed il pulsante per avviare una nuova analisi.
+- *Descrizione:* Il Developer vuole accedere all'area dedicata a uno specifico repository per visualizzare le metriche di sintesi.
 
 - *Precondizioni:* Il Developer è autenticato e visualizza la lista dei propri progetti.
 
@@ -533,7 +539,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Developer visualizza la struttura generale della dashboard.
   + Il Developer visualizza la sezione di sintesi composta dai widget per le tre aree di analisi (*<\<include>>* #link(<UC3.1>)[[UC3.1]]).
-  + Il Developer visualizza il pulsante "Nuova Analisi", su cui può cliccare per avviare un nuovo ciclo di controllo (*<\<extend>>* #link(<UC4>)[[UC4]]).
+  + Il Developer visualizza il pulsante "Nuova Analisi" per avviare un nuovo ciclo di controllo (*<\<extend>>* #link(<UC4>)[[UC4]]).
 
 - *Postcondizioni:* L'utente visualizza lo stato attuale del repository e le azioni disponibili.
 
@@ -849,7 +855,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Permette al Developer di configurare e avviare manualmente un nuovo ciclo di analisi sul repository, selezionando specifici ambiti (Sicurezza, Test, Documentazione).
+- *Descrizione:* Il Developer vuole dare avvio ad un nuovo ciclo di analisi sul repository selezionato.
 
 - *Precondizioni:* Il repository è registrato e il Developer si trova sulla dashboard del progetto.
 
@@ -893,7 +899,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* L'utente prende atto dell'impossibilità di avviare l'analisi per una o più tipologie selezionate, in quanto risulta già attivo un processo pendente per il medesimo ambito.
+- *Descrizione:* Il Developer prende atto dell'impossibilità di avviare l'analisi per una o più tipologie selezionate, in quanto risulta già attivo un processo pendente per il medesimo ambito.
 
 - *Precondizioni:* Il Developer ha richiesto l'avvio per una tipologia che è attualmente in fase di esecuzione.
 
@@ -912,19 +918,20 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Utente.
 
-- *Descrizione:* L'utente interagisce con la propria area personale richiamando il menu di navigazione globale. Questo caso d'uso funge da punto di ingresso per le funzionalità di gestione account, cambio ruolo e disconnessione.
+- *Descrizione:* L'utente vuole visualizzare la propria area personale.
 
 - *Precondizioni:* L'utente è autenticato e si trova su una qualsiasi pagina della piattaforma.
 
 - *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale.
 
 - *Scenario principale:*
-  + L'utente visualizza il pannello a comparsa del menu utente.
+  + L'utente visualizza il pannello a comparsa del menù utente.
   + L'utente visualizza il riepilogo delle proprie informazioni (Nome, Email, Ruolo attuale).
   + L'utente visualizza il pulsante "Cambia Ruolo", su cui può cliccare per cambiare il ruolo operativo (*<\<extend>>* #link(<UC5.1>)[[UC5.1]]).
   + L'utente visualizza il pulsante "Logout", su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extend>>* #link(<UC5.2>)[[UC5.2]]).
+  + L'utente visualizza il pulsante "X", su cui può cliccare per uscire dal menù utente e tornare alla pagina precedente.
 
-- *Postcondizioni:* Il menu utente è attivo e le opzioni sono selezionabili.
+- *Postcondizioni:* Il menù utente è attivo e le opzioni sono selezionabili.
 
 - *Estensioni:*
   + #link(<UC5.1>)[[UC5.1]]: Se l'utente seleziona l'opzione "Cambia Ruolo".
@@ -936,16 +943,16 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Utente.
 
-- *Descrizione:* Permette all'utente di cambiare il proprio ruolo attivo all'interno della sessione corrente, aggiornando l'interfaccia e i contenuti visibili in base alle _repository_ precedentemente collegate al ruolo.
+- *Descrizione:* L'utente vuole di cambiare il proprio ruolo attivo all'interno della sessione corrente.
 
-- *Precondizioni:* Il menu utente è aperto.
+- *Precondizioni:* Il menù utente è aperto.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC5>)[[UC5]] (L'utente seleziona la voce "Cambia Ruolo").
+- *Trigger:* L'utente seleziona la voce "Cambia Ruolo".
 
 - *Scenario principale:*
   + L'utente visualizza l'elenco dei ruoli disponibili per il proprio account (es. se attualmente nel ruolo Developer i ruoli selezionabili saranno Project Manager e Business Owner).
   + L'utente seleziona il nuovo ruolo desiderato.
-  + La piattaforma ricarica l'ambiente di lavoro visualizzando i repository e le configurazioni associate al ruolo selezionato (o lo stato iniziale vuoto nel caso di primo utilizzo).
+  + La piattaforma ricarica l'ambiente di lavoro alla dashboard principale, visualizzando i repository e le configurazioni associate al ruolo selezionato (o lo stato iniziale vuoto nel caso di primo utilizzo).
   + L’utente visualizza il messaggio di avvenuto cambio ruolo operativo.
 
 - *Postcondizioni:* L'interfaccia è aggiornata coerentemente con il nuovo ruolo selezionato.
@@ -958,9 +965,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Permette all'utente di terminare la sessione di lavoro corrente.
 
-- *Precondizioni:* Il menu utente è aperto.
+- *Precondizioni:* Il menù utente è aperto.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC5>)[[UC5]] (L'utente seleziona la voce "Logout").
+- *Trigger:* L'utente seleziona la voce "Logout".
 
 - *Scenario principale:*
   + L'utente seleziona l'opzione di disconnessione.
@@ -975,7 +982,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer analizza la soluzione proposta dall'IA. Il caso d'uso coordina la revisione dei singoli artefatti, la selezione parziale delle componenti da applicare e la decisione finale.
+- *Descrizione:* Il Developer vuole analizzare la soluzione di remediation proposta dall'IA.
 
 - *Precondizioni:* L'utente ha selezionato il comando "Risolvi" da uno dei dettagli di analisi.
 
@@ -987,9 +994,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer seleziona tramite checkbox uno o più file da includere nel fix.
   + Il Developer approva la selezione cliccando su "Applica Fix", avviando la procedura di creazione della _Pull Request_ per tutte le modifiche selezionate (*<\<include>>* #link(<UC6.3>)[[UC6.3]]).
 
-- *Scenari alternativi:* Il Developer ritiene la soluzione interamente non valida e decide di scartare la segnalazione (*<\<extend>>* #link(<UC6.4>)[[UC6.4]]).
+- *Scenari alternativi:* 
+  + Il Developer ritiene la soluzione interamente non valida e decide di scartare la segnalazione (*<\<extend>>* #link(<UC6.4>)[[UC6.4]]).
+  + Il Developer annulla l'operazione e torna alla schermata precedente premendo sul pulsante "Annulla"
 
-- *Postcondizioni:* La segnalazione viene risolta (PR creata) o ignorata.
+- *Postcondizioni:* Le soluzioni proposte vengono accettate (PR creata) o ignorate.
 
 - *Inclusioni:* #link(<UC6.3>)[[UC6.3]].
 - *Estensioni:* #link(<UC6.1>)[[UC6.1]], #link(<UC6.2>)[[UC6.2]], #link(<UC6.4>)[[UC6.4]].
@@ -1000,15 +1009,16 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* L'utente visualizza le modifiche suggerite dall'IA su un documento o file di codice già esistente nel repository al momento dell'analisi.
+- *Descrizione:* L'utente vuole visualizzare le modifiche suggerite dall'IA su un documento o file di codice già esistente nel repository al momento dell'analisi.
 
-- *Precondizioni:* L'artefatto selezionato in #link(<UC6>)[[UC6]] è un file esistente nel repository quando l'analisi è stata avviata.
+- *Precondizioni:* Il Developer sta analizzando la soluzione di remediation proposta dall'IA e vuole consultare le modifiche proposte per un file già esistente nel repository quando l'analisi è stata avviata.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC6>)[[UC6]].
+- *Trigger:* Il Developer clicca sull'artefatto che vuole approfondire.
 
 - *Scenario principale:*
   + Il Developer visualizza un'interfaccia di confronto che presenta in rosso le righe rimosse e in verde le righe aggiunte o modificate.
   + Il Developer analizza le differenze per validare la correttezza della logica della modifica.
+  + Dopo aver cosultato le modifiche proposte per lo specifico documento, il Developer preme il pulsante "X" per tronare alla schermata precedente.
 
 - *Postcondizioni:* Il Developer ha verificato le modifiche proposte al file esistente.
 
@@ -1018,11 +1028,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* L'utente visualizza l'anteprima completa di un nuovo file (es. nuova classe di test, file di documentazione mancante) generato dall'IA.
+- *Descrizione:* L'utente vuole visualizzare l'anteprima completa di un nuovo file generato dall'IA.
 
-- *Precondizioni:* L'artefatto selezionato in #link(<UC6>)[[UC6]] è un nuovo file non presente nel repository quando l'analisi è stata avviata.
+- *Precondizioni:* Il Developer sta analizzando la soluzione di remediation proposta dall'IA e vuole consultare un artefatto proposto e generato dall'IA.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC6>)[[UC6]].
+- *Trigger:* Il Developer clicca sull'artefatto che vuole approfondire.
 
 - *Scenario principale:*
   + Il Developer visualizza l'anteprima del contenuto del file generato.
@@ -1040,18 +1050,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Permette al Developer di modificare la cartella in cui verrà salvato il nuovo file.
+- *Descrizione:* Il Developer vuole modificare la cartella in cui verrà salvato il nuovo file.
 
-- *Precondizioni:* Il Developer sta visualizzando l'anteprima di un nuovo file in #link(<UC6.2>)[[UC6.2]].
+- *Precondizioni:* Il Developer sta visualizzando l'anteprima di un nuovo file.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC6.2>)[[UC6.2]] (L'utente seleziona "Modifica Percorso").
+- *Trigger:* L'utente seleziona "Modifica Percorso".
 
 - *Scenario principale:*
   + Il Developer visualizza una finestra contenente l'albero delle directory del repository corrente.
   + Il Developer naviga tra le cartelle esistenti.
   + Il Developer seleziona la cartella di destinazione desiderata.
   + Il Developer conferma la selezione cliccando sul tasto "Conferma".
-  + Il sistema aggiorna il percorso di salvataggio del nuovo file nella schermata di anteprima.
+  + Il Developer visualizza nuovamente la schermata di anteprima del nuovo documento con il percorso di destinazione del nuovo file aggiornato.
 
 - *Scenari alternativi:* Il Developer annulla la modifica premendo sul tasto "Annulla", mantenendo il percorso originale suggerito.
 
@@ -1064,20 +1074,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Attore principale:* Developer.
 - *Attore secondario:* GitHub.
 
-- *Descrizione:* Il Developer finalizza la procedura di correzione ricevendo dal sistema il riscontro dell'avvenuta pubblicazione delle modifiche sulla piattaforma esterna.
+- *Descrizione:* Il Developer vuole finalizzare la procedura di correzione.
 
-- *Precondizioni:* Il Developer ha confermato l'applicazione del fix in #link(<UC6>)[[UC6]].
+- *Precondizioni:* Il Developer ha selezionato mediante checkbox le proposte di remediation che vuole accettare in #link(<UC6>)[[UC6]].
 
-- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC6>)[[UC6]] (L'utente clicca su "Applica Fix").
+- *Trigger:* L'utente clicca su "Applica Fix".
 
 - *Scenario principale:*
   + Il Developer visualizza un indicatore di elaborazione in corso (es. "Creazione PR in corso...").
   + Il Developer visualizza una notifica di successo che conferma la creazione della Pull Request.
   + Il Developer visualizza il link diretto per accedere alla _Pull Request_ sulla piattaforma _GitHub_.
 
-- *Scenari alternativi:* 
-  + Il Developer visualizza un messaggio di errore se la comunicazione con _GitHub_ fallisce (es. conflitto di merge o errore di rete).
-  + Il Developer si trova nuovamente nella schermata di visualizzazione della proposta di remediation #link(<UC6>)[[UC6]], in condizione di tentare nuovamente l'accettazione delle modifiche o annullare l'operazione.
+- *Scenari alternativi:* Il Developer visualizza un messaggio di errore se la comunicazione con _GitHub_ fallisce (es. conflitto di merge o errore di rete) e si trova nuovamente nella schermata di visualizzazione della proposta di remediation #link(<UC6>)[[UC6]], in condizione di tentare nuovamente l'accettazione delle modifiche o annullare l'operazione.
 
 - *Postcondizioni:* La _Pull Request_ è creata su GitHub e l'analisi di partenza viene marcata come "Processata", inibendo la possibilità di generare ulteriori fix dalla stessa analisi.
 
@@ -1087,20 +1095,20 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer interagisce con il sistema per classificare una segnalazione come non pertinente, rimuovendola dalla vista operativa.
+- *Descrizione:* Il Developer vuole interamente classificare una segnalazione come non pertinente, scartandone tutte le proposte.
 
-- *Precondizioni:* Il Developer sta analizzando la proposta in #link(<UC6>)[[UC6]].
+- *Precondizioni:* Il Developer sta analizzando la proposta di remediation in #link(<UC6>)[[UC6]].
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC6>)[[UC6]] (L'utente seleziona "Ignora").
+- *Trigger:* L'utente seleziona il pulsante "Ignora".
 
 - *Scenario principale:*
   + Il Developer visualizza una finestra di dialogo che chiede la conferma dell'operazione.
   + Il Developer conferma l'operazione.
   + Il Developer visualizza un messaggio di conferma dell'avvenuta archiviazione.
-  + Il Developer viene riportato alla lista degli errori e segnalazioni del repository, dove la voce appena gestita appare marcata come ignorata.
+  + Il Developer viene riportato alla dashboard principale del repository.
 
 - *Scenari alternativi:* Al passo 2 il Developer annulla l'operazione e ritorna nella schermata di visualizzazione della proposta di remediation #link(<UC6>)[[UC6]].
 
-- *Postcondizioni:* L'utente visualizza l'elenco delle segnalazioni con l'elemento appena consultato marcato come ignorato.
+- *Postcondizioni:* Il Developer visualizza la dashboard della repository su cui stava lavorando e l'analisi appena consultata viene marcata "Scartata".
 
 #line(length: 100%, stroke: 0.5pt + gray)
