@@ -549,7 +549,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer seleziona "Dettagli" nel widget Sicurezza (*<\<extend>>* #link(<UC3.2>)[[UC3.2]]).
   + Il Developer seleziona "Dettagli" nel widget Documentazione (*<\<extend>>* #link(<UC3.3>)[[UC3.3]]).
 
-- *Postcondizioni:* L'utente visualizza i KPI (Key Performance Indicators) attuali del repository.
+- *Postcondizioni:* L'utente visualizza i widget di sintesi attuali del repository.
 
 - *Estensioni:* 
   + #link(<UC3.1>)[[UC3.1]], #link(<UC3.2>)[[UC3.2]], #link(<UC3.3>)[[UC3.3]]: Per l'approfondimento delle singole aree.
