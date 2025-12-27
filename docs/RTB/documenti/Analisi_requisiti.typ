@@ -397,7 +397,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* L'utente ha selezionato "Annulla" o ha negato i consensi sull'interfaccia del provider.
 
-- *Trigger:* Condizione di estensione dei casi d'uso #link(<UC1.1>)[[UC1.1]].
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1.1>)[[UC1.1]].
 
 - *Scenario principale:*
   + L'utente visualizza un messaggio che conferma l'annullamento dell'operazione di login.
@@ -436,7 +436,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Developer è autenticato e ha accesso alla dashboard.
 
-- *Trigger:* Il Developer seleziona l'opzione 'Aggiungi Repository' dalla dashboard.
+- *Trigger:* Il Developer seleziona l'opzione "Aggiungi Repository" dalla dashboard.
 
 - *Scenario principale:*
   + Il Developer visualizza l'interfaccia per l'inserimento dei dati della repository.
