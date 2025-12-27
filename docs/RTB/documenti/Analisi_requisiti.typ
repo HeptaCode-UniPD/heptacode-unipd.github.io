@@ -1,4 +1,5 @@
-/*Domande per Cardin sul file:
+/*
+Domande per Cardin sul file:
 1) Se ho una situazione in cui è possibile aprire un menù, completare un'azione dopodichè il sistema riporta alla schermata precedente è corretto inserire un include per l'UC della finestra precedente? (es UC6.2.1)
 2) In 6.3, ad esempio, è formalmente corretto fare riferimento ad una situazione precedente linkando l'UC a cui ci si riferisce o è meglio descrivere nuovamente la situazione?
 */
@@ -306,7 +307,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 == Specifica dei casi d'uso
 
 === UC1: Accesso tramite Piattaforma Esterna <UC1>
-#figure(image("../../asset/UC1.png"), caption: [Diagramma del caso d'uso UC1])
+#figure(image("../../asset/UC/UC1.png"), caption: [Diagramma del caso d'uso UC1])
 
 - *Attore principale:* Utente.
 
@@ -335,7 +336,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC1.1: Reindirizzamento al Provider di Identità <UC1.1>
-#figure(image("../../asset/UC1.1.png"), caption: [Diagramma del caso d'uso UC1])
+#figure(image("../../asset/UC/UC1.1.png"), caption: [Diagramma del caso d'uso UC1] )
 
 - *Attore principale:* Utente.
 
@@ -364,7 +365,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC1.2: Registrazione Primo Accesso <UC1.2>
-#figure(image("../../asset/UC1.2.png"), caption: [Diagramma del caso d'uso UC1.2])
+// Indecisa sulla granularità da adottare qui, potremmo chiedere al prof
+#figure(image("../../asset/UC/UC1.2.png"), caption: [Diagramma del caso d'uso UC1.2])
 
 - *Attore principale:* Utente.
 
@@ -395,7 +397,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* L'utente ha selezionato "Annulla" o ha negato i consensi sull'interfaccia del provider.
 
-- *Trigger:* Condizione di estensione dei casi d'uso #link(<UC1.1>)[[UC1.1]], #link(<UC1.2.1>)[[UC1.2.1]] o #link(<UC1.2.2>)[[UC1.2.2]].
+- *Trigger:* Condizione di estensione dei casi d'uso #link(<UC1.1>)[[UC1.1]].
 
 - *Scenario principale:*
   + L'utente visualizza un messaggio che conferma l'annullamento dell'operazione di login.
@@ -426,7 +428,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC2: Aggiunta di un repository per l'analisi <UC2>
 
-// #figure(image("diagramma_uc2.png"), caption: [Diagramma del caso d'uso UC2])
+#figure(image("../../asset/UC/UC2.png"), caption: [Diagramma del caso d'uso UC2])
 
 - *Attore principale:* Developer.
 
@@ -438,7 +440,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza l'interfaccia per l'inserimento dei dati della repository.
-  + Il Developer digita o copia l'URL del repository _GitHub_ che desidera analizzare nel relativo campo di testo.
+  + Il Developer digita o copia l'URL del repository _GitHub_ che desidera analizzare nel relativo campo di testo #link(<UC2.1>)[[UC2.1]].
   + Il Developer conferma l'operazione.
   + Il Developer visualizza il nuovo repository aggiunto correttamente alla lista dei suoi progetti.
 
@@ -452,7 +454,23 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Estensioni:* #link(<UC2.2>)[[UC2.2]], #link(<UC2.3>)[[UC2.3]], #link(<UC2.4>)[[UC2.4]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
+
 === UC2.1: Inserimento URL Repository <UC2.1>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer inserisce l'URL del repository _GitHub_ che desidera analizzare.
+
+- *Precondizioni:* Il Developer è autenticato e ha accesso alla dashboard.
+
+- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC2>)[[UC2]].
+
+- *Scenario principale:*
+  + Il Developer visualizza l'interfaccia per l'inserimento dell'URL del repository.
+  + Il Developer digita o copia l'URL del repository _GitHub_ che desidera analizzare nel relativo campo di testo.
+  + Il Developer conferma l'operazione.
+
+- *Postcondizioni:* L'URL è stato inserito nel campo dedicato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -509,7 +527,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC2.3>)[[UC2.3]].
 
 - *Scenario principale:*
-  + Il Developer incolla il token nel campo di testo dedicato.
+  + Il Developer scrive o incolla il token nel campo di testo dedicato.
   + Il Developer visualizza di default i caratteri mascherati (es. asterischi o pallini), ma dispone del controllo "Mostra/Nascondi" per verificare la correttezza della stringa inserita.
 
 - *Postcondizioni:* Il campo di input contiene il token valido.
@@ -535,6 +553,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3: Accesso alla Dashboard del Repository <UC3>
+#figure(image("../../asset/UC/UC3.png"), caption: [Diagramma del caso d'uso UC3])
 
 - *Attore principale:* Developer.
 
