@@ -585,7 +585,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3.1: Consultazione Dettagli Test <UC3.1>
-
+#figure(image("../../asset/UC/UC3.1.png"), caption: [Diagramma del caso d'uso UC3.1])
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole approfondire le criticità identificate nell'area test dall'ultima analisi condotta.
@@ -612,7 +612,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3.2: Consultazione Dettagli Sicurezza <UC3.2>
-
+#figure(image("../../asset/UC/UC3.2.png"), caption: [Diagramma del caso d'uso UC3.2])
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole esaminare le vulnerabilità di sicurezza rilevate nel codice e nelle dipendenze dall'ultima analisi condotta.
@@ -638,7 +638,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3.3: Consultazione Dettagli Documentazione <UC3.3>
-
+#figure(image("../../asset/UC/UC3.3.png"), caption: [Diagramma del caso d'uso UC3.3])
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer verifica la completezza e la qualità della documentazione del progetto in base all'ultima analisi condotta.
