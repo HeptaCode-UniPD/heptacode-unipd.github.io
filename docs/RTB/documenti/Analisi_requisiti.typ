@@ -395,7 +395,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* L'utente ha selezionato "Annulla" o ha negato i consensi sull'interfaccia del provider.
 
-- *Trigger:* Condizione di estensione dei casi d'uso #link(<UC1.1>)[[UC1.1]], #link(<UC1.2.1>)[[UC1.2.1]] o #link(<UC1.2.2>)[[UC1.2.2]].
+- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1.1>)[[UC1.1]]
 
 - *Scenario principale:*
   + L'utente visualizza un messaggio che conferma l'annullamento dell'operazione di login.
