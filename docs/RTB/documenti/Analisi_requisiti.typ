@@ -434,7 +434,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Developer è autenticato e ha accesso alla dashboard.
 
-- *Trigger:* Il Developer seleziona l'opzione 'Aggiungi Repository' dalla dashboard.
+- *Trigger:* Il Developer seleziona l'opzione "Aggiungi Repository" dalla dashboard.
 
 - *Scenario principale:*
   + Il Developer visualizza l'interfaccia per l'inserimento dei dati della repository.
