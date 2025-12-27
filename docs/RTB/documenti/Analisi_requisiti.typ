@@ -375,43 +375,15 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC1>)[[UC1]] (primo accesso rilevato al rientro dall'autenticazione).
 
 - *Scenario principale:*
-    + L'utente visualizza la schermata di completamento profilo con i dati importati dal provider (username, email) #link(<UC1.2.1>)[[UC1.2.1]].
-    + L'utente seleziona il ruolo desiderato con cui il profilo sarà inizializzato tra quelli disponibili (Developer, Project Manager o Business Owner) #link(<UC1.2.2>)[[UC1.2.2]].
-    + L'utente conferma la registrazione #link(<UC1.2.3>)[[UC1.2.3]]. 
-    + L'utente visualizza una notifica di avvenuta creazione dell'account #link(<UC1.2.4>)[[UC1.2.4]].
+    + L'utente visualizza la schermata di completamento profilo con i dati importati dal provider (username, email).
+    + L'utente seleziona il ruolo desiderato con cui il profilo sarà inizializzato tra quelli disponibili (Developer, Project Manager o Business Owner).
+    + L'utente conferma la registrazione. 
+    + L'utente visualizza una notifica di avvenuta creazione dell'account.
 
 - *Scenari alternativi:* 
   + Ai passi 1 e 2, l'utente decide di annullare l'operazione e viene reindirizzato alla pagina di login (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
   
 - *Postcondizioni:* Il nuovo utente è registrato e la sessione è attiva nel ruolo selezionato.
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC1.2.1: Visualizzazione Dati Profilo - Primo Accesso
-<UC1.2.1>
-#figure(image("../../asset/UC1.2.1.png"), caption: [Diagramma del caso d'uso UC1.2.1])
-// Da aggiungere
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC1.2.2: Selezione Ruolo Profilo - Primo Accesso
-<UC1.2.2>
-#figure(image("../../asset/UC1.2.2.png"), caption: [Diagramma del caso d'uso UC1.2.2])
-// Da aggiungere
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC1.2.3: Conferma Registrazione
-<UC1.2.3>
-#figure(image("../../asset/UC1.2.3.png"), caption: [Diagramma del caso d'uso UC1.2.3])
-// Da aggiungere
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC1.2.4: Visualizzazione Notifica Attivazione Account
-<UC1.2.4>
-#figure(image("../../asset/UC1.2.4.png"), caption: [Diagramma del caso d'uso UC1.2.4])
-// Da aggiungere
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -423,7 +395,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* L'utente ha selezionato "Annulla" o ha negato i consensi sull'interfaccia del provider.
 
-- *Trigger:* Condizione di estensione del caso d'uso #link(<UC1.1>)[[UC1.1]].
+- *Trigger:* Condizione di estensione dei casi d'uso #link(<UC1.1>)[[UC1.1]], #link(<UC1.2.1>)[[UC1.2.1]] o #link(<UC1.2.2>)[[UC1.2.2]].
 
 - *Scenario principale:*
   + L'utente visualizza un messaggio che conferma l'annullamento dell'operazione di login.
@@ -447,9 +419,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + L'utente visualizza una schermata o un messaggio di avviso relativo a problemi di comunicazione con il servizio esterno (es. "Servizio non disponibile").
-  + L'utente visualizza l'opzione per riprovare la connessione.
 
-- *Postcondizioni:* L’utente non è autenticato, si trova nella pagina di login, visualizza l'avviso di errore e l'opzione per riprovare la connessione.
+- *Postcondizioni:* L’utente non è autenticato, si trova nella pagina di login, visualizza l'avviso di errore.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -463,10 +434,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Developer è autenticato e ha accesso alla dashboard.
 
-- *Trigger:* Il Developer seleziona l'opzione per aggiungere un nuovo repository dalla dashboard.
+- *Trigger:* Il Developer seleziona l'opzione 'Aggiungi Repository' dalla dashboard.
 
 - *Scenario principale:*
-  + Il Developer visualizza l'interfaccia per l'inserimento dei dati del repository.
+  + Il Developer visualizza l'interfaccia per l'inserimento dei dati della repository.
   + Il Developer digita o copia l'URL del repository _GitHub_ che desidera analizzare nel relativo campo di testo.
   + Il Developer conferma l'operazione.
   + Il Developer visualizza il nuovo repository aggiunto correttamente alla lista dei suoi progetti.
@@ -479,6 +450,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il repository è visibile nella lista dei progetti del Developer. 
 
 - *Estensioni:* #link(<UC2.2>)[[UC2.2]], #link(<UC2.3>)[[UC2.3]], #link(<UC2.4>)[[UC2.4]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+=== UC2.1: Inserimento URL Repository <UC2.1>
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
