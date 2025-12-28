@@ -13,7 +13,8 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("0.4.0", "2025-12-27", "Angela Favaro", "Laura Venturini", "Rifattorizzazione UC1.2"),
+  ("0.4.2", "2025-12-28", "Angela Favaro", "Laura Venturini", "Correzioni fino a UC6.3"),
+  ("0.4.1", "2025-12-27", "Angela Favaro", "Laura Venturini", "Rifattorizzazione UC1.2"),
   ("0.4.0", "2025-12-23", "Alberto Reginato", "Angela Canazza", "Aggiunta UC da UC3.6 a UC3.7, da UC6 a UC6.4 e fix"),
   ("0.3.0", "2025-12-23", "Alberto Reginato", "Angela Canazza", "Aggiunta UC2.4 e fix"),
   ("0.2.0", "2025-12-21", "Alberto Reginato", "Angela Canazza", "Modellazione UC da UC2.3.1 a UC5.2"),
@@ -805,7 +806,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer conferma l'avvio dell'operazione.
   + Il Developer visualizza un feedback immediato di presa in carico e l'aggiornamento dello stato dei moduli coinvolti.
 
-- *Scenari alternativi:* Al passo 3, il Developer visualizza un avviso che impedisce l'operazione perché un'analisi della stessa tipologia è già in corso (*<\<extend>>* #link(<UC4.2>)[[UC4.2]]).
+- *Scenari alternativi:* Al passo 3, il Developer visualizza un avviso che impedisce l'operazione perché un'analisi della stessa tipologia è già in corso (*<\<extends>>* #link(<UC4.2>)[[UC4.2]]).
 
 - *Postcondizioni:* L'interfaccia mostra che il processo di analisi è in esecuzione per gli ambiti selezionati.
 
@@ -825,12 +826,32 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC4>)[[UC4]].
 
 - *Scenario principale:*
-  + Il Developer visualizza le opzioni disponibili (Sicurezza, Test, Documentazione) con il pulsante di conferma inizialmente disabilitato.
-  + Il Developer interagisce con i controlli (checkbox) per includere le aree di analisi desiderate.
+  + Il Developer può:
+    -  selezionare 'Analisi Manuale' e visualizzare le opzioni disponibili (Sicurezza, Test, Documentazione) (*<\<include>>* #link(<UC4.1.1>)[[UC4.1.1]]). 
+    -  selezionare 'Analisi Automatica' 
+   con il pulsante di conferma inizialmente disabilitato.
   + Il Developer visualizza l'abilitazione del pulsante di conferma non appena almeno una tipologia viene selezionata.
 
 - *Postcondizioni:* Le opzioni di configurazione sono impostate e il comando di avvio è accessibile.
 
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC4.1.1:Selezione Analisi Manuale <UC4.1.1>
+- *Attore principale:* Developer.
+  
+- *Descrizione:* Il Developer sceglie di avviare un'Analisi Manuale.
+  
+- *Precondizioni:* Il pannello di configurazione dell'analisi è attivo. 
+  
+- *Trigger:* Il developer preme il pulsante 'Analisi Manuale'.
+  
+- *Scenario principale:*
+  + Il Developer seleziona una o più tipologie di analisi tra Sicurezza, Test e Documentazione.
+  + Il sistema evidenzia graficamente le selezioni effettuate.
+  + Il Developer visualizza l'abilitazione del pulsante di conferma non appena almeno una tipologia viene selezionata.
+  
+- *Postcondizioni:* Le opzioni di configurazione sono impostate e il comando di avvio è accessibile.
+  
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC4.2: Conflitto Tipologia Analisi <UC4.2>
@@ -853,7 +874,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5: Accesso al Menù Utente <UC5>
-
+#figure(image("../../asset/UC/UC5.png"), caption: [Diagramma del caso d'uso UC5])
 - *Attore principale:* Utente.
 
 - *Descrizione:* L'utente vuole visualizzare la propria area personale.
@@ -908,7 +929,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* L'utente seleziona la voce "Logout".
 
 - *Scenario principale:*
-  + L'utente seleziona l'opzione di disconnessione.
+  + L'utente conferma l'operazione di disconnessione tramite un pulsante 'Conferma Logout'.
   + L'utente viene reindirizzato alla pagina pubblica di accesso (Login).
   + L'utente visualizza il messaggio di avvenuta disconnessione.
 
@@ -936,7 +957,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer ritiene la soluzione interamente non valida e decide di scartare la segnalazione (*<\<extend>>* #link(<UC6.4>)[[UC6.4]]).
   + Il Developer annulla l'operazione e torna alla schermata precedente premendo sul pulsante "Annulla".
 
-- *Postcondizioni:* Le soluzioni proposte vengono accettate (PR creata) o ignorate.
+- *Postcondizioni:* Le soluzioni proposte vengono accettate (Pull Request creata) o ignorate.
 
 - *Estensioni:* #link(<UC6.1>)[[UC6.1]], #link(<UC6.2>)[[UC6.2]], #link(<UC6.3>)[[UC6.3]], #link(<UC6.4>)[[UC6.4]].
 
@@ -957,12 +978,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer analizza le differenze per validare la correttezza della logica della modifica.
   + Dopo aver consultato le modifiche proposte per lo specifico documento, il Developer preme il pulsante "X" per tornare alla schermata precedente.
 
-- *Postcondizioni:* Il Developer ha verificato le modifiche proposte al file esistente.
+- *Postcondizioni:* Il Developer ha consultato le modifiche proposte al file esistente.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC6.2: Visualizzazione Nuovo Documento <UC6.2>
-
+#figure(image("../../asset/UC/UC6.2.png"), caption: [Diagramma del caso d'uso UC6.2])
 - *Attore principale:* Developer.
 
 - *Descrizione:* L'utente vuole visualizzare l'anteprima completa di un nuovo file generato dall'IA.
@@ -977,7 +998,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer può modificare la proposta di percorso di destinazione cliccando sul tasto "Modifica Percorso" (*<\<extend>>* #link(<UC6.2.1>)[[UC6.2.1]]).
   + Il Developer legge il contenuto per verificarne la completezza e la correttezza.
 
-- *Postcondizioni:* Il Developer ha verificato il contenuto del nuovo file proposto.
+- *Postcondizioni:* Il Developer ha consultato il contenuto del nuovo file proposto.
 
 - *Estensioni:* #link(<UC6.2.1>)[[UC6.2.1]].
 
