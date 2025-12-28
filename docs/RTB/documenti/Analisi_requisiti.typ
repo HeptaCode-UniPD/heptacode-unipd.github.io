@@ -850,7 +850,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
 - *Precondizioni:* Il pannello di configurazione dell'analisi è attivo. 
   
-- *Trigger:* Il developer preme il pulsante 'Analisi Manuale'.
+- *Trigger:* Il developer preme il pulsante "Analisi Manuale".
   
 - *Scenario principale:*
   + Il Developer seleziona una o più tipologie di analisi tra Sicurezza, Test e Documentazione.
