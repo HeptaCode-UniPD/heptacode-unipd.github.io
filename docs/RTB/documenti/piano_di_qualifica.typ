@@ -32,7 +32,7 @@
     "0.4.0",
   "2025/12/28",
   "Laura Venturini", 
-  "Angela Canazza", 
+  "Amerigo Vegliante",
   "Aggiunta di problemi incontrati e contromisure nella sezione 6.1 - Valutazione organizzativa",
   "0.3.0",
   "2025/12/15",
