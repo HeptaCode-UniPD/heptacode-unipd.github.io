@@ -708,6 +708,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3.4: Consultazione Storico Test <UC3.4>
+#figure(image("../../asset/UC/UC3.4.png"), caption: [Diagramma del caso d'uso UC3.4])
 
 - *Attore principale:* Developer.
 
@@ -723,14 +724,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.1>)[[UC3.1]]).
 
-- *Postcondizioni:* Il Developer visualizza le analisi archiviate per l'area Test.
+- *Postcondizioni:* Il Developer visualizza lo storico delle analisi per l'area Test.
 
 - *Estensioni:* #link(<UC3.7>)[[UC3.7]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3.5: Consultazione Storico Sicurezza <UC3.5>
-
+#figure(image("../../asset/UC/UC3.5.png"), caption: [Diagramma del caso d'uso UC3.5])
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer consulta le analisi archiviatate relative all'area Sicurezza.
@@ -745,14 +746,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.2>)[[UC3.2]]).
 
-- *Postcondizioni:* Il Developer visualizza le analisi archiviate per l'area Sicurezza.
+- *Postcondizioni:* Il Developer visualizza lo storico delle analisi per l'area Sicurezza.
 
 - *Estensioni:* #link(<UC3.7>)[[UC3.7]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3.6: Consultazione Storico Documentazione <UC3.6>
-
+#figure(image("../../asset/UC/UC3.6.png"), caption: [Diagramma del caso d'uso UC3.6])
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer consulta le analisi archiviatate relative all'area Documentazione.
@@ -767,14 +768,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.3>)[[UC3.3]]).
 
-- *Postcondizioni:* Il Developer visualizza le analisi archiviate per l'area Documentazione.
+- *Postcondizioni:* Il Developer visualizza lo storico delle analisi per l'area Documentazione.
 
 - *Estensioni:* #link(<UC3.7>)[[UC3.7]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3.7: Consultazione Dettaglio Analisi Archiviata (Read-Only) <UC3.7>
-
+#figure(image("../../asset/UC/UC3.7.png"), caption: [Diagramma del caso d'uso UC3.7])
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole visualizzare i risultati di un'analisi passata.
@@ -944,7 +945,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC6: Gestione Proposta di Remediation <UC6>
-
+#figure(image("../../asset/UC/UC6.png"), caption: [Diagramma del caso d'uso UC6])
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole analizzare la soluzione di remediation proposta dall'IA.
