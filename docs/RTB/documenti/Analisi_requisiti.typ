@@ -310,7 +310,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 == Specifica dei casi d'uso
 
 === UC1: Accesso tramite Piattaforma Esterna <UC1>
-#figure(image("../../asset/UC/UC1.png"), caption: [Diagramma del caso d'uso UC1])
+#figure(image("../../asset/UC/UC1.png", width: 80%), caption: [Diagramma del caso d'uso UC1])
 
 - *Attore principale:* Utente.
 
@@ -329,7 +329,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:*
 + Al passo 2, se l'esecuzione di #link(<UC1.1>)[[UC1.1]] termina con esito negativo l'utente rimane sulla pagina di login.
-+ Al passo 3, se il sistema rileva che è il primo accesso assoluto, l'utente viene reindirizzato alla procedura di prima registrazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]).
++ Al passo 3, se il sistema rileva che è il primo accesso assoluto, l'utente viene reindirizzato alla procedura di prima registrazione (*<\<extends>>* #link(<UC1.2>)[[UC1.2]]).
 
 - *Postcondizioni:* L’utente è autenticato e visualizza la Dashboard.
 
@@ -339,7 +339,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC1.1: Reindirizzamento al Provider di Identità <UC1.1>
-#figure(image("../../asset/UC/UC1.1.png"), caption: [Diagramma del caso d'uso UC1] )
+#figure(image("../../asset/UC/UC1.1.png", width: 80%), caption: [Diagramma del caso d'uso UC1] )
 
 - *Attore principale:* Utente.
 
@@ -358,8 +358,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + L'utente viene reindirizzato nuovamente verso la piattaforma _Code Guardian_ con l'esito positivo.
 
 - *Scenari alternativi:* 
-  + Al passo 2, l'utente nega i consensi o annulla l'operazione sul provider (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
-  + In qualsiasi momento del flusso, si verifica un fallimento tecnico nella comunicazione (es. timeout, servizio non raggiungibile) (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]).
+  + Al passo 2, l'utente nega i consensi o annulla l'operazione sul provider (*<\<extends>>* #link(<UC1.3>)[[UC1.3]]).
+  + In qualsiasi momento del flusso, si verifica un fallimento tecnico nella comunicazione (es. timeout, servizio non raggiungibile) (*<\<extends>>* #link(<UC1.4>)[[UC1.4]]).
 
 - *Postcondizioni:* L'utente si trova nella piattaforma _Code Guardian_ nella pagina di accesso.
 
@@ -369,7 +369,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC1.2: Registrazione Primo Accesso <UC1.2>
 // Indecisa sulla granularità da adottare qui, potremmo chiedere al prof
-#figure(image("../../asset/UC/UC1.2.png"), caption: [Diagramma del caso d'uso UC1.2])
+#figure(image("../../asset/UC/UC1.2.png", width: 80%), caption: [Diagramma del caso d'uso UC1.2])
 
 - *Attore principale:* Utente.
 
@@ -385,7 +385,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     + L'utente conferma la registrazione. 
     + L'utente visualizza una notifica di avvenuta creazione dell'account.
 
-- *Scenari alternativi:* + In qualsiasi momento prima della conferma finale, l'utente decide di annullare l'operazione e viene reindirizzato alla pagina di login (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
+- *Scenari alternativi:* + In qualsiasi momento prima della conferma finale, l'utente decide di annullare l'operazione e viene reindirizzato alla pagina di login (*<\<extends>>* #link(<UC1.3>)[[UC1.3]]).
   
 - *Postcondizioni:* Il nuovo utente è registrato e la sessione è attiva nel ruolo selezionato.
 
@@ -472,7 +472,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC2: Aggiunta di un repository per l'analisi <UC2>
 
-//#figure(image("../../asset/UC/UC2.png"), caption: [Diagramma del caso d'uso UC2])
+#figure(image("../../asset/UC/UC2.png"), caption: [Diagramma del caso d'uso UC2])
 
 - *Attore principale:* Developer.
 
@@ -489,9 +489,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza il nuovo repository aggiunto correttamente alla lista dei suoi progetti.
 
 - *Scenari alternativi:* 
-  + Al passo 3, il Developer visualizza un messaggio di errore relativo all'invalidità dell'URL (*<\<extend>>* #link(<UC2.2>)[[UC2.2]]).
-  + Al passo 3, il Developer visualizza una richiesta di autenticazione aggiuntiva poiché il repository risulta privato (*<\<extend>>* #link(<UC2.3>)[[UC2.3]]).
-  + Prima della conferma (passo 3), il Developer decide di annullare l'operazione e seleziona il tasto "Annulla" (*<\<extend>>* #link(<UC2.4>)[[UC2.4]]).
+  + Al passo 3, il Developer visualizza un messaggio di errore relativo all'invalidità dell'URL (*<\<extends>>* #link(<UC2.2>)[[UC2.2]]).
+  + Al passo 3, il Developer visualizza una richiesta di autenticazione aggiuntiva poiché il repository risulta privato (*<\<extends>>* #link(<UC2.3>)[[UC2.3]]).
+  + Prima della conferma (passo 3), il Developer decide di annullare l'operazione e seleziona il tasto "Annulla" (*<\<extends>>* #link(<UC2.4>)[[UC2.4]]).
 
 - *Postcondizioni:* Il repository è visibile nella lista dei progetti del Developer. 
 
@@ -612,13 +612,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza il widget di sintesi per l'area *Test*, contenente la percentuale di copertura e il rapporto passati/falliti.
   + Il Developer visualizza il widget di sintesi per l'area *Sicurezza*, contenente il conteggio delle vulnerabilità per gravità.
   + Il Developer visualizza il widget di sintesi per l'area *Documentazione*, contenente il rating qualitativo.
-  + Il Developer visualizza il pulsante "Nuova Analisi" per avviare un aggiornamento dei dati (*<\<extend>>* #link(<UC4>)[[UC4]]).
+  + Il Developer visualizza il pulsante "Nuova Analisi" per avviare un aggiornamento dei dati (*<\<extends>>* #link(<UC4>)[[UC4]]).
 
 - *Scenari alternativi:*
   + Al passo 2, 3 o 4, se non sono presenti dati storici per una specifica area (mai analizzata), il Developer visualizza un placeholder "Nessun dato disponibile" nel relativo widget.
-  + Il Developer seleziona "Dettagli" nel widget Test (*<\<extend>>* #link(<UC3.1>)[[UC3.1]]).
-  + Il Developer seleziona "Dettagli" nel widget Sicurezza (*<\<extend>>* #link(<UC3.2>)[[UC3.2]]).
-  + Il Developer seleziona "Dettagli" nel widget Documentazione (*<\<extend>>* #link(<UC3.3>)[[UC3.3]]).
+  + Il Developer seleziona "Dettagli" nel widget Test (*<\<extends>>* #link(<UC3.1>)[[UC3.1]]).
+  + Il Developer seleziona "Dettagli" nel widget Sicurezza (*<\<extends>>* #link(<UC3.2>)[[UC3.2]]).
+  + Il Developer seleziona "Dettagli" nel widget Documentazione (*<\<extends>>* #link(<UC3.3>)[[UC3.3]]).
 
 - *Postcondizioni:* L'utente visualizza i widget di sintesi attuali del repository.
 
@@ -642,11 +642,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza il grafico dettagliato della Code Coverage.
   + Il Developer consulta l'elenco dei file critici (es. copertura inferiore alla soglia o test falliti).
   + Il Developer espande una voce specifica per visualizzare il dettaglio dell'errore o della mancanza.
-  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extend>>* #link(<UC6>)[[UC6]]).
+  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extends>>* #link(<UC6>)[[UC6]]).
 
 - *Scenari alternativi:* 
   + Se l'analisi visualizzata è etichettata come "Processata" o "Scartata" il comando "Risolvi" è disabilitato.
-  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extend>>* #link(<UC3.4>)[[UC3.4]]).
+  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extends>>* #link(<UC3.4>)[[UC3.4]]).
   + Il Developer seleziona il pulsante "Indietro" per tornare alla Dashboard (#link(<UC3>)[[UC3]]).
 
 - *Postcondizioni:* Il Developer visualizza i dettagli tecnici delle problematiche di testing.
@@ -668,11 +668,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Developer visualizza la lista delle vulnerabilità (es. Secret esposti) raggruppate per livello di rischio (Alto, Medio, Basso).
   + Il Developer seleziona una vulnerabilità specifica per leggerne la descrizione tecnica e l'impatto.
-  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extend>>* #link(<UC6>)[[UC6]]).
+  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extends>>* #link(<UC6>)[[UC6]]).
 
 - *Scenari alternativi:* 
   + Se l'analisi visualizzata è etichettata come "Processata" o "Scartata" il comando "Risolvi" è disabilitato. 
-  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extend>>* #link(<UC3.5>)[[UC3.5]]).
+  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extends>>* #link(<UC3.5>)[[UC3.5]]).
   + Il Developer seleziona il pulsante "Indietro" per tornare alla Dashboard (#link(<UC3>)[[UC3]]).
 
 - *Postcondizioni:* Il Developer visualizza i dettagli tecnici delle falle di sicurezza.
@@ -694,11 +694,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Developer visualizza la checklist degli artefatti documentali (es. README).
   + Il Developer identifica le voci segnalate come mancanti o incomplete.
-  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extend>>* #link(<UC6>)[[UC6]]).
+  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extends>>* #link(<UC6>)[[UC6]]).
 
 - *Scenari alternativi:* 
   + Se l'analisi visualizzata è etichettata come "Processata" o "Scartata" il comando "Risolvi" è disabilitato.
-  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extend>>* #link(<UC3.6>)[[UC3.6]]).
+  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extends>>* #link(<UC3.6>)[[UC3.6]]).
   + Il Developer seleziona il pulsante "Indietro" per tornare alla Dashboard (#link(<UC3>)[[UC3]]).
 
 - *Postcondizioni:* Il Developer visualizza lo stato di conformità della documentazione.
@@ -708,7 +708,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3.4: Consultazione Storico Test <UC3.4>
-#figure(image("../../asset/UC/UC3.4.png"), caption: [Diagramma del caso d'uso UC3.4])
+#figure(image("../../asset/UC/UC3.4.png", width: 80%), caption: [Diagramma del caso d'uso UC3.4])
 
 - *Attore principale:* Developer.
 
@@ -720,7 +720,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
+  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extends>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.1>)[[UC3.1]]).
 
@@ -731,7 +731,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3.5: Consultazione Storico Sicurezza <UC3.5>
-#figure(image("../../asset/UC/UC3.5.png"), caption: [Diagramma del caso d'uso UC3.5])
+#figure(image("../../asset/UC/UC3.5.png", width: 80%), caption: [Diagramma del caso d'uso UC3.5])
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer consulta le analisi archiviate relative all'area Sicurezza.
@@ -742,7 +742,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
+  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extends>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.2>)[[UC3.2]]).
 
@@ -753,7 +753,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC3.6: Consultazione Storico Documentazione <UC3.6>
-#figure(image("../../asset/UC/UC3.6.png"), caption: [Diagramma del caso d'uso UC3.6])
+#figure(image("../../asset/UC/UC3.6.png", width: 80%), caption: [Diagramma del caso d'uso UC3.6])
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer consulta le analisi archiviate relative all'area Documentazione.
@@ -764,7 +764,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
+  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extends>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.3>)[[UC3.3]]).
 
@@ -797,7 +797,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC4: Avvio di un'analisi on-demand <UC4>
 
-#figure(image("../../asset/UC/UC4.png"), caption: [Diagramma del caso d'uso UC4])
+#figure(image("../../asset/UC/UC4.png", height: 30%), caption: [Diagramma del caso d'uso UC4])
 
 - *Attore principale:* Developer.
 
@@ -813,7 +813,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer conferma l'avvio dell'operazione.
   + Il Developer visualizza un feedback immediato di presa in carico e l'aggiornamento dello stato dei moduli coinvolti.
 
-- *Scenari alternativi:* Al passo 3, il Developer visualizza un avviso che impedisce l'operazione perché un'analisi della stessa tipologia è già in corso (*<\<extends>>* #link(<UC4.2>)[[UC4.2]]).
+- *Scenari alternativi:* Al passo 3, il Developer visualizza un avviso che impedisce l'operazione perché un'analisi della stessa tipologia è già in corso (*<\<extendss>>* #link(<UC4.2>)[[UC4.2]]).
 
 - *Postcondizioni:* L'interfaccia mostra che il processo di analisi è in esecuzione per gli ambiti selezionati.
 
@@ -881,7 +881,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5: Accesso al Menù Utente <UC5>
-#figure(image("../../asset/UC/UC5.png"), caption: [Diagramma del caso d'uso UC5])
+#figure(image("../../asset/UC/UC5.png", width: 80%), caption: [Diagramma del caso d'uso UC5])
 - *Attore principale:* Utente.
 
 - *Descrizione:* L'utente vuole visualizzare la propria area personale.
@@ -893,8 +893,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + L'utente visualizza il pannello a comparsa del menù utente.
   + L'utente visualizza il riepilogo delle proprie informazioni (Nome, Email, Ruolo attuale).
-  + L'utente visualizza il pulsante "Cambia Ruolo", su cui può cliccare per cambiare il ruolo operativo (*<\<extend>>* #link(<UC5.1>)[[UC5.1]]).
-  + L'utente visualizza il pulsante "Logout", su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extend>>* #link(<UC5.2>)[[UC5.2]]).
+  + L'utente visualizza il pulsante "Cambia Ruolo", su cui può cliccare per cambiare il ruolo operativo (*<\<extends>>* #link(<UC5.1>)[[UC5.1]]).
+  + L'utente visualizza il pulsante "Logout", su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extends>>* #link(<UC5.2>)[[UC5.2]]).
   + L'utente visualizza il pulsante "X", su cui può cliccare per uscire dal menù utente e tornare alla pagina precedente.
 
 - *Postcondizioni:* Il menù utente è attivo e le opzioni sono selezionabili.
@@ -921,7 +921,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + La piattaforma ricarica l'ambiente di lavoro alla dashboard principale, visualizzando i repository e le configurazioni associate al ruolo selezionato (o lo stato iniziale vuoto nel caso di primo utilizzo).
   + L’utente visualizza il messaggio di avvenuto cambio ruolo operativo.
 
-- *Postcondizioni:* L'interfaccia è aggiornata coerentemente con il nuovo ruolo selezionato.
+- *Postcondizioni:* L'interfaccia è aggiornata coerentemente con il nuovo ruolo selezionato, l'utente si trova nel proprio "Menù utente".
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -956,12 +956,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza l'elenco dei file coinvolti nella soluzione proposta, ciascuno affiancato da una checkbox di selezione.
-  + Il Developer può espandere i singoli file per visualizzare il confronto delle modifiche (*<\<extend>>* #link(<UC6.1>)[[UC6.1]]) o le anteprime dei nuovi file creati (*<\<extend>>* #link(<UC6.2>)[[UC6.2]]).
+  + Il Developer può espandere i singoli file per visualizzare il confronto delle modifiche (*<\<extends>>* #link(<UC6.1>)[[UC6.1]]) o le anteprime dei nuovi file creati (*<\<extends>>* #link(<UC6.2>)[[UC6.2]]).
   + Il Developer seleziona tramite checkbox uno o più file da includere nel fix.
-  + Il Developer approva la selezione cliccando su "Applica Fix", avviando la procedura di creazione della _Pull Request_ per tutte le modifiche selezionate (*<\<extend>>* #link(<UC6.3>)[[UC6.3]]).
+  + Il Developer approva la selezione cliccando su "Applica Fix", avviando la procedura di creazione della _Pull Request_ per tutte le modifiche selezionate (*<\<extends>>* #link(<UC6.3>)[[UC6.3]]).
 
 - *Scenari alternativi:* 
-  + Il Developer ritiene la soluzione interamente non valida e decide di scartare la segnalazione (*<\<extend>>* #link(<UC6.4>)[[UC6.4]]).
+  + Il Developer ritiene la soluzione interamente non valida e decide di scartare la segnalazione (*<\<extends>>* #link(<UC6.4>)[[UC6.4]]).
   + Il Developer annulla l'operazione e torna alla schermata precedente premendo sul pulsante "Annulla".
 
 - *Postcondizioni:* Le soluzioni proposte vengono accettate (Pull Request creata) o ignorate.
@@ -990,7 +990,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC6.2: Visualizzazione Nuovo Documento <UC6.2>
-#figure(image("../../asset/UC/UC6.2.png"), caption: [Diagramma del caso d'uso UC6.2])
+#figure(image("../../asset/UC/UC6.2.png", width: 80%), caption: [Diagramma del caso d'uso UC6.2])
 - *Attore principale:* Developer.
 
 - *Descrizione:* L'utente vuole visualizzare l'anteprima completa di un nuovo file generato dall'IA.
@@ -1002,7 +1002,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Developer visualizza l'anteprima del contenuto del file generato.
   + Il Developer visualizza la proposta di percorso di destinazione (path) per il contenuto generato.
-  + Il Developer può modificare la proposta di percorso di destinazione cliccando sul tasto "Modifica Percorso" (*<\<extend>>* #link(<UC6.2.1>)[[UC6.2.1]]).
+  + Il Developer può modificare la proposta di percorso di destinazione cliccando sul tasto "Modifica Percorso" (*<\<extends>>* #link(<UC6.2.1>)[[UC6.2.1]]).
   + Il Developer legge il contenuto per verificarne la completezza e la correttezza.
 
 - *Postcondizioni:* Il Developer ha consultato il contenuto del nuovo file proposto.
