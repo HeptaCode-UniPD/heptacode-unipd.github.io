@@ -1072,23 +1072,28 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [1 Dicembre 2025 – 7 Dicembre 2025],
 
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
   [
-
+  1. Studio individuale della sintassi e l’utilizzo dei Casi d’Uso.
+  2. Inizio stesura del Piano di Progetto.
+  3. Inizio stesura del Piano di Qualifica.
+  4. Inizio stesura delle Norme di Progetto.
+    
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. Mancanza di monitoraggio dello stato di avanzamento.
+    2. Difficoltà nella comprensione della sintassi degli Use Case.
   ],
 
   [_Mitigazione_],
   [
-    1.
+    1. Comunicazione tra i membri del team per via telematica per cercare di monitorare lo stato di avanzamento. 
   ],
 
   [_GANTT Diagram_],
@@ -1108,8 +1113,8 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [
-    1. formazione con l'azienda proponente su backend;
-    2. Inizio stesura prime bozza per PdP, AdR e NdP;
+    1. Formazione con l'azienda proponente su backend;
+    2. Proseguimento stesura del PdP, AdR e NdP;
     3. Aggiornamento WoW, Glossario e sito;
     4. Organizzazione milestones e Project Board.
 
