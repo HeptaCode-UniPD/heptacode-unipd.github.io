@@ -2,6 +2,8 @@
 Domande per Cardin sul file:
 1) Se ho una situazione in cui è possibile aprire un menù, completare un'azione dopodichè il sistema riporta alla schermata precedente è corretto inserire un include per l'UC della finestra precedente? (es UC6.2.1)
 2) In 6.3, ad esempio, è formalmente corretto fare riferimento ad una situazione precedente linkando l'UC a cui ci si riferisce o è meglio descrivere nuovamente la situazione?
+3) se la descrizione è "Il Developer vuole consultare un'analisi archiviata relativa all'area Testing" allora non è corretto considerare l'azione di consultazione analisi archiviata come un include?
+4) Se l'utente è obbligato alla fine a tornare alla pagina precedente, è giusto inserirlo nel flusso principale?
 */
 
 
@@ -12,7 +14,7 @@ Domande per Cardin sul file:
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
   ("0.4.0", "2025-12-27", "Angela Favaro", "Laura Venturini", "Rifattorizzazione UC1.2"),
-  ("0.4.0", "2025-12-23", "Alberto Reginato", "Angela Canazza", "Aggiunta UC da UC3.6 a UC3.9, da UC6 a UC6.4 e fix"),
+  ("0.4.0", "2025-12-23", "Alberto Reginato", "Angela Canazza", "Aggiunta UC da UC3.6 a UC3.7, da UC6 a UC6.4 e fix"),
   ("0.3.0", "2025-12-23", "Alberto Reginato", "Angela Canazza", "Aggiunta UC2.4 e fix"),
   ("0.2.0", "2025-12-21", "Alberto Reginato", "Angela Canazza", "Modellazione UC da UC2.3.1 a UC5.2"),
   ("0.1.2", "2025-12-18", "Alberto Reginato", "Angela Canazza", "Rimodellazione UC fino UC2.3"),
@@ -377,15 +379,55 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC1>)[[UC1]] (primo accesso rilevato al rientro dall'autenticazione).
 
 - *Scenario principale:*
-    + L'utente visualizza la schermata di completamento profilo con i dati importati dal provider (username, email).
-    + L'utente seleziona il ruolo desiderato con cui il profilo sarà inizializzato tra quelli disponibili (Developer, Project Manager o Business Owner).
+    + L'utente visualizza e verifica i dati anagrafici importati dal provider (*<\<include>>* #link(<UC1.2.1>)[[UC1.2.1]]).
+    + L'utente seleziona il ruolo operativo con cui il profilo sarà inizializzato (*<\<include>>* #link(<UC1.2.2>)[[UC1.2.2]]).
     + L'utente conferma la registrazione. 
     + L'utente visualizza una notifica di avvenuta creazione dell'account.
 
-- *Scenari alternativi:* 
-  + Ai passi 1 e 2, l'utente decide di annullare l'operazione e viene reindirizzato alla pagina di login (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
+- *Scenari alternativi:* + In qualsiasi momento prima della conferma finale, l'utente decide di annullare l'operazione e viene reindirizzato alla pagina di login (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
   
 - *Postcondizioni:* Il nuovo utente è registrato e la sessione è attiva nel ruolo selezionato.
+
+- *Inclusioni:* #link(<UC1.2.1>)[[UC1.2.1]], #link(<UC1.2.2>)[[UC1.2.2]].
+- *Estensioni:* #link(<UC1.3>)[[UC1.3]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC1.2.1: Visualizzazione Dati Importati <UC1.2.1>
+
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'utente prende visione dei dati recuperati automaticamente dal provider esterno.
+
+- *Precondizioni:* L'autenticazione esterna è avvenuta con successo.
+
+- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC1.2>)[[UC1.2]].
+
+- *Scenario principale:*
+    + Il sistema presenta il modulo di completamento profilo.
+    + L'utente visualizza i campi (Username, Email) precompilati con le informazioni recuperate da _GitHub_.
+    + L'utente verifica la correttezza dei dati mostrati.
+
+- *Postcondizioni:* L'utente ha preso visione dei propri dati anagrafici importati.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC1.2.2: Selezione del Ruolo <UC1.2.2>
+
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'utente sceglie il ruolo iniziale che utilizzerà all'interno della piattaforma.
+
+- *Precondizioni:* L'utente sta completando la procedura di registrazione.
+
+- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC1.2>)[[UC1.2]].
+
+- *Scenario principale:*
+    + L'utente visualizza le opzioni di ruolo disponibili: _Developer_, _Project Manager_ o _Business Owner_.
+    + L'utente seleziona una tra le opzioni disponibili.
+    + Il sistema evidenzia graficamente la selezione effettuata.
+
+- *Postcondizioni:* Il ruolo iniziale dell'utente è stato selezionato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -675,7 +717,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
+  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.1>)[[UC3.1]]).
 
@@ -695,7 +737,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
+  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.2>)[[UC3.2]]).
 
@@ -715,7 +757,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.9>)[[UC3.9]]).
+  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.3>)[[UC3.3]]).
 
@@ -723,7 +765,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC3.9: Consultazione Dettaglio Analisi Archiviata (Read-Only) <UC3.9>
+=== UC3.7: Consultazione Dettaglio Analisi Archiviata (Read-Only) <UC3.7>
 
 - *Attore principale:* Developer.
 
@@ -740,7 +782,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer espande le singole voci per leggere i dettagli tecnici.
   + Il Developer seleziona "Indietro" per ritornare alla lista dello storico.
 
-- *Postcondizioni:* L'utente dopo aver visualizzato i risultati di un'analisi passata ritorna alla lista delle analisi storiche.
+- *Postcondizioni:* Il Developer visualizza l'analisi della voce che ha selezionato nella sua interezza e ritorna alla lista delle analisi storiche.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -838,7 +880,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Utente.
 
-- *Descrizione:* L'utente vuole di cambiare il proprio ruolo attivo all'interno della sessione corrente.
+- *Descrizione:* L'utente vuole cambiare il proprio ruolo attivo all'interno della sessione corrente.
 
 - *Precondizioni:* Il menù utente è aperto.
 
@@ -887,7 +929,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza l'elenco dei file coinvolti nella soluzione proposta, ciascuno affiancato da una checkbox di selezione.
   + Il Developer può espandere i singoli file per visualizzare il confronto delle modifiche (*<\<extend>>* #link(<UC6.1>)[[UC6.1]]) o le anteprime dei nuovi file creati (*<\<extend>>* #link(<UC6.2>)[[UC6.2]]).
   + Il Developer seleziona tramite checkbox uno o più file da includere nel fix.
-  + Il Developer approva la selezione cliccando su "Applica Fix", avviando la procedura di creazione della _Pull Request_ per tutte le modifiche selezionate (*<\<include>>* #link(<UC6.3>)[[UC6.3]]).
+  + Il Developer approva la selezione cliccando su "Applica Fix", avviando la procedura di creazione della _Pull Request_ per tutte le modifiche selezionate (*<\<extend>>* #link(<UC6.3>)[[UC6.3]]).
 
 - *Scenari alternativi:* 
   + Il Developer ritiene la soluzione interamente non valida e decide di scartare la segnalazione (*<\<extend>>* #link(<UC6.4>)[[UC6.4]]).
@@ -895,8 +937,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* Le soluzioni proposte vengono accettate (PR creata) o ignorate.
 
-- *Inclusioni:* #link(<UC6.3>)[[UC6.3]].
-- *Estensioni:* #link(<UC6.1>)[[UC6.1]], #link(<UC6.2>)[[UC6.2]], #link(<UC6.4>)[[UC6.4]].
+- *Estensioni:* #link(<UC6.1>)[[UC6.1]], #link(<UC6.2>)[[UC6.2]], #link(<UC6.3>)[[UC6.3]], #link(<UC6.4>)[[UC6.4]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
