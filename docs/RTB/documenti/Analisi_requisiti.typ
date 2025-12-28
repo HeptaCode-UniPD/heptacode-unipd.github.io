@@ -711,7 +711,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole consultare un'analisi archiviata relativa all'area Testing.
+- *Descrizione:* Il Developer consulta le analisi archiviatate relative all'area Testing.
 
 - *Precondizioni:* Esistono almeno due analisi storiche per l'area Test.
 
@@ -719,11 +719,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.7>)[[UC3.7]]).
+  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.1>)[[UC3.1]]).
 
-- *Postcondizioni:* Il Developer seleziona e apre un report passato tra le analisi archiviate per l'area Test.
+- *Postcondizioni:* Il Developer visualizza le analisi archiviate per l'area Test.
+
+- *Estensioni:* #link(<UC3.7>)[[UC3.7]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -731,7 +733,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole consultare un'analisi archiviata relativa all'area Sicurezza.
+- *Descrizione:* Il Developer consulta le analisi archiviatate relative all'area Sicurezza.
 
 - *Precondizioni:* Esistono almeno due analisi storiche per l'area Sicurezza.
 
@@ -739,11 +741,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.7>)[[UC3.7]]).
+  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.2>)[[UC3.2]]).
 
-- *Postcondizioni:* Il Developer seleziona e apre un report passato tra le analisi archiviate per l'area Sicurezza.
+- *Postcondizioni:* Il Developer visualizza le analisi archiviate per l'area Sicurezza.
+
+- *Estensioni:* #link(<UC3.7>)[[UC3.7]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -751,7 +755,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole consultare un'analisi archiviata relativa all'area Documentazione.
+- *Descrizione:* Il Developer consulta le analisi archiviatate relative all'area Documentazione.
 
 - *Precondizioni:* Esistono almeno due analisi storiche per l'area Documentazione.
 
@@ -759,11 +763,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer clicca su un report specifico della lista d'interesse (*<\<include>>* #link(<UC3.7>)[[UC3.7]]).
+  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.3>)[[UC3.3]]).
 
-- *Postcondizioni:* Il Developer seleziona e apre un report passato tra le analisi archiviate per l'area Documentazione.
+- *Postcondizioni:* Il Developer visualizza le analisi archiviate per l'area Documentazione.
+
+- *Estensioni:* #link(<UC3.7>)[[UC3.7]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
