@@ -29,6 +29,11 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
+    "0.4.0",
+  "2025/12/28",
+  "Laura Venturini", 
+  "Angela Canazza", 
+  "Aggiunta di problemi incontrati e contromisure nella sezione 6.1 - Valutazione organizzativa",
   "0.3.0",
   "2025/12/15",
   "Angela Canazza", 
@@ -202,8 +207,15 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
     ),
     [Eccessivo lavoro svolto in locale non conforme agli standard condivisi dal gruppo], 
     [Scomposizione dei compiti complessi in issue#super[G] granulari, gestite e assegnate tramite la Project Board di GitHub#super[G]],
+    
+    [Mancanza di monitoraggio dello stato di avanzamento],
+    [ Comunicazione tra i membri per via telematica e creazione di Project Board ed issues per monitorare lo stato di avanzamento dei membri del team ],
+
     [Mancata coerenza grafica e stilistica nella documentazione],
     [Sviluppo di template standardizzati in Typst#super[G] per garantire uniformità visiva],
+
+    [Difficoltà nella comprensione della sintassi degli Use Case e conseguente modellazione errata degli Use Case],
+    [Consultazione con il docente e studio più approfondito della sintassi degli Use Case]
   ),
   caption: [Contromisure adottate al fine di migliorare il lavoro],
   kind: table
