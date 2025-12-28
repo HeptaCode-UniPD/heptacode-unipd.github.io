@@ -421,8 +421,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + L'utente visualizza una schermata o un messaggio di avviso relativo a problemi di comunicazione con il servizio esterno (es. "Servizio non disponibile").
+  + L’utente visualizza l'opzione per riprovare la connessione.
 
-- *Postcondizioni:* L’utente non è autenticato, si trova nella pagina di login, visualizza l'avviso di errore.
+- *Postcondizioni:* L’utente non è autenticato, si trova nella pagina di login, visualizza l'avviso di errore e l'opzione per riprovare la connessione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -746,7 +747,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC4: Avvio di un'analisi on-demand <UC4>
 
-// #figure(image("diagramma_uc4.png"), caption: [Diagramma del caso d'uso UC4])
+#figure(image("../../asset/UC/UC4.png"), caption: [Diagramma del caso d'uso UC4])
 
 - *Attore principale:* Developer.
 
