@@ -472,7 +472,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC2: Aggiunta di un repository per l'analisi <UC2>
 
-#figure(image("../../asset/UC/UC2.png"), caption: [Diagramma del caso d'uso UC2])
+//#figure(image("../../asset/UC/UC2.png"), caption: [Diagramma del caso d'uso UC2])
 
 - *Attore principale:* Developer.
 
@@ -712,7 +712,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer consulta le analisi archiviatate relative all'area Testing.
+- *Descrizione:* Il Developer consulta le analisi archiviate relative all'area Testing.
 
 - *Precondizioni:* Esistono almeno due analisi storiche per l'area Test.
 
@@ -734,7 +734,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #figure(image("../../asset/UC/UC3.5.png"), caption: [Diagramma del caso d'uso UC3.5])
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer consulta le analisi archiviatate relative all'area Sicurezza.
+- *Descrizione:* Il Developer consulta le analisi archiviate relative all'area Sicurezza.
 
 - *Precondizioni:* Esistono almeno due analisi storiche per l'area Sicurezza.
 
@@ -756,7 +756,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #figure(image("../../asset/UC/UC3.6.png"), caption: [Diagramma del caso d'uso UC3.6])
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer consulta le analisi archiviatate relative all'area Documentazione.
+- *Descrizione:* Il Developer consulta le analisi archiviate relative all'area Documentazione.
 
 - *Precondizioni:* Esistono almeno due analisi storiche per l'area Documentazione.
 
@@ -834,8 +834,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer può:
-    -  selezionare 'Analisi Manuale' e visualizzare le opzioni disponibili (Sicurezza, Test, Documentazione) (*<\<include>>* #link(<UC4.1.1>)[[UC4.1.1]]). 
-    -  selezionare 'Analisi Automatica' 
+    -  selezionare "Analisi Manuale" e visualizzare le opzioni disponibili (Sicurezza, Test, Documentazione) (*<\<include>>* #link(<UC4.1.1>)[[UC4.1.1]]). 
+    -  selezionare "Analisi Automatica" 
    con il pulsante di conferma inizialmente disabilitato.
   + Il Developer visualizza l'abilitazione del pulsante di conferma non appena almeno una tipologia viene selezionata.
 
@@ -936,7 +936,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* L'utente seleziona la voce "Logout".
 
 - *Scenario principale:*
-  + L'utente conferma l'operazione di disconnessione tramite un pulsante 'Conferma Logout'.
+  + L'utente conferma l'operazione di disconnessione tramite un pulsante "Conferma Logout".
   + L'utente viene reindirizzato alla pagina pubblica di accesso (Login).
   + L'utente visualizza il messaggio di avvenuta disconnessione.
 
