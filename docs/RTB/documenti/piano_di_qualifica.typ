@@ -6,12 +6,6 @@
 #show: applica-glossario
 
 
-= Analisi dei Requisiti
-
-Abbiamo riscontrato un problema con la Repository e le Github Action.
-Anche la fase di Commit è stata lenta.
-
-
 #v(1fr)
 #align(center, [
   #image("../../asset/logo.svg")
@@ -37,8 +31,8 @@ Anche la fase di Commit è stata lenta.
   ),
   "0.3.0",
   "2025/12/15",
-  "Alberico Vegliante",
-  "Angela Canazza",
+  "Angela Canazza", 
+  "Amerigo Vegliante",
   "Stesura iniziale del capitolo 6 - Iniziative di miglioramento",
   "0.2.0",
   "2025/12/14",
