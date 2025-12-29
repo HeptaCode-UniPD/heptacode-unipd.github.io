@@ -60,6 +60,7 @@ js
 rtb
 dall'ai
 dell'ai
+<<<<<<< HEAD
 gantt
 pdp
 pert
@@ -85,3 +86,12 @@ ndp
 ro
 adr
 dockerfile
+mros
+mco
+messaggistica
+gantt
+nomedocumento
+nomegruppo
+pdp
+poc
+txt
