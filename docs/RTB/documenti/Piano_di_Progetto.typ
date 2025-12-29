@@ -824,7 +824,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [9 Febbraio 2026 - 22 - 2026],
+  [_Intervallo temporale_], [9 Febbraio 2026 - 22 Febbraio 2026],
 
   [_Giorni di sprint_], [14],
 
