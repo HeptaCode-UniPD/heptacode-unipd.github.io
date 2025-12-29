@@ -843,7 +843,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC4.1.1:Selezione Analisi Manuale <UC4.1.1>
+=== UC4.1.1: Selezione Analisi Manuale <UC4.1.1>
 - *Attore principale:* Developer.
   
 - *Descrizione:* Il Developer sceglie di avviare un'Analisi Manuale.
