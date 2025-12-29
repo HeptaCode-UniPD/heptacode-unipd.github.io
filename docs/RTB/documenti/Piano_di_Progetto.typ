@@ -1165,7 +1165,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ],
   [_Mitigazione_],
   [
-    1. Implementato un utlizzo più efficiente della dashboard di progetto.
+    1. Implementato un utilizzo più efficiente della dashboard di progetto.
     2. Issue assegnate all'inizio di ogni sprint da parte del responsabile di sprint.
     3. Le Issue assegnate si riferiscono al periodo di sprint e devono essere completate entro la fine dello sprint.
   ],
