@@ -84,7 +84,7 @@ Termini tecnici e ambiguità sono chiariti nel documento _glossario.pdf_, ogni t
 - Capitolato d'appalto C2 _Vargroup S.p.a._ - Code Guardian: \
 #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")
 
-- Standard ISO/IEC 12207:1995 - Processi di Ciclo di Vita del Software:
+- Standard ISO/x 12207:1995 - Processi di Ciclo di Vita del Software:
 #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 
 === Riferimenti Informativi
@@ -171,7 +171,7 @@ Il processo di sviluppo, in conformità allo standard ISO/IEC 12207:1995, defini
 
 ==== Scopo
 
-Lo scopo principale dell' Analisi dei Requisiti è quello di formalizzare le specifiche funzionali, non funzionali e i vincoli del progetto "_Code Guardian_". Agisce come una fonte di verità unica (_single source of truth_) per il team di sviluppo e per tutti gli stakeholder di VarGroup, con l'obiettivo primario di garantire una comprensione comune e ridurre al minimo le ambiguità che potrebbero emergere nelle fasi successive.
+Lo scopo principale dell'Analisi dei Requisiti è quello di formalizzare le specifiche funzionali, non funzionali e i vincoli del progetto "_Code Guardian_". Agisce come una fonte di verità unica (_single source of truth_) per il team di sviluppo e per tutti gli stakeholder di VarGroup, con l'obiettivo primario di garantire una comprensione comune e ridurre al minimo le ambiguità che potrebbero emergere nelle fasi successive.
 
 Tramite questo documento è possibile comprendere:
 
@@ -319,7 +319,7 @@ Il template della documentazione garantisce che ogni documento pubblicato presen
   - *Descrizione*: Una concisa descrizione delle modifiche apportate.
 
 - *Indici*:
-  In seguito al Registro dei Cambiamenti ogni documento presenta 3 indici, l' Indice dei Contenuti elenca i capitoli e i paragrafi, l'Indice delle Tabelle elenca le etichette delle tabelle presenti e l'Indice delle immagini elenca le etichette delle immagini del documento.
+  In seguito al Registro dei Cambiamenti ogni documento presenta 3 indici, l'Indice dei Contenuti elenca i capitoli e i paragrafi, l'Indice delle Tabelle elenca le etichette delle tabelle presenti e l'Indice delle immagini elenca le etichette delle immagini del documento.
 
 === Struttura dei Verbali
 
@@ -377,7 +377,7 @@ Le aspettative del processo di Verifica sono quindi le seguenti:
 
 - Dimostrare che il software e la documentazione siano coerenti con dei requisiti pregressi.
 
-- Accettarsi che il codice rispetti le linne guida stilistiche e la documentazione sia coerente con il template Typst.
+- Accettarsi che il codice rispetti le linee guida stilistiche e la documentazione sia coerente con il template Typst.
 
 - Generare documenti che attestino lo stato di progresso del progetto.
 
@@ -465,7 +465,7 @@ La sincronizzazione del lavoro tra i membri del gruppo è gestita attraverso:
 
 == Gestione della Qualità
 
-=== Descrizione eScopo
+=== Descrizione e Scopo
 
 === PDCA
 

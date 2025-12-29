@@ -64,3 +64,17 @@ https
 l'audit
 pdca
 uml
+ciclomatica
+containerizzare
+dockerfile
+gg
+yy
+iec
+manutenibile
+monorepo
+poc
+postcondizioni
+templating
+testabilità
+tracciabilità
+ucx
