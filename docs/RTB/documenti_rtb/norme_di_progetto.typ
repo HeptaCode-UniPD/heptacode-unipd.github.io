@@ -80,7 +80,7 @@ Termini tecnici e ambiguità sono chiariti nel documento _glossario.pdf_, ogni t
 #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")
 
 - Standard ISO/IEC 12207:1995 - Processi di Ciclo di Vita del Software:
-#linke("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
+#link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
 
 === Riferimenti Informativi
 
