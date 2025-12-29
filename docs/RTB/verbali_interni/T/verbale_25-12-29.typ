@@ -55,7 +55,7 @@ Gli argomenti discussi nell'incontro sono stati:
 = Svolgimento
 == Stato di completamento degli Use Case
 === Use Case del ruolo "Developer"
-La stesura degli Use Case per il ruolo del "Developer" è ultimata, ad eccezione dell'UC5, sul quale sono emerse divergenze interpretative riguardo la definizione dello scenario principale.
+La stesura degli Use Case per il ruolo del "Developer" è ultimata, ad eccezione dello Use Case 5, sul quale sono emerse divergenze interpretative riguardo la definizione dello scenario principale.
 Non avendo raggiunto un consenso unanime, il gruppo ha deciso di inviare una richiesta di chiarimento via email al Prof. _R. Cardin_ per individuare l'approccio più corretto.
 === Milestone "UCB - Use Cases Baseline" e gestione ritardi
 È stato rilavato il mancato completamento della Milestone "UCB - Use Cases Baseline" entro la scadenza prevista del 28 dicembre 2025. Tale slittamento è dovuto alla decisione di integrare nell'analisi corrente anche gli Use Case relativi ai ruoli di Project Manager e Business Owner. La motivazione per la quale non sono stati presi in considerazione dall'inizio, è da darsi alla loro classificazione, in quanto questi ruoli fanno parte degli _sviluppi opzionali_. La decisione di trattarli in questa fase progettuale è stata definita necessaria a seguito delle indicazioni ricevute via email dal Prof. _R. Cardin_.
@@ -76,16 +76,16 @@ Il gruppo ha stabilito che nel corso delle settimana avrebbe:
 - Inviato un email al Prof _R. Cardin_ per chiedere consiglio
 - Concluso gli Use Case
 - Studiato individualmente le varie scelte progettuali
-- Concluso una prima verisone non ufficiale del documento "Piano di Progetto"
-- Contattato il referente _VarGrup_ su Slack per definire la frequenza degli Sprint
+- Concluso una prima versione non ufficiale del documento "Piano di Progetto"
+- Contattato il referente _VarGroup_ su Slack per definire la frequenza degli Sprint
 
 Il prossimo incontro è fissato per il giorno #next-meeting
 ]
 
 
 #let decisione-azione = ((
-  "Completare la Milestone UCB entro il prossimo Sprint","Concludere gli Use Case dei ruoli per il Project Manahger e per il Business Owner entro il prossimo Sprint",
-  "Concludere la scrittura dell'UC5","Scrivere al Prof R. Cardin chiedendo consiglio",
+  "Completare la Milestone UCB entro il prossimo Sprint","Concludere gli Use Case dei ruoli per il Project Manager e per il Business Owner entro il prossimo Sprint",
+  "Concludere la scrittura dello USe Case 5","Scrivere al Prof R. Cardin chiedendo consiglio",
   "Stabilire la frequenza degli Sprint con la proponente","Contattare il referente su Slack"
 )
 )
