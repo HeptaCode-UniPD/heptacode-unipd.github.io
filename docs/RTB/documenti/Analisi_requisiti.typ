@@ -329,7 +329,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:*
 + Al passo 2, se l'esecuzione di #link(<UC1.1>)[[UC1.1]] termina con esito negativo l'utente rimane sulla pagina di login.
-+ Al passo 3, se il sistema rileva che è il primo accesso assoluto, l'utente viene reindirizzato alla procedura di prima registrazione (*<\<extends>>* #link(<UC1.2>)[[UC1.2]]).
++ Al passo 3, se il sistema rileva che è il primo accesso assoluto, l'utente viene reindirizzato alla procedura di prima registrazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]).
 
 - *Postcondizioni:* L’utente è autenticato e visualizza la Dashboard.
 
@@ -358,8 +358,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + L'utente viene reindirizzato nuovamente verso la piattaforma _Code Guardian_ con l'esito positivo.
 
 - *Scenari alternativi:* 
-  + Al passo 2, l'utente nega i consensi o annulla l'operazione sul provider (*<\<extends>>* #link(<UC1.3>)[[UC1.3]]).
-  + In qualsiasi momento del flusso, si verifica un fallimento tecnico nella comunicazione (es. timeout, servizio non raggiungibile) (*<\<extends>>* #link(<UC1.4>)[[UC1.4]]).
+  + Al passo 2, l'utente nega i consensi o annulla l'operazione sul provider (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
+  + In qualsiasi momento del flusso, si verifica un fallimento tecnico nella comunicazione (es. timeout, servizio non raggiungibile) (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]).
 
 - *Postcondizioni:* L'utente si trova nella piattaforma _Code Guardian_ nella pagina di accesso.
 
@@ -385,7 +385,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     + L'utente conferma la registrazione. 
     + L'utente visualizza una notifica di avvenuta creazione dell'account.
 
-- *Scenari alternativi:* + In qualsiasi momento prima della conferma finale, l'utente decide di annullare l'operazione e viene reindirizzato alla pagina di login (*<\<extends>>* #link(<UC1.3>)[[UC1.3]]).
+- *Scenari alternativi:* + In qualsiasi momento prima della conferma finale, l'utente decide di annullare l'operazione e viene reindirizzato alla pagina di login (*<\<extend>>* #link(<UC1.3>)[[UC1.3]]).
   
 - *Postcondizioni:* Il nuovo utente è registrato e la sessione è attiva nel ruolo selezionato.
 
@@ -470,70 +470,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC5: Accesso al Menù Utente <UC5>
-#figure(image("../../asset/UC/UC5.png", width: 80%), caption: [Diagramma del caso d'uso UC5])
-- *Attore principale:* Utente.
-
-- *Descrizione:* L'utente vuole visualizzare la propria area personale.
-
-- *Precondizioni:* L'utente è autenticato e si trova su una qualsiasi pagina della piattaforma.
-
-- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale.
-
-- *Scenario principale:*
-  + L'utente visualizza il pannello a comparsa del menù utente.
-  + L'utente visualizza il riepilogo delle proprie informazioni (Nome, Email, Ruolo attuale).
-  + L'utente visualizza il pulsante "Cambia Ruolo", su cui può cliccare per cambiare il ruolo operativo (*<\<extends>>* #link(<UC5.1>)[[UC5.1]]).
-  + L'utente visualizza il pulsante "Logout", su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extends>>* #link(<UC5.2>)[[UC5.2]]).
-  + L'utente visualizza il pulsante "X", su cui può cliccare per uscire dal menù utente e tornare alla pagina precedente.
-
-- *Postcondizioni:* Il menù utente è attivo e le opzioni sono selezionabili.
-
-- *Estensioni:*
-  + #link(<UC5.1>)[[UC5.1]]: Se l'utente seleziona l'opzione "Cambia Ruolo".
-  + #link(<UC5.2>)[[UC5.2]]: Se l'utente seleziona l'opzione "Logout".
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC5.1: Cambio Ruolo Operativo (Context Switch) <UC5.1>
-
-- *Attore principale:* Utente.
-
-- *Descrizione:* L'utente vuole cambiare il proprio ruolo attivo all'interno della sessione corrente.
-
-- *Precondizioni:* Il menù utente è aperto.
-
-- *Trigger:* L'utente seleziona la voce "Cambia Ruolo".
-
-- *Scenario principale:*
-  + L'utente visualizza l'elenco dei ruoli disponibili per il proprio account (es. se attualmente nel ruolo Developer i ruoli selezionabili saranno Project Manager e Business Owner).
-  + L'utente seleziona il nuovo ruolo desiderato.
-  + La piattaforma ricarica l'ambiente di lavoro alla dashboard principale, visualizzando i repository e le configurazioni associate al ruolo selezionato (o lo stato iniziale vuoto nel caso di primo utilizzo).
-  + L’utente visualizza il messaggio di avvenuto cambio ruolo operativo.
-
-- *Postcondizioni:* L'interfaccia è aggiornata coerentemente con il nuovo ruolo selezionato, l'utente si trova nel proprio "Menù utente".
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC5.2: Logout <UC5.2>
-
-- *Attore principale:* Utente.
-
-- *Descrizione:* Permette all'utente di terminare la sessione di lavoro corrente.
-
-- *Precondizioni:* Il menù utente è aperto.
-
-- *Trigger:* L'utente seleziona la voce "Logout".
-
-- *Scenario principale:*
-  + L'utente conferma l'operazione di disconnessione tramite un pulsante "Conferma Logout".
-  + L'utente viene reindirizzato alla pagina pubblica di accesso (Login).
-  + L'utente visualizza il messaggio di avvenuta disconnessione.
-
-- *Postcondizioni:* La sessione utente è terminata e si trova nella pagina iniziale non autenticato dove può effettuare nuovamente l'accesso.
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
 === UC2: Aggiunta di un repository per l'analisi <UC2>
 
 #figure(image("../../asset/UC/UC2.png"), caption: [Diagramma del caso d'uso UC2])
@@ -553,9 +489,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + L'Utente visualizza il nuovo repository aggiunto correttamente alla lista dei suoi progetti.
 
 - *Scenari alternativi:* 
-  + Al passo 3, l'Utente visualizza un messaggio di errore relativo all'invalidità dell'URL (*<\<extends>>* #link(<UC2.2>)[[UC2.2]]).
-  + Al passo 3, l'Utente visualizza una richiesta di autenticazione aggiuntiva poiché il repository risulta privato (*<\<extends>>* #link(<UC2.3>)[[UC2.3]]).
-  + Prima della conferma (passo 3), l'Utente decide di annullare l'operazione e seleziona il tasto "Annulla" (*<\<extends>>* #link(<UC2.4>)[[UC2.4]]).
+  + Al passo 3, l'Utente visualizza un messaggio di errore relativo all'invalidità dell'URL (*<\<extend>>* #link(<UC2.2>)[[UC2.2]]).
+  + Al passo 3, l'Utente visualizza una richiesta di autenticazione aggiuntiva poiché il repository risulta privato (*<\<extend>>* #link(<UC2.3>)[[UC2.3]]).
+  + Prima della conferma (passo 3), l'Utente decide di annullare l'operazione e seleziona il tasto "Annulla" (*<\<extend>>* #link(<UC2.4>)[[UC2.4]]).
 
 - *Postcondizioni:* Il repository è visibile nella lista dei progetti dell'Utente. 
 
@@ -660,6 +596,112 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
+=== UC5: Accesso al Menù Utente <UC5>
+#figure(image("../../asset/UC/UC5.png", width: 80%), caption: [Diagramma del caso d'uso UC5])
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'utente vuole visualizzare la propria area personale.
+
+- *Precondizioni:* L'utente è autenticato e si trova su una qualsiasi pagina della piattaforma.
+
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale.
+
+- *Scenario principale:*
+  + L'utente visualizza il pannello a comparsa del menù utente.
+  + L'utente visualizza il riepilogo delle proprie informazioni (Nome, Email, Ruolo attuale).
+  + L'utente visualizza il pulsante "Cambia Ruolo", su cui può cliccare per cambiare il ruolo operativo (*<\<extend>>* #link(<UC5.1>)[[UC5.1]]).
+  + L'utente visualizza il pulsante "Logout", su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extend>>* #link(<UC5.2>)[[UC5.2]]).
+  + L'utente visualizza il pulsante "X", su cui può cliccare per uscire dal menù utente e tornare alla pagina precedente.
+
+- *Postcondizioni:* Il menù utente è attivo e le opzioni sono selezionabili.
+
+- *Estensioni:*
+  + #link(<UC5.1>)[[UC5.1]]: Se l'utente seleziona l'opzione "Cambia Ruolo".
+  + #link(<UC5.2>)[[UC5.2]]: Se l'utente seleziona l'opzione "Logout".
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC5.1: Cambio Ruolo Operativo (Context Switch) <UC5.1>
+
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'utente vuole cambiare il proprio ruolo attivo all'interno della sessione corrente.
+
+- *Precondizioni:* Il menù utente è aperto.
+
+- *Trigger:* L'utente seleziona la voce "Cambia Ruolo".
+
+- *Scenario principale:*
+  + L'utente visualizza l'elenco dei ruoli disponibili per il proprio account (es. se attualmente nel ruolo Developer i ruoli selezionabili saranno Project Manager e Business Owner).
+  + L'utente seleziona il nuovo ruolo desiderato.
+  + La piattaforma ricarica l'ambiente di lavoro alla dashboard principale, visualizzando i repository e le configurazioni associate al ruolo selezionato (o lo stato iniziale vuoto nel caso di primo utilizzo).
+  + L’utente visualizza il messaggio di avvenuto cambio ruolo operativo.
+
+- *Postcondizioni:* L'interfaccia è aggiornata coerentemente con il nuovo ruolo selezionato, l'utente si trova nel proprio "Menù utente".
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC5.2: Logout <UC5.2>
+
+- *Attore principale:* Utente.
+
+- *Descrizione:* Permette all'utente di terminare la sessione di lavoro corrente.
+
+- *Precondizioni:* Il menù utente è aperto.
+
+- *Trigger:* L'utente seleziona la voce "Logout".
+
+- *Scenario principale:*
+  + L'utente conferma l'operazione di disconnessione tramite un pulsante "Conferma Logout".
+  + L'utente viene reindirizzato alla pagina pubblica di accesso (Login).
+  + L'utente visualizza il messaggio di avvenuta disconnessione.
+
+- *Postcondizioni:* La sessione utente è terminata e si trova nella pagina iniziale non autenticato dove può effettuare nuovamente l'accesso.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC7: Creazione di un Gruppo di Progetto <UC7>
+
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'Utente crea un Progetto per aggregare più repository già importate nella piattaforma.
+
+- *Precondizioni:* L'Utente è autenticato e ha già importato almeno una repository tramite #link(<UC2>)[[UC2]].
+
+- *Trigger:* L'Utente seleziona il pulsante "Nuovo Progetto" dalla propria dashboard o dalla lista progetti.
+
+- *Scenario principale:*
+  + L'Utente visualizza il modulo di creazione del progetto.
+  + L'Utente inserisce il *Nome del Progetto* (obbligatorio) e una *Descrizione* (opzionale).
+  + L'Utente seleziona le repository da includere nel gruppo da una lista di risorse disponibili (*<\<include>>* #link(<UC7.1>)[[UC7.1]]).
+  + L'Utente conferma la creazione.
+  + L'Utente visualizza il nuovo progetto generato nella lista dei suoi progetti attivi.
+
+- *Scenari alternativi:* L'Utente annulla l'operazione premendo "Annulla" in qualsiasi punto del flusso principale prima della conferma.
+
+- *Postcondizioni:* Un nuovo progetto è stato creato e contiene le repository selezionate.
+
+- *Inclusioni:* #link(<UC7.1>)[[UC7.1]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC7.1: Selezione Repository per il Gruppo <UC7.1>
+
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'Utente seleziona quali repository, tra quelle già collegate al suo account, faranno parte del nuovo progetto.
+
+- *Precondizioni:* Il modulo di creazione o modifica progetto è attivo.
+
+- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC7>)[[UC7]].
+
+- *Scenario principale:*
+  + Il sistema mostra l'elenco di tutte le repository precedentemente importate dall'Utente.
+  + L'Utente seleziona tramite checkbox una o più repository da includere nel gruppo.
+
+- *Postcondizioni:* L'Utente ha selezionato le repository da associare al progetto in fase di creazione.
+
+#line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
 
@@ -672,7 +714,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer accede alla schermata principale di un progetto per consultare, in un'unica vista aggregata, lo stato di salute del codice relativamente a Test, Sicurezza e Documentazione.
 
-- *Precondizioni:* Il Developer è autenticato e visualizza la lista dei propri progetti.
+- *Precondizioni:* Il Developer è autenticato e visualizza la lista dei propri repository precedente importati.
 
 - *Trigger:* Il Developer seleziona un repository specifico dalla lista progetti.
 
@@ -681,13 +723,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza il widget di sintesi per l'area *Test*, contenente la percentuale di copertura e il rapporto passati/falliti.
   + Il Developer visualizza il widget di sintesi per l'area *Sicurezza*, contenente il conteggio delle vulnerabilità per gravità.
   + Il Developer visualizza il widget di sintesi per l'area *Documentazione*, contenente il rating qualitativo.
-  + Il Developer visualizza il pulsante "Nuova Analisi" per avviare un aggiornamento dei dati (*<\<extends>>* #link(<UC4>)[[UC4]]).
+  + Il Developer visualizza il pulsante "Nuova Analisi" per avviare un aggiornamento dei dati (*<\<extend>>* #link(<UC4>)[[UC4]]).
 
 - *Scenari alternativi:*
   + Al passo 2, 3 o 4, se non sono presenti dati storici per una specifica area (mai analizzata), il Developer visualizza un placeholder "Nessun dato disponibile" nel relativo widget.
-  + Il Developer seleziona "Dettagli" nel widget Test (*<\<extends>>* #link(<UC3.1>)[[UC3.1]]).
-  + Il Developer seleziona "Dettagli" nel widget Sicurezza (*<\<extends>>* #link(<UC3.2>)[[UC3.2]]).
-  + Il Developer seleziona "Dettagli" nel widget Documentazione (*<\<extends>>* #link(<UC3.3>)[[UC3.3]]).
+  + Il Developer seleziona "Dettagli" nel widget Test (*<\<extend>>* #link(<UC3.1>)[[UC3.1]]).
+  + Il Developer seleziona "Dettagli" nel widget Sicurezza (*<\<extend>>* #link(<UC3.2>)[[UC3.2]]).
+  + Il Developer seleziona "Dettagli" nel widget Documentazione (*<\<extend>>* #link(<UC3.3>)[[UC3.3]]).
 
 - *Postcondizioni:* L'utente visualizza i widget di sintesi attuali del repository.
 
@@ -711,11 +753,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza il grafico dettagliato della Code Coverage.
   + Il Developer consulta l'elenco dei file critici (es. copertura inferiore alla soglia o test falliti).
   + Il Developer espande una voce specifica per visualizzare il dettaglio dell'errore o della mancanza.
-  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extends>>* #link(<UC6>)[[UC6]]).
+  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extend>>* #link(<UC6>)[[UC6]]).
 
 - *Scenari alternativi:* 
   + Se l'analisi visualizzata è etichettata come "Processata" o "Scartata" il comando "Risolvi" è disabilitato.
-  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extends>>* #link(<UC3.4>)[[UC3.4]]).
+  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extend>>* #link(<UC3.4>)[[UC3.4]]).
   + Il Developer seleziona il pulsante "Indietro" per tornare alla Dashboard (#link(<UC3>)[[UC3]]).
 
 - *Postcondizioni:* Il Developer visualizza i dettagli tecnici delle problematiche di testing.
@@ -737,11 +779,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Developer visualizza la lista delle vulnerabilità (es. Secret esposti) raggruppate per livello di rischio (Alto, Medio, Basso).
   + Il Developer seleziona una vulnerabilità specifica per leggerne la descrizione tecnica e l'impatto.
-  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extends>>* #link(<UC6>)[[UC6]]).
+  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extend>>* #link(<UC6>)[[UC6]]).
 
 - *Scenari alternativi:* 
   + Se l'analisi visualizzata è etichettata come "Processata" o "Scartata" il comando "Risolvi" è disabilitato. 
-  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extends>>* #link(<UC3.5>)[[UC3.5]]).
+  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extend>>* #link(<UC3.5>)[[UC3.5]]).
   + Il Developer seleziona il pulsante "Indietro" per tornare alla Dashboard (#link(<UC3>)[[UC3]]).
 
 - *Postcondizioni:* Il Developer visualizza i dettagli tecnici delle falle di sicurezza.
@@ -763,11 +805,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Developer visualizza la checklist degli artefatti documentali (es. README).
   + Il Developer identifica le voci segnalate come mancanti o incomplete.
-  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extends>>* #link(<UC6>)[[UC6]]).
+  + Il Developer visualizza il comando "Risolvi" per visualizzare le proposte di remediation (*<\<extend>>* #link(<UC6>)[[UC6]]).
 
 - *Scenari alternativi:* 
   + Se l'analisi visualizzata è etichettata come "Processata" o "Scartata" il comando "Risolvi" è disabilitato.
-  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extends>>* #link(<UC3.6>)[[UC3.6]]).
+  + Il Developer seleziona il pulsante "Storico" per consultare le analisi precedenti (*<\<extend>>* #link(<UC3.6>)[[UC3.6]]).
   + Il Developer seleziona il pulsante "Indietro" per tornare alla Dashboard (#link(<UC3>)[[UC3]]).
 
 - *Postcondizioni:* Il Developer visualizza lo stato di conformità della documentazione.
@@ -789,7 +831,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extends>>* #link(<UC3.7>)[[UC3.7]]).
+  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.1>)[[UC3.1]]).
 
@@ -811,7 +853,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extends>>* #link(<UC3.7>)[[UC3.7]]).
+  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.2>)[[UC3.2]]).
 
@@ -833,7 +875,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza la lista delle analisi passate (ordinate dalla più recente alla più datata).
-  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extends>>* #link(<UC3.7>)[[UC3.7]]).
+  + Il Developer può cliccare su un report specifico della lista d'interesse per visualizzarne i dettagli (*<\<extend>>* #link(<UC3.7>)[[UC3.7]]).
 
 - *Scenari alternativi:* Il Developer clicca "Indietro" per tornare alla vista dettaglio corrente (#link(<UC3.3>)[[UC3.3]]).
 
@@ -882,7 +924,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer conferma l'avvio dell'operazione.
   + Il Developer visualizza un feedback immediato di presa in carico e l'aggiornamento dello stato dei moduli coinvolti.
 
-- *Scenari alternativi:* Al passo 3, il Developer visualizza un avviso che impedisce l'operazione perché un'analisi della stessa tipologia è già in corso (*<\<extends>>* #link(<UC4.2>)[[UC4.2]]).
+- *Scenari alternativi:* Al passo 3, il Developer visualizza un avviso che impedisce l'operazione perché un'analisi della stessa tipologia è già in corso (*<\<extend>>* #link(<UC4.2>)[[UC4.2]]).
 
 - *Postcondizioni:* L'interfaccia mostra che il processo di analisi è in esecuzione per gli ambiti selezionati.
 
@@ -961,12 +1003,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Developer visualizza l'elenco dei file coinvolti nella soluzione proposta, ciascuno affiancato da una checkbox di selezione.
-  + Il Developer può espandere i singoli file per visualizzare il confronto delle modifiche (*<\<extends>>* #link(<UC6.1>)[[UC6.1]]) o le anteprime dei nuovi file creati (*<\<extends>>* #link(<UC6.2>)[[UC6.2]]).
+  + Il Developer può espandere i singoli file per visualizzare il confronto delle modifiche (*<\<extend>>* #link(<UC6.1>)[[UC6.1]]) o le anteprime dei nuovi file creati (*<\<extend>>* #link(<UC6.2>)[[UC6.2]]).
   + Il Developer seleziona tramite checkbox uno o più file da includere nel fix.
-  + Il Developer approva la selezione cliccando su "Applica Fix", avviando la procedura di creazione della _Pull Request_ per tutte le modifiche selezionate (*<\<extends>>* #link(<UC6.3>)[[UC6.3]]).
+  + Il Developer può approvare la selezione cliccando su "Applica Fix", avviando la procedura di creazione della _Pull Request_ per tutte le modifiche selezionate (*<\<extend>>* #link(<UC6.3>)[[UC6.3]]).
 
 - *Scenari alternativi:* 
-  + Il Developer ritiene la soluzione interamente non valida e decide di scartare la segnalazione (*<\<extends>>* #link(<UC6.4>)[[UC6.4]]).
+  + Il Developer ritiene la soluzione interamente non valida e decide di scartare la segnalazione (*<\<extend>>* #link(<UC6.4>)[[UC6.4]]).
   + Il Developer annulla l'operazione e torna alla schermata precedente premendo sul pulsante "Annulla".
 
 - *Postcondizioni:* Le soluzioni proposte vengono accettate (Pull Request creata) o ignorate.
@@ -1007,7 +1049,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Developer visualizza l'anteprima del contenuto del file generato.
   + Il Developer visualizza la proposta di percorso di destinazione (path) per il contenuto generato.
-  + Il Developer può modificare la proposta di percorso di destinazione cliccando sul tasto "Modifica Percorso" (*<\<extends>>* #link(<UC6.2.1>)[[UC6.2.1]]).
+  + Il Developer può modificare la proposta di percorso di destinazione cliccando sul tasto "Modifica Percorso" (*<\<extend>>* #link(<UC6.2.1>)[[UC6.2.1]]).
   + Il Developer legge il contenuto per verificarne la completezza e la correttezza.
 
 - *Postcondizioni:* Il Developer ha consultato il contenuto del nuovo file proposto.
@@ -1085,6 +1127,160 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 == Specifica dei casi d'uso - Project Manager
+
+=== UC8: Accesso alla Dashboard Portfolio <UC8>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager accede alla propria dashboard principale.
+
+- *Precondizioni:* L'utente si è autenticato e assume il ruolo di Project Manager.
+
+- *Trigger:* L'Utente seleziona il ruolo Project Manager o clicca sulla voce "Dashboard" nel menu di navigazione.
+
+- *Scenario principale:*
+  + Il Project Manager visualizza la barra degli strumenti contenente:
+    - Il selettore di vista (Progetti / Repository).
+    - Il pulsante globale "Aggiungi Repository" (*<\<extend>>* #link(<UC2>)[[UC2]]). - Il pulsante "Nuovo Progetto" (*<\<extend>>* #link(<UC7>)[[UC7]]).
+  + Il Project Manager visualizza di default la *Vista Progetti* (*<\<include>>* #link(<UC8.1>)[[UC8.1]]).
+
+- *Scenari alternativi:* 
++ Il Project Manager interagisce con il selettore per cambiare vista selezionando la *Vista Repository* (*<\<extend>>* #link(<UC8.2>)[[UC8.2]]).
+
+- *Postcondizioni:* Il Project Manager visualizza la lista Progetti.
+
+- *Inclusioni:* #link(<UC8.1>)[[UC8.1]].
+- *Estensioni:* #link(<UC2>)[[UC2]], #link(<UC7>)[[UC7]], #link(<UC8.2>)[[UC8.2]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC8.1: Visualizzazione Lista Progetti <UC8.1>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager visualizza l'elenco dei Progetti attivi e i relativi indicatori di sintesi.
+
+- *Precondizioni:* Il selettore di vista in #link(<UC8>)[[UC8]] è impostato su "Progetti".
+
+- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC8>)[[UC8]].
+
+- *Scenario principale:*
+  + Il Project Manager visualizza la lista delle card di Progetto, contenenti:
+    - Nome del Progetto.
+    - Numero di repository associate.
+    - Indicatori sintetici di salute (es. media qualità).
+  + Il Project Manager può selezionare una card specifica per accedere al dettaglio del Progetto (*<\<extend>>* #link(<UC9>)[[UC9]]).
+
+- *Scenari alternativi:* Il sistema non rileva progetti: mostra uno stato vuoto e invita a creare il primo progetto tramite il pulsante "Nuovo Progetto" (*<\<extend>>* #link(<UC7>)[[UC7]]).
+
+- *Postcondizioni:* Il Project Manager naviga verso il dettaglio di un progetto o ne crea uno nuovo.
+
+- *Estensioni:* #link(<UC7>)[[UC7]], #link(<UC9>)[[UC9]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC8.2: Visualizzazione Lista Repository <UC8.2>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager visualizza l'elenco completo di tutte le repository precedentemente collegate all'account.
+
+- *Precondizioni:* l'utente è autenticato nel ruolo di Project Manager e visualizza la dashboard.
+
+- *Trigger:* L'utente seleziona la voce "Repository" dal selettore di vista.
+
+- *Scenario principale:*
+  + Il Project Manager visualizza la tabella riepilogativa di tutte le repository importate.
+  + Per ogni repository, il sistema mostra colonne informative sintetiche (nome repository, progetto di appartenenza se assegnato e data ultimo aggiornamento).
+
+- *Scenari alternativi:* Il Project Manager non ha aggiunto nessuna repository, visualizza un messaggio informativo che lo invita ad importarne uno tramite il pulsante "Aggiungi Repository" (*<\<extend>>* #link(<UC2>)[[UC2]]).
+
+- *Postcondizioni:* Il Project Manager ha visionato le repository collegate all'account.
+
+- *Estensioni:* #link(<UC2>)[[UC2]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC9: Accesso alla Dashboard di Dettaglio Progetto <UC9>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager accede alla vista aggregata di uno specifico progetto per analizzarne i KPI complessivi.
+
+- *Precondizioni:* Esiste almeno un progetto creato.
+
+- *Trigger:* Il Project Manager clicca su una card di Progetto in #link(<UC8.1>)[[UC8.1]].
+
+- *Scenario principale:*
+  + Il Project Manager visualizza l'intestazione del progetto.
+  + Il Project Manager visualizza i widget aggregati (Sicurezza, copertura Test, adeguatezza Documentazione, Avanzamento ecc...).
+  + Il Project Manager visualizza il pulsante "Team & Competenze", su cui può premere per approfondire le competenze del team (*<\<extend>>* #link(<UC10>)[[UC10]]).
+  + Il Project Manager visualizza il pulsante "Stack Tecnologico", su cui può premere per analizzare le tecnologie utilizzate nel progetto e ricevere suggerimenti (*<\<extend>>* #link(<UC11>)[[UC11]]).
+  + Il Project Manager visualizza l'elenco dei Repository che compongono il progetto con i relativi indicatori di stato.
+ + Il Project Manager clicca "Indietro" per tornare alla lista progetti.
+
+- *Postcondizioni:* Il Project Manager visualizza i dati aggregati del progetto.
+
+- *Estensioni:* #link(<UC10>)[[UC10]], #link(<UC11>)[[UC11]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC10: Visualizzazione Mappatura Competenze <UC10>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager consulta la distribuzione delle tecnologie utilizzate dal team.
+
+- *Precondizioni:* Il Project Manager si trova nella dashboard di dettaglio di un progetto (#link(<UC9>)[[UC9]]).
+
+- *Trigger:* Il Project Manager seleziona il pulsante "Team & Competenze".
+
+- *Scenario principale:*
+  + Il sistema visualizza una lista dei membri del team a cui viene associata un'icona delle tecnologie di loro competenza.
+  + Il Project Manager può selezionare un membro specifico per approfondirne il profilo (*<\<extend>>* #link(<UC10.1>)[[UC10.1]]).
+
+- *Postcondizioni:* Il Project Manager ha analizzato la mappatura delle competenze all'interno del team del progetto.
+
+- *Estensioni:* #link(<UC10.1>)[[UC10.1]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC10.1: Dettaglio Membro del Team <UC10.1>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Visualizzazione delle metriche specifiche di uno sviluppatore nel contesto del progetto.
+
+- *Precondizioni:* Il Project Manager sta visualizzando la schermata di mappatura competenze #link(<UC10>)[[UC10]].
+
+- *Trigger:* Il Project Manager ha selezionato uno specifico membro del team.
+
+- *Scenario principale:*
+  + Il Project Manager visualizza il profilo dell'utente e le statistiche di contribuzione (commit, PR).
+  + Il Project Manager visualizza i linguaggi maggiormente utilizzati dall'utente.
+
+- *Postcondizioni:* Il Project Manager ha consultato i dettagli di uno specifico membro del team.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC11: Stack Tecnologico e Suggerimenti <UC11>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager analizza lo stack tecnologico per identificare librerie obsolete e ricevere suggerimenti.
+
+- *Precondizioni:* Il Project Manager si trova nella Dashboard di Dettaglio Progetto (#link(<UC9>)[[UC9]]).
+
+- *Trigger:* Il Project Manager seleziona la voce "Stack Tecnologico".
+
+- *Scenario principale:*
+  + Il Project Manager visualizza l'elenco consolidato di framework e librerie usate.
+  + Il sistema segnala le dipendenze deprecate o a rischio sicurezza.
+  + Il Project Manager visualizza i suggerimenti strategici generati dall'IA.
+
+- *Postcondizioni:* Il Project Manager ha preso visione dello stato tecnologico del progetto analizzato.
+
+#line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
 
