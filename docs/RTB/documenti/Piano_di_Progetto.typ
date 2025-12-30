@@ -23,11 +23,17 @@
   align: horizon,
   table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
 
-  "0.1.4", 
-  "2025/12/22", 
+  "0.1.5",
+  "2025/12/31", 
   "Nicola Simionato", 
   "", 
-  "Stesura trascorso sprint 1 (sezione 5.4.1).",
+  "Aggiunto trascorso Sprint 1 (sezione 5.4.1).",
+
+  "0.1.4",
+  "2025/12/29", 
+  "Angela Favaro", 
+  "Amerigo Vegliante", 
+  "Aggiunto trascorso Sprint 4",
 
   "0.1.3", 
   "2025/12/22", 
@@ -824,7 +830,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [9 Febbraio 2026 - 22 - 2026],
+  [_Intervallo temporale_], [9 Febbraio 2026 - 22 Febbraio 2026],
 
   [_Giorni di sprint_], [14],
 
@@ -1049,7 +1055,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
-
+  [_Responsabile_], [Nicola Simionato],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
@@ -1058,11 +1064,12 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     2. Studio individuale dei Casi d'Uso, tramite appunti e risorse online.
     3. Incontro intero per fare brianstorming in seguito all'incontro con la proponente (vedere Verbale 25-11-24).
     4. Discussione sulle possibile tecnologie da usare.
+
   ],
 
   [_Rischi incontrati_],
   [
-    1. Dubbi riguardo i Casi d'Uso, ad esempio granularità.
+    1. Dubbi riguardo sintassi e granularità dei Casi d'Uso.
   ],
 
   [_Mitigazione_],
@@ -1081,22 +1088,27 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [1 Dicembre 2025 – 7 Dicembre 2025],
 
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
   [
+  1. Studio individuale della sintassi e l’utilizzo dei Casi d’Uso.
+  2. Inizio stesura del Piano di Progetto.
+  3. Inizio stesura del Piano di Qualifica.
+  4. Inizio stesura delle Norme di Progetto.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. Mancanza di monitoraggio dello stato di avanzamento.
+    2. Difficoltà nella comprensione della sintassi degli Use Case.
   ],
 
   [_Mitigazione_],
   [
-    1.
+    1. Comunicazione tra i membri del team per via telematica per cercare di monitorare lo stato di avanzamento. 
   ],
 
   [_GANTT Diagram_],
@@ -1111,13 +1123,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [8 Dicembre 2025 - 14 Dicembre 2025],
-
+  [_Responsabile_], [Alberto Reginato],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
   [
-    1. formazione con l'azienda proponente su backend;
-    2. Inizio stesura prime bozza per PdP, AdR e NdP;
+    1. Formazione con l'azienda proponente su backend;
+    2. Proseguimento stesura del PdP, AdR e NdP;
     3. Aggiornamento WoW, Glossario e sito;
     4. Organizzazione milestones e Project Board.
 
@@ -1148,27 +1160,37 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
-
+  [_Responsabile_], [Angela Favaro],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
   [
-
+    1. Formazione con l'azienda proponente su Frontend, AWS ed AI;
+    2. Continuazione stesura documentazione PdP, AdR e NdP;
+    3. Continuazione stesura Use Case;
+    4. Accorpamento documenti WoW e NdP 
+    5. Aggiornamento Glossario.
   ],
-
   [_Rischi incontrati_],
   [
-    1.
+    1. RO1 - Mancato rispetto delle tempistiche (@tab:RO1);
+    2. RO4 - Scarso coordinamento del team (@tab:RO4);
+    3. RO5 - Mancanza di monitoraggio dello stato di avanzamento (@tab:RO5).
   ],
-
   [_Mitigazione_],
   [
-    1.
+    1. Implementato un utilizzo più efficiente della dashboard di progetto.
+    2. Issue assegnate all'inizio di ogni sprint da parte del responsabile di sprint.
+    3. Le Issue assegnate si riferiscono al periodo di sprint e devono essere completate entro la fine dello sprint.
   ],
 
   [_GANTT Diagram_],
   [
-    [_Inserire immagine_]
+    #figure(
+  caption: [Diagramma di GANTT dello Sprint 4],
+  )[
+  #image("../../asset/GANTT/GANTT_Sprint4.png"),
+  ]<GANTT-Sprint4>
   ],
 )
 
