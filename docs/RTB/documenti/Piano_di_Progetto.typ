@@ -23,6 +23,12 @@
   align: horizon,
   table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
 
+  "0.1.4", 
+  "2025/12/22", 
+  "Nicola Simionato", 
+  "", 
+  "Stesura trascorso sprint 1 (sezione 5.4.1).",
+
   "0.1.3", 
   "2025/12/22", 
   "Angela Favaro", 
@@ -1048,17 +1054,20 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [
-
+    1. Individuazione e studio documenti necessario all'RTB.
+    2. Studio individuale dei Casi d'Uso, tramite appunti e risorse online.
+    3. Incontro intero per fare brianstorming in seguito all'incontro con la proponente (vedere Verbale 25-11-24).
+    4. Discussione sulle possibile tecnologie da usare.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. Dubbi riguardo i Casi d'Uso, ad esempio granularità.
   ],
 
   [_Mitigazione_],
   [
-    1.
+    1. Richiesta di colloquio con il Professore Cardin.
   ],
 
   [_GANTT Diagram_],
@@ -1078,7 +1087,6 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [
-
   ],
 
   [_Rischi incontrati_],
