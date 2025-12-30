@@ -307,7 +307,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-== Specifica dei casi d'uso
+== Specifica dei casi d'uso - Utente
 
 === UC1: Accesso tramite Piattaforma Esterna <UC1>
 #figure(image("../../asset/UC/UC1.png", width: 80%), caption: [Diagramma del caso d'uso UC1])
@@ -470,30 +470,94 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
+=== UC5: Accesso al Menù Utente <UC5>
+#figure(image("../../asset/UC/UC5.png", width: 80%), caption: [Diagramma del caso d'uso UC5])
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'utente vuole visualizzare la propria area personale.
+
+- *Precondizioni:* L'utente è autenticato e si trova su una qualsiasi pagina della piattaforma.
+
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale.
+
+- *Scenario principale:*
+  + L'utente visualizza il pannello a comparsa del menù utente.
+  + L'utente visualizza il riepilogo delle proprie informazioni (Nome, Email, Ruolo attuale).
+  + L'utente visualizza il pulsante "Cambia Ruolo", su cui può cliccare per cambiare il ruolo operativo (*<\<extends>>* #link(<UC5.1>)[[UC5.1]]).
+  + L'utente visualizza il pulsante "Logout", su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extends>>* #link(<UC5.2>)[[UC5.2]]).
+  + L'utente visualizza il pulsante "X", su cui può cliccare per uscire dal menù utente e tornare alla pagina precedente.
+
+- *Postcondizioni:* Il menù utente è attivo e le opzioni sono selezionabili.
+
+- *Estensioni:*
+  + #link(<UC5.1>)[[UC5.1]]: Se l'utente seleziona l'opzione "Cambia Ruolo".
+  + #link(<UC5.2>)[[UC5.2]]: Se l'utente seleziona l'opzione "Logout".
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC5.1: Cambio Ruolo Operativo (Context Switch) <UC5.1>
+
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'utente vuole cambiare il proprio ruolo attivo all'interno della sessione corrente.
+
+- *Precondizioni:* Il menù utente è aperto.
+
+- *Trigger:* L'utente seleziona la voce "Cambia Ruolo".
+
+- *Scenario principale:*
+  + L'utente visualizza l'elenco dei ruoli disponibili per il proprio account (es. se attualmente nel ruolo Developer i ruoli selezionabili saranno Project Manager e Business Owner).
+  + L'utente seleziona il nuovo ruolo desiderato.
+  + La piattaforma ricarica l'ambiente di lavoro alla dashboard principale, visualizzando i repository e le configurazioni associate al ruolo selezionato (o lo stato iniziale vuoto nel caso di primo utilizzo).
+  + L’utente visualizza il messaggio di avvenuto cambio ruolo operativo.
+
+- *Postcondizioni:* L'interfaccia è aggiornata coerentemente con il nuovo ruolo selezionato, l'utente si trova nel proprio "Menù utente".
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC5.2: Logout <UC5.2>
+
+- *Attore principale:* Utente.
+
+- *Descrizione:* Permette all'utente di terminare la sessione di lavoro corrente.
+
+- *Precondizioni:* Il menù utente è aperto.
+
+- *Trigger:* L'utente seleziona la voce "Logout".
+
+- *Scenario principale:*
+  + L'utente conferma l'operazione di disconnessione tramite un pulsante "Conferma Logout".
+  + L'utente viene reindirizzato alla pagina pubblica di accesso (Login).
+  + L'utente visualizza il messaggio di avvenuta disconnessione.
+
+- *Postcondizioni:* La sessione utente è terminata e si trova nella pagina iniziale non autenticato dove può effettuare nuovamente l'accesso.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
 === UC2: Aggiunta di un repository per l'analisi <UC2>
 
 #figure(image("../../asset/UC/UC2.png"), caption: [Diagramma del caso d'uso UC2])
 
-- *Attore principale:* Developer.
+- *Attore principale:* Utente.
 
-- *Descrizione:* Il Developer vuole registrare un nuovo repository _GitHub_ nella piattaforma.
+- *Descrizione:* L'Utente vuole registrare un nuovo repository _GitHub_ nella piattaforma.
 
-- *Precondizioni:* Il Developer è autenticato e ha accesso alla dashboard.
+- *Precondizioni:* L'Utente è autenticato e ha accesso alla dashboard.
 
-- *Trigger:* Il Developer seleziona l'opzione "Aggiungi Repository" dalla dashboard.
+- *Trigger:* L'Utente seleziona l'opzione "Aggiungi Repository" dalla dashboard.
 
 - *Scenario principale:*
-  + Il Developer visualizza l'interfaccia per l'inserimento dei dati della repository.
-  + Il Developer digita o copia l'URL del repository _GitHub_ che desidera analizzare nel relativo campo di testo #link(<UC2.1>)[[UC2.1]].
-  + Il Developer conferma l'operazione.
-  + Il Developer visualizza il nuovo repository aggiunto correttamente alla lista dei suoi progetti.
+  + L'Utente visualizza l'interfaccia per l'inserimento dei dati della repository.
+  + L'Utente digita o copia l'URL del repository _GitHub_ che desidera analizzare nel relativo campo di testo #link(<UC2.1>)[[UC2.1]].
+  + L'Utente conferma l'operazione.
+  + L'Utente visualizza il nuovo repository aggiunto correttamente alla lista dei suoi progetti.
 
 - *Scenari alternativi:* 
-  + Al passo 3, il Developer visualizza un messaggio di errore relativo all'invalidità dell'URL (*<\<extends>>* #link(<UC2.2>)[[UC2.2]]).
-  + Al passo 3, il Developer visualizza una richiesta di autenticazione aggiuntiva poiché il repository risulta privato (*<\<extends>>* #link(<UC2.3>)[[UC2.3]]).
-  + Prima della conferma (passo 3), il Developer decide di annullare l'operazione e seleziona il tasto "Annulla" (*<\<extends>>* #link(<UC2.4>)[[UC2.4]]).
+  + Al passo 3, l'Utente visualizza un messaggio di errore relativo all'invalidità dell'URL (*<\<extends>>* #link(<UC2.2>)[[UC2.2]]).
+  + Al passo 3, l'Utente visualizza una richiesta di autenticazione aggiuntiva poiché il repository risulta privato (*<\<extends>>* #link(<UC2.3>)[[UC2.3]]).
+  + Prima della conferma (passo 3), l'Utente decide di annullare l'operazione e seleziona il tasto "Annulla" (*<\<extends>>* #link(<UC2.4>)[[UC2.4]]).
 
-- *Postcondizioni:* Il repository è visibile nella lista dei progetti del Developer. 
+- *Postcondizioni:* Il repository è visibile nella lista dei progetti dell'Utente. 
 
 - *Estensioni:* #link(<UC2.2>)[[UC2.2]], #link(<UC2.3>)[[UC2.3]], #link(<UC2.4>)[[UC2.4]].
 
@@ -501,18 +565,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC2.1: Inserimento URL Repository <UC2.1>
 
-- *Attore principale:* Developer.
+- *Attore principale:* Utente.
 
-- *Descrizione:* Il Developer inserisce l'URL del repository _GitHub_ che desidera analizzare.
+- *Descrizione:* L'Utente inserisce l'URL del repository _GitHub_ che desidera analizzare.
 
-- *Precondizioni:* Il Developer è autenticato e ha accesso alla dashboard.
+- *Precondizioni:* L'Utente è autenticato e ha accesso alla dashboard.
 
 - *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC2>)[[UC2]].
 
 - *Scenario principale:*
-  + Il Developer visualizza l'interfaccia per l'inserimento dell'URL del repository.
-  + Il Developer digita o copia l'URL del repository _GitHub_ che desidera analizzare nel relativo campo di testo.
-  + Il Developer conferma l'operazione.
+  + L'Utente visualizza l'interfaccia per l'inserimento dell'URL del repository.
+  + L'Utente digita o copia l'URL del repository _GitHub_ che desidera analizzare nel relativo campo di testo.
+  + L'Utente conferma l'operazione.
 
 - *Postcondizioni:* L'URL è stato inserito nel campo dedicato.
 
@@ -520,17 +584,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC2.2: Errore di Validazione Repository <UC2.2>
 
-- *Attore principale:* Developer.
+- *Attore principale:* Utente.
 
 - *Descrizione:* L'utente prende visione dell'impossibilità di aggiungere il repository dovuta a un formato dell'URL non valido o al mancato raggiungimento della risorsa (es. inesistente).
 
-- *Precondizioni:* Il Developer ha confermato l'inserimento e la verifica automatica ha dato esito negativo.
+- *Precondizioni:* L'Utente ha confermato l'inserimento e la verifica automatica ha dato esito negativo.
 
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC2>)[[UC2]].
 
 - *Scenario principale:*
-  + Il Developer visualizza un messaggio di errore che specifica la natura del problema (es. "Il formato dell'url è errato o il repository non è stato trovato").
-  + Il Developer modifica l'URL nel campo di input per correggere l'errore.
+  + L'Utente visualizza un messaggio di errore che specifica la natura del problema (es. "Il formato dell'url è errato o il repository non è stato trovato").
+  + L'Utente modifica l'URL nel campo di input per correggere l'errore.
 
 - *Postcondizioni:* L'utente si trova nuovamente nella condizione di poter confermare l'inserimento.
 
@@ -538,7 +602,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC2.3: Repository Privato (Richiesta Token) <UC2.3>
 
-- *Attore principale:* Developer.
+- *Attore principale:* Utente.
 
 - *Descrizione:* Gestisce il caso in cui il repository sia raggiungibile ma richieda permessi di accesso (repository privato).
 
@@ -547,12 +611,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC2>)[[UC2]].
 
 - *Scenario principale:*
-  + Il Developer visualizza un avviso che il repository è privato e un campo per l'inserimento del Personal Access Token.
-  + Il Developer inserisce il token richiesto, per concedere i permessi alla repo sia di lettura che di scrittura (*<\<include>>* #link(<UC2.3.1>)[[UC2.3.1]]).
-  + Il Developer conferma nuovamente l'operazione.
+  + L'Utente visualizza un avviso che il repository è privato e un campo per l'inserimento del Personal Access Token.
+  + L'Utente inserisce il token richiesto, per concedere i permessi alla repo sia di lettura che di scrittura (*<\<include>>* #link(<UC2.3.1>)[[UC2.3.1]]).
+  + L'Utente conferma nuovamente l'operazione.
   + Il flusso riprende dalla verifica del repository.
 
-- *Scenari alternativi:* Il Developer annulla l'operazione se non possiede il token o non desidera fornirlo.
+- *Scenari alternativi:* L'Utente annulla l'operazione se non possiede il token o non desidera fornirlo.
 
 - *Postcondizioni:* Il sistema dispone delle credenziali per accedere al repository privato.
 
@@ -562,17 +626,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC2.3.1: Inserimento Token di Accesso <UC2.3.1>
 
-- *Attore principale:* Developer.
+- *Attore principale:* Utente.
 
-- *Descrizione:* Rappresenta l'azione del Developer di inserire il Personal Access Token in modo sicuro, gestendo la visibilità del dato sensibile.
+- *Descrizione:* Rappresenta l'azione dell'Utente di inserire il Personal Access Token in modo sicuro, gestendo la visibilità del dato sensibile.
 
-- *Precondizioni:* Il sistema ha richiesto al Developer di fornire un token di autenticazione.
+- *Precondizioni:* Il sistema ha richiesto all'Utente di fornire un token di autenticazione.
 
 - *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC2.3>)[[UC2.3]].
 
 - *Scenario principale:*
-  + Il Developer scrive o incolla il token nel campo di testo dedicato.
-  + Il Developer visualizza di default i caratteri mascherati (es. asterischi o pallini), ma dispone del controllo "Mostra/Nascondi" per verificare la correttezza della stringa inserita.
+  + L'Utente scrive o incolla il token nel campo di testo dedicato.
+  + L'Utente visualizza di default i caratteri mascherati (es. asterischi o pallini), ma dispone del controllo "Mostra/Nascondi" per verificare la correttezza della stringa inserita.
 
 - *Postcondizioni:* Il campo di input contiene il token valido.
 
@@ -580,21 +644,26 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC2.4: Annullamento aggiunta repository <UC2.4>
 
-- *Attore principale:* Developer.
+- *Attore principale:* Utente.
 
-- *Descrizione:* Gestisce il caso in cui il Developer decida di annullare l'operazione di aggiunta di un repository nel proprio profilo.
+- *Descrizione:* Gestisce il caso in cui l'Utente decida di annullare l'operazione di aggiunta di un repository nel proprio profilo.
 
-- *Precondizioni:* Il Developer è autenticato e visualizza l'interfaccia per l'inserimento dei dati del repository.
+- *Precondizioni:* L'Utente è autenticato e visualizza l'interfaccia per l'inserimento dei dati del repository.
 
 - *Trigger:* Condizione di estensione del caso d'uso #link(<UC2>)[[UC2]] (l'utente seleziona il tasto "Annulla").
 
 - *Scenario principale:* 
-+ Il Developer viene reindirizzato alla dashboard principale della piattaforma _Code Guardian_.
-+ Il Developer visualizza a schermo il messaggio che conferma l'annullamento della procedura.
++ L'Utente viene reindirizzato alla dashboard principale della piattaforma _Code Guardian_.
++ L'Utente visualizza a schermo il messaggio che conferma l'annullamento della procedura.
 
 - *Postcondizioni:* L'utente si trova nuovamente nella dashboard senza aver aggiunto il repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
+
+
+#pagebreak()
+
+== Specifica dei casi d'uso - Developer
 
 === UC3: Accesso alla Dashboard del Repository <UC3>
 #figure(image("../../asset/UC/UC3.png"), caption: [Diagramma del caso d'uso UC3])
@@ -880,70 +949,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC5: Accesso al Menù Utente <UC5>
-#figure(image("../../asset/UC/UC5.png", width: 80%), caption: [Diagramma del caso d'uso UC5])
-- *Attore principale:* Utente.
-
-- *Descrizione:* L'utente vuole visualizzare la propria area personale.
-
-- *Precondizioni:* L'utente è autenticato e si trova su una qualsiasi pagina della piattaforma.
-
-- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale.
-
-- *Scenario principale:*
-  + L'utente visualizza il pannello a comparsa del menù utente.
-  + L'utente visualizza il riepilogo delle proprie informazioni (Nome, Email, Ruolo attuale).
-  + L'utente visualizza il pulsante "Cambia Ruolo", su cui può cliccare per cambiare il ruolo operativo (*<\<extends>>* #link(<UC5.1>)[[UC5.1]]).
-  + L'utente visualizza il pulsante "Logout", su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extends>>* #link(<UC5.2>)[[UC5.2]]).
-  + L'utente visualizza il pulsante "X", su cui può cliccare per uscire dal menù utente e tornare alla pagina precedente.
-
-- *Postcondizioni:* Il menù utente è attivo e le opzioni sono selezionabili.
-
-- *Estensioni:*
-  + #link(<UC5.1>)[[UC5.1]]: Se l'utente seleziona l'opzione "Cambia Ruolo".
-  + #link(<UC5.2>)[[UC5.2]]: Se l'utente seleziona l'opzione "Logout".
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC5.1: Cambio Ruolo Operativo (Context Switch) <UC5.1>
-
-- *Attore principale:* Utente.
-
-- *Descrizione:* L'utente vuole cambiare il proprio ruolo attivo all'interno della sessione corrente.
-
-- *Precondizioni:* Il menù utente è aperto.
-
-- *Trigger:* L'utente seleziona la voce "Cambia Ruolo".
-
-- *Scenario principale:*
-  + L'utente visualizza l'elenco dei ruoli disponibili per il proprio account (es. se attualmente nel ruolo Developer i ruoli selezionabili saranno Project Manager e Business Owner).
-  + L'utente seleziona il nuovo ruolo desiderato.
-  + La piattaforma ricarica l'ambiente di lavoro alla dashboard principale, visualizzando i repository e le configurazioni associate al ruolo selezionato (o lo stato iniziale vuoto nel caso di primo utilizzo).
-  + L’utente visualizza il messaggio di avvenuto cambio ruolo operativo.
-
-- *Postcondizioni:* L'interfaccia è aggiornata coerentemente con il nuovo ruolo selezionato, l'utente si trova nel proprio "Menù utente".
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC5.2: Logout <UC5.2>
-
-- *Attore principale:* Utente.
-
-- *Descrizione:* Permette all'utente di terminare la sessione di lavoro corrente.
-
-- *Precondizioni:* Il menù utente è aperto.
-
-- *Trigger:* L'utente seleziona la voce "Logout".
-
-- *Scenario principale:*
-  + L'utente conferma l'operazione di disconnessione tramite un pulsante "Conferma Logout".
-  + L'utente viene reindirizzato alla pagina pubblica di accesso (Login).
-  + L'utente visualizza il messaggio di avvenuta disconnessione.
-
-- *Postcondizioni:* La sessione utente è terminata e si trova nella pagina iniziale non autenticato dove può effettuare nuovamente l'accesso.
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
 === UC6: Gestione Proposta di Remediation <UC6>
 #figure(image("../../asset/UC/UC6.png"), caption: [Diagramma del caso d'uso UC6])
 - *Attore principale:* Developer.
@@ -1076,3 +1081,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* Il Developer visualizza nuovamente il dettaglio dell'analisi (#link(<UC3.1>)[[UC3.1]], #link(<UC3.2>)[[UC3.2]] o #link(<UC3.3>)[[UC3.3]]) e la segnalazione corrente viene marcata "Scartata".
 #line(length: 100%, stroke: 0.5pt + gray)
+
+#pagebreak()
+
+== Specifica dei casi d'uso - Project Manager
+
+#pagebreak()
+
+== Specifica dei casi d'uso - Business Owner
+
+#pagebreak()
+
