@@ -13,6 +13,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("0.5.0", "2025-12-30", "Alberto Reginato", "Laura Venturini", "Creazione UC7,8 e 9; riorganizzato UC secondo le personas"),
   ("0.4.2", "2025-12-28", "Angela Favaro", "Laura Venturini", "Correzioni fino a UC6.3"),
   ("0.4.1", "2025-12-27", "Angela Favaro", "Laura Venturini", "Rifattorizzazione UC1.2"),
   ("0.4.0", "2025-12-23", "Alberto Reginato", "Angela Canazza", "Aggiunta UC da UC3.6 a UC3.7, da UC6 a UC6.4 e fix"),
@@ -1141,7 +1142,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Project Manager visualizza la barra degli strumenti contenente:
     - Il selettore di vista (Progetti / Repository).
-    - Il pulsante globale "Aggiungi Repository" (*<\<extend>>* #link(<UC2>)[[UC2]]). - Il pulsante "Nuovo Progetto" (*<\<extend>>* #link(<UC7>)[[UC7]]).
+    - Il pulsante globale "Aggiungi Repository" (*<\<extend>>* #link(<UC2>)[[UC2]]). 
+    - Il pulsante "Nuovo Progetto" (*<\<extend>>* #link(<UC7>)[[UC7]]).
   + Il Project Manager visualizza di default la *Vista Progetti* (*<\<include>>* #link(<UC8.1>)[[UC8.1]]).
 
 - *Scenari alternativi:* 
@@ -1214,18 +1216,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Project Manager visualizza l'intestazione del progetto.
   + Il Project Manager visualizza i widget aggregati (Sicurezza, copertura Test, adeguatezza Documentazione, Avanzamento ecc...).
-  + Il Project Manager visualizza il pulsante "Team & Competenze", su cui può premere per approfondire le competenze del team (*<\<extend>>* #link(<UC10>)[[UC10]]).
-  + Il Project Manager visualizza il pulsante "Stack Tecnologico", su cui può premere per analizzare le tecnologie utilizzate nel progetto e ricevere suggerimenti (*<\<extend>>* #link(<UC11>)[[UC11]]).
+  + Il Project Manager visualizza il pulsante "Team & Competenze", su cui può premere per approfondire le competenze del team (*<\<extend>>* #link(<UC9.1>)[[UC9.1]]).
+  + Il Project Manager visualizza il pulsante "Stack Tecnologico", su cui può premere per analizzare le tecnologie utilizzate nel progetto e ricevere suggerimenti (*<\<extend>>* #link(<UC9.2>)[[UC9.2]]).
   + Il Project Manager visualizza l'elenco dei Repository che compongono il progetto con i relativi indicatori di stato.
  + Il Project Manager clicca "Indietro" per tornare alla lista progetti.
 
 - *Postcondizioni:* Il Project Manager visualizza i dati aggregati del progetto.
 
-- *Estensioni:* #link(<UC10>)[[UC10]], #link(<UC11>)[[UC11]].
+- *Estensioni:* #link(<UC9.1>)[[UC9.1]], #link(<UC9.2>)[[UC9.2]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC10: Visualizzazione Mappatura Competenze <UC10>
+=== UC9.1: Visualizzazione Mappatura Competenze <UC9.1>
 
 - *Attore principale:* Project Manager.
 
@@ -1237,21 +1239,21 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il sistema visualizza una lista dei membri del team a cui viene associata un'icona delle tecnologie di loro competenza.
-  + Il Project Manager può selezionare un membro specifico per approfondirne il profilo (*<\<extend>>* #link(<UC10.1>)[[UC10.1]]).
+  + Il Project Manager può selezionare un membro specifico per approfondirne il profilo (*<\<extend>>* #link(<UC9.1.1>)[[UC9.1.1]]).
 
 - *Postcondizioni:* Il Project Manager ha analizzato la mappatura delle competenze all'interno del team del progetto.
 
-- *Estensioni:* #link(<UC10.1>)[[UC10.1]].
+- *Estensioni:* #link(<UC9.1.1>)[[UC9.1.1]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC10.1: Dettaglio Membro del Team <UC10.1>
+=== UC9.1.1: Dettaglio Membro del Team <UC9.1.1>
 
 - *Attore principale:* Project Manager.
 
 - *Descrizione:* Visualizzazione delle metriche specifiche di uno sviluppatore nel contesto del progetto.
 
-- *Precondizioni:* Il Project Manager sta visualizzando la schermata di mappatura competenze #link(<UC10>)[[UC10]].
+- *Precondizioni:* Il Project Manager sta visualizzando la schermata di mappatura competenze #link(<UC9.1>)[[UC9.1]].
 
 - *Trigger:* Il Project Manager ha selezionato uno specifico membro del team.
 
@@ -1263,7 +1265,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC11: Stack Tecnologico e Suggerimenti <UC11>
+=== UC9.2: Stack Tecnologico e Suggerimenti <UC9.2>
 
 - *Attore principale:* Project Manager.
 
