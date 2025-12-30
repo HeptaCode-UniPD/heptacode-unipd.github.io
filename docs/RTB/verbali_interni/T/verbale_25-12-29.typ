@@ -14,7 +14,8 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("0.1.0", "2025-12-29", "Angela Canazza", "Nicola Simionato", "Stesura del verbale")
+  ("0.1.0", "2025-12-29", "Angela Canazza", "Nicola Simionato", "Stesura del verbale",
+  "0.1.1", "2025-12-29", "Angela Canazza", "Nicola Simionato", "Correzzione riguardante i diagrammi GANTT",)
 )
 
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
@@ -65,7 +66,7 @@ Tuttavia, il ritardo verrà interamente assorbito dal periodo di slack di 7 gior
 - Al fine di garantire la chiusura degli Use Case entro la prossima settimana, si è stabilito che i membri con ruolo di Analista concentreranno la maggior parte del proprio monte ore nella stesura, revisione e perfezionamento degli stessi.
 - Il team inizierà ad assumere il ruolo di Progettista. Le ore iniziali saranno dedicate a un periodo di studio individuale. Le best practices e le scelte progettuali preliminari emerse in questa fase verranno formalizzate e introdotte nel documento "Norme di Progetto".
 - Entro la fine della settimana corrente, l'Amministratore concluderà una prima versione non ufficiale del documento. 
-- Nel "Piano di Progetto" si procederà con l'aggiornamento del documento includendo la retrospettiva di tutti gli sprint conclusi fino ad ora, corredati dai relativi diagrammi PERT.
+- Nel "Piano di Progetto" si procederà con l'aggiornamento del documento includendo la retrospettiva di tutti gli sprint conclusi fino ad ora, corredati dai relativi diagrammi GANTT.
 
 == Programmazione degli sprint con l'azienda proponente
 È emersa la necessità di formalizzare la calendarizzazione degli incontri di allineamento con l'azienda proponente _VarGroup_. A seguito della conclusione del programma di formazione, non è stata ancora stabilita la frequenza degli sprint con la proponente. Al fine di ripristinare il flusso comunicativo, il l'attuale Responsabile del team _HeptaCode_ è stato incaricato di contattare il referente aziendale tramite il canale Slack dedicato, con l'obiettivo di concordare una programmazione periodica degli incontri.
