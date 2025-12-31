@@ -14,8 +14,9 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("0.1.0", "2025-12-29", "Angela Canazza", "Nicola Simionato", "Stesura del verbale",
-  "0.1.1", "2025-12-29", "Angela Canazza", "Nicola Simionato", "Correzzione riguardante i diagrammi GANTT",)
+  ( "1.0.0", "2025-12-29", "Angela Canazza", "Nicola Simionato", "Approvazione del verbale",
+  "0.1.1", "2025-12-29", "Angela Canazza", "Nicola Simionato", "Correzzione riguardante i diagrammi GANTT",
+  "0.1.0", "2025-12-29", "Angela Canazza", "Nicola Simionato", "Stesura del verbale",)
 )
 
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
