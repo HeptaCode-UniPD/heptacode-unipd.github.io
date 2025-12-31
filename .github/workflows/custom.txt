@@ -69,3 +69,6 @@ nomegruppo
 pdp
 poc
 txt
+ucb
+calendarizzazione
+gantt
