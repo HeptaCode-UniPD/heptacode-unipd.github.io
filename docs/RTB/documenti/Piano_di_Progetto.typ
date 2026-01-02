@@ -1060,9 +1060,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [
-    1. Individuazione e studio documenti necessario all'RTB.
+    1. Individuazione e studio documenti necessari all'RTB.
     2. Studio individuale dei Casi d'Uso, tramite appunti e risorse online.
-    3. Incontro intero per fare brianstorming in seguito all'incontro con la proponente (vedere Verbale 25-11-24).
+    3. Riunione interna per fare brianstorming in seguito all'incontro con la proponente.
     4. Discussione sulle possibile tecnologie da usare.
 
   ],
@@ -1076,12 +1076,15 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1. Richiesta di colloquio con il Professore Cardin.
   ],
-
-  [_GANTT Diagram_],
-  [
-    [_Inserire immagine_]
-  ],
 )
+
+*GANTT Diagram*
+    #figure(
+  caption: [Diagramma di GANTT dello Sprint 2],
+  )[
+  #image("../../asset/GANTT/sprint1-gantt.png")
+  ]<GANTT-Sprint1>
+
 
 === Sprint 2
 #table(
@@ -1117,7 +1120,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Diagramma di GANTT dello Sprint 2],
   )[
   #image("../../asset/GANTT/sprint2-gantt.png")
-  ]<GANTT-Sprint4>
+  ]<GANTT-Sprint2>
 
 === Sprint 3
 #table(
@@ -1156,7 +1159,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Diagramma di GANTT dello Sprint 3],
   )[
   #image("../../asset/GANTT/sprint3-gantt.jpg")
-  ]<GANTT-Sprint4>
+  ]<GANTT-Sprint3>
 
 === Sprint 4
 #table(
