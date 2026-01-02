@@ -1060,9 +1060,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [
-    1. Individuazione e studio documenti necessari all'RTB.
+    1. Individuazione e studio documenti necessari per la RTB.
     2. Studio individuale dei Casi d'Uso, tramite appunti e risorse online.
-    3. Riunione interna per fare brianstorming in seguito all'incontro con la proponente.
+    3. Riunione interna per fare brainstorming in seguito all'incontro con la proponente.
     4. Discussione sulle possibile tecnologie da usare.
 
   ],
