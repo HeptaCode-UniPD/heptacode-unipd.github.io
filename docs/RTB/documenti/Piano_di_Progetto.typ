@@ -1079,7 +1079,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [1 Dicembre 2025 – 7 Dicembre 2025],
-
+  [_Responsabile_], [Laura Venturini],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
@@ -1100,13 +1100,15 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Mitigazione_],
   [
     1. Comunicazione tra i membri del team per via telematica per cercare di monitorare lo stato di avanzamento. 
-  ],
-
-  [_GANTT Diagram_],
-  [
-    [_Inserire immagine_]
-  ],
+  ]
 )
+
+*GANTT Diagram*
+    #figure(
+  caption: [Diagramma di GANTT dello Sprint 2],
+  )[
+  #image("../../asset/GANTT/sprint2-gantt.png")
+  ]<GANTT-Sprint4>
 
 === Sprint 3
 #table(
@@ -1120,7 +1122,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Attività Svolte_],
   [
     1. Formazione con l'azienda proponente su backend;
-    2. Proseguimento stesura del PdP, AdR e NdP;
+    2. Proseguimento stesura del PdP, AdR, PdQ e NdP;
     3. Aggiornamento WoW, Glossario e sito;
     4. Organizzazione milestones e Project Board.
 
@@ -1137,20 +1139,22 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1. Consultazione con il professore per chiarire i dubbi riguardanti la documentazione;
     2. Creazione Project Board ed issues per monitorare lo stato di avanzamento dei membri del team.
-  ],
-
-  [_GANTT Diagram_],
-  [
-    [_Inserire immagine_]
-  ],
+  ]
 )
+
+*GANTT Diagram*
+    #figure(
+  caption: [Diagramma di GANTT dello Sprint 3],
+  )[
+  #image("../../asset/GANTT/sprint3-gantt.jpg")
+  ]<GANTT-Sprint4>
 
 === Sprint 4
 #table(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [15 Dicembre 2025 – 21 Dicembre 2025],
   [_Responsabile_], [Angela Favaro],
   [_Giorni di sprint_], [7],
 
@@ -1173,17 +1177,15 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     1. Implementato un utilizzo più efficiente della dashboard di progetto.
     2. Issue assegnate all'inizio di ogni sprint da parte del responsabile di sprint.
     3. Le Issue assegnate si riferiscono al periodo di sprint e devono essere completate entro la fine dello sprint.
-  ],
+  ]
+)
 
-  [_GANTT Diagram_],
-  [
+*GANTT Diagram*
     #figure(
   caption: [Diagramma di GANTT dello Sprint 4],
   )[
-  #image("../../asset/GANTT/GANTT_Sprint4.png"),
+  #image("../../asset/GANTT/sprint4-gantt.png")
   ]<GANTT-Sprint4>
-  ],
-)
 
 === Sprint 5
 #table(
