@@ -59,7 +59,7 @@
 #set page(
   numbering: "1",
   header: [
-    #align(left)[HeptaCode #h(57%) Norme di Progetto vers. 0.1.1]
+    #align(left)[HeptaCode #h(57%) Norme di Progetto v. 0.1.1]
     #line(length: 100%, stroke: black)
   ],
 )
@@ -269,7 +269,7 @@ Per rendere oggettiva la qualità del software prodotto, il codice verrà monito
 
 = Processi di Supporto
 
-== Prodesso di Documentazione
+== Processo di Documentazione
 
 === Descrizione e Scopo
 
@@ -530,7 +530,7 @@ Inoltre specificano tutti gli elementi utili a garantire una corretta esecuzione
 - i costi previsti;
 - le risorse infrastrutturali e l’ambiente operativo necessari.
 === Controllo ed Esecuzione
-Il responsabile avvia il piano per raggiungere gli obiettivi prefissati, mantenendo il controllo sull’intero processo. \
+Il responsabile avvia il piano per raggiungere gli obiettivi prefissati, mantenendo il controllo sull'intero processo. \
 Durante l’esecuzione, deve monitorare i progressi, fornendo aggiornamenti interni e (se necessario) ai professori o all’azienda. \ 
 #pad(left: 2em)[*Se sorgono problemi:* \
 il Responsabile deve analizzarli e risolverli. 
