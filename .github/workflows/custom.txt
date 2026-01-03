@@ -60,6 +60,27 @@ js
 rtb
 dall'ai
 dell'ai
+<<<<<<< HEAD
 mros
 mco
 messaggistica
+=======
+https
+l'audit
+pdca
+uml
+ciclomatica
+containerizzare
+dockerfile
+gg
+yy
+iec
+manutenibile
+monorepo
+poc
+postcondizioni
+templating
+testabilità
+tracciabilità
+ucx
+>>>>>>> 7670d8e3dcf5055244c4e772cee91a6e149a993c
