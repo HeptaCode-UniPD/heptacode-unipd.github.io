@@ -37,7 +37,7 @@
   "2026/01/15",
   "Angela Favaro",
   "Riccardo Baldin",
-  "Correzione errori di battitura e refusi vari",
+  "Stesura Processi di Supporto",
 
   "0.1.1",
   "2025/12/28",
@@ -100,59 +100,51 @@ Termini tecnici e ambiguità sono chiariti nel documento _glossario.pdf_, ogni t
 #link("https://typst.app/docs/")
 
 = Processi Primari
+
 == Processo di Fornitura
+Secondo lo standard ISO/IEC 12207:1995, comprende le attività e le risorse necessarie al fornitore (_HeptaCode_)per realizzare il progetto. \
+Questo processo inizia dopo lo Studio di Fattibilità, quando le esigenze del committente sono chiare. \
+Il fornitore stipula un contratto che definisce i requisiti e la data di consegna. Solo dopo l'accordo si passa alla fase esecutiva con la redazione del _Piano di Progetto_. \
 
-=== Scopo
-
-Il processo di fornitura, secondo lo standard ISO/IEC 12207:1995, comprende le attività e le risorse necessarie al fornitore per realizzare il progetto. Esso monitora l'avanzamento delle operazioni del gruppo _HeptaCode_, confrontando il lavoro completato con le richieste del proponente. Questo processo inizia dopo lo Studio di Fattibilità, quando le esigenze del committente sono chiare. Il fornitore stipula un contratto che definisce i requisiti e la data di consegna. Solo dopo l'accordo si passa alla fase esecutiva con la redazione del Piano di Progetto.
-
-==== Fasi della Fornitura
 Il processo si articola nelle seguenti attività:
 
-1. Analisi della Richiesta: Valutazione dei requisiti espressi nel Capitolato per determinare la capacità di soddisfare le attese.
+1. _Analisi della Richiesta_: valutazione dei requisiti espressi nel Capitolato per determinare la capacità di soddisfare le attese.
 
-2. Preparazione della Proposta: Definizione dell'offerta tecnica e preventivo economico.
+2. _Preparazione della Proposta_: definizione dell'offerta tecnica e preventivo economico.
 
-3. Pianificazione Tecnica: Redazione della documentazione di coordinamento e programmazione delle attività del progetto, analisi delle risorse e creazione delle milestone.
+3. _Pianificazione Tecnica_: redazione della documentazione di coordinamento e programmazione delle attività del progetto, analisi delle risorse e creazione delle milestone.
+   
+4. _Esecuzione_: sviluppo del software e monitoraggio costante tramite milestone, test, verifiche e documentazione.
 
-4. Esecuzione: Sviluppo del software e monitoraggio costante tramite milestone, test, verifiche e documentazione.
+5. _Controllo_: valutazione del lavoro svolto per garantire la conformità alle regole del gruppo e ai requisiti contrattuali tramite esecuzione dei test di accettazione e revisione del codice scritto.
 
-5. Controllo: Valutazione del lavoro svolto per garantire la conformità alle regole del gruppo e ai requisiti contrattuali tramite esecuzione dei test di accettazione e revisione del codice scritto.
-
-6. Consegna: Trasferimento del prodotto finale al cliente.
-
-=== Descrizione
-In questo processo, il team delimita il perimetro entro cui verrà attuato tutto il lavoro tecnico. La fornitura serve a stabilire le regole con il committente, assicurando che lo sviluppo non proceda a tentoni, ma segua obiettivi precisi, tempi concordati e standard di qualità. In pratica, è l'impegno che ci prendiamo per trasformare le idee del proponente in un software reale e verificato.
-
-=== Aspettative
-L'obiettivo principale è la massima aderenza tra quanto richiesto dal proponente e quanto realizzato. Ci si aspetta di:
-
+6. _Consegna_: trasferimento del prodotto finale al cliente.
+   
+=== Obiettivi
 1. Ridurre al minimo le ambiguità nei requisiti.
 
 2. Garantire un prodotto di qualità tramite verifiche sistematiche.
-
+  
 3. Mantenere una comunicazione fluida per gestire tempestivamente eventuali variazioni in corso d'opera.
+   
+=== Descrizione
+In questo processo, il team delimita il perimetro entro cui verrà attuato tutto il lavoro tecnico. \ Stabilisce le regole con il committente, assicurando che lo sviluppo non proceda a tentoni, ma segua obiettivi precisi, tempi concordati e standard di qualità. In pratica, è una dichiarazione d'impegno per trasformare le idee del proponente in un software reale e verificato.
+==== Rapporti con l'azienda Proponente
+La comunicazione asincrona con il proponente avviene tramite _Slack_, mentre gli incontri telematici vengono fatti tramite la piattaforma _Microsoft Teams_.
+Durante gli incontri tra il team e l'azienda vengono redatti dei verbali nei quali si evidenziano gli argomenti discussi e le decisioni prese.
 
-=== Rapporti con la Proponente
-La comunicazione asincrona con il committente avviene tramite _Slack_, mentre gli incontri telematici vengono fatti tramite la piattaforma _Microsoft Teams_.
-Durante gli incontri tra il team e la azienda vengono redatti dei verbali nei quali si evidenziano gli argomenti discussi e le decisioni prese.
-
-=== Documentazione Fornitura
+==== Documentazione Fornitura
 La documentazione prodotta funge da prova tangibile dell'esecuzione dei processi:
 
-==== Analisi dei requisiti:
-L'Analisi dei Requisiti è un documento redatto da chi copre il ruolo di Analista e ha come scopo definire le funzionalità necessarie del prodotto in relazione alle richieste della azienda proponente.
+- *Analisi dei requisiti:* documento redatto da chi copre il ruolo di Analista e ha come scopo definire le funzionalità necessarie del prodotto in relazione alle richieste della azienda proponente.
 
-==== Piano di Progetto:
-Il Piano di Progetto è un documento redatto da chi copre il ruolo di Responsabile e ha come scopo definire una linea guida da seguire durante tutto lo svolgimento del progetto in maniera tale da avere sotto controllo i costi, i tempi e l'andamento generale dell'avanzamento.
+- *Piano di Progetto:* documento _redatto da chi copre il ruolo di Responsabile_ e ha come scopo definire una linea guida da seguire durante tutto lo svolgimento del progetto in maniera tale da avere sotto controllo i costi, i tempi e l'andamento generale dell'avanzamento.
+  
+- *Piano di Qualifica:* documento _redatto da chi copre il ruolo di Amministratore_ e ha come scopo definire in dettaglio le strategie di verifica e validazione per garantire la qualità del prodotto finale e dei processi realizzativi.
 
-==== Piano di Qualifica:
-Il Piano di Qualifica è un documento redatto da chi copre il ruolo di Amministratore e ha come scopo definire in dettaglio le strategie di verifica e validazione per garantire la qualità del prodotto finale e dei processi realizzativi.
+- *Lettera di Presentazione:* documento formale tramite il quale il gruppo si è proposto al professor Vardanega come candidato per l'assegnazione del capitolato proposto da _Vargroup S.p.A._.
 
-==== Lettera di Presentazione:
-Documento formale tramite il quale il gruppo si è proposto al professor Vardanega come candidato per l'assegnazione del capitolato proposto da _Vargroup S.p.A._.
-
-=== Strumenti
+==== Strumenti
 
 Per la gestione del processo di fornitura, il gruppo utilizza:
 
@@ -165,19 +157,14 @@ Per la gestione del processo di fornitura, il gruppo utilizza:
 *Documentazione*: Typst per la realizzazione dei documenti e dei verbali.
 
 == Processo di Sviluppo
+In conformità allo standard ISO/IEC 12207:1995, definisce le attività tecniche che il gruppo _HeptaCode_ mette in atto per trasformare i requisiti contrattuali in un prodotto software finito. \ 
+Lo sviluppo si occupa del come realizzare concretamente secondo le regole stabilite durante il processo di Fornitura. \ 
 
-=== Scopo
-
-Il processo di sviluppo, in conformità allo standard ISO/IEC 12207:1995, definisce le attività tecniche che il gruppo _HeptaCode_ mette in atto per trasformare i requisiti contrattuali in un prodotto software finito. Lo sviluppo si occupa del come realizzare concretamente secondo le regole stabilite durante il processo di Fornitura. L'obiettivo principale è garantire che ogni riga di codice e ogni scelta siano tracciabili e rispondano direttamente alle esigenze della azienda proponente, assicurando al contempo che il prodotto sia robusto, manutenibile e privo di difetti critici.
+=== Obiettivi
+L'obiettivo principale è garantire che ogni riga di codice e ogni scelta siano tracciabili e rispondano direttamente alle esigenze della azienda proponente, assicurando al contempo che il prodotto sia robusto, manutenibile e privo di difetti critici.
 
 === Descrizione
-
-=== Aspettative
-
-=== Analisi dei Requisiti
-
-==== Scopo
-
+==== Analisi dei Requisiti
 Lo scopo principale dell'Analisi dei Requisiti è quello di formalizzare le specifiche funzionali, non funzionali e i vincoli del progetto "_Code Guardian_". Agisce come una fonte di verità unica (_single source of truth_) per il team di sviluppo e per tutti gli stakeholder di VarGroup, con l'obiettivo primario di garantire una comprensione comune e ridurre al minimo le ambiguità che potrebbero emergere nelle fasi successive.
 
 Tramite questo documento è possibile comprendere:
