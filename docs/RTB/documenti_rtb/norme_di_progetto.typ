@@ -165,17 +165,18 @@ L'obiettivo principale è garantire che ogni riga di codice e ogni scelta siano 
 
 === Descrizione
 ==== Analisi dei Requisiti
-Lo scopo principale dell'Analisi dei Requisiti è quello di formalizzare le specifiche funzionali, non funzionali e i vincoli del progetto "_Code Guardian_". Agisce come una fonte di verità unica (_single source of truth_) per il team di sviluppo e per tutti gli stakeholder di VarGroup, con l'obiettivo primario di garantire una comprensione comune e ridurre al minimo le ambiguità che potrebbero emergere nelle fasi successive.
+Lo scopo principale dell'Analisi dei Requisiti è quello di formalizzare le specifiche funzionali, non funzionali e i vincoli del progetto "_Code Guardian_". \
+Agisce come una fonte di verità unica (_single source of truth_) per il team di sviluppo e per tutti gli stakeholder, con l'obiettivo primario di garantire una comprensione comune e ridurre al minimo le ambiguità che potrebbero emergere nelle fasi successive.
 
 Tramite questo documento è possibile comprendere:
-
 - le necessità degli utenti
 - gli obiettivi del prodotto
 - il contesto in cui il prodotto verrà utilizzato
 
-==== Descrizione
+*Descrizione*
 
-L'Analisi dei Requisiti è un documento redatto da chi copre il ruolo di Analista e comprende i seguenti concetti:
+L'Analisi dei Requisiti è un documento redatto da chi copre il ruolo di Analista. \
+Comprende i seguenti concetti:
 
 - *Introduzione*: descrizione dell'obiettivo del documento e riferimenti usati per la stesura del documento.
 
@@ -183,7 +184,7 @@ L'Analisi dei Requisiti è un documento redatto da chi copre il ruolo di Analist
 
 - *Casi d'uso*: rappresentazione in modo formale e non ambiguo le interazioni tra gli utenti (attori) e il sistema.
 
-==== Notazione dei Casi d'uso
+*Notazione dei Casi d'uso*
 
 I Casi d'Uso rappresentano un elemento fondamentale all'interno del ciclo di vita dello sviluppo software in quanto definiscono in modo formale e non ambiguo le interazioni tra gli utenti (attori) e il sistema. 
 
@@ -203,18 +204,28 @@ I termini utilizzati nell'esposizione dei casi d'uso sono i seguenti:
   - *Estensioni*: Identifica una relazione in cui un Caso d'Uso può arricchire o modificare il comportamento di un Caso d'Uso base, ma solo qualora si verifichino specifiche condizioni o scelte discrezionali dell'utente. A differenza dell'inclusione, questa aggiunta funzionale è del tutto opzionale;
   - *Generalizzazione*: Relazione di ereditarietà tra un elemento più generico, detto padre, e uno più specifico, detto figlio.
 
-==== Requisiti
+*Requisiti*
 
-==== Metriche
+*Metriche*
 
-=== Codifica
-==== Descrizione e Scopo
+==== Progettazione
 
-Lo sviluppo del codice è l'attività designata ai Programmatori, i quali devono rendere codice sorgente di qualità ciò che viene deciso durante la progettazione del prodotto.
+*Aspettative*
+
+*Documentazione*
+
+*Metriche*
+
+*Diagrammi UML*
+
+*Design Pattern*
+
+==== Codifica
+Aattività designata ai Programmatori, i quali devono rendere codice sorgente di qualità ciò che viene deciso durante la progettazione del prodotto.
 
 Gli sviluppatori devono seguire in maniera scolastica gli standard e le linee guida definiti nel _Piano di Qualifica_ al fine di garantire la produzione di codice affidabile, pulito e facilmente manutenibile anche da chi non l'avesse mai letto prima.
 
-==== Aspettative
+*Aspettative*
 
 L'obiettivo è la produzione di codice di qualità in linea con i requisiti e gli obiettivi del progetto che soddisfi le seguenti caratteristiche di qualità:
 - Sia semplice e leggibile;
@@ -222,7 +233,7 @@ L'obiettivo è la produzione di codice di qualità in linea con i requisiti e gl
 - Abbia una adeguata copertura dei test;
 - Rispetti i requisiti del _Piano di Qualifica_
 
-==== Stile di Codifica
+*Stile di Codifica* 
 
 Al fine di garantire la manutenibilità del codice gli Sviluppatori dovranno attenersi alle seguenti linee guida:
 
@@ -232,27 +243,11 @@ Al fine di garantire la manutenibilità del codice gli Sviluppatori dovranno att
 - *Efficienza*: Il codice deve poter eseguire ottimizzando il consumo di tempo e di risorse;
 - *Testabilità*: Il codice deve essere facilmente testabile; Le funzioni devono avere un solo punto di ritorno e devono gestire un unico scenario; 
 
-==== Metriche
+*Metriche*
 
 Per rendere oggettiva la qualità del software prodotto, il codice verrà monitorato tramite le seguenti metriche:
 - ?? complessità ciclomatica
 - ?? campi delle classi
-
-=== Progettazione
-
-==== Scopo
-
-==== Descrizione
-
-==== Aspettative
-
-==== Documentazione
-
-==== Metriche
-
-==== Diagrammi UML
-
-==== Design Pattern
 
 = Processi di Supporto
 
