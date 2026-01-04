@@ -221,7 +221,7 @@ I termini utilizzati nell'esposizione dei casi d'uso sono i seguenti:
 *Design Pattern*
 
 ==== Codifica
-Aattività designata ai Programmatori, i quali devono rendere codice sorgente di qualità ciò che viene deciso durante la progettazione del prodotto.
+Attività designata ai Programmatori, i quali devono rendere codice sorgente di qualità ciò che viene deciso durante la progettazione del prodotto.
 
 Gli sviluppatori devono seguire in maniera scolastica gli standard e le linee guida definiti nel _Piano di Qualifica_ al fine di garantire la produzione di codice affidabile, pulito e facilmente manutenibile anche da chi non l'avesse mai letto prima.
 
@@ -253,29 +253,28 @@ Per rendere oggettiva la qualità del software prodotto, il codice verrà monito
 
 == Processo di Documentazione
 
-=== Descrizione e Scopo
-
 La scrittura di documentazione è un processo essenziale per lo sviluppo software in quanto aiuta sia chi produce sia chi utilizza riguardo alla comprensione del prodotto.
 
 Tramite la documentazione infatti vengono monitorate le attività svolte e quelle da svolgere al fine di lavorare a regola d'arte e produrre del software di qualità.
 
-=== Aspettative
+=== Obiettivi
 
 Ciò che ci si aspetta dalla documentazione è che rispetti delle regole al momento della redazione per risultare coerente e uniforme in tutti i documenti. 
 
-=== Ciclo di Vita dei Documenti
+=== Descrizione
+==== Ciclo di Vita dei Documenti
 
 I documenti prodotti dal gruppo _HeptaCode_ attraverseranno le seguenti tre fasi:
 
-- *Redazione*: Scrittura del documento da parte di vari membri del gruppo a turno in relazione ai ruoli ricoperti.
-- *Revisione*: Controllo dei contenuti del documento da parte di una persona terza alla redazione dello stesso.
-- *Distribuzione*: Una volta che il documento viene revisionato da chi di dovere, esso viene pubblicato sul sito web del gruppo.
+- *Redazione*: scrittura del documento da parte di vari membri del gruppo a turno in relazione ai ruoli ricoperti.
+- *Revisione*: controllo dei contenuti del documento da parte di una persona terza alla redazione dello stesso.
+- *Distribuzione*: una volta che il documento viene revisionato da chi di dovere, esso viene pubblicato sul sito web del gruppo.
 
-=== Template Typst
+==== Template Typst
 
 Per garantire la uniformità della documentazione il gruppo ha deciso di creare dei template in Typst sia per la stesura dei verbali (sia interni che esterni), sia per la documentazione; questa idea, oltre a velocizzare la stesura dei verbali, serve anche ad assicurare ai redattori che le loro produzioni siano coerenti con gli standard del gruppo. 
 
-=== Documenti del Progetto
+==== Documenti del Progetto
 
 Il gruppo produce sia documenti "interni", quindi destinati a rimanere in mano ad esso, sia "esterni", cioè da mostrare a terzi come l'azienda o i professori, i documenti di questi due gruppi sono:
 - *Interni*: 
@@ -288,7 +287,7 @@ Il gruppo produce sia documenti "interni", quindi destinati a rimanere in mano a
   - Glossario
   - Verbali Esterni
 
-=== Struttura dei Documenti
+==== Struttura dei Documenti
 
 Il template della documentazione garantisce che ogni documento pubblicato presenti la seguente struttura prima del corpo del documento:
 
@@ -308,9 +307,9 @@ Il template della documentazione garantisce che ogni documento pubblicato presen
   - *Descrizione*: Una concisa descrizione delle modifiche apportate.
 
 - *Indici*:
-  In seguito al Registro dei Cambiamenti ogni documento presenta 3 indici, l'Indice dei Contenuti elenca i capitoli e i paragrafi, l'Indice delle Tabelle elenca le etichette delle tabelle presenti e l'Indice delle immagini elenca le etichette delle immagini del documento.
+  In seguito al Registro dei Cambiamenti ogni documento presenta 3 indici, l'_Indice dei Contenuti_ elenca i capitoli e i paragrafi, l'_Indice delle Tabelle_ elenca le etichette delle tabelle presenti e l'_Indice delle Immagini_ elenca le etichette delle immagini del documento.
 
-=== Struttura dei Verbali
+==== Struttura dei Verbali
 
 I template dei Verbali differiscono da quello della documentazione e seguono il seguente standard:
 
@@ -328,39 +327,35 @@ I template dei Verbali differiscono da quello della documentazione e seguono il 
 - *Indici*:
   In seguito al Registro dei Cambiamenti ogni documento presenta esclusivamente l'Indice dei Contenuti, non essendo i verbali esageratamente corposi, sono facilmente navigabili anche senza l'ausilio degli altri due.
 
-=== Convenzioni Stilistiche
+==== Convenzioni Stilistiche
 
 Ogni file di documentazione deve essere chiamato come il suo titolo, ed ogni file di verbale deve avere nel nome la data in formato YY-MM-GG al fine di rendere più rapida la ricerca e la consultazione dei documenti.
 
 All'interno degli indici non deve essere usato il grassetto, utilizzabile invece per enfatizzare termini importanti ad esempio in elenchi puntati.
 
-=== Strumenti
+==== Strumenti
 
 Per produrre la documentazione il gruppo adopera il linguaggio di markup Typst sfruttandone il sistema di templating per garantire coerenza grafica e uniformità strutturale tra i diversi documenti.
 
 Per condividere i documenti tra i membri essi vengono caricati nella repository GitHub tramite la quale vengono anche effettuati controlli grammaticali e sintattici automatici con l'ausilio delle GitHub Actions.
 
-=== Metriche
+==== Metriche
 
 ?? istituire le metriche di valutazione dei documenti (periodi lunghi / parole lunghe / etc)
 
-==  Verifica
-
-=== Descrizione e Scopo
+==  Processo di Verifica
 
 Il processo di verifica costituisce un'attività di supporto fondamentale volta ad accertare, mediante analisi e prove oggettive, che i prodotti intermedi e finali del progetto soddisfino i requisiti specificati in ogni fase del ciclo di vita.
 
 L'obiettivo primario è duplice:
 
-- Per il software: garantire che il codice e le componenti tecniche siano conformi alle specifiche di progettazione e ai vincoli tecnici, minimizzando il rischio di difetti logici o di implementazione attraverso test funzionali e revisioni del codice.
+- _per il software_: garantire che il codice e le componenti tecniche siano conformi alle specifiche di progettazione e ai vincoli tecnici, minimizzando il rischio di difetti logici o di implementazione attraverso test funzionali e revisioni del codice.
 
-- Per la documentazione: assicurare la correttezza formale, la coerenza sintattica e la precisione semantica dei testi prodotti, verificando che le informazioni trasmesse siano complete, aggiornate e aderenti agli standard qualitativi prefissati (come l'utilizzo rigoroso dei template in Typst).
+- _per la documentazione_: assicurare la correttezza formale, la coerenza sintattica e la precisione semantica dei testi prodotti, verificando che le informazioni trasmesse siano complete, aggiornate e aderenti agli standard qualitativi prefissati (come l'utilizzo rigoroso dei template in Typst).
 
 In sintesi la verifica fornisce una base di fiducia necessaria per il rilascio del sistema e del materiale di supporto.
 
-=== Aspettative
-
-Le aspettative del processo di Verifica sono quindi le seguenti:
+=== Obiettivi
 
 - Identificare alla radice errori nel software e nella documentazione, riducendo i costi di correzione.
 
@@ -370,50 +365,46 @@ Le aspettative del processo di Verifica sono quindi le seguenti:
 
 - Generare documenti che attestino lo stato di progresso del progetto.
 
-
-=== Analisi Statica
+=== Descrizione
+==== Analisi Statica
 
 L'analisi statica viene eseguita senza l'esecuzione diretta del codice sorgente o dei documenti, focalizzandosi sulla struttura e sulla conformità formale. Per quanto riguarda il software, l'attività si concentra sulla revisione del codice per identificare potenziali vulnerabilità o errori logici. 
 Per la documentazione, la verifica statica è supportata dal compilatore Typst, che garantisce la correttezza sintattica e il rispetto dei vincoli definiti nel template di gruppo. In questa fase, la verifica mira ad assicurare che ogni componente sia strutturalmente pronto per le fasi successive.
 
-=== Analisi Dinamica
+==== Analisi Dinamica
 
 L'analisi dinamica prevede la verifica del sistema attraverso la sua esecuzione. Grazie all'integrazione di pipeline di *Continuous Integration* tramite *GitHub Actions*, gran parte di questi processi viene automatizzata per garantire feedback rapidi al team di sviluppo.
 
-==== Test di Unità
+===== Test di Unità
 
 Questi test sono mirati a verificare il corretto funzionamento delle singole unità logiche (funzioni, classi o moduli) in modo isolato. Verranno implementati utilizzando framework specifici per gli stack tecnologici scelti per validare la logica interna prima dell'integrazione.
 
-==== Test di Integrazione
+===== Test di Integrazione
 
 Considerando l'architettura basata su Database, Backend e Frontend, i test di integrazione verificano che la comunicazione tra questi tre livelli avvenga correttamente. L'obiettivo è assicurare che il flusso dei dati tra le API del backend e le collezioni del database sia coerente e privo di errori di interfaccia.
 
-==== Test di Sistema
-
+===== Test di Sistema
 I test di sistema verificano l'intero applicativo nel suo complesso rispetto ai requisiti definiti nel capitolato. L'analisi mira a confermare che l'integrazione totale tra interfaccia utente e servizi rispetti le performance e le funzionalità attese.
 
-==== Test di Regressione
+===== Test di Regressione
 
 Per ogni nuova funzionalità introdotta o bug corretto, vengono eseguiti test di regressione automatizzati tramite GitHub Actions. Questo assicura che le modifiche al codice non compromettano le funzionalità precedentemente verificate e funzionanti.
 
-==== Test di Accettazione
-
+===== Test di Accettazione
 Rappresentano la fase finale della verifica e mirano a confermare che il prodotto sia pronto per la consegna all'azienda cliente. Questi test si basano direttamente sui criteri di accettazione definiti con l'azienda, validando che il software soddisfi pienamente i requisiti contrattuali.
 
-== Validazione
-
-=== Descrizione e scopo
+== Processo di Validazione
 
 Il processo di validazione fornisce la conferma, attraverso la fornitura di prove oggettive, che i requisiti per l'utilizzo specifico previsto siano stati soddisfatti. L'obiettivo è assicurare che il sistema realizzato sia conforme alle aspettative dell'azienda cliente e degli utenti finali.
 
-=== Aspettative
-
+=== Obiettivi
 Le principali aspettative di questo processo includono:
 - *Soddisfazione del capitolato*: dimostrare che ogni funzionalità richiesta dal committente sia stata implementata e risulti operativa;
 - *Idoneità all'uso*: accertare che l'interfaccia e le logiche di business siano intuitive e risolvano i problemi reali dell'utente;
 - *Accettazione formale*: ottenere l'approvazione finale dell'azienda esterna attraverso la dimostrazione del prodotto completo.
 
-=== Proof of Concept (PoC)
+=== Descrizione
+==== Proof of Concept (PoC)
 
 Il gruppo ha previsto la realizzazione di un *Proof of Concept* come milestone fondamentale del processo di validazione. 
 
@@ -423,56 +414,69 @@ Lo scopo del PoC è:
 - *Riduzione del rischio*: identificare tempestivamente eventuali limiti tecnici o architetturali prima della fase di sviluppo intensivo;
 - *Feedback immediato*: fornire all'azienda e ai docenti una prova tangibile del funzionamento, permettendo di validare la direzione intrapresa.
 
-== Gestione della Configurazione
+==== Va aggiunto qualcos'altro??
 
-=== Descrizione e Scopo
+== Processo di Gestione della Configurazione
+Il processo assicura l'integrità degli artefatti e la tracciabilità delle evoluzioni, permettendo al gruppo di lavorare in parallelo minimizzando i conflitti e garantendo la riproducibilità di ogni versione rilasciata.
 
-La gestione della configurazione ha l'obiettivo di identificare, organizzare e controllare le modifiche a tutti i prodotti del progetto (codice e documentazione). Il processo assicura l'integrità degli artefatti e la tracciabilità delle evoluzioni, permettendo al gruppo di lavorare in parallelo minimizzando i conflitti e garantendo la riproducibilità di ogni versione rilasciata.
+=== Obiettivi
+La gestione della configurazione ha l'obiettivo di identificare, organizzare e controllare le modifiche a tutti i prodotti del progetto (codice e documentazione). 
 
-=== Codice di Versionamento
+=== Descrizione
+==== Codice di Versionamento
 
 Il gruppo adotta Git come sistema di controllo di versione. La strategia di branching prevede l'utilizzo di un ramo principale destinato alle versioni stabili. 
 - *Documentazione*: si utilizza un approccio "branch-per-documento", dove ogni nuova sezione o revisione viene sviluppata in un ramo dedicato prima di essere integrata nel _main_ tramite operazione di merge.
 - *Software*: si prevede l'adozione di un modello simile, orientato alla gestione di funzionalità isolate per mantenere il codice sorgente sempre testabile.
 
-=== Tecnologie Adottate
+==== Tecnologie Adottate
 
 Il controllo di versione e la collaborazione sono centralizzati sulla piattaforma GitHub. Per garantire l'uniformità degli ambienti di sviluppo è previsto l'utilizzo di Docker, che permetterà di containerizzare i servizi di backend, frontend e database. Per il software, la gestione delle versioni seguirà lo standard Semantic Versioning, garantendo una comunicazione chiara sull'entità degli aggiornamenti rilasciati.
 
-=== Repository
+==== Repository
 
 Il progetto è organizzato in una struttura con due repository per separare logicamente le responsabilità:
 - *Repository Documentale*: ospitato su una repo specifica, contiene esclusivamente i file sorgente Typst e le configurazioni per il sito web statico.
 - *Repository Software*: organizzato come monorepo, contenente cartelle distinte per il frontend e il backend, facilitando la gestione delle dipendenze correlate e dei Dockerfile di orchestrazione.
 
-=== Sincronizzazione
+==== Sincronizzazione
 
 La sincronizzazione del lavoro tra i membri del gruppo è gestita attraverso:
 - *GitHub Issues e Project Board*: per la pianificazione e l'assegnazione dei task, permettendo di collegare ogni modifica a una specifica esigenza di progetto.
 - *Continuous Integration*: per la documentazione, è attiva una GitHub Action che interviene ad ogni aggiornamento dei file `.typ`. Il runner compila automaticamente i sorgenti e genera i PDF aggiornati.
 - *Gestione delle Pull Request*: per garantire la stabilità del ramo `main`, il gruppo adotta il meccanismo delle Pull Request come filtro di qualità. Prima dell'integrazione definitiva, la CI verifica che il codice (o il documento) sia privo di errori sintattici; il merge è consentito solo in caso di esito positivo della compilazione, impedendo che errori accidentali interrompano la disponibilità della documentazione online.
 
-== Gestione della Qualità
+== Processo di Gestione della Qualità
 
-=== Descrizione e Scopo
+=== Obiettivi
 
-=== PDCA
+=== Descrizione
+==== PDCA
 
-==== Plan
+*Plan*
+#pad(left: 2em)[
+  // scrivi qui
+]
+*Do*
+#pad(left: 2em)[
+  // scrivi qui
+]
+*Check*
+#pad(left: 2em)[ 
+  // scrivi qui
+]
+*Act*
+#pad(left: 2em)[ 
+  // scrivi qui
+]
 
-==== Do
+==== Strumenti
 
-==== Check
+==== Struttura delle Metriche
 
-==== Act
+==== Struttura degli Obiettivi
 
-=== Strumenti
-
-=== Struttura delle Metriche
-
-=== Struttura degli Obiettivi
-
-=== Metriche
+==== Metriche
 
 = Processi Organizzativi
 Insieme strutturato di attività correlate tra loro svolte
@@ -483,22 +487,20 @@ I processi organizzativi qui presenti sono:
 2. Processo di Miglioramento
 3. Processo di Formazione
 
-== Gestione dei Processi
-Il Responsabile è incaricato della gestione del prodotto, della gestione del progetto e della gestione delle 
-attività dei processi applicabili.
-\ La gestione è suddivisa in più aree:
-- Definizione dello scopo;
-- Pianificazione delle attività;
-- Controllo ed esecuzione;
-- Valutazione;
-- Chiusura dell'attività.
+== Processo di Gestione
+Il Responsabile è incaricato della gestione del prodotto, della gestione del progetto e della gestione delle attività dei processi applicabili.
 
-=== Definizione dello Scopo
+=== Obiettivi
+L'obiettivo principale del Processo di Gestione è assicurare che i processi siano pianificati, eseguiti, monitorati e completati in modo efficace ed efficiente,
+garantendo il raggiungimento degli obiettivi prefissati e la conformità ai requisiti stabiliti.
+
+=== Descrizione
+==== Definizione dello Scopo
 Il processo di gestione ha inizio con la definizione degli obiettivi e dei requisiti del processo da svolgere. \
 Una volta chiariti tali requisiti, il responsabile (in accordo con il gruppo) valuta se il processo è realizzabile, verificando che le risorse necessarie siano disponibili e adeguate 
 e che i tempi previsti per il completamento possano essere rispettati. \
 I requisiti possono essere adattati in questa fase per garantire il raggiungimento degli obiettivi finali.
-=== Pianificazione delle Attività
+==== Pianificazione delle Attività
 Il Responsabile definisce le attività necessarie per realizzare il processo. \ 
 Le attività descrivono i compiti previsti e i prodotti software da consegnare. 
 Inoltre specificano tutti gli elementi utili a garantire una corretta esecuzione del processo, tra cui:
@@ -511,7 +513,7 @@ Inoltre specificano tutti gli elementi utili a garantire una corretta esecuzione
 - le modalità di controllo della qualità;
 - i costi previsti;
 - le risorse infrastrutturali e l’ambiente operativo necessari.
-=== Controllo ed Esecuzione
+==== Controllo ed Esecuzione
 Il responsabile avvia il piano per raggiungere gli obiettivi prefissati, mantenendo il controllo sull'intero processo. \
 Durante l’esecuzione, deve monitorare i progressi, fornendo aggiornamenti interni e (se necessario) ai professori o all’azienda. \ 
 #pad(left: 2em)[*Se sorgono problemi:* \
@@ -520,11 +522,11 @@ Eventuali soluzioni possono comportare modifiche ai piani, e spetta al Responsab
 Tutti i problemi e le relative soluzioni devono essere documentati. \ 
 Infine, il responsabile deve informare periodicamente sullo stato del processo, confermando l’aderenza ai piani e affrontando eventuali ritardi o ostacoli, 
 tramite report interni ed esterni secondo le procedure.]
-=== Valutazione
+==== Valutazione
 Il Responsabile deve garantire che prodotti software e piani siano esaminati per verificare che soddisfino i requisiti previsti. \ 
 Deve inoltre analizzare i risultati delle valutazioni dei prodotti software, delle attività e dei compiti completati durante il processo, 
 per _accertarsi che gli obiettivi siano stati raggiunti e che i piani siano stati portati a termine_.
-=== Chiusura dell'Attività
+==== Chiusura dell'Attività
 Una volta completati tutti i prodotti software, le attività e i compiti, il Responsabile deve _verificare_ se il 
 processo può considerarsi terminato, seguendo i criteri definiti nel contratto o nelle procedure dell’organizzazione.
 Inoltre, deve controllare che i risultati e la documentazione relativi ai prodotti software, alle attività e ai compiti siano completi, 
@@ -533,40 +535,42 @@ archiviare tutto all’interno del repository del gruppo e pubblicare la documen
 == Processo di Miglioramento
 Processo per stabilire, valutare, misurare, controllare e migliorare un processo del ciclo di vita del software.
 
-=== Stabilimento 
+=== Obiettivi
+L'obiettivo principale del Processo di Miglioramento è garantire che i processi del ciclo di vita del software siano continuamente valutati e migliorati per aumentare l'efficacia, l'efficienza e la qualità complessiva del prodotto software.
+
+=== Descrizione
+==== Stabilimento 
 Il gruppo definisce un insieme di processi per l’intero ciclo di vita del software. \
 Tali processi, insieme alle modalità di applicazione a casi specifici, devono essere documentati nella documentazione
 del gruppo. \ 
-Quando necessario, _deve essere implementato un meccanismo di controllo dei processi_ per _garantirne lo sviluppo, 
-il monitoraggio, la gestione e il miglioramento continuo_.
-=== Valutazione 
+Quando necessario, _deve essere implementato un meccanismo di controllo dei processi_ per _garantirne lo sviluppo, il monitoraggio, la gestione e il miglioramento continuo_.
+==== Valutazione 
 Deve essere creata, documentata e messa in pratica una procedura per la valutazione dei processi i relativi documenti
 sulla valutazione devono essere conservati e aggiornati. \ 
 Vanno effettuate periodicamente revisioni dei processi, al fine di assicurarne la continua adeguatezza ed efficacia 
 sulla base dei risultati delle valutazioni.
-=== Miglioramento 
+==== Miglioramento 
 Devono essere implementati (da parte del gruppo) i miglioramenti ai processi ritenuti necessari a seguito delle valutazioni e delle revisioni, 
 aggiornando la documentazione per riflettere le modifiche apportate.
 
 == Processo di Formazione
-
-=== Scopo
-Garantire una preparazione adeguata da parte del gruppo per lo svolgimento del progetto. \ 
+Il Processo di Formazione ha lo scopo di garantire una preparazione adeguata da parte del gruppo per lo svolgimento del progetto. \ 
 Per questo motivo, è essenziale pianificare e avviare la formazione fin dalle prime fasi, 
 così che risorse qualificate siano pronte quando il prodotto software viene implementato o 
 mantenuto.
 
-=== Aspettative
+=== Obiettivi
 Ogni membro del gruppo deve acquisire le competenze necessarie per svolgere i propri compiti in modo efficace. \
-La formazione (p _palestra_) deve essere continua, adattandosi alle esigenze del progetto ed acquisendo una conoscenza approfondita delle tecnologie e metodologie utilizzate. \
+La formazione (o _palestra_) deve essere continua, adattandosi alle esigenze del progetto ed acquisendo una conoscenza approfondita delle tecnologie e metodologie utilizzate. \
 L'obiettivo è garantire che il team sia sempre aggiornato e in grado di affrontare i compiti richiesti dal progetto.
 
-=== Formazione dei Membri del Gruppo
-È necessario _esaminare i requisiti_ del progetto per identificare e pianificare tempestivamente lo sviluppo
-delle risorse e delle competenze richieste al team. \ 
-Sulla base di queste informazioni, ogni membro deve organizzare autonomamente la propria formazione, utilizzando 
-risorse interne (università, docenti) o esterne (formazione aziendale, materiale online). \
-Eventualmente, il gruppo può decidere di organizzare sessioni di formazione interne per condividere conoscenze specifiche. \
+=== Descrizione
+==== Formazione dei Membri del Gruppo
+È necessario _esaminare i requisiti_ del progetto per identificare e pianificare tempestivamente lo sviluppo delle risorse e delle competenze richieste al team. \ 
+Sulla base di queste informazioni, ogni membro deve organizzare autonomamente la propria formazione, utilizzando:
+- risorse interne (università, docenti); 
+- risorse esterne (formazione aziendale, materiale online); 
+- eventualmente, il gruppo può decidere di organizzare sessioni di formazione interne per condividere conoscenze specifiche. 
 
 = Standard per la Qualità
 
