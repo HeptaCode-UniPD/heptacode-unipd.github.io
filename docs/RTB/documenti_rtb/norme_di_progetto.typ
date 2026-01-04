@@ -512,10 +512,10 @@ Inoltre specificano tutti gli elementi utili a garantire una corretta esecuzione
 - i rischi potenziali legati alle attività o al processo;
 - le modalità di controllo della qualità;
 - i costi previsti;
-- le risorse infrastrutturali e l’ambiente operativo necessari.
+- le risorse infrastrutturali e l'ambiente operativo necessari.
 ==== Controllo ed Esecuzione
 Il responsabile avvia il piano per raggiungere gli obiettivi prefissati, mantenendo il controllo sull'intero processo. \
-Durante l’esecuzione, deve monitorare i progressi, fornendo aggiornamenti interni e (se necessario) ai professori o all’azienda. \ 
+Durante l'esecuzione, deve monitorare i progressi, fornendo aggiornamenti interni e (se necessario) ai professori o all’azienda. \ 
 #pad(left: 2em)[*Se sorgono problemi:* \
 il Responsabile deve analizzarli e risolverli. 
 Eventuali soluzioni possono comportare modifiche ai piani, e spetta al Responsabile valutare e controllare l’impatto di questi cambiamenti. \
