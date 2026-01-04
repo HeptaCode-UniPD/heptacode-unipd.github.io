@@ -33,10 +33,16 @@
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]
   ),
 
-  "0.1.2",
-  "2026/01/15",
+  "0.1.3",
+  "2026/01/04",
   "Angela Favaro",
-  "Riccardo Baldin",
+  "Nicola Simionato",
+  "Stesura Standard per la Qualità",
+
+  "0.1.2",
+  "2026/01/03",
+  "Angela Favaro",
+  "Nicola Simionato",
   "Stesura Processi di Supporto",
 
   "0.1.1",
