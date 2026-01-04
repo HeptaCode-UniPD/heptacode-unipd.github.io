@@ -518,9 +518,9 @@ Il responsabile avvia il piano per raggiungere gli obiettivi prefissati, mantene
 Durante l'esecuzione, deve monitorare i progressi, fornendo aggiornamenti interni e (se necessario) ai professori o all’azienda. \ 
 #pad(left: 2em)[*Se sorgono problemi:* \
 il Responsabile deve analizzarli e risolverli. 
-Eventuali soluzioni possono comportare modifiche ai piani, e spetta al Responsabile valutare e controllare l’impatto di questi cambiamenti. \
+Eventuali soluzioni possono comportare modifiche ai piani, e spetta al Responsabile valutare e controllare l'impatto di questi cambiamenti. \
 Tutti i problemi e le relative soluzioni devono essere documentati. \ 
-Infine, il responsabile deve informare periodicamente sullo stato del processo, confermando l’aderenza ai piani e affrontando eventuali ritardi o ostacoli, 
+Infine, il responsabile deve informare periodicamente sullo stato del processo, confermando l'aderenza ai piani e affrontando eventuali ritardi o ostacoli, 
 tramite report interni ed esterni secondo le procedure.]
 ==== Valutazione
 Il Responsabile deve garantire che prodotti software e piani siano esaminati per verificare che soddisfino i requisiti previsti. \ 
@@ -540,7 +540,7 @@ L'obiettivo principale del Processo di Miglioramento è garantire che i processi
 
 === Descrizione
 ==== Stabilimento 
-Il gruppo definisce un insieme di processi per l’intero ciclo di vita del software. \
+Il gruppo definisce un insieme di processi per l'intero ciclo di vita del software. \
 Tali processi, insieme alle modalità di applicazione a casi specifici, devono essere documentati nella documentazione
 del gruppo. \ 
 Quando necessario, _deve essere implementato un meccanismo di controllo dei processi_ per _garantirne lo sviluppo, il monitoraggio, la gestione e il miglioramento continuo_.
