@@ -266,7 +266,7 @@ Per garantire chiarezza e coerenza, vengono definiti nella seguente tabella i te
   [*Generalizzazione*],[Relazione di ereditarietà tra un elemento più generico, detto padre, e uno più specifico, detto figlio, che stabilisce un legame logico di tipo "_is-a_" tra le due entità. L'elemento figlio eredita il comportamento dell'elemento padre, ma si riserva la facoltà di sovrascrivere o arricchire tali caratteristiche],
 )
 
-Il paragrafo successivo andrà ad indentificare invece gli attori che interagiranno con il sistema.
+Il paragrafo successivo andrà ad identificare invece gli attori che interagiranno con il sistema.
 
 == Attori
 
