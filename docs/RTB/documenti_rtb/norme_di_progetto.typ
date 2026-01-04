@@ -88,18 +88,24 @@ Termini tecnici e ambiguità sono chiariti nel documento _glossario.pdf_, ogni t
 
 === Riferimenti Normativi
 
-- Capitolato d'appalto C2 _Vargroup S.p.a._ - Code Guardian: \
-#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")
+- Capitolato d'appalto C2 _Vargroup S.p.a._ - Code Guardian: 
+#h(2em) #link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")
 
 - Standard ISO/x 12207:1995 - Processi di Ciclo di Vita del Software:
-#link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")
+#h(2em) #link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf"). \
+#h(2em) A questo standard fanno riferimento: @processi-primari, @processi-di-supporto e @processi-organizzativi.
+
+- Standard ISO/IEC 9126 - Modello di Qualità: 
+#h(2em) #link("https://it.wikipedia.org/wiki/ISO/IEC_9126"). \
+#h(2em) A questo standard fanno riferimento: @standard-per-la-qualita e @metriche-per-la-qualita.
 
 === Riferimenti Informativi
 
 - Documentazione Typst: \
-#link("https://typst.app/docs/")
+#h(2em) #link("https://typst.app/docs/")
 
 = Processi Primari
+<processi-primari>
 
 == Processo di Fornitura
 Secondo lo standard ISO/IEC 12207:1995, comprende le attività e le risorse necessarie al fornitore (_HeptaCode_)per realizzare il progetto. \
@@ -250,6 +256,7 @@ Per rendere oggettiva la qualità del software prodotto, il codice verrà monito
 - ?? campi delle classi
 
 = Processi di Supporto
+<processi-di-supporto>
 
 == Processo di Documentazione
 
@@ -479,6 +486,7 @@ La sincronizzazione del lavoro tra i membri del gruppo è gestita attraverso:
 ==== Metriche
 
 = Processi Organizzativi
+<processi-organizzativi>
 Insieme strutturato di attività correlate tra loro svolte
  in modo coordinato per raggiungere un obiettivo specifico e creare 
  valore. \
@@ -573,21 +581,89 @@ Sulla base di queste informazioni, ogni membro deve organizzare autonomamente la
 - eventualmente, il gruppo può decidere di organizzare sessioni di formazione interne per condividere conoscenze specifiche. 
 
 = Standard per la Qualità
-
+<standard-per-la-qualita>
+La qualità del prodotto è definita da sei caratteristiche principali:
+  1. Funzionalità
+  2. Affidabilità
+  3. Usabilità
+  4. Efficienza
+  5. Manutenibilità
+  6. Portabilità
+Che andremo ora a definire. 
 == Funzionalità
+Indica come il software deve rispondere alle necessità degli utenti e comportarsi nelle diverse situazioni d'uso.
+
+=== Appropriatezza 
+Il software deve offrire le funzioni che servono all'utente per raggiungere i propri obiettivi, senza complicazioni inutili.
+=== Accuratezza
+I risultati e i calcoli devono essere precisi e corrispondere sempre a quanto richiesto.
+=== Interoperabilità
+La capacità del sistema di lavorare bene insieme ad altri software o piattaforme esterne (_GitHub_).
+=== Conformità
+Il rispetto di tutte le regole e gli standard del settore in cui il software andrà a operare.
+=== Sicurezza
+Dobbiamo garantire che i dati siano protetti da accessi non autorizzati, ma restino sempre facilmente accessibili per chi ha i permessi necessari. \ Nel progetto _Code Guardian_ non viene garantita la sicurezza dei dati degli utenti in quanto non è requisito del capitolato. Ma verranno comunque seguite le best practice per la gestione dei dati. 
+// controllate questo ultimo punto plis
 
 == Affidabilità
+Quanto il software sia capace di funzionare correttamente nel tempo, mantenendo stabili le sue prestazioni senza interruzioni impreviste.
 
-== Usabilità
+=== Maturità 
+Prevenire alla radice bug, crash o risultati sbagliati, assicurandoci che il software sia solido prima di ogni rilascio tramite test.
+=== Tolleranza agli errori 
+Il sistema deve essere "resiliente". Se qualcosa va storto o l'utente preme il tasto sbagliato, il software non deve bloccarsi ma continuare a funzionare, magari in modalità limitata o riportando l'utente in una pagina stabile dello software.
+=== Aderenza
+Seguiamo rigorosamente le best practice che garantiscano che il livello di affidabilità sia misurabile e costante, maggiori dettagli vengono forniti nel _Piano di Qualifica_.
 
 == Efficienza
+Come il software gestisce le risorse a disposizione per offrire le migliori prestazioni possibili.
+
+=== Velocità e tempi di risposta 
+Il sistema deve rispondere alle azioni dell'utente e completare le elaborazioni in tempi accettabili, senza rallentamenti ingiustificati durante i processi.
+=== Gestione delle risorse 
+Il software non deve sprecare memoria o potenza di calcolo. L'obiettivo è consumare solo lo stretto necessario per funzionare correttamente.
+=== Conformità 
+Seguiamo le specifiche di progetto (all'interno del _Piano di Qualifica_) che definiscono i limiti accettabili di velocità.
+
+== Usabilità
+Indica quanto sia facile, intuitivo e piacevole per l'utente interagire con il software. Un prodotto usabile è un prodotto che non richiede sforzi eccessivi per essere capito e utilizzato.
+
+=== Chiarezza (Comprensibilità) 
+L'utente deve capire al primo sguardo cosa fa il software e le funzionalità principali che mette a disposizione.
+=== Semplicità d'apprendimento 
+Il software deve essere intuitivo così da ridurre al minimo il tempo necessario per imparare a usarlo.
+=== Facilità d'uso (Operatività) 
+Chi usa il software deve avere sempre il pieno controllo delle operazioni, riuscendo a completare i propri compiti senza ostacoli.
+=== Gradevolezza (Attrattiva) 
+L'interfaccia deve essere curata e piacevole, rendendo l'esperienza d'uso soddisfacente anche dal punto di vista estetico.
+=== Rispetto degli standard 
+Seguiamo le convenzioni e le linee guida consolidate di accessibilità.
 
 == Manutenibilità
+Indica quanto sia semplice modificare il software per correggere errori, migliorarne le prestazioni o adattarlo a nuove esigenze senza compromettere ciò che già funziona.
+
+=== Analizzabilità 
+Il codice deve essere scritto in modo chiaro (scelta dei nomi, documentazione, logica pulita) per permettere a chiunque di individuare velocemente la causa di un problema.
+=== Facilità di modifica (Modificabilità) 
+La struttura del software deve essere modulare. Cambiare una parte del sistema o sostituire un componente non deve richiedere la riscrittura dell'intero progetto.
+=== Stabilità 
+Ogni modifica deve essere sicura. Il sistema deve essere solido abbastanza da evitare che la correzione di un bug ne generi altri tre in parti diverse del programma (_effetti collaterali_); lo si farà tramite test di regressione.
+=== Verificabilità (Testabilità) 
+Il software deve essere progettato per essere testato facilmente e in modo automatico (il più possibile). \ Più è semplice creare test automatici, più saremo sicuri che le modifiche apportate siano corrette.
 
 == Portabilità
+Indica quanto sia semplice trasferire il software da un ambiente di lavoro a un altro, sia che si tratti di cambiare l'hardware sottostante o il sistema operativo.
+
+=== Adattabilità 
+Il software deve poter girare su configurazioni diverse senza bisogno di interventi pesanti o versioni dedicate per ogni sistema.
+=== Installabilità 
+La procedura per configurare l'applicazione deve essere semplice, rapida e documentata per l'ambiente di destinazione.
+=== Conformità 
+Seguiamo gli standard tecnici che favoriscono il passaggio tra piattaforme diverse, evitando di legarci a tecnologie troppo chiuse.
+// anche questo non sono sicura se bisogna aggiungere un riferimento a Docker o se sia incompleta la cosa
 
 = Metriche per la Qualità
-
+<metriche-per-la-qualita>
 == Metriche Interne
 
 == Metriche Esterne
