@@ -13,6 +13,8 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("0.6.1", "2026-01-05", "Amerigo Vegliante", "", "Correzione ortografica"),
+  ("0.6.0", "2026-01-05", "Amerigo Vegliante", "", "Creazione UC10 e UC11 nella sezione Business Owner"),
   ("0.5.0", "2025-12-30", "Alberto Reginato", "Laura Venturini", "Creazione UC7,8 e 9; riorganizzato UC secondo le personas"),
   ("0.4.2", "2025-12-28", "Angela Favaro", "Laura Venturini", "Correzioni fino a UC6.3"),
   ("0.4.1", "2025-12-27", "Angela Favaro", "Laura Venturini", "Rifattorizzazione UC1.2"),
@@ -1399,7 +1401,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il Business Owner conosce le tecnologie utilizzate nel progetto.
 - *Estensioni:* #link(<UC11.2.1>)[[UC11.2.1]]
 
-=== UC11.2.1: Identificare aggiornamenti disponibili (es. nuove LTS) <UC11.2.1>
+=== UC11.2.1: Identificare aggiornamenti disponibili <UC11.2.1>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner verifica se ci sono aggiornamenti importanti disponibili per le tecnologie utilizzate nel progetto.
