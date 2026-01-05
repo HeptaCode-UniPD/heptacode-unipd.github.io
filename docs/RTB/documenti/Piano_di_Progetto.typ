@@ -23,16 +23,22 @@
   align: horizon,
   table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
 
+  "0.1.7",
+  "2026/01/05", 
+  "Angela Canazza", 
+  "Laura Venturini", 
+  "Aggiunto trascorso Sprint 6",
+
   "0.1.6",
   "2026/01/05", 
   "Amerigo Vegliante", 
-  "", 
-  "Aggiunto trascorso Sprint 5.",
+  "Laura Venturini", 
+  "Aggiunto trascorso Sprint 5",
 
   "0.1.5",
   "2025/12/31", 
   "Nicola Simionato", 
-  "", 
+  "Laura Venturini", 
   "Aggiunto trascorso Sprint 1 (sezione 5.4.1).",
 
   "0.1.4",
@@ -1211,7 +1217,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [22 Dicembre 2025 – 28 Dicembre 2025],
-
+  [_Responsabile_],[Amerigo Vegliante],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
@@ -1224,8 +1230,8 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Rischi incontrati_],
   [
-    1. Mancato rispetto delle tempistiche (@tab:RO1);
-    2. RO2 Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2);
+    1. RO1 - Mancato rispetto delle tempistiche (@tab:RO1);
+    2. RO2 - Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2);
   ],
 
   [_Mitigazione_],
@@ -1236,7 +1242,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
 *GANTT Diagram*
     #figure(
-  caption: [Diagramma di GANTT dello Sprint 4],
+  caption: [Diagramma di GANTT dello Sprint 5],
   )[
   #image("../../asset/GANTT/sprint5-gantt.png")
   ]<GANTT-Sprint5>
@@ -1247,29 +1253,36 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
-
+  [_Responsabile_],[Angela Canazza],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
-  [
-
+  [1. Continuazione stesura documentazione PdP, AdR e NdP;
+  2. Conclusione scrittura Use Case per Developer, Business Owner e Project Manager
+  3. Aggiornamento Glossario
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. RO1 - Mancato rispetto delle tempistiche (@tab:RO1)
+    2. RO2 - Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2);
+    3. Mancato aggiornamento del docuemnto PdQ
   ],
 
   [_Mitigazione_],
   [
-    1.
-  ],
-
-  [_GANTT Diagram_],
-  [
-    [_Inserire immagine_]
-  ],
+    1. Utilizzo di giorni aggiuntivi per la verifica e correzione degli Use Case, al fine di garantire la consegna del documento AdR per la milestone RTB.
+    2. Ristribuzione interna del carico di lavoro e sessioni di lavoro asincrono per recuperare il ritardo accumulato.
+    3. I verificatori si impegnano a produrre una versione finale non ufficiale del Piano di Qualità entro il prossimo sprint.
+  ]
 )
+
+*GANTT Diagram*
+    #figure(
+  caption: [Diagramma di GANTT dello Sprint 6],
+  )[
+  #image("../../asset/GANTT/sprint6-gantt.png")
+  ]<GANTT-Sprint6>
 
 === Sprint 7
 #table(
@@ -1277,7 +1290,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
-
+  [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
@@ -1307,7 +1320,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
-
+  [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
@@ -1337,7 +1350,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
-
+  [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
@@ -1367,7 +1380,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
-
+  [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
@@ -1397,7 +1410,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
-
+  [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
@@ -1427,7 +1440,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
-
+  [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
@@ -1457,7 +1470,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
-
+  [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
