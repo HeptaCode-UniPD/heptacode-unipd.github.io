@@ -1266,13 +1266,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1. RO1 - Mancato rispetto delle tempistiche (@tab:RO1)
     2. RO2 - Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2);
-    3. Mancato aggiornamento del docuemnto PdQ
+    3. Mancato aggiornamento del documento PdQ
   ],
 
   [_Mitigazione_],
   [
     1. Utilizzo di giorni aggiuntivi per la verifica e correzione degli Use Case, al fine di garantire la consegna del documento AdR per la milestone RTB.
-    2. Ristribuzione interna del carico di lavoro e sessioni di lavoro asincrono per recuperare il ritardo accumulato.
+    2. Ridistribuzione interna del carico di lavoro e sessioni di lavoro asincrono per recuperare il ritardo accumulato.
     3. I verificatori si impegnano a produrre una versione finale non ufficiale del Piano di Qualità entro il prossimo sprint.
   ]
 )
