@@ -1408,7 +1408,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Precondizioni:* Il Business Owner sta visualizzando la lista tecnologie del progetto (#link(<UC11.2>)[[UC11.2]]).
 - *Trigger:* Il Business Owner cerca specificamente informazioni sugli aggiornamenti.
 - *Scenario principale:*
-  + Il sistema evidenzia le tecnologie che hanno aggiornamenti disponibili (es.: nuove versioni LTS).
+  + Il sistema evidenzia le tecnologie che hanno aggiornamenti disponibili.
   + Il Business Owner identifica quali tecnologie richiedono aggiornamento.
   + Il Business Owner valuta l'importanza degli aggiornamenti disponibili.
 - *Postcondizioni:* Il Business Owner è consapevole degli aggiornamenti disponibili per le tecnologie del progetto.
