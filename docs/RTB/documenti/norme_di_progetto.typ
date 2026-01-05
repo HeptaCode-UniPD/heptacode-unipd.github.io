@@ -33,6 +33,12 @@
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]
   ),
 
+  "0.1.4",
+  "2026/01/04",
+  "Laura Venturini",
+  "",
+  "Stesura paragrafo Progettazione",
+
   "0.1.3",
   "2026/01/04",
   "Angela Favaro",
@@ -109,7 +115,8 @@ Termini tecnici e ambiguità sono chiariti nel documento _glossario.pdf_, ogni t
 
 - Documentazione Typst: \
 #h(2em) #link("https://typst.app/docs/")
-
+- Materiale didattico del corso di Ingegneria del Software 2025/2026:
+#h(2em) #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T06.pdf")
 = Processi Primari
 <processi-primari>
 
@@ -221,10 +228,17 @@ I termini utilizzati nell'esposizione dei casi d'uso sono i seguenti:
 *Metriche*
 
 ==== Progettazione
+L'attività di progettazione serve per definire l'architettura logica del prodotto, cercando una soluzione tecnica che soddisfi tutti gli stakeholder. Inoltre, suddivide il sistema in singole componenti dalla complessità individuale minore possibile in modo da facilitare la successiva fase di codifica. \ La progettazione avviene in contemporanea al rilevamento dei requisiti e si basa su di essi per definire le scelte architetturali più adatte; la realizzazione dell'architettura inizia con lo sviluppo del Proof of Concept, cioè della dimostrazione della Fattibilità della soluzione ipotizzata e della compatibilità tra le tecnologie adottate. Per effettuarla, i progettisti del team dovranno decidere di quali tecnologie avvalersi dopo aver analizzato le alternative possibili. 
+  \ \
+  *Aspettative* \
+L'architettura progettata deve avere le seguenti proprietà: 
+- Sufficienza: deve essere in grado di soddisfare tutti i requisiti funzionali e non funzionali del sistema;
+- Comprensibilità: deve essere capita da tutti gli stakeholder coinvolti nel progetto;
+- Modularità: deve essere suddivisa in parti chiare e indipendenti tra loro;
+- Robustezza: deve essere in grado di gestire diversi tipi di ingressi da parte dall'utente e dall'ambiente senza compromettere l'integrità del sistema;
 
-*Aspettative*
-
-*Documentazione*
+*Documentazione* \
+La documentazione relativa alla progettazione verrà redatta dai progettisti. Questi membri del team dovranno assicurarsi di documentare il Proof of Concept, di conseguenza le scelte tecnologiche effettuate, le motivazioni di tali scelte e la definizione delle componenti architetturali del sistema. \ Inoltre, per  la Product Baseline dovranno essere documentati i test eseguiti per validare il Proof of Concept e i risultati ottenuti, i design pattern che si pensano adatti all'implementazione del sistema e la definizione delle classi usate nel Proof of Concept. 
 
 *Metriche*
 
