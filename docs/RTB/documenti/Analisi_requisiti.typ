@@ -1288,5 +1288,221 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 == Specifica dei casi d'uso - Business Owner
 
+=== UC10: Visualizzare Dashboard Home con Statistiche <UC10>
+
+=== UC10: Visualizzare Dashboard Home con Statistiche
+
+- *Attore principale:* Business Owner 
+- *Descrizione:* Il Business Owner accede alla home page dell'applicazione che mostra una panoramica aggregata di tutti i progetti attraverso grafici e indicatori chiave.
+- *Precondizioni:* 
+  + Il Business Owner è autenticato nel sistema.
+  + Esiste almeno un progetto nel sistema.
+- *Trigger:* Il Business Owner accede all'applicazione o clicca su "Home"/"Dashboard".
+- *Scenario principale:*
+  + Il sistema visualizza la dashboard home con diversi grafici e istogrammi.
+  + Il Business Owner visualizza le statistiche aggregate sui progetti (*<\<extend>>* #link(<UC10.1>)[[UC10.1]]).
+  + Il Business Owner analizza le issue totali in lavorazione (*<\<extend>>* #link(<UC10.2>)[[UC10.2]]).
+  + Il Business Owner consulta il rapporto budget vs spesa complessivo (*<\<extend>>* #link(<UC10.3>)[[UC10.3]]).
+  + Il Business Owner valuta l'indice di coerenza tra progetti (*<\<extend>>* #link(<UC10.4>)[[UC10.4]]).
+  + Il Business Owner può *selezionare un progetto per analizzarlo nel dettaglio* (*<\<extend>>* #link(<UC11>)[[UC11]]).
+- *Postcondizioni:* Il Business Owner ha una visione d'insieme dello stato del portafoglio progetti.
+- *Estensioni:* #link(<UC10.1>)[[UC10.1]], #link(<UC10.2>)[[UC10.2]], #link(<UC10.3>)[[UC10.3]], #link(<UC10.4>)[[UC10.4]], #link(<UC11>)[[UC11]]
+
+=== UC10.1: Visualizzare grafici a torta/istogrammi su progetti <UC10.1>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner consulta le visualizzazioni grafiche che rappresentano statistiche aggregate sui progetti.
+- *Precondizioni:* Il Business Owner sta visualizzando la Dashboard Home (#link(<UC10>)[[UC10]]).
+- *Trigger:* Il Business Owner si concentra sulla sezione grafici della dashboard.
+- *Scenario principale:*
+  + Il sistema visualizza grafici a torta e/o istogrammi che rappresentano vari aspetti dei progetti.
+  + Il Business Owner interpreta i grafici per comprendere distribuzioni e proporzioni.
+- *Postcondizioni:* Il Business Owner ha composto un quadro visivo della situazione dei progetti.
+- *Estensioni:* 
+
+=== UC10.2: Visualizzare issue totali in lavorazione (complessivo) <UC10.2>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner consulta il conteggio totale delle issue attualmente in lavorazione su tutti i progetti.
+- *Precondizioni:* Il Business Owner sta visualizzando la Dashboard Home (#link(<UC10>)[[UC10]]).
+- *Trigger:* Il Business Owner consulta il widget/indicatore delle issue.
+- *Scenario principale:*
+  + Il sistema visualizza il numero totale di issue attualmente "in lavorazione" o "in sviluppo".
+  + Il Business Owner legge il valore per comprendere il carico di lavoro complessivo.
+- *Postcondizioni:* Il Business Owner è consapevole del volume totale di lavoro in corso.
+- *Estensioni:* 
+
+=== UC10.3: Visualizzare rapporto budget vs spesa complessivo <UC10.3>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner consulta l'indicatore aggregato che confronta il budget totale allocato con la spesa totale sostenuta.
+- *Precondizioni:* Il Business Owner sta visualizzando la Dashboard Home (#link(<UC10>)[[UC10]]).
+- *Trigger:* Il Business Owner consulta il widget/indicatore finanziario.
+- *Scenario principale:*
+  + Il sistema visualizza un indicatore che mostra budget totale e spesa totale.
+  + Il Business Owner analizza se la spesa complessiva è entro il budget complessivo.
+- *Postcondizioni:* Il Business Owner conosce la situazione finanziaria aggregata.
+- *Estensioni:* 
+
+=== UC10.4: Visualizzare indice coerenza tra progetti <UC10.4>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner consulta un indicatore che misura il livello di coerenza o standardizzazione tra i vari progetti.
+- *Precondizioni:* Il Business Owner sta visualizzando la Dashboard Home (#link(<UC10>)[[UC10]]).
+- *Trigger:* Il Business Owner consulta l'indicatore di coerenza.
+- *Scenario principale:*
+  + Il sistema visualizza un indicatore di "coerenza tra progetti".
+  + Il Business Owner interpreta il valore per valutare quanto i progetti siano allineati tra loro.
+- *Postcondizioni:* Il Business Owner ha una misura del livello di coerenza del portafoglio progetti.
+- *Estensioni:* 
+
 #pagebreak()
 
+=== UC11: Accedere e Analizzare un Progetto Singolo <UC11>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner seleziona ed entra in un progetto specifico per analizzarne i dettagli: tecnologie, repository, issue, costi e team.
+- *Precondizioni:* Il Business Owner sta visualizzando una lista o dashboard dei progetti.
+- *Trigger:* Il Business Owner seleziona un progetto specifico dalla lista/dashboard.
+- *Scenario principale:*
+  + Il Business Owner *entra in un progetto* (*<\<extend>>* #link(<UC11.1>)[[UC11.1]]).
+  + Il Business Owner visualizza la *lista delle tecnologie utilizzate* nel progetto (*<\<extend>>* #link(<UC11.2>)[[UC11.2]]).
+  + Il Business Owner consulta la *vista generale sulle repository* del progetto (*<\<extend>>* #link(<UC11.3>)[[UC11.3]]).
+  + Il Business Owner visualizza la *lista del team di sviluppo* (*<\<extend>>* #link(<UC11.4>)[[UC11.4]]).
+  + Il Business Owner può tornare alla dashboard home.
+- *Postcondizioni:* Il Business Owner ha analizzato i dettagli del progetto selezionato.
+- *Estensioni:* #link(<UC11.1>)[[UC11.1]], #link(<UC11.2>)[[UC11.2]], #link(<UC11.3>)[[UC11.3]], #link(<UC11.4>)[[UC11.4]]
+
+=== UC11.1: Entrare in un progetto <UC11.1>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner esegue l'azione di navigazione per accedere alla vista di dettaglio di un progetto specifico.
+- *Precondizioni:* Il Business Owner sta visualizzando una lista o dashboard dei progetti.
+- *Trigger:* Il Business Owner decide di approfondire un progetto specifico.
+- *Scenario principale:*
+  + Il Business Owner identifica il progetto di interesse nella lista/dashboard.
+  + Il Business Owner clicca sul progetto o sul pulsante "Entra"/"Dettagli".
+  + Il sistema carica e visualizza la pagina di dettaglio del progetto.
+- *Postcondizioni:* Il Business Owner è ora nella vista di dettaglio del progetto selezionato.
+- *Estensioni:* 
+
+=== UC11.2: Visualizzare lista tecnologie utilizzate nel progetto <UC11.2>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner esamina l'elenco delle tecnologie impiegate nel progetto specifico.
+- *Precondizioni:* Il Business Owner è entrato in un progetto (#link(<UC11.1>)[[UC11.1]]).
+- *Trigger:* Il Business Owner accede alla sezione "Tecnologie" del progetto.
+- *Scenario principale:*
+  + Il sistema visualizza una lista delle tecnologie utilizzate nel progetto.
+  + Il Business Owner legge l'elenco per comprendere lo stack tecnologico.
+  + Il Business Owner può verificare se ci sono *aggiornamenti disponibili* (*<\<extend>>* #link(<UC11.2.1>)[[UC11.2.1]]).
+- *Postcondizioni:* Il Business Owner conosce le tecnologie utilizzate nel progetto.
+- *Estensioni:* #link(<UC11.2.1>)[[UC11.2.1]]
+
+=== UC11.2.1: Identificare aggiornamenti disponibili (es. nuove LTS) <UC11.2.1>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner verifica se ci sono aggiornamenti importanti disponibili per le tecnologie utilizzate nel progetto.
+- *Precondizioni:* Il Business Owner sta visualizzando la lista tecnologie del progetto (#link(<UC11.2>)[[UC11.2]]).
+- *Trigger:* Il Business Owner cerca specificamente informazioni sugli aggiornamenti.
+- *Scenario principale:*
+  + Il sistema evidenzia le tecnologie che hanno aggiornamenti disponibili (es.: nuove versioni LTS).
+  + Il Business Owner identifica quali tecnologie richiedono aggiornamento.
+  + Il Business Owner valuta l'importanza degli aggiornamenti disponibili.
+- *Postcondizioni:* Il Business Owner è consapevole degli aggiornamenti disponibili per le tecnologie del progetto.
+- *Estensioni:* 
+
+=== UC11.3: Visualizzare vista generale sulle repository del progetto <UC11.3>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner consulta una vista d'insieme delle repository che compongono il progetto.
+- *Precondizioni:* Il Business Owner è entrato in un progetto (#link(<UC11.1>)[[UC11.1]]).
+- *Trigger:* Il Business Owner accede alla sezione "Repository" del progetto.
+- *Scenario principale:*
+  + Il sistema visualizza una lista o panoramica delle repository del progetto.
+  + Il Business Owner può vedere le *quantità di issue* per repository (*<\<extend>>* #link(<UC11.3.1>)[[UC11.3.1]]).
+  + Il Business Owner può consultare le *stime dei costi* (*<\<extend>>* #link(<UC11.3.2>)[[UC11.3.2]]).
+- *Postcondizioni:* Il Business Owner ha una visione generale della struttura repository del progetto.
+- *Estensioni:* #link(<UC11.3.1>)[[UC11.3.1]], #link(<UC11.3.2>)[[UC11.3.2]]
+
+=== UC11.3.1: Visualizzare quantità issue completate/aperte/in sviluppo <UC11.3.1>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner consulta i numeri delle issue divise per stato nelle repository del progetto.
+- *Precondizioni:* Il Business Owner sta visualizzando la vista repository del progetto (#link(<UC11.3>)[[UC11.3]]).
+- *Trigger:* Il Business Owner cerca informazioni sullo stato delle issue.
+- *Scenario principale:*
+  + Il sistema visualizza i conteggi delle issue per stato:
+    - Issue completate
+    - Issue aperte
+    - Issue in sviluppo
+  + Il Business Owner analizza la distribuzione per valutare l'avanzamento.
+- *Postcondizioni:* Il Business Owner comprende lo stato di avanzamento del progetto attraverso le issue.
+- *Estensioni:* 
+
+=== UC11.3.2: Visualizzare stima dei costi (se calcolabile) <UC11.3.2>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner consulta una stima dei costi associati al progetto o alle sue repository.
+- *Precondizioni:* Il Business Owner sta visualizzando la vista repository del progetto (#link(<UC11.3>)[[UC11.3]]).
+- *Trigger:* Il Business Owner cerca informazioni sui costi.
+- *Scenario principale:*
+  + Il sistema visualizza una stima dei costi (se calcolabile dal sistema).
+  + Il Business Owner legge il valore per comprendere l'impatto finanziario.
+- *Postcondizioni:* Il Business Owner ha una stima dei costi del progetto.
+- *Estensioni:* 
+
+=== UC11.4: Visualizzare lista del team di sviluppo <UC11.4>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner esamina l'elenco dei membri del team assegnati al progetto.
+- *Precondizioni:* Il Business Owner è entrato in un progetto (#link(<UC11.1>)[[UC11.1]]).
+- *Trigger:* Il Business Owner accede alla sezione "Team" del progetto.
+- *Scenario principale:*
+  + Il sistema visualizza una lista dei membri del team di sviluppo.
+  + Il Business Owner può *accedere alle statistiche dei singoli developer* (*<\<extend>>* #link(<UC11.4.1>)[[UC11.4.1]]).
+- *Postcondizioni:* Il Business Owner conosce la composizione del team del progetto.
+- *Estensioni:* #link(<UC11.4.1>)[[UC11.4.1]]
+
+=== UC11.4.1: Accedere alle statistiche dei singoli developer <UC11.4.1>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner consulta le statistiche e informazioni dettagliate di uno specifico developer del team.
+- *Precondizioni:* Il Business Owner sta visualizzando la lista del team (#link(<UC11.4>)[[UC11.4]]).
+- *Trigger:* Il Business Owner seleziona un developer dalla lista del team.
+- *Scenario principale:*
+  + Il sistema visualizza le statistiche del developer selezionato.
+  + Il Business Owner può vedere il *numero di progetti* in cui il developer ha lavorato/sta lavorando (*<\<extend>>* #link(<UC11.4.1.1>)[[UC11.4.1.1]]).
+  + Il Business Owner può consultare i *linguaggi e tecnologie affini* del developer (*<\<extend>>* #link(<UC11.4.1.2>)[[UC11.4.1.2]]).
+- *Postcondizioni:* Il Business Owner ha approfondito la conoscenza delle competenze e del carico di lavoro del developer.
+- *Estensioni:* #link(<UC11.4.1.1>)[[UC11.4.1.1]], #link(<UC11.4.1.2>)[[UC11.4.1.2]]
+
+=== UC11.4.1.1: Visualizzare numero progetti in cui ha lavorato/sta lavorando <UC11.4.1.1>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner consulta l'elenco e il conteggio dei progetti associati al developer.
+- *Precondizioni:* Il Business Owner sta visualizzando le statistiche di un developer (#link(<UC11.4.1>)[[UC11.4.1]]).
+- *Trigger:* Il Business Owner cerca informazioni sul carico di progetti del developer.
+- *Scenario principale:*
+  + Il sistema visualizza:
+    - Numero totale di progetti in cui il developer ha lavorato
+    - Numero di progetti attualmente assegnati
+    - Lista dei progetti (passati e attuali)
+  + Il Business Owner valuta il carico di lavoro e l'esperienza del developer.
+- *Postcondizioni:* Il Business Owner comprende il coinvolgimento del developer nei vari progetti.
+- *Estensioni:* 
+
+=== UC11.4.1.2: Visualizzare linguaggi e tecnologie affini <UC11.4.1.2>
+
+- *Attore principale:* Business Owner
+- *Descrizione:* Il Business Owner consulta le competenze tecnologiche del developer.
+- *Precondizioni:* Il Business Owner sta visualizzando le statistiche di un developer (#link(<UC11.4.1>)[[UC11.4.1]]).
+- *Trigger:* Il Business Owner cerca informazioni sulle competenze tecniche del developer.
+- *Scenario principale:*
+  + Il sistema visualizza:
+    - Linguaggi di programmazione conosciuti/utilizzati
+    - Tecnologie e framework con esperienza
+    - Livello di competenza (base/intermedio/avanzato) se disponibile
+  + Il Business Owner valuta le competenze tecniche del developer.
+- *Postcondizioni:* Il Business Owner conosce le competenze tecnologiche del developer.
+- *Estensioni:* 
