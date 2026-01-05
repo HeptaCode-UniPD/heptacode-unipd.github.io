@@ -67,8 +67,8 @@ l'url
 ciclomatica
 committati
 gmail
-indentificare
-inidcatori
+identificare
+indicatori
 l'
 openapi
 postcondizioni
