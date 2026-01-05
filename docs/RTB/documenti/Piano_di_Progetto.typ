@@ -23,6 +23,12 @@
   align: horizon,
   table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
 
+  "0.1.6",
+  "2026/01/05", 
+  "Amerigo Vegliante", 
+  "", 
+  "Aggiunto trascorso Sprint 5.",
+
   "0.1.5",
   "2025/12/31", 
   "Nicola Simionato", 
@@ -1204,30 +1210,36 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [22 Dicembre 2025 – 28 Dicembre 2025],
 
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
   [
-
+    1. Continuazione stesura documentazione: PdP, AdR e NdP;
+    2. Continuazione stesura Use Case e finitura della sezione Developer;
+    3. Inizio stesure Use Case per sezioni opzionali (Business Owner, Project Manager);
+    4. Aggiornamento Glossario.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. Mancato rispetto delle tempistiche (@tab:RO1);
+    2. RO2 Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2);
   ],
 
   [_Mitigazione_],
   [
-    1.
-  ],
-
-  [_GANTT Diagram_],
-  [
-    [_Inserire immagine_]
-  ],
+    1. Utilizzo di tempo di slack nello sprint successivo per poter finire, anche se in ritardo rispetto le tempistiche previste, la milestone UCB.
+  ]
 )
+
+*GANTT Diagram*
+    #figure(
+  caption: [Diagramma di GANTT dello Sprint 4],
+  )[
+  #image("../../asset/GANTT/sprint5-gantt.png")
+  ]<GANTT-Sprint5>
 
 === Sprint 6
 #table(
