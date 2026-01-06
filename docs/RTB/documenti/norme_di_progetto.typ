@@ -616,10 +616,10 @@ Il modello di qualità di riferimento per il progetto è definito dallo standard
   5. Manutenibilità
   6. Portabilità
 == Funzionalità
-La Funzionalità definisce la capacità del software di erogare servizi e funzioni che rispondano alle esigenze (esplicite o implicite) dell'utente, quando utilizzato sotto specifiche condizioni. Essa rappresenta il nucleo dei requisiti funzionali e si articola nelle seguenti sottocaratteristiche:
+La Funzionalità definisce la capacità del software di erogare servizi e funzioni che rispondano alle esigenze (esplicite o implicite) dell'utente, quando utilizzato sotto specifiche condizioni. Essa rappresenta il nucleo dei requisiti funzionali e si articola nelle seguenti sotto caratteristiche:
 
 === Appropriatezza 
-Il software deve essere in grado di fornire una serie di funzioni appropriate per lo svolgimento di compiti e il raggiungimento degli obiettibi dell'utente senza complicazioni aggiuntive.
+Il software deve essere in grado di fornire una serie di funzioni appropriate per lo svolgimento di compiti e il raggiungimento degli obiettivi dell'utente senza complicazioni aggiuntive.
 === Accuratezza
 I risultati e i calcoli prodotti dal software devono essere precisi e corrispondere sempre a quanto richiesto dagli standard del progetto.
 === Interoperabilità
@@ -657,7 +657,7 @@ La capacità del software di utilizzare quantità e tipi di risorse in misura ap
 La capacità del prodotto di aderire a standard o convenzioni relative all'efficienza prestazionale, nel rispetto dei vincoli definiti nel _Piano di Qualifica_.
 
 == Usabilità
-La capacità del prodotto software di essere semplice, intruitivo e di risultare piacevole per l'utente. Un prodotto usabile è un prodotto che non richiede sforzi eccessivi per essere capito e utilizzato.
+La capacità del prodotto software di essere semplice, intuitivo e di risultare piacevole per l'utente. Un prodotto usabile è un prodotto che non richiede sforzi eccessivi per essere capito e utilizzato.
 
 === Comprensibilità
 La capacità del software di permettere all'utente di comprendere se il sistema è adatto ai propri compiti e di come utilizzarlo. L'utente deve poter identificare le funzionalità principali e la logica operativa fin dal primo impatto.
@@ -783,7 +783,7 @@ $ "SV" = ("EV" - "PV")/"PV" dot 100 $
 $ "CV" = "EV" - "AC" $
 - *Valore accettabile*: $>=0€$
 - *Valore ottimale*: $>=0€$
-- *Descrizione*: L'indicatore Cost Variance rappresenta la differenza tra il costo realmente raggiunto dal progetto e quello del lavoro effettivamente svolto. Se si raggiunge un valore positivo, allora lo svolgimento del lavoro risulta più efficiente, viceversa se negativo. Se invece risulta pari a 0, si sta procedento come pianificato. 
+- *Descrizione*: L'indicatore Cost Variance rappresenta la differenza tra il costo realmente raggiunto dal progetto e quello del lavoro effettivamente svolto. Se si raggiunge un valore positivo, allora lo svolgimento del lavoro risulta più efficiente, viceversa se negativo. Se invece risulta pari a 0, si sta procedendo come pianificato. 
 
 ====  MPC03 - Budget Variance (BV)
 - *Formula*:
@@ -835,7 +835,7 @@ $ "EV" = "BAC" dot ("AH") / ("THP") $
 $ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
 - *Valore accettabile*: $>=0€$
 - *Valore ottimale*: $<="AEC"$
-- *Descrizione*: L'indice Actual Cost rappresenta il costo effettivamente sostenito alla data corrente.
+- *Descrizione*: L'indice Actual Cost rappresenta il costo effettivamente sostenuto alla data corrente.
 - *Legenda*:
   - *AHR*: ACtual Hours by Role;
   - *HCR*: Hourly Cost per Role.
@@ -897,7 +897,7 @@ $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 
 === Documentazione
 
-==== MPC14 - Correttezza ortigrafica
+==== MPC14 - Correttezza ortografica
 - *Formula*:
 $ "Correttezza ortografica" = "numero di errori ortografici" $
 - *Valore accettabile*: $100%$
@@ -1016,7 +1016,7 @@ $ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
  $ "Indice Gulpease" = 89 − "numero di lettere" / "numero di parole" dot 100 + "numero di frasi"/
 "numero di parole" dot 300 $
 - *Valore $>=$80*: La complessità del testo è molto semplice e adatta a lettori che hanno completato la scuola primaria.  
-- *Valore tra 60 e 80*:  La complessità del testo è di media difcicoltà e adatta a lettori che hanno completato la scuola dell'obbligo.  
+- *Valore tra 60 e 80*:  La complessità del testo è di media difficoltà e adatta a lettori che hanno completato la scuola dell'obbligo.  
 - *Valore tra 40 e 60*:  La complessità del testo è di abbastanza complessa e adatta a lettori che hanno almeno un istruzione di livello superiore.  
 - *Valore $<$40*:   La complessità del testo complessa e adatta a lettori che hanno un livello di istruzione universitaria.  
 - *Valore accettabile*: $>=50$
@@ -1030,4 +1030,4 @@ $ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
 $ "ROS" = "Test eseguiti"/"Test falliti" dot 100 $ 
 - *Valore accettabile*: $30%$
 - *Valore ottimale*: $15%$
-- *Descrizione*: L'indice di Error Rate indica la percentuale di errori durante l'esecuzione. Gli eventuali errori verranno riportati dai programmatori al fine di calcoalre il valore della metrica.
+- *Descrizione*: L'indice di Error Rate indica la percentuale di errori durante l'esecuzione. Gli eventuali errori verranno riportati dai programmatori al fine di calcolare il valore della metrica.
