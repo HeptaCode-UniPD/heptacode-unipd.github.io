@@ -33,25 +33,31 @@
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]
   ),
 
-  "0.1.4",
+  "0.5.0",
+  "2026/01/06",
+  "Angela Canazza",
+  "Nicola Simionato",
+  "Stesura Metriche per la Qualità",
+
+  "0.4.1",
   "2026/01/04",
   "Laura Venturini",
-  "",
+  "Nicola Simionato",
   "Stesura paragrafo Progettazione",
 
-  "0.1.3",
+  "0.4.0",
   "2026/01/04",
   "Angela Favaro",
   "Nicola Simionato",
   "Stesura Standard per la Qualità",
 
-  "0.1.2",
+  "0.3.0",
   "2026/01/03",
   "Angela Favaro",
   "Nicola Simionato",
   "Stesura Processi di Supporto",
 
-  "0.1.1",
+  "0.2.0",
   "2025/12/28",
   "Riccardo Baldin",
   "Angela Favaro",
@@ -602,110 +608,426 @@ Sulla base di queste informazioni, ogni membro deve organizzare autonomamente la
 
 = Standard per la Qualità
 <standard-per-la-qualita>
-La qualità del prodotto è definita da sei caratteristiche principali:
+Il modello di qualità di riferimento per il progetto è definito dallo standard _ISO/IEC 9126-1_. Tale norma decompone la qualità del software in sei caratteristiche fondamentali: 
   1. Funzionalità
   2. Affidabilità
   3. Usabilità
   4. Efficienza
   5. Manutenibilità
   6. Portabilità
-Che andremo ora a definire. 
 == Funzionalità
-Indica come il software deve rispondere alle necessità degli utenti e comportarsi nelle diverse situazioni d'uso.
+La Funzionalità definisce la capacità del software di erogare servizi e funzioni che rispondano alle esigenze (esplicite o implicite) dell'utente, quando utilizzato sotto specifiche condizioni. Essa rappresenta il nucleo dei requisiti funzionali e si articola nelle seguenti sottocaratteristiche:
 
 === Appropriatezza 
-Il software deve offrire le funzioni che servono all'utente per raggiungere i propri obiettivi, senza complicazioni inutili.
+Il software deve essere in grado di fornire una serie di funzioni appropriate per lo svolgimento di compiti e il raggiungimento degli obiettibi dell'utente senza complicazioni aggiuntive.
 === Accuratezza
-I risultati e i calcoli devono essere precisi e corrispondere sempre a quanto richiesto.
+I risultati e i calcoli prodotti dal software devono essere precisi e corrispondere sempre a quanto richiesto dagli standard del progetto.
 === Interoperabilità
-La capacità del sistema di lavorare bene insieme ad altri software o piattaforme esterne (_GitHub_).
+La capacità del sistema di interagire e scambiare informazioni con uno o più sistemi specificati.
+Nel contesto del progetto _CodeGuardian_, questa caratteristica è fondamentale per garantire l'integrazione con la piattaforma esterna _GitHub_ , permettendo l'accesso e la gestione delle repository.
 === Conformità
 Il rispetto di tutte le regole e gli standard del settore in cui il software andrà a operare.
+
 === Sicurezza
-Dobbiamo garantire che i dati siano protetti da accessi non autorizzati, ma restino sempre facilmente accessibili per chi ha i permessi necessari. \ Nel progetto _Code Guardian_ non viene garantita la sicurezza dei dati degli utenti in quanto non è requisito del capitolato. Ma verranno comunque seguite le best practice per la gestione dei dati. 
-// controllate questo ultimo punto plis
+La capacità del software di proteggere le informazioni e i dati, negando l'accesso a entità non autorizzate e garantendolo a quelle autorizzate.
+Nel contesto di _CodeGuardian_, non essendo prevista la memorizzazione diretta di dati sensibili o credenziali utente (delegate alla piattaforma GitHub), non è stato implementato un modulo di sicurezza proprietario complesso. Tuttavia, vengono adottate le *best practices* di sviluppo sicuro per prevenire vulnerabilità comuni nel trattamento dei dati analizzati.
 
 == Affidabilità
-Quanto il software sia capace di funzionare correttamente nel tempo, mantenendo stabili le sue prestazioni senza interruzioni impreviste.
+La capacità del software di mantenere un determinato livello di prestazioni quando utilizzato sotto condizioni specifiche per un determinato periodo di tempo.
 
-=== Maturità 
-Prevenire alla radice bug, crash o risultati sbagliati, assicurandoci che il software sia solido prima di ogni rilascio tramite test.
-=== Tolleranza agli errori 
-Il sistema deve essere "resiliente". Se qualcosa va storto o l'utente preme il tasto sbagliato, il software non deve bloccarsi ma continuare a funzionare, magari in modalità limitata o riportando l'utente in una pagina stabile dello software.
-=== Aderenza
-Seguiamo rigorosamente le best practice che garantiscano che il livello di affidabilità sia misurabile e costante, maggiori dettagli vengono forniti nel _Piano di Qualifica_.
+=== Maturità
+La capacità del software di evitare malfunzionamenti (failure) causati da difetti interni. Si ottiene attraverso test rigorosi che mirano a stabilizzare il prodotto, riducendo la frequenza di errori prima del rilascio.
+
+=== Tolleranza agli errori (Fault Tolerance)
+La capacità del sistema di mantenere un livello di prestazioni specificato anche in caso di guasti software o violazioni delle interfacce. Il sistema deve essere resiliente: gestire l'anomalia senza bloccarsi, garantendo il degrado controllato delle funzionalità o il ripristino di uno stato stabile.
+
+=== Conformità 
+La capacità del prodotto software di aderire a standard, convenzioni o regolamentazioni relative all'affidabilità. I dettagli metrici sono specificati nel _Piano di Qualifica_.
 
 == Efficienza
-Come il software gestisce le risorse a disposizione per offrire le migliori prestazioni possibili.
+La capacità del software di fornire prestazioni appropriate relative alla quantità di risorse utilizzate, sotto condizioni specifiche.
 
-=== Velocità e tempi di risposta 
-Il sistema deve rispondere alle azioni dell'utente e completare le elaborazioni in tempi accettabili, senza rallentamenti ingiustificati durante i processi.
-=== Gestione delle risorse 
-Il software non deve sprecare memoria o potenza di calcolo. L'obiettivo è consumare solo lo stretto necessario per funzionare correttamente.
-=== Conformità 
-Seguiamo le specifiche di progetto (all'interno del _Piano di Qualifica_) che definiscono i limiti accettabili di velocità.
+=== Comportamento rispetto al tempo
+La capacità del software di fornire tempi di risposta, tempi di elaborazione e velocità di throughput (capacità di calcolo) che soddisfino i requisiti stabiliti durante l'esecuzione delle sue funzioni.
+
+=== Utilizzo delle risorse
+La capacità del software di utilizzare quantità e tipi di risorse in misura appropriata per svolgere i propri compiti, ottimizzando i consumi ed evitando sprechi ingiustificati.
+
+=== Conformità
+La capacità del prodotto di aderire a standard o convenzioni relative all'efficienza prestazionale, nel rispetto dei vincoli definiti nel _Piano di Qualifica_.
 
 == Usabilità
-Indica quanto sia facile, intuitivo e piacevole per l'utente interagire con il software. Un prodotto usabile è un prodotto che non richiede sforzi eccessivi per essere capito e utilizzato.
+La capacità del prodotto software di essere semplice, intruitivo e di risultare piacevole per l'utente. Un prodotto usabile è un prodotto che non richiede sforzi eccessivi per essere capito e utilizzato.
 
-=== Chiarezza (Comprensibilità) 
-L'utente deve capire al primo sguardo cosa fa il software e le funzionalità principali che mette a disposizione.
-=== Semplicità d'apprendimento 
-Il software deve essere intuitivo così da ridurre al minimo il tempo necessario per imparare a usarlo.
-=== Facilità d'uso (Operatività) 
-Chi usa il software deve avere sempre il pieno controllo delle operazioni, riuscendo a completare i propri compiti senza ostacoli.
-=== Gradevolezza (Attrattiva) 
-L'interfaccia deve essere curata e piacevole, rendendo l'esperienza d'uso soddisfacente anche dal punto di vista estetico.
-=== Rispetto degli standard 
-Seguiamo le convenzioni e le linee guida consolidate di accessibilità.
+=== Comprensibilità
+La capacità del software di permettere all'utente di comprendere se il sistema è adatto ai propri compiti e di come utilizzarlo. L'utente deve poter identificare le funzionalità principali e la logica operativa fin dal primo impatto.
+
+=== Apprendibilità
+La capacità del software di essere intuitivo e permettere all'utente di imparare ad utilizzarlo con uno sforzo ridotto e in tempi minimi.
+
+=== Operabilità 
+La capacità del software di mettere l'utente in condizione di operarlo e controllarlo interamente. Include la facilità di navigazione, la gestione degli errori e l'assenza di ostacoli nel completamento dei compiti.
+
+=== Attrattiva 
+La capacità del software di essere piacevole per l'utente. L'interfaccia grafica deve essere curata, coerente e progettata per garantire un'esperienza d'uso soddisfacente.
+
+=== Conformità 
+La capacità del software di aderire a standard, convenzioni o regolamentazioni relative alle linee guida consolidate di accessibilità.
+
 
 == Manutenibilità
-Indica quanto sia semplice modificare il software per correggere errori, migliorarne le prestazioni o adattarlo a nuove esigenze senza compromettere ciò che già funziona.
+La capacità del prodotto software di essere modificato. Le modifiche possono includere correzioni, miglioramenti o adattamenti a cambiamenti nell'ambiente senza compromettere ciò che già funziona.
 
-=== Analizzabilità 
-Il codice deve essere scritto in modo chiaro (scelta dei nomi, documentazione, logica pulita) per permettere a chiunque di individuare velocemente la causa di un problema.
-=== Facilità di modifica (Modificabilità) 
-La struttura del software deve essere modulare. Cambiare una parte del sistema o sostituire un componente non deve richiedere la riscrittura dell'intero progetto.
+=== Analizzabilità
+La capacità del software di essere diagnosticato velocemente per cause di guasti o per identificare le parti da modificare. Il codice deve rispettare alcuni requisiti per ridurre il tempo di analisi e trovare con rapidità la natura di un problema: deve essere scritto in modo pulito, deve essere chiaro nella scelta dei nomi, deve essere modulare e avere una documentazione chiara. 
+
+=== Modificabilità 
+La capacità del software di permettere l'implementazione di una modifica. La struttura deve essere a basso accoppiamento o modulare affinché la modifica di un componente non richieda la riscrittura di moduli dipendenti.
+
 === Stabilità 
-Ogni modifica deve essere sicura. Il sistema deve essere solido abbastanza da evitare che la correzione di un bug ne generi altri tre in parti diverse del programma (_effetti collaterali_); lo si farà tramite test di regressione.
-=== Verificabilità (Testabilità) 
-Il software deve essere progettato per essere testato facilmente e in modo automatico (il più possibile). \ Più è semplice creare test automatici, più saremo sicuri che le modifiche apportate siano corrette.
+La capacità del software di minimizzare gli effetti collaterali imprevisti derivanti da modifiche. Ogni modifica deve essere sicura, il sistema deve essere solido abbastanza da evitare che la correzione di un bug ne generi altri in parti diverse del programma (_effetti collaterali_); lo si farà tramite test di regressione.
+
+=== Testabilità
+La capacità del software di essere testato facilmente e in modo automatico. Il sistema deve essere progettato per facilitare la scrittura e l'esecuzione di test automatici che verifichino la correttezza delle nuove implementazioni.
 
 == Portabilità
-Indica quanto sia semplice trasferire il software da un ambiente di lavoro a un altro, sia che si tratti di cambiare l'hardware sottostante o il sistema operativo.
+La capacità del software di essere trasferito da un ambiente a un altro, sia che si tratti di hardware sottostante o del sistema operativo.
 
 === Adattabilità 
-Il software deve poter girare su configurazioni diverse senza bisogno di interventi pesanti o versioni dedicate per ogni sistema.
+La capacità del software di adattarsi a diversi ambienti specificati senza dover applicare azioni pesanti o utilizzare versioni dedicare per ogni sistema.
+Nel contesto di _CodeGuardian_, l'adozione della containerizzazione (Docker) garantisce che l'applicativo possa essere eseguito su qualsiasi sistema host supportato senza conflitti di dipendenze.
+
 === Installabilità 
-La procedura per configurare l'applicazione deve essere semplice, rapida e documentata per l'ambiente di destinazione.
-=== Conformità 
-Seguiamo gli standard tecnici che favoriscono il passaggio tra piattaforme diverse, evitando di legarci a tecnologie troppo chiuse.
-// anche questo non sono sicura se bisogna aggiungere un riferimento a Docker o se sia incompleta la cosa
+La capacità del software di essere installato in un ambiente specificato. La procedura di configurazione e deploy deve essere semplice, rapida e documentata per l'ambiente di destinazione.
+
+=== Conformità
+La capacità del software di aderire a standard o convenzioni relative alla portabilità.
+Nel contesto di _CodeGuardian_, tale conformità è garantita tramite l'utilizzo di container Docker. Questo approccio evita il legame con tecnologie proprietarie o specifiche di sistema, assicurando che il software rispetti le specifiche universali di distribuzione.
+
 
 = Metriche per la Qualità
 <metriche-per-la-qualita>
+
+La qualità del prodotto software non è il risultato di un processo di valutazione che confronta il prodotto ottenuto con le attese prefissate. Secondo la norma ISO, la qualità è definita come l'insieme delle caratteristiche di un'entità che le conferiscono la capacità di soddisfare esigenze espresse (esplicite) ed implicite.
+
+La valutazione della qualità dipende dal punto di vista dell'osservatore:
+- *Prospettiva interna* (Sviluppatore): Focalizzata sulla struttura, la manutenibilità e la correttezza tecnica del codice.
+
+- *Prospettiva esterna* (Utente): Focalizzata sull'uso, sull'efficacia e sulla soddisfazione dei bisogni.
+
+- *Prospettiva terza* (Committente): Focalizzata sulla conformità ai processi e sugli standard contrattuali.
+
+
 == Metriche Interne
+Le metriche interne (_riferimento normativo: ISO/IEC 9126-3_) si applicano alla struttura statica del software (non eseguibile) durante le fasi di progettazione e codifica. Tali metriche valutano attributi architetturali quali: la modularità, la completezza della documentazione, la coesione e il livello di accoppiamento tra i componenti. L'obiettivo è garantire che il codice sorgente possieda elevate caratteristiche di: manutenibilità, modificabilità, analizzabilità e verificabilità.
+
+Le metriche interne sono spesso invisibili all'utente finale, ma il loro monitoraggio è propedeutico al raggiungimento della qualità esterna e in uso, gli attributi interni influenzano direttamente il comportamento del software a runtime e l'adozione di queste metriche consente di:
+
+- *Prevedere la qualità finale del software*, stimando il livello qualitativo del prodotto prima del rilascio.
+
+- *Individuare anomalie strutturali e difetti potenziali* prima che venga prodotto l'eseguibile, riducendo i costi di correzione.
+
+- Assicurare che *il progetto possa evolvere nel tempo* senza degradare in debito tecnico ingestibile.
+
 
 == Metriche Esterne
+Le metriche esterne (riferimento normativo: _ISO/IEC 9126-2_) misurano il comportamento del sistema software in esecuzione (runtime). A differenza delle metriche interne, queste misure si basano sulla validazione dinamica, sull'operatività e sull'osservazione degli output in ambienti di test o in simulazione operativa.
+
+L'obiettivo è verificare la conformità del software rispetto ai requisiti tecnici e di business stabiliti, garantendo che il prodotto soddisfi le esigenze dell'utente quando viene eseguito in un contesto reale.
+
+Le metriche esterne permettono di quantificare attributi qualitativi quali:
+
+- *Adeguatezza funzionale*: Il software fornisce le funzioni appropriate per i task previsti.
+
+- *Affidabilità*: Il software mantiene le prestazioni nel tempo senza rompersi.
+
+- *Efficienza*: I tempi di risposta e l'uso delle risorse sono adeguati.
+
+- *Usabilità*: L'utente riesce a capire e operare il software con facilità.
+
+- *Sicurezza*: I dati e gli accessi sono protetti durante l'esecuzione.
 
 == Metriche della Qualità in Uso
+La Qualità in uso (riferimento normativo: _ISO/IEC 9126-4_) rappresenta il punto di vista dell'utente finale nell'interazione reale con il sistema. Essa può essere conseguita pienamente solo se sono stati precedentemente soddisfatti i requisiti di qualità interna e qualità esterna.
+
+Mentre le metriche tecniche misurano il codice o il comportamento del sistema, la qualità in uso misura l'impatto del software sull'utente. L'obiettivo è validare se il sistema abilita specifici utenti a raggiungere specifici obiettivi in un determinato contesto d'uso.
+
+Gli attributi misurati sono:
+
+- *Efficacia*: La capacità del software di permettere agli utenti di raggiungere gli obiettivi prefissati con accuratezza e completezza.
+
+- *Efficienza*: La relazione tra l'efficacia ottenuta e le risorse spese (tempo, sforzo cognitivo, materiali).
+
+- *Sicurezza* (Safety): La capacità del software di mantenere i livelli di rischio per le persone, l'ambiente o le apparecchiature entro soglie accettabili. \ L'attributo della sicurezza si riferisce all'incolumità e ai danni fisici o economici, distinguendosi dalla protezione dei dati (Security). Nel contesto del progetto _CodeGuardian_, questa metrica avrà un peso minore rispetto all'efficacia e all'efficienza, in quanto il software non presenta rischi critici per l'incolumità delle persone o dell'ambiente.
+
+- *Soddisfazione*: La risposta soggettiva dell'utente all'interazione con il sistema.
 
 == Metriche della Qualità di Processo
+La qualità del prodotto software è una diretta conseguenza della qualità dei processi utilizzati per realizzarlo.
+Un processo di sviluppo può essere modellato come un sistema che trasforma input (bisogni, requisiti) in output (prodotti intermedi o finali), consumando risorse quali tempo, sforzo umano e strumenti. Per garantire che l'output sia quello desiderato, il processo necessita di un sistema di controllo (feedback loop), composto da:
+- Metriche: Misurazioni oggettive per conoscere lo stato istantaneo del processo.
+- Azioni correttive: Decisioni e regole atte a modificare l'andamento del processo per riportarlo nelle misure previste.
+L'approccio adottato segue il ciclo di PDCA (Plan-Do-Check-Act): le misurazioni devono essere preventive e continue, non solo a posteriori, per permettere un miglioramento iterativo del processo stesso durante il ciclo di vita del progetto.
 
 === Miglioramento
 
+==== MPC01 - Schedule Variance (SV)
+- *Formula*:
+$ "SV" = ("EV" - "PV")/"PV" dot 100 $
+- *Valore accettabile*: $>=-10%$
+- *Valore ottimale*: $>=0%$
+- *Descrizione*: L'indicatore Schedule Variance rappresenta il rispetto della schedulazione delle attività di progetto pianificate nella baseline. Se il valore è superiore allo 0, vuol dire che la velocità di avanzamento del lavoro è superiore a quanto pianificato, viceversa se negativo.
+
+====  MPC02 - Cost Variance (CV)
+- *Formula*:
+$ "CV" = "EV" - "AC" $
+- *Valore accettabile*: $>=0€$
+- *Valore ottimale*: $>=0€$
+- *Descrizione*: L'indicatore Cost Variance rappresenta la differenza tra il costo realmente raggiunto dal progetto e quello del lavoro effettivamente svolto. Se si raggiunge un valore positivo, allora lo svolgimento del lavoro risulta più efficiente, viceversa se negativo. Se invece risulta pari a 0, si sta procedento come pianificato. 
+
+====  MPC03 - Budget Variance (BV)
+- *Formula*:
+$ "BV" = ("PV" - "AC")/"PV" dot 100 $
+- *Valore accettabile*: $-10%>="BV"<=10%$
+- *Valore ottimale*: $0%$
+- *Descrizione*: L'indice Budget Variance rappresenta il costo totale raggiunto alla data corrente rispetto a quello pianificato. Se il valore è maggiore di 0, allora il budget si sta consumando più rapidamente di quanto pianificato, viceversa se negativo.
+
+==== MPC04 - Requirements Stability Index (RSI)
+- *Formula*:
+$ "RSI" = (1- ("NRC"+"NRD"+"NRA")/"TNIR" dot 100) $
+- *Valore accettabile*: $>=70%$
+- *Valore ottimale*: $100%$
+- *Descrizione*:L'indice Requirements Stability Index rappresenta che i requisiti hanno subito durante lo svolgimento del progetto.
+- *Legenda*:
+  - *NRC*: Number of Requirements Changed
+  - *NRD*: Number of Requirements Deleted
+  - *NRA*: Number of Requirements Added
+  - *TNIR*: Total Number of Initial Requirements 
+
 === Fornitura
 
-=== Codifica
+==== MPC05 - Planned Value (PV)
+- *Formula* 
+$ "PV" = "BAC" dot ("PH") / ("THP") $
+- *Valore accettabile*: $>=0€$
+- *Valore ottimale*: $<="BAC"€$
+- *Descrizione*: L'indicatore Planned Value rappresenta il valore del lavoro pianificato rispetto al budget totale previsto. Tale valore permette di monitorare l'avanzamento del progetto e la conformità con la sua pianificazione iniziale.
+
+- *Legenda*:
+ - *BAC*: Budget at Completion (Budget totale preventivato);
+ - *PH*: Planned Hours;
+ - *THP*: Total Hours Planned.
+
+====  MPC06 - Earned Value (EV)
+- *Formula*:
+$ "EV" = "BAC" dot ("AH") / ("THP") $
+- *Valore accettabile*: $>=0€$
+- *Valore ottimale*: $<="EAC"$
+- *Descrizione*: L'indicatore Earned Value rappresenta il valore del lavoro completato rispetto al budget totale previsto. Tale valore permette di valutare se lo svolgimento del progetto è rimasto in linea con le aspettative.
+
+- *Legenda*:
+ - *BAC*: Budget at Completion (Budget totale preventivato);
+ - *AH*: Actual Hours;
+ - *THP*: Total Hours Planned.
+
+==== MPC07 - Actual Cost (AC)
+- *Formula*:
+$ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
+- *Valore accettabile*: $>=0€$
+- *Valore ottimale*: $<="AEC"$
+- *Descrizione*: L'indice Actual Cost rappresenta il costo effettivamente sostenito alla data corrente.
+- *Legenda*:
+  - *AHR*: ACtual Hours by Role;
+  - *HCR*: Hourly Cost per Role.
+
+==== MPC08 - Estimate at Completion (EAC):
+- *Formula*:
+$ "EAC" = "BAC"/"CPI" $
+- *Valore accettabile*: $>="BAC"-5%$
+- *Valore ottimale*:  $<="BAC"+5%$
+- *Descrizione*: L'indice Estimate at Completion rappresenta la stima del costo totale del progetto al momento del suo completamento.
+- *Legenda*:
+ - *BAC*: Budget at Completion (Budget totale preventivato);
+ - *CPI*: Cost Performance Index.
+
+==== MPC09 - Estimate to Complete (ETC)
+- *Formula*:
+$ "ETC" = "BAC" - "EV" $
+- *Valore accettabile*: $>=0€$
+- *Valore ottimale*: $<="EAC"$
+- *Descrizione*: L'indice Estimate to Complete rappresenta la stima dei costi necessari per completare tutte le attività previste rimanenti.
+- *Legenda*:
+ - *BAC*: Budget at Completion (Budget totale preventivato).
+
+
+=== Verifica e validazione
+
+==== MPC10 - Code Coverage (CC)
+- *Codice*: 
+- *Formula*:
+$ "CC" = "Codice testato" / "Codice totale" * 100 $
+- *Valore accettabile*: $>=80%$
+- *Valore ottimale*: $>=90%$
+- *Descrizione*: L'indice di Code Coverage misura la percentuale di codice sorgente che viene eseguita durante l'esecuzione dei test automatici. Indica quanto il codice è stato verificato dal processo di testing.
+
+==== MPC11 - Test Success Rate (TSR)
+- *Codice*: MPC13
+- *Formula*:
+$ "TSR" = "Test passati"/ "Test totali" * 100 $
+- *Valore accettabile*: $100%$
+- *Valore ottimale*:  $100%$
+- *Descrizione*: L'indice Test Success Rate misura la percentuale dei test superati rispetto a quelli totali. 
+
+==== MPC12 - Statement Coverage (SC)
+- *Codice*: 
+- *Formula*:
+$ "SC" = ("Linee eseguite") / "Linee totali" * 100 $
+- *Valore accettabile*: $>=90%$
+- *Valore ottimale*: $100%$
+- *Descrizione*: L'indice Statement Coverage misura la percentuale di istruzioni elementari eseguire dai test.
+
+==== MPC13 - Branch Coverage (BC)
+- *Codice*: 
+- *Formula*:
+$ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
+- *Valore accettabile*: $>=70%$
+- *Valore ottimale*:  $>=80%$
+- *Descrizione*: L'indice Branch Coverage misura la percentuale di rami decisionali (i percorsi true e false delle condizioni if, while, for) che sono stati percorsi dai test.
+
 
 === Documentazione
+
+==== MPC14 - Correttezza ortigrafica
+- *Formula*:
+$ "Correttezza ortografica" = "numero di errori ortografici" $
+- *Valore accettabile*: $100%$
+- *Valore ottimale*: $100%$
+- *Descrizione*:  La correttezza ortografica è un indicatore della qualità della documentazione. Tutti i documenti ufficiali devono essere privi di errori ortografici.
+
+
 
 == Metriche della Qualità di Prodotto
 
 === Funzionalità
 
-=== Usabilità
+==== MPD01 - Requisiti obbligatori soddisfatti (RS)
+- *Formula*:
+$ "RS" = "Requisiti obbligatori soddisfatti"/"Requisiti obbligatori totali" dot 100 $ 
+- *Valore accettabile*: $100%$
+- *Valore ottimale*: $100%$
+- *Descrizione*: L'indice dei requisiti obbligatori soddisfatti rappresenta la percentuale dei requisiti obbligatori completati.
+
+====  MPD02 - Requisiti desiderabili soddisfatti (RDS)
+- *Formula*:
+$ "RDS" = "Requisiti desiderabili soddisfatti"/"Requisiti desiderabili totali" dot 100 $ 
+- *Valore accettabile*: $>=0%$
+- *Valore ottimale*: $>=60%$
+- *Descrizione*: L'indice dei requisiti desiderabili soddisfatti rappresenta la percentuale dei requisiti desiderabili completati.
+
+==== MPD03 - Requisiti opzionali soddisfatti (ROS)
+- *Formula*:
+$ "ROS" = "Requisiti opzionali soddisfatti"/"Requisiti opzionali totali" dot 100 $ 
+- *Valore accettabile*: $>=0%$
+- *Valore ottimale*: $>=30%$
+- *Descrizione*: L'indice dei requisiti opzionali soddisfatti rappresenta la percentuale dei requisiti opzionali completati.
+
+
+
+=== Adeguatezza funzionale
+
+
+==== MPD04 - Tempo di caricamento
+- *Valore accettabile*: $<=10 "secondi"$
+- *Valore ottimale*: $<=5 "secondi"$
+- *Descrizione*:L'indice del tempo di caricamento misura il tempo medio che il programma impiega per avviarsi.
+
+==== MPD05 -Tempo medio di risposta (Sistema)
+- *Valore accettabile*: $<= 5 "secondi" $
+- *Valore ottimale*: $<= 2 "secondi" $
+- *Descrizione*: Misura il tempo medio che il sistema impiega per rispondere a operazioni tecniche standard che non coinvolgono l'elaborazione dell'IA. Garantisce la fluidità dell'interazione tecnica.
+
+==== MPD06 -Tempo medio di risposta (Elaborazione AI)
+- *Valore accettabile*: $<= 1,50 "minuti" $
+- *Valore ottimale*: $<= 30 "secondi" $
+- *Descrizione*: Misura il tempo medio che il sistema impiega per restituire un risultato quando viene sollecitata una richiesta utente che coinvolge il motore di Intelligenza Artificiale.
+Nel contesto di _CodeGuardian_, l'uso di modelli LLM per l'analisi e il refactoring del codice nelle repository GitHub richiede un tempo di ragionamento computazionale più alto rispetto alle operazioni standard.
 
 == Manutenibilità
 
+==== MPD07 - Complessità Ciclomatica
+- *Formula*:
+$ v(G) = E - N + 2P $
+- *Valore accettabile*: $<= 15 $
+- *Valore ottimale*: $<= 10 $
+- *Descrizione*: Misura la complessità logica di un metodo calcolando il numero di cammini linearmente indipendenti attraverso il grafo di controllo del flusso.
+Un valore elevato indica che la funzione ha troppe logiche condizionali (if, loop) ed è quindi difficile da testare e soggetta a errori. Se il valore supera la soglia accettabile, è necessario suddividere il metodo in sotto-funzioni più semplici (Refactoring).
+- *Legenda*:
+  - $v(G)$: Numero ciclomatico del grafo $G$;
+  - $E$: Numero di archi (collegamenti) nel grafo di controllo;
+  - $N$: Numero di nodi (blocchi di istruzioni) nel grafo di controllo;
+  - $P$: Numero di componenti connesse (generalmente $P=1$ calcolando la metrica per singolo metodo).
+
+==== MPD08 - Parametri per metodo
+
+- *Valore accettabile*: $<= 6 $
+- *Valore ottimale*: $<= 4 $
+- *Descrizione*: L'indice rappresenta il numero massimo di parametri che un metodo può accettare nella sua firma all'interno del codice sorgente. Un numero eccessivo di parametri riduce la leggibilità e aumenta la complessità di test.
+
+==== MPD09 - Linee di codice per metodo
+
+- *Valore accettabile*: $<= 35 $
+- *Valore ottimale*: $<= 20 $
+- *Descrizione*: L'indice rappresenta il numero massimo di righe di codice da cui può essere composto un singolo metodo. Metodi troppo lunghi violano il principio di "Single Responsibility".
+
+==== MPD10 - Linee di codice per file
+
+- *Valore accettabile*: $<= 120 $
+- *Valore ottimale*: $<= 80 $
+- *Descrizione*: L'indice rappresenta il numero massimo di righe di codice da cui può essere composto un singolo file sorgente nel progetto.
+
+==== MPD11 - Densità dei commenti (CD)
+
+- *Formula*:
+$ "CD" = ("CM" / "CL") dot 100 $
+- *Valore accettabile*: $<=15% $
+- *Valore ottimale*: $>=5%$
+- *Descrizione*:L'indice rappresenta il rapporto percentuale tra le righe di commento e il totale delle righe di codice presenti in un modulo. Misura quanto il codice è documentato inline.
+- *Legenda*:
+  - *CM*: Numero di righe di commento (Comment Lines);
+  - *CL*: Numero di righe di codice (Code Lines).
+
+==== MPD12 - Coefficient of Coupling (CoC)
+- *Formula*:
+$ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
+- *Valore accettabile*: $<= 0.4 $
+- *Valore ottimale*: $<= 0.2 $
+- *Descrizione*: L'indice misura il grado di accoppiamento medio tra i moduli del sistema. \ Si calcola dividendo il numero totale di dipendenze (import, chiamate tra classi) per il numero totale di componenti (classi o moduli). \ Un valore basso indica un'architettura modulare e disaccoppiata (migliore manutenibilità), mentre un valore superiore a 0.4 indica un accoppiamento eccessivo che rende difficile modificare una parte del sistema senza impattare le altre.
+
+
+=== Usabilità
+
+====  MPD13 - Tempo di apprendimento
+- *Valore accettabile*: $<=10 "minuti"$
+- *Valore ottimale*: $<=5 "minuti"$
+- *Descrizione*: L'indice del tempo di apprendimento misura il tempo medio che un utente impiega per imparare l'utilizzo del programma in analisi, nel caso di questo progetto è _CodeGuardian_.
+
+==== MPD14 - Indice di Gulpease
+- *Formula*:
+ $ "Indice Gulpease" = 89 − "numero di lettere" / "numero di parole" dot 100 + "numero di frasi"/
+"numero di parole" dot 300 $
+- *Valore $>=$80*: La complessità del testo è molto semplice e adatta a lettori che hanno completato la scuola primaria.  
+- *Valore tra 60 e 80*:  La complessità del testo è di media difcicoltà e adatta a lettori che hanno completato la scuola dell'obbligo.  
+- *Valore tra 40 e 60*:  La complessità del testo è di abbastanza complessa e adatta a lettori che hanno almeno un istruzione di livello superiore.  
+- *Valore $<$40*:   La complessità del testo complessa e adatta a lettori che hanno un livello di istruzione universitaria.  
+- *Valore accettabile*: $>=50$
+- *Valore ottimale*: $>=80$
+- *Descrizione*:  L'Indice Gulpease è un indice di leggibilità del testo. Tale indice serve per classificare la difficoltà di lettura di un testo per un lettore medio. La formula tiene conto del numero di lettere, parole e frasi nel testo.
+
 === Affidabilità
+
+==== MPD15 - Error Rate
+- *Formula*:
+$ "ROS" = "Test eseguiti"/"Test falliti" dot 100 $ 
+- *Valore accettabile*: $30%$
+- *Valore ottimale*: $15%$
+- *Descrizione*: L'indice di Error Rate indica la percentuale di errori durante l'esecuzione. Gli eventuali errori verranno riportati dai programmatori al fine di calcoalre il valore della metrica.
