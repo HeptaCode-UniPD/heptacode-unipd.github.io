@@ -797,7 +797,7 @@ $ "BV" = ("PV" - "AC")/"PV" dot 100 $
 $ "RSI" = (1- ("NRC"+"NRD"+"NRA")/"TNIR" dot 100) $
 - *Valore accettabile*: $>=70%$
 - *Valore ottimale*: $100%$
-- *Descrizione*:L'indice Requirements Stability Index rappresenta che i requisiti hanno subito durante lo svolgimento del progetto.
+- *Descrizione*:L'indice Requirements Stability Index rappresenta le variazioni che i requisiti hanno subito durante lo svolgimento del progetto.
 - *Legenda*:
   - *NRC*: Number of Requirements Changed
   - *NRD*: Number of Requirements Deleted
@@ -837,7 +837,7 @@ $ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
 - *Valore ottimale*: $<="AEC"$
 - *Descrizione*: L'indice Actual Cost rappresenta il costo effettivamente sostenuto alla data corrente.
 - *Legenda*:
-  - *AHR*: ACtual Hours by Role;
+  - *AHR*: Actual Hours by Role;
   - *HCR*: Hourly Cost per Role.
 
 ==== MPC08 - Estimate at Completion (EAC):
