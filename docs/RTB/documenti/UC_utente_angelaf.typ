@@ -199,6 +199,8 @@
 
 - *Postcondizioni:* Le repository selezionate sono state rimosse dal progetto.
 
+#pagebreak()
+
 == UC7 - Eliminazione Repository dal Sistema <UC7>
 - *Attore principale:* Utente.
 
