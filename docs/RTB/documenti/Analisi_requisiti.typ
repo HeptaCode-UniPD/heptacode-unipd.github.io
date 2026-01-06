@@ -13,6 +13,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("0.7.0", "2026-01-06", "Angela Favaro", "Nicola Simionato", "Revisione UC Utente e Developer"),
   ("0.6.1", "2026-01-05", "Amerigo Vegliante", "", "Correzione ortografica"),
   ("0.6.0", "2026-01-05", "Amerigo Vegliante", "", "Creazione UC10 e UC11 nella sezione Business Owner"),
   ("0.5.0", "2025-12-30", "Alberto Reginato", "Laura Venturini", "Creazione UC7,8 e 9; riorganizzato UC secondo le personas"),
