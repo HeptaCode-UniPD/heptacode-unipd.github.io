@@ -154,6 +154,10 @@ Ambiente digitale dove vengono salvati tutti i file riguardanti i progetti. Può
 
 #pagebreak()
 = S
+
+#heading(level: 2, outlined: false)[Single Responsibility]
+Il principio di singola responsabilità, noto anche come coesione, afferma che una classe dovrebbe avere una e una sola ragione per cambiare. Ciò significa che dovrebbe essere respondabile per un solo specifico lavoro o pezzo di funzionalità, rendendo il codice semplice da mantenere, testare e capire.
+
 #heading(level: 2, outlined: false)[Stakeholder]
 Qualsiasi individuo, gruppo o organizzazione che possa essere direttamente o indirettamente coinvolto dalle attività, dalle decisioni o dai risultati di un'azienda.
 
