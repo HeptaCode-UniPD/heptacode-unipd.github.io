@@ -947,8 +947,8 @@ $ "ROS" = "Requisiti opzionali soddisfatti"/"Requisiti opzionali totali" dot 100
 - *Descrizione*: Misura il tempo medio che il sistema impiega per rispondere a operazioni tecniche standard che non coinvolgono l'elaborazione dell'IA. Garantisce la fluidità dell'interazione tecnica.
 
 ==== MPD06 -Tempo medio di risposta (Elaborazione AI)
-- *Valore accettabile*: $<= 1,50 "minuti" $
-- *Valore ottimale*: $<= 30 "secondi" $
+- *Valore accettabile*: $<= 15 "minuti" $
+- *Valore ottimale*: $<= 10 "minuti" $
 - *Descrizione*: Misura il tempo medio che il sistema impiega per restituire un risultato quando viene sollecitata una richiesta utente che coinvolge il motore di Intelligenza Artificiale.
 Nel contesto di _CodeGuardian_, l'uso di modelli LLM per l'analisi e il refactoring del codice nelle repository GitHub richiede un tempo di ragionamento computazionale più alto rispetto alle operazioni standard.
 
