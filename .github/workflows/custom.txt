@@ -69,3 +69,12 @@ nomegruppo
 pdp
 poc
 txt
+  adr
+  containerizzato
+  dall'ia
+  dall'llm
+  gitingest
+  l'rtb
+  ndp
+  openai
+  uc
