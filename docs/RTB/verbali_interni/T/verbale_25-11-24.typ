@@ -14,12 +14,8 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-<<<<<<< HEAD
-  ("0.1.0", "2025-11-25", "Nicola Simionato", "Amerigo Vegliante", "Stesura e relazione del verbale",
-   "1.0.0", "2025-11-26", "Nicola Simionato", "Amerigo Vegliante", "Versione del verbale approvata",)
-=======
-  ("0.1.0", "2025-11-25", "Nicola Simionato", "Laura Venturini", "Stesura e relazione del verbale")
->>>>>>> verbale-8gennaio2026
+  ("1.0.0", "2025-11-26", "Nicola Simionato", "Amerigo Vegliante", "Versione del verbale approvata",
+    "0.1.0", "2025-11-25", "Nicola Simionato", "Amerigo Vegliante", "Stesura e relazione del verbale",)
 )
 
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
