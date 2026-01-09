@@ -29,6 +29,11 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
+      "0.4.1",
+  "2026/01/09",
+  "Angela Canazza", 
+  "Laura Venturini",
+  "Completemanto dei capitolo 3 e 4 con l'inserimento delle metriche",
     "0.4.0",
   "2025/12/28",
   "Laura Venturini", 
@@ -117,26 +122,126 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
 
 - Attuatori (Azioni Correttive): Meccanismi decisionali e regole che permettono di intervenire sull'implementazione del processo. Se i sensori rilevano una deviazione rispetto alla pianificazione, gli attuatori modificano la direzione del lavoro per riportarlo ai risultati attesi.
 == Processi primari
-// qui andranno inserite le tabelle contenenti le metriche con i valori accettabili decisi, non avendoli ancora decisi, lascio vuoto
-== Processi di supporto
+=== Fornitura
 #figure(
   table(
-    columns: (auto, auto, auto, auto),
+    columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
     table.header(
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
     ),
     
-    "MCO", //Metrica Correttezza Ortografica
+    "MPC05",
+    "Planned Value",
+    "≥0€",
+    "≤BAC",
+    "MPC06",
+    "Earned Value",
+    "≥0€",
+    "≤EAC",
+    "MPC07",
+    "Actual Cost",
+    "≥0€",
+    "≤EAC",
+    "MPC08",
+    "Estimate at Completion",
+    "≥BAC -5%",
+    "≤BAC +5%",
+    "MPC09",
+    "Estimate to Complete",
+    "≥0€",
+    "≤EAC"
+    
+  ),
+  caption: [Metriche processi di fornitura],
+  kind: table
+)
+// qui andranno inserite le tabelle contenenti le metriche con i valori accettabili decisi, non avendoli ancora decisi, lascio vuoto
+== Processi di supporto
+=== Verifica e validazione
+#figure(
+  table(
+    columns: (auto, 1.5fr, 1fr, 1fr),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+    ),
+    
+    "MPC10",
+    "Code Coverage",
+    "≥80%",
+    "≥90%",
+    "MPC11",
+    "Test Success Rate",
+    "100%",
+    "100%",
+    "MPC12",
+    "Statement Coverage",
+    "≥90%",
+    "100%",
+    "MPC13",
+    "Branch Coverage",
+    "≥70%",
+    "≥80%"
+  ),
+  caption: [Metriche processi di verifica],
+  kind: table
+)
+
+=== Documentazione
+#figure(
+  table(
+    columns: (auto, 1.5fr, 1fr, 1fr),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+    ),
+    
+    "MPC14",
     "Correttezza Ortografica",
     "0",
     "0"
   ),
-  caption: [Metriche processi di supporto],
+  caption: [Metriche processi di documentazione],
   kind: table
 )
 == Processi organizzativi
+=== Miglioramento
+#figure(
+  table(
+    columns: (auto, 1.5fr, 1fr, 1fr),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+    ),
+    
+    "MPC01",
+    "Schedule Variance",
+    "≥-10%",
+    "≥0%",
+    "MPC02",
+    "Cost Variance",
+    "≥0€",
+    "≥0€",
+    "MPC03",
+    "Budget Variance",
+    "-10%≥BV≤10%",
+    "0%",
+    "MPC04",
+    "Requirements Stability Index",
+    "≥70%",
+    "100%"
+  ),
+  caption: [Metriche processi di miglioramento],
+  kind: table
+)
+
+
+
 
 = Qualità di prodotto
 La qualità del prodotto software viene intesa, in conformità con la normativa ISO#super[G], come l'insieme delle caratteristiche che permettono al sistema di soddisfare le esigenze implicite ed esplicite degli stakeholder#super[G]. Poiché la valutazione della qualità dipende dalla prospettiva di osservazione, è necessario un confronto oggettivo tra i risultati ottenuti e gli obiettivi iniziali.
@@ -149,22 +254,22 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
 == Funzionalità
 #figure(
   table(
-    columns: (auto, auto, auto, auto),
+    columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
     table.header(
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
     ),
     
-    "MROS", 
+    "MPD01", 
     "Requisiti obbligatori soddisfatti",
     "100%",
     "100%",
-    "MROS", 
+    "MPD02", 
     "Requisiti desiderabili soddisfatti",
     "≥0%",
     "≥60%",
-    "MROS", 
+    "MPD03", 
     "Requisiti opzionali soddisfatti ",
     "≥0%",
     "≥30%"
@@ -172,11 +277,114 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
   caption: [Metriche funzionalità del prodotto],
   kind: table
 )
-//altre tabelle da fare sono
-//usabilità
-//manutenibilità
-//affidabilità
-//efficienza
+
+== Efficienza
+#figure(
+  table(
+    columns: (auto, 1.5fr, 1fr, 1fr),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+    ),
+    
+    "MPD04", 
+    "Tempo di caricamento",
+    "≤10 secondi ",
+    "≤5 secondi",
+    "MPD05", 
+    "Tempo medio di risposta (Sistema)",
+    "≤15 secondi",
+    "≤2 secondi",
+    "MPD06", 
+    "Tempo medio di risposta (Elaborazione AI)",
+    "≤15 minuti",
+    "≤10 minuti"
+  ),
+  caption: [Metriche di efficienza del prodotto],
+  kind: table
+)
+
+== Manutenibilità
+#figure(
+  table(
+    columns: (auto, 1.5fr, 1fr, 1fr),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+    ),
+    
+    "MPD07", 
+    "Complessità Ciclomatica",
+    "≤5 ",
+    "≤10",
+    "MPD08", 
+    "Parametri per metodo ",
+    "≤6",
+    "≤4",
+    "MPD09", 
+    "Linee di codice per metodo",
+    "≤35",
+    "≤20",
+    "MPD10", 
+    "Linee di codice per file",
+    "≤120",
+    "≤80",
+    "MPD11", 
+    "Densità dei commenti",
+    "≤15%",
+    "≤5%",
+    "MPD12",
+    "Coefficient of Coupling",
+    "≤0.4",
+    "≤0.2"
+  ),
+  caption: [Metriche di manutenibilità del prodotto],
+  kind: table
+)
+
+== Usabilità
+#figure(
+  table(
+    columns: (auto, 1.5fr, 1fr, 1fr),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+    ),
+    
+    "MPD13", 
+    "Tempo di apprendimento",
+    "≤10 minuti ",
+    "≤5 minuti",
+    "MPD14", 
+    "Indice di Gulpease",
+    "≥50",
+    "≥80"
+  ),
+  caption: [Metriche usabilità del prodotto],
+  kind: table
+)
+
+== Affidabilità
+#figure(
+  table(
+    columns: (auto, 1.5fr, 1fr, 1fr),
+    inset: 9pt,
+    align: horizon,
+    table.header(
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+    ),
+    
+    "MPD15", 
+    "Error Rate",
+    "30%",
+    "15%"
+  ),
+  caption: [Metriche affidabilità del prodotto],
+  kind: table
+)
 
 = Metodi di testing
 Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_progetto.pdf","Norme di Progetto")], i test utilizzati per la verifica del codice saranno:
