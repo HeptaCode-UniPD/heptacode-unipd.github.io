@@ -98,3 +98,6 @@ txt
 ucb
 calendarizzazione
 gantt
+ndp
+octokit
+uml
