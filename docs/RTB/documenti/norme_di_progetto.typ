@@ -810,7 +810,7 @@ $ "RSI" = (1- ("NRC"+"NRD"+"NRA")/"TNIR" dot 100) $
 - *Formula* 
 $ "PV" = "BAC" dot ("PH") / ("THP") $
 - *Valore accettabile*: $>=0€$
-- *Valore ottimale*: $<="BAC"€$
+- *Valore ottimale*: $<="BAC"$
 - *Descrizione*: L'indicatore Planned Value rappresenta il valore del lavoro pianificato rispetto al budget totale previsto. Tale valore permette di monitorare l'avanzamento del progetto e la conformità con la sua pianificazione iniziale.
 
 - *Legenda*:
@@ -900,8 +900,8 @@ $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 ==== MPC14 - Correttezza ortografica
 - *Formula*:
 $ "Correttezza ortografica" = "numero di errori ortografici" $
-- *Valore accettabile*: $100%$
-- *Valore ottimale*: $100%$
+- *Valore accettabile*: $0$
+- *Valore ottimale*: $0$
 - *Descrizione*:  La correttezza ortografica è un indicatore della qualità della documentazione. Tutti i documenti ufficiali devono essere privi di errori ortografici.
 
 
@@ -933,7 +933,7 @@ $ "ROS" = "Requisiti opzionali soddisfatti"/"Requisiti opzionali totali" dot 100
 
 
 
-=== Adeguatezza funzionale
+=== Efficienza
 
 
 ==== MPD04 - Tempo di caricamento
@@ -952,7 +952,7 @@ $ "ROS" = "Requisiti opzionali soddisfatti"/"Requisiti opzionali totali" dot 100
 - *Descrizione*: Misura il tempo medio che il sistema impiega per restituire un risultato quando viene sollecitata una richiesta utente che coinvolge il motore di Intelligenza Artificiale.
 Nel contesto di _CodeGuardian_, l'uso di modelli LLM per l'analisi e il refactoring del codice nelle repository GitHub richiede un tempo di ragionamento computazionale più alto rispetto alle operazioni standard.
 
-== Manutenibilità
+=== Manutenibilità
 
 ==== MPD07 - Complessità Ciclomatica
 - *Formula*:
@@ -990,7 +990,7 @@ Un valore elevato indica che la funzione ha troppe logiche condizionali (if, loo
 - *Formula*:
 $ "CD" = ("CM" / "CL") dot 100 $
 - *Valore accettabile*: $<=15% $
-- *Valore ottimale*: $>=5%$
+- *Valore ottimale*: $<=5%$
 - *Descrizione*:L'indice rappresenta il rapporto percentuale tra le righe di commento e il totale delle righe di codice presenti in un modulo. Misura quanto il codice è documentato inline.
 - *Legenda*:
   - *CM*: Numero di righe di commento (Comment Lines);
@@ -1020,7 +1020,7 @@ $ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
 - *Valore tra 40 e 60*:  La complessità del testo è di abbastanza complessa e adatta a lettori che hanno almeno un istruzione di livello superiore.  
 - *Valore $<$40*:   La complessità del testo complessa e adatta a lettori che hanno un livello di istruzione universitaria.  
 - *Valore accettabile*: $>=50$
-- *Valore ottimale*: $>=80$
+- *Valore ottimale*: $>=70$
 - *Descrizione*:  L'Indice Gulpease è un indice di leggibilità del testo. Tale indice serve per classificare la difficoltà di lettura di un testo per un lettore medio. La formula tiene conto del numero di lettere, parole e frasi nel testo.
 
 === Affidabilità
