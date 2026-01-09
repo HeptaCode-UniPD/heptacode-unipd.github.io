@@ -1293,8 +1293,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UC10: Visualizzare Dashboard Home con Statistiche <UC10>
 
-=== UC10: Visualizzare Dashboard Home con Statistiche
-
 - *Attore principale:* Business Owner 
 - *Descrizione:* Il Business Owner accede alla home page dell'applicazione che mostra una panoramica aggregata di tutti i progetti attraverso grafici e indicatori chiave.
 - *Precondizioni:* 
