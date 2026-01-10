@@ -1,6 +1,6 @@
 #v(1fr)
 #align(center, [
-  #image("../../asset/logo.svg")
+  #image("../../../asset/logo.svg")
   #set text(lang: "it")
   
   #v(1.5cm)
