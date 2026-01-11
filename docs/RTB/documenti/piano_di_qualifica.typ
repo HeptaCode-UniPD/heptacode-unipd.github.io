@@ -423,7 +423,15 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
     [Sviluppo di template standardizzati in Typst#super[G] per garantire uniformità visiva],
 
     [Difficoltà nella comprensione della sintassi degli Use Case e conseguente modellazione errata degli Use Case],
-    [Consultazione con il docente e studio più approfondito della sintassi degli Use Case]
+    [Consultazione con il docente e studio più approfondito della sintassi degli Use Case],
+    [Mancato rispetto delle tempistiche pianificate],
+    [Adozione di un approccio più rigoroso nella pianificazione tramite issues: queste vengono assegnate dal responsabile di progetto e devono essere completate entro lo sprint successivo; \
+    utilizzo di tempo di slack negli sprint successivi per recuperare eventuali ritardi],
+    [Scarso coordiamento del team],
+    [Sprint planning più dettagliati, con suddivisione dei compiti tramite issues assegnate dal responsabile di progetto],
+    [Rallentamento dovuto ad altri impegni personali o universitari],
+    [Utilizzo di tempo di slack negli sprint successivi per recuperare eventuali ritardi; \ ridistribuzione interna dei compiti in caso ]
+
   ),
   caption: [Contromisure adottate al fine di migliorare il lavoro],
   kind: table
