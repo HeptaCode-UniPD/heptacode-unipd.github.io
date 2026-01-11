@@ -1,13 +1,5 @@
-#set page(
-  footer: context [
-    #align(center)[
-      #line(length: 100%)
-      #counter(page).display("1")
-      di
-      #counter(page).final().first()
-    ]
-  ]
-)
+#outline(title: "Indice dei contenuti")
+
 
 == Specifica dei casi d'uso - Utente
 
