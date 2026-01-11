@@ -226,7 +226,7 @@ Gli strumenti per la comunicazione sono invece:
 
 = Organizzazione del team
 #label("Organizzazione")
-Ad ogni suddivisione di periodo (_sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 Gennaio 2026_ al _21 Febbraio 2026_. \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
+Ad ogni suddivisione di periodo (_sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 gennaio 2026_ al _21 febbraio 2026_. \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
 #figure(
   caption: [Stima delle ore individuali per ruolo in totale.],
   kind: table,
@@ -328,14 +328,14 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 )[
   #image("../../asset/PERT-UCB.png"),
 ]<PERT-UCB>
-#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 Novembre 2025*. La suddetta data è stata scelta insieme all’azienda appaltante a seguito del nostro primo incontro in data _20 Novembre 2025_. \ #underline[La data ultima] per il conseguimento della milestone è prevista in data *28 Dicembre 2025*
+#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 novembre 2025*. La suddetta data è stata scelta insieme all’azienda appaltante a seguito del nostro primo incontro in data _20 novembre 2025_. \ #underline[La data ultima] per il conseguimento della milestone è prevista in data *28 dicembre 2025*
 
 ==== Sprint 1
 #table(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
 
   [_Giorni di sprint_], [7],
 
@@ -391,7 +391,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [1 Dicembre 2025 - 7 Dicembre 2025],
+  [_Intervallo temporale_], [1 dicembre 2025 - 7 dicembre 2025],
 
   [_Giorni di sprint_], [7],
 
@@ -449,7 +449,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [8 Dicembre 2025 - 14 Dicembre 2025],
+  [_Intervallo temporale_], [8 dicembre 2025 - 14 dicembre 2025],
 
   [_Giorni di sprint_], [7],
 
@@ -503,7 +503,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [15 Dicembre 2025 - 21 Dicembre 2025],
+  [_Intervallo temporale_], [15 dicembre 2025 - 21 dicembre 2025],
 
   [_Giorni di sprint_], [7],
 
@@ -560,7 +560,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [22 Dicembre 2025 - 28 Dicembre 2025],
+  [_Intervallo temporale_], [22 dicembre 2025 - 28 dicembre 2025],
 
   [_Giorni di sprint_], [7],
 
@@ -612,14 +612,14 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 680€ \ #underline[Spesa totale]: *2.780€*
 
 === RTB - _Requirements and Technology Baseline_
-#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *29 Dicembre 2025*.
-\ #underline[La data ultima] per il conseguimento della milestone; quindi per la presentazione di ciò che è stato prodotto ai professori Cardin e Vardanega è prevista in data *25 Gennaio 2026*.
+#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *29 dicembre 2025*.
+\ #underline[La data ultima] per il conseguimento della milestone; quindi per la presentazione di ciò che è stato prodotto ai professori Cardin e Vardanega è prevista in data *25 gennaio 2026*.
 ==== Sprint 6
 #table(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [29 Dicembre 2025 - 4 Gennaio 2026],
+  [_Intervallo temporale_], [29 dicembre 2025 - 4 gennaio 2026],
 
   [_Giorni di sprint_], [7],
 
@@ -674,7 +674,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [5 Gennaio 2026 - 11 Gennaio 2026],
+  [_Intervallo temporale_], [5 gennaio 2026 - 11 gennaio 2026],
 
   [_Giorni di sprint_], [7],
 
@@ -728,7 +728,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [12 Gennaio 2026 - 25 Gennaio 2026],
+  [_Intervallo temporale_], [12 gennaio 2026 - 25 gennaio 2026],
 
   [_Giorni di sprint_], [14],
 
@@ -779,14 +779,14 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
 #underline[Spese della settimana]: 1.200€ \ #underline[Spesa totale]: *5.935*
 === PAB - _Progettazione & Analisi Baseline_
-#underline[La data di inizio attività] per il conseguimento della terza milestone (_PAB_) è *26 Gennaio 2026*, a seguito dei colloqui con i professori per la conferma del superamento dei requisiti della milestone RTB. \ #underline[La data ultima prevista] per gli sprint del PAB è *22 Febbraio 2026*.
+#underline[La data di inizio attività] per il conseguimento della terza milestone (_PAB_) è *26 gennaio 2026*, a seguito dei colloqui con i professori per la conferma del superamento dei requisiti della milestone RTB. \ #underline[La data ultima prevista] per gli sprint del PAB è *22 febbraio 2026*.
 
 ==== Sprint 9
 #table(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [26 Gennaio 2026 - 8 Febbraio 2026],
+  [_Intervallo temporale_], [26 gennaio 2026 - 8 febbraio 2026],
 
   [_Giorni di sprint_], [14],
 
@@ -842,7 +842,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [9 Febbraio 2026 - 22 Febbraio 2026],
+  [_Intervallo temporale_], [9 febbraio 2026 - 22 febbraio 2026],
 
   [_Giorni di sprint_], [14],
 
@@ -895,13 +895,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *8.812,5€*
 
 === PB - _Product Baseline_
-#underline[La data di inizio attività] per il conseguimento dell ultima milestone (_PAB_) è *23 Febbraio 2026*. \ #underline[La data ultima prevista] per il conseguimento della milestone PB e, di conseguenza, per la consegna del progetto è il *15 Marzo 2026*.
+#underline[La data di inizio attività] per il conseguimento dell ultima milestone (_PAB_) è *23 febbraio 2026*. \ #underline[La data ultima prevista] per il conseguimento della milestone PB e, di conseguenza, per la consegna del progetto è il *15 marzo 2026*.
 ==== Sprint 11
 #table(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [23 Febbraio 2026 - 1 Marzo 2026],
+  [_Intervallo temporale_], [23 febbraio 2026 - 1 marzo 2026],
 
   [_Giorni di sprint_], [7],
 
@@ -955,7 +955,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [2 Marzo 2026 - 8 Marzo 2026],
+  [_Intervallo temporale_], [2 marzo 2026 - 8 marzo 2026],
 
   [_Giorni di sprint_], [7],
 
@@ -1009,7 +1009,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [9 Marzo 2026 - 15 Marzo 2026],
+  [_Intervallo temporale_], [9 marzo 2026 - 15 marzo 2026],
 
   [_Giorni di sprint_], [7],
 
@@ -1020,7 +1020,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Conclusione stesura documentazione adeguata alla consegna del progetto.
     - Validazione dei risultati prodotti durante gli Sprint.
     - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-    - *Consegna del progetto previsto in data 15 Marzo 2026*.
+    - *Consegna del progetto previsto in data 15 marzo 2026*.
   ],
 )
 #figure(
@@ -1066,7 +1066,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
   [_Responsabile_], [Nicola Simionato],
   [_Giorni di sprint_], [7],
 
@@ -1103,7 +1103,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [1 Dicembre 2025 – 7 Dicembre 2025],
+  [_Intervallo temporale_], [1 dicembre 2025 – 7 dicembre 2025],
   [_Responsabile_], [Laura Venturini],
   [_Giorni di sprint_], [7],
 
@@ -1139,7 +1139,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [8 Dicembre 2025 - 14 Dicembre 2025],
+  [_Intervallo temporale_], [8 dicembre 2025 - 14 dicembre 2025],
   [_Responsabile_], [Alberto Reginato],
   [_Giorni di sprint_], [7],
 
@@ -1178,7 +1178,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [15 Dicembre 2025 – 21 Dicembre 2025],
+  [_Intervallo temporale_], [15 dicembre 2025 – 21 dicembre 2025],
   [_Responsabile_], [Angela Favaro],
   [_Giorni di sprint_], [7],
 
@@ -1216,7 +1216,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [22 Dicembre 2025 – 28 Dicembre 2025],
+  [_Intervallo temporale_], [22 dicembre 2025 – 28 dicembre 2025],
   [_Responsabile_],[Amerigo Vegliante],
   [_Giorni di sprint_], [7],
 
@@ -1252,7 +1252,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [29 dicembre 2025 – 4 gennaio 2026],
   [_Responsabile_],[Angela Canazza],
   [_Giorni di sprint_], [7],
 
@@ -1289,7 +1289,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
@@ -1319,7 +1319,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
@@ -1349,7 +1349,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
@@ -1379,7 +1379,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
@@ -1409,7 +1409,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
@@ -1439,7 +1439,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
@@ -1469,7 +1469,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 Novembre 2025 – 30 Novembre 2025],
+  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
