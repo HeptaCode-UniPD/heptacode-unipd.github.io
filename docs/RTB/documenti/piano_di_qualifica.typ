@@ -400,6 +400,12 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
 - *Test di Accettazione*: Validazione esterna con il committente rispetto al Capitolato.
 
 = Valutazione lavoro
+In questa sezione sono riportate le misurazioni della qualità effettuate durante lo svolgimento delle attività dedicate al raggiungimento della Requirements and Technology Baseline. Inoltre, sono presenti i ragionamenti sulla differenza fra le tendenze attese e quelle effettivamente osservate. 
+== MPC05 e MPC06 - Planned Value ed Earned Value
+//Grafico 1 
+Si osservi che il valore di EV è sempre uguale a quello di PV, indicando che il lavoro svolto è in linea con la pianificazione iniziale. Questo suggerisce una corretta gestione del progetto.
+== MPC07 e MPC08 - Actual Cost ed Estimate at Completion
+//Grafico 2
 
 = Iniziative di miglioramento
 La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durante lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
@@ -430,7 +436,7 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
     [Scarso coordiamento del team],
     [Sprint planning più dettagliati, con suddivisione dei compiti tramite issues assegnate dal responsabile di progetto],
     [Rallentamento dovuto ad altri impegni personali o universitari],
-    [Utilizzo di tempo di slack negli sprint successivi per recuperare eventuali ritardi; \ ridistribuzione interna dei compiti in caso ]
+    [Utilizzo di tempo di slack negli sprint successivi per recuperare eventuali ritardi; \ ridistribuzione interna dei compiti in maniera tale da riuscire a rispettare le scadenze]
 
   ),
   caption: [Contromisure adottate al fine di migliorare il lavoro],
