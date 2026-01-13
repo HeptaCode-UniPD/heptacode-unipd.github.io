@@ -118,7 +118,10 @@
 
 #pagebreak()
 
-Indice delle figure
+#outline(
+  title: "Indice delle figure",
+  target: figure.where(kind : image),
+)
 
 #pagebreak()
 #set page(
@@ -164,11 +167,9 @@ Per ognuno dei tre verrà fornita un’interfaccia consona alle funzioni che pi�
 - forniti suggerimenti per il miglioramento del progetto;
 - visualizzati dati statistici di interesse sul progetto.
 \
-#underline[Gli ambiti tecnici di progetto sono quindi:]
+Gli ambiti tecnici di progetto sono quindi
 - implementazione e addestramento di agenti tramite utilizzo di _AI_ e _LLM_;
 - implementazione di una $text("web-app")_G$.
-
-[Aggiunta dei linguaggi e tecnologie che andremo ad utilizzare]
 
 == Ruoli interni al documento
 Questo documento dovrà periodicamente essere aggiornato dal $text("Responsabile")_G$ e validato dal $text("Verificatore")_G$.  \
@@ -1092,7 +1093,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
 *GANTT Diagram*
     #figure(
-  caption: [Diagramma di GANTT dello Sprint 2],
+  caption: [Diagramma di GANTT dello Sprint 1],
   )[
   #image("../../asset/GANTT/sprint1-gantt.png")
   ]<GANTT-Sprint1>
@@ -1273,7 +1274,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1. Utilizzo di giorni aggiuntivi per la verifica e correzione degli Use Case, al fine di garantire la consegna del documento AdR per la milestone RTB.
     2. Ridistribuzione interna del carico di lavoro e sessioni di lavoro asincrono per recuperare il ritardo accumulato.
-    3. I verificatori si impegnano a produrre una versione finale non ufficiale del Piano di Qualità entro il prossimo sprint.
+    3. I verificatori si impegnano a produrre una versione finale non ufficiale del Piano di Qualifica entro il prossimo sprint.
   ]
 )
 
@@ -1289,30 +1290,39 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
-  [_Responsabile_],[],
+  [_Intervallo temporale_], [5 gennaio 2026 - 11 gennaio 2026],
+  [_Responsabile_],[Riccardo Baldin],
   [_Giorni di sprint_], [7],
 
   [_Attività Svolte_],
   [
-
+    1. Progettazione e Programmazione del PoC
+    2. Avanzamento nella stesura dei documenti e revisione degli stessi
+    3. Revisione sistematica dei Casi d'Uso
+    4. Correzione e ultimazione dei Casi d'Uso
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. RR1 - Comprensione errata dei requisiti (@tab:RR1);
+    2. RO8 - Mancanza di confronto con l'azienda (@tab:RO8);
+    3. RO2 - Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2);
   ],
 
   [_Mitigazione_],
   [
-    1.
-  ],
-
-  [_GANTT Diagram_],
-  [
-    [_Inserire immagine_]
-  ],
+    1. Disponizione di giorni aggiuntivi per scrivere tutti gli UC granulari controllando minuziosamente ogni aspetto del Progetto.
+    2. Concentrarsi sul lavoro riguardante i Diagrammi di Attività nel documento AdR
+    3. Scrivere il PdQ una volta ultimata l'analisi dei requisiti
+  ]
 )
+
+*GANTT Diagram*
+    #figure(
+  caption: [Diagramma di GANTT dello Sprint 7],
+  )[
+  #image("../../asset/GANTT/sprint7-gantt.png")
+  ]<GANTT-Sprint7>
 
 === Sprint 8
 #table(
@@ -1651,7 +1661,7 @@ Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $
   )]<tab:RT2>
 
 #figure(
-  caption: [Rischio Qualit' insufficiente del codice],
+  caption: [Rischio Qualità insufficiente del codice],
   kind: table,
 )[
 #table(
