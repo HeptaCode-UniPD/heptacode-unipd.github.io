@@ -1013,8 +1013,7 @@ $ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
 
 ==== MPD14 - Indice di Gulpease
 - *Formula*:
- $ "Indice Gulpease" = 89 − "numero di lettere" / "numero di parole" dot 100 + "numero di frasi"/
-"numero di parole" dot 300 $
+ $ "Indice Gulpease" = 89 + (300 dot "numero di frasi"- 10 dot "numero delle lettere") / "numero di parole" $
 - *Valore $>=$80*: La complessità del testo è molto semplice e adatta a lettori che hanno completato la scuola primaria.  
 - *Valore tra 60 e 80*:  La complessità del testo è di media difficoltà e adatta a lettori che hanno completato la scuola dell'obbligo.  
 - *Valore tra 40 e 60*:  La complessità del testo è di abbastanza complessa e adatta a lettori che hanno almeno un istruzione di livello superiore.  
