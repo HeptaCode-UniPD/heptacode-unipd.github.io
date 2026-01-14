@@ -33,7 +33,7 @@
   "2026/01/09",
   "Angela Canazza", 
   "Laura Venturini",
-  "Completemanto dei capitolo 3 e 4 con l'inserimento delle metriche",
+  "Completamento dei capitolo 3 e 4 con l'inserimento delle metriche",
     "0.4.0",
   "2025/12/28",
   "Laura Venturini", 
