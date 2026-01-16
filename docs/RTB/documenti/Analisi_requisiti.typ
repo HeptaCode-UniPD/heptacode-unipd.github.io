@@ -1490,31 +1490,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Si verifica un errore durante il caricamento di una pagina.
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
-  Al passo 1: \
-  - Il Developer sceglie di annullare l'operazione di visualizzazione di una o più analisi eseguite (*<\<extend>>* #link(<UCD12.1>)[[UCD12.1]]).
 
 - *Postcondizioni:* Il Developer ha visualizzato le ultime analisi eseguite nel sistema.
 
-- *Estensioni:* #link(<UCD12.1>)[[UCD12.1]]
 - *inclusioni:* #link(<UCD5>)[[UCD5]]
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UCD12.1 - Annullamento visualizzazione esiti ultime analisi
-<UCD12.1>
-- *Attore principale:* Developer
-
-- *Descrizione:* Il Developer desidera annullare l'operazione di Visualizzazione delle ultime analisi eseguite.
-
-- *Precondizioni:* Il Developer ha avviato il caso d’uso #link(<UCD12>)[UCD12].
-
-- *Trigger:* Il Developer seleziona il pulsante per tornare alla pagina precedente.
-
-- *Scenario principale:*
-  - Il Developer seleziona l’opzione per tornare indietro.
-  - Il sistema ripristina lo stato precedente alla richiesta di visualizzazione.
-
-- *Postcondizioni:* Lo stato del sistema è coerente con la situazione precedente all’avvio della richiesta di visualizzazione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
