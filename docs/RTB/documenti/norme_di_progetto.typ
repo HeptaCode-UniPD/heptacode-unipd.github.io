@@ -214,11 +214,11 @@ Comprende i seguenti concetti:
   dove:
     - *R* sta per _Requisito_;
     - *Numero* è l'identificativo univoco del requisito;
-    - *Categoria* indica la classificazione del requisito, piò essere:
-      - *V* per _Vincolo_ : Vincoli che non si discutono, ma vanno rispettati.
-      - *A* per _Aspettativa_ : Vincoli impliciti legati ai desideri dell'utente o a fonti esterne.
-      - *F* per _Funzionale_ : Cosa deve fare il prodotto e come lo deve fare. Attengono a funzioni che il sistema deve svolgere per soddisfare le esigenze degli utenti.
-      - *Q* per _Qualità_ : Caratteristiche che il sistema deve avere per funzionare correttamente (prestazioni, affidabilità, sicurezza, manutenibilità e altri requisiti non funzionali).
+    - *Categoria* indica la classificazione del requisito, può essere:
+      - *V* per _Vincolo_: Requisiti obbligatori e imprescindibili, imposti da fattori esterni o scelte progettuali vincolanti.
+      - *A* per _Aspettativa_: Requisiti impliciti derivanti dai bisogni dell'utente o da standard di settore, spesso non espressi direttamente ma attesi.
+      - *F* per _Funzionale_: Descrivono le funzionalità specifiche e i comportamenti che il sistema deve attuare per soddisfare le esigenze degli utenti.
+      - *Q* per _Qualità_: Caratteristiche non funzionali che il sistema deve possedere per operare correttamente (es. prestazioni, affidabilità, sicurezza, manutenibilità).
     - *Importanza*: indica l'urgenza di soddisfacimento del requisito, i possibili valori sono:
       - *O* per Obbligatorio; 
       - *D* per Desiderabile;
