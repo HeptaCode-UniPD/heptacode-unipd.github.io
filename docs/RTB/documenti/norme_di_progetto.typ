@@ -209,7 +209,20 @@ Comprende i seguenti concetti:
 
 - *Casi d'uso*: rappresentazione in modo formale e non ambiguo le interazioni tra gli utenti (attori) e il sistema.
 
-- *Requisiti*: Una volta identificati i casi d'uso, il documento illustra i requisiti derivati dagli stessi e capitolato.
+- *Requisiti*: Una volta identificati i casi d'uso, il documento illustra i requisiti derivati dagli stessi e capitolato. I requisiti sono identificati da una nomenclatura:
+  * $ "R-Numero-Categoria-Importanza" $ * 
+  dove:
+    - *R* sta per _Requisito_;
+    - *Numero* è l'identificativo univoco del requisito;
+    - *Categoria* indica la classificazione del requisito, piò essere:
+      - *V* per _Vincolo_ : Vincoli che non si discutono, ma vanno rispettati.
+      - *A* per _Aspettativa_ : Vincoli impliciti legati ai desideri dell'utente o a fonti esterne.
+      - *F* per _Funzionale_ : Cosa deve fare il prodotto e come lo deve fare. Attengono a funzioni che il sistema deve svolgere per soddisfare le esigenze degli utenti.
+      - *Q* per _Qualità_ : Caratteristiche che il sistema deve avere per funzionare correttamente (prestazioni, affidabilità, sicurezza, manutenibilità e altri requisiti non funzionali).
+    - *Importanza*: indica l'urgenza di soddisfacimento del requisito, i possibili valori sono:
+      - *O* per Obbligatorio; 
+      - *D* per Desiderabile;
+      - *P* per Opzionale.
 
 *Notazione dei Casi d'uso*
 
