@@ -15,8 +15,8 @@ Domande per Cardin sul file:
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
   ("0.8.0", "2026-01-12", "Angela Favaro", "Nicola Simionato", "Finale UC Utente e Developer"),
   ("0.7.0", "2026-01-06", "Angela Favaro", "Nicola Simionato", "Revisione UC Utente e Developer"),
-  ("0.6.1", "2026-01-05", "Amerigo Vegliante", "", "Correzione ortografica"),
-  ("0.6.0", "2026-01-05", "Amerigo Vegliante", "", "Creazione UC10 e UC11 nella sezione Business Owner"),
+  ("0.6.1", "2026-01-05", "Amerigo Vegliante", "Angela Favaro", "Correzione ortografica"),
+  ("0.6.0", "2026-01-05", "Amerigo Vegliante", "Angela Favaro", "Creazione UC10 e UC11 nella sezione Business Owner"),
   ("0.5.0", "2025-12-30", "Alberto Reginato", "Laura Venturini", "Creazione UC7,8 e 9; riorganizzato UC secondo le personas"),
   ("0.4.2", "2025-12-28", "Angela Favaro", "Laura Venturini", "Correzioni fino a UC6.3"),
   ("0.4.1", "2025-12-27", "Angela Favaro", "Laura Venturini", "Rifattorizzazione UC1.2"),
@@ -316,10 +316,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #outline(title: "Indice dei contenuti")
 
+#pagebreak()
+
 
 == Specifica dei casi d'uso - Utente
 
 === UC1 - Accesso alla piattaforma 
+#align(center, [#image("../../asset/UC/user/UC1.png", height: 7cm)])
 <UC1>
 - *Attore principale:* Utente.
 
@@ -422,8 +425,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-#pagebreak()
-
 === UC2 - Visualizzazione area personale
 <UC2>
 - *Attore principale:* Utente.
@@ -502,6 +503,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UC4 - Logout
+#align(center, [#image("../../asset/UC/user/UC4.png", height: 7cm)])
 <UC4>
 - *Attore principale:* Utente.
 
@@ -549,10 +551,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-#pagebreak()
 == Specifica dei casi d'uso - developer
 
 === UCD1 - Aggiungi singola repository
+#align(center, [#image("../../asset/UC/developer/UCD1.png", height: 7cm)])
 <UCD1>
 - *Attore principale:* Developer.
 
@@ -652,7 +654,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-#pagebreak()
 
 // === UCD2 - Visualizzazione lista repository personali
 // <UCD2>
@@ -678,6 +679,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 // #pagebreak()
 === UCD2 - Visualizzazione lista repository personali
+#align(center, [#image("../../asset/UC/developer/UCD2.png", height: 7cm)])
 <UCD2>
 - *Attore principale*: Developer.
 
@@ -727,6 +729,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD3 - Visualizzazione lista progetti
+#align(center, [#image("../../asset/UC/developer/UCD3.png", height: 7cm)])
+
 <UCD3>
 - *Attore principale*: Developer.
 
@@ -753,6 +757,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD4 - Visualizzazione dettagli progetto
+#align(center, [#image("../../asset/UC/developer/UCD4.png", height: 7cm)])
+
 <UCD4>
 - *Attore principale:* Developer.
 
@@ -786,6 +792,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD5 - Visalizzazione dettagli repository
+#align(center, [#image("../../asset/UC/developer/UCD5.png", height: 7cm)])
+
 <UCD5>
 - *Attore principale:* Developer.
 
@@ -820,6 +828,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD13 - Visualizzazione dettagli ultima analisi repository
+#align(center, [#image("../../asset/UC/developer/UCD13.png", height: 9cm)])
+
 <UCD13>
 - *Attore principale:* Developer.
 
@@ -847,6 +857,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD13.1 - Visualizzazione dettagli ultima analisi area test
+#align(center, [#image("../../asset/UC/developer/UCD13.1.png", height: 8cm)])
+
 <UCD13.1>
 - *Attore principale:* Developer.
 
@@ -875,6 +887,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD13.2 - Visualizzazione dettagli ultima analisi area OWASP
+#align(center, [#image("../../asset/UC/developer/UCD13.2.png", height: 8cm)])
+
 <UCD13.2>
 - *Attore principale:* Developer.
 
@@ -903,6 +917,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD13.3 - Visualizzazione dettagli ultima analisi area documentazione
+#align(center, [#image("../../asset/UC/developer/UCD13.3.png", height: 8cm)])
+
 <UCD13.3>
 - *Attore principale:* Developer.
 
@@ -935,6 +951,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD6 - Visualizzazione proposta remediation
+#align(center, [#image("../../asset/UC/developer/UCD6.png", height: 10cm)])
+
 <UCD6>
 - *Attore principale:* Developer
 
@@ -1046,6 +1064,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD6.1 - Visualizzazione dettaglio singolo file per remediation
+#align(center, [#image("../../asset/UC/developer/UCD6.1.png", height: 7cm)])
+
 <UCD6.1>
 - *Attore principale:* Developer
 
@@ -1075,6 +1095,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD6.1.2 - Cambio percorso di destinazione file 
+#align(center, [#image("../../asset/UC/developer/UCD6.1.2.png", height: 6cm)])
+
 <UCD6.1.2>
 - *Attore principale:* Developer
 
@@ -1121,6 +1143,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD6.2 - Accettazione proposta remediation 
+#align(center, [#image("../../asset/UC/developer/UCD6.2.png", height: 8cm)])
+
 <UCD6.2>
 - *Attore principale:* Developer.
 
@@ -1227,6 +1251,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD7 - Eliminazione singola repository
+#align(center, [#image("../../asset/UC/developer/UCD7.png", height: 7cm)])
+
 <UCD7>
 - *Attore principale:* Developer
 
@@ -1272,9 +1298,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-#pagebreak()
 
 === UCD8 - Procedimenti in corso
+#align(center, [#image("../../asset/UC/developer/UCD8.png", height: 8cm)])
+
 <UCD8>
 - *Attore principale:* Developer
 
@@ -1324,6 +1351,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD8.1 - Visualizzazione remediation avviate
+#align(center, [#image("../../asset/UC/developer/UCD8.1.png", height: 7cm)])
+
 <UCD8.1>
 - *Attore principale:* Developer
 
@@ -1353,6 +1382,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD8.2 - Visualizzazione analisi su repository in corso
+#align(center, [#image("../../asset/UC/developer/UCD8.2.png", height: 7cm)])
+
 <UCD8.2>
 - *Attore principale:* Developer
 
@@ -1384,6 +1415,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD9 - Interrompi remediation avviata
+#align(center, [#image("../../asset/UC/developer/UCD9.png", height:6cm)])
+
 <UCD9>
 - *Attore principale:* Developer.
 
@@ -1441,7 +1474,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-#pagebreak()
 
 === UCD11 - Annullamento di Interruzione Operazione In corso
 <UCD11>
@@ -1465,12 +1497,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD12 - Visualizzazione esiti ultime analisi repository
+#align(center, [#image("../../asset/UC/developer/UCD12.png", height: 6cm)])
+
 <UCD12>
 - *Attore principale:* Developer
 
 - *Descrizione:* Il Developer vuole visualizzare l'esito delle analisi nei repository.
 
-- *Precondizioni:* Il Developer vuole visualizzare l'esito di una o più analisi da lui avviate e non ancora confermate tramite merge con il repository coinvolto. Le analisi non sono in atto. Le analisi non possono essere precedenti oltre la settimana dalla data di visualizzazione ed un massimo di 30.
+- *Precondizioni:* Il Developer vuole visualizzare l'esito di una o più analisi da lui avviate e non ancora confermate tramite merge con il repository coinvolto. Le analisi non sono in atto. Le analisi visualizzate saranno quelle dell'ultima settimana dalla data di visualizzazione, possono essere visualizzate un massimo di 30 analisi.
 
 - *Trigger:* Il Developer seleziona l'opzione di visualizzazione delle ultime analisi avviate e completate.
 
@@ -1497,6 +1531,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD14 - Visualizzazione Storico delle analisi sul Repository
+#align(center, [#image("../../asset/UC/developer/UCD14.png", height: 6cm)])
+
 <UCD14>
 - *Attore principale:* Developer
 
@@ -1545,9 +1581,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-#pagebreak()
 
 === UCD15 - Avvio analisi di una repository
+#align(center, [#image("../../asset/UC/developer/UCD15.png", height: 7cm)])
+
 <UCD15>
 - *Attore principale:* Developer.
 
@@ -1698,11 +1735,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
-#pagebreak()
 
 == Specifica dei casi d'uso - Project Manager
 
-=== UCPM1: Accesso alla dashboard generale <UCPM1>
+=== UCPM1: Accesso alla dashboard generale
+#align(center, [#image("../../asset/UC/project-manager/UCPM1.png", height: 5cm)])
+ <UCPM1>
 
 - *Attore principale:* Project Manager.
 
@@ -1725,7 +1763,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM1.1: Visualizzazione lista progetti <UCPM1.1>
+#pagebreak()
+
+=== UCPM1.1: Visualizzazione lista progetti 
+#align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
+
+<UCPM1.1>
 
 - *Attore principale:* Project Manager.
 
@@ -1750,7 +1793,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM1.1.1: Accesso alla dashboard di dettaglio progetto <UCPM1.1.1>
+=== UCPM1.1.1: Accesso alla dashboard di dettaglio progetto 
+#align(center, [#image("../../asset/UC/project-manager/UCPM1.1.1.png", height: 10cm)])
+
+<UCPM1.1.1>
 
 - *Attore principale:* Project Manager.
 
@@ -1782,7 +1828,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM2: Visualizzazione lista repository <UCPM2>
+=== UCPM2: Visualizzazione lista repository 
+#align(center, [#image("../../asset/UC/project-manager/UCPM2.png", height: 5cm)])
+
+<UCPM2>
 
 - *Attore principale:* Project Manager.
 
@@ -1809,7 +1858,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
-=== UCPM3: Visualizzazione mappatura competenze <UCPM3>
+=== UCPM3: Visualizzazione mappatura competenze 
+#align(center, [#image("../../asset/UC/project-manager/UCPM3.png", height: 5cm)])
+
+<UCPM3>
 
 - *Attore principale:* Project Manager.
 
@@ -1887,7 +1939,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM4: Stack tecnologico e suggerimenti <UCPM4>
+=== UCPM4: Stack tecnologico e suggerimenti
+
+ <UCPM4>
 
 - *Attore principale:* Project Manager.
 
@@ -1913,7 +1967,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 == Specifica dei casi d'uso - Business Owner
 
-=== UCBO1: Visualizzazione dashboard home con statistiche <UCBO1>
+=== UCBO1: Visualizzazione dashboard home con statistiche 
+#align(center, [#image("../../asset/UC/business-owner/UCBO1.png", height: 10cm)])
+
+<UCBO1>
 
 - *Attore principale:* Business Owner 
 - *Descrizione:* Il Business Owner accede alla home page dell'applicazione che mostra una panoramica aggregata di tutti i progetti attraverso grafici e indicatori chiave.
@@ -1992,7 +2049,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCBO2: Accedere progetto singolo <UCBO2>
+=== UCBO2: Accedere progetto singolo 
+#align(center, [#image("../../asset/UC/business-owner/UCBO2.png", height: 7cm)])
+
+<UCBO2>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner seleziona ed entra in un progetto specifico per analizzarne i dettagli: tecnologie, repository, issue, costi e team.
@@ -2012,7 +2072,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCBO2.1: Visualizzare lista tecnologie utilizzate nel progetto <UCBO2.1>
+=== UCBO2.1: Visualizzare lista tecnologie utilizzate nel progetto 
+#align(center, [#image("../../asset/UC/business-owner/UCBO2.1.png", height: 3cm)])
+
+<UCBO2.1>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner esamina l'elenco delle tecnologie impiegate nel progetto specifico.
@@ -2042,7 +2105,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCBO2.2: Visualizzazione vista generale sulle repository del progetto <UCBO2.2>
+=== UCBO2.2: Visualizzazione vista generale sulle repository del progetto 
+#align(center, [#image("../../asset/UC/business-owner/UCBO2.2.png", height: 5cm)])
+
+<UCBO2.2>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta una vista d'insieme delle repository che compongono il progetto.
@@ -2090,7 +2156,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCBO2.3: Visualizzazione lista del team di sviluppo <UCBO2.3>
+=== UCBO2.3: Visualizzazione lista del team di sviluppo 
+#align(center, [#image("../../asset/UC/business-owner/UCBO2.3.png", height: 6cm)])
+
+<UCBO2.3>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner esamina l'elenco dei membri del team assegnati al progetto.
@@ -2107,7 +2176,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 
-=== UCBO3: Visualizzazione statistiche singoli developer <UCBO3>
+=== UCBO3: Visualizzazione statistiche singoli developer 
+#align(center, [#image("../../asset/UC/business-owner/UCBO3.png", height: 5cm)])
+
+<UCBO3>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta le statistiche e informazioni dettagliate di uno specifico developer del team.
