@@ -1428,8 +1428,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer seleziona l’opzione di interruzione del processo.
 
 - *Scenario principale:*
-  + Il sistema mostra al Developer una richiesta di conferma per l’interruzione dell'analisi.
-  + Il Developer conferma l’operazione di interruzione.
   + Il sistema annulla automaticamente l'analisi in corso.
   + Il sistema notifica al Developer l’avvenuta interruzione dell'analisi.
   
@@ -1437,11 +1435,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Si verifica un errore durante il caricamento della pagina.
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
-  - Il Developer non conferma l'operazoine di interruzione (*<\<extend>>* #link(<UCD11>)[[UCD11]]).
 
 - *Postcondizioni:* Un'analisi in atto è stata interrotta.
-
-- *Estensioni:* #link(<UCD11>)[[UCD11]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
