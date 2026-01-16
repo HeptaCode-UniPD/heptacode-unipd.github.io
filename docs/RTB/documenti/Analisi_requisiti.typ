@@ -13,6 +13,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("0.8.0", "2026-01-16", "Angela Canazza", "Angela Favaro", "Scrittura requisiti e modifica errori sugli UC"),
   ("0.8.0", "2026-01-12", "Angela Favaro", "Nicola Simionato", "Finale UC Utente e Developer"),
   ("0.7.0", "2026-01-06", "Angela Favaro", "Nicola Simionato", "Revisione UC Utente e Developer"),
   ("0.6.1", "2026-01-05", "Amerigo Vegliante", "Angela Favaro", "Correzione ortografica"),
@@ -567,7 +568,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer seleziona l'opzione di Aggiunta Repository dalla dashboard.
 
 - *Scenario principale:*
-  + Il sistema mostra l’interfaccia per l’inserimento dei dati della repository.
+  + Il sistema mostra l’interfaccia per l’inserimento dei dati del repository.
   + Il Developer inserisce l'URL del repository _GitHub_.
   + Il Developer conferma l'operazione.
   + Il sistema valida l’URL e registra la repository.
@@ -604,7 +605,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer seleziona l'opzione di Aggiunta Repository dalla dashboard.
 
 - *Scenario principale:*
-  + Il sistema mostra l’interfaccia per l’inserimento dei dati della repository.
+  + Il sistema mostra l’interfaccia per l’inserimento dei dati del repository.
   + Il Developer inserisce l'URL del repository _GitHub_.
   + Il Developer conferma l'operazione.
   + Il sistema valida l’URL.
@@ -729,7 +730,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD3 - Visualizzazione lista progetti
-#align(center, [#image("../../asset/UC/developer/UCD3.png", height: 7cm)])
+#align(center, [#image("../../asset/UC/developer/UCD3.png", height: 6cm)])
 
 <UCD3>
 - *Attore principale*: Developer.
@@ -757,7 +758,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD4 - Visualizzazione dettagli progetto
-#align(center, [#image("../../asset/UC/developer/UCD4.png", height: 7cm)])
+#align(center, [#image("../../asset/UC/developer/UCD4.png", height: 6cm)])
 
 <UCD4>
 - *Attore principale:* Developer.
@@ -770,7 +771,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il sistema mostra l'intestazione del progetto.
-  + Il sistema mostra i widget aggregati (analisi sicurezza, test, OWASP).
+  + Il sistema mostra i widget aggregati (analisi documentazione, test, OWASP).
   + Il sistema mostra l'elenco dei repository che compongono il progetto con i relativi indicatori di stato.
   + Il sistma mostra il pulsante per tornare alla visualizzazione della lista dei progetti. 
   
@@ -804,8 +805,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer clicca su una card di progetto in #link(<UCD2>)[[UCD2]] o #link(<UCD3>)[[UCD3]].
 
 - *Scenario principale:*
-  + Il sistema mostra l'intestazione della repository.
-  + Il sistema mostra i widget aggregati (analisi Sicurezza, test, OWASP).
+  + Il sistema mostra l'intestazione del repository.
+  + Il sistema mostra i widget aggregati (analisi documentazione, test, OWASP).
   + Il sistema mostra l'opzione di visualizzazione delle proposte di remediation (*<\<extend>>* #link(<UCD6>)[[UCD6]]).
   + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti (*<\<extend>>* #link(<UCD14>)[[UCD14]]).
   + Il sistema mostra l'opzione per avviare un analisi sul repository (*<\<extend>>* #link(<UCD15>)[[UCD15]]).
@@ -958,7 +959,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation che l'agente ha svolto per l'analisi sul repository.
 
-- *Precondizioni:* Il Developer sta visualizzando la dashboard di dettaglio della repository #link(<UCD5>)[[UCD5]], dove deve essere stata eseguita almeno un analisi.
+- *Precondizioni:* Il Developer sta visualizzando la dashboard di dettaglio del repository #link(<UCD5>)[[UCD5]], dove deve essere stata eseguita almeno un analisi.
 
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation per il repository.
 
@@ -1162,7 +1163,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema prepara le modifiche secondo la remediation proposta.
   + Il sistema interagisce con GitHub per creare un nuovo branch dedicato.
   + Il sistema applica automaticamente le modifiche al file nel branch.
-  + Il sistema avvia una pull request verso il branch di destinazione della repository.
+  + Il sistema avvia una pull request verso il branch di destinazione del repository.
   + Il sistema notifica il Developer della corretta creazione della pull request.
 
 - *Scenari alternativi*
@@ -1179,7 +1180,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Il sistema interrompe l’automazione.
   - Il sistema segnala il conflitto al Developer, suggerendo una risoluzione manuale.
   
-- *Postcondizioni:* è stata avviata una richiesta di pull request su github che prevede l'aggiornamento della repository secondo remediation.
+- *Postcondizioni:* è stata avviata una richiesta di pull request su github che prevede l'aggiornamento del repository secondo remediation.
 
 - *Estensioni:* #link(<UCD6.3>)[UCD6.3]
 
@@ -1205,7 +1206,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema prepara le modifiche al file secondo la remediation proposta.
   + Il sistema interagisce con GitHub per creare una nuova branch dedicata.
   + Il sistema applica automaticamente le modifiche al file nella branch.
-  + Il sistema avvia una pull request verso il branch di destinazione della repository.
+  + Il sistema avvia una pull request verso il branch di destinazione del repository.
   + Il sistema notifica il Developer della corretta creazione della pull request.
 
 - *Scenari alternativi*
@@ -1222,7 +1223,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Il sistema interrompe l’automazione.
   - Il sistema segnala il conflitto al Developer, suggerendo una risoluzione manuale.
   
-- *Postcondizioni:* è stata avviata una richiesta di pull request su github che prevede l'aggiornamento della repository secondo remediation.
+- *Postcondizioni:* è stata avviata una richiesta di pull request su github che prevede l'aggiornamento del repository secondo remediation.
 
 *Estensioni:* #link(<UCD6.3>)[UCD6.3]
 
@@ -1510,7 +1511,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   - Il sistema mostra la lista delle ultime analisi completate.
-  - Il sistema mostra il nome della repository sul quale è stata eseguita l'analisi.
+  - Il sistema mostra il nome del repository sul quale è stata eseguita l'analisi.
   - Il sistema mostra la data relativa all'avvio del processo di remediation.
   - Il Developer consulta l'ultima analisi (*<\<extend>>* #link(<UCD5>)[[UCD5]]).
   - Il sistema mostra un pulsante per tornare alla pagina precedente
@@ -2226,3 +2227,129 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Livello di competenza (base/intermedio/avanzato) se disponibile
   + Il Business Owner valuta le competenze tecniche del developer.
 - *Postcondizioni:* Il Business Owner conosce le competenze tecnologiche del developer.
+
+= Requisiti
+Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenclatura e il significato degli attributi fanno riferimento al documento _Norme di Progetto (capitolo 2.2.2.1)_. Per facilità di consultazione, si riportano di seguito le definizioni delle categorie adottate:
+
+- *Funzionale*: Descrivono le funzionalità specifiche e i comportamenti che il sistema deve attuare per soddisfare le esigenze degli utenti.
+
+- *Vincolo*: Requisiti obbligatori e imprescindibili, imposti da fattori esterni o scelte progettuali vincolanti.
+
+- *Qualità*: Caratteristiche non funzionali che il sistema deve possedere per operare correttamente (es. prestazioni, affidabilità, sicurezza, manutenibilità).
+
+- *Aspettativa*: Requisiti impliciti derivanti dai bisogni dell'utente o da standard di settore, spesso non espressi direttamente ma attesi.
+
+
+== Requisiti funzionali
+
+#table(
+  columns: (auto, auto, 3cm),
+  inset: 10pt,
+  align: (left, left, left),
+  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
+  
+  table.header(
+  [*Codice*], [*Descrizione*], [*Fonti*]),
+  //NOTA: i requisiti non dovrebbero cambiare, al massimo se ne aggiungono, ma i riferienti agli UC molto probabilmente cambiano
+  [R-1-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian tramite autenticazione interna],[],
+  [R-2-F-O],[L'utente deve poter inserire le proprie credianziali per l'accesso], [],
+  [R-3-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian tramite GitHub], [#link(<UC1>)[UC1], #link(<UC1.2>)[UC1.2]],
+  [R-4-F-O],[L'utente deve un messaggio d'errore se il tentativo di autenticazione non è andato a buon fine], [#link(<UC1>)[UC1], #link(<UC1.2>)[UC1.2]],
+  [R-5-F-P],[L'utente deve poter cambiare ruolo a Business Owner se riconosicuto come tale], [],
+  [R-6-F-P],[L'utente deve poter cambiare ruolo a Project Manager se riconosicuto come tale], [],
+  [R-7-F-O],[L'utente deve poter annullare l'accesso alla piattaforma CodeGuardian], [#link(<UC1.1>)[UC1.1]],
+  [R-8-F-O],[L'utente deve poter visualizzare la propria area personale], [#link(<UC2>)[UC2]],
+  [R-9-F-O],[L'utente deve poter eseguire il logout], [#link(<UC4>)[UC4]],
+  [R-10-F-O],[L'utente deve visualizzare un messaggio d'errore se il logout non è andato a buon fine], [#link(<UC4>)[UC4]],
+  [R-11-F-O],[L'utente deve poter annullare l'operaiozne di logout], [#link(<UC4.1>)[UC4.1]],
+  [R-12-F-O],[L'utente deve poter aggiungere una singola repository sulla piattaforma], [#link(<UCD1>)[UCD1], #link(<UCD1.0.1>)[UCD1.0.1]],
+  [R-13-F-O],[L'utente deve ricevere un messaggio d'errore se l'aggiunta del repository non è andata a buon fine], [#link(<UCD1>)[UCD1], #link(<UCD1.0.1>)[UCD1.0.1]],
+  [R-14-F-O],[L'utente deve poter annullare l'aggiunta di una singola repository sulla piattaforma], [#link(<UCD1.1>)[UCD1.1]],
+  [R-15-F-O],[L'utente deve poter visualizzare la lista dei repository che ha inserito sulla piattaforma], [#link(<UCD2>)[UCD2]],
+  [R-16-F-O],[Dalla visualizzazione della lista di repository, l'utente deve poter selezionarne una per vederne i dettagli], [#link(<UCD5>)[UCD5]],
+  [R-17-F-D],[L'utente interagisce con il filtro a tendina per poter visualizzare solo le repository di suo interesse tra "Tutte" e "Senza progetto"], [#link(<UCD2.1>)[UCD2.1]],
+  [R-18-F-O],[L'utente visualizza la lista dei progetti di cui fa parte], [#link(<UCD3>)[UCD3]],
+  [R-19-F-O],[L'utente seleziona un progetto dalla lista dei progetti per vederne i dettagli], [#link(<UCD4>)[UCD4]],
+  [R-20-F-O],[L'utente visualizza i dettagli del progetto selezionato], [#link(<UCD4>)[UCD4]],
+  [R-21-F-O],[L'utente visualizza l'intestazione del progetto selezionato], [#link(<UCD4>)[UCD4]],
+  [R-22-F-O],[L'utente visualizza il widget riguardante l'analisi della documentazione del progetto selezionato], [#link(<UCD4>)[UCD4]],
+  [R-23-F-O],[L'utente visualizza il widget di copertura dei test per il progetto selezionato], [#link(<UCD4>)[UCD4]],
+  [R-24-F-O],[L'utente visualizza il widget di analisi sicurezza OWASP per il progetto selezionato], [#link(<UCD4>)[UCD4]],
+  [R-25-F-O],[L'utente deve visualizzare un messaggio d'errore se la pagina del progetto non viene caricata correttamente], [#link(<UCD4>)[UCD4]],
+  [R-26-F-O],[Dalle visualizzazione dei deattagli del progetto, l'utente deve avere la possibilità si selezionare una repository facente parte di quest'ultimo, per vederne i dettagli], [#link(<UCD4>)[UCD4], #link(<UCD5>)[UCD5]],
+  [R-27-F-O],[L'utente vede i dettagli del repository selezionata], [#link(<UCD5>)[UCD5]],
+  [R-28-F-O],[L'utente vede l'intestazione del repository selezionata], [#link(<UCD5>)[UCD5]],
+  [R-29-F-O],[L'utente vede il widget riguardante l'analisi della documentazione per repository selezionata], [#link(<UCD5>)[UCD5]],
+  [R-30-F-O],[L'utente vede il widget di copertura dei test per repository selezionata], [#link(<UCD5>)[UCD5]],
+  [R-31-F-O],[L'utente vede il widget di analisi sicurezza OWASP per repository selezionata], [#link(<UCD5>)[UCD5]],
+  [R-32-F-O],[L'utente vede il pulsante per visualizzare le proposte di remediation per la repository selezionata], [#link(<UCD5>)[UCD5]],
+  [R-33-F-O],[L'utente deve visualizzare un messaggio d'errore se la pagina del repository non viene caricata correttamente], [#link(<UCD5>)[UCD5]],
+  [R-34-F-O],[L'utente visualizza l'ultima analisi effettuata], [#link(<UCD13>)[UCD13]],
+  [R-35-F-O],[L'utente visualizza un messaggio d'errore se la pagina l'ultima analisi non viene caricata correttamente ], [#link(<UCD13>)[UCD13]],
+  [R-36-F-O],[Sulla pagina dell'ultima analisi del repository, vengono visualizzati i grafici dell'area test], [#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1]],
+  [R-37-F-O],[Sulla pagina dell'ultima analisi del repository, vengono visualizzati i grafici dell'area OWASP], [#link(<UCD13>)[UCD13], #link(<UCD13.2>)[UCD13.2]],
+  [R-38-F-O],[Sulla pagina dell'ultima analisi del repository, vengono visualizzati i grafici dell'area documentazione], [#link(<UCD13>)[UCD13], #link(<UCD13.3>)[UCD13.3]],
+  [R-39-F-D],[L'utente visualizza una lista delle ultime analisi della settimana. Le analisi disponibili saranno in ogni caso al massimo 30], [#link(<UCD12>)[UCD12]],
+)
+
+== Requisiti di vincolo
+
+#table(
+  columns: (auto, auto, 5.4cm),
+  inset: 10pt,
+  align: (left, left, left),
+  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
+  
+  table.header(
+  [*Codice*], [*Descrizione*], [*Fonti*],
+  [R-1-V-O],[È necessario usare Git come software di versionamento], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-2-V-O],[È necessario che l'applicativo sia realizzato in ottica modulare], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-3-V-O],[È necessario che l'utilizzo di Node.js e Typescript per il backend], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  [R-4-V-O],[È necessario che l'utilizzo di React.js per il frontend], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  [R-5-V-O],[È necessario che l'utilizzo di MongoDB per la gestione database], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  [R-6-V-O],[È necessario che l'utilizzo di GitHub Actions per l'integrazione dell'applicativo], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto]  Sezione "Tecnologie"],
+  [R-7-V-O],[È necessario che l'utilizzo dell'architettura cloud AWS per la gestione degli agenti], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  ),
+)
+
+== Requisiti di qualità
+
+#table(
+  columns: (auto, auto, 5.4cm),
+  inset: 10pt,
+  align: (left, left, left),
+  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
+  
+  table.header(
+  [*Codice*], [*Descrizione*], [*Fonti*],
+  [R-1-Q-O],[È necessario redigere diagrammi UML relativi agli Use Cases di progetto], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-2-Q-O],[È necessario che il code coverage del progetto finale sia almeno del 70%], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-3-Q-O],[È necessario realizzare opportuni test di unità automatizzati], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-4-Q-O],[È necessario redigere lo schema design relativo alla base di dati], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-5-Q-O],[È necessario redigere il documento di requisiti di business e user story mapping], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-6-Q-O],[È necessario redigere la documentazione tecnica di Swagger API], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-7-Q-O],[È necessario redigere la documentazione descrittiva del progetto], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-8-Q-O],[È necessario redigere una documentazione sul Bug reporting], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-9-Q-O],[È necessario fornire il codice  prodotto in formato sorgente utilizzando sistemi di versionamento del codice come Git o repository online ( github, bitbucket ...)], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-10-Q-O],[È necessario redigere la documentazione tecnica formata da: "R-6-Q-O", "R-7-Q-O", "R-8-Q-O" e "R-9-Q-O"], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-11-Q-O],[È necessario soddisfare tutte le metriche presenti nel documento "Norme di Progetto"],[Analisi interna]
+  ),
+)
+
+== Requisiti di aspettativa
+
+#table(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
+  
+  table.header(
+  [*Codice*], [*Descrizione*],[*Fonti*],
+  [R-1-A-O],[L'utente deve riuscire ad orientarsi velocemente all'interno dell'applicativo],[Analisi interna],
+  [R-2-A-O],[Il tempo di caricamento della piattaforma deve essere breve],[Analisi interna],
+  [R-3-A-O],[La responsività all'interazione del sistema deve essere breve (es. cambio pagine, pulsanti)],[Analisi interna],
+  [R-4-A-O],[Il tempo di risposta medio degli agenti non deve superare i 15 minuti],[Analisi interna],
+  [R-5-A-O],[L'applicativo deve essere gradevole alla vista],[Analisi interna],
+  ),
+)
