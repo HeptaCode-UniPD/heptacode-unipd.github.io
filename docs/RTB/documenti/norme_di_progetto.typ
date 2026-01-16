@@ -209,6 +209,8 @@ Comprende i seguenti concetti:
 
 - *Casi d'uso*: rappresentazione in modo formale e non ambiguo le interazioni tra gli utenti (attori) e il sistema.
 
+- *Requisiti*: Una volta identificati i casi d'uso, il documento illustra i requisiti derivati dagli stessi e capitolato.
+
 *Notazione dei Casi d'uso*
 
 I Casi d'Uso rappresentano un elemento fondamentale all'interno del ciclo di vita dello sviluppo software in quanto definiscono in modo formale e non ambiguo le interazioni tra gli utenti (attori) e il sistema. 
