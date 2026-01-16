@@ -2,7 +2,7 @@
 Domande per Cardin sul file:
 1) Se ho una situazione in cui è possibile aprire un menù, completare un'azione dopodichè il sistema riporta alla schermata precedente è corretto inserire un include per l'UC della finestra precedente? (es UC6.2.1)
 2) In 6.3, ad esempio, è formalmente corretto fare riferimento ad una situazione precedente linkando l'UC a cui ci si riferisce o è meglio descrivere nuovamente la situazione?
-3) se la descrizione è "Il Developer vuole consultare un'analisi archiviata relativa all'area Testing" allora non è corretto considerare l'azione di consultazione analisi archiviata come un include?
+3) se la descrizione è "Il Developer vuole consultare un'analisi archiviata relativa all'area testing" allora non è corretto considerare l'azione di consultazione analisi archiviata come un include?
 4) Se l'utente è obbligato alla fine a tornare alla pagina precedente, è giusto inserirlo nel flusso principale?
 */
 
@@ -30,7 +30,7 @@ Domande per Cardin sul file:
 
 #let versione = storia_modifiche.first().at(0)
 #let data_versione = storia_modifiche.first().at(1)
-#let titolo = "Analisi dei requisiti"
+#let titolo = "analisi dei requisiti"
 #let gruppo = "Hepta Code"
 
 #set page(
@@ -57,7 +57,7 @@ Domande per Cardin sul file:
   #text(weight: "bold", size: 17pt)[Descrizione] \
   #v(0.5em)
   #block(width: 80%)[
-    Il presente documento contiene l'_Analisi dei Requisiti_ redatta dal gruppo _Hepta Code_ per il capitolato C2 proposto da _Var Group_.
+    Il presente documento contiene l'_analisi dei Requisiti_ redatta dal gruppo _Hepta Code_ per il capitolato C2 proposto da _Var Group_.
   ]
 ]
 
@@ -119,13 +119,13 @@ L'uso del glossario è raccomandato per garantire la piena coerenza semantica du
 Questa sezione elenca i documenti utilizzati come base per la stesura della presente analisi.
 
 === Riferimenti Normativi
-- _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato])
-- _Norme di Progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("...")[Norme di Progetto]).
+- _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/progetto/C2.pdf")[Capitolato])
+- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("...")[Norme di progetto]).
 - [Altro ...]
 
 === Riferimenti Informativi
 - Verbale Interno: #link("https://heptacode-unipd.github.io/docs/RTB/verbali_esterni/vargroup_1.pdf")[Primo Incontro di Design Thinking]
-- Slide di lezione: #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[Analisi dei requisiti]
+- Slide di lezione: #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[analisi dei requisiti]
 - Documento interno: #link("https://heptacode-unipd.github.io/docs/CC/glossario.pdf")[Glossario]
 - [Altro ...]
 Questa introduzione delinea il contesto e gli scopi del progetto. Il capitolo seguente procederà con una descrizione dettagliata del prodotto, delle sue funzionalità e dei vincoli che ne guideranno la realizzazione.
@@ -140,29 +140,29 @@ Il sistema _Code Guardian_ è concepito per automatizzare il controllo di qualit
 
 === Audit Automatico del Codice
 Il sistema esegue un'analisi approfondita del codice sorgente ogni volta che viene rilevata una modifica nel _repository_ (evento di `PUSH`).
-- *Analisi Statica*: Rilevamento automatico di _code smell_, bug potenziali e violazioni delle convenzioni di stile.
-- *Verifica dei Test*: Controllo della copertura dei test (_code coverage_) per garantire che le nuove funzionalità siano adeguatamente verificate.
+- *analisi Statica*: Rilevamento automatico di _code smell_, bug potenziali e violazioni delle convenzioni di stile.
+- *Verifica dei test*: Controllo della copertura dei test (_code coverage_) per garantire che le nuove funzionalità siano adeguatamente verificate.
 
 === Scansione di Sicurezza e Vulnerabilità
 Per garantire la robustezza del software, il sistema integra strumenti di controllo specifici per la _security_:
 - *Rilevamento Credenziali*: Identificazione di chiavi API, password o token involontariamente committati nel codice (_secret scanning_).
-- *Analisi delle Dipendenze*: Verifica delle librerie di terze parti per individuare versioni obsolete o affette da vulnerabilità note.
+- *analisi delle Dipendenze*: Verifica delle librerie di terze parti per individuare versioni obsolete o affette da vulnerabilità note.
 - *Compliance OWASP*: Controllo della conformità agli standard di sicurezza web (es. _OWASP Top 10_).
 
-=== Validazione della Documentazione
+=== Validazione della documentazione
 Il sistema assicura che il progetto mantenga un alto livello di manutenibilità verificando la presenza e la qualità della documentazione:
 - *Check Strutturale*: Verifica della presenza di file essenziali (es. `README.md`).
 - *Coerenza API*: Controllo della corrispondenza tra il codice implementato e la documentazione delle interfacce (es. specifiche _OpenAPI/Swagger_).
 
-=== Remediation Proattiva
+=== remediation Proattiva
 A differenza dei semplici strumenti di reportistica, _Code Guardian_ agisce attivamente per risolvere i problemi:
 - *Suggerimenti di Correzione*: Il sistema non si limita a segnalare l'errore, ma genera proposte concrete di codice correttivo.
-- *Creazione Pull Request*: Se l'utente approva un suggerimento, il sistema crea automaticamente un _branch_ dedicato e una _Pull Request_ pronta per la revisione, senza richiedere intervento manuale per la scrittura del codice.
+- *Creazione pull request*: Se l'utente approva un suggerimento, il sistema crea automaticamente un _branch_ dedicato e una _pull request_ pronta per la revisione, senza richiedere intervento manuale per la scrittura del codice.
 
-=== Monitoraggio e Dashboard
+=== Monitoraggio e dashboard
 Il sistema fornisce un punto di accesso centralizzato per la consultazione dello stato di salute dei progetti:
 - *Visione Aggregata*: Visualizzazione di metriche chiave indicatori relativi qualità del codice per singoli _repository_ o per interi gruppi di progetti.
-- *Storico Analisi*: Consultazione dei report passati per valutare l'evoluzione della qualità del software nel tempo.
+- *Storico analisi*: Consultazione dei report passati per valutare l'evoluzione della qualità del software nel tempo.
 
 == Utenti e Stakeholder (Personas) <Cap2.2>
 Per creare un prodotto realmente utile è fondamentale in prima istanza comprendere le reali esigenze e necessità degli utenti finali a cui la piattaforma è destinata a rivolgersi. \
@@ -204,7 +204,7 @@ L'architettura e l'interfaccia utente di _Code Guardian_ sono state ideate per s
 == Vincoli del Prodotto
 Lo sviluppo del progetto dovrà sottostare ad una serie di vincoli tecnici ed architetturali definiti dalla committente per garantire la qualità, la manutenibilità e la corretta consegna del prodotto finale.
 
-=== Vincoli di Progetto
+=== Vincoli di progetto
 - *Copertura dei test*: Il codice sorgente della piattaforma dovrà essere coperto per un minimo del *70%* da test di unità automatizzati.
 - *Modularità*: L'applicativo dovrà essere progettato e realizzato con un'architettura modulare, per facilitare l'estensione futura delle sue funzionalità (ad esempio, con nuovi agenti).
 - [Altro ...]
@@ -227,7 +227,7 @@ Per garantire la fattibilità del progetto entro le scadenze accademiche e focal
 
 - *Integrazione esclusiva GitHub:* Il sistema supporta unicamente _repository_ ospitati sulla piattaforma _GitHub_, utilizzando le sue API specifiche per l'autenticazione e la gestione del codice. Non sono previste integrazioni con altri provider in questa fase.
 
-- *Remediation semi-automatica:* Per motivi di sicurezza e affidabilità, le azioni di correzione del codice proposte dagli agenti non verranno mai applicate automaticamente sul _branch_ principale. Il sistema si limita a generare _Pull Request_ o _snippet_ di codice che richiedono la revisione e l'approvazione umana.
+- *remediation semi-automatica:* Per motivi di sicurezza e affidabilità, le azioni di correzione del codice proposte dagli agenti non verranno mai applicate automaticamente sul _branch_ principale. Il sistema si limita a generare _pull request_ o _snippet_ di codice che richiedono la revisione e l'approvazione umana.
 
 - *Limiti dell'Intelligenza Artificiale:* Essendo il sistema basato su _Large Language Models_ (LLM), i suggerimenti di analisi e refactoring sono soggetti ai limiti intrinseci di tale tecnologia, inclusa la possibilità di "allucinazioni" (suggerimenti sintatticamente corretti ma semanticamente errati) o falsi positivi nell'individuazione delle vulnerabilità.
 
@@ -319,7 +319,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 == Specifica dei casi d'uso - Utente
 
-=== UC1 - Accesso alla Piattaforma 
+=== UC1 - Accesso alla piattaforma 
 <UC1>
 - *Attore principale:* Utente.
 
@@ -345,14 +345,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il sistema reindirizza l'utente alla pagina di Login.
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* L’utente è autenticato e visualizza la Dashboard.
+- *Postcondizioni:* L’utente è autenticato e visualizza la dashboard.
 
 - *Estensioni:* #link(<UC1.1>)[[UC1.1]].
 - *Generalizzazioni:* #link(<UC1.2>)[[UC1.2]].
   
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC1.1 - Annullamento Accesso alla Piattaforma
+=== UC1.1 - Annullamento accesso alla piattaforma
 <UC1.1>
 - *Attore principale:* Utente.
 
@@ -369,7 +369,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC1.2 - Primo Accesso alla Piattaforma
+=== UC1.2 - Primo accesso alla piattaforma
 <UC1.2>
 - *Attore principale:* Utente.
 
@@ -394,7 +394,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il sistema reindirizza l'utente alla pagina di Login.
     - Il caso d'uso termina senza successo.
   
-- *Postcondizioni:* L’utente è autenticato e visualizza la Dashboard secondo il ruolo da lui selezionato.
+- *Postcondizioni:* L’utente è autenticato e visualizza la dashboard secondo il ruolo da lui selezionato.
 
 - *Inclusioni:* #link(<UC1.2.1>)[[UC1.2.1]].
 - *Estensioni:* #link(<UC1.1>)[[UC1.1]]
@@ -424,7 +424,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UC2 - Visualizzazione Area Personale
+=== UC2 - Visualizzazione area personale
 <UC2>
 - *Attore principale:* Utente.
 
@@ -436,9 +436,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + L'utente visualizza il pannello a comparsa del menù utente.
-  + L'utente visualizza il riepilogo delle proprie informazioni (Nome, Email, Ruolo attuale).
-  + L'utente visualizza il pulsante per il Cambio Ruolo, su cui può cliccare per cambiare il ruolo operativo (*<\<extend>>* #link(<UC3>)[[UC3]]).
-  + L'utente visualizza il pulsante per il Logout, su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extend>>* #link(<UC4>)[[UC4]]).
+  + L'utente visualizza il riepilogo delle proprie informazioni (nome, email, ruolo attuale).
+  + L'utente visualizza il pulsante per il cambio ruolo, su cui può cliccare per cambiare il ruolo operativo (*<\<extend>>* #link(<UC3>)[[UC3]]).
+  + L'utente visualizza il pulsante per il logout, su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extend>>* #link(<UC4>)[[UC4]]).
   + L'utente visualizza il pulsante "X", su cui può cliccare per uscire dal menù utente e tornare alla pagina precedente.
 
 - *Postcondizioni:* Il menù utente è attivo e le opzioni sono selezionabili.
@@ -512,7 +512,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* L'utente seleziona il pulsante di Logout.
 
 - *Scenario principale:*
-  + L’utente conferma l’operazione di Logout.
+  + L’utente conferma l’operazione di logout.
   + Il sistema termina la sessione dell’utente.
   + Il sistema reindirizza l’utente alla pagina di accesso.
   + Il sistema mostra un messaggio di avvenuta disconnessione.
@@ -531,7 +531,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC4.1 - Annullamento Logout
+=== UC4.1 - Annullamento logout
 <UC4.1>
 - *Attore principale:* Utente.
 
@@ -542,9 +542,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* L'utente selziona il tasto per annullare l'operazione di logout.
 
 - *Scenario principale:* 
-+ Il sistema reindirizza l'utente alla pagina di visualizzazione Area Personale.
++ Il sistema reindirizza l'utente alla pagina di visualizzazione area personale.
 
-- *Postcondizioni:* L'utente è autenticato e si trova nella propria area personale senza aver effettuato il Logout.
+- *Postcondizioni:* L'utente è autenticato e si trova nella propria area personale senza aver effettuato il logout.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -552,7 +552,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 == Specifica dei casi d'uso - developer
 
-=== UCD1 - Aggiungi Singola Repository
+=== UCD1 - Aggiungi singola repository
+<UCD1>
 - *Attore principale:* Developer.
 
 - *Attore secondario:* GitHub.
@@ -588,7 +589,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD1.0.1 - Aggiungi Singola Repository Privata
+=== UCD1.0.1 - Aggiungi singola repository privata
 <UCD1.0.1>
 - *Attore principale:* Developer.
 
@@ -633,7 +634,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD1.1 - Annullamento Aggiungi Singola Repository
+=== UCD1.1 - Annullamento aggiungi singola repository
 <UCD1.1>
 - *Attore principale:* Developer.
 
@@ -653,37 +654,85 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD2 - Visualizzazione Lista Repository Personali
+// === UCD2 - Visualizzazione lista repository personali
+// <UCD2>
+// - *Attore principale*: Developer.
+
+// - *Descrizione:* Il Developer desidera visualizzare la lista delle proprie Repository presenti sulla piattaforma _Code Guardian_. Le repository non fanno parte di un progetto.
+
+// - *Precondizioni:* Il Developer si trova all'interno della dashboard.
+
+// - *Trigger:* Caricamento della schermata della dashboard.
+
+// - *Scenario principale:*
+//   + Il sistema visualizza all'interno della dasboard una sezione contente la lista delle repository.
+//   + L'utente può scorrere per visualizzare tutte le repository presenti.
+
+// - *Scenari alternativi:* \
+//   - Il Developer decide di visualizzare una repository (*<\<extend>>* #link(<UCD5>)[[UCD5]]).
+
+// - *Postcondizioni:* Il Developer visualizza la lista delle proprie Repository.
+
+// #line(length: 100%, stroke: 0.5pt + gray)
+// #line(length: 100%, stroke: 0.5pt + gray)
+
+// #pagebreak()
+=== UCD2 - Visualizzazione lista repository personali
 <UCD2>
 - *Attore principale*: Developer.
 
-- *Descrizione:* Il Developer desidera visualizzare la lista delle proprie Repository presenti sulla piattaforma _Code Guardian_. Le repository non fanno parte di un progetto.
+- *Descrizione:* Il Developer desidera visualizzare la lista delle proprie Repository presenti sulla piattaforma _Code Guardian_.
 
-- *Precondizioni:* Il Developer si trova all'interno della daashboard.
+- *Precondizioni:* Il Developer si trova all'interno della dashboard.
 
 - *Trigger:* Caricamento della schermata della dashboard.
 
 - *Scenario principale:*
-  + Il sistema visualizza all'intero della dasboard una sezione contente la lista delle repository.
+  + Il sistema visualizza all'interno della dasboard una sezione contente la lista delle repository.
+  + L'utente può utilizzare un menù a tendina per selezionare la tipologia di repository che desidera (tutte, senza progetto) (*<\<extend>>* #link(<UCD2.1>)[[UCD2.1]]).
   + L'utente può scorrere per visualizzare tutte le repository presenti.
 
 - *Scenari alternativi:* \
   - Il Developer decide di visualizzare una repository (*<\<extend>>* #link(<UCD5>)[[UCD5]]).
 
 - *Postcondizioni:* Il Developer visualizza la lista delle proprie Repository.
+- *Estensioni:* #link(<UCD2.1>)[[UCD2.1]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD2.1 - Selezione preferenza repository
+<UCD2.1>
+- *Attore principale*: Developer.
+
+- *Descrizione:* Il Developer desidera selezionare una preferenza per le repository da visualizzare, presenti sulla piattaforma _Code Guardian_.
+
+- *Precondizioni:* Il Developer si trova all'interno della dashboard.
+
+- *Trigger:* L'utente seleziona la tendina del filtro repository.
+
+- *Scenario principale:*
+  + L'utente seleziona la preferenza di visualizzazione che desidera.
+  + Il sistema ricarica la pagina con le repository che soddisfano l'opzione selezionata.
+
+- *Scenari alternativi:* \
+  - Al passo 2 si verifica un errore durante il ricaricamento della pagina.
+  - Il sistema mostra un messaggio d'errore.
+  - Il caso d'uso termina senza successo.
+
+- *Postcondizioni:* Il Developer visualizza la lista delle repository desiderate.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
 
-=== UCD3 - Visualizzazione Lista Progetti
+=== UCD3 - Visualizzazione lista progetti
 <UCD3>
 - *Attore principale*: Developer.
 
 - *Descrizione:* Il Developer desidera visualizzare la lista dei progetti ai quali partecipa presenti sulla piattaforma _Code Guardian_.
 
-- *Precondizioni:* Il Developer si trova all'interno della daashboard.
+- *Precondizioni:* Il Developer si trova all'interno della dashboard.
 
 - *Trigger:* Caricamento della schermata della dashboard.
 
@@ -703,7 +752,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD4 - Visualizzazione Dettagli Progetto
+=== UCD4 - Visualizzazione dettagli progetto
 <UCD4>
 - *Attore principale:* Developer.
 
@@ -711,13 +760,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Esiste almeno un progetto creato.
 
-- *Trigger:* Il developer clicca su una card di Progetto in #link(<UCD3>)[[UCD3]].
+- *Trigger:* Il developer clicca su una card di progetto in #link(<UCD3>)[[UCD3]].
 
 - *Scenario principale:*
   + Il sistema mostra l'intestazione del progetto.
-  + Il sistema mostra i widget aggregati (Analisi Sicurezza, Test, OWASP).
-  + Il sistema mostra l'elenco dei Repository che compongono il progetto con i relativi indicatori di stato.
-  + Il sistma mostra il pulsante per tornare alla cisualizzazione della lista dei progetti. 
+  + Il sistema mostra i widget aggregati (analisi sicurezza, test, OWASP).
+  + Il sistema mostra l'elenco dei repository che compongono il progetto con i relativi indicatori di stato.
+  + Il sistma mostra il pulsante per tornare alla visualizzazione della lista dei progetti. 
   
 - *Scenari alternativi:* \
   Al passo 1: 
@@ -736,7 +785,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD5 - Visalizzazione Dettagli Repository
+=== UCD5 - Visalizzazione dettagli repository
 <UCD5>
 - *Attore principale:* Developer.
 
@@ -744,14 +793,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Esiste almeno una repository all'interno del sistema.
 
-- *Trigger:* Il Developer clicca su una card di Progetto in #link(<UCD2>)[[UCD2]] o #link(<UCD3>)[[UCD3]].
+- *Trigger:* Il Developer clicca su una card di progetto in #link(<UCD2>)[[UCD2]] o #link(<UCD3>)[[UCD3]].
 
 - *Scenario principale:*
   + Il sistema mostra l'intestazione della repository.
-  + Il sistema mostra i widget aggregati (Analisi Sicurezza, Test, OWASP).
+  + Il sistema mostra i widget aggregati (analisi Sicurezza, test, OWASP).
   + Il sistema mostra l'opzione di visualizzazione delle proposte di remediation (*<\<extend>>* #link(<UCD6>)[[UCD6]]).
   + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti (*<\<extend>>* #link(<UCD14>)[[UCD14]]).
-  + Il sistema mostra l'opzione per avviare un Analisi sul repository (*<\<extend>>* #link(<UCD15>)[[UCD15]]).
+  + Il sistema mostra l'opzione per avviare un analisi sul repository (*<\<extend>>* #link(<UCD15>)[[UCD15]]).
   + Il sistma mostra il pulsante per tornare alla pagina precedente. 
   
 - *Scenari alternativi:* \
@@ -765,20 +814,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Estensioni:* \
   - #link(<UCD6>)[[UCD6]]
   - #link(<UCD14>)[[UCD14]]
-
-- *Inclusioni:*
-  - #link(<UCD13>)[[UCD13]]
+  - #link(<UCD15>)[[UCD15]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD13 - Visualizzazione Dettagli Ultima Analisi Repository
+=== UCD13 - Visualizzazione dettagli ultima analisi repository
 <UCD13>
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole controllare le criticità identificate dall'ultima analisi condotta nelle varie aree.
 
-- *Precondizioni:* Il Developer si trova sulla Dashboard del repository (#link(<UCD5>)[[UCD5]]).
+- *Precondizioni:* Il Developer si trova sulla dashboard del repository (#link(<UCD5>)[[UCD5]]).
 
 - *Trigger:* Viene caricata la pagina di dettaglio del Repository.
 
@@ -799,20 +846,20 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD13.1 - Visualizzazione Dettagli Ultima Analisi Area Test
+=== UCD13.1 - Visualizzazione dettagli ultima analisi area test
 <UCD13.1>
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole controllare le criticità identificate nell'area test dall'ultima analisi condotta.
 
-- *Precondizioni:* Il Developer si trova sulla Dashboard del repository (#link(<UCD5>)[[UCD5]]) e sono presenti dati relativi all'analisi sui test.
+- *Precondizioni:* Il Developer si trova sulla dashboard del repository (#link(<UCD5>)[[UCD5]]) e sono presenti dati relativi all'analisi sui test.
 
 - *Trigger:* Viene caricata la pagina di dettaglio del Repository.
 
 - *Scenario principale:*
   + Il sistema mostra i grafici relativi all'analisi sui test.
   + Il sistema mostra il comando per visualizzare le criticità e relative proposte di remediation (*<\<extend>>* #link(<UCD6.0.1>)[[UCD6.0.1]]).
-  + Il sistema mostra l'opzione per avviare un'Analisi per l'area Test (*<\<extend>>* #link(<UCD15.1>)[[UCD15.1]]).
+  + Il sistema mostra l'opzione per avviare un'analisi per l'area test (*<\<extend>>* #link(<UCD15.1>)[[UCD15.1]]).
 
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
@@ -827,20 +874,20 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD13.2 - Visualizzazione Dettagli Ultima Analisi Area OWASP
+=== UCD13.2 - Visualizzazione dettagli ultima analisi area OWASP
 <UCD13.2>
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole controllare le criticità identificate nell'area OWASP dall'ultima analisi condotta.
 
-- *Precondizioni:* Il Developer si trova sulla Dashboard del repository (#link(<UCD5>)[[UCD5]]) e sono presenti dati relativi all'analisi OWASP.
+- *Precondizioni:* Il Developer si trova sulla dashboard del repository (#link(<UCD5>)[[UCD5]]) e sono presenti dati relativi all'analisi OWASP.
 
-- *Trigger:* Viene caricata la pagina di dettaglio del Repository.
+- *Trigger:* Viene caricata la pagina di dettaglio del repository.
 
 - *Scenario principale:*
   + Il sistema mostra i grafici relativi all'analisi OWASP.
   + Il sistema mostra il comando per visualizzare le criticità e relative proposte di remediation (*<\<extend>>* #link(<UCD6.0.2>)[[UCD6.0.2]]).
-  + Il sistema mostra l'opzione per avviare un'Analisi per l'area OWASP (*<\<extend>>* #link(<UCD15.2>)[[UCD15.2]]).
+  + Il sistema mostra l'opzione per avviare un'analisi per l'area OWASP (*<\<extend>>* #link(<UCD15.2>)[[UCD15.2]]).
 
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
@@ -855,20 +902,20 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD13.3 - Visualizzazione Dettagli Ultima Analisi Area Documentazione
+=== UCD13.3 - Visualizzazione dettagli ultima analisi area documentazione
 <UCD13.3>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole controllare le criticità identificate nell'area Documentazione dall'ultima analisi condotta.
+- *Descrizione:* Il Developer vuole controllare le criticità identificate nell'area documentazione dall'ultima analisi condotta.
 
-- *Precondizioni:* Il Developer si trova sulla Dashboard del repository (#link(<UCD5>)[[UCD5]]) e sono presenti dati relativi all'analisi sulla Documentazione.
+- *Precondizioni:* Il Developer si trova sulla dashboard del repository (#link(<UCD5>)[[UCD5]]) e sono presenti dati relativi all'analisi sulla documentazione.
 
 - *Trigger:* Viene caricata la pagina di dettaglio del Repository.
 
 - *Scenario principale:*
-  + Il sistema mostra i grafici relativi all'analisi sulla Documentazione.
+  + Il sistema mostra i grafici relativi all'analisi sulla documentazione.
   + Il sistema mostra il comando per visualizzare le criticità e relative proposte di remediation (*<\<extend>>* #link(<UCD6.0.3>)[[UCD6.0.3]]).
-  + Il sistema mostra l'opzione per avviare un'Analisi per l'area Documentazione (*<\<extend>>* #link(<UCD15.3>)[[UCD15.3]]).
+  + Il sistema mostra l'opzione per avviare un'analisi per l'area documentazione (*<\<extend>>* #link(<UCD15.3>)[[UCD15.3]]).
   + 
 
 - *Scenari alternativi:* \
@@ -876,7 +923,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* Il Developer visualizza i risultati delle dell'ultima analisi sulla Documentazione.
+- *Postcondizioni:* Il Developer visualizza i risultati delle dell'ultima analisi sulla documentazione.
 
 - *Estensioni:*  
   - #link(<UCD6.0.3>)[[UCD6.0.3]]
@@ -887,30 +934,34 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD6 - Visualizzazione Proposta Remediation
+=== UCD6 - Visualizzazione proposta remediation
 <UCD6>
 - *Attore principale:* Developer
 
-- *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation dell'agente che ha svolto l'analisi sul repository.
+- *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation che l'agente ha svolto per l'analisi sul repository.
 
-- *Precondizioni:* Il Developer sta visualizzando la dashboard di dettaglio della repository #link(<UCD5>)[[UCD5]] e dove deve essere stata eseguita almeno un analisi.
+- *Precondizioni:* Il Developer sta visualizzando la dashboard di dettaglio della repository #link(<UCD5>)[[UCD5]], dove deve essere stata eseguita almeno un analisi.
 
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation per il repository.
 
 - *Scenario principale:* \
   - Il sistema mostra una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area test. 
   - Il sistema mostra una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area OWASP.
-  - Il sistema mostra una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area Documentazione.
+  - Il sistema mostra una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area documentazione.
   - Il sistema mostra un pulsante per tornare alla pagina precedente.
+  - Il sistema mostra un pulsante per accettare tutte le proposte di remediation (*<\<extend>>* #link(<UCD6.2>)[[UCD6.2]])
 
 - *Scenari alternativi:* \
+  - Il Developer seleziona un qualsiasi file presente nelle diverse liste (*<\<extend>>* #link(<UCD6.1>)[[UCD6.1]])
   - Si verifica un errore durante il caricamento della pagina.
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il developer sta visualizzando una lista di documenti sui quali gli agenti, di ogni categoria, hanno riscontrato criticità e hanno elaborato una soluzione.
 
-- *Estensioni:* #link(<UCD6.1>)[[UCD6.1]]
+- *Estensioni:* 
+  - #link(<UCD6.1>)[[UCD6.1]]
+  - #link(<UCD6.2>)[[UCD6.2]]
 
 - *Generalizzazioni:*
   - #link(<UCD6.0.1>)[[UCD6.0.1]]
@@ -919,7 +970,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.0.1 - Visualizzazione Proposta Remediation Test
+=== UCD6.0.1 - Visualizzazione proposta remediation test
 <UCD6.0.1>
 - *Attore principale:* Developer
 
@@ -944,7 +995,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.0.2 - Visualizzazione Proposta Remediation Documentazione
+=== UCD6.0.2 - Visualizzazione proposta remediation documentazione
 <UCD6.0.2>
 - *Attore principale:* Developer
 
@@ -969,7 +1020,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.0.3 - Visualizzazione Proposta Remediation OWASP
+=== UCD6.0.3 - Visualizzazione proposta remediation OWASP
 <UCD6.0.3>
 - *Attore principale:* Developer
 
@@ -994,7 +1045,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.1 - Visualizzazione Dettaglio Singolo File per Remediation
+=== UCD6.1 - Visualizzazione dettaglio singolo file per remediation
 <UCD6.1>
 - *Attore principale:* Developer
 
@@ -1023,7 +1074,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.1.2 - Cambio Percorso di Destinazione File 
+=== UCD6.1.2 - Cambio percorso di destinazione file 
 <UCD6.1.2>
 - *Attore principale:* Developer
 
@@ -1051,7 +1102,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.1.2.1 Annullamento Cambio Percorso di Destinazione File
+=== UCD6.1.2.1 Annullamento cambio percorso di destinazione file
 <UCD6.1.2.1>
 - *Attore principale:* Developer
 
@@ -1069,7 +1120,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.2 - Accettazione proposta Remediation 
+=== UCD6.2 - Accettazione proposta remediation 
+<UCD6.2>
 - *Attore principale:* Developer.
 
 - *Attore secondario:* GitHub.
@@ -1086,8 +1138,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema prepara le modifiche secondo la remediation proposta.
   + Il sistema interagisce con GitHub per creare un nuovo branch dedicato.
   + Il sistema applica automaticamente le modifiche al file nel branch.
-  + Il sistema avvia una Pull Request verso il branch di destinazione della repository.
-  + Il sistema notifica il Developer della corretta creazione della Pull Request.
+  + Il sistema avvia una pull request verso il branch di destinazione della repository.
+  + Il sistema notifica il Developer della corretta creazione della pull request.
 
 - *Scenari alternativi*
   GitHub non è raggiungibile o restituisce un errore.
@@ -1111,7 +1163,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.2.1 - Accettazione Remediation Singolo File
+=== UCD6.2.1 - Accettazione remediation singolo file
 <UCD6.2.1>
 - *Attore principale:* Developer.
 
@@ -1129,8 +1181,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema prepara le modifiche al file secondo la remediation proposta.
   + Il sistema interagisce con GitHub per creare una nuova branch dedicata.
   + Il sistema applica automaticamente le modifiche al file nella branch.
-  + Il sistema avvia una Pull Request verso il branch di destinazione della repository.
-  + Il sistema notifica il Developer della corretta creazione della Pull Request.
+  + Il sistema avvia una pull request verso il branch di destinazione della repository.
+  + Il sistema notifica il Developer della corretta creazione della pull request.
 
 - *Scenari alternativi*
   GitHub non è raggiungibile o restituisce un errore.
@@ -1152,13 +1204,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.3 - Annullamento Accettazione Remediation
+=== UCD6.3 - Annullamento accettazione remediation
 <UCD6.3>
 - *Attore principale:* Developer
 
 - *Descrizione:* Il Developer desidera annullare l'accettazione della proposta di remediation #link(<UCD6.2.1>)[UCD6.2.1].
 
-- *Precondizioni:* Il Developer ha avviato il caso d’uso #link(<UCD6.2.1>)[UCD6.2.1] e la Pull Request non è ancora stata creata.
+- *Precondizioni:* Il Developer ha avviato il caso d’uso #link(<UCD6.2.1>)[UCD6.2.1] e la pull request non è ancora stata creata.
 
 - *Trigger:* Il Developer seleziona l’opzione di annullamento durante il processo di accettazione della remediation.
 
@@ -1167,14 +1219,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Il sistema interrompe il processo di applicazione della remediation.
   - Il sistema ripristina lo stato precedente alla richiesta di accettazione.
 
-- *Postcondizioni:* Il processo di accettazione è stato annullato. Nessuna Pull Request è stata creata su GitHub e lo stato del sistema è coerente con la situazione precedente all’avvio dell’accettazione.
+- *Postcondizioni:* Il processo di accettazione è stato annullato. Nessuna pull request è stata creata su GitHub e lo stato del sistema è coerente con la situazione precedente all’avvio dell’accettazione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
 
-=== UCD7 - Eliminazione Singola Repository
+=== UCD7 - Eliminazione singola repository
 <UCD7>
 - *Attore principale:* Developer
 
@@ -1230,10 +1282,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Developer vuole visualizzare tutte le operaizioni da lui avviate e non ancora concluse. 
 
-- *Trigger:* Il Developer si trova nella dashboard e seleziona la voce 'Procedimenti in Corso'.
+- *Trigger:* Il Developer si trova nella dashboard e seleziona la voce 'Procedimenti in corso'.
 
 - *Scenario principale:*
-  - Il sistema mostra l'opzione per visualizzare le Remediation avviate e le Analisi avviate .
+  - Il sistema mostra l'opzione per visualizzare le remediation avviate e le analisi avviate .
   - Il Developer seleziona le due opzioni (*<\<include>>* #link(<UCD8.1>)[[UCD8.1]], *<\<include>>* #link(<UCD8.2>)[[UCD8.2]])
   - Il sistema mostra il tasto per tornare all pagina precedente (*<\<extend>>* #link(<UCD8.0.1>)[[UCD8.0.1]]).
 
@@ -1253,7 +1305,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD8.0.1 - Annullamento visualizzazione Procedimenti in Corso
+=== UCD8.0.1 - Annullamento visualizzazione procedimenti in corso
 <UCD8.0.1>
 - *Attore principale:* Developer
 
@@ -1271,15 +1323,15 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD8.1 - Visualizzazione Remediation Avviate
+=== UCD8.1 - Visualizzazione remediation avviate
 <UCD8.1>
 - *Attore principale:* Developer
 
 - *Descrizione:* Il Developer visualizza le remediation che sono state avviate .
 
-- *Precondizioni:* Il Developer vuole visualizzare le remediation da lui avviate e non ancora confermate tramite merge con il Repository coinvolto. 
+- *Precondizioni:* Il Developer vuole visualizzare le remediation da lui avviate e non ancora confermate tramite merge con il repository coinvolto. 
 
-- *Trigger:* Il Developer si trova nella sezione 'Procedimenti in Corso' e seleziona la voce di Remediation in Corso.
+- *Trigger:* Il Developer si trova nella sezione 'Procedimenti in corso' e seleziona la voce di remediation in corso.
 
 - *Scenario principale:*
   - Il sistema mostra la lista dei branch aperti per effettuare remdiation ai quali non è stata accettata la pull request.
@@ -1292,7 +1344,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
   Al passo 1: \
-  - Il Developer sceglie di annullare l'operazione di Remediation (*<\<extend>>* #link(<UCD9>)[[UCD9]])
+  - Il Developer sceglie di annullare l'operazione di remediation (*<\<extend>>* #link(<UCD9>)[[UCD9]])
 
 - *Postcondizioni:* Il Developer sta visualizzando tutte le remediation in atto nel sistema.
 
@@ -1300,18 +1352,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD8.2 - Visualizzazione Analisi su Repository in corso
+=== UCD8.2 - Visualizzazione analisi su repository in corso
 <UCD8.2>
 - *Attore principale:* Developer
 
 - *Descrizione:* Il Developer visualizza le analisi che sono state avviate .
 
-- *Precondizioni:* Il Developer vuole visualizzare le analisi da lui avviate e non ancora confermate tramite merge con il Repository coinvolto. 
+- *Precondizioni:* Il Developer vuole visualizzare le analisi da lui avviate e non ancora confermate tramite merge con il repository coinvolto. 
 
-- *Trigger:* Il Developer si trova nella sezione 'Procedimenti in Corso' e seleziona la voce di Analisi in Corso.
+- *Trigger:* Il Developer si trova nella sezione 'Procedimenti in corso' e seleziona la voce di analisi in corso.
 
 - *Scenario principale:*
-  - Il sistema mostra la lista repository sulle quali sono state avviate delle Analisi.
+  - Il sistema mostra la lista repository sulle quali sono state avviate delle analisi.
   - Il sistema mostra la data relativa all'avvio del processo di remediation.
   - Il sistema mostra un pulsante per tornare alla pagina precedente
 
@@ -1320,9 +1372,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
   Al passo 1: \
-  - Il Developer sceglie di annullare l'operazione di Analisi (*<\<extend>>* #link(<UCD10>)[[UCD10]])
+  - Il Developer sceglie di annullare l'operazione di analisi (*<\<extend>>* #link(<UCD10>)[[UCD10]])
 
-- *Postcondizioni:* Il Developer sta visualizzando tutte le Analisi in atto nel sistema.
+- *Postcondizioni:* Il Developer sta visualizzando tutte le analisi in atto nel sistema.
 
 - *Estensioni:* #link(<UCD10>)[[UCD10]]
 
@@ -1331,7 +1383,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD9 - Interrompi Remediation Avviata
+=== UCD9 - Interrompi remediation avviata
 <UCD9>
 - *Attore principale:* Developer.
 
@@ -1355,7 +1407,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il caso d'uso termina senza successo.
   - Il Developer non conferma l'operazoine di interruzione (*<\<extend>>* #link(<UCD11>)[[UCD11]]).
 
-- *Postcondizioni:* Una Remediation in atto è stata interrotta.
+- *Postcondizioni:* Una remediation in atto è stata interrotta.
 
 - *Estensioni:* #link(<UCD11>)[[UCD11]]
 
@@ -1365,21 +1417,21 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD10 - Interrompi Analisi Avviata
+=== UCD10 - Interrompi analisi Avviata
 <UCD10>
 - *Attore principale:* Developer
 
-- *Descrizione:* Il Developer desidera interrompere un'operazione di Analisi in corso.
+- *Descrizione:* Il Developer desidera interrompere un'operazione di analisi in corso.
 
 - *Precondizioni:* Il Developer ha avviato il caso d’uso #link(<UCD8.2>)[UCD8.2].
 
 - *Trigger:* Il Developer seleziona l’opzione di interruzione del processo.
 
 - *Scenario principale:*
-  + Il sistema mostra al Developer una richiesta di conferma per l’interruzione dell'Analisi.
+  + Il sistema mostra al Developer una richiesta di conferma per l’interruzione dell'analisi.
   + Il Developer conferma l’operazione di interruzione.
-  + Il sistema annulla automaticamente l'Analisi in corso.
-  + Il sistema notifica al Developer l’avvenuta interruzione dell'Analisi.
+  + Il sistema annulla automaticamente l'analisi in corso.
+  + Il sistema notifica al Developer l’avvenuta interruzione dell'analisi.
   
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -1387,7 +1439,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il caso d'uso termina senza successo.
   - Il Developer non conferma l'operazoine di interruzione (*<\<extend>>* #link(<UCD11>)[[UCD11]]).
 
-- *Postcondizioni:* Un'Analisi in atto è stata interrotta.
+- *Postcondizioni:* Un'analisi in atto è stata interrotta.
 
 - *Estensioni:* #link(<UCD11>)[[UCD11]]
 
@@ -1396,7 +1448,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD11 - Annullamento di Interruzione Operazione In Corso
+=== UCD11 - Annullamento di Interruzione Operazione In corso
 <UCD11>
 - *Attore principale:* Developer
 
@@ -1417,18 +1469,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD12 - Visualizzazione Esiti Ultime Analisi Repository
+=== UCD12 - Visualizzazione esiti ultime analisi repository
 <UCD12>
 - *Attore principale:* Developer
 
 - *Descrizione:* Il Developer vuole visualizzare l'esito delle analisi nei repository.
 
-- *Precondizioni:* Il Developer vuole visualizzare l'esito di una o più analisi da lui avviate e non ancora confermate tramite merge con il Repository coinvolto. Le Analisi non sono in atto. Le Analisi non possono essere precedenti oltre la settimana dalla data di visualizzazione ed un massimo di 30.
+- *Precondizioni:* Il Developer vuole visualizzare l'esito di una o più analisi da lui avviate e non ancora confermate tramite merge con il repository coinvolto. Le analisi non sono in atto. Le analisi non possono essere precedenti oltre la settimana dalla data di visualizzazione ed un massimo di 30.
 
-- *Trigger:* Il Developer selezione l'opzione dei visualizzazione delle ultime Analisi avviate e completate.
+- *Trigger:* Il Developer seleziona l'opzione di visualizzazione delle ultime analisi avviate e completate.
 
 - *Scenario principale:*
-  - Il sistema mostra la lista delle ultime Analisi completate.
+  - Il sistema mostra la lista delle ultime analisi completate.
   - Il sistema mostra il nome della repository sul quale è stata eseguita l'analisi.
   - Il sistema mostra la data relativa all'avvio del processo di remediation.
   - Il Developer consulta l'ultima analisi (*<\<extend>>* #link(<UCD5>)[[UCD5]]).
@@ -1441,14 +1493,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   Al passo 1: \
   - Il Developer sceglie di annullare l'operazione di visualizzazione di una o più analisi eseguite (*<\<extend>>* #link(<UCD12.1>)[[UCD12.1]]).
 
-- *Postcondizioni:* Il Developer ha visualizzato le ultime Analisi eseguite nel sistema.
+- *Postcondizioni:* Il Developer ha visualizzato le ultime analisi eseguite nel sistema.
 
 - *Estensioni:* #link(<UCD12.1>)[[UCD12.1]]
 - *inclusioni:* #link(<UCD5>)[[UCD5]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD12.1 - Annullamento Visualizzazione Esiti Ultime Analisi
+=== UCD12.1 - Annullamento visualizzazione esiti ultime analisi
 <UCD12.1>
 - *Attore principale:* Developer
 
@@ -1470,11 +1522,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD14 - Visualizzazione Storico delle Analisi sul Repository
+=== UCD14 - Visualizzazione Storico delle analisi sul Repository
 <UCD14>
 - *Attore principale:* Developer
 
-- *Descrizione:* Il Developer desidera visualizzare lo storico delle varie Analisi eseguite all'interno di un repository.
+- *Descrizione:* Il Developer desidera visualizzare lo storico delle varie analisi eseguite all'interno di un repository.
 
 - *Precondizioni:* Il Developer sta visualizzando il dettaglio di un repository (#link(<UCD5>)[[UCD5]]) e sono state eseguite almeno due analisi all'interno dello stesso.
 
@@ -1482,18 +1534,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   - Il sistema mostra una lista che contiene:
-    - Tipo di Analisi (Documentazione, Test, OWASP)
-    - Data Analisi
+    - Tipo di analisi (documentazione, test, OWASP)
+    - Data analisi
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento di una pagina.
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
-  - Il Developer selezione un Analisi specifica di visualizzare (*<\<extend>>* #link(<UCD14.1>)[[UCD14.1]]).
+  - Il Developer selezione un analisi specifica per visualizzarla (*<\<extend>>* #link(<UCD14.1>)[[UCD14.1]]).
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD14.1 - Visualizzazione Storico Singola Analisi
+=== UCD14.1 - Visualizzazione storico singola analisi
 <UCD14.1>
 - *Attore principale:* Developer.
 
@@ -1504,9 +1556,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer preme su un elemento della lista.
 
 - *Scenario principale:*
-  + Il sistema mostra i grafici relativi all'ultima analisi condotta nell'area Test.
+  + Il sistema mostra i grafici relativi all'ultima analisi condotta nell'area test.
   + Il sistema mostra i grafici relativi all'ultima analisi condotta nell'area OWASP.  
-  + Il sistema mostra i grafici relativi all'ultima analisi condotta nell'area Documentazione.
+  + Il sistema mostra i grafici relativi all'ultima analisi condotta nell'area documentazione.
   + Il sistema mostra il pulsante per tornare alla pagina precedente.   
 
 - *Scenari alternativi:* \
@@ -1521,7 +1573,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD15 - Avvio Analisi di una Repository
+=== UCD15 - Avvio analisi di una repository
 <UCD15>
 - *Attore principale:* Developer.
 
@@ -1558,11 +1610,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD15.1 - Avvio Analisi di Test di una Repository
+=== UCD15.1 - Avvio analisi di test di una repository
 <UCD15.1>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole avviare un'analisi Test del repository.
+- *Descrizione:* Il Developer vuole avviare un'analisi test del repository.
 
 - *Precondizioni:* Il Developer sta visualizzando il dettaglio di un repository relativa alle analisi test (#link(<UCD13.1>)[[UCD13.1]]).
 
@@ -1584,13 +1636,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
   
-  *Postcondizioni:* Un'analisi sull'area Test del repository è stata avviata.
+  *Postcondizioni:* Un'analisi sull'area test del repository è stata avviata.
 
   *Estensioni:* #link(<UCD16>)[[UCD16]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD15.2 - Avvio Analisi OwASP di una Repository
+=== UCD15.2 - Avvio analisi OWASP di una repository
 <UCD15.2>
 - *Attore principale:* Developer.
 
@@ -1622,13 +1674,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD15.3 - Avvio Analisi di Documentazione di una Repository
+=== UCD15.3 - Avvio analisi di documentazione di una repository
 <UCD15.3>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole avviare un'analisi Documentazione del repository.
+- *Descrizione:* Il Developer vuole avviare un'analisi documentazione del repository.
 
-- *Precondizioni:* Il Developer sta visualizzando il dettaglio di un repository relativa alle analisi Documentazione (#link(<UCD13.3>)[[UCD13.3]]).
+- *Precondizioni:* Il Developer sta visualizzando il dettaglio di un repository relativa alle analisi documentazione (#link(<UCD13.3>)[[UCD13.3]]).
 
 - *Trigger:* Il Developer preme sul tasto di avvio analisi.
 
@@ -1648,20 +1700,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
   
-  *Postcondizioni:* Un'analisi sull'area Documentazione del repository è stata avviata.
+  *Postcondizioni:* Un'analisi sull'area documentazione del repository è stata avviata.
 
   *Estensioni:* #link(<UCD16>)[[UCD16]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-#pagebreak()
-
-=== UCD16 - Annullamento Avvio di un'Analisi
+=== UCD16 - Annullamento Avvio di un'analisi
 <UCD16>
 - *Attore principale:* Developer
 
-- *Descrizione:* Il Developer desidera annullare l'operazione di Avvio Analisi.
+- *Descrizione:* Il Developer desidera annullare l'operazione di Avvio analisi.
 
 - *Precondizioni:* Il Developer ha avviato il caso d’uso #link(<UCD15>)[UCD15] o #link(<UCD15.1>)[UCD15.1] o #link(<UCD15.2>)[UCD15.2] o #link(<UCD15.3>)[UCD15.3].
 
@@ -1674,10 +1724,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
+#pagebreak()
 
 == Specifica dei casi d'uso - Project Manager
 
-=== UCPM1: Accesso alla Dashboard Generale <UCPM1>
+=== UCPM1: Accesso alla dashboard generale <UCPM1>
 
 - *Attore principale:* Project Manager.
 
@@ -1685,23 +1736,22 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* L'utente si è autenticato e assume il ruolo di Project Manager.
 
-- *Trigger:* L'Utente seleziona il ruolo Project Manager o clicca sulla voce "Dashboard" nel menu di navigazione.
+- *Trigger:* L'Utente seleziona il ruolo Project Manager o clicca sulla voce "dashboard" nel menu di navigazione.
 
 - *Scenario principale:*
   + Il sistema carica i dati generali relativi ai progetti collegati all'account.
   + Il Project Manager visualizza di default la *Lista Progetti* (*<\<include>>* #link(<UCPM1.1>)[[UCPM1.1]]).
 
 - *Scenari alternativi:* 
-  + Il Project Manager decider di creare un nuovo Progetto (*<\<extend>>* #link(<UC7>)[[UC7]]).
+  + Il Project Manager decider di creare un nuovo progetto.
 
 - *Postcondizioni:* Il Project Manager visualizza la lista Progetti.
 
 - *Inclusioni:* #link(<UCPM1.1>)[[UCPM1.1]].
-- *Estensioni:* #link(<UC7>)[[UC7]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM1.1: Visualizzazione Lista Progetti <UCPM1.1>
+=== UCPM1.1: Visualizzazione lista progetti <UCPM1.1>
 
 - *Attore principale:* Project Manager.
 
@@ -1712,22 +1762,21 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Condizione d'inclusione del caso d'uso #link(<UCPM1>)[[UCPM1]].
 
 - *Scenario principale:*
-  + Il Project Manager visualizza la lista delle card di Progetto, contenenti:
-    - Nome del Progetto.
+  + Il Project Manager visualizza la lista dei progetti, rappresentati come delle card contenenti:
+    - Nome del progetto.
     - Numero di repository associate.
     - Indicatori sintetici di salute (es. media qualità).
-  + Il Project Manager può selezionare una card specifica per accedere al dettaglio del Progetto (*<\<include>>* #link(<UCPM1.1.1>)[[UCPM1.1.1]]).
+  + Il Project Manager può selezionare un progetto specifico per accedere ai suoi dettagli (*<\<extend>>* #link(<UCPM1.1.1>)[[UCPM1.1.1]]).
 
-- *Scenari alternativi:* Il sistema non rileva progetti: mostra uno stato vuoto e invita a creare il primo progetto tramite il pulsante "Nuovo Progetto" (*<\<extend>>* #link(<UC7>)[[UC7]]).
+- *Scenari alternativi:* Il sistema non rileva progetti: mostra uno stato vuoto e invita a creare il primo progetto tramite il pulsante "Nuovo progetto".
 
-- *Postcondizioni:* Il Project Manager naviga verso il dettaglio di un progetto o ne crea uno nuovo.
+- *Postcondizioni:* Il Project Manager scorre la lista dei progetti.
 
-- *Inclusioni:* #link(<UCPM1.1.1>)[[UCPM1.1.1]].
-- *Estensioni:* #link(<UC7>)[[UC7]].
+- *Estensioni:* #link(<UCPM1.1.1>)[[UCPM1.1.1]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM1.1.1: Accesso alla Dashboard di Dettaglio Progetto <UCPM1.1.1>
+=== UCPM1.1.1: Accesso alla dashboard di dettaglio progetto <UCPM1.1.1>
 
 - *Attore principale:* Project Manager.
 
@@ -1735,23 +1784,31 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Esiste almeno un progetto creato.
 
-- *Trigger:* Il Project Manager clicca su una card di Progetto in #link(<UCPM1.1>)[[UCPM1.1]].
+- *Trigger:* Il Project Manager clicca su una card di progetto in #link(<UCPM1.1>)[[UCPM1.1]].
 
 - *Scenario principale:*
   + Il Project Manager visualizza l'intestazione del progetto.
-  + Il Project Manager visualizza i widget aggregati (Sicurezza, copertura Test, adeguatezza Documentazione, Avanzamento ecc...).
+  + Il Project Manager visualizza i widget aggregati (Sicurezza, copertura test, adeguatezza documentazione, Avanzamento ecc...).
   + Il Project Manager visualizza il pulsante "Team & Competenze", su cui può premere per approfondire le competenze del team (*<\<extend>>* #link(<UCPM3>)[[UCPM3]]).
-  + Il Project Manager visualizza il pulsante "Stack Tecnologico", su cui può premere per analizzare le tecnologie utilizzate nel progetto e ricevere suggerimenti (*<\<extend>>* #link(<UCPM4>)[[UCPM4]]).
-  + Il Project Manager visualizza l'elenco dei Repository che compongono il progetto con i relativi indicatori di stato. (*<\<extend>>* #link(<UCPM2>)[[UCPM2]])
+  + Il Project Manager visualizza il pulsante "Stack tecnologico", su cui può premere per analizzare le tecnologie utilizzate nel progetto e ricevere suggerimenti (*<\<extend>>* #link(<UCPM4>)[[UCPM4]]).
+  + Il Project Manager visualizza l'elenco dei repository che compongono il progetto con i relativi indicatori di stato. (*<\<extend>>* #link(<UCPM2>)[[UCPM2]]).
  + Il Project Manager clicca "Indietro" per tornare alla lista progetti.
+ - *Scenari alternativi:* 
+  - Il Project Manager preme il pulsante relativo alle competenze del team  (*<\<extend>>* #link(<UCPM3>)[[UCPM3]]).
+  - Il Project Manager preme il pulsante relativo all'analisi delle tecnologie utilizzate (*<\<extend>>* #link(<UCPM4>)[[UCPM4]]).
+  - Il Project Manajer preme il pulsante relativo all'elenco dei repository nel progetto(*<\<extend>>* #link(<UCPM2>)[[UCPM2]]).
 
 - *Postcondizioni:* Il Project Manager visualizza i dati aggregati del progetto.
 
-- *Estensioni:* #link(<UCPM2>)[[UCPM2]],#link(<UCPM3>)[[UCPM3]], #link(<UCPM4>)[[UCPM4]].
+- *Estensioni:* 
+  - #link(<UCPM2>)[[UCPM2]];
+  - #link(<UCPM3>)[[UCPM3]]; 
+  - #link(<UCPM4>)[[UCPM4]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM2: Visualizzazione Lista Repository <UCPM2>
+=== UCPM2: Visualizzazione lista repository <UCPM2>
 
 - *Attore principale:* Project Manager.
 
@@ -1767,16 +1824,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - nome repository.
     - data ultimo aggiornamento.
 
-- *Scenari alternativi:* Il Project Manager non ha aggiunto nessuna repository, visualizza un messaggio informativo che lo invita ad importarne uno tramite il pulsante "Aggiungi Repository" (*<\<extend>>* #link(<UC2>)[[UC2]]).
+- *Scenari alternativi:* Il Project Manager non ha aggiunto nessuna repository, visualizza un messaggio informativo che lo invita ad importarne uno tramite il pulsante "Aggiungi Repository" (*<\<extend>>* #link(<UCD1>)[[UCD1]]).
 
 - *Postcondizioni:* Il Project Manager ha visionato le repository collegate all'account.
 
 // Hanno senso questi due UC, 9.1 e 9.2 oppure è una granularità troppo dettagliate, magari anche corretta ma conforme a quanto fatto negli altri uc?
-- *Estensioni:* #link(<UC2>)[[UC2]].
+- *Estensioni:* #link(<UCD1>)[[UCD1]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM3: Visualizzazione Mappatura Competenze <UCPM3>
+#pagebreak()
+=== UCPM3: Visualizzazione mappatura competenze <UCPM3>
 
 - *Attore principale:* Project Manager.
 
@@ -1787,8 +1846,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Project Manager seleziona il pulsante "Team & Competenze".
 
 - *Scenario principale:*
-  + Il sistema visualizza una lista dei membri del team a cui viene associata un'icona delle tecnologie di loro competenza.
-  + Il Project Manager può selezionare un membro specifico per approfondirne il profilo (*<\<inclue>>* #link(<UCPM3.1>)[[UCPM3.1]]).
+  + Il sistema visualizza una lista dei membri del team a cui vengono associate delle icone sulle tecnologie di loro competenza.
+  + Il Project Manager può selezionare un membro specifico per approfondirne il profilo (*<\<include>>* #link(<UCPM3.1>)[[UCPM3.1]]).
 
 - *Postcondizioni:* Il Project Manager ha analizzato la mappatura delle competenze all'interno del team del progetto.
 
@@ -1796,7 +1855,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM3.1: Dettaglio Membro del Team <UCPM3.1>
+=== UCPM3.1: Visualizzazione dettagli membro del team <UCPM3.1>
 
 - *Attore principale:* Project Manager.
 
@@ -1807,9 +1866,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Project Manager ha selezionato uno specifico membro del team.
 
 - *Scenario principale:*
-  + Il Project Manager visualizza il profilo dell'utente.
-  + Il Project Manage visualiza le statistiche di contribuzione (*<\<inclue>>* #link(<UCPM3.1.1>)[[UCPM3.1.1]]).
-  + Il Project Manager visualizza i linguaggi maggiormente utilizzati dall'utente (*<\<inclue>>* #link(<UCPM3.1.2>)[[UCPM3.1.2]]).
+  + Il Project Manager visualizza il profilo del Developer.
+  + Il Project Manage visualiza le statistiche di contribuzione (*<\<extend>>* #link(<UCPM3.1.1>)[[UCPM3.1.1]]).
+  + Il Project Manager visualizza i linguaggi maggiormente utilizzati dal Developer (*<\<extend>>* #link(<UCPM3.1.2>)[[UCPM3.1.2]]).
 
 // anche qui si possono aggiungere degli UC più specificiper entrambe le parti dello scenario principali. Quindi UC10.1.1 per visuallizare il profilo utente, UC10.1.2 per visualizzare le statistiche di contribuzione e UC1.1.3 per informazioni sui linguaggi affini.
 
@@ -1817,7 +1876,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM3.1.1: Dettaglio Membro del Team <UCPM3.1.1>
+=== UCPM3.1.1: Visualizzazione statistiche membro del team <UCPM3.1.1>
 
 - *Attore principale:* Project Manager.
 
@@ -1830,13 +1889,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Project Manager visualizza una serie di statistiche come:
     - Numero di commit.
-    - Numero di Pull Request.
+    - Numero di pull request.
 
 - *Postcondizioni:* Il Project Manager ha consultato le statistiche di contribuzione di un membro del team.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM3.1.2: Dettaglio linguaggi di un developer <UCPM3.1.2>
+=== UCPM3.1.2: Visualizzazione linguaggi di un developer <UCPM3.1.2>
 
 - *Attore principale:* Project Manager.
 
@@ -1852,16 +1911,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il Project Manager ha consultato i linguaggi affini a un membro del team.
 
 #line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM4: Stack Tecnologico e Suggerimenti <UCPM4>
+=== UCPM4: Stack tecnologico e suggerimenti <UCPM4>
 
 - *Attore principale:* Project Manager.
 
 - *Descrizione:* Il Project Manager analizza lo stack tecnologico per identificare librerie obsolete e ricevere suggerimenti.
 
-- *Precondizioni:* Il Project Manager si trova nella Dashboard di Dettaglio Progetto (#link(<UCPM1.1.1>)[[UCPM1.1.1]]).
+- *Precondizioni:* Il Project Manager si trova nella dashboard di dettaglio progetto (#link(<UCPM1.1.1>)[[UCPM1.1.1]]).
 
-- *Trigger:* Il Project Manager seleziona la voce "Stack Tecnologico".
+- *Trigger:* Il Project Manager seleziona la voce "Stack tecnologico".
 
 - *Scenario principale:*
   + Il Project Manager visualizza l'elenco consolidato di framework e librerie usate.
@@ -1873,68 +1933,83 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il Project Manager ha preso visione dello stato tecnologico del progetto analizzato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
 
 == Specifica dei casi d'uso - Business Owner
 
-=== UCBO1: Visualizzare Dashboard Home con Statistiche <UCBO1>
+=== UCBO1: Visualizzazione dashboard home con statistiche <UCBO1>
 
 - *Attore principale:* Business Owner 
 - *Descrizione:* Il Business Owner accede alla home page dell'applicazione che mostra una panoramica aggregata di tutti i progetti attraverso grafici e indicatori chiave.
 - *Precondizioni:* 
   + Il Business Owner è autenticato nel sistema.
   + Esiste almeno un progetto nel sistema.
-- *Trigger:* Il Business Owner accede all'applicazione o clicca su "Home"/"Dashboard".
+- *Trigger:* Il Business Owner accede all'applicazione o clicca su "Home"/"dashboard".
 - *Scenario principale:*
   + Il sistema visualizza la dashboard home con diversi grafici e istogrammi.
   + Il Business Owner visualizza le statistiche aggregate sui progetti (*<\<include>>* #link(<UCBO1.1>)[[UCBO1.1]]).
   + Il Business Owner analizza le issue totali in lavorazione (*<\<include>>* #link(<UCBO1.2>)[[UCBO1.2]]).
   + Il Business Owner consulta il rapporto budget vs spesa complessivo (*<\<include>>* #link(<UCBO1.3>)[[UCBO1.3]]).
   + Il Business Owner valuta l'indice di coerenza tra progetti (*<\<include>>* #link(<UCBO1.4>)[[UCBO1.4]]).
-  + Il Business Owner può selezionare un progetto per analizzarlo nel dettaglio (*<\<include>>* #link(<UCBO2>)[[UCBO2]]).
+  + Il Business Owner può selezionare un progetto per analizzarlo nel dettaglio (*<\<extend>>* #link(<UCBO2>)[[UCBO2]]).
+- *Scenario alternativo:* Il Business Owner seleziona un progetto per vederne i dettagli #link(<UCBO2>)[[UCBO2]]).
 - *Postcondizioni:* Il Business Owner ha una visione d'insieme dello stato del portafoglio progetti.
-- *Inclusioni:* #link(<UCBO1.1>)[[UCBO1.1]], #link(<UCBO1.2>)[[UCBO1.2]], #link(<UCBO1.3>)[[UCBO1.3]], #link(<UCBO1.4>)[[UCBO1.4]], #link(<UCBO2>)[[UCBO2]]
+- *Inclusioni:* 
+  - #link(<UCBO1.1>)[[UCBO1.1]];
+  - #link(<UCBO1.2>)[[UCBO1.2]]; 
+  - #link(<UCBO1.3>)[[UCBO1.3]]; 
+  - #link(<UCBO1.4>)[[UCBO1.4]].
+- *Estensioni:*
+  - #link(<UCBO2>)[[UCBO2]].
 
-=== UCBO1.1: Visualizzare grafici a torta/istogrammi su progetti <UCBO1.1>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO1.1: Visualizzazione grafici su progetti <UCBO1.1>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta le visualizzazioni grafiche che rappresentano statistiche aggregate sui progetti.
-- *Precondizioni:* Il Business Owner sta visualizzando la Dashboard Home (#link(<UCBO1>)[[UCBO1]]).
+- *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
 - *Trigger:* Il Business Owner si concentra sulla sezione grafici della dashboard.
 - *Scenario principale:*
   + Il sistema visualizza grafici a torta e/o istogrammi che rappresentano vari aspetti dei progetti.
   + Il Business Owner interpreta i grafici per comprendere distribuzioni e proporzioni.
 - *Postcondizioni:* Il Business Owner ha composto un quadro visivo della situazione dei progetti.
-- *Estensioni:* 
 
-=== UCBO1.2: Visualizzare issue totali in lavorazione (complessivo) <UCBO1.2>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO1.2: Visualizzazione issue totali in lavorazione (complessivo) <UCBO1.2>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta il conteggio totale delle issue attualmente in lavorazione su tutti i progetti.
-- *Precondizioni:* Il Business Owner sta visualizzando la Dashboard Home (#link(<UCBO1>)[[UCBO1]]).
+- *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
 - *Trigger:* Il Business Owner consulta il widget/indicatore delle issue.
 - *Scenario principale:*
   + Il sistema visualizza il numero totale di issue attualmente "in lavorazione" o "in sviluppo".
   + Il Business Owner legge il valore per comprendere il carico di lavoro complessivo.
 - *Postcondizioni:* Il Business Owner è consapevole del volume totale di lavoro in corso.
 
-=== UCBO1.3: Visualizzare rapporto budget vs spesa complessivo <UCBO1.3>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO1.3: Visualizzazione rapporto budget vs spesa complessivo <UCBO1.3>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta l'indicatore aggregato che confronta il budget totale allocato con la spesa totale sostenuta.
-- *Precondizioni:* Il Business Owner sta visualizzando la Dashboard Home (#link(<UCBO1>)[[UCBO1]]).
+- *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
 - *Trigger:* Il Business Owner consulta il widget/indicatore finanziario.
 - *Scenario principale:*
   + Il sistema visualizza un indicatore che mostra budget totale e spesa totale.
   + Il Business Owner analizza se la spesa complessiva è entro il budget complessivo.
 - *Postcondizioni:* Il Business Owner conosce la situazione finanziaria aggregata.
 
-=== UCBO1.4: Visualizzare indice coerenza tra progetti <UCBO1.4>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO1.4: Visualizzazione indice coerenza tra progetti <UCBO1.4>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta un indicatore che misura il livello di coerenza o standardizzazione tra i vari progetti.
-- *Precondizioni:* Il Business Owner sta visualizzando la Dashboard Home (#link(<UCBO1>)[[UCBO1]]).
+- *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
 - *Trigger:* Il Business Owner consulta l'indicatore di coerenza.
 - *Scenario principale:*
   + Il sistema visualizza un indicatore di "coerenza tra progetti".
@@ -1943,7 +2018,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCBO2: Accedere Progetto Singolo <UCBO2>
+=== UCBO2: Accedere progetto singolo <UCBO2>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner seleziona ed entra in un progetto specifico per analizzarne i dettagli: tecnologie, repository, issue, costi e team.
@@ -1954,9 +2029,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Business Owner visualizza la *lista delle tecnologie utilizzate* nel progetto (*<\<include>>* #link(<UCBO2.1>)[[UCBO2.1]]).
   + Il Business Owner consulta la *vista generale sulle repository* del progetto (*<\<include>>* #link(<UCBO2.2>)[[UC2.2]]).
   + Il Business Owner visualizza la *lista del team di sviluppo* (*<\<include>>* #link(<UCBO2.3>)[[UCBO2.3]]).
-  + Il Business Owner può tornare alla dashboard home.
+  + Il Business Owner può tornare alla dashboard "Home".
 - *Postcondizioni:* Il Business Owner ha analizzato i dettagli del progetto selezionato.
-- *Inclusione:* #link(<UCBO2.1>)[[UCBO2.1]], #link(<UCBO2.2>)[[UCBO2.2]], #link(<UCBO2.3>)[[UCBO2.3]]
+- *Inclusione:* 
+  - #link(<UCBO2.1>)[[UCBO2.1]]
+  - #link(<UCBO2.2>)[[UCBO2.2]]
+  - #link(<UCBO2.3>)[[UCBO2.3]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO2.1: Visualizzare lista tecnologie utilizzate nel progetto <UCBO2.1>
 
@@ -1971,7 +2051,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il Business Owner conosce le tecnologie utilizzate nel progetto.
 - *Inclusioni:* #link(<UCBO2.1.1>)[[UCBO2.1.1]]
 
-=== UCBO2.1.1: Identificare aggiornamenti disponibili <UCBO2.1.1>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+
+=== UCBO2.1.1: Identificazione aggiornamenti disponibili <UCBO2.1.1>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner verifica se ci sono aggiornamenti importanti disponibili per le tecnologie utilizzate nel progetto.
@@ -1982,22 +2065,28 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Business Owner identifica quali tecnologie richiedono aggiornamento.
   + Il Business Owner valuta l'importanza degli aggiornamenti disponibili.
 - *Postcondizioni:* Il Business Owner è consapevole degli aggiornamenti disponibili per le tecnologie del progetto.
-- *Estensioni:* 
 
-=== UCBO2.2: Visualizzare vista generale sulle repository del progetto <UCBO2.2>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.2: Visualizzazione vista generale sulle repository del progetto <UCBO2.2>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta una vista d'insieme delle repository che compongono il progetto.
 - *Precondizioni:* Il Business Owner è entrato in un progetto (#link(<UCBO2>)[[UCBO2]]).
-- *Trigger:* Il Business Owner accede alla sezione "Repository" del progetto.
+- *Trigger:* Il Business Owner si concentra sulla sezione "Repository" del progetto.
 - *Scenario principale:*
   + Il sistema visualizza una lista o panoramica delle repository del progetto identificate dal nome.
-  + Il Business Owner può vedere le *quantità di issue* per repository (*<\<include>>* #link(<UCBO2.2.1>)[[UCBO2.2.1]]).
-  + Il Business Owner può consultare le *stime dei costi* (*<\<include>>* #link(<UCBO2.2.2>)[[UCBO2.2.2]]).
+  + Il Business Owner vede le *quantità di issue* per repository (*<\<include>>* #link(<UCBO2.2.1>)[[UCBO2.2.1]]).
+  + Il Business Owner consulta le *stime dei costi* (*<\<include>>* #link(<UCBO2.2.2>)[[UCBO2.2.2]]).
 - *Postcondizioni:* Il Business Owner ha una visione generale della struttura repository del progetto.
-- *Estensioni:* #link(<UCBO2.2.1>)[[UCBO2.2.1]], #link(<UCBO2.2.2>)[[UCBO2.2.2]]
+- *Inclusioni:* 
+  - #link(<UCBO2.2.1>)[[UCBO2.2.1]] 
+  - #link(<UCBO2.2.2>)[[UCBO2.2.2]]
 
-=== UCBO2.2.1: Visualizzare quantità issue completate/aperte/in sviluppo <UCBO2.2.1>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+
+=== UCBO2.2.1: Visualizzazione quantità issue <UCBO2.2.1>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta i numeri delle issue divise per stato nelle repository del progetto.
@@ -2011,7 +2100,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Business Owner analizza la distribuzione per valutare l'avanzamento.
 - *Postcondizioni:* Il Business Owner comprende lo stato di avanzamento del progetto attraverso le issue.
 
-=== UCBO2.2.2: Visualizzare stima dei costi <UCBO2.2.2>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+
+=== UCBO2.2.2: Visualizzazione stima dei costi <UCBO2.2.2>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta una stima dei costi associati al progetto o alle sue repository.
@@ -2022,7 +2114,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Business Owner legge il valore per comprendere l'impatto finanziario.
 - *Postcondizioni:* Il Business Owner ha una stima dei costi del progetto.
 
-=== UCBO2.3: Visualizzare lista del team di sviluppo <UCBO2.3>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.3: Visualizzazione lista del team di sviluppo <UCBO2.3>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner esamina l'elenco dei membri del team assegnati al progetto.
@@ -2030,11 +2124,16 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Business Owner accede alla sezione "Team" del progetto.
 - *Scenario principale:*
   + Il sistema visualizza una lista dei membri del team di sviluppo.
-  + Il Business Owner può *accedere alle statistiche dei singoli developer* (*<\<include>>* #link(<UCBO3>)[[UCBO3]]).
+  + Il Business Owner può visualizzare le *statistiche dei singoli developer* (*<\<extend>>* #link(<UCBO3>)[[UCBO3]]).
+- *Scenario alternativo:* Il Business Owner seleziona un singolo sviluppatore per vederne le statistiche *<\<extend>>* #link(<UCBO3>)[[UCBO3]]).
 - *Postcondizioni:* Il Business Owner conosce la composizione del team del progetto.
-- *Inclusioni:* #link(<UCBO3>)[[UCBO3]]
+- *Estensioni:* #link(<UCBO3>)[[UCBO3]]
 
-=== UCBO3: Accedere alle statistiche dei singoli developer <UCBO3>
+#line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
+
+
+=== UCBO3: Visualizzazione statistiche singoli developer <UCBO3>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta le statistiche e informazioni dettagliate di uno specifico developer del team.
@@ -2042,12 +2141,16 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Business Owner seleziona un developer dalla lista del team.
 - *Scenario principale:*
   + Il sistema visualizza le statistiche del developer selezionato.
-  + Il Business Owner può vedere il *numero di progetti* in cui il developer ha lavorato/sta lavorando (*<\<include>>* #link(<UCBO3.1>)[[UCBO3.1]]).
-  + Il Business Owner può consultare i *linguaggi e tecnologie affini* del developer (*<\<include>>* #link(<UCBO3.2>)[[UCBO3.2]]).
+  + Il Business Owner vede il *numero di progetti* a cui il developer ha lavorato e sta lavorando (*<\<include>>* #link(<UCBO3.1>)[[UCBO3.1]]).
+  + Il Business Owner consulta i *linguaggi e tecnologie affini* del developer (*<\<include>>* #link(<UCBO3.2>)[[UCBO3.2]]).
 - *Postcondizioni:* Il Business Owner ha approfondito la conoscenza delle competenze e del carico di lavoro del developer.
-- *Inclusioni:* #link(<UCBO3.1>)[[UCBO3.1]], #link(<UCBO3.2>)[[UCBO3.2]]
+- *Inclusioni:* 
+  - #link(<UCBO3.1>)[[UCBO3.1]]
+  - #link(<UCBO3.2>)[[UCBO3.2]]
 
-=== UCBO3.1: Visualizzare numero progetti in cui ha lavorato/sta lavorando <UCBO3.1>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO3.1: Visualizzazione numero progetti dello sviluppatore <UCBO3.1>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta l'elenco e il conteggio dei progetti associati al developer.
@@ -2061,7 +2164,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Business Owner valuta il carico di lavoro e l'esperienza del developer.
 - *Postcondizioni:* Il Business Owner comprende il coinvolgimento del developer nei vari progetti.
 
-=== UCBO3.2: Visualizzare linguaggi e tecnologie affini <UCBO3.2>
+#line(length: 100%, stroke: 0.5pt + gray)
+
+
+=== UCBO3.2: Visualizzazione linguaggi e tecnologie affini <UCBO3.2>
 
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta le competenze tecnologiche del developer.
