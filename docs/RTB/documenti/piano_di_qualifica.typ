@@ -401,12 +401,18 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
 
 = Valutazione lavoro
 In questa sezione sono riportate le misurazioni della qualità effettuate durante lo svolgimento delle attività dedicate al raggiungimento della Requirements and Technology Baseline. Inoltre, sono presenti i ragionamenti sulla differenza fra le tendenze attese e quelle effettivamente osservate. 
+== MPC01 e MPC02 - Schedule Variance e Cost Variance
+// Grafico 8
+Dal grafico si può capire che le ore effettive e le ore previste per di più corrispondono, quindi SV e CV hanno sempre un valore di 0, eccetto negli sprint 5, 6 e 8, in cui il team ha lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi. 
 == MPC05 e MPC06 - Planned Value ed Earned Value
 //Grafico 1 
-Si osservi che il valore di EV è sempre uguale a quello di PV, indicando che il lavoro svolto è in linea con la pianificazione iniziale. Questo suggerisce una corretta gestione del progetto.
+Si osservi che il valore di EV è più o meno allineato a quello di PV: il lavoro svolto è abbastanza in linea con la pianificazione iniziale in quasi tutti gli sprint, eccetto per il quinto, il sesto e l'ottavo. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare il debito accumulato. Nell'ottavo sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
 == MPC07 e MPC08 - Actual Cost ed Estimate at Completion
 //Grafico 2
-
+La spesa è cresciuta in maniera abbastanza lineare in questi sprint. Dall'ETC si può notare che abbiamo abbastanza 
+== MPC14 - Correttezza ortografica
+//Grafico 7
+Grazie all'implementazione di uno spellchecker prima della pianificazione degli sprint, il numero di errori ortografici all'interno dei documenti ufficiali è sempre stato 0.
 = Iniziative di miglioramento
 La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durante lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
 
