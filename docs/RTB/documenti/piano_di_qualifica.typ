@@ -409,10 +409,14 @@ Dal grafico si può capire che le ore effettive e le ore previste per di più co
 Si osservi che il valore di EV è più o meno allineato a quello di PV: il lavoro svolto è abbastanza in linea con la pianificazione iniziale in quasi tutti gli sprint, eccetto per il quinto, il sesto e l'ottavo. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare il debito accumulato. Nell'ottavo sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
 == MPC07 e MPC08 - Actual Cost ed Estimate at Completion
 //Grafico 2
-La spesa è cresciuta in maniera abbastanza lineare in questi sprint. Dall'ETC si può notare che abbiamo abbastanza 
+La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare col budget, in quanto allo sprint 8 non è ancora stata usata più di metà di budget.
+//=== CPI
+
 == MPC14 - Correttezza ortografica
 //Grafico 7
 Grazie all'implementazione di uno spellchecker prima della pianificazione degli sprint, il numero di errori ortografici all'interno dei documenti ufficiali è sempre stato 0.
+
+
 = Iniziative di miglioramento
 La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durante lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
 
