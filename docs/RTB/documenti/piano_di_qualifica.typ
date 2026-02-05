@@ -408,13 +408,19 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
 == MPC01 e MPC02 - Schedule Variance e Cost Variance
 // Grafico 8
 Dal grafico si può capire che le ore effettive e le ore previste per di più corrispondono, quindi SV e CV hanno sempre un valore di 0, eccetto negli sprint 5, 6 e 8, in cui il team ha lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi. 
+
+== MPC03 - Budget Variance
+//Grafico 9
+// Descrizione budget variance....
 == MPC05 e MPC06 - Planned Value ed Earned Value
 //Grafico 1 
 Si osservi che il valore di EV è più o meno allineato a quello di PV: il lavoro svolto è abbastanza in linea con la pianificazione iniziale in quasi tutti gli sprint, eccetto per il quinto, il sesto e l'ottavo. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare il debito accumulato. Nell'ottavo sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
 == MPC07 e MPC08 - Actual Cost ed Estimate at Completion
 //Grafico 2
 La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare col budget, in quanto allo sprint 8 non è ancora stata usata più di metà di budget.
-//=== CPI
+== CPI
+//Grafico 3
+Il CPI è costantemente minore di 1, il valore ottimale, questo è dovuto all'utilizzo dei ruoli più costosi durante la fase di RTB. Siccome dopo questa fase lavoreranno di più figure meno costose come programmatore e verificatore, il CPI dovrebbe arrivare a raggiungere il valore ottimale.\ Negli Sprint 5, 6 e 8 ha un leggero calo dovuta al fatto che l'Earned Value è risultato inferiore rispetto al Planned Value.
 
 == MPC14 - Correttezza ortografica
 //Grafico 7
