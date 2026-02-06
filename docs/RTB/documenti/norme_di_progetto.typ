@@ -805,7 +805,7 @@ $ "CV" = "EV" - "AC" $
 $ "BV" = ("PV" - "AC")/"PV" dot 100 $
 - *Valore accettabile*: $-10%>="BV"<=10%$
 - *Valore ottimale*: $0%$
-- *Descrizione*: L'indice Budget Variance rappresenta il costo totale raggiunto alla data corrente rispetto a quello pianificato. Se il valore è maggiore di 0, allora il budget si sta consumando più rapidamente di quanto pianificato, viceversa se negativo.
+- *Descrizione*: L'indice Budget Variance rappresenta il costo totale raggiunto alla data corrente rispetto a quello pianificato. Se il valore è minore di 0, allora il budget si sta consumando più rapidamente di quanto pianificato, viceversa se positivo.
 
 ==== MPC04 - Requirements Stability Index (RSI)
 - *Formula*:
