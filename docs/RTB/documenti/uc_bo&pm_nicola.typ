@@ -4,14 +4,14 @@ Project Manager
 
 Business Owner
 - In generale si fa un abuso di extends
-- l'uc 10.1 forse non ha senso
+- lo uc 10.1 forse non ha senso
 - uc 11 e 11.1 sono praticamente la stessa cosa e se collegati praticamente descrivono il flusso, non un uc
 - uc 11.2.1 e simili non credo abbiano senso, perché non descrivono un'interazione e lo scopo dell'utente (in questo caso pm), ma semplicemente un ragionamento (ripensandoci forse vanno bene, tipo visualizza titolo del brano nell'appello visto durante la simulazione esame)
 - per la issue 11.3.1 se si vuole si possono suddividere ulteriormente nelle tre diversi tipi di issue
 
 pagebreak()
 
-- UC 8 da capire cos'è (forse la home), probabilmente anche l'uc8.2 va come estensione e non nei scenari alternativi
+- UC 8 da capire cos'è (forse la home), probabilmente anche lo uc8.2 va come estensione e non nei scenari alternativi
 - UC 8.1 sembra corretto, ma cambierei da extend UC9 a include UC9
 
 == Specifica dei casi d'uso - Project Manager

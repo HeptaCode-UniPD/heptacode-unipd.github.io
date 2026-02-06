@@ -1,7 +1,7 @@
 /*
 Domande per Cardin sul file:
-1) Se ho una situazione in cui è possibile aprire un menù, completare un'azione dopodichè il sistema riporta alla schermata precedente è corretto inserire un include per l'UC della finestra precedente? (es UC6.2.1)
-2) In 6.3, ad esempio, è formalmente corretto fare riferimento ad una situazione precedente linkando l'UC a cui ci si riferisce o è meglio descrivere nuovamente la situazione?
+1) Se ho una situazione in cui è possibile aprire un menù, completare un'azione dopodichè il sistema riporta alla schermata precedente è corretto inserire un include per lo uc della finestra precedente? (es UC6.2.1)
+2) In 6.3, ad esempio, è formalmente corretto fare riferimento ad una situazione precedente linkando lo uc a cui ci si riferisce o è meglio descrivere nuovamente la situazione?
 3) se la descrizione è "Il Developer vuole consultare un'analisi archiviata relativa all'area testing" allora non è corretto considerare l'azione di consultazione analisi archiviata come un include?
 4) Se l'utente è obbligato alla fine a tornare alla pagina precedente, è giusto inserirlo nel flusso principale?
 */
@@ -1081,7 +1081,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Developer annulla il Caso d'Uso #link(<UCD6.1.2>)[[UCD6.1.2]].
 
-- *Trigger:* Il Developer seleziona l’opzione di annullamento dell'inserimeno del path.
+- *Trigger:* Il Developer seleziona l’opzione di annullamento dell'inserimento del path.
 
 - *Scenario principale:*
   - Il Developer seleziona l’opzione di annullamento.
@@ -1340,7 +1340,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Developer vuole visualizzare le analisi da lui avviate e non ancora confermate tramite merge con il repository coinvolto. 
 
-- *Trigger:* Il Developer si trova nella sezione 'Procedimenti in corso' e seleziona la voce di analisi in corso.
+- *Trigger:* Il Developer si trova nella sezione "Procedimenti in corso" e seleziona la voce di analisi in corso.
 
 - *Scenario principale:*
   - Il sistema mostra la lista repository sulle quali sono state avviate delle analisi.
@@ -1765,7 +1765,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
  - *Scenari alternativi:* 
   - Il Project Manager preme il pulsante relativo alle competenze del team  (*<\<extend>>* #link(<UCPM3>)[[UCPM3]]).
   - Il Project Manager preme il pulsante relativo all'analisi delle tecnologie utilizzate (*<\<extend>>* #link(<UCPM4>)[[UCPM4]]).
-  - Il Project Manajer preme il pulsante relativo all'elenco dei repository nel progetto(*<\<extend>>* #link(<UCPM2>)[[UCPM2]]).
+  - Il Project manager preme il pulsante relativo all'elenco dei repository nel progetto(*<\<extend>>* #link(<UCPM2>)[[UCPM2]]).
 
 - *Postcondizioni:* Il Project Manager visualizza i dati aggregati del progetto.
 
@@ -1786,7 +1786,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Project Manager visualizza l'elenco completo di tutte le repository collegate al progetto.
 
-- *Precondizioni:* l'utente sta visualizzando un progetto e si concentra sulla lista delle repositoy.
+- *Precondizioni:* l'utente sta visualizzando un progetto e si concentra sulla lista delle repository.
 
 - *Trigger:* L'utente seleziona la voce "Repository" dal selettore di vista.
 
@@ -1842,7 +1842,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Project Manager visualizza il profilo del Developer.
-  + Il Project Manage visualiza le statistiche di contribuzione (*<\<extend>>* #link(<UCPM3.1.1>)[[UCPM3.1.1]]).
+  + Il Project Manage visualizza le statistiche di contribuzione (*<\<extend>>* #link(<UCPM3.1.1>)[[UCPM3.1.1]]).
   + Il Project Manager visualizza i linguaggi maggiormente utilizzati dal Developer (*<\<extend>>* #link(<UCPM3.1.2>)[[UCPM3.1.2]]).
 
 // anche qui si possono aggiungere degli UC più specificiper entrambe le parti dello scenario principali. Quindi UC10.1.1 per visuallizare il profilo utente, UC10.1.2 per visualizzare le statistiche di contribuzione e UC1.1.3 per informazioni sui linguaggi affini.
@@ -2200,16 +2200,16 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [*Codice*], [*Descrizione*], [*Fonti*]),
   //NOTA: i requisiti non dovrebbero cambiare, al massimo se ne aggiungono, ma i riferienti agli UC molto probabilmente cambiano
   [R-1-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian tramite autenticazione interna],[],
-  [R-2-F-O],[L'utente deve poter inserire le proprie credianziali per l'accesso], [],
+  [R-2-F-O],[L'utente deve poter inserire le proprie credenziali per l'accesso], [],
   [R-3-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian tramite GitHub], [#link(<UC1>)[UC1]],
   [R-4-F-O],[L'utente deve un messaggio d'errore se il tentativo di autenticazione non è andato a buon fine], [#link(<UC1>)[UC1]],
-  [R-5-F-P],[L'utente deve poter cambiare ruolo a Business Owner se riconosicuto come tale], [],
-  [R-6-F-P],[L'utente deve poter cambiare ruolo a Project Manager se riconosicuto come tale], [],
+  [R-5-F-P],[L'utente deve poter cambiare ruolo a Business Owner se riconosciuto come tale], [],
+  [R-6-F-P],[L'utente deve poter cambiare ruolo a Project Manager se riconosciuto come tale], [],
   [R-7-F-O],[L'utente deve poter annullare l'accesso alla piattaforma CodeGuardian], [#link(<UC1.1>)[UC1.1]],
   [R-8-F-O],[L'utente deve poter visualizzare la propria area personale], [#link(<UC2>)[UC2]],
   [R-9-F-O],[L'utente deve poter eseguire il logout], [#link(<UC3>)[UC3]],
   [R-10-F-O],[L'utente deve visualizzare un messaggio d'errore se il logout non è andato a buon fine], [#link(<UC3>)[UC3]],
-  [R-11-F-O],[L'utente deve poter annullare l'operaiozne di logout], [#link(<UC3.1>)[UC3.1]],
+  [R-11-F-O],[L'utente deve poter annullare l'operazione di logout], [#link(<UC3.1>)[UC3.1]],
   [R-12-F-O],[L'utente deve poter aggiungere una singola repository sulla piattaforma], [#link(<UCD1>)[UCD1], #link(<UCD1.0.1>)[UCD1.0.1]],
   [R-13-F-O],[L'utente deve ricevere un messaggio d'errore se l'aggiunta del repository non è andata a buon fine], [#link(<UCD1>)[UCD1], #link(<UCD1.0.1>)[UCD1.0.1]],
   [R-14-F-O],[L'utente deve poter annullare l'aggiunta di una singola repository sulla piattaforma], [#link(<UCD1.1>)[UCD1.1]],
@@ -2224,7 +2224,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-23-F-O],[L'utente visualizza il widget di copertura dei test per il progetto selezionato], [#link(<UCD4>)[UCD4]],
   [R-24-F-O],[L'utente visualizza il widget di analisi sicurezza OWASP per il progetto selezionato], [#link(<UCD4>)[UCD4]],
   [R-25-F-O],[L'utente deve visualizzare un messaggio d'errore se la pagina del progetto non viene caricata correttamente], [#link(<UCD4>)[UCD4]],
-  [R-26-F-O],[Dalle visualizzazione dei deattagli del progetto, l'utente deve avere la possibilità si selezionare una repository facente parte di quest'ultimo, per vederne i dettagli], [#link(<UCD4>)[UCD4], #link(<UCD5>)[UCD5]],
+  [R-26-F-O],[Dalle visualizzazione dei dettagli del progetto, l'utente deve avere la possibilità si selezionare una repository facente parte di quest'ultimo, per vederne i dettagli], [#link(<UCD4>)[UCD4], #link(<UCD5>)[UCD5]],
   [R-27-F-O],[L'utente vede i dettagli del repository selezionata], [#link(<UCD5>)[UCD5]],
   [R-28-F-O],[L'utente vede l'intestazione del repository selezionata], [#link(<UCD5>)[UCD5]],
   [R-29-F-O],[L'utente vede il widget riguardante l'analisi della documentazione per repository selezionata], [#link(<UCD5>)[UCD5]],

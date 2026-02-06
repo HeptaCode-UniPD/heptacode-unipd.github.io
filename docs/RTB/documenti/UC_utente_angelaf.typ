@@ -348,7 +348,7 @@
 - *Trigger:* Caricamento della schermata della dashboard.
 
 - *Scenario principale:*
-  + Il sistema visualizza all'intero della dasboard una sezione contente la lista delle repository.
+  + Il sistema visualizza all'intero della dashboard una sezione contente la lista delle repository.
   + L'utente può scorrere per visualizzare tutte le repository presenti.
 
 - *Scenari alternativi:* \
@@ -372,7 +372,7 @@
 - *Trigger:* Caricamento della schermata della dashboard.
 
 - *Scenario principale:*
-  + Il sistema visualizza all'intero della dasboard una sezione contente la lista dei progetti.
+  + Il sistema visualizza all'intero della dashboard una sezione contente la lista dei progetti.
   + L'utente può scorrere per visualizzare tutti i progetti presenti.
   
 - *Scenari alternativi:* \
@@ -992,7 +992,7 @@
 
 - *Precondizioni:* Il Developer vuole visualizzare le analisi da lui avviate e non ancora confermate tramite merge con il Repository coinvolto. 
 
-- *Trigger:* Il Developer si trova nella sezione 'Procedimenti in Corso' e seleziona la voce di Analisi in Corso.
+- *Trigger:* Il Developer si trova nella sezione "Procedimenti in corso" e seleziona la voce di Analisi in Corso.
 
 - *Scenario principale:*
   - Il sistema mostra la lista repository sulle quali sono state avviate delle Analisi.
