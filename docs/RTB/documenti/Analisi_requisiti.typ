@@ -811,7 +811,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti (*<\<extend>>* #link(<UCD14>)[[UCD14]]).
   + Il sistema mostra l'opzione per avviare un analisi sul repository (*<\<extend>>* #link(<UCD15>)[[UCD15]]).
   + Il sistma mostra il pulsante per tornare alla pagina precedente. 
-  
 - *Scenari alternativi:* \
   Al passo 1: 
   - Si verifica un errore durante il caricamento della pagina.
