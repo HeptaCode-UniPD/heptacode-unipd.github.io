@@ -352,7 +352,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* L’utente è autenticato e visualizza la dashboard.
 
 - *Estensioni:* #link(<UC1.1>)[[UC1.1]].
-- *Generalizzazioni:* #link(<UC1.2>)[[UC1.2]].
   
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -371,62 +370,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* L’utente non è autenticato, si trova nella pagina di login.
 
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC1.2 - Primo accesso alla piattaforma
-<UC1.2>
-- *Attore principale:* Utente.
-
-- *Descrizione:* L’utente accede per la prima volta a _Code Guardian_ delegando l'autenticazione al provider esterno (GitHub).
-
-- *Precondizioni:* L’utente non ha ancora effettuato l’accesso.
-
-- *Trigger:* L’utente interagisce con la funzionalità di login nella pagina iniziale.
-
-- *Scenario principale:*
-  + L’utente esprime la volontà di accedere tramite il provider GitHub.
-  + L'utente completa la procedura di autenticazione esterna.
-  + (*<\<include>>* #link(<UC1.2.1>)[[UC1.2.1]]) 
-  + Il sistema mostra all'utente la dashboard personale.
-
-- *Scenari alternativi:* \
-  Al passo 1: \
-  - l'utente esprime la volontà di annullare l'autenticazione (*<\<extend>>* #link(<UC1.1>)[[UC1.1]]) 
-  Al passo 2: \
-  - Si verifica un errore durante la procedura.
-    - Il sistema mostra un messaggio di errore.
-    - Il sistema reindirizza l'utente alla pagina di Login.
-    - Il caso d'uso termina senza successo.
-  
-- *Postcondizioni:* L’utente è autenticato e visualizza la dashboard secondo il ruolo da lui selezionato.
-
-- *Inclusioni:* #link(<UC1.2.1>)[[UC1.2.1]].
-- *Estensioni:* #link(<UC1.1>)[[UC1.1]]
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC1.2.1 - Selezione Ruolo Primo Accesso
-<UC1.2.1>
-- *Attore principale:* Utente.
-
-- *Descrizione:* L'utente sceglie il ruolo iniziale che utilizzerà all'interno della piattaforma.
-
-- *Precondizioni:* L'utente sta completando la procedura di primo accesso.
-
-- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UC1.2>)[[UC1.2]].
-
-- *Scenario principale:*
-  + L'utente visualizza le opzioni di ruolo disponibili: _Developer_, _Project Manager_ o _Business Owner_.
-  + L'utente seleziona una tra le opzioni disponibili.
-  + Il sistema evidenzia graficamente la selezione effettuata.
-  + L'utente conferma la scelta.
-  
-- *Postcondizioni:* Il ruolo iniziale dell'utente è stato selezionato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC2 - Visualizzazione area personale
+#align(center, [#image("../../asset/UC/user/UC2.png", height: 7cm)])
 <UC2>
 - *Attore principale:* Utente.
 
@@ -438,81 +387,81 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + L'utente visualizza il pannello a comparsa del menù utente.
-  + L'utente visualizza il riepilogo delle proprie informazioni (nome, email, ruolo attuale).
-  + L'utente visualizza il pulsante per il cambio ruolo, su cui può cliccare per cambiare il ruolo operativo (*<\<extend>>* #link(<UC3>)[[UC3]]).
-  + L'utente visualizza il pulsante per il logout, su cui può cliccare per terminare la sessione e tornare all'interfaccia di login (*<\<extend>>* #link(<UC4>)[[UC4]]).
-  + L'utente visualizza il pulsante "X", su cui può cliccare per uscire dal menù utente e tornare alla pagina precedente.
+  + L'utente visualizza il riepilogo delle proprie informazioni (nome, email, ruolo attuale). (*<\<include>>* #link(<UC2.1>)[[UC2.1]], *<\<include>>* #link(<UC2.2>)[[UC2.2]], *<\<include>>* #link(<UC2.3>)[[UC2.3]])
+  + L'utente visualizza il pulsante per il logout (*<\<include>>* #link(<UC3>)[[UC3]]).
+  + L'utente visualizza il pulsante "X".
 
-- *Postcondizioni:* Il menù utente è attivo e le opzioni sono selezionabili.
+- *Postcondizioni:* Il menù utente è attivo, l'utente visualizza le sue informazioni personali e le opzioni sono selezionabili.
 
-- *Estensioni:*
+- *Inclusioni:*
+  - #link(<UC2.1>)[[UC2.1]]
+  - #link(<UC2.2>)[[UC2.2]]
+  - #link(<UC2.3>)[[UC2.3]]
   - #link(<UC3>)[[UC3]]
-  - #link(<UC4>)[[UC4]]
 
-#line(length: 100%, stroke: 0.5pt + gray)
-#line(length: 100%, stroke: 0.5pt + gray)
-
-#pagebreak()
-
-=== UC3 - Cambio Ruolo Operativo
-<UC3>
+=== UC2.1 - Visualizzazione nome utente
+<UC2.1>
 - *Attore principale:* Utente.
 
-- *Descrizione:* L'utente vuole cambiare il proprio ruolo attivo all'interno della sessione corrente.
+- *Descrizione:* L'utente vuole visualizzare il proprio nome.
 
-- *Precondizioni:* L'utente è autenticato e sta visualizzando la propria area personale.
+- *Precondizioni:* Il menù utente è attivo.
 
-- *Trigger:* L'utente seleziona il pulsante per il Cambio Ruolo.
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale e pone l'attenzione sulle informazioni personali.
 
 - *Scenario principale:*
-  + Il sistema visualizza l'elenco dei ruoli disponibili (es. se attualmente nel ruolo Developer i ruoli selezionabili saranno Project Manager e Business Owner).
-  + L'utente seleziona il nuovo ruolo desiderato.
-  + Il sistema aggiorna il contesto operativo in base al ruolo selezionato.
+  + L'utente visualizza il proprio nome tra le informazioni personali.
 
-- *Scenario alternativo:* \
-  Ai passi 1 o 2: \
-  -  L'utente sceglie di annullare l'operazione selezionando il tasto di annullamento #link(<UC3.1>)[[UC3.1]]. 
-  Al passo 3: \
-  - Si verifica un errore durante la procedura.
-    - Il sistema mostra un messaggio di errore.
-    - Il caso d'uso termina senza successo.
+- *Postcondizioni:* L'utente è a conoscenza del proprio nome, utilizzato sull'applicativo CodeGuardian.
 
-- *Postcondizioni:* L'interfaccia è aggiornata coerentemente con il nuovo ruolo selezionato.
 
-- *Estensioni:* #link(<UC3.1>)[[UC3.1]]
-  
 #line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC3.1 - Annullamento Cambio Ruolo Operativo
-<UC3.1>
+=== UC2.2 - Visualizzazione email
+<UC2.2>
 - *Attore principale:* Utente.
 
-- *Descrizione:* L'Utente decide di annullare l'operazione di Cambio Ruolo Operativo.
+- *Descrizione:* L'utente vuole visualizzare la propria email.
 
-- *Precondizioni:* L'Utente è autenticato e sta eseguendo l'operazione di cambio ruolo #link(<UC3>)[[UC3]].
+- *Precondizioni:* Il menù utente è attivo.
 
-- *Trigger:* L'utente selzione il tasto per uscire dall'operazione di Cambio Ruolo.
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale e pone l'attenzione sulle informazioni personali.
 
-- *Scenario principale:* 
-+ Il sistema reindirizza l'utente alla pagina di visualizzazione Area Personale.
+- *Scenario principale:*
+  + L'utente visualizza la propria email tra le informazioni personali.
 
-- *Postcondizioni:* L'utente si trova nella propria area personale senza aver effettuato un cambio ruolo.
+- *Postcondizioni:* L'utente è a conoscenza della propria, email utilizzata sull'applicativo CodeGuardian.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+=== UC2.3 - Visualizzazione ruolo
+<UC2.3>
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'utente vuole visualizzare il proprio ruolo.
+
+- *Precondizioni:* Il menù utente è attivo.
+
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale e pone l'attenzione sulle informazioni personali.
+
+- *Scenario principale:*
+  + L'utente visualizza il proprio ruolo tra le informazioni personali.
+
+- *Postcondizioni:* L'utente è a conoscenza del proprio ruolo all'interno dell'applicativo CodeGuardian.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
 
-=== UC4 - Logout
-#align(center, [#image("../../asset/UC/user/UC4.png", height: 7cm)])
-<UC4>
+=== UC3 - Logout
+#align(center, [#image("../../asset/UC/user/UC3.png", height: 7cm)])
+<UC3>
 - *Attore principale:* Utente.
 
 - *Descrizione:* Permette all'utente di terminare la sessione di lavoro corrente.
 
-- *Precondizioni:* L'utente è autenticato e sta visualizzando la propria Area Personale.
+- *Precondizioni:* L'utente è autenticato e sta visualizzando la propria area Personale.
 
-- *Trigger:* L'utente seleziona il pulsante di Logout.
+- *Trigger:* L'utente seleziona il pulsante di logout.
 
 - *Scenario principale:*
   + L’utente conferma l’operazione di logout.
@@ -522,7 +471,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:* \
   Al passo 1:
-  + L’utente annulla l’operazione di logout. Il sistema interrompe l’operazione #link(<UC4.1>)[[UC4.1]].
+  + L’utente annulla l’operazione di logout. Il sistema interrompe l’operazione #link(<UC3.1>)[[UC3.1]].
   Al passo 2:
   + Si verifica un errore durante la terminazione della sessione.
     - Il sistema mostra un messaggio di errore.
@@ -530,17 +479,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* La sessione dell’utente è terminata e l’utente si trova in uno stato non autenticato.
 
-- *Estensioni:* #link(<UC4.1>)[[UC4.1]]
+- *Estensioni:* #link(<UC3.1>)[[UC3.1]]
   
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC4.1 - Annullamento logout
-<UC4.1>
+=== UC3.1 - Annullamento logout
+<UC3.1>
 - *Attore principale:* Utente.
 
-- *Descrizione:* Gestisce il caso in cui l'Utente decida di annullare l'operazione di Logout.
+- *Descrizione:* Gestisce il caso in cui l'Utente decida di annullare l'operazione di logout.
 
-- *Precondizioni:* L'Utente è autenticato e sta eseguendo l'operazione di logout #link(<UC4>)[[UC4]].
+- *Precondizioni:* L'Utente è autenticato e sta eseguendo l'operazione di logout #link(<UC3>)[[UC3]].
 
 - *Trigger:* L'utente selziona il tasto per annullare l'operazione di logout.
 
@@ -2252,15 +2201,15 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   //NOTA: i requisiti non dovrebbero cambiare, al massimo se ne aggiungono, ma i riferienti agli UC molto probabilmente cambiano
   [R-1-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian tramite autenticazione interna],[],
   [R-2-F-O],[L'utente deve poter inserire le proprie credianziali per l'accesso], [],
-  [R-3-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian tramite GitHub], [#link(<UC1>)[UC1], #link(<UC1.2>)[UC1.2]],
-  [R-4-F-O],[L'utente deve un messaggio d'errore se il tentativo di autenticazione non è andato a buon fine], [#link(<UC1>)[UC1], #link(<UC1.2>)[UC1.2]],
+  [R-3-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian tramite GitHub], [#link(<UC1>)[UC1]],
+  [R-4-F-O],[L'utente deve un messaggio d'errore se il tentativo di autenticazione non è andato a buon fine], [#link(<UC1>)[UC1]],
   [R-5-F-P],[L'utente deve poter cambiare ruolo a Business Owner se riconosicuto come tale], [],
   [R-6-F-P],[L'utente deve poter cambiare ruolo a Project Manager se riconosicuto come tale], [],
   [R-7-F-O],[L'utente deve poter annullare l'accesso alla piattaforma CodeGuardian], [#link(<UC1.1>)[UC1.1]],
   [R-8-F-O],[L'utente deve poter visualizzare la propria area personale], [#link(<UC2>)[UC2]],
-  [R-9-F-O],[L'utente deve poter eseguire il logout], [#link(<UC4>)[UC4]],
-  [R-10-F-O],[L'utente deve visualizzare un messaggio d'errore se il logout non è andato a buon fine], [#link(<UC4>)[UC4]],
-  [R-11-F-O],[L'utente deve poter annullare l'operaiozne di logout], [#link(<UC4.1>)[UC4.1]],
+  [R-9-F-O],[L'utente deve poter eseguire il logout], [#link(<UC3>)[UC3]],
+  [R-10-F-O],[L'utente deve visualizzare un messaggio d'errore se il logout non è andato a buon fine], [#link(<UC3>)[UC3]],
+  [R-11-F-O],[L'utente deve poter annullare l'operaiozne di logout], [#link(<UC3.1>)[UC3.1]],
   [R-12-F-O],[L'utente deve poter aggiungere una singola repository sulla piattaforma], [#link(<UCD1>)[UCD1], #link(<UCD1.0.1>)[UCD1.0.1]],
   [R-13-F-O],[L'utente deve ricevere un messaggio d'errore se l'aggiunta del repository non è andata a buon fine], [#link(<UCD1>)[UCD1], #link(<UCD1.0.1>)[UCD1.0.1]],
   [R-14-F-O],[L'utente deve poter annullare l'aggiunta di una singola repository sulla piattaforma], [#link(<UCD1.1>)[UCD1.1]],
