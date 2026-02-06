@@ -411,9 +411,9 @@ Dal grafico si può capire che le ore effettive e le ore previste per di più co
 
 // == MPC03 - Budget Variance     VEDERE SE INCLUDERE
 //Grafico 9
-// La Budget Variance ha sempre un valore negativo a causa dell'utilizzo dei ruoli più costosi durante la fase di RTB, dovrebbe arrivare a 0 quando si inizieranno a utilizzare di più ruoli meno costosi.
+// La Budget Variance ha un valore negativo in ogni sprint del RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase, dovrebbe arrivare a 0 quando si inizieranno a utilizzare di più ruoli meno costosi.
 // ATTENZIONE: se si decide di non mettere questi commenti nel documento, rimuovere "anche" nella descrizione del cpi
-== MPC05 CPI
+== MPC05 -  CPI
 //Grafico 3
 Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto all'utilizzo dei ruoli più costosi durante la fase di RTB. Siccome dopo questa fase lavoreranno di più figure meno costose come programmatore e verificatore, il CPI dovrebbe arrivare a raggiungere il valore ottimale.\ Negli Sprint 5, 6 e 8 ha un leggero calo dovuta al fatto che l'Earned Value è risultato inferiore rispetto al Planned Value.
 
@@ -425,7 +425,9 @@ Si osservi che il valore di EV è più o meno allineato a quello di PV: il lavor
 La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare col budget, in quanto allo sprint 8 non è ancora stata usata più di metà di budget.
 
 == MPC10 - Estimate at Completion
-
+// Grafico 4
+L'attuale scostamento tra EAC e BAC rappresenta lo scenario in cui l'utilizzo dei ruoli rimanesse invariato. Tuttavia, poiché il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, questa stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
+Con il passaggio alla fase successiva (Sprint 9-13), che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un diminuimento progressivo del valore dell'EAC. La curva dell'EAC dovrebbe quindi convergere verso il BAC entro la fine del progetto.
 == MPC15 - Correttezza ortografica
 //Grafico 7
 Grazie all'implementazione di uno spellchecker prima della pianificazione degli sprint, il numero di errori ortografici all'interno dei documenti ufficiali è sempre stato 0.
