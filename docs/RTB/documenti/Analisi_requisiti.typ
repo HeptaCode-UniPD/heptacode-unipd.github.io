@@ -491,7 +491,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* L'Utente è autenticato e sta eseguendo l'operazione di logout #link(<UC3>)[[UC3]].
 
-- *Trigger:* L'utente selziona il tasto per annullare l'operazione di logout.
+- *Trigger:* L'utente seleziona il tasto per annullare l'operazione di logout.
 
 - *Scenario principale:* 
 + Il sistema reindirizza l'utente alla pagina di visualizzazione area personale.
@@ -594,7 +594,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Developer visualizza l'interfaccia per l'inserimento dei dati del repository.
 
-- *Trigger:* Il Developer selziona il tasto per l'annullamento di aggiunta di repoitory.
+- *Trigger:* Il Developer seleziona il tasto per l'annullamento di aggiunta di repository.
 
 - *Scenario principale:* 
   + Il Developer viene reindirizzato alla dashboard principale della piattaforma _Code Guardian_.
@@ -616,7 +616,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 // - *Trigger:* Caricamento della schermata della dashboard.
 
 // - *Scenario principale:*
-//   + Il sistema visualizza all'interno della dasboard una sezione contente la lista delle repository.
+//   + Il sistema visualizza all'interno della dashboard una sezione contente la lista delle repository.
 //   + L'utente può scorrere per visualizzare tutte le repository presenti.
 
 // - *Scenari alternativi:* \
@@ -640,7 +640,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Caricamento della schermata della dashboard.
 
 - *Scenario principale:*
-  + Il sistema visualizza all'interno della dasboard una sezione contente la lista delle repository.
+  + Il sistema visualizza all'interno della dashboard una sezione contente la lista delle repository.
   + L'utente può utilizzare un menù a tendina per selezionare la tipologia di repository che desidera (tutte, senza progetto) (*<\<extend>>* #link(<UCD2.1>)[[UCD2.1]]).
   + L'utente può scorrere per visualizzare tutte le repository presenti.
 
@@ -691,7 +691,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Caricamento della schermata della dashboard.
 
 - *Scenario principale:*
-  + Il sistema visualizza all'intero della dasboard una sezione contente la lista dei progetti.
+  + Il sistema visualizza all'intero della dashboard una sezione contente la lista dei progetti.
   + L'utente può scorrere per visualizzare tutti i progetti presenti.
   
 - *Scenari alternativi:* \
@@ -722,7 +722,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra l'intestazione del progetto.
   + Il sistema mostra i widget aggregati (analisi documentazione, test, OWASP).
   + Il sistema mostra l'elenco dei repository che compongono il progetto con i relativi indicatori di stato.
-  + Il sistma mostra il pulsante per tornare alla visualizzazione della lista dei progetti. 
+  + Il sistema mostra il pulsante per tornare alla visualizzazione della lista dei progetti. 
   
 - *Scenari alternativi:* \
   Al passo 1: 
@@ -741,7 +741,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD5 - Visalizzazione dettagli repository
+=== UCD5 - visualizzazione dettagli repository
 #align(center, [#image("../../asset/UC/developer/UCD5.png", height: 7cm)])
 
 <UCD5>
@@ -759,7 +759,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra l'opzione di visualizzazione delle proposte di remediation (*<\<extend>>* #link(<UCD6>)[[UCD6]]).
   + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti (*<\<extend>>* #link(<UCD14>)[[UCD14]]).
   + Il sistema mostra l'opzione per avviare un analisi sul repository (*<\<extend>>* #link(<UCD15>)[[UCD15]]).
-  + Il sistma mostra il pulsante per tornare alla pagina precedente. 
+  + Il sistema mostra il pulsante per tornare alla pagina precedente. 
 - *Scenari alternativi:* \
   Al passo 1: 
   - Si verifica un errore durante il caricamento della pagina.
@@ -1025,7 +1025,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer seleziona il file che gli interessa consultare.
 
 - *Scenario principale:* \
-  - Il sistema mostra il contenuto del file con le differenze tra il file presente e la proposta applicaile (_diff_). 
+  - Il sistema mostra il contenuto del file con le differenze tra il file presente e la proposta applicabile (_diff_). 
   - Il sistema mostra il path che il file seguirà all'interno del repository (*<\<extend>>* #link(<UCD6.1.2>)[[UCD6.1.2]]).
   - Il sistema mostra un pulsante per accettare la proposta dell'agente (*<\<extend>>* #link(<UCD6.2.1>)[[UCD6.2.1]]).
   - Il sistema mostra un pulsante per tornare alla pagina precedente.
@@ -1051,7 +1051,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer vuole cambiare la destinazione di uno specifico file nel contesto di una proposta di remediation.
 
-- *Precondizioni:* Il Developer sta visualizzando la proposta di remdiation relativa ad un singolo file #link(<UCD6.1>)[[UCD6.1]].
+- *Precondizioni:* Il Developer sta visualizzando la proposta di remediation relativa ad un singolo file #link(<UCD6.1>)[[UCD6.1]].
 
 - *Trigger:* Il Developer seleziona il pulsante per il cambio path.
 
@@ -1256,9 +1256,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer visualizza le operazioni che sono in corso .
 
-- *Precondizioni:* Il Developer vuole visualizzare tutte le operaizioni da lui avviate e non ancora concluse. 
+- *Precondizioni:* Il Developer vuole visualizzare tutte le operazioni da lui avviate e non ancora concluse. 
 
-- *Trigger:* Il Developer si trova nella dashboard e seleziona la voce 'Procedimenti in corso'.
+- *Trigger:* Il Developer si trova nella dashboard e seleziona la voce "Procedimenti in corso".
 
 - *Scenario principale:*
   - Il sistema mostra l'opzione per visualizzare le remediation avviate e le analisi avviate .
@@ -1309,10 +1309,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Developer vuole visualizzare le remediation da lui avviate e non ancora confermate tramite merge con il repository coinvolto. 
 
-- *Trigger:* Il Developer si trova nella sezione 'Procedimenti in corso' e seleziona la voce di remediation in corso.
+- *Trigger:* Il Developer si trova nella sezione "Procedimenti in corso" e seleziona la voce di remediation in corso.
 
 - *Scenario principale:*
-  - Il sistema mostra la lista dei branch aperti per effettuare remdiation ai quali non è stata accettata la pull request.
+  - Il sistema mostra la lista dei branch aperti per effettuare remediation ai quali non è stata accettata la pull request.
   - Il sistema mostra i nomi delle repository su cui un branch sta effettuando l'operazione.
   - Il sistema mostra la data relativa all'avvio del processo di remediation.
   - Il sistema mostra un pulsante per tornare alla pagina precedente
@@ -1387,7 +1387,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Si verifica un errore durante il caricamento della pagina.
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
-  - Il Developer non conferma l'operazoine di interruzione (*<\<extend>>* #link(<UCD11>)[[UCD11]]).
+  - Il Developer non conferma l'operazione di interruzione (*<\<extend>>* #link(<UCD11>)[[UCD11]]).
 
 - *Postcondizioni:* Una remediation in atto è stata interrotta.
 
