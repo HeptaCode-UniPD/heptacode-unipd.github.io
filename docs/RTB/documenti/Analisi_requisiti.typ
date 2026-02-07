@@ -323,45 +323,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 == Specifica dei casi d'uso - Utente
 
-=== UC1 - Accesso alla piattaforma GitHub
+=== UC1 - Accesso alla piattaforma
 #align(center, [#image("../../asset/UC/user/UC1.png", height: 7cm)])
 <UC1>
 - *Attore principale:* Utente.
 
-- *Attore secondario:* GitHub.
-
-- *Descrizione:* L’utente accede a _Code Guardian_ delegando l'autenticazione al provider esterno (GitHub).
-
-- *Precondizioni:* L’utente non ha ancora effettuato l’accesso.
-
-- *Trigger:* L’utente interagisce con la funzionalità di login nella pagina iniziale.
-
-- *Scenario principale:*
-  + L’utente esprime la volontà di accedere tramite il provider GitHub.
-  + L'utente completa la procedura di autenticazione esterna.
-  + L'utente accede alla propria dashboard personale.
-
-- *Scenari alternativi:* \
-  Al passo 1: \
-  - l'utente esprime la volontà di annullare l'autenticazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]) 
-  Al passo 2: \
-  - Si verifica un errore durante la procedura.
-    - Il sistema mostra un messaggio di errore.
-    - Il sistema reindirizza l'utente alla pagina di Login.
-    - Il caso d'uso termina senza successo.
-
-- *Postcondizioni:* L’utente è autenticato e visualizza la dashboard.
-
-- *Estensioni:* #link(<UC1.2>)[[UC1.2]].
-  
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC1.1 - Accesso alla piattaforma metodo interno
-#align(center, [#image("../../asset/UC/user/UC1.1.png", height: 7cm)])
-<UC1.1>
-- *Attore principale:* Utente.
-
-- *Descrizione:* L’utente accede a _Code Guardian_ con il metodo interno.
+- *Descrizione:* L’utente accede a _Code Guardian_.
 
 - *Precondizioni:* L’utente non ha ancora effettuato l’accesso.
 
@@ -374,49 +341,49 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + L’utente inserisce lo username.
   + L’utente inserisce la password.
   + L’utente preme il pulsante di accesso.
-  + Il sistema controlla che le credenziali siano corrette.
-  + L'utente accede alla propria dashboard personale.
+  + Il sistema convalida le credenziali immesse.
+  + L'utente viene autenticato e reindirizzato alla propria dashboard personale.
 
 - *Scenari alternativi:* \
-  Al passo 1: \
-  - l'utente esprime la volontà di annullare l'autenticazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]) 
-  Al passo 6: Le credenziali non sono corrette (*<\<extend>>* #link(<UC1.3>)[[UC1.3]])
+  - L'utente esprime la volontà di annullare l'autenticazione (*<\<extend>>* #link(<UC1.1>)[[UC1.1]]) 
+  - Al passo 7: Le credenziali risultano errate (*<\<extend>>* #link(<UC1.2>)[[UC1.2]])
 
 - *Postcondizioni:* L’utente è autenticato e visualizza la dashboard.
 
 - *Estensioni:* 
+  - #link(<UC1.1>)[[UC1.1]].
   - #link(<UC1.2>)[[UC1.2]].
-  - #link(<UC1.3>)[[UC1.3]].
   
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC1.2 - Annullamento accesso alla piattaforma
-<UC1.2>
+=== UC1.1 - Annullamento accesso alla piattaforma
+<UC1.1>
 - *Attore principale:* Utente.
 
 - *Descrizione:* L'utente annulla la procedura di accesso alla piattaforma _Code Guardian_.
 
-- *Precondizioni:* L'utente ha selezionato il tasto di annullamento dell'operazione di autenticazione.
+- *Precondizioni:* L'utente si trova nell'interfaccia di inserimento credenziali.
 
-- *Trigger:* Condizione di estensione dei casi d'uso #link(<UC1>)[[UC1]], #link(<UC1>)[[UC1.1]].
+- *Trigger:* L'utente seleziona il tasto di annullamento.
 
 - *Scenario principale:*
-  + L’utente si ritrova nella schermata iniziale di login.
+  + Il sistema interrompe la procedura di autenticazione.
+  + Il sistema reindirizza l'utente alla schermata iniziale.
 
-- *Postcondizioni:* L’utente non è autenticato, si trova nella pagina di login.
+- *Postcondizioni:* L’utente non è autenticato e si trova nella pagina di login.
 
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC1.3 - Credenziali errate
-<UC1.3>
+=== UC1.2 - Credenziali errate
+<UC1.2>
 - *Attore principale:* Utente.
 
-- *Descrizione:* L'utente inserisce credenziali non valide durante la procedura di accesso. Il sistema notifica l'errore e permette di inserire nuovamente i dati.
+- *Descrizione:* Il sistema gestisce l'inserimento di credenziali non valide, notificando l'utente.
 
-- *Precondizioni:* L'utente ha confermato l'invio del modulo di login (#link(<UC1.1>)[[UC1.1]]).
+- *Precondizioni:* L'utente ha confermato l'invio del modulo di login (#link(<UC1>)[[UC1]]).
 
-- *Trigger:* Il sistema di autenticazione rileva una mancata corrispondenza tra le credenziali inserite e i dati presenti nel database.
+- *Trigger:* Il sistema rileva una mancata corrispondenza tra le credenziali inserite e i dati a sistema.
 
 - *Scenario principale:*
   + Il sistema invalida la richiesta di accesso.
@@ -425,6 +392,82 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* L’utente non è autenticato e rimane sulla pagina di login.
 
+#line(length: 100%, stroke: 0.5pt + gray)
+
+
+=== UC1.3 - Sincronizzazione repository GitHub
+#align(center, [#image("../../asset/UC/user/UC1.3.png", width: 100%)])
+<UC1.3>
+- *Attore principale:* Utente.
+
+- *Attore secondario:* GitHub.
+
+- *Descrizione:* L’utente sincronizza i propri repository GitHub con la piattaforma _Code Guardian_.
+
+- *Precondizioni:* L’utente ha effettuato l’accesso a _Code Guardian_ ed è in possesso di un account GitHub.
+
+- *Trigger:* L’utente seleziona l'opzione di sincronizzazione globale delle repository GitHub.
+
+- *Scenario principale:*
+  + L’utente avvia la procedura di sincronizzazione.
+  + L'utente completa l'autenticazione tramite il provider esterno GitHub.
+  + Il sistema verifica se l'utente desidera includere repository private.
+  + L'utente conferma l'operazione di sincronizzazione finale.
+  + Il sistema preleva le informazioni da GitHub e popola la dashboard con i repository trovati.
+
+- *Scenari alternativi:* \
+  - Al passo 1: L'utente esprime la volontà di annullare l'autenticazione (*<\<extend>>* #link(<UC1.5>)[[UC1.5]]).
+  - Al passo 2: Si verifica un errore durante la procedura.
+    - Il sistema mostra un messaggio di errore.
+    - Il sistema reindirizza l'utente alla dashboard.
+    - Il caso d'uso termina senza successo.
+  - Al passo 3: L'utente desidera includere le repository private ma non ha un token valido associato (*<\<extend>>* #link(<UCD1.0.2>)[[UCD1.0.2]]).
+  - Al passo 4: l'utente esprime la volontà di annullare la sincronizzazione (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]).
+
+- *Postcondizioni:* L’utente ha tutte le sue repository sulla dashboard.
+
+- *Estensioni:* 
+  - #link(<UC1.4>)[[UC1.4]].
+  - #link(<UC1.5>)[[UC1.5]].
+  - #link(<UCD1.0.2>)[[UCD1.0.2]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+
+=== UC1.4 - Annullamento sincronizzazione
+<UC1.4>
+- *Attore principale:* Utente.
+
+- *Descrizione:* L’utente annulla l'importazione dei repository prima della conferma finale.
+
+- *Precondizioni:* L’utente ha completato l'autenticazione esterna ma non ha confermato la sincronizzazione.
+
+- *Trigger:* Selezione del comando di annullamento per la sincronizzazione.
+
+- *Scenario principale:*
+  + L’utente annulla l'operazione.
+  + Il sistema interrompe l'importazione senza apportare modifiche alla dashboard.
+
+- *Postcondizioni:* La dashboard rimane invariata rispetto allo stato precedente all'operazione.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC1.5 - Annullamento autenticazione GitHub
+<UC1.5>
+- *Attore principale:* Utente.
+
+- *Descrizione:* L’utente interrompe la procedura di autorizzazione sul portale esterno GitHub.
+
+- *Precondizioni:* L’utente è stato reindirizzato alla pagina di autorizzazione di GitHub.
+
+- *Trigger:* L'utente nega l'autorizzazione o chiude la finestra del provider.
+
+- *Scenario principale:*
+  + Il sistema rileva il mancato completamento dell'autenticazione esterna.
+  + Il sistema riporta l'utente alla dashboard di _Code Guardian_.
+
+- *Postcondizioni:* Nessun dato viene sincronizzato, l'utente torna alla dashboard.
+  
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -576,13 +619,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra un messaggio di conferma dell’avvenuta aggiunta.
 
 - *Scenari alternativi:* \
-  Al passo 1 o 2: Il Developer decide di annullare l’operazione #link(<UCD1.1>)[[UCD1.1]].
+  - Al passo 1 o 2: Il Developer decide di annullare l’operazione #link(<UCD1.1>)[[UCD1.1]].
   
-  Al passo 4:
-  - URL della repository non valido *<\<extend>>* #link(<UCD1.3>)[[UCD1.3]].
+  - Al passo 4: URL della repository non valido *<\<extend>>* #link(<UCD1.3>)[[UCD1.3]].
   - Si verifica un errore durante il collegamento con GitHub.
-    - Il sistema mostra un messaggio di errore.
-    - Il caso d'uso termina senza successo.
+      - Il sistema mostra un messaggio di errore.
+      - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* La repository è stata aggiunta alla piattaforma.
 
@@ -595,6 +637,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD1.0.1 - Aggiungi singola repository privata
+#align(center, [#image("../../asset/UC/developer/UCD1.0.1.png", width: 60%)])
 <UCD1.0.1>
 - *Attore principale:* Developer.
 
@@ -605,54 +648,56 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer seleziona l'opzione di "Aggiunta repository" dalla dashboard.
 
 - *Scenario principale:*
-  + Il sistema mostra l’interfaccia per l’inserimento dei dati del repository.
-  + Il Developer inserisce l'URL della repository _GitHub_ *<\<include>>* #link(<UCD1.2>)[[UCD1.2]].
-  + Il Developer conferma l'operazione.
-  + Il sistema valida l’URL.
-  + Il sistema richiede l'inserimento di un token per poter accedere alla repository *<\<include>>* #link(<UCD1.0.2>)[[UCD1.0.2]].
-  + Il Developer inserisce il token.
-  + Il Developer conferma l'operazione.
-  + Il sistema valida il token e registra la repository.
+  + Il sistema mostra l’interfaccia per l’inserimento dell'URL della repository.
+  + Il Developer inserisce l'URL della repository GitHub (<<include>> #link(<UCD1.2>)[[UCD1.2]]).
+  + Il sistema valida l'URL inserito.
+  + Il sistema verifica la presenza di un token GitHub valido associato al profilo del Developer.
+  + Il sistema registra la repository utilizzando le credenziali (token) dell'utente.
   + Il sistema mostra un messaggio di conferma dell’avvenuta aggiunta.
 
 - *Scenari alternativi:* \
-  Al passo 1 o 2: Il Developer decide di annullare l’operazione #link(<UCD1.1>)[[UCD1.1]].
-  
-  Al passo 4: URL della repository non valido *<\<extend>>* #link(<UCD1.3>)[[UCD1.3]].
-  
-  Al passo 4 o 7: Si verifica un errore durante il collegamento con GitHub.
+  - Al passo 1 o 2: Il Developer decide di annullare l’operazione #link(<UCD1.1>)[[UCD1.1]].
+  - Al passo 3: URL non valido (*<\<extend>>* #link(<UCD1.3>)[[UCD1.3]]).
+  - Al passo 4: Il Developer non ha mai associato un token o il token è scaduto (*<\<extend>>* #link(<UCD1.0.2>)[[UCD1.0.2]]).
+  - Al passo 4 o 5: Si verifica un errore durante il collegamento con GitHub.
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
-  
-  Al passo 8: Token della repository non valido *<\<extend>>* #link(<UCD1.0.3>)[[UCD1.0.3]].
 
 - *Postcondizioni:* La repository è stata aggiunta alla piattaforma.
 
 - *Estensioni:* 
   - #link(<UCD1.1>)[[UCD1.1]]
   - #link(<UCD1.3>)[[UCD1.3]]
-  - #link(<UCD1.0.3>)[[UCD1.0.3]]
+  - #link(<UCD1.0.2>)[[UCD1.0.2]]
+
 - *Inclusioni:* 
   - #link(<UCD1.2>)[[UCD1.2]]
-  - #link(<UCD1.0.2>)[[UCD1.0.2]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD1.0.2 - Inserimento token repository
+#align(center, [#image("../../asset/UC/developer/UCD1.0.2.png", width: 90%)])
 <UCD1.0.2>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer deve inserire il token della repository GitHub privata che vuole aggiungere alla piattaforma.
+- *Descrizione:* Il Developer inserisce il proprio Personal Access Token GitHub per consentire alla piattaforma l'accesso alle proprie risorse private.
 
-- *Precondizioni:* La repository da aggiungere è privata e richiede l'utilizzo di un token.
+- *Precondizioni:* Il sistema ha rilevato l'assenza di un token valido durante un'operazione di aggiunta o sincronizzazione.
 
-- *Trigger:* Il Developer seleziona l'opzione di "Aggiunta repository" dalla dashboard, la repository risulta privata.
+- *Trigger:* Richiesta del sistema a seguito di un tentativo di accesso a repository private.
 
 - *Scenario principale:*
-  + Il sistema mostra l’interfaccia per l’inserimento del token.
-  + Il Developer inserisce il token della repository _GitHub_ privata.
+  + Il sistema mostra un'interfaccia di inserimento per il token GitHub dell'utente.
+  + Il Developer inserisce il proprio token.
+  + Il sistema verifica la validità del token.
+  + Il sistema salva il token associandolo stabilmente al profilo dell'utente.
 
-- *Postcondizioni:* È stato indicato un token nell'input proposto.
+- *Scenari alternativi:*
+- Al passo 3: Il token inserito non è valido (*<\<extend>>* #link(<UCD1.0.3>)[[UCD1.0.3]]).
+
+- *Postcondizioni:* Il profilo del Developer è aggiornato con un token valido, permettendo l'importazione di repository private.
+- *Estensioni:* 
+  - #link(<UCD1.0.3>)[[UCD1.0.3]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -660,16 +705,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCD1.0.3>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Segnalazione al developer della mancata validità del token inserito, per l'aggiunta di una repository privata.
+- *Descrizione:* Il sistema notifica al Developer che il token inserito non è valido o ha permessi insufficienti.
 
-- *Precondizioni:* Il token inserito, per aggiungere una repository privata alla piattaforma, non è valido.
+- *Precondizioni:* Il sistema ha fallito la validazione del token in #link(<UCD1.0.2>)[[UCD1.0.2]].
 
-- *Trigger:* Il Developer seleziona l'opzione di "Aggiunta repository" dalla dashboard, la repository risulta privata e il token inserito non è valido.
+- *Trigger:* Il token inserito non è riconosciuto da GitHub o è scaduto.
 
 - *Scenario principale:*
-  + Il sistema mostra un messaggio di errore.
+  + Il sistema mostra un messaggio di errore, indicando la causa del fallimento.
+  + Il sistema invita il Developer a inserire un nuovo token o a verificare i permessi di quello attuale.
 
-- *Postcondizioni:* Il Developer può effettuare un nuovo tentativo di inserimento token.
+- *Postcondizioni:* Il Developer può tentare nuovamente l'inserimento o annullare l'operazione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -791,8 +837,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD3 - Visualizzazione lista progetti
-#align(center, [#image("../../asset/UC/developer/UCD3.png", width: 100%)])
-
 <UCD3>
 - *Attore principale*: Developer.
 
