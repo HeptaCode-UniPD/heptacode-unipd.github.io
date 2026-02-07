@@ -323,7 +323,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 == Specifica dei casi d'uso - Utente
 
-=== UC1 - Accesso alla piattaforma 
+=== UC1 - Accesso alla piattaforma GitHub
 #align(center, [#image("../../asset/UC/user/UC1.png", height: 7cm)])
 <UC1>
 - *Attore principale:* Utente.
@@ -343,7 +343,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:* \
   Al passo 1: \
-  - l'utente esprime la volontà di annullare l'autenticazione (*<\<extend>>* #link(<UC1.1>)[[UC1.1]]) 
+  - l'utente esprime la volontà di annullare l'autenticazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]) 
   Al passo 2: \
   - Si verifica un errore durante la procedura.
     - Il sistema mostra un messaggio di errore.
@@ -352,25 +352,78 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* L’utente è autenticato e visualizza la dashboard.
 
-- *Estensioni:* #link(<UC1.1>)[[UC1.1]].
+- *Estensioni:* #link(<UC1.2>)[[UC1.2]].
   
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC1.1 - Annullamento accesso alla piattaforma
+=== UC1.1 - Accesso alla piattaforma metodo interno
+#align(center, [#image("../../asset/UC/user/UC1.1.png", height: 7cm)])
 <UC1.1>
+- *Attore principale:* Utente.
+
+- *Descrizione:* L’utente accede a _Code Guardian_ con il metodo interno.
+
+- *Precondizioni:* L’utente non ha ancora effettuato l’accesso.
+
+- *Trigger:* L’utente interagisce con la funzionalità di login nella pagina iniziale.
+
+- *Scenario principale:*
+  + Il sistema mostra l’interfaccia per l’inserimento dei dati personali.
+  + Il sistema mostra mostra l'input per lo username.
+  + Il sistema mostra mostra l'input per la password.
+  + L’utente inserisce lo username.
+  + L’utente inserisce la password.
+  + L’utente preme il pulsante di accesso.
+  + Il sistema controlla che le credenziali siano corrette.
+  + L'utente accede alla propria dashboard personale.
+
+- *Scenari alternativi:* \
+  Al passo 1: \
+  - l'utente esprime la volontà di annullare l'autenticazione (*<\<extend>>* #link(<UC1.2>)[[UC1.2]]) 
+  Al passo 6: Le credenziali non sono corrette (*<\<extend>>* #link(<UC1.3>)[[UC1.3]])
+
+- *Postcondizioni:* L’utente è autenticato e visualizza la dashboard.
+
+- *Estensioni:* 
+  - #link(<UC1.2>)[[UC1.2]].
+  - #link(<UC1.3>)[[UC1.3]].
+  
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC1.2 - Annullamento accesso alla piattaforma
+<UC1.2>
 - *Attore principale:* Utente.
 
 - *Descrizione:* L'utente annulla la procedura di accesso alla piattaforma _Code Guardian_.
 
 - *Precondizioni:* L'utente ha selezionato il tasto di annullamento dell'operazione di autenticazione.
 
-- *Trigger:* Condizione di estensione dei casi d'uso #link(<UC1>)[[UC1]].
+- *Trigger:* Condizione di estensione dei casi d'uso #link(<UC1>)[[UC1]], #link(<UC1>)[[UC1.1]].
 
 - *Scenario principale:*
   + L’utente si ritrova nella schermata iniziale di login.
 
 - *Postcondizioni:* L’utente non è autenticato, si trova nella pagina di login.
 
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC1.3 - Credenziali errate
+<UC1.3>
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'utente inserisce credenziali non valide durante la procedura di accesso. Il sistema notifica l'errore e permette di inserire nuovamente i dati.
+
+- *Precondizioni:* L'utente ha confermato l'invio del modulo di login (#link(<UC1.1>)[[UC1.1]]).
+
+- *Trigger:* Il sistema di autenticazione rileva una mancata corrispondenza tra le credenziali inserite e i dati presenti nel database.
+
+- *Scenario principale:*
+  + Il sistema invalida la richiesta di accesso.
+  + Il sistema mostra un messaggio di errore all'utente (esempio. "Email o password errati").
+  + Il sistema svuota i campi sensibili e permette all'utente di effettuare un nuovo tentativo.
+
+- *Postcondizioni:* L’utente non è autenticato e rimane sulla pagina di login.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
