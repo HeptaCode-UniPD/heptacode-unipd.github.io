@@ -173,7 +173,7 @@
 
 - *Precondizioni:* L'Utente è autenticato e sta eseguendo l'operazione di cambio ruolo #link(<UC3>)[[UC3]].
 
-- *Trigger:* L'utente selzione il tasto per uscire dall'operazione di Cambio Ruolo.
+- *Trigger:* L'utente seleziona il tasto per uscire dall'operazione di Cambio Ruolo.
 
 - *Scenario principale:* 
 + Il sistema reindirizza l'utente alla pagina di visualizzazione Area Personale.
