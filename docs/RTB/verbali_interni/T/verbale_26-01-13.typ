@@ -29,13 +29,13 @@
 // ruolo e presenza abbastanza intuitivo
 //esempio: "Amministratore", "Presente"
 #let lista-ruoli = (
-    "Progettista",   "Presente", //Angela Favaro
-    "Amministratore",   "Presente", //Angela Canazza
-    "",   "Assente", //Riccardo Baldin
+    "Verificatore",   "Presente", //Angela Favaro
+    "Programmatore",   "Presente", //Angela Canazza
+    "Progettista",   "Presente", //Riccardo Baldin
     "Progettista",   "Presente", //Alberto Reginato
-    "Progettista",   "Presente", //Amerigo Vegliante
-    "Progettista",   "Presente", //Nicola Simionato
-    "Progettista",   "Presente" //Laura Venturini
+    "Analista",   "Presente", //Amerigo Vegliante
+    "Responsabile",   "Presente", //Nicola Simionato
+    "Amministratore",   "Presente" //Laura Venturini
 )
 
 // ora di inzio dell'incontro
