@@ -13,6 +13,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("0.8.1", "2026-02-07", "Angela Canazza", "Angela Favaro", "Modifica UC di Utente e Developer"),
   ("0.8.0", "2026-01-16", "Angela Canazza", "Angela Favaro", "Scrittura requisiti e modifica errori sugli UC"),
   ("0.8.0", "2026-01-12", "Angela Favaro", "Nicola Simionato", "Finale UC Utente e Developer"),
   ("0.7.0", "2026-01-06", "Angela Favaro", "Nicola Simionato", "Revisione UC Utente e Developer"),
@@ -911,9 +912,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il sistema mostra l'intestazione del repository.
-  + Il sistema mostra il widget delle stastistiche di analisi documentazione (*<\<include>>* #link(<UCD5.1>)[[UCD5.1]]).
-  + Il sistema mostra il widget delle stastistiche di analisi di test (*<\<include>>* #link(<UCD5.2>)[[UCD5.2]]).
-  + Il sistema mostra il widget delle stastistiche correttezza OWASP (*<\<include>>* #link(<UCD5.3>)[[UCD5.3]]).
+  + Il sistema mostra il widget delle statistiche di analisi documentazione (*<\<include>>* #link(<UCD5.1>)[[UCD5.1]]).
+  + Il sistema mostra il widget delle statistiche di analisi di test (*<\<include>>* #link(<UCD5.2>)[[UCD5.2]]).
+  + Il sistema mostra il widget delle statistiche correttezza OWASP (*<\<include>>* #link(<UCD5.3>)[[UCD5.3]]).
   + Il sistema mostra l'opzione di visualizzazione delle proposte di remediation.
   + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti.
   + Il sistema mostra l'opzione per avviare un analisi sul repository.
@@ -1546,9 +1547,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il sistema carica i dati statici relativi alla specifica sessione di analisi selezionata.
   + Il sistema mostra l'intestazione del repository.
-  + Il sistema mostra i grafici delle stastistiche di analisi documentazione nella sessione di interesse (*<\<include>>* #link(<UCD12.1>)[[UCD12.1]]).
+  + Il sistema mostra i grafici delle statistiche di analisi documentazione nella sessione di interesse (*<\<include>>* #link(<UCD12.1>)[[UCD12.1]]).
   + Il sistema mostra i grafici delle statistiche di analisi di test nella sessione di interesse (*<\<include>>* #link(<UCD12.2>)[[UCD12.2]]).
-  + Il sistema mostra i grafici delle stastistiche di correttezza OWASP nella sessione di interesse (*<\<include>>* #link(<UCD12.3>)[[UCD12.3]]).
+  + Il sistema mostra i grafici delle statistiche di correttezza OWASP nella sessione di interesse (*<\<include>>* #link(<UCD12.3>)[[UCD12.3]]).
   + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti.
   + Il sistema mostra il pulsante per tornare alla pagina precedente. 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
