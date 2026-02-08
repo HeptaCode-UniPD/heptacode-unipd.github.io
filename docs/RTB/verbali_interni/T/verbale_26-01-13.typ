@@ -15,6 +15,7 @@
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
   ("0.1.0", "2026-02-07", "Nicola Simionato", "", "Stesura del verbale")
+  ("1.0.0", "2026-02-07", "Nicola Simionato", "Angela Favaro", "Stesura del verbale")
 )
 
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
@@ -54,8 +55,8 @@ Gli argomenti discussi nell'incontro sono stati:
 
 = Svolgimento
 == Stato di avanzamento degli UC e dei requisiti
-Il confronto con il Professor Cardin Giovanni ci ha permesso di riconoscere delle problematiche all'interno dell'Analisi dei Requisiti (AdR).
-In particolar modo la parte da rivisionare è quella del developer.
+Il confronto con il Professor Cardin ci ha permesso di riconoscere delle problematiche all'interno dell'Analisi dei Requisiti (AdR).
+In particolar modo la parte da revisionare è quella del ruolo del developer.
 == Scrittura dei diagrammi di attività
 Per capire come l'utente interagirà con il sistema e il flusso che seguirà all'interno della piattaforma abbiamo discusso della possibilità di descrivere tali comportamenti attraverso i diagrammi di attività, differenziandoli anche per i diversi ruoli del nostro sistema.
 == Ultimazione del PoC
