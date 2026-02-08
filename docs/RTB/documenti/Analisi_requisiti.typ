@@ -360,7 +360,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC1.0.1 - Insrimento username
+=== UC1.0.1 - Inserimento username
 <UC1.0.1>
 - *Attore principale:* Utente.
 - *Descrizione:* L'utente inserisce il proprio username.
