@@ -338,8 +338,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra l’interfaccia per l’inserimento dei dati personali.
   + Il sistema mostra mostra l'input per lo username.
   + Il sistema mostra mostra l'input per la password.
-  + L’utente inserisce lo username.
-  + L’utente inserisce la password.
+  + L’utente inserisce lo username (*<\<include>>* #link(<UC1.0.1>)[UC1.0.1]).
+  + L’utente inserisce la password (*<\<include>>* #link(<UC1.0.2>)[UC1.0.2]).
   + L’utente preme il pulsante di accesso.
   + Il sistema convalida le credenziali immesse.
   + L'utente viene autenticato e reindirizzato alla propria dashboard personale.
@@ -353,6 +353,34 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Estensioni:* 
   - #link(<UC1.1>)[[UC1.1]].
   - #link(<UC1.2>)[[UC1.2]].
+
+- *Inclusioni*
+  - #link(<UC1.0.1>)[UC1.0.1]
+  - #link(<UC1.0.2>)[UC1.0.2]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC1.0.1 - Insrimento username
+<UC1.0.1>
+- *Attore principale:* Utente.
+- *Descrizione:* L'utente inserisce il proprio username.
+- *Precondizioni:* L'utente si trova nell'interfaccia di inserimento credenziali.
+- *Trigger:* L'utente seleziona lo spazio destinato all'inserimento dello username.
+- *Scenario principale:*
+  1. L'utente inserisce il proprio username.
+- *Postcondizioni:* L'utente ha inserito il proprio username all'interno dello spazio dedicato.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC1.0.2 - Inserimento password
+<UC1.0.2>
+- *Attore principale:* Utente.
+- *Descrizione:* L'utente inserisce la propria password.
+- *Precondizioni:* L'utente si trova nell'interfaccia di inserimento credenziali.
+- *Trigger:* L'utente seleziona lo spazio destinato all'inserimento della password.
+- *Scenario principale:*
+  1. L'utente inserisce la propria password.
+- *Postcondizioni:* L'utente ha inserito la propria password all'interno dello spazio dedicato.
   
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -393,7 +421,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* L’utente non è autenticato e rimane sulla pagina di login.
 
 #line(length: 100%, stroke: 0.5pt + gray)
-
 
 === UC1.3 - Sincronizzazione repository GitHub
 #align(center, [#image("../../asset/UC/user/UC1.3.png", width: 100%)])
@@ -529,6 +556,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* L'utente è a conoscenza della propria, email utilizzata sull'applicativo CodeGuardian.
 
 #line(length: 100%, stroke: 0.5pt + gray)
+// In questo caso come gestiamo l'assegnazione del ruolo? Semplicmente da db vengono concessi i permessi? In questo modo ci semplificheremmo la vita e le credenziali di accesso vengno dati.
 === UC2.3 - Visualizzazione ruolo
 <UC2.3>
 - *Attore principale:* Utente.
@@ -2589,7 +2617,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   table.header(
   [*Codice*], [*Descrizione*], [*Fonti*]),
   //NOTA: i requisiti non dovrebbero cambiare, al massimo se ne aggiungono, ma i riferienti agli UC molto probabilmente cambiano
-  [R-1-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian tramite autenticazione interna],[],
+  [R-1-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian],[#link(<UC1>)[UC1]],
   [R-2-F-O],[L'utente deve poter inserire le proprie credenziali per l'accesso], [],
   [R-3-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian tramite GitHub], [#link(<UC1>)[UC1]],
   [R-4-F-O],[L'utente deve un messaggio d'errore se il tentativo di autenticazione non è andato a buon fine], [#link(<UC1>)[UC1]],
