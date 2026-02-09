@@ -13,6 +13,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("0.9.0", "2026-02-09", "Angela Favaro", "Laura Venturini", "Aggiunta requisiti funzionali"),
   ("0.8.1", "2026-02-07", "Angela Canazza", "Angela Favaro", "Modifica UC di Utente e Developer"),
   ("0.8.0", "2026-01-16", "Angela Canazza", "Angela Favaro", "Scrittura requisiti e modifica errori sugli UC"),
   ("0.8.0", "2026-01-12", "Angela Favaro", "Nicola Simionato", "Finale UC Utente e Developer"),
@@ -316,13 +317,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 == Specifica dei casi d'uso - Utente
 
-#outline(title: "Indice dei contenuti")
-
-#pagebreak()
-
-
-== Specifica dei casi d'uso - Utente
-
 === UC1 - Accesso alla piattaforma
 #align(center, [#image("../../asset/UC/user/UC1.png", height: 7cm)])
 <UC1>
@@ -355,8 +349,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - #link(<UC1.2>)[[UC1.2]].
 
 - *Inclusioni*
-  - #link(<UC1.0.1>)[UC1.0.1]
-  - #link(<UC1.0.2>)[UC1.0.2]
+  - #link(<UC1.0.1>)[[UC1.0.1]]
+  - #link(<UC1.0.2>)[[UC1.0.2]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
