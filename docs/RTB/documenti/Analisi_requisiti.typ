@@ -13,7 +13,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("0.9.0", "2026-02-09", "Angela Favaro", "Laura Venturini", "Aggiunta requisiti funzionali"),
+  ("0.9.0", "2026-02-09", "Angela Favaro", "Laura Venturini", "Aggiunta requisiti funzionali user e dev"),
   ("0.8.1", "2026-02-07", "Angela Canazza", "Angela Favaro", "Modifica UC di Utente e Developer"),
   ("0.8.0", "2026-01-16", "Angela Canazza", "Angela Favaro", "Scrittura requisiti e modifica errori sugli UC"),
   ("0.8.0", "2026-01-12", "Angela Favaro", "Nicola Simionato", "Finale UC Utente e Developer"),
@@ -550,7 +550,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* L'utente è a conoscenza della propria, email utilizzata sull'applicativo CodeGuardian.
 
 #line(length: 100%, stroke: 0.5pt + gray)
-// In questo caso come gestiamo l'assegnazione del ruolo? Semplicmente da db vengono concessi i permessi? In questo modo ci semplificheremmo la vita e le credenziali di accesso vengno dati.
 === UC2.3 - Visualizzazione ruolo
 <UC2.3>
 - *Attore principale:* Utente.
@@ -1945,7 +1944,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCD14 - Visualizzazione storico delle analisi sulla repository
+=== UCD14 - Visualizzazione storico delle analisi sul repository
 <UCD14>
 - *Attore principale:* Developer
 
@@ -1969,7 +1968,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #pagebreak()
 
-=== UCD15 - Avvio analisi di una repository
+=== UCD15 - Avvio analisi di un repository
 #align(center, [#image("../../asset/UC/developer/UCD15.png", width: 100%)])
 <UCD15>
 - *Attore principale:* Developer.
@@ -2611,23 +2610,33 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   table.header(
   [*Codice*], [*Descrizione*], [*Fonti*]),
   //NOTA: i requisiti non dovrebbero cambiare, al massimo se ne aggiungono, ma i riferienti agli UC molto probabilmente cambiano
-  [R-1-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian],[#link(<UC1>)[UC1]],
-  [R-2-F-O],[L'utente deve poter inserire le proprie credenziali per l'accesso], [],
-  [R-3-F-O],[L'utente deve poter accedere alla piattaforma CodeGuardian tramite GitHub], [#link(<UC1>)[UC1]],
-  [R-4-F-O],[L'utente deve un messaggio d'errore se il tentativo di autenticazione non è andato a buon fine], [#link(<UC1>)[UC1]],
-  [R-5-F-P],[L'utente deve poter cambiare ruolo a Business Owner se riconosciuto come tale], [],
-  [R-6-F-P],[L'utente deve poter cambiare ruolo a Project Manager se riconosciuto come tale], [],
-  [R-7-F-O],[L'utente deve poter annullare l'accesso alla piattaforma CodeGuardian], [#link(<UC1.1>)[UC1.1]],
-  [R-8-F-O],[L'utente deve poter visualizzare la propria area personale], [#link(<UC2>)[UC2]],
-  [R-9-F-O],[L'utente deve poter eseguire il logout], [#link(<UC3>)[UC3]],
-  [R-10-F-O],[L'utente deve visualizzare un messaggio d'errore se il logout non è andato a buon fine], [#link(<UC3>)[UC3]],
-  [R-11-F-O],[L'utente deve poter annullare l'operazione di logout], [#link(<UC3.1>)[UC3.1]],
-  [R-12-F-O],[L'utente deve poter aggiungere una singola repository sulla piattaforma], [#link(<UCD1>)[UCD1], #link(<UCD1.0.1>)[UCD1.0.1]],
-  [R-13-F-O],[L'utente deve ricevere un messaggio d'errore se l'aggiunta del repository non è andata a buon fine], [#link(<UCD1>)[UCD1], #link(<UCD1.0.1>)[UCD1.0.1]],
-  [R-14-F-O],[L'utente deve poter annullare l'aggiunta di una singola repository sulla piattaforma], [#link(<UCD1.1>)[UCD1.1]],
-  [R-15-F-O],[L'utente deve poter visualizzare la lista dei repository che ha inserito sulla piattaforma], [#link(<UCD2>)[UCD2]],
+  // UTENTE GENERICO
+  [R-X-F-O],[L'utente deve poter accedere alla piattaforma Code Guardian inserendo username e password],[#link(<UC1>)[UC1]],
+  [R-X-F-O],[L'utente deve poter inserire le proprie credenziali per l'accesso], [#link(<UC1.0.1>)[UC1.0.1], #link(<UC1.0.2>)[UC1.0.2]],
+  [R-X-F-O],[L'utente deve ricevere un messaggio di errore nel caso inserisca delle credenziali sbagliate durante la procedura di accesso],[#link(<UC1.2>)[UC1.2]],
+  [R-X-F-O],[L'utente deve poter sincronizzare I propri repository GitHub all'interno della piattaforma Code Guardian], [#link(<UC1.3>)[UC1.3]],
+  [R-X-F-O],[L'utente deve poter annullare la sincronizzazione dei repository GitHub all'interno di Code Guardian], [#link(<UC1.4>)[UC1.4]],
+  [R-X-F-P],[L'utente deve visualizzare un messaggio nel caso di negazione della sincronizzazione dalla piattaforma GitHub], [#link(<UC1.5>)[UC1.5]],
+  [R-X-F-O],[L'utente deve poter visualizzare la propria area personale], [#link(<UC2>)[UC2]],
+  [R-X-F-O],[L'utente deve poter visualizzare il proprio nome utente],[#link(<UC2.1>)[UC2.1]],
+  [R-X-F-O],[L'utente deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
+  [R-X-F-O],[L'utente deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
+  [R-X-F-O],[L'utente deve poter eseguire il logout], [#link(<UC3>)[UC3]],
+  [R-X-F-O],[L'utente deve poter annullare l'operazione di logout dalla piattaforma], [#link(<UC3.1>)[UC3.1]],
+
+  // DEVELOPER
+  [R-X-F-O],[L'utente deve poter aggiungere un singolo repository sulla piattaforma], [#link(<UCD1>)[UCD1], #link(<UCD1.0.1>)[UCD1.0.1]],
+  [R-X-F-O],[L'utente, nella procedura di aggiunta in di un repository privato, deve poter inserire il token di accesso],[#link(<UCD1.0.2>)[UCD1.0.2]],
+  [R-X-F-O],[L'utente deve visualizzare un messaggio di errore, nel caso inserisca un token non valido],[#link(<UCD1.0.3>)[UCD1.0.3]],
+  [R-X-F-O],[Durante il processo din inserimento di un repository, l'utente deve inserire l'URL del repository],[#link(<UCD1.2>)[UCD1.2]],
+  [R-X-F-O],[L'utente deve ricevere un messaggio di errore nel caso l'URL del repository da inserire non sia valido],[#link(<UCD1.3>)[UCD1.3]],
+  [R-X-F-O],[L'utente deve poter annullare l'aggiunta di una singola repository sulla piattaforma], [#link(<UCD1.1>)[UCD1.1]],
+  [R-X-F-O],[L'utente deve ricevere un messaggio d'errore se l'aggiunta del repository non è andata a buon fine], [],
+  [R-X-F-O],[L'utente deve poter visualizzare la lista dei repository che ha inserito sulla piattaforma], [#link(<UCD2>)[UCD2]],
+
+  // SONO ARRIVATA QUI -- Angela F.
+  [R-X-F-O],[L'utente deve poter selezionare un repository tra quelli presenti nel proprio account], [#link(<UCD2.1>)[UCD2.1]],
   [R-16-F-O],[Dalla visualizzazione della lista di repository, l'utente deve poter selezionarne una per vederne i dettagli], [#link(<UCD5>)[UCD5]],
-  [R-17-F-D],[L'utente interagisce con il filtro a tendina per poter visualizzare solo le repository di suo interesse tra "Tutte" e "Senza progetto"], [#link(<UCD2.1>)[UCD2.1]],
   [R-18-F-O],[L'utente visualizza la lista dei progetti di cui fa parte], [#link(<UCD3>)[UCD3]],
   [R-19-F-O],[L'utente seleziona un progetto dalla lista dei progetti per vederne i dettagli], [#link(<UCD4>)[UCD4]],
   [R-20-F-O],[L'utente visualizza i dettagli del progetto selezionato], [#link(<UCD4>)[UCD4]],
