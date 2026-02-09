@@ -14,7 +14,7 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("0.1.0", "2026-01-27", "Laura Venturini", "Amerigo Vegliante", "Stesura del verbale")
+  ("1.0.0", "2026-01-27", "Laura Venturini", "Angela Favaro", "Stesura del verbale")
 )
 
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
@@ -76,7 +76,7 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 ]
 
 #let decisione-azione = ((
-   "Candidarsi al RTB entro metà febbraio", "Dedicarsi completamente ad AdR e PoC",
+  "Candidarsi al RTB entro metà febbraio", "Dedicarsi completamente ad AdR e PoC",
   "Focalizzarsi sull'AdR", "Impiegati più analisti per questo sprint",
   "Rimediare ai ritardi", "Recuperare il tempo dedicato agli esami invece che al progetto durante il mese di febbraio"
 )
