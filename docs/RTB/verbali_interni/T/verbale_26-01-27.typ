@@ -77,7 +77,7 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 #let decisione-azione = ((
   "Candidarsi al RTB entro metà febbraio", "Dedicarsi completamente ad AdR e PoC",
-  "Focalizzarsi sull’AdR", "Impiegati più analisti per questo sprint",
+  "Focalizzarsi sull'AdR", "Impiegati più analisti per questo sprint",
   "Rimediare ai ritardi", "Recuperare il tempo dedicato agli esami invece che al progetto durante il mese di febbraio"
 )
 )
