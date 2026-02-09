@@ -59,7 +59,7 @@ Sono stati discussi i ritardi accumulati a causa degli impegni universitari e la
 - la stesura dell'ultimo capitolo programmato del PdQ.
 
 == Data di candidatura per l'RTB.
-La candidatura per l'RTB è stata posticipata rispetto a quella precedentemente prevista a causa del periodo di sessione universitaria, tuttavia si pensa sia fattibile consegnare entro la prima metà di febbraio, idealmente entro il 10. Per conseguire questo scopo è stato deciso di prioritizzare la riformulazione degli Use Case, la stesura dei requisiti nell'AdR e la conclusione del PoC. 
+La candidatura per l'RTB è stata posticipata rispetto a quella precedentemente prevista a causa del periodo di sessione universitaria, tuttavia si pensa sia fattibile consegnare entro la prima metà di febbraio, idealmente entro il 10. Per conseguire questo scopo è stato deciso di dare priorità alla riformulazione degli Use Case, la stesura dei requisiti nell'AdR e la conclusione del PoC. 
 
 == Pianificazione attività per la settimana corrente
 Gli analisti si dedicheranno con urgenza al completamento dell'AdR, per il quale si deve:
