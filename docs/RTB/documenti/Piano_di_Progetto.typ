@@ -23,6 +23,12 @@
   align: horizon,
   table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
 
+  "0.2.0",
+  "2026/02/10", 
+  "Angela Favaro", 
+  "", 
+  "Sistemazione rendicontazione ore effettive",
+
   "0.1.7",
   "2026/01/05", 
   "Angela Canazza", 
