@@ -13,6 +13,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("0.8.2", "2026-02-10", "Nicola Simionato", "Angela Favaro", "Modifica UC Project Manager e Business Owner"),
   ("0.8.1", "2026-02-07", "Angela Canazza", "Angela Favaro", "Modifica UC di Utente e Developer"),
   ("0.8.0", "2026-01-16", "Angela Canazza", "Angela Favaro", "Scrittura requisiti e modifica errori sugli UC"),
   ("0.8.0", "2026-01-12", "Angela Favaro", "Nicola Simionato", "Finale UC Utente e Developer"),
@@ -2120,13 +2121,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il sistema carica i dati generali relativi ai progetti collegati all'account.
   + Il Project Manager visualizza di default la *Lista Progetti* (*<\<include>>* #link(<UCPM1.1>)[[UCPM1.1]]).
-
-- *Scenari alternativi:* 
-  + Il Project Manager decider di creare un nuovo progetto.
+  + Il Project Manager visualizza può creare un nuovo progetto (*<\<include>>* #link(<UCPM1.2>)[[UCPM1.2]]).
 
 - *Postcondizioni:* Il Project Manager visualizza la lista Progetti.
 
-- *Inclusioni:* #link(<UCPM1.1>)[[UCPM1.1]].
+- *Inclusioni:* #link(<UCPM1.1>)[[UCPM1.1]] , #link(<UCPM1.2>)[[UCPM1.2]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2150,11 +2149,36 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Nome del progetto.
     - Numero di repository associate.
     - Indicatori sintetici di salute (es. media qualità).
-  + Il Project Manager può selezionare un progetto specifico per accedere ai suoi dettagli (*<\<extend>>* #link(<UCPM1.1.1>)[[UCPM1.1.1]]).
+  + Il Project Manager può selezionare un progetto specifico per accedere ai suoi dettagli (*<\<include>>* #link(<UCPM1.1.1>)[[UCPM1.1.1]]).
 
 - *Scenari alternativi:* Il sistema non rileva progetti: mostra uno stato vuoto e invita a creare il primo progetto tramite il pulsante "Nuovo progetto".
 
 - *Postcondizioni:* Il Project Manager scorre la lista dei progetti.
+
+- *Inclusioni:* #link(<UCPM1.1.1>)[[UCPM1.1.1]].
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCPM1.2: Creazione nuovo progetto 
+// #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
+
+<UCPM1.2>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager crea un nuovo progetto.
+
+- *Precondizioni:* Il Project Manager ha intenzione di creare un nuovo progetto.
+
+- *Trigger:* Condizione d'inclusione del caso d'uso #link(<UCPM1>)[[UCPM1]].
+
+- *Scenario principale:*
+  + Il Project Manager inserisce i dati necessari per il progetto:
+    - Nome del Progetto (*<\<include>>* #link(<UCPM1.2.1>)[[UCPM1.2.1]]).
+
+- *Scenari alternativi:* Il sistema non rileva progetti: mostra uno stato vuoto e invita a creare il primo progetto tramite il pulsante "Nuovo progetto".
+
+- *Postcondizioni:* Il Project Manager crea un nuovo progetto.
 
 - *Estensioni:* #link(<UCPM1.1.1>)[[UCPM1.1.1]].
 
@@ -2176,23 +2200,37 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Project Manager visualizza l'intestazione del progetto.
   + Il Project Manager visualizza i widget aggregati (Sicurezza, copertura test, adeguatezza documentazione, Avanzamento ecc...).
-  + Il Project Manager visualizza il pulsante "Team & Competenze", su cui può premere per approfondire le competenze del team (*<\<extend>>* #link(<UCPM3>)[[UCPM3]]).
-  + Il Project Manager visualizza il pulsante "Stack tecnologico", su cui può premere per analizzare le tecnologie utilizzate nel progetto e ricevere suggerimenti (*<\<extend>>* #link(<UCPM4>)[[UCPM4]]).
-  + Il Project Manager visualizza l'elenco dei repository che compongono il progetto con i relativi indicatori di stato. (*<\<extend>>* #link(<UCPM2>)[[UCPM2]]).
+  + Il Project Manager visualizza il pulsante "Team & Competenze", su cui può premere per approfondire le competenze del team (*<\<include>>* #link(<UCPM3>)[[UCPM3]]).
+  + Il Project Manager visualizza il pulsante "Stack tecnologico", su cui può premere per analizzare le tecnologie utilizzate nel progetto e ricevere suggerimenti (*<\<include>>* #link(<UCPM4>)[[UCPM4]]).
+  + Il Project Manager visualizza l'elenco dei repository che compongono il progetto con i relativi indicatori di stato (*<\<include>>* #link(<UCPM2>)[[UCPM2]]).
  + Il Project Manager clicca "Indietro" per tornare alla lista progetti.
- - *Scenari alternativi:* 
-  - Il Project Manager preme il pulsante relativo alle competenze del team  (*<\<extend>>* #link(<UCPM3>)[[UCPM3]]).
-  - Il Project Manager preme il pulsante relativo all'analisi delle tecnologie utilizzate (*<\<extend>>* #link(<UCPM4>)[[UCPM4]]).
-  - Il Project manager preme il pulsante relativo all'elenco dei repository nel progetto(*<\<extend>>* #link(<UCPM2>)[[UCPM2]]).
-
 - *Postcondizioni:* Il Project Manager visualizza i dati aggregati del progetto.
 
-- *Estensioni:* 
+- *Inclusioni:* 
   - #link(<UCPM2>)[[UCPM2]];
   - #link(<UCPM3>)[[UCPM3]]; 
   - #link(<UCPM4>)[[UCPM4]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCPM1.2.1: Accesso alla dashboard di dettaglio progetto 
+// #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.1.png", height: 10cm)])
+
+<UCPM1.2.1>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager deve inserire il nome del progetto che sta creando.
+
+- *Precondizioni:* Il progetto non è ancora stato creato.
+
+- *Trigger:* Condizioni di inclusione del caso d'uso #link(<UCPM1.2>)[[UCPM1.2]].
+
+- *Scenario principale:*
+  + Il Project Manager inserisce il nome del nuovo progetto.
+
+- *Postcondizioni:* Il Project Manager ha inserito il nome del progetto.
+
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM2: Visualizzazione lista repository 
@@ -2211,8 +2249,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Project Manager visualizza la tabella riepilogativa di tutte le repository importate.
   + Per ogni repository, il sistema mostra:
-    - nome repository.
-    - data ultimo aggiornamento.
+    - nome repository (*<\<include>>* #link(<UCPM2.1>)[[UCPM2.1]]).
+    - data ultimo aggiornamento (*<\<include>>* #link(<UCPM2.2>)[[UCPM2.2]]).
 
 - *Scenari alternativi:* Il Project Manager non ha aggiunto nessuna repository, visualizza un messaggio informativo che lo invita ad importarne uno tramite il pulsante "Aggiungi Repository" (*<\<extend>>* #link(<UCD1>)[[UCD1]]).
 
@@ -2222,6 +2260,37 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Estensioni:* #link(<UCD1>)[[UCD1]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCPM2.1 Visualizza nome repository
+<UCPM2.1>
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager legge il nome della repository su cui si sta concentrando.
+
+- *Precondizioni:* Il Project Manager si trova nella lista delle repository (#link(<UCPM2>)[[UCPM2]]).
+
+- *Trigger:* Condizioni di inclusione del caso d'uso #link(<UCPM2>)[[UCPM2]].
+
+- *Scenario principale:*
+  + Il Project Manager prende visione del nome della repository che sta osservando.
+
+- *Postcondizioni:* Il Project Manager conosce il nome della repository.
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCPM2.2 Visualizza ultima data aggiornamento repository
+<UCPM2.2>
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager legge la data in cui la repository è stata modificata per ultima.
+
+- *Precondizioni:* Il Project Manager si trova nella lista delle repository (#link(<UCPM2>)[[UCPM2]]).
+
+- *Trigger:* Condizioni di inclusione del caso d'uso #link(<UCPM2>)[[UCPM2]].
+
+- *Scenario principale:*
+  + Il Project Manager prende visione del nome della repository che sta osservando.
+
+- *Postcondizioni:* Il Project Manager conosce il nome della repository.
 #line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
@@ -2260,8 +2329,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Project Manager visualizza il profilo del Developer.
-  + Il Project Manage visualizza le statistiche di contribuzione (*<\<extend>>* #link(<UCPM3.1.1>)[[UCPM3.1.1]]).
-  + Il Project Manager visualizza i linguaggi maggiormente utilizzati dal Developer (*<\<extend>>* #link(<UCPM3.1.2>)[[UCPM3.1.2]]).
+  + Il Project Manage visualizza le statistiche di contribuzione (*<\<include>>* #link(<UCPM3.1.1>)[[UCPM3.1.1]]).
+  + Il Project Manager visualizza i linguaggi maggiormente utilizzati dal Developer (*<\<include>>* #link(<UCPM3.1.2>)[[UCPM3.1.2]]).
 
 // anche qui si possono aggiungere degli UC più specificiper entrambe le parti dello scenario principali. Quindi UC10.1.1 per visuallizare il profilo utente, UC10.1.2 per visualizzare le statistiche di contribuzione e UC1.1.3 per informazioni sui linguaggi affini.
 
@@ -2326,6 +2395,40 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 // Anche qua si può pensare ad una maggiore granularità UC11.1 Segnalatori di deprecazione o sicurezza e UC11.2 Suggeriemtni strategici generati dall'IA
 
 - *Postcondizioni:* Il Project Manager ha preso visione dello stato tecnologico del progetto analizzato.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCPM4.1: Segnalatori di deprecazione
+
+ <UCPM4.1>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager analizza se esistono librerie obsolete che possono causare problemi per la sicurezza.
+
+- *Precondizioni:* Il Project Manager sta consultando lo stack tecnologico (#link(<UCPM4>)[[UCPM4]]).
+
+- *Trigger:* Il Project Manager si concentra sulle segnalazioni di deprecazioni o rischi sicurezza.
+
+- *Scenario principale:*
+  + Il Project Manager prende conoscenza delle notifiche riguardanti le possibili librerie e framework obsoleti o con rischi di sicurezza. 
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCPM4.2: Suggerimetni strategici IA
+
+ <UCPM4.2>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager prende in considerazione i suggerimenti proposti dall'IA.
+
+- *Precondizioni:* Il Project Manager sta consultando lo stack tecnologico (#link(<UCPM4>)[[UCPM4]]).
+
+- *Trigger:* Il Project Manager si concentra sui consigli dell'IA.
+
+- *Scenario principale:*
+  + Il Project Manager prende atto dei consigli da parte dell'IA. 
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -2534,10 +2637,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Business Owner accede alla sezione "Team" del progetto.
 - *Scenario principale:*
   + Il sistema visualizza una lista dei membri del team di sviluppo.
-  + Il Business Owner può visualizzare le *statistiche dei singoli developer* (*<\<extend>>* #link(<UCBO3>)[[UCBO3]]).
-- *Scenario alternativo:* Il Business Owner seleziona un singolo sviluppatore per vederne le statistiche *<\<extend>>* #link(<UCBO3>)[[UCBO3]]).
+  + Il Business Owner può visualizzare le *statistiche dei singoli developer* (*<\<include>>* #link(<UCBO3>)[[UCBO3]]).
 - *Postcondizioni:* Il Business Owner conosce la composizione del team del progetto.
-- *Estensioni:* #link(<UCBO3>)[[UCBO3]]
+- *Inclusioni:* #link(<UCBO3>)[[UCBO3]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -2593,6 +2695,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Livello di competenza (base/intermedio/avanzato) se disponibile
   + Il Business Owner valuta le competenze tecniche del developer.
 - *Postcondizioni:* Il Business Owner conosce le competenze tecnologiche del developer.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
+
+#pagebreak()
 
 = Requisiti
 Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenclatura e il significato degli attributi fanno riferimento al documento _Norme di Progetto (capitolo 2.2.2.1)_. Per facilità di consultazione, si riportano di seguito le definizioni delle categorie adottate:
