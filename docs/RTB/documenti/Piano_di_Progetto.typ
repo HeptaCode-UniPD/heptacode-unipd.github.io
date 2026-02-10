@@ -1596,7 +1596,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   stroke: 0.7pt,
   [_Intervallo temporale_], [12 gennaio 2026 – 25 gennaio 2026],
   [_Responsabile_],[],
-  [_Giorni di sprint_], [7],
+  [_Giorni di sprint_], [14],
 
   [_Attività Svolte_],
   [
@@ -1665,7 +1665,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   stroke: 0.7pt,
   [_Intervallo temporale_], [26 gennaio 2026 - 8 febbraio 2026],
   [_Responsabile_],[],
-  [_Giorni di sprint_], [7],
+  [_Giorni di sprint_], [14],
 
   [_Attività Svolte_],
   [
@@ -1748,12 +1748,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Mitigazione_],
   [
     1.
-  ],
-
-  [_GANTT Diagram_],
-  [
-    [_Inserire immagine_]
-  ],
+  ]
 )
 
 === Sprint 11
@@ -1778,12 +1773,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Mitigazione_],
   [
     1.
-  ],
-
-  [_GANTT Diagram_],
-  [
-    [_Inserire immagine_]
-  ],
+  ]
 )
 
 === Sprint 12
@@ -1808,12 +1798,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Mitigazione_],
   [
     1.
-  ],
-
-  [_GANTT Diagram_],
-  [
-    [_Inserire immagine_]
-  ],
+  ]
 )
 
 === Sprint 13
@@ -1838,15 +1823,10 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [_Mitigazione_],
   [
     1.
-  ],
-
-  [_GANTT Diagram_],
-  [
-    [_Inserire immagine_]
-  ],
+  ]
 )
 #pagebreak()
-= Analisi e gestione dei $text("rischi")_G$
+= Analisi e gestione dei rischi
 Successivamente verranno illustrati:
 - i rischi rilevati per il progetto;
 - come pensiamo di prevenire tali rischi;
@@ -1880,7 +1860,7 @@ Successivamente verranno illustrati:
 Ogni rischio ha:
 - una determinata probabilità di avverarsi, che può essere bassa, media o alta;
 - un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch'esso basso, medio o alto.
-Abbiamo inoltre elaborato un _piano di $text("mitigazione")_G$_ e un _piano di $text("contingenza")_G$_ per ogni rischio individuato.
+Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ per ogni rischio individuato.
 === Rischi legati ai requisiti
 #figure(
   caption: [Rischio Comprensione errata dei requisiti],
