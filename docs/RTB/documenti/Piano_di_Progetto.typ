@@ -157,17 +157,17 @@ Il Piano di Progetto ha lo scopo di definire in modo chiaro, strutturato e verif
 Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e per aggiornare contenuti errati o imprecisi.
 == Ambito del progetto
 In questa prima parte del documento è presente una breve introduzione al progetto di cui si farà riferimento in ogni paragrafo. Non vuole essere una spiegazione esplicativa e dettagliata dello stesso; per quello si può consultare il documento di _Analisi dei requisiti_ presente nel #link("https://heptacode-unipd.github.io", "sito del team Hepta Code"). \
-*Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un’organizzazione. \ Verranno utilizzati degli $text("agenti")_G$ che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository $text("Git Hub")_G$. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \
+*Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un’organizzazione. \ Verranno utilizzati degli agenti che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository Git Hub. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \
 Gli agenti fino ad ora pensati per _Code Guardian_ sono:
 1. Agente per il controllo del codice.
 2. Agente per il controllo della documentazione.
-3. Agente per il controllo delle prime 10 linee guida $text("OWASP")_G$.
-\ Gli utenti / $text("attori")_G$ presi in esame per la creazione del progetto sono di tre tipi (lavoreranno insieme all’interno di uno stesso progetto):
-- $text("Business Owner")_G$;
-- $text("Project Manager")_G$;
-- $text("Sviluppatore")_G$
+3. Agente per il controllo delle prime 10 linee guida OWASP.
+\ Gli utenti / attori presi in esame per la creazione del progetto sono di tre tipi (lavoreranno insieme all’interno di uno stesso progetto):
+- Business Owner;
+- Project Manager;
+- Sviluppatore
 Per ognuno dei tre verrà fornita un’interfaccia consona alle funzioni che più possono interessare loro riguardo lo stato di uno o più progetti di sviluppo. \
-\ Grazie a meccanismi $text("AI")_G$ e $text("LLM")_G$ , in base al dominio dell’utente, verranno:
+\ Grazie a meccanismi AI e LLM , in base al dominio dell’utente, verranno:
 - visualizzati gli errori rilevati;
 - forniti suggerimenti agli errori rilevati;
 - forniti suggerimenti per il miglioramento del progetto;
@@ -175,33 +175,33 @@ Per ognuno dei tre verrà fornita un’interfaccia consona alle funzioni che pi�
 \
 Gli ambiti tecnici di progetto sono quindi
 - implementazione e addestramento di agenti tramite utilizzo di _AI_ e _LLM_;
-- implementazione di una $text("web-app")_G$.
+- implementazione di una web-app.
 
 == Ruoli interni al documento
-Questo documento dovrà periodicamente essere aggiornato dal $text("Responsabile")_G$ e validato dal $text("Verificatore")_G$.  \
-Ad ogni $text("Sprint Retrospective")_G$ si aggiornerà il _Trascorso_ con:
-- un riassunto di ciò che è accaduto durante lo $text("sprint")_G$, diviso per punti;
+Questo documento dovrà periodicamente essere aggiornato dal Responsabile e validato dal Verificatore.  \
+Ad ogni Sprint Retrospective si aggiornerà il _Trascorso_ con:
+- un riassunto di ciò che è accaduto durante lo sprint, diviso per punti;
 - le problematiche incontrate;
 - le misure di mitigazione attuate;
 - gli eventuali aggiornamenti all’_Analisi dei rischi_;
-- i $text("Diagrammi di GANTT")_G$ utili alla comprensione immediata dell’avanzamento del progetto.
+- i Diagrammi di GANTT utili alla comprensione immediata dell’avanzamento del progetto.
 Verrà conseguentemente aggiornata l’_Analisi dei Rischi_ con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
 #pagebreak()
 
 
 = Processi e metodologie
 == Modello di processo scelto
-Abbiamo scelto di lavorare al progetto utilizzando l’approccio $text("Agile")_G$ basato sul framework $text("Scrum")_G$. È stato scelto tale modello per le seguenti ragioni:
+Abbiamo scelto di lavorare al progetto utilizzando l’approccio Agile basato sul framework Scrum. È stato scelto tale modello per le seguenti ragioni:
 - Grazie a questo metodo si possono limitare gli sprechi di risorse: con la suddivisione di task molto granulari, l’introduzione di un errore è più facilmente individuabile e quindi è meno frequente che l’errore si propaghi in grosse parti del progetto.
-- Lo stato del progetto, la suddivisione dei task da fare, le ore a disposizione e gli aspetti migliorabili sono chiari a tutti grazie alla $text("Sprint Review")_G$, allo Sprint Retrospective e allo $text("Sprint Planning")_G$.
+- Lo stato del progetto, la suddivisione dei task da fare, le ore a disposizione e gli aspetti migliorabili sono chiari a tutti grazie alla Sprint Review, allo Sprint Retrospective e allo Sprint Planning.
 - Grazie allo Sprint Retrospective si può migliorare l’efficacia del team durante lo svolgimento del progetto e capire in quali aspetti è lacunoso.
 - Permette una gestione dei rischi più facile e il loro continuo monitoraggio, diminuendo la probabilità che si verifichino.
 - Il rilascio incrementale permette all’azienda cliente di vedere come sta avanzando il progetto.
 - Feedback più veloce: questo metodo impone un contatto più frequente con l’azienda proponente, permettendo di avere un riscontro sull'adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
 == Struttura del ciclo di vita
 Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all’11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; sarà invece di due settimane durante il periodo di sessione d’esami che va dal 12 gennaio al 22 febbraio 2026. \ Per ogni Sprint, sono previsti:
-- uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi, che vengono scritti nello *$text("Sprint Backlog")_G$*;
-- uno *Sprint Review*, in cui si esamina il lavoro completato dopo uno Sprint e si raccoglie feedback e si aggiorna il *$text("Product Backlog")_G$*, che contiene tutte le task da completare per completare il progetto;
+- uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi, che vengono scritti nello *Sprint Backlog*;
+- uno *Sprint Review*, in cui si esamina il lavoro completato dopo uno Sprint e si raccoglie feedback e si aggiorna il *Product Backlog*, che contiene tutte le task da completare per completare il progetto;
 - uno *Sprint Retrospective*, in cui il team ragiona su ciò che può essere migliorato in confronto allo Sprint appena finito.
 - un  aggiornamento asincrono via Telegram ogni tre giorni al posto del Daily Scrum per monitorare l’avanzamento del lavoro.
 
@@ -220,15 +220,15 @@ Ogni membro del team userà il proprio computer per lavorare al progetto. Inoltr
 Gli strumenti di sviluppo che abbiamo deciso di usare sono:
 - *React* e *Typescript* per la parte Frontend;
 - *Node.js* per la parte Backend;
-- *$text("MongoDB")_G$* per il Database;
-- *$text("AWS")_G$* per l’architettura Cloud.
+- *MongoDB* per il Database;
+- *AWS* per l’architettura Cloud.
 Per il controllo della versione usiamo *GitHub*.\
 Per implementare la Continuous Integration e la Continuous Delivery usiamo *GitHub Actions*.\ \
 Per la redazione dei documenti il linguaggio scelto è *Typst*.\ \
 Gli strumenti per la comunicazione sono invece:
-- *$text("Discord")_G$* per le riunioni telematiche;
-- *$text("Telegram")_G$* per avere un canale di comunicazione asincrona fra i  membri del team;
-- *$text("Slack")_G$* e *$text("Gmail")_G$* per comunicare con l’azienda proponente.
+- *Discord* per le riunioni telematiche;
+- *Telegram* per avere un canale di comunicazione asincrona fra i  membri del team;
+- *Slack* e *Gmail* per comunicare con l’azienda proponente.
 #pagebreak()
 
 = Organizzazione del team
@@ -312,17 +312,17 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
 )[
   #image("../../asset/timeline_generale.png"),
 ]<fig:CalendarioProgetto>
-== $text("Milestones")_G$ programmate
+== Milestones programmate
 Di seguito elencate le milestone con i punti da considerare per poterle ritenere concluse.
-1. _$text("UCB (Use Case Baseline)")_G$_:
+1. _UCB (Use Case Baseline)_:
   - Conclusione stesura degli Use Case.
-2. _$text("RTB (Requirements & Technology Baseline)")_G$_:
+2. _RTB (Requirements & Technology Baseline)_:
   - Documento _Analisi dei Requisiti_ (tecnologie, i framework, le librerie adottate, e ne dimostra adeguatezza e interoperabilità).
-  - _$text("Proof of Concept")_G$_, demo eseguibile.
-3. _$text("PAB (Progettazione & Analisi Baseline)")_G$_:
+  - _Proof of Concept_, demo eseguibile.
+3. _PAB (Progettazione & Analisi Baseline)_:
   - Conclusione attività di progettazione.
   - Conclusione stesura definitiva _Analisi dei requisiti_.
-4. _$text("PB (Product Baseline)")_G$_:
+4. _PB (Product Baseline)_:
   - Consegna del progetto validato.
 == Preventivo a finire
 Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team. In questo sotto-paragrafo verranno esplicitati:
@@ -352,7 +352,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Studio in preparazione dell’attività di Analisi dei Requisiti.
     - Primo approccio di gruppo all’analisi (tramite incontri interni organizzati come brainstorming).
     - Studio della documentazione adeguata al progetto.
-    - Attività di analisi dei $text("Casi d'uso")_G$ preliminare.
+    - Attività di analisi dei Casi d'uso preliminare.
   ],
 )
 #figure(
@@ -462,7 +462,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Attività di formazione su $text("Backend")_G$ da parte dell’azienda committente.
+    - Attività di formazione su Backend da parte dell’azienda committente.
     - Continuazione da parte del team completo dell’Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
     - Avanzamento stesura dei documenti per milestone RTB.
     - Studio individuale sulle tecnologie discusse dal team.
@@ -632,7 +632,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Inizio attività di produzione del _$text("Proof of Concept (PoC)")_G$_.
+    - Inizio attività di produzione del _Proof of Concept (PoC)")_.
     - Continuazione stesura della documentazione.
     - Continuazione attività di Analisi dei Requisiti.
     - Inizio dell’attività di Progettazione.
@@ -859,7 +859,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Studio della documentazione necessaria per la prossima milestone _PB_.
     - Sviluppo Backend e verifica del codice prodotto.
     - Sviluppo Frontend e verifica del codice prodotto.
-    - $text("Training degli agenti")_G$.
+    - Training degli agenti.
     _Milestone "(PAB)"_:
     Conclusione attività di Progettazione ed Analisi.
   ],
@@ -1538,7 +1538,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Mitigazione_],
   [
-    1. Disponizione di giorni aggiuntivi per scrivere tutti gli UC granulari controllando minuziosamente ogni aspetto del Progetto.
+    1. Disposizione di giorni aggiuntivi per scrivere tutti gli UC granulari controllando minuziosamente ogni aspetto del Progetto.
     2. Concentrarsi sul lavoro riguardante i Diagrammi di Attività nel documento AdR
     3. Scrivere il PdQ una volta ultimata l'analisi dei requisiti
   ]
@@ -1594,7 +1594,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [12 gennario 2026 – 25 gennaio 2026],
+  [_Intervallo temporale_], [12 gennaio 2026 – 25 gennaio 2026],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
