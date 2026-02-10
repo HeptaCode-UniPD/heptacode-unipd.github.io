@@ -1091,6 +1091,41 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ],
 )
 
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 1],
+  kind: table,
+)[
+  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #table(
+      columns: 8,
+      fill: (row, col) => {
+        if col == 0 and row <= 6 {
+          rgb("#BB85E1")
+        } else if (row == 7 and col == 0) {
+          rgb("#9856D8")
+        }
+      },
+      stroke: 0.5pt,
+      align: center,
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [1], [], [], [], [25€],
+      [_Angela Canazza_], [], [], [1], [], [], [], [25€],
+      [_Riccardo Baldin_], [], [], [1], [], [], [], [25€],
+      [_Alberto Reginato_], [], [], [1], [], [], [], [25€],
+      [_Nicola Simionato_], [1], [], [1], [], [], [], [55€],
+      [_Amerigo Vegliante_], [], [], [1], [], [], [0,5], [32,5€],
+      [_Laura Venturini_], [], [2], [1], [], [], [], [65€],
+    ) ]] <tab:RetrospettivaSprint1>
+
 *GANTT Diagram*
     #figure(
   caption: [Diagramma di GANTT dello Sprint 1],
@@ -1098,6 +1133,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   #image("../../asset/GANTT/sprint1-gantt.png")
   ]<GANTT-Sprint1>
 
+#underline[Spese della settimana]: 252,5€ \ #underline[Spesa totale]: *252,5€*
 
 === Sprint 2
 #table(
@@ -1128,12 +1164,49 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]
 )
 
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 2],
+  kind: table,
+)[
+  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #table(
+      columns: 8,
+      fill: (row, col) => {
+        if col == 0 and row <= 6 {
+          rgb("#BB85E1")
+        } else if (row == 7 and col == 0) {
+          rgb("#9856D8")
+        }
+      },
+      stroke: 0.5pt,
+      align: center,
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [2], [], [], [], [50€],
+      [_Angela Canazza_], [], [], [2], [], [], [], [50€],
+      [_Riccardo Baldin_], [], [], [2], [], [], [1], [65€],
+      [_Alberto Reginato_], [], [2], [2], [], [], [], [90€],
+      [_Nicola Simionato_], [], [], [2], [], [], [], [50€],
+      [_Amerigo Vegliante_], [], [], [2], [], [], [], [50€],
+      [_Laura Venturini_], [1], [], [2], [], [], [], [80€],
+    ) ]] <tab:RetrospettivaSprint2>
+
 *GANTT Diagram*
     #figure(
   caption: [Diagramma di GANTT dello Sprint 2],
   )[
   #image("../../asset/GANTT/sprint2-gantt.png")
   ]<GANTT-Sprint2>
+
+#underline[Spese della settimana]: 435€ \ #underline[Spesa totale]: *687,5€*
 
 === Sprint 3
 #table(
@@ -1167,12 +1240,49 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]
 )
 
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 3],
+  kind: table,
+)[
+  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #table(
+      columns: 8,
+      fill: (row, col) => {
+        if col == 0 and row <= 6 {
+          rgb("#BB85E1")
+        } else if (row == 7 and col == 0) {
+          rgb("#9856D8")
+        }
+      },
+      stroke: 0.5pt,
+      align: center,
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [4], [], [], [], [100€],
+      [_Angela Canazza_], [], [], [4], [], [], [], [100€],
+      [_Riccardo Baldin_], [], [], [4], [], [], [], [100€],
+      [_Alberto Reginato_], [3], [], [], [], [], [1,5], [112,5€],
+      [_Nicola Simionato_], [], [3], [], [], [], [], [60€],
+      [_Amerigo Vegliante_], [], [], [4], [], [], [], [100€],
+      [_Laura Venturini_], [], [], [4], [], [], [], [100€],
+    ) ]] <tab:RetrospettivaSprint3>
+
 *GANTT Diagram*
     #figure(
   caption: [Diagramma di GANTT dello Sprint 3],
   )[
   #image("../../asset/GANTT/sprint3-gantt.jpg")
   ]<GANTT-Sprint3>
+
+#underline[Spese della settimana]: 672,5€ \ #underline[Spesa totale]: *1.360€*
 
 === Sprint 4
 #table(
@@ -1205,12 +1315,49 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]
 )
 
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 4],
+  kind: table,
+)[
+  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #table(
+      columns: 8,
+      fill: (row, col) => {
+        if col == 0 and row <= 6 {
+          rgb("#BB85E1")
+        } else if (row == 7 and col == 0) {
+          rgb("#9856D8")
+        }
+      },
+      stroke: 0.5pt,
+      align: center,
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [3], [], [], [], [], [], [90€],
+      [_Angela Canazza_], [], [], [4], [], [], [1,5], [122,5€],
+      [_Riccardo Baldin_], [], [], [6], [], [], [], [150€],
+      [_Alberto Reginato_], [], [], [5], [], [], [], [125€],
+      [_Nicola Simionato_], [], [], [2], [], [], [], [50€],
+      [_Amerigo Vegliante_], [], [4], [], [], [], [1,5], [102,5€],
+      [_Laura Venturini_], [], [], [4], [], [], [], [100€],
+    ) ]] <tab:RetrospettivaSprint4>
+
 *GANTT Diagram*
     #figure(
   caption: [Diagramma di GANTT dello Sprint 4],
   )[
   #image("../../asset/GANTT/sprint4-gantt.png")
   ]<GANTT-Sprint4>
+
+#underline[Spese della settimana]: 740€ \ #underline[Spesa totale]: *2100€*
 
 === Sprint 5
 #table(
@@ -1241,12 +1388,49 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]
 )
 
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 5],
+  kind: table,
+)[
+  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #table(
+      columns: 8,
+      fill: (row, col) => {
+        if col == 0 and row <= 6 {
+          rgb("#BB85E1")
+        } else if (row == 7 and col == 0) {
+          rgb("#9856D8")
+        }
+      },
+      stroke: 0.5pt,
+      align: center,
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [4 → 2], [], [], [], [50€],
+      [_Angela Canazza_], [], [], [4 → 2], [], [], [], [50€],
+      [_Riccardo Baldin_], [], [4 → 1], [], [], [], [], [20€],
+      [_Alberto Reginato_], [], [], [4 → 2], [], [], [], [50€],
+      [_Nicola Simionato_], [], [], [4 → 2], [], [], [], [50€],
+      [_Amerigo Vegliante_], [3 → 1], [], [], [], [], [2 → 1], [45€],
+      [_Laura Venturini_], [], [], [2], [], [], [2 → 1], [65€],
+    ) ]] <tab:RetrospettivaSprint5>
+
 *GANTT Diagram*
     #figure(
   caption: [Diagramma di GANTT dello Sprint 5],
   )[
   #image("../../asset/GANTT/sprint5-gantt.png")
   ]<GANTT-Sprint5>
+
+#underline[Spese della settimana]: 330€ \ #underline[Spesa totale]: *2.430€*
 
 === Sprint 6
 #table(
@@ -1277,6 +1461,43 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     3. I verificatori si impegnano a produrre una versione finale non ufficiale del Piano di Qualifica entro il prossimo sprint.
   ]
 )
+
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 6],
+  kind: table,
+)[
+  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #table(
+      columns: 8,
+      fill: (row, col) => {
+        if col == 0 and row <= 6 {
+          rgb("#BB85E1")
+        } else if (row == 7 and col == 0) {
+          rgb("#9856D8")
+        }
+      },
+      stroke: 0.5pt,
+      align: center,
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
+      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [4 → 2], [], [1 → 0], [], [], [40€],
+      [_Angela Canazza_], [3 → 2], [], [], [1 → 0], [], [], [60€],
+      [_Riccardo Baldin_], [], [], [4], [1 → 0], [], [], [100€],
+      [_Alberto Reginato_], [], [], [4], [1 → 0], [], [], [100€],
+      [_Nicola Simionato_], [], [], [], [4 → 0], [], [2], [30€],
+      [_Amerigo Vegliante_], [], [], [6 → 4], [1 → 0], [], [], [100€],
+      [_Laura Venturini_], [], [], [], [4 → 0], [], [2], [30€],
+    ) ]] <tab:PrevisioneSprint6>
+
+#underline[Spese della settimana]: 460€ \ #underline[Spesa totale]: *2.890€*
 
 *GANTT Diagram*
     #figure(
@@ -1329,7 +1550,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
+  [_Intervallo temporale_], [12 gennario 2026 – 25 gennaio 2026],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
@@ -1359,7 +1580,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
+  [_Intervallo temporale_], [26 gennaio 2026 - 8 febbraio 2026],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
