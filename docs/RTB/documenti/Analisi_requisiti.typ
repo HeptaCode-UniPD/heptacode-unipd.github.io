@@ -3122,7 +3122,26 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 [R-56-F-D],[Il Developer deve visualizzare un messaggio di avvenuta interruzione di una remediation in corso, in caso ne abbia richiesto la stessa],[#link(<UCD9.1>)[UCD9.1]],
 [R-57-F-D],[Il Developer deve poter annullare un analisi in corso all'interno del sistema],[#link(<UCD8.3>)[UCD8.3], #link(<UCD10>)[UCD10]],
 [R-58-F-D],[Il Developer deve visualizzare un messaggio di avvenuto annullamento di un analisi in corso],[#link(<UCD10.1>)[UCD10.1]],
-// arrivata fino ad UCD10.1
+[R-59-F-D],[Il Developer deve visualizzare una lista con le ultime analisi portate a termine],[#link(<UCD11>)[UCD11]],
+[R-60-F-D],[Il Developer deve visualizzare il nome del repository sul quale un analisi  stata terminata],[#link(<UCD11.1>)[UCD11.1], #link(<UCD2.2.1>)[UCD2.2.1]],
+[R-61-F-D],[Il Developer deve visualizzare la data di completamento di un'analisi terminata],[#link(<UCD11.1>)[UCD11.1], #link(<UCD11.1.1>)[UCD11.1.1]],
+[R-62-F-D],[Il Developer deve poter visualizzare la specifica di una analisi portata a termine all'interno di un repository, che non sia l'ultima],[#link(<UCD12>)[UCD12]],
+[R-63-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi sulla documentazione],[#link(<UCD12.1>)[UCD12.1]],
+[R-64-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi sui test],[#link(<UCD12.2>)[UCD12.2]],
+[R-65-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi OWASP],[#link(<UCD12.3>)[UCD12.3]],
+[R-66-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare le proposte di remediation elaborate in seguito all'analisi],[#link(<UCD12.4>)[UCD12.4]],
+[R-67-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare la proposta di remediation specifica inerente ad un singolo file],[#link(<UCD12.4.1>)[UCD12.4.1]],
+[R-68-F-O],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository per l'area test],[#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1]],
+[R-69-F-O],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository],[#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1], #link(<UCD13.2>)[UCD13.2], #link(<UCD13.3>)[UCD13.3]],
+[R-70-F-D],[Il Developer deve poter visualizzare la data di fine di un analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD11.1.1>)[UCD11.1.1]],
+[R-71-F-D],[Il Developer deve poter visualizzare la lo stato di un analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD14.1>)[UCD14.1]],
+[R-72-F-O],[Il Developer deve poter avviare un analisi generale all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.2>)[UCD15.2]],
+[R-73-F-O],[Il Developer deve poter avviare un sui test all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.3>)[UCD15.3]],
+[R-74-F-O],[Il Developer deve poter avviare un analisi sulla documentazione all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.4>)[UCD15.4]],
+[R-75-F-O],[Il Developer deve poter avviare un analisi OWASP all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.5>)[UCD15.5]],
+[R-76-F-O],[Il Developer deve ricevere un messaggio di errore nel caso si verificasse un conflitto con un'altra analisi all'avvio di un'analisi],[#link(<UCD15.6>)[UCD15.6]],
+[R-77-F-O],[Il Developer deve poter annullare l'avvio di un analisi],[#link(<UCD15.7>)[UCD15.7]],
+// PM & BO
 )
 
 == Requisiti di vincolo
