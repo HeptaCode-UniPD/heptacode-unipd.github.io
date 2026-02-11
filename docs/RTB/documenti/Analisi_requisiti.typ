@@ -1737,57 +1737,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer si trova nella sezione dei procedimenti in corso.
 
 - *Scenario principale:*
-  - Il sistema mostra un pulsante annullare un'analisi in corso (#link(<UCD8.3.1>)[[UCD8.3.1]]).
+  - Il sistema mostra un pulsante annullare un'analisi in corso (#link(<UCD10>)[[UCD10]]).
 
 - *Postcondizioni:* Il Developer sta visualizzando un analisi in atto nel sistema.
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UCD8.3.1 - Annullamento analisi in corso
-<UCD8.3.1>
-
-- *Attore principale:* Developer.
-
-- *Descrizione:* Il Developer annulla un analisi in corso da lui precedentemente avviata.
-
-- *Precodizioni:* Il Developer sta visualizzando un analisi in corso (#link(<UCD8.3>)[[UCD8.3]]).
-
-- *Trigger:* Il Developer seleziona l'opzione di interruzione dell'analisi avviata.
-
-- *Scenario principale:*
-  + Il sistema interrompe il lavoro del/degli agenti coinvolti.
-  + Il sistema mostra un messaggio di avvenuta interruzione dell'analisi in corso (*<\<include>>* #link(<UCD8.3.2>)[[UCD8.3.2]]).
-
-- *Scenari alternativi:*
-  - Si verifica un errore durante il processo.
-    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
-    - Il caso d'uso termina senza successo.
-  
-- *Postcondizioni:* L'analisi selezionata è stata annullata, il Developer visualizza la lista delle operazioni in corso.
-
-- *Inclusioni:*
-  - #link(<UCD8.3.2>)[[UCD8.3.2]]
-
-- *Estensioni:*
-  - #link(<UC4>)[[UC4]]
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UCD8.3.2 - Visualizzazione conferma interruzione analisi in corso
-<UCD8.3.2>
-
-- *Attore principale:* Developer.
-
-- *Descrizione:* Il Developer visualizza il messaggio di avvenuta cancellazione di un analisi precedentemente avviata.
-
-- *Precondizioni:* Il Developer ha espresso il desiderio di eliminare un analisi avviata.
-
-- *Trigger:* Il sistema ha interrotto l'operazione di analisi di uno o più agenti.
-
-- *Scenario principale:*
-  + Il sistema mostra un messaggio di avvenuta cancellazione dell'analisi in corso
-
-- *Postcondizioni:* Il Developer è a conoscenza della cancellazione dell'analisi da lui selezionata.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1858,24 +1810,49 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UCD10 - Interrompi analisi avviata
 <UCD10>
-- *Attore principale:* Developer
+- *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer desidera interrompere un'operazione di analisi in corso.
+- *Descrizione:* Il Developer annulla un analisi in corso da lui precedentemente avviata.
 
-- *Precondizioni:* Il Developer ha un'analisi in corso.
+- *Precodizioni:* Il Developer sta visualizzando un analisi in corso (#link(<UCD8.3>)[[UCD8.3]]).
 
-- *Trigger:* Il Developer seleziona l’opzione di interruzione del processo di analisi.
+- *Trigger:* Il Developer seleziona l'opzione di interruzione dell'analisi avviata.
 
 - *Scenario principale:*
-  + Il sistema annulla automaticamente l'analisi in corso.
-  + Il sistema notifica al Developer l’avvenuta interruzione dell'analisi.
-  
-- *Scenari alternativi:*
-  - Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
-    - Il caso d'uso termina senza successo.
+  + Il sistema interrompe il lavoro del/degli agenti coinvolti.
+  + Il sistema mostra un messaggio di avvenuta interruzione dell'analisi in corso (*<\<include>>* #link(<UCD10.1>)[[UCD10.1]]).
 
-- *Postcondizioni:* Un'analisi in atto è stata interrotta.
+- *Scenari alternativi:*
+  - Si verifica un errore durante il processo.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+    - Il caso d'uso termina senza successo.
+  
+- *Postcondizioni:* L'analisi selezionata è stata annullata, il Developer visualizza la lista delle operazioni in corso.
+
+- *Inclusioni:*
+  - #link(<UCD10.1>)[[UCD10.1]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
+
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD10.1 - Visualizzazione conferma interruzione analisi in corso
+<UCD10.1>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer visualizza il messaggio di avvenuta cancellazione di un analisi precedentemente avviata.
+
+- *Precondizioni:* Il Developer ha espresso il desiderio di eliminare un analisi avviata.
+
+- *Trigger:* Il sistema ha interrotto l'operazione di analisi di uno o più agenti.
+
+- *Scenario principale:*
+  + Il sistema mostra un messaggio di avvenuta cancellazione dell'analisi in corso
+
+- *Postcondizioni:* Il Developer è a conoscenza della cancellazione dell'analisi da lui selezionata.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -3032,9 +3009,9 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 [R-54-F-D],[Il Developer deve visualizzare il nome branch aperto di ogni elemento della lista delle remediation in corso.],[#link(<UCD8.2>)[UCD8.2], #link(<UCD8.2.1>)[UCD8.2.1]],
 [R-55-F-D],[Il Developer deve poter interrompere una remediation avviata],[#link(<UCD8.2>)[UCD8.2], #link(<UCD9>)[UCD9]],
 [R-56-F-D],[Il Developer deve visualizzare un messaggio di avvenuta interruzione di una remediation in corso, in caso ne abbia richiesto la stessa],[#link(<UCD9.1>)[UCD9.1]],
-[R-57-F-D],[Il Developer deve poter annullare un analisi n corso all'interno del sistema],[#link(<UCD8.3>)[UCD8.3], #link(<UCD8.3.1>)[UCD8.3.1]],
-[R-58-F-D],[Il Developer deve visualizzare un messaggio di avvenuto annullamento di un analisi in corso],[#link(<UCD8.3.2>)[UCD8.3.2]],
-// arrivata fino ad UCD9.1
+[R-57-F-D],[Il Developer deve poter annullare un analisi in corso all'interno del sistema],[#link(<UCD8.3>)[UCD8.3], #link(<UCD10>)[UCD10]],
+[R-58-F-D],[Il Developer deve visualizzare un messaggio di avvenuto annullamento di un analisi in corso],[#link(<UCD10.1>)[UCD10.1]],
+// arrivata fino ad UCD10.1
 )
 
 == Requisiti di vincolo
