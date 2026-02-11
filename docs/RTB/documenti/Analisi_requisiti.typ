@@ -884,7 +884,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Per ogni elemento, il sistema mostra il nome del repository (*<\<include>>* #link(<UCD2.2.1>)[[UCD2.2.1]]).
   + Il sistema mostra il nome del progetto associato (se esistente) (*<\<include>>* #link(<UCD2.2.2>)[[UCD2.2.2]]).
-  + Il sistema mostra l'indicatore di visibilità (Pubblica/Privata) (*<\<include>>* #link(<UCD2.2.3>)[[UCD2.2.3]]).
+  + Il sistema mostra l’indicatore  di visibilità (Pubblica/Privata) (*<\<include>>* #link(<UCD2.2.3>)[[UCD2.2.3]]).
 
 - *Postcondizioni:* Il Developer ha una panoramica sintetica delle proprie repository.
   
@@ -933,16 +933,16 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCD2.2.3>
 - *Attore principale*: Developer.
   
-- *Descrizione*: Il sistema mostra l'indicatore di visibilità associato al repository.
+- *Descrizione*: Il sistema mostra l’indicatore  di visibilità associato al repository.
   
 - *Precondizioni*: Il sistema sta mostrando un elemento da una lista di repository o la schermata di dettaglio di un repository.
   
 - *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UCD2>)[[UCD2]] o da #link(<UCD4>)[[UCD4]]).
   
 - *Scenario principale*:
-  + Il sistema mostra il l'indicatore di visibilità del repository. 
+  + Il sistema mostra il l’indicatore  di visibilità del repository. 
   
-- *Postcondizioni*: Il Developer ha visualizzato l'indicatore di visibilità del repository.
+- *Postcondizioni*: Il Developer ha visualizzato l’indicatore  di visibilità del repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -1122,7 +1122,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il sistema mostra l'intestazione del repository (*<\<include>>* #link(<UCD2.2.1>)[[UCD2.2.1]]).
   +  Il sistema mostra il nome del progetto associato al repository (*<\<include>>* #link(<UCD2.2.2>)[[UCD2.2.2]]).
-  +  Il sistema mostra l'indicatore di visibilità del repository (*<\<include>>* #link(<UCD2.2.3>)[[UCD2.2.3]]).
+  +  Il sistema mostra l’indicatore  di visibilità del repository (*<\<include>>* #link(<UCD2.2.3>)[[UCD2.2.3]]).
   + Il sistema mostra il widget delle statistiche di analisi documentazione (*<\<include>>* #link(<UCD5.1>)[[UCD5.1]]).
   + Il sistema mostra il widget delle statistiche di analisi di test (*<\<include>>* #link(<UCD5.2>)[[UCD5.2]]).
   + Il sistema mostra il widget delle statistiche correttezza OWASP (*<\<include>>* #link(<UCD5.3>)[[UCD5.3]]).
@@ -2728,9 +2728,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Project Manager visualizza l'elenco consolidato di framework e librerie usate.
   + Il sistema segnala le dipendenze deprecate o a rischio sicurezza.
-  + Il Project Manager visualizza i suggerimenti strategici generati dall'IA.
+  + Il Project Manager visualizza i suggerimenti strategici generati dall’IA.
 
-// Anche qua si può pensare ad una maggiore granularità UC11.1 Segnalatori di deprecazione o sicurezza e UC11.2 Suggeriemtni strategici generati dall'IA
+// Anche qua si può pensare ad una maggiore granularità UC11.1 Segnalatori di deprecazione o sicurezza e UC11.2 Suggeriemtni strategici generati dall’IA
 
 - *Postcondizioni:* Il Project Manager ha preso visione dello stato tecnologico del progetto analizzato.
 
@@ -2759,14 +2759,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Project Manager.
 
-- *Descrizione:* Il Project Manager prende in considerazione i suggerimenti proposti dall'IA.
+- *Descrizione:* Il Project Manager prende in considerazione i suggerimenti proposti dall’IA.
 
 - *Precondizioni:* Il Project Manager sta consultando lo stack tecnologico (#link(<UCPM4>)[[UCPM4]]).
 
-- *Trigger:* Il Project Manager si concentra sui consigli dell'IA.
+- *Trigger:* Il Project Manager si concentra sui consigli dell’IA.
 
 - *Scenario principale:*
-  + Il Project Manager prende atto dei consigli da parte dell'IA. 
+  + Il Project Manager prende atto dei consigli da parte dell’IA. 
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -2834,7 +2834,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 === UCBO1.3: Visualizzazione rapporto budget vs spesa complessivo <UCBO1.3>
 
 - *Attore principale:* Business Owner
-- *Descrizione:* Il Business Owner consulta l'indicatore aggregato che confronta il budget totale allocato con la spesa totale sostenuta.
+- *Descrizione:* Il Business Owner consulta l’indicatore  aggregato che confronta il budget totale allocato con la spesa totale sostenuta.
 - *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
 - *Trigger:* Il Business Owner consulta il widget/indicatore finanziario.
 - *Scenario principale:*
@@ -2849,7 +2849,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Attore principale:* Business Owner
 - *Descrizione:* Il Business Owner consulta un indicatore che misura il livello di coerenza o standardizzazione tra i vari progetti.
 - *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
-- *Trigger:* Il Business Owner consulta l'indicatore di coerenza.
+- *Trigger:* Il Business Owner consulta l’indicatore  di coerenza.
 - *Scenario principale:*
   + Il sistema visualizza un indicatore di "coerenza tra progetti".
   + Il Business Owner interpreta il valore per valutare quanto i progetti siano allineati tra loro.
@@ -3090,7 +3090,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 [R-24-F-O],[Il Developer deve poter selezionare una preferenza sulla tipologia di repository che desidera visualizzare],[#link(<UCD2.1>)[UCD2.1]],
 [R-25-F-O],[Il Developer deve poter visualizzare il nome di un repository],[#link(<UCD2.2>)[UCD2.2], #link(<UCD2.2.1>)[UCD2.2.1]],
 [R-26-F-D],[Il Developer deve poter visualizzare il nome del progetto associato al repository],[#link(<UCD2.2>)[UCD2.2], #link(<UCD2.2.2>)[UCD2.2.2]],
-[R-27-F-O],[Il Developer deve poter visualizzare 'indicatore di visibilità di un repository],[#link(<UCD2.2>)[UCD2.2], #link(<UCD2.2.3>)[UCD2.2.3]],
+[R-27-F-O],[Il Developer deve poter visualizzare l’indicatore  di visibilità di un repository],[#link(<UCD2.2>)[UCD2.2], #link(<UCD2.2.3>)[UCD2.2.3]],
 [R-28-F-O],[Il Developer deve poter visualizzare la lista dei progetti ai quali contribuisce],[#link(<UCD3>)[UCD3]],
 [R-29-F-O],[Il Developer deve poter visualizzare il nome di un progetto],[#link(<UCD3.0.1>)[UCD3.0.1]],
 [R-30-F-O],[Il Developer deve poter visualizzare le statistiche dell'analisi sulla documentazione di un progetto],[#link(<UCD4>)[UCD4], #link(<UCD4.1>)[UCD4.1]],
