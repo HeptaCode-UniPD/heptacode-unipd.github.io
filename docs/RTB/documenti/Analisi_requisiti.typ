@@ -1127,6 +1127,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra il widget delle statistiche di analisi di test (*<\<include>>* #link(<UCD5.2>)[[UCD5.2]]).
   + Il sistema mostra il widget delle statistiche correttezza OWASP (*<\<include>>* #link(<UCD5.3>)[[UCD5.3]]).
   + Il sistema mostra l'opzione di visualizzazione delle proposte di remediation (#link(<UCD6>)[[UCD6]]).
+  + Il sistema mostra l'opzione di visualizzazione i dettagli dell'ultima analisi effettuata sul repository (#link(<UCD13>)[[UCD13]]).
   + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti (#link(<UCD12>)[[UCD12]]).
   + Il sistema mostra l'opzione per avviare una o più analisi sul repository (#link(<UCD15>)[[UCD15]]).
   + Il sistema mostra il pulsante per l'eliminazione del repository (#link(<UCD7>)[[UCD7]]). 
@@ -1868,26 +1869,69 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Esistono analisi completate negli ultimi 7 giorni (fino a un massimo di 30 record). Tali analisi non hanno ancora portato a un merge definitivo sul repository.
 
-- *Trigger:* Il Developer seleziona la sezione "Ultime analisi" dalla dashboard.
+- *Trigger:* Il Developer seleziona l'opzione per visualizzare le ultime analisi dalla dashboard.
 
 - *Scenario principale:*
   + Il sistema recupera i record delle analisi che soddisfano i criteri temporali e di stato.
   + Il sistema mostra la lista ordinata per data decrescente.
-  + Per ogni elemento, il sistema mostra: nome del repository, data di completamento e stato della remediation.
-  + Il sistema permette di selezionare un'analisi per visualizzarne il dettaglio.
-  - Il sistema mostra un pulsante per tornare alla pagina precedente
+  + Il sistema mostra la specifica di ogni elemento (*<\<include>>* #link(<UCD11.1>)[[UCD11.1]]).
+  + Il sistema permette di selezionare un'analisi per visualizzarne il dettaglio (#link(<UCD12>)[[UCD12]]).
+  - Il sistema mostra un pulsante per tornare alla pagina precedente.
 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento di una pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il Developer ha visualizzato la lista delle ultime repository analizzate nel sistema.
+
+- *inclusioni:*
+  - #link(<UCD11.1>)[[UCD11.1]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD11.1 - Visualizzazione elemento lista ultime analisi terminate
+<UCD11.1>
+
+- *Attore principale:* Developer.
+
+- *Descrzione:* Il developer visualizza un elemento all'interno della lista delle ultime analisi portate a termine.
+
+- *Precondizioni:* Deve essere stata portata a termine almeno un analisi.
+
+- *Scenario principale:*
+  + Il sistema mostra il nome del repository analizzato (*<\<include>>* #link(<UCD2.2.1>)[[UCD2.2.1]]).
+  + Il sistema mostra la data di completamento dell'analisi (*<\<include>>* #link(<UCD11.1.1>)[[UCD11.1.1]]).
+
+- *Postcondizioni:* Il Developer ha visualizzato un singolo elemento dalla lista delle ultime analisi completate
+
+- *Inclusioni:*
+  - #link(<UCD2.2.1>)[[UCD2.2.1]]
+  - #link(<UCD11.1.1>)[[UCD11.1.1]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD11.1.1 - Visualizzazione data completamento analisi
+<UCD11.1.1>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer visualizza la data di conclusione di un analisi da lui avviata.
+
+- *Precondizioni:* Deve essere portata a termine almeno un analisi.
+
+- *Scenario principale:*
+  + Il sistema mostra la data di completamento dell'analisi.
+
+- *Postcondizioni:* Il Developer ha visualizzato la data di terminazione dell'analisi in esaminazione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 #pagebreak()
 
-=== UCD12 - Visualizzazione storico singola repository
+=== UCD12 - Visualizzazione dettaglio storico analisi su singola repository
 <UCD12>
 - *Attore principale:* Developer
 
@@ -1899,22 +1943,28 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il sistema carica i dati statici relativi alla specifica sessione di analisi selezionata.
-  + Il sistema mostra l'intestazione del repository.
+  + Il sistema mostra il nome del repository (*<\<include>>* #link(<UCD2.2.1>)[[UCD2.2.1]]).
+  + Il sistema mostra la data di terminazione dell'analisi (*<\<include>>* #link(<UCD11.1.1>)[[UCD11.1.1]]).
   + Il sistema mostra i grafici delle statistiche di analisi documentazione nella sessione di interesse (*<\<include>>* #link(<UCD12.1>)[[UCD12.1]]).
   + Il sistema mostra i grafici delle statistiche di analisi di test nella sessione di interesse (*<\<include>>* #link(<UCD12.2>)[[UCD12.2]]).
   + Il sistema mostra i grafici delle statistiche di correttezza OWASP nella sessione di interesse (*<\<include>>* #link(<UCD12.3>)[[UCD12.3]]).
-  + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti.
+  + Il sistema mpstra l'opzione di visualizzazione della remediation proposta contestualmente a quell'analisi.
   + Il sistema mostra il pulsante per tornare alla pagina precedente. 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il Developer visualizza i dati aggregati della repository.
 
 - *Inclusioni:* 
+  - #link(<UCD2.2.1>)[[UCD2.2.1]]
+  - #link(<UCD11.1.1>)[[UCD11.1.1]]
   - #link(<UCD12.1>)[[UCD12.1]]
   - #link(<UCD12.2>)[[UCD12.2]]
   - #link(<UCD12.3>)[[UCD12.3]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1935,7 +1985,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema visualizza il grafico con la percentuale corrispondente.
   
 - *Scenari alternativi:* \
-  Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore "N.D." (Non Disponibile).
+  Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore N.D. (Non Disponibile).
 
 - *Postcondizioni:* Il Developer visualizza l'indice di correttezza della documentazione relativo al periodo selezionato.
 
@@ -1957,7 +2007,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema visualizza il grafico con la percentuale corrispondente.
   
 - *Scenari alternativi:* \
-  Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore "N.D." (Non Disponibile).
+  Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore N.D. (Non Disponibile).
 
 - *Postcondizioni:* Il Developer visualizza lo stato dei test al relativo al periodo selezionato.
 
@@ -1979,11 +2029,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema visualizza il grafico con la percentuale corrispondente.
   
 - *Scenari alternativi:* \
-  Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore "N.D." (Non Disponibile).
+  Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore N.D. (Non Disponibile).
 
 - *Postcondizioni:* Il Developer visualizza lo stato della correttezza OWASP al relativo al periodo selezionato.
 
-=== UCD12.4 - Visualizzazione storico remediation documentazione
+=== UCD12.4 - Visualizzazione storico lista remediation
 <UCD12.4>
 - *Attore principale:* Developer
 
@@ -1991,67 +2041,49 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Developer ha selezionato un'analisi storica #link(<UCD12>)[[UCD12]] 
 
-- *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation passate per la documentazione.
+- *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation passate.
 
 - *Scenario principale:* \
   - Il sistema recupera i dati della sessione di analisi selezionata.
-  - Il sistema mostra l'elenco dei documenti che presentavano criticità nella documentazione in tale data.
-  - Il sistema visualizza le soluzioni (remediation) proposte all'epoca dall'agente.
+  - Il sistema visualizza la lista dei file sui quali erano state proposte soluzioni (remediation) dall'agente.
+  - Il sistema attiva la possibilità di premere un file per avere dettagli riguardo alla proposta di remediation (#link(<UCD12.4.1>)[[UCD12.4.1]]).
   - Il sistema mostra un pulsante per tornare alla panoramica dell'analisi selezionata.
 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il Developer visualizza lo stato delle proposte di remediation della documentazione relative allo storico selezionato (sola lettura).
 
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UCD12.5 - Visualizzazione storico remediation test
-<UCD12.5>
-- *Attore principale:* Developer
-
-- *Descrizione:* Il Developer visualizza le proposte di remediation relative ai test generate durante una specifica analisi passata.
-
-- *Precondizioni:* Il Developer ha selezionato un'analisi storica #link(<UCD12>)[[UCD12]] 
-
-- *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation passate per i test.
-
-- *Scenario principale:* \
-  - Il sistema recupera i dati della sessione di analisi selezionata.
-  - Il sistema mostra l'elenco dei documenti che presentavano criticità nei test in tale data.
-  - Il sistema visualizza le soluzioni (remediation) proposte all'epoca dall'agente.
-  - Il sistema mostra un pulsante per tornare alla panoramica dell'analisi selezionata.
-
-- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
-    - Il caso d'uso termina senza successo.
-
-- *Postcondizioni:* Il Developer visualizza lo stato delle proposte di remediation ai test relative allo storico selezionato (sola lettura).
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD12.6 - Visualizzazione storico remediation OWASP
-<UCD12.6>
+=== UCD12.4.1 - Visualizzazione proposta remediation passata di un file 
+<UCD12.4.1>
 - *Attore principale:* Developer
 
-- *Descrizione:* Il Developer visualizza le proposte di remediation relative alla correttezza OWASP generate durante una specifica analisi passata.
+- *Descrizione:* Il Developer vuole visualizzare una vecchia proposta di remediation di uno specifico file.
 
-- *Precondizioni:* Il Developer ha selezionato un'analisi storica #link(<UCD12>)[[UCD12]] 
+- *Precondizioni:* Il Developer sta visualizzando una lista di file sui quali il sistema ha proposto delle remediation: #link(<UCD12.4>)[[UCD12.4]]
 
-- *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation passate per la correttezza OWASP.
+- *Trigger:* Il Developer seleziona il file che gli interessa consultare.
 
 - *Scenario principale:* \
-  - Il sistema recupera i dati della sessione di analisi selezionata.
-  - Il sistema mostra l'elenco dei documenti che presentavano criticità nella correttezza OWASP in tale data.
-  - Il sistema visualizza le soluzioni (remediation) proposte all'epoca dall'agente.
-  - Il sistema mostra un pulsante per tornare alla panoramica dell'analisi selezionata.
+  - Il sistema mostra il contenuto del file con le differenze tra il file presente e la proposta applicabile (_diff_). 
+  - Il sistema mostra il path che il file seguirà all'interno del repository.
+  - Il sistema mostra un pulsante per tornare alla pagina precedente.
 
-- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+- *Scenari alternativi:* \
+  - Si verifica un errore durante il caricamento della pagina.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* Il Developer visualizza lo stato delle proposte di remediation della correttezza OWASP relative allo storico selezionato (sola lettura).
+- *Postcondizioni:* Il developer conosce la proposta di remediation relativa ad un file specifico, relativo ad un'analisi passata.
+  
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -2068,16 +2100,16 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Developer si trova sulla dashboard del repository (#link(<UCD5>)[[UCD5]]).
 
-- *Trigger:* Viene caricata la pagina di dettaglio del Repository.
+- *Trigger:* Il developer seleziona l'opzione per la visualizzazione dell'ultima analisi.
 
 - *Scenario principale:*
-  + Il sistema mostra i grafici relativi all'ultima analisi condotta sull'area test *<\<include>>* #link(<UCD13.1>)[[UCD13.1]].
-  + Il sistema mostra i grafici relativi all'ultima analisi condotta sull'area documentazione *<\<include>>* #link(<UCD13.2>)[[UCD13.2]].
-  + Il sistema mostra i grafici relativi all'ultima analisi condotta sull'area OWASP *<\<include>>* #link(<UCD13.3>)[[UCD13.3]].
+  + Il sistema mostra i grafici relativi all'ultima analisi condotta sull'area test (*<\<include>>* #link(<UCD13.1>)[[UCD13.1]]).
+  + Il sistema mostra i grafici relativi all'ultima analisi condotta sull'area documentazione (*<\<include>>* #link(<UCD13.2>)[[UCD13.2]]).
+  + Il sistema mostra i grafici relativi all'ultima analisi condotta sull'area OWASP (*<\<include>>* #link(<UCD13.3>)[[UCD13.3]]).
   
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UCD4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il Developer visualizza i risultati dell'ultima analisi svolta relativa ai vari agenti.
@@ -2086,6 +2118,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - #link(<UCD13.1>)[[UCD13.1]] 
   - #link(<UCD13.2>)[[UCD13.2]] 
   - #link(<UCD13.3>)[[UCD13.3]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UCD4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2097,24 +2132,28 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer vuole controllare le criticità identificate nell'area test dall'ultima analisi condotta.
 
-- *Precondizioni:* Il Developer si trova sulla dashboard del repository (#link(<UCD5>)[[UCD5]]) e sono presenti dati relativi all'analisi sui test.
+- *Precondizioni:* Il Developer ha selezionato l'opzione di visualizzazione dell'ultima analisi condotta sul repository.
 
-- *Trigger:* Viene caricata la pagina di dettaglio del Repository.
+- *Trigger:* Viene caricata la pagina di dettaglio dell'ultima analisi del repository.
 
 - *Scenario principale:*
   + Il sistema mostra i grafici relativi all'analisi sui test.
-  + Il sistema mostra le criticità e relative proposte di remediation (*<\<include>>* #link(<UCD6.0.1>)[[UCD6.0.1]]).
-  + Il sistema mostra l'opzione per avviare un'analisi per l'area test.
+  + Il sistema mostra le relative proposte di remediation (*<\<include>>* #link(<UCD6.0.1>)[[UCD6.0.1]]).
+  + Il sistema mostra l'opzione per avviare un'analisi per l'area test (#link(<UCD15.1>)[[UCD15.1]]).
 
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UCD4]]).
     - Il caso d'uso termina senza successo.
+  - Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore N.D. (Non Disponibile).
 
 - *Postcondizioni:* Il Developer visualizza i risultati delle dell'ultima analisi relativa ai test.
 
 - *Inclusioni:*  
   - #link(<UCD6.0.1>)[[UCD6.0.1]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UCD4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2126,24 +2165,28 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer vuole controllare le criticità identificate nell'area OWASP dall'ultima analisi condotta.
 
-- *Precondizioni:* Il Developer si trova sulla dashboard del repository (#link(<UCD5>)[[UCD5]]) e sono presenti dati relativi all'analisi OWASP.
+- *Precondizioni:* Il Developer ha selezionato l'opzione di visualizzazione dell'ultima analisi condotta sul repository.
 
-- *Trigger:* Viene caricata la pagina di dettaglio del repository.
+- *Trigger:* Viene caricata la pagina di dettaglio dell'ultima analisi del repository.
 
 - *Scenario principale:*
   + Il sistema mostra i grafici relativi all'analisi OWASP.
-  + Il sistema mostra le criticità e relative proposte di remediation (*<\<include>>* #link(<UCD6.0.2>)[[UCD6.0.2]]).
-  + Il sistema mostra l'opzione per avviare un'analisi per l'area OWASP.
+  + Il sistema mostra le relative proposte di remediation (*<\<include>>* #link(<UCD6.0.2>)[[UCD6.0.2]]).
+  + Il sistema mostra l'opzione per avviare un'analisi per l'area OWASP (#link(<UCD15.3>)[[UCD15.3]]).
 
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UCD4]]).
     - Il caso d'uso termina senza successo.
+  - Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore N.D. (Non Disponibile).
 
 - *Postcondizioni:* Il Developer visualizza i risultati delle dell'ultima analisi OWASP.
 
 - *Inclusioni:*  
   - #link(<UCD6.0.2>)[[UCD6.0.2]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UCD4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2155,24 +2198,28 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer vuole controllare le criticità identificate nell'area documentazione dall'ultima analisi condotta.
 
-- *Precondizioni:* Il Developer si trova sulla dashboard del repository (#link(<UCD5>)[[UCD5]]) e sono presenti dati relativi all'analisi sulla documentazione.
+- *Precondizioni:* Il Developer ha selezionato l'opzione di visualizzazione dell'ultima analisi condotta sul repository.
 
-- *Trigger:* Viene caricata la pagina di dettaglio del Repository.
+- *Trigger:* Viene caricata la pagina di dettaglio dell'ultima analisi del repository.
 
 - *Scenario principale:*
   + Il sistema mostra i grafici relativi all'analisi sulla documentazione.
   + Il sistema mostra le relative proposte di remediation (*<\<include>>* #link(<UCD6.0.3>)[[UCD6.0.3]]).
-  + Il sistema mostra l'opzione per avviare un'analisi per l'area documentazione.
+  + Il sistema mostra l'opzione per avviare un'analisi per l'area documentazione (#link(<UCD15.2>)[[UCD15.2]]).
 
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UCD4]]).
     - Il caso d'uso termina senza successo.
+  - Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore N.D. (Non Disponibile).
 
 - *Postcondizioni:* Il Developer visualizza i risultati delle dell'ultima analisi sulla documentazione.
 
 - *Inclusioni:*  
   - #link(<UCD6.0.3>)[[UCD6.0.3]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UCD4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -2192,18 +2239,46 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il sistema recupera l'elenco completo delle analisi concluse per il repository indicato.
   + Il sistema mostra la lista ordinata per data decrescente.
-  + Per ogni analisi in elenco, il sistema mostra: data/ora di completamento e stato della remediation (Applicato, Non applicato, Non presente).
+  + Per ogni analisi in elenco, il sistema mostra la data di completamento (*<\<include>>* #link(<UCD11.1.1>)[[UCD11.1.1]]).
+  + Per ogni analisi in elenco il sistema mostra lo stato della remediation (*<\<include>>* #link(<UCD14.1>)[[UCD14.1]]).
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento di una pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<sxtend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
+
+- *Inclusioni:*
+  - #link(<UCD11.1.1>)[[UCD11.1.1]]
+  - #link(<UCD14.1>)[[UCD14.1]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD14.1 - Visualizzazione stato analisi storica
+<UCD14.1>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer visualizza lo stato di un analisi passata effettuata in un determinato repository.
+
+- *Precondizioni:* Il Developer sta visualizzando la lista dello storico delle analisi effettuare in un repository (#link(<UCD14>)[[UCD14]])
+
+- *Trigger:* Viene caricata la pagine di visualizzazione dello storico delle analisi sul repository.
+
+- *Scenario principale:*
+  + Il Developer visualizza la scritta 'Applicata' se la remediation proposta dall'analisi è stata applicata.
+  + Il Developer visualizza la scritta 'Non applicata' se la remediation proposta dall'analisi non è stata applicata.
+  + Il Developer visualizza la scritta 'Parzialmente applicato' se la remediation proposta dall'analisi è stata parzialmente applicata.
+
+- *Postcondizioni:* Il Developer ha visualizzato lo stato della proposta di remediation per quell'analisi.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 #pagebreak()
 
-=== UCD15 - Avvio analisi di un repository
+=== UCD15 - Selezione opzioni avvio analisi di un repository
 #align(center, [#image("../../asset/UC/developer/UCD15.png", width: 100%)])
 <UCD15>
 - *Attore principale:* Developer.
@@ -2215,109 +2290,129 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer preme sul tasto di avvio analisi.
 
 - *Scenario principale:*
-  + Il sistema avvia l'analisi sull'area di test (*<\<include>>* #link(<UCD15.1>)[[UCD15.1]]).
-  + Il sistema avvia l'analisi sull'area di documentazione (*<\<include>>* #link(<UCD15.2>)[[UCD15.2]]).
-  + Il sistema avvia l'analisi sull'area OWASP (*<\<include>>* #link(<UCD15.3>)[[UCD15.3]]).
-
-- *Scenari alternativi*
-  - Si verifica un errore durante il caricamento della conferma.
-    - Il sistema mostra un messaggio di errore.
-    - Il caso d'uso termina senza successo.
-  - Si verifica un conflitto in quanto c'è già un analisi in corso in qualche area della repository (*<\<extend>>* #link(<UCD15.4>)[[UCD15.4]]).
+  + Il sistema mostra l'opzione di avvio analisi a tutte le aree. 
+  + Il sistema mostra l'opzione di avvio analisi area test.
+  + Il sistema mostra l'opzione di avvio analisi area documentazione.
+  + Il sistema mostra l'opzione di avvio analisi area OWASP.
+  + L'utente seleziona un opzione.
   
--  *Postcondizioni:* Un'analisi sul repository è stata avviata.
-
-- *Estensioni:* #link(<UCD15.4>)[[UCD15.4]]
-- *Inclusioni:*
-  - #link(<UCD15.1>)[[UCD15.1]]
-  - #link(<UCD15.2>)[[UCD15.2]]
-  - #link(<UCD15.3>)[[UCD15.3]]
+-  *Postcondizioni:* Un'analisi sul repository è stata selezionata.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD15.1 - Avvio analisi di test di una repository
+=== UCD15.1 - Avvio analisi 
 <UCD15.1>
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer avvia un analisi all'interno di un repository.
+
+- *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare.
+
+- *Scenario principale*:
+  - Il sistema richiede la conferma per l'avvio dell'analisi.
+  - Il Developer conferma l'avvio dell'analisi.
+
+- *Scenari alternativi*
+  - Si verifica un errore durante il caricamento della conferma.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+    - Il caso d'uso termina senza successo.
+  - Si verifica un conflitto in quanto c'è già un analisi in corso in qualche area della repository (*<\<extend>>* #link(<UCD15.6>)[[UCD15.6]]).
+  - Il Developer annulla l'avvio di un analisi (*<\<extend>>* #link(<UCD15.7>)[[UCD15.7]])
+
+*Postcondizioni:* Il Developer ha avviato un analisi all'interno del repository.
+
+- *Generalizzazioni:*
+  - #link(<UCD15.2>)[[UCD15.1]]
+  - #link(<UCD15.3>)[[UCD15.2]]
+  - #link(<UCD15.4>)[[UCD15.3]]
+  - #link(<UCD15.5>)[[UCD15.4]]
+
+- *Estensioni:* 
+  - #link(<UC4>)[[UC4]]
+  - #link(<UCD15.6>)[[UCD15.6]]
+  - #link(<UCD15.7>)[[UCD15.7]]
+
+=== UCD15.2 - Avvio analisi generale
+<UCD15.2>
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer vuole avviare un'analisi generale del repository.
+
+- *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare ed ha eseguito la selezione.
+
+- *Trigger:* Il Developer preme sul tasto di conferma per l'avvio analisi generale.
+
+- *Scenario principale:*
+  + Il sistema avvia l'analisi sull'area di test (*<\<include>>* #link(<UCD15.3>)[[UCD15.3]]).
+  + Il sistema avvia l'analisi sull'area di documentazione (*<\<include>>* #link(<UCD15.4>)[[UCD15.4]]).
+  + Il sistema avvia l'analisi sull'area OWASP (*<\<include>>* #link(<UCD15.5>)[[UCD15.5]]).
+
+*Postcondizioni:* Il developer
+
+- *Inclusioni:*
+  - #link(<UCD15.3>)[[UCD15.3]]
+  - #link(<UCD15.4>)[[UCD15.4]]
+  - #link(<UCD15.5>)[[UCD15.5]]
+
+=== UCD15.3 - Avvio analisi di test di una repository
+<UCD15.3>
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole avviare un'analisi test del repository.
 
-- *Precondizioni:* Il Developer sta visualizzando il dettaglio di un repository relativa alle analisi test (#link(<UCD13.1>)[[UCD13.1]]).
+- *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare ed ha eseguito la selezione.
 
-- *Trigger:* Il Developer preme sul tasto di avvio analisi.
+- *Trigger:* Il Developer preme sul tasto di conferma per l'avvio analisi test.
 
 - *Scenario principale:*
   + Il sistema avvia un analisi sull'area test.
-
-- *Scenari alternativi*
-  - Si verifica un errore durante il caricamento della conferma.
-    - Il sistema mostra un messaggio di errore.
-    - Il caso d'uso termina senza successo.
-  - Si verifica un conflitto in quanto c'è già un analisi in corso in quell'area all'interno del repository (*<\<extend>>* #link(<UCD15.4>)[[UCD15.4]]).
   
-  *Postcondizioni:* Un'analisi sull'area test del repository è stata avviata.
-
-  *Estensioni:* #link(<UCD15.4>)[[UCD15.4]]
+-  *Postcondizioni:* Un'analisi sull'area test del repository è stata avviata.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD15.2 - Avvio analisi di documentazione di una repository
-<UCD15.2>
+=== UCD15.4 - Avvio analisi di documentazione di una repository
+<UCD15.4>
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole avviare un'analisi documentazione del repository.
 
-- *Precondizioni:* Il Developer sta visualizzando il dettaglio di un repository relativa alle analisi documentazione (#link(<UCD13.3>)[[UCD13.3]]).
+- *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare ed ha eseguito la selezione.
 
-- *Trigger:* Il Developer preme sul tasto di avvio analisi.
+- *Trigger:* Il Developer preme sul tasto di conferma per l'avvio analisi test.
 
 - *Scenario principale:*
   + Il sistema avvia un analisi sull'area documentazione.
-
-- *Scenari alternativi*
-  - Si verifica un errore durante il caricamento della conferma.
-    - Il sistema mostra un messaggio di errore.
-    - Il caso d'uso termina senza successo.
-  - Si verifica un conflitto in quanto c'è già un analisi in corso in quell'area all'interno del repository (*<\<extend>>* #link(<UCD15.4>)[[UCD15.4]]).
   
-  *Postcondizioni:* Un'analisi sull'area documentazione del repository è stata avviata.
-
-  *Estensioni:* #link(<UCD15.4>)[[UCD15.4]]
+- *Postcondizioni:* Un'analisi sull'area documentazione del repository è stata avviata.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD15.3 - Avvio analisi OWASP di una repository
-<UCD15.3>
+=== UCD15.5 - Avvio analisi OWASP di una repository
+<UCD15.5>
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole avviare un'analisi OWASP del repository.
 
-- *Precondizioni:* Il Developer sta visualizzando il dettaglio di un repository relativa alle analisi OWASP (#link(<UCD13.2>)[[UCD13.2]]).
+- *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare ed ha eseguito la selezione.
 
-- *Trigger:* Il Developer preme sul tasto di avvio analisi.
+- *Trigger:* Il Developer preme sul tasto di conferma di avvio analisi OWASP.
 
 - *Scenario principale:*
   + Il sistema avvia un analisi sull'area OWASP.
-
-- *Scenari alternativi*
-  - Si verifica un errore durante il caricamento della conferma.
-    - Il sistema mostra un messaggio di errore.
-    - Il caso d'uso termina senza successo.
-  - Si verifica un conflitto in quanto c'è già un analisi in corso in quell'area all'interno del repository (*<\<extend>>* #link(<UCD15.4>)[[UCD15.4]]).
   
-  *Postcondizioni:* Un'analisi sull'area OWASP del repository è stata avviata.
-
-  *Estensioni:* #link(<UCD15.4>)[[UCD15.4]]
+- *Postcondizioni:* Un'analisi sull'area OWASP del repository è stata avviata.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD15.4 - Conflitto analisi in corso
-<UCD15.4>
+=== UCD15.6 - Conflitto analisi in corso
+<UCD15.6>
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il sistema rileva che è già attiva un'analisi sulla repository (o sull'area specifica richiesta) e impedisce l'avvio di una nuova sessione per evitare conflitti di elaborazione.
 
-- *Precondizioni:* Il Developer ha tentato di avviare un'analisi globale o specifica (#link(<UCD15>)[[UCD15]], #link(<UCD15.1>)[[UCD15.1]], #link(<UCD15.2>)[[UCD15.2]], #link(<UCD15.3>)[[UCD15.3]]).
-
+- *Precondizioni:* Il Developer ha tentato di avviare un'analisi (#link(<UCD15.1>)[[UCD15.1]])
+  
 - *Trigger:* Il sistema rileva un processo di analisi attivo incompatibile con la richiesta effettuata.
 
 - *Scenario principale:*
@@ -2327,6 +2422,22 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra un messaggio di avviso al Developer, indicando l'analisi attualmente attiva.
   
   *Postcondizioni:* Il sistema non avvia alcuna nuova analisi. Lo stato della repository rimane invariato e l'utente è informato dell'impedimento.
+
+=== UCD15.7 - Annullamento procedura avvio analisi
+<UCD15.7>
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer annulla l'operazione di avvio di un'analisi al repository.
+
+- *Precondizioni:* Il Developer ha selezionato un'analisi da avviare sul repository.
+
+- *Trigger:* Il Developer seleziona l'annullamento nella richiesta di conferma dell'avvio.
+
+- *Scenario principale:*
+  + Il sistema non avvia nessuna analisi.
+  + Il sistema porta il Developer alla pagina di selezione di un analisi (#link(<UCD15>)[[UCD15]]).
+
+- *Postcondizioni:* Nuessun analisi è stata avviata nell'ambito del repository di riferimento.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
