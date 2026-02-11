@@ -13,7 +13,8 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("0.9.1", "2026-02-10", "Nicola Simionato", "", "Modifica UC Project Manager e Business Owner"),
+  ("0.10.0", "2026-02-10", "Angela Favaro", "", "Stesura definitiva requisiti funzionali"),
+  ("0.10.0", "2026-02-10", "Nicola Simionato", "Angela Favaro", "Modifica UC Project Manager e Business Owner"),
   ("0.9.0", "2026-02-09", "Angela Favaro", "Laura Venturini", "Aggiunta requisiti funzionali user e dev"),
   ("0.8.1", "2026-02-07", "Angela Canazza", "Angela Favaro", "Modifica UC di Utente e Developer"),
   ("0.8.0", "2026-01-16", "Angela Canazza", "Angela Favaro", "Scrittura requisiti e modifica errori sugli UC"),
@@ -358,11 +359,16 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 === UC1.0.1 - Inserimento username
 <UC1.0.1>
 - *Attore principale:* Utente.
+  
 - *Descrizione:* L'utente inserisce il proprio username.
+  
 - *Precondizioni:* L'utente si trova nell'interfaccia di inserimento credenziali.
+  
 - *Trigger:* L'utente seleziona lo spazio destinato all'inserimento dello username.
+
 - *Scenario principale:*
-  1. L'utente inserisce il proprio username.
+  + L'utente inserisce il proprio username.
+  
 - *Postcondizioni:* L'utente ha inserito il proprio username all'interno dello spazio dedicato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -370,11 +376,16 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 === UC1.0.2 - Inserimento password
 <UC1.0.2>
 - *Attore principale:* Utente.
+
 - *Descrizione:* L'utente inserisce la propria password.
+  
 - *Precondizioni:* L'utente si trova nell'interfaccia di inserimento credenziali.
+  
 - *Trigger:* L'utente seleziona lo spazio destinato all'inserimento della password.
+  
 - *Scenario principale:*
-  1. L'utente inserisce la propria password.
+  + L'utente inserisce la propria password.
+   
 - *Postcondizioni:* L'utente ha inserito la propria password all'interno dello spazio dedicato.
   
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -428,12 +439,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* L’utente ha effettuato l’accesso a _Code Guardian_ ed è in possesso di un account GitHub.
 
-- *Trigger:* L’utente seleziona l'opzione di sincronizzazione globale delle repository GitHub.
+- *Trigger:* L’utente seleziona l'opzione di sincronizzazione globale deI repository GitHub.
 
 - *Scenario principale:*
   + L’utente avvia la procedura di sincronizzazione.
   + L'utente completa l'autenticazione tramite il provider esterno GitHub.
-  + Il sistema verifica se l'utente desidera includere repository private.
+  + Il sistema verifica se l'utente desidera includere repository privatI.
   + L'utente conferma l'operazione di sincronizzazione finale.
   + Il sistema preleva le informazioni da GitHub e popola la dashboard con i repository trovati.
 
@@ -443,10 +454,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il sistema mostra un messaggio di errore.
     - Il sistema reindirizza l'utente alla dashboard.
     - Il caso d'uso termina senza successo.
-  - Al passo 3: L'utente desidera includere le repository private ma non ha un token valido associato (*<\<extend>>* #link(<UCD1.0.2>)[[UCD1.0.2]]).
+  - Al passo 3: L'utente desidera includere i repository privati ma non ha un token valido associato (*<\<extend>>* #link(<UCD1.0.2>)[[UCD1.0.2]]).
   - Al passo 4: l'utente esprime la volontà di annullare la sincronizzazione (*<\<extend>>* #link(<UC1.4>)[[UC1.4]]).
 
-- *Postcondizioni:* L’utente ha tutte le sue repository sulla dashboard.
+- *Postcondizioni:* L’utente ha tutti suoi repository sulla dashboard.
 
 - *Estensioni:* 
   - #link(<UC1.4>)[[UC1.4]].
@@ -508,7 +519,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + L'utente visualizza il pannello a comparsa del menù utente.
   + L'utente visualizza il riepilogo delle proprie informazioni (nome, email, ruolo attuale). (*<\<include>>* #link(<UC2.1>)[[UC2.1]], *<\<include>>* #link(<UC2.2>)[[UC2.2]], *<\<include>>* #link(<UC2.3>)[[UC2.3]])
   + L'utente visualizza il pulsante per il logout (*<\<include>>* #link(<UC3>)[[UC3]]).
-  + L'utente visualizza il pulsante "X".
 
 - *Postcondizioni:* Il menù utente è attivo, l'utente visualizza le sue informazioni personali e le opzioni sono selezionabili.
 
@@ -522,7 +532,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UC2.1>
 - *Attore principale:* Utente.
 
-- *Descrizione:* L'utente vuole visualizzare il proprio nome.
+- *Descrizione:* L'utente vuole visualizzare il proprio nome utente.
 
 - *Precondizioni:* Il menù utente è attivo.
 
@@ -531,7 +541,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + L'utente visualizza il proprio nome tra le informazioni personali.
 
-- *Postcondizioni:* L'utente è a conoscenza del proprio nome, utilizzato sull'applicativo CodeGuardian.
+- *Postcondizioni:* L'utente è a conoscenza del proprio nome, utilizzato sull'applicativo Code Guardian.
 
 
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -548,7 +558,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + L'utente visualizza la propria email tra le informazioni personali.
 
-- *Postcondizioni:* L'utente è a conoscenza della propria, email utilizzata sull'applicativo CodeGuardian.
+- *Postcondizioni:* L'utente è a conoscenza della propria, email utilizzata sull'applicativo Code Guardian.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 === UC2.3 - Visualizzazione ruolo
@@ -564,7 +574,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + L'utente visualizza il proprio ruolo tra le informazioni personali.
 
-- *Postcondizioni:* L'utente è a conoscenza del proprio ruolo all'interno dell'applicativo CodeGuardian.
+- *Postcondizioni:* L'utente è a conoscenza del proprio ruolo all'interno dell'applicativo Code Guardian.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -617,80 +627,99 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* L'utente è autenticato e si trova nella propria area personale senza aver effettuato il logout.
 
+=== UC4 - Errore generico
+<UC4>
+- *Attore principale:* Utente.
+  
+- *Descrizione:* L'utente visualizza un messaggio di errore nel caso il sistema non sia in grado di eseguire un'operazione.
+
+- *Precondizioni:* L'utente si trova all'interno della piattaforma Code Guardian e sta attendendo l'esecuzione di un'operazione.
+
+- *Trigger:* L'utente seleziona un'operazione da eseguire.
+
+- *Scenario principale:*
+  + Viene mostrato un messaggio di errore.
+  
+- *Postcondizioni:* L'utente rimane nello stato precedente alla selezione dell'operazione.
+   
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
 == Specifica dei casi d'uso - developer
 
-=== UCD1 - Aggiungi singola repository
+=== UCD1 - Aggiungi singolo repository
 #align(center, [#image("../../asset/UC/developer/UCD1.png", width: 100%)])
 <UCD1>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole registrare una nuova repository singola _GitHub_ nella piattaforma.
+- *Descrizione:* Il Developer vuole registrare un nuovo repository _GitHub_ nella piattaforma.
 
 - *Precondizioni:* Il Developer è all'interno della dashboard.
 
-- *Trigger:* Il Developer seleziona l'opzione di "Aggiunta repository" dalla dashboard.
+- *Trigger:* Il Developer seleziona l'opzione di aggiunta repository dalla dashboard.
 
 - *Scenario principale:*
-  + Il sistema mostra l’interfaccia per l’inserimento dei dati della repository.
-  + Il Developer inserisce l'URL della repository _GitHub_ *<\<include>>* #link(<UCD1.2>)[[UCD1.2]].
+  + Il sistema mostra l’interfaccia per l’inserimento dei dati del repository.
+  + Il Developer inserisce l'URL del repository _GitHub_ *<\<include>>* #link(<UCD1.2>)[[UCD1.2]].
   + Il Developer conferma l'operazione.
-  + Il sistema valida l’URL e registra la repository.
+  + Il sistema valida l’URL e registra il repository.
   + Il sistema mostra un messaggio di conferma dell’avvenuta aggiunta.
 
 - *Scenari alternativi:* \
   - Al passo 1 o 2: Il Developer decide di annullare l’operazione #link(<UCD1.1>)[[UCD1.1]].
   
-  - Al passo 4: URL della repository non valido *<\<extend>>* #link(<UCD1.3>)[[UCD1.3]].
+  - Al passo 4: URL del repository non valido *<\<extend>>* #link(<UCD1.3>)[[UCD1.3]].
   - Si verifica un errore durante il collegamento con GitHub.
-      - Il sistema mostra un messaggio di errore.
+      - Il sistema mostra un messaggio di errore *<\<extend>>* #link(<UC4>)[[UC4]].
       - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* La repository è stata aggiunta alla piattaforma.
+- *Postcondizioni:* Il repository è stato aggiunto alla piattaforma.
 
 - *Estensioni:* 
   - #link(<UCD1.1>)[[UCD1.1]]
   - #link(<UCD1.3>)[[UCD1.3]]
+  - #link(<UC4>)[[UC4]]
+
 - *Inclusioni:* #link(<UCD1.2>)[[UCD1.2]]
+  
 - *Generalizzazioni:* #link(<UCD1.0.1>)[[UCD1.0.1]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD1.0.1 - Aggiungi singola repository privata
+=== UCD1.0.1 - Aggiungi singolo repository privato
 #align(center, [#image("../../asset/UC/developer/UCD1.0.1.png", width: 60%)])
 <UCD1.0.1>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole registrare una nuova repository singola _GitHub_ nella piattaforma.
+- *Descrizione:* Il Developer vuole registrare un nuovo repository _GitHub_ privato nella piattaforma.
 
-- *Precondizioni:* Il Developer è all'interno della dashboard.
+- *Precondizioni:* Il Developer si trova all'interno della dashboard.
 
-- *Trigger:* Il Developer seleziona l'opzione di "Aggiunta repository" dalla dashboard.
+- *Trigger:* Il Developer seleziona l'opzione di aggiunta repository dalla dashboard.
 
 - *Scenario principale:*
-  + Il sistema mostra l’interfaccia per l’inserimento dell'URL della repository.
-  + Il Developer inserisce l'URL della repository GitHub (<<include>> #link(<UCD1.2>)[[UCD1.2]]).
+  + Il sistema mostra l’interfaccia per l’inserimento dell'URL del repository.
+  + Il Developer inserisce l'URL del repository GitHub (<<include>> #link(<UCD1.2>)[[UCD1.2]]).
   + Il sistema valida l'URL inserito.
   + Il sistema verifica la presenza di un token GitHub valido associato al profilo del Developer.
-  + Il sistema registra la repository utilizzando le credenziali (token) dell'utente.
+  + Il sistema registra il repository utilizzando le credenziali (token) dell'utente.
   + Il sistema mostra un messaggio di conferma dell’avvenuta aggiunta.
 
 - *Scenari alternativi:* \
-  - Al passo 1 o 2: Il Developer decide di annullare l’operazione #link(<UCD1.1>)[[UCD1.1]].
+  - Al passo 1 o 2: Il Developer decide di annullare l’operazione (*<\<extend>>*  #link(<UCD1.1>)[[UCD1.1]]).
   - Al passo 3: URL non valido (*<\<extend>>* #link(<UCD1.3>)[[UCD1.3]]).
   - Al passo 4: Il Developer non ha mai associato un token o il token è scaduto (*<\<extend>>* #link(<UCD1.0.2>)[[UCD1.0.2]]).
   - Al passo 4 o 5: Si verifica un errore durante il collegamento con GitHub.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* La repository è stata aggiunta alla piattaforma.
+- *Postcondizioni:* Il repository è stato aggiunto alla piattaforma.
 
 - *Estensioni:* 
   - #link(<UCD1.1>)[[UCD1.1]]
   - #link(<UCD1.3>)[[UCD1.3]]
   - #link(<UCD1.0.2>)[[UCD1.0.2]]
+  - #link(<UC4>)[[UC4]]
 
 - *Inclusioni:* 
   - #link(<UCD1.2>)[[UCD1.2]]
@@ -706,7 +735,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il sistema ha rilevato l'assenza di un token valido durante un'operazione di aggiunta o sincronizzazione.
 
-- *Trigger:* Richiesta del sistema a seguito di un tentativo di accesso a repository private.
+- *Trigger:* Richiesta del sistema a seguito di un tentativo di accesso a repository privatI.
 
 - *Scenario principale:*
   + Il sistema mostra un'interfaccia di inserimento per il token GitHub dell'utente.
@@ -717,7 +746,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenari alternativi:*
 - Al passo 3: Il token inserito non è valido (*<\<extend>>* #link(<UCD1.0.3>)[[UCD1.0.3]]).
 
-- *Postcondizioni:* Il profilo del Developer è aggiornato con un token valido, permettendo l'importazione di repository private.
+- *Postcondizioni:* Il profilo del Developer è aggiornato con un token valido, permettendo l'importazione di repository privati.
+  
 - *Estensioni:* 
   - #link(<UCD1.0.3>)[[UCD1.0.3]]
 
@@ -745,32 +775,32 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCD1.1>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer decide di annullare l'operazione di aggiunta di una repository nel proprio profilo.
+- *Descrizione:* Il Developer decide di annullare l'operazione di aggiunta di un repository nel proprio profilo.
 
-- *Precondizioni:* Il Developer visualizza l'interfaccia per l'inserimento dei dati della repository.
+- *Precondizioni:* Il Developer visualizza l'interfaccia per l'inserimento dei dati del repository.
 
 - *Trigger:* Il Developer seleziona il tasto per l'annullamento dell'aggiunta repository.
 
 - *Scenario principale:* 
   + Il Developer viene reindirizzato alla dashboard principale della piattaforma _Code Guardian_.
 
-- *Postcondizioni:* Il Developer si trova nuovamente nella dashboard senza aver aggiunto una repository.
+- *Postcondizioni:* Il Developer si trova nuovamente nella dashboard senza aver aggiunto un repository.
   
 === UCD1.2 - Inserimento URL repository
 <UCD1.2>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole inserire l'URL della repository GitHub da aggiungere alla piattaforma.
+- *Descrizione:* Il Developer vuole inserire l'URL del repository GitHub da aggiungere alla piattaforma.
 
-- *Precondizioni:* La repository da aggiungere non è presente nella piattaforma.
+- *Precondizioni:* Il repository da aggiungere non è presente nella piattaforma.
 
-- *Trigger:* Il Developer seleziona l'opzione di "Aggiunta repository" dalla dashboard.
+- *Trigger:* Il Developer seleziona l'opzione di aggiunta repository dalla dashboard.
 
 - *Scenario principale:*
   + Il sistema mostra l’interfaccia per l’inserimento dei dati del repository.
   + Il Developer inserisce l'URL del repository _GitHub_.
 
-- *Postcondizioni:* È stato indicato un URL nell'input per il link della repository da aggiungere.
+- *Postcondizioni:* È stato indicato un URL nell'input per il link del repository da aggiungere.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -778,16 +808,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCD1.3>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Segnalazione al developer della mancata validità dell'URL inserito, per l'aggiunta di una repository.
+- *Descrizione:* Segnalazione al developer della mancata validità dell'URL inserito, per l'aggiunta di un repository.
 
-- *Precondizioni:* L'URL inserito, per aggiungere una repository alla piattaforma, non è valido.
+- *Precondizioni:* L'URL inserito, per aggiungere un repository alla piattaforma, non è valido.
 
-- *Trigger:* Il Developer seleziona l'opzione di "Aggiunta repository" dalla dashboard, l'URL inserito non è valido.
+- *Trigger:* Il Developer seleziona l'opzione di aggiunta repository dalla dashboard, l'URL inserito non è valido.
 
 - *Scenario principale:*
   + Il sistema mostra un messaggio di errore.
 
 - *Postcondizioni:* Il Developer può effettuare un nuovo tentativo di inserimento URL.
+
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -796,25 +827,29 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCD2>
 - *Attore principale*: Developer.
 
-- *Descrizione:* Il Developer desidera visualizzare la lista delle proprie repository presenti sulla piattaforma _Code Guardian_.
+- *Descrizione:* Il Developer desidera visualizzare la lista dei propri repository presenti sulla piattaforma _Code Guardian_.
 
 - *Precondizioni:* Il Developer si trova all'interno della dashboard.
 
 - *Trigger:* Caricamento della schermata della dashboard.
 
 - *Scenario principale:*
-  + L'utente visualizza un menù a tendina per selezionare la tipologia di repository che desidera (tutte/senza progetto) (*<\<include>>* #link(<UCD2.1>)[[UCD2.1]]).
-  + Il sistema visualizza all'interno della dashboard una sezione contente la lista delle repository (*<\<include>>* #link(<UCD2.2>)[[UCD2.2]]).
-  + L'utente può scorrere per visualizzare tutte le repository presenti.
+  + L'utente visualizza un menù a tendina per selezionare la tipologia di repository che desidera (tutti/senza progetto) (*<\<include>>* #link(<UCD2.1>)[[UCD2.1]]).
+  + Il sistema visualizza all'interno della dashboard una sezione contente la lista dei repository (*<\<include>>* #link(<UCD2.2>)[[UCD2.2]]).
+  + L'utente può scorrere per visualizzare tutti i repository presenti.
 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-  - Il sistema mostra un messaggio d'errore.
+  - Il sistema mostra un messaggio d'errore *<\<extend>>* #link(<UC4>)[[UC4]].
   - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* Il Developer visualizza la lista delle proprie Repository.
+- *Postcondizioni:* Il Developer visualizza la lista dei propri Repository.
+  
 - *Inclusioni:* 
   - #link(<UCD2.1>)[[UCD2.1]]
   - #link(<UCD2.2>)[[UCD2.2]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -822,17 +857,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCD2.1>
 - *Attore principale*: Developer.
 
-- *Descrizione:* Il Developer desidera selezionare una preferenza per le repository da visualizzare, presenti sulla piattaforma _Code Guardian_.
+- *Descrizione:* Il Developer desidera selezionare una preferenza per i repository da visualizzare, presenti sulla piattaforma _Code Guardian_.
 
 - *Precondizioni:* Il Developer si trova all'interno della dashboard.
 
 - *Trigger:* L'utente seleziona la tendina del filtro repository.
 
 - *Scenario principale:*
-  + L'utente seleziona la preferenza di visualizzazione che desidera (tutte/senza progetto).
-  + Il sistema ricarica la pagina con le repository che soddisfano l'opzione selezionata.
+  + L'utente seleziona la preferenza di visualizzazione che desidera (tutti/senza progetto).
+  + Il sistema ricarica la pagina con i repository che soddisfano l'opzione selezionata.
 
-- *Postcondizioni:* Il Developer visualizza la lista delle repository desiderate.
+- *Postcondizioni:* Il Developer visualizza la lista dei repository desiderati.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -840,18 +875,74 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCD2.2>
 - *Attore principale*: Developer.
 
-- *Descrizione:* Il sistema mostra un riepilogo dei dati principali delle repository appartenenti al Developer all'interno della dashboard.
+- *Descrizione:* Il sistema mostra un riepilogo dei dati principali dei repository appartenenti al Developer all'interno della dashboard.
 
 - *Precondizioni:* Il Developer dispone dell'accesso a repository presenti sulla piattaforma _Code Guardian_.
 
 - *Trigger:* Caricamento della lista di repository (che essa sia da #link(<UCD2>)[[UCD2]] o da #link(<UCD4>)[[UCD4]]).
 
 - *Scenario principale:*
-  + Per ogni elemento, il sistema visualizza il nome della repository.
-  + Il sistema visualizza il nome del progetto associato (se esistente).
-  + Il sistema mostra l'indicatore di visibilità (Pubblica/Privata).
+  + Per ogni elemento, il sistema mostra il nome del repository (*<\<include>>* #link(<UCD2.2.1>)[[UCD2.2.1]]).
+  + Il sistema mostra il nome del progetto associato (se esistente) (*<\<include>>* #link(<UCD2.2.2>)[[UCD2.2.2]]).
+  + Il sistema mostra l'indicatore di visibilità (Pubblica/Privata) (*<\<include>>* #link(<UCD2.2.3>)[[UCD2.2.3]]).
 
 - *Postcondizioni:* Il Developer ha una panoramica sintetica delle proprie repository.
+  
+- *Inclusioni:*
+  - #link(<UCD2.2.1>)[[UCD2.2.1]]
+  - #link(<UCD2.2.2>)[[UCD2.2.2]]
+  - #link(<UCD2.2.3>)[[UCD2.2.3]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD2.2.1 - Visualizzazione nome repository
+<UCD2.2.1>
+- *Attore principale*: Developer.
+  
+- *Descrizione*: Il sistema mostra il nome di un singolo repository.
+  
+- *Precondizioni*: Il sistema sta mostrando un elemento da una lista di repository o la schermata di dettaglio di un repository.
+  
+- *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UCD2>)[[UCD2]] o da #link(<UCD4>)[[UCD4]]).
+  
+- *Scenario principale*:
+  + Il sistema mostra il nome del repository. 
+  
+- *Postocondizioni*: Il Developer ha visualizzato il nome di un repository.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD2.2.2 - Visualizzazione nome progetto associato al repository
+<UCD2.2.2>
+- *Attore principale*: Developer.
+  
+- *Descrizione*: Il sistema mostra il nome del progetto a cui appartiene un singolo repository.
+  
+- *Precondizioni*: Il sistema sta mostrando un elemento da una lista di repository o la schermata di dettaglio di un repository.
+  
+- *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UCD2>)[[UCD2]] o da #link(<UCD4>)[[UCD4]]).
+  
+- *Scenario principale*:
+  + Il sistema mostra il nome del progetto a cui appartiene il repository. 
+  
+- *Postocondizioni*: Il Developer ha visualizzato il nome del progetto a cui appartiene il repository.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD2.2.3 - Visualizzazione indicatore visibilità del repository
+<UCD2.2.3>
+- *Attore principale*: Developer.
+  
+- *Descrizione*: Il sistema mostra l'indicatore di visibilità associato al repository.
+  
+- *Precondizioni*: Il sistema sta mostrando un elemento da una lista di repository o la schermata di dettaglio di un repository.
+  
+- *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UCD2>)[[UCD2]] o da #link(<UCD4>)[[UCD4]]).
+  
+- *Scenario principale*:
+  + Il sistema mostra il l'indicatore di visibilità del repository. 
+  
+- *Postocondizioni*: Il Developer ha visualizzato l'indicatore di visibilità del repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -869,14 +960,38 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Caricamento della schermata della dashboard.
 
 - *Scenario principale:*
-  + Il sistema visualizza, all'intero della dashboard, una sezione contente la lista dei progetti. Per ogni progetto, il sistema ne recupera e ne mostra il nome.
+  + Il sistema visualizza, all'intero della dashboard, una sezione contente la lista dei progetti. 
+  + Per ogni progetto, il sistema ne recupera e ne mostra il nome (*<\<include>>* #link(<UCD3.0.1>)[[UCD3.0.1]]).
   + L'utente può scorrere per visualizzare tutti i progetti presenti.
   
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-  - Il sistema mostra un messaggio d'errore.
+  - Il sistema mostra un messaggio d'errore *<\<extend>>* #link(<UC4>)[[UC4]].
   - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il Developer visualizza la lista dei progetti in cui è coinvolto.
+  
+- *Inclusioni:*
+  - #link(<UCD3.0.1>)[[UCD3.0.1]]
+  
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD3.0.1 - Visualizzazione nome singolo progetto
+<UCD3.0.1>
+- *Attore principale*: Developer. 
+  
+- *Descrizione*: Il sistema mostra il nome del progetto.
+  
+- *Precondizioni*: Il sistema sta mostrando un elemento da una lista di progetto o la schermata di dettaglio di un progetto.
+  
+- *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UCD3>)[[UCD3]] o da #link(<UCD4>)[[UCD4]]).
+  
+- *Scenario principale*:
+  + Il sistema mostra il nome del un progetto. 
+  
+- *Postocondizioni*: Il Developer ha visualizzato il nome del progetto.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -884,9 +999,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #pagebreak()
 
 === UCD4 - Visualizzazione dettagli progetto
+<UCD4>
 #align(center, [#image("../../asset/UC/developer/UCD4.png", width: 100%)])
 
-<UCD4>
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole accedere alla vista di uno specifico progetto.
@@ -896,27 +1011,28 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il developer clicca su un progetto in #link(<UCD3>)[[UCD3]].
 
 - *Scenario principale:*
-  + Il sistema mostra l'intestazione del progetto.
+  + Il sistema mostra l'intestazione del progetto (*<\<include>>* #link(<UCD3.0.1>)[[UCD3.0.1]]).
   + Il sistema mostra il widget delle statistiche di analisi documentazione(*<\<include>>* #link(<UCD4.1>)[[UCD4.1]]).
   + Il sistema mostra il widget delle statistiche di test (*<\<include>>* #link(<UCD4.2>)[[UCD4.2]]). 
   + Il sistema mostra il widget delle statistiche di correttezza OWASP (*<\<include>>* #link(<UCD4.3>)[[UCD4.3]]).
   + Il sistema mostra l'elenco dei repository che compongono il progetto (*<\<include>>* #link(<UCD2.2>)[[UCD2.2]]).
-  + Il sistema mostra, per ogni repository, il suo indicatore di stato (*<\<include>>* #link(<UCD4.4>)[[UCD4.4]]).
   + Il sistema mostra il pulsante per tornare alla visualizzazione della lista dei progetti. 
   
 - *Scenari alternativi:* \
   Al passo 1: 
   - Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore *<\<extend>>* #link(<UC4>)[[UC4]].
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il Developer visualizza i dati aggregati del progetto.
 
 - *Inclusioni:* 
+  - #link(<UCD3.0.1>)[[UCD3.0.1]]
   - #link(<UCD4.1>)[[UCD4.1]]
   - #link(<UCD4.2>)[[UCD4.2]]
   - #link(<UCD4.3>)[[UCD4.3]]
-  - #link(<UCD4.4>)[[UCD4.4]]
+- *Estensioni:*
+  - #link(<UC4>)[[UCD4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -931,13 +1047,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Caricamento della schermata di dettaglio del progetto.
 
 - *Scenario principale:*
-  + Il sistema identifica tutte le repository associate al progetto.
-  + Il sistema recupera i dati dell'ultima analisi della documentazione per ciascuna repository coinvolta.
+  + Il sistema identifica tutti i repository associati al progetto.
+  + Il sistema recupera i dati dell'ultima analisi della documentazione per ciascun repository coinvolta.
   + Il sistema calcola la media aritmetica dei valori di correttezza recuperati.
   + Il sistema visualizza il widget con la percentuale risultante.
   
 - *Scenari alternativi:* \
-  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore "N.D." (Non Disponibile) o un messaggio informativo.
+  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
 - *Postcondizioni:* Il Developer è a conoscenza dello stato della documentazione, tramite l'indice percentuale di correttezza.
 
@@ -954,13 +1070,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Caricamento della schermata di dettaglio del progetto.
 
 - *Scenario principale:*
-  + Il sistema identifica tutte le repository associate al progetto.
-  + Il sistema recupera i dati dell'ultima analisi dei test per ciascuna repository coinvolta.
+  + Il sistema identifica tutti i repository associati al progetto.
+  + Il sistema recupera i dati dell'ultima analisi dei test per ciascun repository coinvolto.
   + Il sistema calcola la media aritmetica dei valori di correttezza recuperati.
   + Il sistema visualizza il widget con la percentuale risultante.
   
 - *Scenari alternativi:* \
-  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore "N.D." (Non Disponibile) o un messaggio informativo.
+  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
 - *Postcondizioni:* Il Developer è a conoscenza dello stato dei test, tramite l'indice percentuale di correttezza.
 
@@ -977,40 +1093,15 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Caricamento della schermata di dettaglio del progetto.
 
 - *Scenario principale:*
-  + Il sistema identifica tutte le repository associate al progetto.
-  + Il sistema recupera i dati dell'ultima analisi OWASP per ciascuna repository coinvolta.
+  + Il sistema identifica tutti i repository associati al progetto.
+  + Il sistema recupera i dati dell'ultima analisi OWASP per ciascun repository coinvolto.
   + Il sistema calcola la media aritmetica dei valori di correttezza recuperati.
   + Il sistema visualizza il widget con la percentuale risultante.
   
 - *Scenari alternativi:* \
-  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore "N.D." (Non Disponibile) o un messaggio informativo.
+  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
 - *Postcondizioni:* Il Developer è a conoscenza dello stato della correttezza OWASP, tramite l'indice percentuale di correttezza.
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UCD4.4 - Visualizzazione widget di stato repository
-#align(center, [#image("../../asset/UC/developer/UCD4.4.png",  width: 100%)])
-<UCD4.4>
-- *Attore principale:* Developer.
-
-- *Descrizione:* Il sistema mostra al Developer un widget contenente gli esiti percentuali sulle analisi di: documentazione, test e correttezza OWASP per la repository di riferimento.
-
-- *Precondizioni:* Il Developer si trova nella visualizzazione di dettaglio del progetto (#link(<UCD4>)[[UCD4]]).
-
-- *Trigger:* Caricamento della schermata di dettaglio del progetto.
-
-- *Scenario principale:*
-  + Il sistema mostra il widget sulla correttezza della documentazione per la repository in oggetto (*<\<include>>* #link(<UCD5.1>)[[UCD5.1]]).
-  + Il sistema mostra il widget sulla correttezza dei test per la repository in oggetto (*<\<include>>* #link(<UCD5.2>)[[UCD5.2]]).
-  + Il sistema mostra il widget sulla correttezza OWASP per la repository in oggetto (*<\<include>>* #link(<UCD5.3>)[[UCD5.3]]).
-
-- *Postcondizioni:* Il Developer è a conoscenza dello stato generale della repository tramite i widget di correttezza.
-
-- *Inclusioni:* \
-  - #link(<UCD5.1>)[[UCD5.1]]
-  - #link(<UCD5.2>)[[UCD5.2]]
-  - #link(<UCD5.3>)[[UCD5.3]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -1019,35 +1110,42 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UCD5 - visualizzazione dettagli repository
 #align(center, [#image("../../asset/UC/developer/UCD5.png", width: 100%)])
-
 <UCD5>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer vuole accedere alla vista di una specifica repository.
+- *Descrizione:* Il Developer vuole accedere alla vista di uno specifico repository.
 
-- *Precondizioni:* Esiste almeno una repository all'interno del sistema a cui il Developer ha accesso.
+- *Precondizioni:* Esiste almeno un repository all'interno del sistema a cui il Developer ha accesso.
 
-- *Trigger:* Il Developer clicca su una repository nella dashboard (#link(<UCD2>)[[UCD2]]) o su una repository nei dettagli di un progetto (#link(<UCD3>)[[UCD3]]).
+- *Trigger:* Il Developer clicca su un repository nella dashboard (#link(<UCD2>)[[UCD2]]) o su un repository nei dettagli di un progetto (#link(<UCD3>)[[UCD3]]).
 
 - *Scenario principale:*
-  + Il sistema mostra l'intestazione del repository.
+  + Il sistema mostra l'intestazione del repository (*<\<include>>* #link(<UCD2.2.1>)[[UCD2.2.1]]).
+  +  Il sistema mostra il nome del progetto associato al repository (*<\<include>>* #link(<UCD2.2.2>)[[UCD2.2.2]]).
+  +  Il sistema mostra l'indicatore di visibulità del repository (*<\<include>>* #link(<UCD2.2.3>)[[UCD2.2.3]]).
   + Il sistema mostra il widget delle statistiche di analisi documentazione (*<\<include>>* #link(<UCD5.1>)[[UCD5.1]]).
   + Il sistema mostra il widget delle statistiche di analisi di test (*<\<include>>* #link(<UCD5.2>)[[UCD5.2]]).
   + Il sistema mostra il widget delle statistiche correttezza OWASP (*<\<include>>* #link(<UCD5.3>)[[UCD5.3]]).
-  + Il sistema mostra l'opzione di visualizzazione delle proposte di remediation.
-  + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti.
-  + Il sistema mostra l'opzione per avviare un analisi sul repository.
+  + Il sistema mostra l'opzione di visualizzazione delle proposte di remediation (#link(<UCD6>)[[UCD6]]).
+  + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti (#link(<UCD12>)[[UCD12]]).
+  + Il sistema mostra l'opzione per avviare una o più analisi sul repository (#link(<UCD15>)[[UCD15]]).
   + Il sistema mostra il pulsante per tornare alla pagina precedente. 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UCD4]]).
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* Il Developer visualizza i dati aggregati della repository.
+- *Postcondizioni:* Il Developer visualizza i dati aggregati del repository.
 
 - *Inclusioni:* 
+  - #link(<UCD2.2.1>)[[UCD2.2.1]]
+  - #link(<UCD2.2.2>)[[UCD2.2.2]]
+  - #link(<UCD2.2.3>)[[UCD2.2.3]]
   - #link(<UCD5.1>)[[UCD5.1]]
   - #link(<UCD5.2>)[[UCD5.2]]
   - #link(<UCD5.3>)[[UCD5.3]]
+  
+- *Estensioni:*
+  - #link(<UC4>)[[UCD4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1057,17 +1155,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il sistema mostra al Developer un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi della documentazione effettuata.
 
-- *Precondizioni:* Il Developer si trova nella visualizzazione di dettaglio della repository (#link(<UCD5>)[[UCD5]]).
+- *Precondizioni:* Il Developer si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
 
-- *Trigger:* Caricamento della schermata di dettaglio della repository.
+- *Trigger:* Caricamento della schermata di dettaglio del repository.
 
 - *Scenario principale:*
-  + Il sistema recupera i dati dell'ultima analisi della documentazione disponibile per la repository.
+  + Il sistema recupera i dati dell'ultima analisi della documentazione disponibile per il repository.
   + Il sistema calcola la percentuale di correttezza.
   + Il sistema visualizza il widget con la percentuale aggiornata.
   
 - *Scenari alternativi:* \
-  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore "N.D." (Non Disponibile) o un messaggio informativo.
+  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
 - *Postcondizioni:* Il Developer è a conoscenza dello stato della documentazione, tramite l'indice percentuale di correttezza.
 
@@ -1079,17 +1177,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il sistema mostra al Developer un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi dei test effettuata.
 
-- *Precondizioni:* Il Developer si trova nella visualizzazione di dettaglio della repository (#link(<UCD5>)[[UCD5]]).
+- *Precondizioni:* Il Developer si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
 
 - *Trigger:* Caricamento della schermata di dettaglio della repository.
 
 - *Scenario principale:*
-  + Il sistema recupera i dati dell'ultima analisi dei test disponibile per la repository.
+  + Il sistema recupera i dati dell'ultima analisi dei test disponibile per il repository.
   + Il sistema calcola la percentuale di correttezza.
   + Il sistema visualizza il widget con la percentuale aggiornata.
   
 - *Scenari alternativi:* \
-  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore "N.D." (Non Disponibile) o un messaggio informativo.
+  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
 - *Postcondizioni:* Il Developer è a conoscenza dello stato dei test, tramite l'indice percentuale di correttezza.
 
@@ -1101,17 +1199,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il sistema mostra al Developer un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi OWASP effettuata.
 
-- *Precondizioni:* Il Developer si trova nella visualizzazione di dettaglio della repository (#link(<UCD5>)[[UCD5]]).
+- *Precondizioni:* Il Developer si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
 
-- *Trigger:* Caricamento della schermata di dettaglio della repository.
+- *Trigger:* Caricamento della schermata di dettaglio del repository.
 
 - *Scenario principale:*
-  + Il sistema recupera i dati dell'ultima analisi OWASP disponibile per la repository.
+  + Il sistema recupera i dati dell'ultima analisi OWASP disponibile per il repository.
   + Il sistema calcola la percentuale di correttezza.
   + Il sistema visualizza il widget con la percentuale aggiornata.
   
 - *Scenari alternativi:* \
-  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore "N.D." (Non Disponibile) o un messaggio informativo.
+  Se il sistema non rileva analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
 - *Postcondizioni:* Il Developer è a conoscenza dello stato della correttezza OWASP, tramite l'indice percentuale di correttezza.
 
@@ -1133,12 +1231,12 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:* \
   - Il sistema mostra una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area test (*<\<include>>* #link(<UCD6.0.1>)[[UCD6.0.1]]).
   - Il sistema mostra una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area OWASP. (*<\<include>>* #link(<UCD6.0.2>)[[UCD6.0.2]]).
-  - Il sistema mostra un pulsante per tornare alla pagina precedente.
   - Il sistema mostra una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area documentazione (*<\<include>>* #link(<UCD6.0.3>)[[UCD6.0.3]]).
-  - Il sistema mostra un pulsante per accettare tutte le proposte di remediation
+  - Il sistema mostra un pulsante per accettare tutte le proposte di remediation (#link(<UCD6.2>)[[UCD6.2]])
+  - Il sistema mostra un pulsante per tornare alla pagina precedente.
 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il developer sta visualizzando una lista di documenti sui quali gli agenti, di ogni categoria, hanno riscontrato criticità e hanno elaborato una soluzione.
@@ -1148,6 +1246,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - #link(<UCD6.0.2>)[[UCD6.0.2]]
   - #link(<UCD6.0.3>)[[UCD6.0.3]]
 
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
+
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD6.0.1 - Visualizzazione proposta remediation test
@@ -1156,9 +1257,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation relative ai test sul repository. 
 
-- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area test sulla dashboard di dettaglio del repository #link(<UCD13.1>)[[UCD13.1]]. Deve essere stata eseguita almeno un analisi.
+- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area test sulla dashboard di dettaglio del repository #link(<UCD13.1>)[[UCD13.1]]. Deve essere stata eseguita almeno un analisi relativa ai test.
 
-- *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation per i test.
+- *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
 - *Scenario principale:* \
   - Il sistema mostra una lista di zero o più documenti dove ha riscontrato criticità sui test.
@@ -1167,12 +1268,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Il sistema mostra un pulsante per accettare tutte le proposte di remediation sui test.
 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il developer sta visualizzando una lista di documenti sui quali l'agente incaricato all'analisi dei test, ha riscontrato criticità e ha elaborato una soluzione.
 
-- *Estensioni:* #link(<UCD6.1>)[[UCD6.1]]
+- *Estensioni:* 
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1182,9 +1284,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation delle OWASP sul repository. 
 
-- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area OWASP sulla dashboard di dettaglio del repository #link(<UCD13.2>)[[UCD13.2]]. Deve essere stata eseguita almeno un analisi.
+- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area OWASP sulla dashboard di dettaglio del repository #link(<UCD13.2>)[[UCD13.2]]. Deve essere stata eseguita almeno un analisi OWASP.
 
-- *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation per OWASP.
+- *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
 - *Scenario principale:* \
   - Il sistema mostra una lista di zero o più documenti dove ha riscontrato criticità sull'analisi OWASP.
@@ -1193,12 +1295,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Il sistema mostra un pulsante per accettare tutte le proposte di remediation sull'analisi OWASP.
 
 - *Scenari alternativi:*Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il developer sta visualizzando una lista di documenti sui quali l'agente incaricato all'analisi OWASP, ha riscontrato criticità e ha elaborato una soluzione.
 
-- *Estensioni:* #link(<UCD6.1>)[[UCD6.1]]
+- *Estensioni:* 
+  - #link(<UC4>)[[UC4]]
 
 === UCD6.0.3 - Visualizzazione proposta remediation documentazione
 <UCD6.0.3>
@@ -1206,9 +1309,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation relative alla documentazione sul repository. 
 
-- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area documentazione sulla dashboard di dettaglio del repository #link(<UCD13.3>)[[UCD13.3]]. Deve essere stata eseguita almeno un analisi.
+- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area documentazione sulla dashboard di dettaglio del repository #link(<UCD13.3>)[[UCD13.3]]. Deve essere stata eseguita almeno un analisi sulla documentazione.
 
-- *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation per la documentazione.
+- *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
 - *Scenario principale:* \
   - Il sistema mostra una lista di zero o più documenti dove ha riscontrato criticità sulla documentazione.
@@ -1217,12 +1320,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Il sistema mostra un pulsante per accettare tutte le proposte di remediation sulla documentazione.
 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il developer sta visualizzando una lista di documenti sui quali l'agente incaricato all'analisi della documentazione, ha riscontrato criticità e ha elaborato una soluzione.
 
-- *Estensioni:* #link(<UCD6.1>)[[UCD6.1]]
+- *Estensioni:* 
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1239,15 +1343,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:* \
   - Il sistema mostra il contenuto del file con le differenze tra il file presente e la proposta applicabile (_diff_). 
   - Il sistema mostra il path che il file seguirà all'interno del repository.
-  - Il sistema mostra un pulsante per accettare la proposta dell'agente.
+  - Il sistema mostra un pulsante per accettare la proposta dell'agente (#link(<UCD6.2>)[[UCD6.2]]).
   - Il sistema mostra un pulsante per tornare alla pagina precedente.
 
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il developer conosce la proposta di remediation relativa ad un file specifico.
+  
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1264,14 +1371,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer seleziona il pulsante per il cambio path.
 
 - *Scenario principale:* \
-  - Il sistema mostra un pop-up con un campo sul quale inserire il nuovo path.
-  - Il Developer inserisce il path all'interno del campo.
+  - Il sistema mostra un campo sul quale inserire il nuovo path.
+  - Il Developer inserisce il path all'interno del campo (*<\<include>>* #link(<UCD6.1.5>)[[UCD6.1.5]]).
   - Il Developer conferma l'operazione.
 
 - *Scenari alternativi:*
   - Il Developer decide di annullare l'operazione (*<\<extend>>* #link(<UCD6.1.3>)[[UCD6.1.3]])
   Al passo 3: Il path inserito non è valido (*<\<extend>>* #link(<UCD6.1.4>)[[UCD6.1.4]])
 - *Postcondizioni:* Il file ha un nuovo path all'interno del campo di destinazione. 
+
+- *Inclusioni:*
+  - #link(<UCD6.1.5>)[[UCD6.1.5]]
 
 - *Estensioni:* 
   - #link(<UCD6.1.3>)[[UCD6.1.3]]
@@ -1291,7 +1401,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   - Il Developer seleziona l’opzione di annullamento.
-  - Il sistema chiude il pop-up e ripristina il percorso di destinazione originale.
+  - Il sistema ripristina il percorso di destinazione originale.
 
 - *Postcondizioni:* Il processo di inserimento del nuovo path è stato annullato. Lo stato del sistema è coerente con la situazione precedente all’avvio dell’accettazione.
 
@@ -1301,9 +1411,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCD6.1.4>
 - *Attore principale:* Developer
 
-- *Descrizione:* Il Developer desidera inserire una nuova destinazione per la remediation del file che sta visualizzando, ma il path selezionato non è valido e viene segnalato all'utente.
+- *Descrizione:* Il Developer ha inserito una nuova destinazione per la remediation del file che sta visualizzando, ma il path selezionato non è valido e viene segnalato all'utente.
 
-- *Precondizioni:* Il Developer ha immesso un nuovo path #link(<UCD6.1.2>)[[UCD6.1.2]].
+- *Precondizioni:* Il Developer ha immesso un path #link(<UCD6.1.2>)[[UCD6.1.2]].
 
 - *Trigger:* Il percorso inserito non è valido.
 
@@ -1312,6 +1422,23 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Viene data la possibilità di effettuare un nuovo tentativo
 
 - *Postcondizioni:* Il developer è a conoscenza che il percorso inserito non è valido, ha la possibilità di inserirne un altro o di annullare l'operazione.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD6.1.5 - Inserimento nuovo path file
+<UCD6.1.5>
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'utente il path di destinazione del file.
+  
+- *Precondizioni:* L'utente si trova nell'interfaccia di visualizzazione di remediation di un singolo file #link(<UCD6.1.2>)[[UCD6.1.2]].
+  
+- *Trigger:* L'utente seleziona lo spazio destinato all'inserimento del path.
+  
+- *Scenario principale:*
+  + L'utente inserisce il path.
+   
+- *Postcondizioni:* L'utente ha inserito il path all'interno dello spazio dedicato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1336,7 +1463,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema interagisce con GitHub per creare un nuovo branch dedicato.
   + Il sistema applica automaticamente le modifiche al file nel branch.
   + Il sistema avvia una pull request verso il branch di destinazione del repository.
-  + Il sistema notifica il Developer della corretta creazione della pull request.
+  + Il sistema notifica il Developer della corretta creazione della pull request (*<\<include>>* #link(<UCD6.4>)[[UCD6.4]]).
 
 - *Scenari alternativi*
   - GitHub non è raggiungibile o restituisce un errore (*<\<extend>>* #link(<UCD6.4>)[[UCD6.4]])
@@ -1346,11 +1473,29 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
 - *Postcondizioni:* è stata avviata una richiesta di pull request su github che prevede l'aggiornamento del repository secondo remediation.
 
+- *Inclusioni:*
+  - #link(<UCD6.4>)[[UCD6.4]]
+
 - *Estensioni:* 
-- #link(<UCD6.3>)[UCD6.3]
-- #link(<UCD6.4>)[UCD6.4]
-- #link(<UCD6.5>)[UCD6.5]
-- #link(<UCD6.6>)[UCD6.6]
+  - #link(<UCD6.3>)[UCD6.3]
+  - #link(<UCD6.4>)[UCD6.4]
+  - #link(<UCD6.5>)[UCD6.5]
+  - #link(<UCD6.6>)[UCD6.6]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD6.2.1 - Visualizzazione creazione pull request
+<UCD6.2.1>
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer riceve un messaggio di avvenuta creazione di una pull request all'interno di GitHub.
+
+- *Trigger:* Il Developer accetta una proposta di remediation #link(<UCD6.2>)[UCD6.2] e il sistema ha inviato la pull request a GitHub
+
+- *Scenario principale:*
+  + Il sistema mostra un messaggio di pull request andata a buon fine.
+
+- *Postcondizioni:* Il Developer ha consapevolezza della buona riuscita della remediation.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2718,54 +2863,53 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [*Codice*], [*Descrizione*], [*Fonti*]),
   //NOTA: i requisiti non dovrebbero cambiare, al massimo se ne aggiungono, ma i riferienti agli UC molto probabilmente cambiano
   // UTENTE GENERICO
-  [R-X-F-O],[L'utente deve poter accedere alla piattaforma Code Guardian inserendo username e password],[#link(<UC1>)[UC1]],
-  [R-X-F-O],[L'utente deve poter inserire le proprie credenziali per l'accesso], [#link(<UC1.0.1>)[UC1.0.1], #link(<UC1.0.2>)[UC1.0.2]],
-  [R-X-F-O],[L'utente deve ricevere un messaggio di errore nel caso inserisca delle credenziali sbagliate durante la procedura di accesso],[#link(<UC1.2>)[UC1.2]],
-  [R-X-F-O],[L'utente deve poter sincronizzare I propri repository GitHub all'interno della piattaforma Code Guardian], [#link(<UC1.3>)[UC1.3]],
-  [R-X-F-O],[L'utente deve poter annullare la sincronizzazione dei repository GitHub all'interno di Code Guardian], [#link(<UC1.4>)[UC1.4]],
-  [R-X-F-P],[L'utente deve visualizzare un messaggio nel caso di negazione della sincronizzazione dalla piattaforma GitHub], [#link(<UC1.5>)[UC1.5]],
-  [R-X-F-O],[L'utente deve poter visualizzare la propria area personale], [#link(<UC2>)[UC2]],
-  [R-X-F-O],[L'utente deve poter visualizzare il proprio nome utente],[#link(<UC2.1>)[UC2.1]],
-  [R-X-F-O],[L'utente deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
-  [R-X-F-O],[L'utente deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
-  [R-X-F-O],[L'utente deve poter eseguire il logout], [#link(<UC3>)[UC3]],
-  [R-X-F-O],[L'utente deve poter annullare l'operazione di logout dalla piattaforma], [#link(<UC3.1>)[UC3.1]],
-
-  // DEVELOPER
-  [R-X-F-O],[L'utente deve poter aggiungere un singolo repository sulla piattaforma], [#link(<UCD1>)[UCD1], #link(<UCD1.0.1>)[UCD1.0.1]],
-  [R-X-F-O],[L'utente, nella procedura di aggiunta in di un repository privato, deve poter inserire il token di accesso],[#link(<UCD1.0.2>)[UCD1.0.2]],
-  [R-X-F-O],[L'utente deve visualizzare un messaggio di errore, nel caso inserisca un token non valido],[#link(<UCD1.0.3>)[UCD1.0.3]],
-  [R-X-F-O],[Durante il processo din inserimento di un repository, l'utente deve inserire l'URL del repository],[#link(<UCD1.2>)[UCD1.2]],
-  [R-X-F-O],[L'utente deve ricevere un messaggio di errore nel caso l'URL del repository da inserire non sia valido],[#link(<UCD1.3>)[UCD1.3]],
-  [R-X-F-O],[L'utente deve poter annullare l'aggiunta di una singola repository sulla piattaforma], [#link(<UCD1.1>)[UCD1.1]],
-  [R-X-F-O],[L'utente deve ricevere un messaggio d'errore se l'aggiunta del repository non è andata a buon fine], [],
-  [R-X-F-O],[L'utente deve poter visualizzare la lista dei repository che ha inserito sulla piattaforma], [#link(<UCD2>)[UCD2]],
-
-  // SONO ARRIVATA QUI -- Angela F.
-  [R-X-F-O],[L'utente deve poter selezionare un repository tra quelli presenti nel proprio account], [#link(<UCD2.1>)[UCD2.1]],
-  [R-16-F-O],[Dalla visualizzazione della lista di repository, l'utente deve poter selezionarne una per vederne i dettagli], [#link(<UCD5>)[UCD5]],
-  [R-18-F-O],[L'utente visualizza la lista dei progetti di cui fa parte], [#link(<UCD3>)[UCD3]],
-  [R-19-F-O],[L'utente seleziona un progetto dalla lista dei progetti per vederne i dettagli], [#link(<UCD4>)[UCD4]],
-  [R-20-F-O],[L'utente visualizza i dettagli del progetto selezionato], [#link(<UCD4>)[UCD4]],
-  [R-21-F-O],[L'utente visualizza l'intestazione del progetto selezionato], [#link(<UCD4>)[UCD4]],
-  [R-22-F-O],[L'utente visualizza il widget riguardante l'analisi della documentazione del progetto selezionato], [#link(<UCD4>)[UCD4]],
-  [R-23-F-O],[L'utente visualizza il widget di copertura dei test per il progetto selezionato], [#link(<UCD4>)[UCD4]],
-  [R-24-F-O],[L'utente visualizza il widget di analisi sicurezza OWASP per il progetto selezionato], [#link(<UCD4>)[UCD4]],
-  [R-25-F-O],[L'utente deve visualizzare un messaggio d'errore se la pagina del progetto non viene caricata correttamente], [#link(<UCD4>)[UCD4]],
-  [R-26-F-O],[Dalle visualizzazione dei dettagli del progetto, l'utente deve avere la possibilità si selezionare una repository facente parte di quest'ultimo, per vederne i dettagli], [#link(<UCD4>)[UCD4], #link(<UCD5>)[UCD5]],
-  [R-27-F-O],[L'utente vede i dettagli del repository selezionata], [#link(<UCD5>)[UCD5]],
-  [R-28-F-O],[L'utente vede l'intestazione del repository selezionata], [#link(<UCD5>)[UCD5]],
-  [R-29-F-O],[L'utente vede il widget riguardante l'analisi della documentazione per repository selezionata], [#link(<UCD5>)[UCD5]],
-  [R-30-F-O],[L'utente vede il widget di copertura dei test per repository selezionata], [#link(<UCD5>)[UCD5]],
-  [R-31-F-O],[L'utente vede il widget di analisi sicurezza OWASP per repository selezionata], [#link(<UCD5>)[UCD5]],
-  [R-32-F-O],[L'utente vede il pulsante per visualizzare le proposte di remediation per la repository selezionata], [#link(<UCD5>)[UCD5]],
-  [R-33-F-O],[L'utente deve visualizzare un messaggio d'errore se la pagina del repository non viene caricata correttamente], [#link(<UCD5>)[UCD5]],
-  [R-34-F-O],[L'utente visualizza l'ultima analisi effettuata], [#link(<UCD13>)[UCD13]],
-  [R-35-F-O],[L'utente visualizza un messaggio d'errore se la pagina l'ultima analisi non viene caricata correttamente ], [#link(<UCD13>)[UCD13]],
-  [R-36-F-O],[Sulla pagina dell'ultima analisi del repository, vengono visualizzati i grafici dell'area test], [#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1]],
-  [R-37-F-O],[Sulla pagina dell'ultima analisi del repository, vengono visualizzati i grafici dell'area OWASP], [#link(<UCD13>)[UCD13], #link(<UCD13.2>)[UCD13.2]],
-  [R-38-F-O],[Sulla pagina dell'ultima analisi del repository, vengono visualizzati i grafici dell'area documentazione], [#link(<UCD13>)[UCD13], #link(<UCD13.3>)[UCD13.3]],
-  [R-39-F-D],[L'utente visualizza una lista delle ultime analisi della settimana. Le analisi disponibili saranno in ogni caso al massimo 30], [#link(<UCD12>)[UCD12]],
+[R-1-F-O],[L'utente deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
+[R-2-F-O],[L'utente deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
+[R-3-F-O],[L'utente deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
+[R-4-F-O],[L'utente deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
+[R-5-F-O],[L'utente deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
+[R-6-F-D],[L'utente può sincronizzare il proprio account GitHub],[#link(<UC1.3>)[UC1.3]],
+[R-7-F-D],[L'utente può annullare l'autenticazione con il provider esterno GitHub],[#link(<UC1.5>)[UC1.5]],
+[R-8-F-D],[L'utente deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UC1.4>)[UC1.4]],
+[R-9-F-O],[L'utente deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
+[R-10-F-O],[L'utente deve poter visualizzare il proprio nome utente],[#link(<UC2.1>)[UC2.1]],
+[R-11-F-O],[L'utente deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
+[R-12-F-O],[L'utente deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
+[R-13-F-O],[L'utente deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
+[R-14-F-O],[L'utente deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
+[R-15-F-D],[L'utente deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
+// DEV
+[R-16-F-O],[Il developer deve poter inserire un repository pubblico al sistema],[#link(<UCD1>)[UCD1]],
+[R-17-F-D],[Il developer deve poter inserire un repository privato al sistema],[#link(<UCD1.0.1>)[UCD1.0.1]],
+[R-18-F-D],[Il Developer deve poter inserire il Personal Access Token collegato al proprio account],[#link(<UCD1.0.2>)[UCD1.0.2]],
+[R-19-F-D],[Il Developer deve ricevere un messaggio di errore in caso di token inserito non valido],[#link(<UCD1.0.3>)[UCD1.0.3]],
+[R-20-F-O],[Il Developer deve poter annullare l'inserimento di un repository],[#link(<UCD1.1>)[UCD1.1]],
+[R-21-F-O],[Il Developer deve poter inserire l'URL del repository],[#link(<UCD1.2>)[UCD1.2]],
+[R-22-F-O],[Il Developer deve ricevere un messaggio di errore nel caso di URL non valido],[#link(<UCD1.3>)[UCD1.3]],
+[R-23-F-O],[Il Developer deve poter visualizzare la lista dei propri repository personali],[#link(<UCD2>)[UCD2]],
+[R-24-F-O],[Il Developer deve poter selezionare una preferenza sulla tipologia di repository che desidera visualizzare],[#link(<UCD2.1>)[UCD2.1]],
+[R-25-F-O],[Il Developer deve poter visualizzare il nome di un repository],[#link(<UCD2.2>)[UCD2.2], #link(<UCD2.2.1>)[UCD2.2.1]],
+[R-26-F-D],[Il Developer deve poter visualizzare il nome del progetto associato al repository],[#link(<UCD2.2>)[UCD2.2], #link(<UCD2.2.2>)[UCD2.2.2]],
+[R-27-F-O],[Il Developer deve poter visualizzare 'indicatore di visibilità di un repository],[#link(<UCD2.2>)[UCD2.2], #link(<UCD2.2.3>)[UCD2.2.3]],
+[R-28-F-O],[Il Developer deve poter visualizzare la lista dei progetti ai quali contribuisce],[#link(<UCD3>)[UCD3]],
+[R-29-F-O],[Il Developer deve poter visualizzare il nome di un progetto],[#link(<UCD3.0.1>)[UCD3.0.1]],
+[R-30-F-O],[Il Developer deve poter visualizzare le statistiche dell'analisi sulla documentazione di un progetto],[#link(<UCD4>)[UCD4], #link(<UCD4.1>)[UCD4.1]],
+[R-31-F-O],[Il Developer deve poter visualizzare le statistiche dell'analisi sui test di un progetto],[#link(<UCD4>)[UCD4], #link(<UCD4.2>)[UCD4.2]],
+[R-32-F-O],[Il Developer deve poter visualizzare le statistiche dell'analisi OWASP di un progetto],[#link(<UCD4>)[UCD4], #link(<UCD4.3>)[UCD4.3]],
+[R-33-F-O],[Il Developer deve poter visualizzare le statistiche dell'analisi sulla documentazione di un repository],[#link(<UCD5>)[UCD5], #link(<UCD5.1>)[UCD5.1]],
+[R-34-F-O],[Il Developer deve poter visualizzare le statistiche dell'analisi sui test di un repository],[#link(<UCD5>)[UCD5], #link(<UCD5.2>)[UCD5.2]],
+[R-35-F-O],[Il Developer deve poter visualizzare le statistiche dell'analisi OWASP di un repository],[#link(<UCD5>)[UCD5], #link(<UCD5.3>)[UCD5.3]],
+[R-36-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
+[R-37-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi OWASP per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.2>)[UCD6.0.2]],
+[R-38-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi sulla documentazione per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.3>)[UCD6.0.3]],
+[R-39-F-O],[Il Developer deve essere n grado di visualizzare il dettaglio del file sul quale è stata proposto un cambiamento],[#link(<UCD6.1>)[UCD6.1]],
+[R-40-F-D],[Il Developer deve poter cambiare il path di destinazione del file sul quale è stata proposta un remediation],[#link(<UCD6.1.2>)[UCD6.1.2]],
+[R-41-F-D],[Il Developer deve poter inserire il uovo path all'interno del sistema],[#link(<UCD6.1.5>)[UCD6.1.5]],
+[R-42-F-D],[Il Developer deve poter annullare il cambio di path di un file nel contesto di una proposta di remediation],[#link(<UCD6.1.3>)[UCD6.1.3]],
+[R-43-F-D],[Il Developer deve visualizzare un messaggio di errore nel caso abbia inserito un path non valido per un file, nel contesto di una proposta di remediation],[#link(<UCD6.1.4>)[UCD6.1.4]],
+[R-44-F-D],[Il Developer deve poter accettare una proposta di remediation],[#link(<UCD6.2>)[UCD6.2]],
+[R-45-F-D],[Il Developer deve ricevere una notifica una volta che è stata inviata con successo una pull request sul repository GitHub],[#link(<UCD6.2.1>)[UCD6.2.1]],
+// arrivata fino ad UCD6.2.1
 )
 
 == Requisiti di vincolo
