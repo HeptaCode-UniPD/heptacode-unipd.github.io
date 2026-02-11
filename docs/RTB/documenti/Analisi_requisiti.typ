@@ -2791,7 +2791,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Business Owner visualizza la lista dei propri progetti attivi.
   + Il Business Owner consulta il rapporto budget vs spesa complessivo (*<\<include>>* #link(<UCBO1.3>)[[UCBO1.3]]).
-  + Il Business Owner valuta l'indice di coerenza tra progetti (*<\<include>>* #link(<UCBO1.4>)[[UCBO1.4]]).
   + Il Business Owner può selezionare un progetto per analizzarlo nel dettaglio (#link(<UCBO2>)[[UCBO2]]).
   
 - *Scenario alternativo:* 
