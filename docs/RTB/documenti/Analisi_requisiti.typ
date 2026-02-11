@@ -908,7 +908,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale*:
   + Il sistema mostra il nome del repository. 
   
-- *Postocondizioni*: Il Developer ha visualizzato il nome di un repository.
+- *Postcondizioni*: Il Developer ha visualizzato il nome di un repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -925,7 +925,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale*:
   + Il sistema mostra il nome del progetto a cui appartiene il repository. 
   
-- *Postocondizioni*: Il Developer ha visualizzato il nome del progetto a cui appartiene il repository.
+- *Postcondizioni*: Il Developer ha visualizzato il nome del progetto a cui appartiene il repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -942,7 +942,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale*:
   + Il sistema mostra il l'indicatore di visibilità del repository. 
   
-- *Postocondizioni*: Il Developer ha visualizzato l'indicatore di visibilità del repository.
+- *Postcondizioni*: Il Developer ha visualizzato l'indicatore di visibilità del repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -991,7 +991,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale*:
   + Il sistema mostra il nome del un progetto. 
   
-- *Postocondizioni*: Il Developer ha visualizzato il nome del progetto.
+- *Postcondizioni*: Il Developer ha visualizzato il nome del progetto.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -1122,7 +1122,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il sistema mostra l'intestazione del repository (*<\<include>>* #link(<UCD2.2.1>)[[UCD2.2.1]]).
   +  Il sistema mostra il nome del progetto associato al repository (*<\<include>>* #link(<UCD2.2.2>)[[UCD2.2.2]]).
-  +  Il sistema mostra l'indicatore di visibulità del repository (*<\<include>>* #link(<UCD2.2.3>)[[UCD2.2.3]]).
+  +  Il sistema mostra l'indicatore di visibilità del repository (*<\<include>>* #link(<UCD2.2.3>)[[UCD2.2.3]]).
   + Il sistema mostra il widget delle statistiche di analisi documentazione (*<\<include>>* #link(<UCD5.1>)[[UCD5.1]]).
   + Il sistema mostra il widget delle statistiche di analisi di test (*<\<include>>* #link(<UCD5.2>)[[UCD5.2]]).
   + Il sistema mostra il widget delle statistiche correttezza OWASP (*<\<include>>* #link(<UCD5.3>)[[UCD5.3]]).
@@ -1717,7 +1717,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer visualizza il nome del branch aperto a seguito dell'avvio di una remediation.
 
-- *Precodnizioni:* Il Developer sta visualizzando un elemento che descrive la remediation in corso.
+- *Precondizioni:* Il Developer sta visualizzando un elemento che descrive la remediation in corso.
 
 - *Trigger:* Il Developer si trova nella sezione dei procedimenti in corso e c'è una remediation avviata.
 
@@ -1751,11 +1751,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer visualizza la data di avvio di un operazione in corso.
 
-- *Precodnizioni:* Il Developer sta visualizzando un elemento che descrive l'operazione in corso (#link(<UCD8.2>)[[UCD8.2]], #link(<UCD8.3>)[[UCD8.3]]).
+- *Precondizioni:* Il Developer sta visualizzando un elemento che descrive l'operazione in corso (#link(<UCD8.2>)[[UCD8.2]], #link(<UCD8.3>)[[UCD8.3]]).
 
 - *Trigger:* Il Developer si trova nella sezione dei procedimenti in corso e c'è un procedimento avviato.
 
-- *Scenario principale:* Il sistema mostra la data di avvio del rocedimento.
+- *Scenario principale:* Il sistema mostra la data di avvio del procedimento.
 
 - *Postcondizioni:* Il Developer ha visualizzato la data di avvio del procedimento.
 
@@ -1815,7 +1815,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer annulla un analisi in corso da lui precedentemente avviata.
 
-- *Precodizioni:* Il Developer sta visualizzando un analisi in corso (#link(<UCD8.3>)[[UCD8.3]]).
+- *Precondizioni:* Il Developer sta visualizzando un analisi in corso (#link(<UCD8.3>)[[UCD8.3]]).
 
 - *Trigger:* Il Developer seleziona l'opzione di interruzione dell'analisi avviata.
 
@@ -1897,7 +1897,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Developer.
 
-- *Descrzione:* Il developer visualizza un elemento all'interno della lista delle ultime analisi portate a termine.
+- *Descrizione:* Il developer visualizza un elemento all'interno della lista delle ultime analisi portate a termine.
 
 - *Precondizioni:* Deve essere stata portata a termine almeno un analisi.
 
@@ -1925,7 +1925,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il sistema mostra la data di completamento dell'analisi.
 
-- *Postcondizioni:* Il Developer ha visualizzato la data di terminazione dell'analisi in esaminazione.
+- *Postcondizioni:* Il Developer ha visualizzato la data di terminazione dell'analisi in esame.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -1948,7 +1948,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra i grafici delle statistiche di analisi documentazione nella sessione di interesse (*<\<include>>* #link(<UCD12.1>)[[UCD12.1]]).
   + Il sistema mostra i grafici delle statistiche di analisi di test nella sessione di interesse (*<\<include>>* #link(<UCD12.2>)[[UCD12.2]]).
   + Il sistema mostra i grafici delle statistiche di correttezza OWASP nella sessione di interesse (*<\<include>>* #link(<UCD12.3>)[[UCD12.3]]).
-  + Il sistema mpstra l'opzione di visualizzazione della remediation proposta contestualmente a quell'analisi.
+  + Il sistema mostra l'opzione di visualizzazione della remediation proposta contestualmente a quell'analisi.
   + Il sistema mostra il pulsante per tornare alla pagina precedente. 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
     - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
@@ -2244,7 +2244,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento di una pagina.
-    - Il sistema mostra un messaggio di errore (*<\<sxtend>>* #link(<UC4>)[[UC4]]).
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Inclusioni:*
@@ -2268,9 +2268,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Viene caricata la pagine di visualizzazione dello storico delle analisi sul repository.
 
 - *Scenario principale:*
-  + Il Developer visualizza la scritta 'Applicata' se la remediation proposta dall'analisi è stata applicata.
-  + Il Developer visualizza la scritta 'Non applicata' se la remediation proposta dall'analisi non è stata applicata.
-  + Il Developer visualizza la scritta 'Parzialmente applicato' se la remediation proposta dall'analisi è stata parzialmente applicata.
+  + Il Developer visualizza la scritta "Applicata" se la remediation proposta dall'analisi è stata applicata.
+  + Il Developer visualizza la scritta "Non applicata" se la remediation proposta dall'analisi non è stata applicata.
+  + Il Developer visualizza la scritta "Parzialmente applicato" se la remediation proposta dall'analisi è stata parzialmente applicata.
 
 - *Postcondizioni:* Il Developer ha visualizzato lo stato della proposta di remediation per quell'analisi.
 
@@ -2437,7 +2437,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema non avvia nessuna analisi.
   + Il sistema porta il Developer alla pagina di selezione di un analisi (#link(<UCD15>)[[UCD15]]).
 
-- *Postcondizioni:* Nuessun analisi è stata avviata nell'ambito del repository di riferimento.
+- *Postcondizioni:* Nessun analisi è stata avviata nell'ambito del repository di riferimento.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -2753,7 +2753,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM4.2: Suggerimetni strategici IA
+=== UCPM4.2: Suggerimenti strategici IA
 
  <UCPM4.2>
 
