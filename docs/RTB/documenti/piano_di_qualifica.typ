@@ -406,30 +406,51 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
 = Valutazione lavoro
 In questa sezione sono riportate le misurazioni della qualità effettuate durante lo svolgimento delle attività dedicate al raggiungimento della Requirements and Technology Baseline. Inoltre, sono presenti i ragionamenti sulla differenza fra le tendenze attese e quelle effettivamente osservate. 
 == MPC01 e MPC02 - Schedule Variance e Cost Variance
-// Grafico 8
+#figure(
+  image("../../asset/MPC01MPC02.png", width: 90%),
+  caption: [Grafico per periodo di Schedule Variance e Cost Variance]
+)
 Dal grafico si può capire che le ore effettive e le ore previste per di più corrispondono, quindi SV e CV hanno sempre un valore di 0, eccetto negli sprint 5, 6 e 8, in cui il team ha lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi. 
 
 // == MPC03 - Budget Variance     VEDERE SE INCLUDERE
-//Grafico 9
+/*#figure(
+  image("../../asset/MPC03.png", width: 90%),
+  caption: [Grafico per periodo di Budget Variance]
+) */
 // La Budget Variance ha un valore negativo in ogni sprint del RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase, dovrebbe arrivare a 0 quando si inizieranno a utilizzare di più ruoli meno costosi.
 // ATTENZIONE: se si decide di non mettere questi commenti nel documento, rimuovere "anche" nella descrizione del cpi
-== MPC05 -  CPI
-//Grafico 3
+== MPC05 - CPI
+#figure(
+  image("../../asset/MPC05.png", width: 90%),
+  caption: [Grafico per periodo di CPI]
+)
 Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto all'utilizzo dei ruoli più costosi durante la fase di RTB. Siccome dopo questa fase lavoreranno di più figure meno costose come programmatore e verificatore, il CPI dovrebbe arrivare a raggiungere il valore ottimale.\ Negli Sprint 5, 6 e 8 ha un leggero calo dovuta al fatto che l'Earned Value è risultato inferiore rispetto al Planned Value.
 
 == MPC06 e MPC07 - Planned Value ed Earned Value
-//Grafico 1 
+#figure(
+  image("../../asset/MPC06MPC07.png", width: 90%),
+  caption: [Grafico per periodo di Planned Value ed Earned Value]
+)
 Si osservi che il valore di EV è più o meno allineato a quello di PV: il lavoro svolto è abbastanza in linea con la pianificazione iniziale in quasi tutti gli sprint, eccetto per il quinto, il sesto e l'ottavo. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare il debito accumulato. Nell'ottavo sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
 == MPC08 e MPC09 - Actual Cost ed Estimate to Complete
-//Grafico 2
+#figure(
+  image("../../asset/MPC08MPC09.png", width: 90%),
+  caption: [Grafico per periodo di Actual Cost ed Estimate to Complete]
+)
 La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare col budget, in quanto allo sprint 8 non è ancora stata usata più di metà di budget.
 
 == MPC10 - Estimate at Completion
-// Grafico 4
+#figure(
+  image("../../asset/MPC10.png", width: 90%),
+  caption: [Grafico per periodo di Estimate at Completion]
+)
 L'attuale scostamento tra EAC e BAC rappresenta lo scenario in cui l'utilizzo dei ruoli rimanesse invariato. Tuttavia, poiché il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, questa stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
 Con il passaggio alla fase successiva (Sprint 9-13), che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un diminuimento progressivo del valore dell'EAC. La curva dell'EAC dovrebbe quindi convergere verso il BAC entro la fine del progetto.
 == MPC15 - Correttezza ortografica
-//Grafico 7
+#figure(
+  image("../../asset/MPC15.png", width: 90%),
+  caption: [Grafico per periodo della Correttezza ortografica]
+)
 Grazie all'implementazione di uno spellchecker prima della pianificazione degli sprint, il numero di errori ortografici all'interno dei documenti ufficiali è sempre stato 0.
 
 
