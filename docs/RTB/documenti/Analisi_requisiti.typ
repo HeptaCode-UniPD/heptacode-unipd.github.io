@@ -1129,6 +1129,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra l'opzione di visualizzazione delle proposte di remediation (#link(<UCD6>)[[UCD6]]).
   + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti (#link(<UCD12>)[[UCD12]]).
   + Il sistema mostra l'opzione per avviare una o più analisi sul repository (#link(<UCD15>)[[UCD15]]).
+  + Il sistema mostra il pulsante per l'eliminazione del repository (#link(<UCD7>)[[UCD7]]). 
   + Il sistema mostra il pulsante per tornare alla pagina precedente. 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
     - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UCD4]]).
@@ -1518,7 +1519,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-
 === UCD6.4 - Errore GitHub
 <UCD6.4>
 - *Attore principale:* Developer
@@ -1603,13 +1603,15 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - La repository e tutti i dati ad essa annessi, vengono rimossi dal sistema.
 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
-  Al passo 1: Il Developer sceglie di annullare l'operazione di eliminazione (*<\<extend>>* #link(<UCD7.1>)[[UCD7.1]])
+  Al passo 1: Il Developer sceglie di annullare l'operazione di eliminazione (*<\<extend>>* #link(<UCD7.1>)[[UCD7.1]]).
 
 - *Postcondizioni:* Il Repository è stato correttamente eliminato dal sistema insieme ai dati ad esso associati.
 
-- *Estensioni:* #link(<UCD7.1>)[[UCD7.1]]
+- *Estensioni:* 
+  - #link(<UC4>)[[UC4]]
+  - #link(<UCD7.1>)[[UCD7.1]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1632,83 +1634,177 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-
 === UCD8 - Procedimenti in corso
 #align(center, [#image("../../asset/UC/developer/UCD8.png", width: 100%)])
 
 <UCD8>
 - *Attore principale:* Developer
 
-- *Descrizione:* Il Developer visualizza le operazioni che sono in corso .
+- *Descrizione:* Il Developer visualizza una lista delle operazioni che sono in corso.
 
 - *Precondizioni:* Il Developer vuole visualizzare tutte le operazioni da lui avviate e non ancora concluse. 
 
-- *Trigger:* Il Developer si trova nella dashboard e seleziona la voce "Procedimenti in corso".
+- *Trigger:* Il Developer si trova nella dashboard e seleziona la voce per visualizzare i procedimenti in corso.
 
 - *Scenario principale:*
-  - Il sistema mostra le remediation avviate (*<\<include>>* #link(<UCD8.1>)[[UCD8.1]]).
-  - Il sistema mostra le analisi avviate (*<\<include>>* #link(<UCD8.2>)[[UCD8.2]]).
+  - Il sistema elenca le operazioni attualmente in corso all'interno del sistema (*<\<include>>* #link(<UCD8.1>)[[UCD8.1]]).
   - Il sistema mostra il tasto per tornare all pagina precedente.
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il Developer ha visualizzato tutte le operazioni in corso all'interno del sistema.
-
-- *Inclusioni:* 
-  - #link(<UCD8.1>)[[UCD8.1]])
-  - #link(<UCD8.2>)[[UCD8.2]])
+  
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD8.1 - Visualizzazione remediation avviate
+=== UCD8.1 - Visualizzazione elemento lista operazioni in corso
 <UCD8.1>
-- *Attore principale:* Developer
+- *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer visualizza le remediation che sono state avviate .
+- *Descrizione:* Il developer visualizza un singolo elemento dalla lista delle operazioni in corso.
 
-- *Precondizioni:* Il Developer si trova sulla scheda dei "Procedimenti in corso" #link(<UCD8>)[[UCD8]]. Il Developer vuole visualizzare le remediation da lui avviate e non ancora confermate tramite merge con il repository coinvolto. 
+- *Precondizioni:* Il Developer sta visualizzando la lista delle operazioni in corso.
 
-- *Trigger:* Il Developer si trova nella sezione "Procedimenti in corso".
+- *Trigger:* Viene caricata la pagina che mostra i procedimenti in corso all'interno del sistema.
 
 - *Scenario principale:*
-  - Il sistema mostra la lista dei branch aperti per effettuare remediation ai quali non è stata accettata la pull request.
-  - Il sistema mostra i nomi delle repository su cui un branch sta effettuando l'operazione.
-  - Il sistema mostra la data relativa all'avvio del processo di remediation.
-  - Il sistema mostra un pulsante per annullare un processo di remediation.
+  - Il sistema mostra il nome del repository in cui l'operazione è in corso (*<\<include>>* #link(<UCD2.2.1>)[[UCD2.2.1]]).
+  - Il sistema mostra la data relativa all'avvio del processo (*<\<include>>* #link(<UCD8.4>)[[UCD8.4]]).
 
-- *Scenari alternativi:*
-  - Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
-    - Il caso d'uso termina senza successo.
+- *Postcondizioni:* Il Developer ha visualizzato un singolo procedimento in corso all'interno del sistema.
 
-- *Postcondizioni:* Il Developer sta visualizzando tutte le remediation in atto nel sistema.
+- *Generalizzazioni:* 
+  - #link(<UCD8.2>)[[UCD8.2]])
+  - #link(<UCD8.3>)[[UCD8.3]])
+
+- *Inclusioni:*
+  - #link(<UCD2.2.1>)[[UCD2.2.1]]
+  - #link(<UCD8.4>)[[UCD8.4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD8.2 - Visualizzazione analisi su repository in corso
+=== UCD8.2 - Visualizzazione remediation avviata
 <UCD8.2>
 - *Attore principale:* Developer
 
-- *Descrizione:* Il Developer visualizza le analisi che sono state avviate .
+- *Descrizione:* Il Developer visualizza le remediation che sono state avviate.
 
-- *Precondizioni:* Il Developer vuole visualizzare le analisi da lui avviate e non ancora confermate tramite merge con il repository coinvolto. 
+- *Precondizioni:* Il Developer si trova sulla scheda dei procedimenti in corso #link(<UCD8>)[[UCD8]]. Il Developer vuole visualizza una remediation da lui avviata e non ancora confermata tramite merge con il repository coinvolto. 
 
-- *Trigger:* Il Developer si trova nella sezione "Procedimenti in corso".
+- *Trigger:* Il Developer si trova nella sezione dei procedimenti in corso e c'è una remediation avviata.
 
 - *Scenario principale:*
-  - Il sistema mostra la lista repository sulle quali sono state avviate delle analisi.
-  - Il sistema mostra la data relativa all'avvio del processo di analisi.
-  - Il sistema mostra un pulsante annullare un'analisi in corso.
+  - Il sistema mostra il nome del branch aperto per effettuare remediation ai quali non è stata accettata la pull request (*<\<include>>* #link(<UCD8.2.1>)[[UCD8.2.1]]).
+  - Il sistema mostra il pulsante per interrompere la remediation avviata #link(<UCD9>)[[UCD9]].
+
+- *Postcondizioni:* Il Developer sta visualizzando una remediation in atto nel sistema.
+
+- *Inclusioni:*
+  - #link(<UCD8.2.1>)[[UCD8.2.1]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD8.2.1 - Visualizzazione nome del branch aperto
+<UCD8.2.1>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer visualizza il nome del branch aperto a seguito dell'avvio di una remediation.
+
+- *Precodnizioni:* Il Developer sta visualizzando un elemento che descrive la remediation in corso.
+
+- *Trigger:* Il Developer si trova nella sezione dei procedimenti in corso e c'è una remediation avviata.
+
+- *Scenario principale:* Il sistema mostra il nome del branch che è stato aperto su GitHub a seguito dell'avvio della remediation.
+
+- *Postcondizioni:* Il Developer ha visualizzato il nome del branch aperto dal sistema.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD8.3 - Visualizzazione analisi su repository in corso
+<UCD8.3>
+- *Attore principale:* Developer
+
+- *Descrizione:* Il Developer visualizza un analisi avviata.
+
+- *Precondizioni:* Il Developer vuole visualizzare un analisi da lui avviata e non ancora terminata. 
+
+- *Trigger:* Il Developer si trova nella sezione dei procedimenti in corso.
+
+- *Scenario principale:*
+  - Il sistema mostra un pulsante annullare un'analisi in corso (#link(<UCD8.3.1>)[[UCD8.3.1]]).
+
+- *Postcondizioni:* Il Developer sta visualizzando un analisi in atto nel sistema.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD8.3.1 - Annullamento analisi in corso
+<UCD8.3.1>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer annulla un analisi in corso da lui precedentemente avviata.
+
+- *Precodizioni:* Il Developer sta visualizzando un analisi in corso (#link(<UCD8.3>)[[UCD8.3]]).
+
+- *Trigger:* Il Developer seleziona l'opzione di interruzione dell'analisi avviata.
+
+- *Scenario principale:*
+  + Il sistema interrompe il lavoro del/degli agenti coinvolti.
+  + Il sistema mostra un messaggio di avvenuta interruzione dell'analisi in corso (*<\<include>>* #link(<UCD8.3.2>)[[UCD8.3.2]]).
 
 - *Scenari alternativi:*
-  - Si verifica un errore durante il caricamento della pagina.
-    - Il sistema mostra un messaggio di errore.
+  - Si verifica un errore durante il processo.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
+  
+- *Postcondizioni:* L'analisi selezionata è stata annullata, il Developer visualizza la lista delle operazioni in corso.
 
-- *Postcondizioni:* Il Developer sta visualizzando tutte le analisi in atto nel sistema.
+- *Inclusioni:*
+  - #link(<UCD8.3.2>)[[UCD8.3.2]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD8.3.2 - Visualizzazione conferma interruzione analisi in corso
+<UCD8.3.2>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer visualizza il messaggio di avvenuta cancellazione di un analisi precedentemente avviata.
+
+- *Precondizioni:* Il Developer ha espresso il desiderio di eliminare un analisi avviata.
+
+- *Trigger:* Il sistema ha interrotto l'operazione di analisi di uno o più agenti.
+
+- *Scenario principale:*
+  + Il sistema mostra un messaggio di avvenuta cancellazione dell'analisi in corso
+
+- *Postcondizioni:* Il Developer è a conoscenza della cancellazione dell'analisi da lui selezionata.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD8.4 - Visualizzazione data avvio operazione in corso
+<UCD8.4>
+
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer visualizza la data di avvio di un operazione in corso.
+
+- *Precodnizioni:* Il Developer sta visualizzando un elemento che descrive l'operazione in corso (#link(<UCD8.2>)[[UCD8.2]], #link(<UCD8.3>)[[UCD8.3]]).
+
+- *Trigger:* Il Developer si trova nella sezione dei procedimenti in corso e c'è un procedimento avviato.
+
+- *Scenario principale:* Il sistema mostra la data di avvio del rocedimento.
+
+- *Postcondizioni:* Il Developer ha visualizzato la data di avvio del procedimento.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -1729,7 +1825,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il sistema annulla automaticamente la pull request oppure ne imposta lo stato come rifiutata/chiusa su GitHub.
-  + Il sistema notifica al Developer l’avvenuta interruzione della remediation.
+  + Il sistema notifica al Developer l’avvenuta interruzione della remediation (*<\<extend>>* #link(<UCD9.1>)[[UCD9.1]]).
   
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -1738,6 +1834,22 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* Una remediation in atto è stata interrotta.
 
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD9.1 - Visualizzazione conferma remediation interrotta
+<UCD9.1>
+- *Attore principale:* Developer.
+
+- *Descrizione:* Il Developer visualizza il messaggio di avvenuta interruzione di una remediation precedentemente avviata.
+
+- *Precondizioni:* Il Developer ha espresso il desiderio di interrompere un processo di remediation.
+
+- *Trigger:* Il sistema ha interrotto l'operazione di remediation.
+
+- *Scenario principale:*
+  + Il sistema mostra un messaggio di avvenuta interruzione della remediation precedentemente in corso.
+
+- *Postcondizioni:* Il Developer è a conoscenza dell'interruzione della remediation da lui selezionata.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -2909,7 +3021,20 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 [R-43-F-D],[Il Developer deve visualizzare un messaggio di errore nel caso abbia inserito un path non valido per un file, nel contesto di una proposta di remediation],[#link(<UCD6.1.4>)[UCD6.1.4]],
 [R-44-F-D],[Il Developer deve poter accettare una proposta di remediation],[#link(<UCD6.2>)[UCD6.2]],
 [R-45-F-D],[Il Developer deve ricevere una notifica una volta che è stata inviata con successo una pull request sul repository GitHub],[#link(<UCD6.2.1>)[UCD6.2.1]],
-// arrivata fino ad UCD6.2.1
+[R-46-F-D],[Il Developer deve poter annullare l'accettazione di una proposta di remediation],[#link(<UCD6.3>)[UCD6.3]],
+[R-47-F-D],[Il Developer deve ricevere un messaggio di errore nel caso di fallimento dell'accettazione della remediation],[#link(<UCD6.4>)[UCD6.4]],
+[R-48-F-D],[Il Developer deve essere informato se la remediation proposta on è più coerente con lo stato del sistema, e quindi non può essere effettuata],[#link(<UCD6.5>)[UCD6.5], #link(<UCD6.6>)[UCD6.6]],
+[R-49-F-O],[Il Developer deve poter eliminare un repository dal sistema],[#link(<UCD7>)[UCD7]],
+[R-50-F-O],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[#link(<UCD7.1>)[UCD7.1]],
+[R-51-F-D],[Il Developer deve poter visualizzare la lista dei procedimenti in corso all'interno del sistema],[#link(<UCD8>)[UCD8], #link(<UCD8.1>)[UCD8.1]],
+[R-52-F-D],[Il Developer deve visualizzare il nome del repository sul quale sta avvenendo il procedimento],[#link(<UCD8.1>)[UCD8.1], #link(<UCD2.2.1>)[UCD2.2.1]],
+[R-53-F-D],[Il Developer deve visualizzare la data di avvio di ogni elemento dalla lista dei procedimenti in corso in corso.],[#link(<UCD8.1>)[UCD8.1], #link(<UCD8.4>)[UCD8.4]],
+[R-54-F-D],[Il Developer deve visualizzare il nome branch aperto di ogni elemento della lista delle remediation in corso.],[#link(<UCD8.2>)[UCD8.2], #link(<UCD8.2.1>)[UCD8.2.1]],
+[R-55-F-D],[Il Developer deve poter interrompere una remediation avviata],[#link(<UCD8.2>)[UCD8.2], #link(<UCD9>)[UCD9]],
+[R-56-F-D],[Il Developer deve visualizzare un messaggio di avvenuta interruzione di una remediation in corso, in caso ne abbia richiesto la stessa],[#link(<UCD9.1>)[UCD9.1]],
+[R-57-F-D],[Il Developer deve poter annullare un analisi n corso all'interno del sistema],[#link(<UCD8.3>)[UCD8.3], #link(<UCD8.3.1>)[UCD8.3.1]],
+[R-58-F-D],[Il Developer deve visualizzare un messaggio di avvenuto annullamento di un analisi in corso],[#link(<UCD8.3.2>)[UCD8.3.2]],
+// arrivata fino ad UCD9.1
 )
 
 == Requisiti di vincolo
