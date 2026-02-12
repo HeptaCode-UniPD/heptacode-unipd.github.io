@@ -1724,8 +1724,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer si trova nella dashboard e seleziona la voce per visualizzare i procedimenti in corso.
 
 - *Scenario principale:*
-  - Il Developer visualizza l'elenco delle operazioni attualmente in corso all'interno del sistema (*<\<include>>* #link(<UCD8.1>)[[UCD8.1]]).
-  - Il Developer visualizza il tasto per tornare all pagina precedente.
+  + Il Developer visualizza l'elenco delle operazioni di remediation attualmente in corso all'interno del sistema (*<\<include>>* #link(<UCD8.2>)[[UCD8.2]]).
+  + Il Developer visualizza l'elenco delle operazioni di analisi attualmente in corso all'interno del sistema (*<\<include>>* #link(<UCD8.3>)[[UCD8.3]]).
+  + Il Developer visualizza il tasto per tornare all pagina precedente.
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -1733,6 +1734,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il Developer ha visualizzato tutte le operazioni in corso all'interno del sistema.
+  
+- *Inclusioni:*
+  - #link(<UCD8.2>)[[UCD8.2]]
+  - #link(<UCD8.3>)[[UCD8.3]]
   
 - *Estensioni:*
   - #link(<UC4>)[[UC4]]
@@ -1750,8 +1755,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Viene caricata la pagina che mostra i procedimenti in corso all'interno del sistema.
 
 - *Scenario principale:*
-  - Il Developer visualizza il nome del repository in cui l'operazione è in corso (*<\<include>>* #link(<UC5.5>)[[UC5.5]]).
-  - Il Developer visualizza la data relativa all'avvio del processo (*<\<include>>* #link(<UCD8.4>)[[UCD8.4]]).
+  + Il Developer visualizza il nome del repository in cui l'operazione è in corso (*<\<include>>* #link(<UC5.5>)[[UC5.5]]).
+  + Il Developer visualizza la data relativa all'avvio del processo (*<\<include>>* #link(<UCD8.4>)[[UCD8.4]]).
 
 - *Postcondizioni:* Il Developer ha visualizzato un singolo procedimento in corso all'interno del sistema.
 
@@ -1774,10 +1779,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Precondizioni:* Il Developer si trova sulla scheda dei procedimenti in corso #link(<UCD8>)[[UCD8]]. Il Developer vuole visualizza una remediation da lui avviata e non ancora confermata tramite merge con il repository coinvolto. 
 
 - *Trigger:* Il Developer si trova nella sezione dei procedimenti in corso e c'è una remediation avviata.
-
 - *Scenario principale:*
-  - Il Developer visualizza il nome del branch aperto per effettuare remediation ai quali non è stata accettata la pull request (*<\<include>>* #link(<UCD8.2.1>)[[UCD8.2.1]]).
-  - Il Developer visualizza il pulsante per interrompere la remediation avviata #link(<UCD9>)[[UCD9]].
+  + Il Developer visualizza i dati come descritto in #link(<UCD8.1>)[[UCD8.1]].
+  + Il Developer visualizza il nome del branch aperto per effettuare remediation ai quali non è stata accettata la pull request (*<\<include>>* #link(<UCD8.2.1>)[[UCD8.2.1]]).
+  + Il Developer visualizza il pulsante per interrompere la remediation avviata #link(<UCD9>)[[UCD9]].
 
 - *Postcondizioni:* Il Developer sta visualizzando una remediation in atto nel sistema.
 
@@ -1814,7 +1819,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Developer si trova nella sezione dei procedimenti in corso.
 
 - *Scenario principale:*
-  - Il Developer visualizza un pulsante annullare un'analisi in corso (#link(<UCD10>)[[UCD10]]).
+  + Il Developer visualizza i dati come descritto in #link(<UCD8.1>)[[UCD8.1]].
+  + Il Developer visualizza un pulsante annullare un'analisi in corso (#link(<UCD10>)[[UCD10]]).
 
 - *Postcondizioni:* Il Developer sta visualizzando un analisi in atto nel sistema.
 
@@ -2544,69 +2550,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-#pagebreak()
-
-=== UCPM2 - Visualizzazione lista progetti 
-#align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
-<UCPM2>
-
-- *Attore principale*: Project Manager.
-
-- *Descrizione:* Il Project Manager desidera visualizzare la lista dei progetti ai quali partecipa, presenti sulla piattaforma _Code Guardian_.
-
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'Utente si trova all'interno della dashboard.
-
-- *Trigger:* Caricamento della schermata della dashboard. Il selettore di vista è impostato su "Progetti".
-
-- *Scenario principale:*
-  + Il Project Manager visualizza i dati come descritto in #link(<UC9>)[[UC9]].
-  + Il Project Manager deve, per ogni progetto:
-        - Il widget delle statistiche di analisi documentazione (*<\<include>>* #link(<UC10.2>)[[UC10.2]]).
-        - Il widget delle statistiche di analisi di test (*<\<include>>* #link(<UC10.3>)[[UC10.3]]).
-        - Il widget delle statistiche correttezza OWASP (*<\<include>>* #link(<UC10.4>)[[UC10.4]]).
-
-- *Postcondizioni:* Il Project Manager scorre la lista dei progetti in cui è coinvolto.
-
-- *Inclusioni:* 
-  - #link(<UC10.2>)[[UC10.2]]
-  - #link(<UC10.3>)[[UC10.3]]
-  - #link(<UC10.4>)[[UC10.4]]
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UCPM2.1 - Visualizzazione dettagli progetto PM
-//#align(center, [#image("../../asset/UC/project-manager/UCPM2.1.png", height: 10cm)])
-<UCPM2.1>
-
-- *Attore principale:* Project Manager.
-
-- *Descrizione:* Il Project Manager vuole accedere alla vista di uno specifico progetto.
-
-- *Precondizioni:* Esiste almeno un progetto creato a cui il Project Manager è associato.
-
-- *Trigger:* Il Project Manager clicca sulla card di un progetto.
-
-- *Scenario principale:*
-  + Il Project Manager visualizza i dati come descritto in #link(<UC10>)[[UC10]].
-  + Il Project Manager visualizza il pulsante "Modifica intestazione".
-  + Il Project Manager visualizza il pulsante "Aggiungi repository" sui cui può premere per inserire delle repository al progetto.
-  + Il Project Manager visualizza il pulsante "Gestisci developer", su cui può premere per consultare la lista degli sviluppatori facenti parte del progetto.
-  + Il Project Manager visualizza il pulsante "Team & Competenze", su cui può premere per approfondire le competenze del team.
-  + Il Project Manager visualizza il pulsante "Stack tecnologico", su cui può premere per analizzare le tecnologie utilizzate nel progetto e ricevere suggerimenti.
-  + Il Project Manager visualizza l'elenco dei repository che compongono il progetto con i relativi indicatori di stato (*<\<include>>* #link(<UC5.9>)[[UC5.9]]). 
-
-- *Scenari alternativi:*
-  - Si verifica un errore durante il caricamento della pagina.
-    - Il Project Manager visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
-    - Il caso d'uso termina senza successo.
-  
-- *Postcondizioni:* L'Utente visualizza i dati aggregati del progetto.
-
-- *Inclusioni:* 
-  - #link(<UC5.9>)[[UC5.9]]
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
 === UCPM1.2 - Creazione nuovo progetto 
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
 
@@ -2696,6 +2639,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Project Manager è invitato a scegliere un nome differente.
 
 - *Postcondizioni:* Il Project Manager è a conoscenza del conflitto di nome e può procedere con un nuovo inserimento.
+
+#line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.3 - Aggiunta repository a progetto 
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
@@ -2970,6 +2915,121 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Il sistema ripristina lo stato precedente alla rimozione del developer.
 
 - *Postcondizioni:* Il processo di rimozione developer è stato annullato. Lo stato del sistema è coerente con la situazione precedente all’avvio della rimozione developer.
+
+  #line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCPM1.9 - Eliminazione progetto 
+// #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
+<UCPM1.9>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager elimina un progetto di sua proprietà.
+
+- *Precondizioni:* Il Project Manager sta visualizzando il dettaglio del progetto di interesse. Esiste almeno un progetto di proprietà del Project Manager.
+
+- *Trigger:* Il Project Manager preme il pulsante di eliminazione progetto.
+
+- *Scenario principale:*
+  + Viene chiesta conferma dell'operazione al Project Manager.
+  + Il Progetto e tutte le relazioni con i diversi repository e developer vengono rimossi dal sistema, il Project Manager non li potrà più visualizzare.
+
+
+- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
+    - Al Project Manager viene mostrato un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+    - Il caso d'uso termina senza successo.
+  Al passo 1: Il Project Manager sceglie di annullare l'operazione di eliminazione (*<\<extend>>* #link(<UC11.1>)[[UC11.1]]).
+
+- *Postcondizioni:* Il Project Manager ha eliminato correttamente il progetto dal sistema.
+
+- *Estensioni:* 
+  - #link(<UC4>)[[UC4]]
+  - #link(<UCPM1.9.1>)[[UCPM1.9.1]]
+
+
+  #line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCPM1.9.1 - Annulla eliminazione progetto 
+<UCPM1.9.1>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager desidera annullare l'operazione di eliminazione di un progetto.
+
+- *Precondizioni:* Il Project Manager ha avviato il caso d’uso #link(<UCPM1.9>)[UCPM1.9].
+
+- *Trigger:* Il Project Manager seleziona l’opzione di annullamento durante il processo di eliminazione.
+
+- *Scenario principale:*
+  - Il Project Manager seleziona l’opzione di annullamento dell'eliminazione.
+  - La pagina viene visualizzata nello stato precedente alla richiesta di eliminazione.
+
+- *Postcondizioni:* Il processo di eliminazione è stato annullato. Lo stato del sistema è coerente con la situazione precedente all’avvio dell'eliminazione.
+
+
+#line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
+#pagebreak()
+
+=== UCPM2 - Visualizzazione lista progetti 
+#align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
+<UCPM2>
+
+- *Attore principale*: Project Manager.
+
+- *Descrizione:* Il Project Manager desidera visualizzare la lista dei progetti ai quali partecipa, presenti sulla piattaforma _Code Guardian_.
+
+- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'Utente si trova all'interno della dashboard.
+
+- *Trigger:* Caricamento della schermata della dashboard. Il selettore di vista è impostato su "Progetti".
+
+- *Scenario principale:*
+  + Il Project Manager visualizza i dati come descritto in #link(<UC9>)[[UC9]].
+  + Il Project Manager deve, per ogni progetto:
+        - Il widget delle statistiche di analisi documentazione (*<\<include>>* #link(<UC10.2>)[[UC10.2]]).
+        - Il widget delle statistiche di analisi di test (*<\<include>>* #link(<UC10.3>)[[UC10.3]]).
+        - Il widget delle statistiche correttezza OWASP (*<\<include>>* #link(<UC10.4>)[[UC10.4]]).
+
+- *Postcondizioni:* Il Project Manager scorre la lista dei progetti in cui è coinvolto.
+
+- *Inclusioni:* 
+  - #link(<UC10.2>)[[UC10.2]]
+  - #link(<UC10.3>)[[UC10.3]]
+  - #link(<UC10.4>)[[UC10.4]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCPM2.1 - Visualizzazione dettagli progetto PM
+//#align(center, [#image("../../asset/UC/project-manager/UCPM2.1.png", height: 10cm)])
+<UCPM2.1>
+
+- *Attore principale:* Project Manager.
+
+- *Descrizione:* Il Project Manager vuole accedere alla vista di uno specifico progetto.
+
+- *Precondizioni:* Esiste almeno un progetto creato a cui il Project Manager è associato.
+
+- *Trigger:* Il Project Manager clicca sulla card di un progetto.
+
+- *Scenario principale:*
+  + Il Project Manager visualizza i dati come descritto in #link(<UC10>)[[UC10]].
+  + Il Project Manager visualizza il pulsante "Modifica intestazione".
+  + Il Project Manager visualizza il pulsante "Aggiungi repository" sui cui può premere per inserire delle repository al progetto.
+  + Il Project Manager visualizza il pulsante "Gestisci developer", su cui può premere per consultare la lista degli sviluppatori facenti parte del progetto.
+  + Il Project Manager visualizza il pulsante "Team & Competenze", su cui può premere per approfondire le competenze del team.
+  + Il Project Manager visualizza il pulsante "Stack tecnologico", su cui può premere per analizzare le tecnologie utilizzate nel progetto e ricevere suggerimenti.
+  + Il Project Manager visualizza il pulsante "Elimina progetto".
+  + Il Project Manager visualizza l'elenco dei repository che compongono il progetto con i relativi indicatori di stato (*<\<include>>* #link(<UC5.9>)[[UC5.9]]). 
+
+- *Scenari alternativi:*
+  - Si verifica un errore durante il caricamento della pagina.
+    - Il Project Manager visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+    - Il caso d'uso termina senza successo.
+  
+- *Postcondizioni:* L'Utente visualizza i dati aggregati del progetto.
+
+- *Inclusioni:* 
+  - #link(<UC5.9>)[[UC5.9]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -4107,6 +4167,8 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-113-F-D],[Il Project Manager deve poter visualizzare l'elenco dei: framework e librerie,  utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.1>)[UCPM4.1]],
   [R-114-F-D],[Il Project Manager deve poter visualizzare l'elenco di segnalazioni a: framework e librerie con rischi di sicurezza o deprecate, utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.2>)[UCPM4.2]],
   [R-115-F-D],[Il Project Manager deve poter visualizzare suggerimenti generati dall'IA per la sostituzione di framework e librerie, utilizzate nello stack tecnologico di un progetto],[#link(<UCPM4.3>)[UCPM4.3]],
+  [R-139-F-O],[Il Project Manager deve poter eliminare un progetto di sua proprietà],[#link(<UCPM1.9>)[UCPM1.9]],
+  [R-140-F-O],[Il Project Manager deve poter annullare l'eliminazione di un progetto di sua proprietà],[#link(<UCPM1.9.1>)[UCPM1.9.1]],
   // BO
   [R-116-F-D],[Il Business Owner deve poter visualizzare la lista dei propri progetti],[#link(<UCBO1>)[UCBO1], #link(<UC9>)[UC9]],
   [R-117-F-D],[Il Business Owner deve poter visualizzare il budget complessivo per il proprio progetto],[#link(<UCBO1>)[UCBO1], #link(<UCBO1.1>)[UCBO1.1], #link(<UCBO1.1.1>)[UCBO1.1.1]],
