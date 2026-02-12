@@ -9,10 +9,11 @@ Domande per Cardin sul file:
 
 #show link: it => text(fill: rgb("#6a00f4"), it)
 
-#show table.cell: block.with(breakable: false)
+#show table.cell: block.with(breakable: true)
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("0.11.0", "2026-02-12", "Amerigo Vegliante", "", "Stesura Diagrammi di Attività"),
   ("0.10.0", "2026-02-10", "Angela Favaro", "", "Stesura definitiva requisiti funzionali"),
   ("0.10.0", "2026-02-10", "Nicola Simionato", "Angela Favaro", "Modifica UC Project Manager e Business Owner"),
   ("0.9.0", "2026-02-09", "Angela Favaro", "Laura Venturini", "Aggiunta requisiti funzionali user e dev"),
@@ -3224,7 +3225,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Project Manager sta consultando la panoramica dello stack tecnologico del progetto (#link(<UCPM4>)[[UCPM4]]).
 
-- *Trigger:* Il Project Manager si concentra sui consigli dell’IA.
+- *Trigger:* Il Project Manager si concentra sui consigli dell'AI.
 
 - *Scenario principale:*
   + Il Project Manager consulta le proposte di ottimizzazione, riguardanti nuovi frameqork e nuove librerie, fornite dall'intelligenza artificiale.
@@ -3251,79 +3252,69 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCBO1>
 
 - *Attore principale:* Business Owner 
-- *Descrizione:* Il Business Owner accede alla home page dell'applicazione che mostra una panoramica aggregata di tutti i progetti attraverso grafici e indicatori chiave.
-- *Precondizioni:* 
-  + Il Business Owner è autenticato nel sistema.
-  + Esiste almeno un progetto nel sistema.
-- *Trigger:* Il Business Owner accede all'applicazione o clicca su "Home"/"dashboard".
+
+- *Descrizione:* Il Business Owner accede alla home page dell'applicazione che mostra una panoramica aggregata di tutti i progetti.
+  
+- *Precondizioni:* Il Business Owner è autenticato nel sistema ed esiste almeno un progetto nel sistema.
+  
+- *Trigger:* Viene caricata la home page del sistema dopo aver effettuato l'accesso accede all'applicazione.
+  
 - *Scenario principale:*
-  + Il sistema visualizza la dashboard home con diversi grafici e istogrammi.
-  + Il Business Owner visualizza le statistiche aggregate sui progetti (*<\<include>>* #link(<UCBO1.1>)[[UCBO1.1]]).
-  + Il Business Owner analizza le issue totali in lavorazione (*<\<include>>* #link(<UCBO1.2>)[[UCBO1.2]]).
+  + Il Business Owner visualizza la lista dei propri progetti attivi.
   + Il Business Owner consulta il rapporto budget vs spesa complessivo (*<\<include>>* #link(<UCBO1.3>)[[UCBO1.3]]).
-  + Il Business Owner valuta l'indice di coerenza tra progetti (*<\<include>>* #link(<UCBO1.4>)[[UCBO1.4]]).
-  + Il Business Owner può selezionare un progetto per analizzarlo nel dettaglio (*<\<extend>>* #link(<UCBO2>)[[UCBO2]]).
-- *Scenario alternativo:* Il Business Owner seleziona un progetto per visualizzarne i dettagli #link(<UCBO2>)[[UCBO2]]).
-- *Postcondizioni:* Il Business Owner ha una visione d'insieme dello stato del portafoglio progetti.
+  + Il Business Owner può selezionare un progetto per analizzarlo nel dettaglio (#link(<UCBO2>)[[UCBO2]]).
+  
+- *Scenario alternativo:* 
+  - Si verifica un errore durante il caricamento della home page.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+    - Il caso d'uso termina senza successo.
+  
+- *Postcondizioni:* Il Business Owner visualizza la propria home page.
+  
 - *Inclusioni:* 
   - #link(<UCBO1.1>)[[UCBO1.1]];
-  - #link(<UCBO1.2>)[[UCBO1.2]]; 
   - #link(<UCBO1.3>)[[UCBO1.3]]; 
-  - #link(<UCBO1.4>)[[UCBO1.4]].
+- 
 - *Estensioni:*
-  - #link(<UCBO2>)[[UCBO2]].
+  - #link(<UC4>)[[UC4]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO1.1: Visualizzazione grafici su progetti <UCBO1.1>
 
 - *Attore principale:* Business Owner
+  
 - *Descrizione:* Il Business Owner consulta le visualizzazioni grafiche che rappresentano statistiche aggregate sui progetti.
-- *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
+  
+- *Precondizioni:* Il Business Owner sta visualizzando la propria home page (#link(<UCBO1>)[[UCBO1]]).
+  
 - *Trigger:* Il Business Owner si concentra sulla sezione grafici della dashboard.
+  
 - *Scenario principale:*
   + Il sistema visualizza grafici a torta e/o istogrammi che rappresentano vari aspetti dei progetti.
   + Il Business Owner interpreta i grafici per comprendere distribuzioni e proporzioni.
+  
 - *Postcondizioni:* Il Business Owner ha composto un quadro visivo della situazione dei progetti.
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UCBO1.2: Visualizzazione issue totali in lavorazione (complessivo) <UCBO1.2>
-
-- *Attore principale:* Business Owner
-- *Descrizione:* Il Business Owner consulta il conteggio totale delle issue attualmente in lavorazione su tutti i progetti.
-- *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
-- *Trigger:* Il Business Owner consulta il widget/indicatore delle issue.
-- *Scenario principale:*
-  + Il sistema visualizza il numero totale di issue attualmente "in lavorazione" o "in sviluppo".
-  + Il Business Owner legge il valore per comprendere il carico di lavoro complessivo.
-- *Postcondizioni:* Il Business Owner è consapevole del volume totale di lavoro in corso.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO1.3: Visualizzazione rapporto budget vs spesa complessivo <UCBO1.3>
 
 - *Attore principale:* Business Owner
+  
 - *Descrizione:* Il Business Owner consulta l’indicatore  aggregato che confronta il budget totale allocato con la spesa totale sostenuta.
+  
 - *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
+  
 - *Trigger:* Il Business Owner consulta il widget/indicatore finanziario.
+  
 - *Scenario principale:*
   + Il sistema visualizza un indicatore che mostra budget totale e spesa totale.
   + Il Business Owner analizza se la spesa complessiva è entro il budget complessivo.
+  
 - *Postcondizioni:* Il Business Owner conosce la situazione finanziaria aggregata.
 
 #line(length: 100%, stroke: 0.5pt + gray)
-
-=== UCBO1.4: Visualizzazione indice coerenza tra progetti <UCBO1.4>
-
-- *Attore principale:* Business Owner
-- *Descrizione:* Il Business Owner consulta un indicatore che misura il livello di coerenza o standardizzazione tra i vari progetti.
-- *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
-- *Trigger:* Il Business Owner consulta l’indicatore  di coerenza.
-- *Scenario principale:*
-  + Il sistema visualizza un indicatore di "coerenza tra progetti".
-  + Il Business Owner interpreta il valore per valutare quanto i progetti siano allineati tra loro.
-- *Postcondizioni:* Il Business Owner ha una misura del livello di coerenza del portafoglio progetti.
 
 #pagebreak()
 
@@ -3333,16 +3324,25 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCBO2>
 
 - *Attore principale:* Business Owner
+  
 - *Descrizione:* Il Business Owner seleziona ed entra in un progetto specifico per analizzarne i dettagli: tecnologie, repository, issue, costi e team.
+  
 - *Precondizioni:* Il Business Owner sta visualizzando una lista o dashboard dei progetti.
+  
 - *Trigger:* Il Business Owner seleziona un progetto specifico dalla lista/dashboard.
+  
 - *Scenario principale:*
-  + Il Business Owner visualizza le informazioni principali del progetto ad esempio nome, data di creazione ecc.
+  + Il Business Owner visualizza le informazioni principali del progetto ad esempio nome.
   + Il Business Owner visualizza la *lista delle tecnologie utilizzate* nel progetto (*<\<include>>* #link(<UCBO2.1>)[[UCBO2.1]]).
+  
   + Il Business Owner consulta la *vista generale sulle repository* del progetto (*<\<include>>* #link(<UCBO2.2>)[[UC2.2]]).
+  
   + Il Business Owner visualizza la *lista del team di sviluppo* (*<\<include>>* #link(<UCBO2.3>)[[UCBO2.3]]).
+  
   + Il Business Owner può tornare alla dashboard "Home".
+  
 - *Postcondizioni:* Il Business Owner ha analizzato i dettagli del progetto selezionato.
+  
 - *Inclusione:* 
   - #link(<UCBO2.1>)[[UCBO2.1]]
   - #link(<UCBO2.2>)[[UCBO2.2]]
@@ -3356,67 +3356,42 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCBO2.1>
 
 - *Attore principale:* Business Owner
+  
 - *Descrizione:* Il Business Owner esamina l'elenco delle tecnologie impiegate nel progetto specifico.
+  
 - *Precondizioni:* Il Business Owner sta visualizzando un progetto (#link(<UCBO2>)[[UCBO2]]).
+  
 - *Trigger:* Il Business Owner si concentra sulla sezione "Tecnologie" del progetto.
+  
 - *Scenario principale:*
   + Il sistema visualizza una lista delle tecnologie utilizzate nel progetto.
   + Il Business Owner legge l'elenco per comprendere lo stack tecnologico.
-  + Il Business Owner può verificare se ci sono *aggiornamenti disponibili* (*<\<include>>* #link(<UCBO2.1.1>)[[UCBO.2.1.1]]).
+  
 - *Postcondizioni:* Il Business Owner conosce le tecnologie utilizzate nel progetto.
-- *Inclusioni:* #link(<UCBO2.1.1>)[[UCBO2.1.1]]
-
+  
 #line(length: 100%, stroke: 0.5pt + gray)
 
-
-=== UCBO2.1.1: Identificazione aggiornamenti disponibili <UCBO2.1.1>
-
-- *Attore principale:* Business Owner
-- *Descrizione:* Il Business Owner verifica se ci sono aggiornamenti importanti disponibili per le tecnologie utilizzate nel progetto.
-- *Precondizioni:* Il Business Owner sta visualizzando la lista tecnologie del progetto (#link(<UCBO2.1>)[[UCBO2.1]]).
-- *Trigger:* Il Business Owner cerca specificamente informazioni sugli aggiornamenti.
-- *Scenario principale:*
-  + Il sistema evidenzia le tecnologie che hanno aggiornamenti disponibili.
-  + Il Business Owner identifica quali tecnologie richiedono aggiornamento.
-  + Il Business Owner valuta l'importanza degli aggiornamenti disponibili.
-- *Postcondizioni:* Il Business Owner è consapevole degli aggiornamenti disponibili per le tecnologie del progetto.
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UCBO2.2: Visualizzazione vista generale sulle repository del progetto 
+=== UCBO2.2: Visualizzazione generale sulle repository del progetto 
 #align(center, [#image("../../asset/UC/business-owner/UCBO2.2.png", height: 5cm)])
 
 <UCBO2.2>
 
 - *Attore principale:* Business Owner
+  
 - *Descrizione:* Il Business Owner consulta una vista d'insieme delle repository che compongono il progetto.
+  
 - *Precondizioni:* Il Business Owner è entrato in un progetto (#link(<UCBO2>)[[UCBO2]]).
+  
 - *Trigger:* Il Business Owner si concentra sulla sezione "Repository" del progetto.
+  
 - *Scenario principale:*
   + Il sistema visualizza una lista o panoramica delle repository del progetto identificate dal nome.
-  + Il Business Owner visualizza le *quantità di issue* per repository (*<\<include>>* #link(<UCBO2.2.1>)[[UCBO2.2.1]]).
   + Il Business Owner consulta le *stime dei costi* (*<\<include>>* #link(<UCBO2.2.2>)[[UCBO2.2.2]]).
+  
 - *Postcondizioni:* Il Business Owner ha una visione generale della struttura repository del progetto.
+  
 - *Inclusioni:* 
-  - #link(<UCBO2.2.1>)[[UCBO2.2.1]] 
   - #link(<UCBO2.2.2>)[[UCBO2.2.2]]
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-
-=== UCBO2.2.1: Visualizzazione quantità issue <UCBO2.2.1>
-
-- *Attore principale:* Business Owner
-- *Descrizione:* Il Business Owner consulta i numeri delle issue divise per stato nelle repository del progetto.
-- *Precondizioni:* Il Business Owner sta visualizzando la vista repository del progetto (#link(<UCBO2.2>)[[UCBO2.2]]).
-- *Trigger:* Il Business Owner cerca informazioni sullo stato delle issue.
-- *Scenario principale:*
-  + Il sistema visualizza i conteggi delle issue per stato:
-    - Issue completate
-    - Issue aperte
-    - Issue in sviluppo
-  + Il Business Owner analizza la distribuzione per valutare l'avanzamento.
-- *Postcondizioni:* Il Business Owner comprende lo stato di avanzamento del progetto attraverso le issue.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3436,17 +3411,22 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 === UCBO2.3: Visualizzazione lista del team di sviluppo 
 #align(center, [#image("../../asset/UC/business-owner/UCBO2.3.png", height: 6cm)])
-
 <UCBO2.3>
 
 - *Attore principale:* Business Owner
+
 - *Descrizione:* Il Business Owner esamina l'elenco dei membri del team assegnati al progetto.
+  
 - *Precondizioni:* Il Business Owner è entrato in un progetto (#link(<UCBO2>)[[UCBO2]]).
+  
 - *Trigger:* Il Business Owner accede alla sezione "Team" del progetto.
+  
 - *Scenario principale:*
-  + Il sistema visualizza una lista dei membri del team di sviluppo.
+  + Il sistema visualizza una lista dei membri del team di sviluppo con Nome e Ruolo.
   + Il Business Owner può visualizzare le *statistiche dei singoli developer* (*<\<include>>* #link(<UCBO3>)[[UCBO3]]).
+  
 - *Postcondizioni:* Il Business Owner conosce la composizione del team del progetto.
+  
 - *Inclusioni:* #link(<UCBO3>)[[UCBO3]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -3459,14 +3439,20 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCBO3>
 
 - *Attore principale:* Business Owner
+  
 - *Descrizione:* Il Business Owner consulta le statistiche e informazioni dettagliate di uno specifico developer del team.
+  
 - *Precondizioni:* Il Business Owner sta visualizzando la lista del team (#link(<UCBO2.3>)[[UCBO2.3]]).
+  
 - *Trigger:* Il Business Owner seleziona un developer dalla lista del team.
+  
 - *Scenario principale:*
-  + Il sistema visualizza le statistiche del developer selezionato.
-  + Il Business Owner visualizza il *numero di progetti* a cui il developer ha lavorato e sta lavorando (*<\<include>>* #link(<UCBO3.1>)[[UCBO3.1]]).
+  + Il Business Owner vede il *numero di progetti* a cui il developer ha lavorato e sta lavorando (*<\<include>>* #link(<UCBO3.1>)[[UCBO3.1]]).
+  + Il Business Owner vede il nome delle repository alle quali sta lavorando in base al progetto.
   + Il Business Owner consulta i *linguaggi e tecnologie affini* del developer (*<\<include>>* #link(<UCBO3.2>)[[UCBO3.2]]).
+  
 - *Postcondizioni:* Il Business Owner ha approfondito la conoscenza delle competenze e del carico di lavoro del developer.
+  
 - *Inclusioni:* 
   - #link(<UCBO3.1>)[[UCBO3.1]]
   - #link(<UCBO3.2>)[[UCBO3.2]]
@@ -3476,16 +3462,19 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 === UCBO3.1: Visualizzazione numero progetti dello sviluppatore <UCBO3.1>
 
 - *Attore principale:* Business Owner
+  
 - *Descrizione:* Il Business Owner consulta l'elenco e il conteggio dei progetti associati al developer.
+  
 - *Precondizioni:* Il Business Owner sta visualizzando le statistiche di un developer (#link(<UCBO3>)[[UCBO3]]).
+  
 - *Trigger:* Il Business Owner cerca informazioni sul carico di progetti del developer.
+  
 - *Scenario principale:*
   + Il sistema visualizza:
     - Numero totale di progetti in cui il developer ha lavorato
-    - Numero di progetti attualmente assegnati
     - Lista dei progetti (passati e attuali)
-  + Il Business Owner valuta il carico di lavoro e l'esperienza del developer.
-- *Postcondizioni:* Il Business Owner comprende il coinvolgimento del developer nei vari progetti.
+  
+- *Postcondizioni:* Il Business Owner visualizza il coinvolgimento del developer nei vari progetti.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3493,19 +3482,142 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 === UCBO3.2: Visualizzazione linguaggi e tecnologie affini <UCBO3.2>
 
 - *Attore principale:* Business Owner
+  
 - *Descrizione:* Il Business Owner consulta le competenze tecnologiche del developer.
+  
 - *Precondizioni:* Il Business Owner sta visualizzando le statistiche di un developer (#link(<UCBO3>)[[UCBO3]]).
+  
 - *Trigger:* Il Business Owner cerca informazioni sulle competenze tecniche del developer.
+  
 - *Scenario principale:*
   + Il sistema visualizza:
     - Linguaggi di programmazione conosciuti/utilizzati
-    - Tecnologie e framework con esperienza
-    - Livello di competenza (base/intermedio/avanzato) se disponibile
+  
   + Il Business Owner valuta le competenze tecniche del developer.
+  
 - *Postcondizioni:* Il Business Owner conosce le competenze tecnologiche del developer.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
+
+#pagebreak()
+
+= Diagrammi di Attività
+
+== Introduzione
+
+Mentre i Casi d’Uso definiscono "cosa" il sistema debba fare, i Diagrammi di Attività si pongono l'obiettivo di descrivere il "come", focalizzandosi sulla logica procedurale e sul flusso di controllo dei processi di business di Code Guardian. Essi rappresentano la traduzione dinamica dei requisiti, permettendo di visualizzare non solo la sequenza temporale delle operazioni, ma anche le condizioni decisionali e le ramificazioni del flusso.\
+L'utilizzo di questa modellazione UML è cruciale per evidenziare la natura reattiva della piattaforma; in particolare, i diagrammi che seguono sono stati progettati per esaltare il supporto all'elaborazione parallela. Attraverso l'uso di nodi di Fork e Join, viene descritto come il sistema sia in grado di eseguire simultaneamente controlli di sicurezza, analisi di qualità e validazione documentale, ottimizzando le prestazioni e riducendo il tempo di feedback per lo sviluppatore.\
+Ciascun diagramma fornisce una visione dettagliata degli aspetti dinamici dei principali casi d'uso, fungendo da ponte tra la specifica funzionale e l'architettura logica del software. Di seguito vengono presentati i flussi relativi all'analisi post-push, alla gestione proattiva delle correzioni e al monitoraggio tramite dashboard.
+
+#v(1em)
+
+#table(
+  columns: (auto, 1fr),
+  inset: 10pt,
+  align: (left, left),
+  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
+  
+  table.header(
+     [*Campo*], [*Descrizione*],
+  ),
+
+  
+  [*Descrizione*], [È una descrizione generale del *processo di business* che il corrispondente Diagramma di Attività schematizza.],
+  [*Precondizioni*], [Definiscono lo stato in cui devono trovarsi obbligatoriamente il sistema e l'ambiente circostante prima che il Diagramma di Attività possa essere eseguito.],
+  [*Postcondizioni*], [Descrivono lo stato finale del sistema una volta che il Diagramma di Attività raggiunge un *nodo finale*.],
+  [*Trigger*], [Attività Iniziale che dà avvio all'esecuzione del Diagramma di Attività. Questo innesco può manifestarsi in tre modi:
+  - *Nodo Iniziale*.
+  - *Segnale Accettato*.
+  - *Segnale Temporale*],
+)
+
+== Diagrammi
+
+=== AD1 - Flusso di Esecuzione Analisi Integrata (Post-PUSH)
+
+==== Descrizione Attività
+- *Titolo*: Flusso di Esecuzione Analisi Integrata (Post-PUSH)
+- *Descrizione*: Il processo descrive l'attivazione e l'esecuzione coordinata dei controlli di qualità, sicurezza e documentazione in seguito a una modifica del codice.
+- *Precondizioni*: Il sistema ha ricevuto una notifica di push e ha salvato il contenuto del commit nel proprio ambiente.
+- *Trigger*: Rilevamento di una modifica del repository.
+- *Postcondizioni*: Lo stato del repository è aggiornato nella Dashboard e l'utente ha ricevuto un feedback immediato sulla qualità dell'ultimo commit.
+
+==== Flusso Procedurale:
++ *Azione*: Il sistema identifica i file modificati e le dipendenze coinvolte.
++ *Fork*: Il sistema lancia simultaneamente tre flussi indipendenti quali:
+  - *Analisi Qualità*: Fase in cui si effettua _Analisi Statica_ del codice.
+    - _Code Smell_.
+    - Rilevazione Bug.
+    - _Code Coverage_ su Test esistenti.
+  - *Analisi Sicurezza*:
+    - _Secret Scanning_ per rilevare credenziali o token.
+    - Analisi Vulnerabilità note di dipendenze.
+    - Controllo conformità agli standard OWASP.
+  - *Validazione Documentale*:
+    - Verifica presenza di un file README.md.
+    - Controllo coerenza tra codice e specifiche OpenAPI/Swagger.
++ *Join*: Il sistema attende il completamento di tutti i rami precedentemente menzionati prima di procedere.
++ *Azione*: Produzione di un Report di Qualità dati i risultati dei tre rami di Analisi e Validazione.
++ *Nodo di Decisione*: Il sistema valuta i risultati ottenuti.
+  - *Criticità Rilevate*:
+    + *Sub-Activity*: Remediation Proattiva.
+  - *Successo o Warning*:
+    + *Finalizzazione*.
++ *Azione*: Aggiornamento della Dashboard con nuovi parametri e invio notifica allo sviluppatore.
++ *Fine Attività*.
+
+=== AD2 - Monitoraggio: Dashboard e Storico
+
+==== Descrizione Attività
+
+- *Titolo*: Visualizzazione Stato di Salute e Analisi Storica
+- *Descrizione*: Il processo descrive le operazioni di recupero e aggregazione dati che il sistema compie per fornire all'utente una panoramica della qualità del software.
+- *Precondizioni*: L’utente ha effettuato l’accesso alla piattaforma Code Guardian.
+- *Trigger*: L’utente accede alla sezione Dashboard o seleziona un gruppo di progetti/repository.
+- *Postcondizioni*: L’utente ha ottenuto una conoscenza approfondita dello stato attuale e dell'andamento temporale della qualità del software gestito.
+
+==== Flusso Procedurale
+
++ *Azione*: Il sistema identifica i repository associati al profilo utente o al gruppo selezionato.
++ *Fork*: Il sistema interroga i database per recuperare informazioni distinte in modo simultaneo:
+  - *Visione Aggregata*: Recupero metriche dell'ultima analisi (Code Smell, Vulnerabilità, Coverage).
+  - *Storico Analisi*: Recupero dei report storici dai commit precedenti.
+    - Elaborazione dei trend di evoluzione della qualità nel tempo.
++ *Join*: Il sistema attende il completamento di entrambi i recuperi dati per garantire una vista coerente.
++ *Azione*: Il sistema genera la vista grafica (grafici di trend, tabelle e contatori di stato).
++ *Azione*: Visualizzazione della Dashboard centralizzata all'utente.
++ *Nodo di Decisione*: L’utente valuta le informazioni visualizzate:
+  - Consultazione Storico:  L'utente seleziona un report passato.
+    - *\u{27F6}*: Il sistema visualizza il dettaglio dello storico.
+  - *Esportazione*: L'utente richiede un report e il sistema genera un riepilogo in un qualche formato.
++ *Fine Attività*
+
+
+=== AD3 - Ciclo di Remediation Proattiva
+
+==== Descrizione Attività
+
+- *Titolo*: Gestione Suggerimenti e Creazione Pull Request
+- *Descrizione*: Il processo descrive come il sistema interviene attivamente per risolvere le criticità rilevate, automatizzando la proposta di codice e la gestione del repository.
+- *Precondizioni*: L’Audit Automatico completato.
+- *Trigger*: Il sistema rileva criticità risolvibili nell'ultimo audit effettuato.
+- *Postcondizioni*: Il repository contiene una proposta di modifica concreta che non ha richiesto scrittura manuale da parte dello sviluppatore.
+
+==== Flusso Procedurale:
+
++ *Azione*: Il sistema elabora lo snippet di codice correttivo e prepara i metadati della modifica
++ *Fork*:
+  - *Interfaccia*: Caricamento del _Suggerimento di Correzione_ con visualizzazione del _diff_ nella dashboard.
+  - *Sistema*: Verifica lo stato del repository e dei permessi di creazione branch.
++ *Join*: Il sistema è pronto a ricevere l'input dell'utente.
++ *Nodo di Decisione*: L'utente valuta la risposta.
+  - *Rifiuto*: Utente scarta il suggerimento.
+    - *Fine Attività*
+  - *Approvazione*: L'utente accetta la correzione proposta.
+    + *Azione*: Il sistema crea un proprio branch dedicato con le modifiche effettuate.
+    + *Azione*: Il sistema apre una Pull Request verso il ramo principale.
++ *Fine Attività*.
 
 #pagebreak()
 
