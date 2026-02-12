@@ -3840,6 +3840,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il Business Owner ha approfondito la conoscenza delle competenze e del carico di lavoro del developer.
   
 - *Inclusioni:* 
+  - #link(<UCBO2.5.2>)[[UCBO2.5.2]]
   - #link(<UCBO3.1>)[[UCBO3.1]]
   - #link(<UCBO3.2>)[[UCBO3.2]]
   - #link(<UCBO3.3>)[[UCBO3.3]]
