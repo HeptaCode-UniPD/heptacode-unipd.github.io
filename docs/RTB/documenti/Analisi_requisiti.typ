@@ -3039,6 +3039,125 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
+= Diagrammi di Attività
+
+== Introduzione
+
+Mentre i Casi d’Uso definiscono "cosa" il sistema debba fare, i Diagrammi di Attività si pongono l'obiettivo di descrivere il "come", focalizzandosi sulla logica procedurale e sul flusso di controllo dei processi di business di Code Guardian. Essi rappresentano la traduzione dinamica dei requisiti, permettendo di visualizzare non solo la sequenza temporale delle operazioni, ma anche le condizioni decisionali e le ramificazioni del flusso.\
+L'utilizzo di questa modellazione UML è cruciale per evidenziare la natura reattiva della piattaforma; in particolare, i diagrammi che seguono sono stati progettati per esaltare il supporto all'elaborazione parallela. Attraverso l'uso di nodi di Fork e Join, viene descritto come il sistema sia in grado di eseguire simultaneamente controlli di sicurezza, analisi di qualità e validazione documentale, ottimizzando le prestazioni e riducendo il tempo di feedback per lo sviluppatore.\
+Ciascun diagramma fornisce una visione dettagliata degli aspetti dinamici dei principali casi d'uso, fungendo da ponte tra la specifica funzionale e l'architettura logica del software. Di seguito vengono presentati i flussi relativi all'analisi post-push, alla gestione proattiva delle correzioni e al monitoraggio tramite dashboard.
+
+#v(1em)
+
+#table(
+  columns: (auto, 1fr),
+  inset: 10pt,
+  align: (left, left),
+  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
+  
+  table.header(
+     [*Campo*], [*Descrizione*],
+  ),
+
+  
+  [*Descrizione*], [È una descrizione generale del *processo di business* che il corrispondendente Diagramma di Attività schematizza.],
+  [*Precondizioni*], [Definiscono lo stato in cui devono trovarsi obbligatoriamente il sistema e l'ambiente circostante prima che il Diagramma di Attività possa essere eseguito.],
+  [*Postcondizioni*], [Descrivono lo stato finale del sistema una volta che il Diagramma di Attività raggiunge un *nodo finale*.],
+  [*Trigger*], [Attività Iniziale che dà avvio all'esecuzione del Diagramma di Attività. Questo innesco può manifestarsi in tre modi:
+  - *Nodo Iniziale*.
+  - *Segnale Accettato*.
+  - *Segnale Temporale*],
+)
+
+== Diagrammi
+
+=== AD1 - Flusso di Esecuzione Analisi Integrata (Post-PUSH)
+
+==== Descrizione Attività
+- *Titolo*: Flusso di Esecuzione Analisi Integrata (Post-PUSH)
+- *Descrizione*: Il processo descrive l'attivazione e l'esecuzione coordinata dei controlli di qualità, sicurezza e documentazione in seguito a una modifica del codice.
+- *Precondizioni*: Il sistema ha ricevuto una notifica di push e ha salvato il contenuto del commit nel proprio ambiente.
+- *Trigger*: Rilevamento di una modifica del repository.
+- *Postcondizioni*: Lo stato del repository è aggiornato nella Dashboard e l'utente ha ricevuto un feedback immediato sulla qualità dell'ultimo commit.
+
+==== Flusso Procedurale:
++ *Azione*: Il sistema identifica i file modificati e le dipendenze coinvolte.
++ *Fork*: Il sistema lancia simultaneamente tre flussi indipendenti quali:
+  - *Analisi Qualità*: Fase in cui si effettua _Analisi Statica_ del codice.
+    - _Code Smell_.
+    - Rilevazione Bug.
+    - _Code Coverage_ su Test esistenti.
+  - *Analisi Sicurezza*:
+    - _Secret Scanning_ per rilevare credenziali o token.
+    - Analisi Vulnerabilità note di dipendenze.
+    - Controllo conformità agli standard OWASP.
+  - *Validazione Documentale*:
+    - Verifica presenza di un file README.md.
+    - Controllo coerenza tra codice e specifiche OpenAPI/Swagger.
++ *Join*: Il sistema attende il completamento di tutti i rami precedentemente menzionati prima di procedere.
++ *Azione*: Produzione di un Report di Qualità dati i risultati dei tre rami di Analisi e Validazione.
++ *Nodo di Decisione*: Il sistema valuta i risultati ottenuti.
+  - *Criticità Rilevate*:
+    + *Sub-Activity*: Remediation Proattiva.
+  - *Successo o Warning*:
+    + *Finalizzazione*.
++ *Azione*: Aggiornamento della Dashboard con nuovi parametri e invio notifica allo sviluppatore.
++ *Fine Attività*.
+
+=== AD2 - Monitoraggio: Dashboard e Storico
+
+==== Descrizione Attività
+
+- *Titolo*: Visualizzazione Stato di Salute e Analisi Storica
+- *Descrizione*: Il processo descrive le operazioni di recupero e aggregazione dati che il sistema compie per fornire all'utente una panoramica della qualità del software.
+- *Precondizioni*: L’utente ha effettuato l’accesso alla piattaforma Code Guardian.
+- *Trigger*: L’utente accede alla sezione Dashboard o seleziona un gruppo di progetti/repository.
+- *Postcondizioni*: L’utente ha ottenuto una conoscenza approfondita dello stato attuale e dell'andamento temporale della qualità del software gestito.
+
+==== Flusso Procedurale
+
++ *Azione*: Il sistema identifica i repository associati al profilo utente o al gruppo selezionato.
++ *Fork*: Il sistema interroga i database per recuperare informazioni distinte in modo simultaneo:
+  - *Visione Aggregata*: Recupero metriche dell'ultima analisi (Code Smell, Vulnerabilità, Coverage).
+  - *Storico Analisi*: Recupero dei report storici dai commit precedenti.
+    - Elaborazione dei trend di evoluzione della qualità nel tempo.
++ *Join*: Il sistema attende il completamento di entrambi i recuperi dati per garantire una vista coerente.
++ *Azione*: Il sistema genera la vista grafica (grafici di trend, tabelle e contatori di stato).
++ *Azione*: Visualizzazione della Dashboard centralizzata all'utente.
++ *Nodo di Decisione*: L’utente valuta le informazioni visualizzate:
+  - Consultazione Storico:  L'utente seleziona un report passato.
+    - *\u{27F6}*: Il sistema visualizza il dettaglio dello storico.
+  - *Esportazione*: L'utente richede un report e il sistema genera un rieplogo in un qualche formato.
++ *Fine Attività*
+
+
+=== AD3 - Ciclo di Remediation Proattiva
+
+==== Descrizione Attività
+
+- *Titolo*: Gestione Suggerimenti e Creazione Pull Request
+- *Descrizione*: Il processo descrive come il sistema interviene attivamente per risolvere le criticità rilevate, automatizzando la proposta di codice e la gestione del repository.
+- *Precondizioni*: L’Audit Automatico completato.
+- *Trigger*: Il sistema rileva criticità risolvibili nell'ultimo audit effettuato.
+- *Postcondizioni*: Il repository contiene una proposta di modifica concreta che non ha richiesto scrittura manuale da parte dello sviluppatore.
+
+==== Flusso Procedurale:
+
++ *Azione*: Il sistema elabora lo snippet di codice correttivo e prepara i metadati della modifica
++ *Fork*:
+  - *Interfaccia*: Caricamento del _Suggerimento di Correzione_ con visualizzazione del _diff_ nella dashboard.
+  - *Sistema*: Verifica lo stato del repository e dei permessi di creazione branch.
++ *Join*: Il sistema è pronto a ricevere l'input dell'utente.
++ *Nodo di Decisione*: L'utente valuta la risposta.
+  - *Rifiuto*: Utente scarta il suggerimento.
+    - *Fine Attività*
+  - *Approvazione*: L'utente accetta la correzione proposta.
+    + *Azione*: Il sistema crea un proprio branch dedicato con le modifiche effettuate.
+    + *Azione*: Il sistema apre una Pull Request verso il ramo principale.
++ *Fine Attività*.
+
+#pagebreak()
+
 = Requisiti
 Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenclatura e il significato degli attributi fanno riferimento al documento _Norme di Progetto (capitolo 2.2.2.1)_. Per facilità di consultazione, si riportano di seguito le definizioni delle categorie adottate:
 
