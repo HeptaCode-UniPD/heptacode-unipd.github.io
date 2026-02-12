@@ -2806,7 +2806,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Project Manager preme il pulsante per annullare l'inserimento dei developer al progetto.
 
 - *Scenario principale:*
-  + Il Project Manager preme il pulsante per annullare l'operaizone di aggiunta developer.
+  + Il Project Manager preme il pulsante per annullare l'operazione di aggiunta developer.
   - Il sistema ripristina lo stato precedente all'aggiunta dei developer.
 
 - *Postcondizioni:* Il processo di aggiunta developer è stato annullato. Lo stato del sistema è coerente con la situazione precedente all’avvio dell'aggiunta developer.
