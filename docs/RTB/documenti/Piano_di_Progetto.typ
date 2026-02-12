@@ -1526,7 +1526,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     1. Progettazione e Programmazione del PoC
     2. Avanzamento nella stesura dei documenti e revisione degli stessi
     3. Revisione sistematica dei Casi d'Uso
-    4. Correzione e ultimazione dei Casi d'Uso
+    4. Correzione dei Casi d'Uso
   ],
 
   [_Rischi incontrati_],
@@ -1664,22 +1664,26 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [26 gennaio 2026 - 8 febbraio 2026],
-  [_Responsabile_],[],
+  [_Responsabile_],[Laura Venturini],
   [_Giorni di sprint_], [14],
 
   [_Attività Svolte_],
-  [
+  [ 1. Riformulazione dei Casi d'Uso con aumento della granularità
+  2. Stesura dei requisiti
+  3. Stesura del capitolo 5 del Piano di Qualifica
+  4. Ultimazione del PoC
 
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. Mancato rispetto delle tempistiche 
+    2. Rallentamento dovuto ad altri impegni personali o universitari
   ],
 
   [_Mitigazione_],
   [
-    1.
+    1. È stato previsto il recupero delle ore pianificate ma non effettivamente svolte in questo sprint negli sprint successivi
   ]
 )
 
