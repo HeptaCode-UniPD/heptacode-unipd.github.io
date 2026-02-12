@@ -79,8 +79,9 @@ Domande per Cardin sul file:
   
   table.header(
   [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*],
-  ..storia_modifiche.flatten()
   ),
+
+  ..storia_modifiche.flatten()
 )
 
 #pagebreak()
@@ -2771,6 +2772,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Project Manager visualizza una barra di ricerca per il nome dei developer (*<\<include>>* #link(<UCPM1.4.2>)[[UCPM1.4.2]]).
   + Il Project Manager visualizza una lista di developer tra cui cercare.(*<\<include>>* #link(<UCPM1.6>)[[UCPM1.6]]). 
   + Il Project Manager seleziona i developer che desidera.
+  + Il Project Manager seleziona il ruolo del developer all'interno del progetto (tra i ruoli disponibili nel profilo del developer).
   + Il Project Manager conferma l'inserimento dei developer.
   + Il Project Manager visualizza, nel progetto, i developer che ha inserito.
 
@@ -3246,7 +3248,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 == Specifica dei casi d'uso - Business Owner
 
-=== UCBO1: Visualizzazione dashboard home con statistiche 
+=== UCBO1 - Visualizzazione dashboard home con statistiche 
 #align(center, [#image("../../asset/UC/business-owner/UCBO1.png", height: 10cm)])
 
 <UCBO1>
@@ -3255,13 +3257,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Business Owner accede alla home page dell'applicazione che mostra una panoramica aggregata di tutti i progetti.
   
-- *Precondizioni:* Il Business Owner è autenticato nel sistema ed esiste almeno un progetto nel sistema.
+- *Precondizioni:* Il Business Owner è autenticato nel sistema.
   
 - *Trigger:* Viene caricata la home page del sistema dopo aver effettuato l'accesso accede all'applicazione.
   
 - *Scenario principale:*
-  + Il Business Owner visualizza la lista dei propri progetti attivi.
-  + Il Business Owner consulta il rapporto budget vs spesa complessivo (*<\<include>>* #link(<UCBO1.3>)[[UCBO1.3]]).
+  + Il Business Owner visualizza la lista dei propri progetti (*<\<include>>* #link(<UC9>)[[UC9]]).
+  + Il Business Owner consulta il rapporto budget vs spesa complessivo per ogni progetto (*<\<include>>* #link(<UCBO1.1>)[[UCBO1.1]]).
   + Il Business Owner può selezionare un progetto per analizzarlo nel dettaglio (#link(<UCBO2>)[[UCBO2]]).
   
 - *Scenario alternativo:* 
@@ -3272,48 +3274,97 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il Business Owner visualizza la propria home page.
   
 - *Inclusioni:* 
-  - #link(<UCBO1.1>)[[UCBO1.1]];
-  - #link(<UCBO1.3>)[[UCBO1.3]]; 
+  - #link(<UC9>)[[UC9]]
+  - #link(<UCBO1.1>)[[UCBO1.1]]; 
 - 
 - *Estensioni:*
   - #link(<UC4>)[[UC4]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCBO1.1: Visualizzazione grafici su progetti <UCBO1.1>
-
-- *Attore principale:* Business Owner
-  
-- *Descrizione:* Il Business Owner consulta le visualizzazioni grafiche che rappresentano statistiche aggregate sui progetti.
-  
-- *Precondizioni:* Il Business Owner sta visualizzando la propria home page (#link(<UCBO1>)[[UCBO1]]).
-  
-- *Trigger:* Il Business Owner si concentra sulla sezione grafici della dashboard.
-  
-- *Scenario principale:*
-  + Il sistema visualizza grafici a torta e/o istogrammi che rappresentano vari aspetti dei progetti.
-  + Il Business Owner interpreta i grafici per comprendere distribuzioni e proporzioni.
-  
-- *Postcondizioni:* Il Business Owner ha composto un quadro visivo della situazione dei progetti.
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-=== UCBO1.3: Visualizzazione rapporto budget vs spesa complessivo <UCBO1.3>
+=== UCBO1.1 - Visualizzazione rapporto budget vs spesa complessivo <UCBO1.1>
 
 - *Attore principale:* Business Owner
   
 - *Descrizione:* Il Business Owner consulta l’indicatore  aggregato che confronta il budget totale allocato con la spesa totale sostenuta.
   
-- *Precondizioni:* Il Business Owner sta visualizzando la dashboard "Home" (#link(<UCBO1>)[[UCBO1]]).
+- *Precondizioni:* Il Business Owner sta visualizzando la propria dashboard ed è presente almeno un progetto (#link(<UCBO1>)[[UCBO1]]).
   
-- *Trigger:* Il Business Owner consulta il widget/indicatore finanziario.
+- *Trigger:* Viene caricata la home page del sistema dopo aver effettuato l'accesso accede all'applicazione.
   
 - *Scenario principale:*
-  + Il sistema visualizza un indicatore che mostra budget totale e spesa totale.
-  + Il Business Owner analizza se la spesa complessiva è entro il budget complessivo.
-  
-- *Postcondizioni:* Il Business Owner conosce la situazione finanziaria aggregata.
+  + Il sistema mostra un indicatore che mostra budget totale allocato (*<\<include>>* #link(<UCBO1.1.1>)[[UCBO1.1.1]]).
+  + Il sistema mostra un indicatore che mostra le spese sostenute (*<\<include>>* #link(<UCBO1.1.2>)[[UCBO1.1.2]]).
+  + Il sistema mostra un grafico a riempimento che confronta la spesa totale e il budget allocato (*<\<include>>* #link(<UCBO1.1.3>)[[UCBO1.1.3]]).
 
+- *Postcondizioni:* Il Business Owner ha visualizzato le spese per il progetto.
+
+- *Inclusioni:*
+  - #link(<UCBO1.1.1>)[[UCBO1.1.1]]
+  - #link(<UCBO1.1.2>)[[UCBO1.1.2]]
+  - #link(<UCBO1.1.3>)[[UCBO1.1.3]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO1.1.1 - Visualizzazione budget totale allocato <UCBO1.1.1>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza il budget totale da esso allocato al progetto.
+
+- *Precondizioni:* Il Business Owner ha eseguito l'accesso.
+
+- *Trigger:* Viene caricata la dashboard del profilo o la pagina delle specifiche di un progetto.
+
+- *Scenario principale:* 
+  + Il sistema mostra un indicatore che mostra budget totale allocato.
+
+- *Scenari alternativi:*
+  - Il Business Owner non ha ancora allocato il budget totale per il progetto:
+    + Viene visualizzata la scritta N.D. (Non disponibile).
+
+- *Postcondizioni:* Il Business Owner ha visualizzato il budget totale allocato per il progetto.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO1.1.2 - Visualizzazione spese sostenute <UCBO1.1.2>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza le spese sostenute, da lui dichiarate, all'interno del progetto.
+
+- *Precondizioni:* Il Business Owner ha eseguito l'accesso.
+
+- *Trigger:* Viene caricata la dashboard del profilo o la pagina delle specifiche di un progetto.
+
+- *Scenario principale:* 
+  + Il sistema mostra un indicatore che mostra la spesa dichiarata in quel momento.
+
+- *Scenari alternativi:*
+  - Il Business Owner non ha ancora allocato la spesa sostenuta per il progetto:
+    + Viene visualizzata la scritta N.D. (Non disponibile).
+
+- *Postcondizioni:* Il Business Owner ha visualizzato la spesa sostenuta per il progetto.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO1.1.3 - Grafico di confronto spese <UCBO1.1.3>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza un grafico di rapporto tra la spesa complessiva e la spesa sostenuta.
+
+- *Precondizioni:* Il Business Owner ha eseguito l'accesso.
+
+- *Trigger:* Viene caricata la dashboard del profilo o la pagina delle specifiche di un progetto.
+
+- *Scenario principale:* 
+  + Il sistema mostra un grafico che confronta il budget totale e la spesa fino ad ora sostenuta.
+
+- *Scenari alternativi:*
+  - Il Business Owner non ha ancora allocato il budget complessivo per il progetto:
+    + Viene visualizzata la scritta N.D. (Non disponibile).
+
+- *Postcondizioni:* Il Business Owner ha visualizzato il grafico di confronto tra la spesa complessiva e quella sostenuta.
+
+#line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
@@ -3325,35 +3376,176 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Business Owner
   
-- *Descrizione:* Il Business Owner seleziona ed entra in un progetto specifico per analizzarne i dettagli: tecnologie, repository, issue, costi e team.
+- *Descrizione:* Il Business Owner seleziona ed entra in un progetto specifico per analizzarne i dettagli.
   
-- *Precondizioni:* Il Business Owner sta visualizzando una lista o dashboard dei progetti.
+- *Precondizioni:* Il Business Owner è proprietario di almeno un progetto.
   
-- *Trigger:* Il Business Owner seleziona un progetto specifico dalla lista/dashboard.
+- *Trigger:* Il Business Owner seleziona un progetto specifico dalla lista della propria dashboard.
   
 - *Scenario principale:*
-  + Il Business Owner visualizza le informazioni principali del progetto ad esempio nome.
-  + Il Business Owner visualizza la *lista delle tecnologie utilizzate* nel progetto (*<\<include>>* #link(<UCBO2.1>)[[UCBO2.1]]).
-  
-  + Il Business Owner consulta la *vista generale sulle repository* del progetto (*<\<include>>* #link(<UCBO2.2>)[[UC2.2]]).
-  
-  + Il Business Owner visualizza la *lista del team di sviluppo* (*<\<include>>* #link(<UCBO2.3>)[[UCBO2.3]]).
-  
-  + Il Business Owner può tornare alla dashboard "Home".
+  + Il Business Owner visualizza il nome del progetto (*<\<include>>* #link(<UC10.1>)[[UC10.1]]).
+  + Il Business Owner visualizza l'opzione di aggiunta del budget complessivo (#link(<UCBO2.1>)[[UCBO2.1]]).
+  + Il Business Owner visualizza l'opzioine di aggiunta spese sostenute (#link(<UCBO2.2>)[[UCBO2.2]]).
+  + Il sistema mostra un indicatore che mostra budget totale allocato (*<\<include>>* #link(<UCBO1.1.1>)[[UCBO1.1.1]]).
+  + Il sistema mostra un indicatore che mostra le spese sostenute (*<\<include>>* #link(<UCBO1.1.2>)[[UCBO1.1.2]]).
+  + Il sistema mostra un grafico a riempimento che confronta la spesa totale e il budget allocato (*<\<include>>* #link(<UCBO1.1.3>)[[UCBO1.1.3]]).
+  + Il sistema mostra le informazioni del Project Manager per il progetto (*<\<include>>* #link(<UCBO2.3>)[[UCBO2.3]]).
+  + Il Business Owner visualizza la lista delle tecnologie utilizzate nel progetto (*<\<include>>* #link(<UCBO2.4>)[[UCBO2.4]]).
+  + Il Business Owner visualizza la lista del team di sviluppo (*<\<include>>* #link(<UCBO2.5>)[[UCBO2.5]]).
+  + Il Business Owner visualizza l'opzione per tornare alla dashboard.
   
 - *Postcondizioni:* Il Business Owner ha analizzato i dettagli del progetto selezionato.
   
 - *Inclusione:* 
-  - #link(<UCBO2.1>)[[UCBO2.1]]
-  - #link(<UCBO2.2>)[[UCBO2.2]]
-  - #link(<UCBO2.3>)[[UCBO2.3]]
+  - #link(<UC10.1>)[[UC10.1]]
+  - #link(<UCBO1.1.1>)[[UCBO1.1.1]]
+  - #link(<UCBO1.1.2>)[[UCBO1.1.2]]
+  - #link(<UCBO1.1.3>)[[UCBO1.1.3]]
+  - #link(<UCBO2.3>)[[UCBO2.3]] 
+  - #link(<UCBO2.4>)[[UCBO2.4]]
+  - #link(<UCBO2.5>)[[UCBO2.5]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCBO2.1: Visualizzare lista tecnologie utilizzate nel progetto 
+=== UCBO2.1 - Aggiunta budget complessivo <UCBO2.1>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner inserisce il budget complessivo per il progetto.
+
+- *Precondizioni:* Il Business Owner è autenticato e sta visualizzando le specifiche di un progetto.
+
+- *Trigger:* Il Business Owner seleziona l'opzione di aggiunta buget complessivo.
+
+- *Scenario principale:*
+  + Il sistema apre una finestra pop-up per l'inserimento del budget.
+  + Il Business Owner inserisce il budget (*<\<include>>* #link(<UCBO2.7>)[[UCBO2.7]]).
+  + Il sistema mostra l'opzione per l'annullamento dell'operazione.
+  + Il Business Owner conferma l'inserimento.
+
+- *Scenari alternativi:*
+  - Il Business Owner decide di annullare l'operazione (*<\<extend>>* #link(<UCBO2.6>)[[UCBO2.6]]). 
+  - - Si verifica un errore durante il caricamento della home page.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+    - Il caso d'uso termina senza successo.
+
+- *Postcondizioni:* Il budget complessivo è stato aggiunto al sistema.
+
+- *Inclusioni:*
+  - #link(<UCBO2.7>)[[UCBO2.7]]
+
+- *Estensioni:*
+  - #link(<UCBO2.6>)[[UCBO2.6]]
+  - #link(<UC4>)[[UC4]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.2 - Aggiunta spese sostenute <UCBO2.2>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner inserisce il le spese sostenute per il progetto.
+
+- *Precondizioni:* Il Business Owner è autenticato e sta visualizzando le specifiche di un progetto.
+
+- *Trigger:* Il Business Owner seleziona l'opzione di aggiunta delle spese sostenute.
+
+- *Scenario principale:*
+  + Il sistema apre una finestra pop-up per l'inserimento delle spese.
+  + Il Business Owner inserisce le spese (*<\<include>>* #link(<UCBO2.7>)[[UCBO2.7]]).
+  + Il sistema mostra l'opzione per l'annullamento dell'operazione.
+  + Il Business Owner conferma l'inserimento.
+
+- *Scenari alternativi:*
+  - Il Business Owner decide di annullare l'operazione (*<\<extend>>* #link(<UCBO2.6>)[[UCBO2.6]]). 
+  - - Si verifica un errore durante il caricamento della home page.
+    - Il sistema mostra un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+    - Il caso d'uso termina senza successo.
+
+- *Postcondizioni:* Le spese sostenute complessivo sono state aggiunte al sistema.
+
+- *Inclusioni:*
+  - #link(<UCBO2.7>)[[UCBO2.7]]
+
+- *Estensioni:*
+  - #link(<UCBO2.6>)[[UCBO2.6]]
+  - #link(<UC4>)[[UC4]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.3 - Visualzzazione informazioni Project Manager <UCBO2.3>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza le informazioni sul Project Manager di un progetto.
+
+- *Precondizioni:* Il Business Owner sta visualizzando i dettagli di un progetto (#link(<UCBO2>)[[UCBO2]]).
+
+- *Trigger:* La pagina di dettaglio del progetto viene caricata.
+
+- *Scenario principale:*
+  - Il sistema mostra il nome del Project Manager del progetto (*<\<include>>* #link(<UCBO2.3.1>)[[UCBO2.3.1]]).
+  - Il sistema mostra il contatto mail del Project Manager del progetto (*<\<include>>* #link(<UCBO2.3.2>)[[UCBO2.3.2]]).
+  - Il sistema mostra la data di creazione del progetto (*<\<include>>* #link(<UCBO2.3.3>)[[UCBO2.3.3]]).
+
+- *Postcondizioni:* Il Business Owner ha visualizzato le informazioni relative al Project Manager.
+
+- *Inclusioni:*
+  - #link(<UCBO2.3.1>)[[UCBO2.3.1]]
+  - #link(<UCBO2.3.2>)[[UCBO2.3.2]]
+  - #link(<UCBO2.3.3>)[[UCBO2.3.3]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.3.1 - Visualizzazione nome Project Manager di progetto <UCBO2.3.1>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza il nome del Project Manager.
+
+- *Precondizioni:* Il Business Owner si trova nella pagina di dettaglio di un progetto (#link(<UCBO2>)[[UCBO2]]).
+
+- *Trigger:* Viene caricata la pagina di dettaglio di un progetto.
+
+- *Scenario principale:*
+  + Il Business Owner visualizza il nome del Project Manager.
+
+- *Postcondizioni:* Il Business Owner ha visualizzato il nome del Project Manager.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.3.2 - Visualizzazione contatto mail Project Manager di progetto <UCBO2.3.2>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza il contatto mail del Project Manager.
+
+- *Precondizioni:* Il Business Owner si trova nella pagina di dettaglio di un progetto (#link(<UCBO2>)[[UCBO2]]).
+
+- *Trigger:* Viene caricata la pagina di dettaglio di un progetto.
+
+- *Scenario principale:*
+  + Il Business Owner visualizza il contatto mail del Project Manager.
+
+- *Postcondizioni:* Il Business Owner ha visualizzato il contatto mail del Project Manager.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.3.3 - Visualizzazione data creazione del progetto <UCBO2.3.3>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza la data di creazione nella quale il Project Manager ha creato il progetto.
+
+- *Precondizioni:* Il Business Owner si trova nella pagina di dettaglio di un progetto (#link(<UCBO2>)[[UCBO2]]).
+
+- *Trigger:* Viene caricata la pagina di dettaglio di un progetto.
+
+- *Scenario principale:*
+  + Il Business Owner visualizza la data nella quale il Project Manager ha creato il progetto.
+
+- *Postcondizioni:* Il Business Owner ha visualizzato la data di creazione nella quale il Project Manager ha creato il progetto.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.4 - Visualizzare lista stack tecnologico usato nel progetto 
 #align(center, [#image("../../asset/UC/business-owner/UCBO2.1.png", height: 3cm)])
 
-<UCBO2.1>
+<UCBO2.4>
 
 - *Attore principale:* Business Owner
   
@@ -3361,57 +3553,96 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
 - *Precondizioni:* Il Business Owner sta visualizzando un progetto (#link(<UCBO2>)[[UCBO2]]).
   
-- *Trigger:* Il Business Owner si concentra sulla sezione "Tecnologie" del progetto.
+- *Trigger:* Viene caricata la pagina di dettaglio di un progetto.
   
 - *Scenario principale:*
-  + Il sistema visualizza una lista delle tecnologie utilizzate nel progetto.
-  + Il Business Owner legge l'elenco per comprendere lo stack tecnologico.
+  + Il sistema mostra un insieme di elementi che descrivono lo stack tecnologico usato (*<\<include>>* #link(<UCBO2.4.1>)[[UCBO2.4.1]]).
+
+- *Scenari alternativi:*
+  - Non è possibile recuperare lo stack tecnolgico del progetto:
+    + Il sistema mostra un messaggio N.D. (Non disponibile).
   
-- *Postcondizioni:* Il Business Owner conosce le tecnologie utilizzate nel progetto.
+- *Postcondizioni:* Il Business Owner visualizza lo stack tecnologico usato nel progetto.
+
+- *Inclusioni:*
+  - #link(<UCBO2.4.1>)[[UCBO2.4.1]]
   
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCBO2.2: Visualizzazione generale sulle repository del progetto 
-#align(center, [#image("../../asset/UC/business-owner/UCBO2.2.png", height: 5cm)])
+=== UCBO2.4.1 - Visualizzazione elemento lista dello stack tecnologico <UCBO2.4.1>
+- *Attore principale:* Business Owner.
 
-<UCBO2.2>
+- *Descrizione:* Il Business Owner visualizza un singolo elemento tra la lista di tecnologie utilizzate.
 
-- *Attore principale:* Business Owner
-  
-- *Descrizione:* Il Business Owner consulta una vista d'insieme delle repository che compongono il progetto.
-  
-- *Precondizioni:* Il Business Owner è entrato in un progetto (#link(<UCBO2>)[[UCBO2]]).
-  
-- *Trigger:* Il Business Owner si concentra sulla sezione "Repository" del progetto.
-  
+- *Trigger:* Viene caricata la pagina di dettaglio di un progetto o la pagina di dettaglio di uno sviluppatore.
+
 - *Scenario principale:*
-  + Il sistema visualizza una lista o panoramica delle repository del progetto identificate dal nome.
-  + Il Business Owner consulta le *stime dei costi* (*<\<include>>* #link(<UCBO2.2.2>)[[UCBO2.2.2]]).
-  
-- *Postcondizioni:* Il Business Owner ha una visione generale della struttura repository del progetto.
-  
-- *Inclusioni:* 
-  - #link(<UCBO2.2.2>)[[UCBO2.2.2]]
+  + Il sistema mostra il logo della tecnologia (*<\<include>>* #link(<UCBO2.4.2>)[[UCBO2.4.2]]).
+  + Il sistema mostra il nome della tecnologia (*<\<include>>* #link(<UCBO2.4.3>)[[UCBO2.4.3]]).
+  + Il sistema ne mostra l'utilizzo all'interno del progetto (backend / frontend / database ecc.) (*<\<include>>* #link(<UCBO2.4.4>)[[UCBO2.4.4]]).
+
+- *Postcondizioni:* Il Business Owner ha visualizzato lo stack tecnologico.
+
+- *Inclusioni:*
+  - #link(<UCBO2.4.2>)[[UCBO2.4.2]]
+  - #link(<UCBO2.4.3>)[[UCBO2.4.3]]
+  - #link(<UCBO2.4.4>)[[UCBO2.4.4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
+=== UCBO2.4.2 - Visualizzazione logo tecnologia <UCBO2.4.2>
+- *Attore principale:* Business Owner.
 
-=== UCBO2.2.2: Visualizzazione stima dei costi <UCBO2.2.2>
+- *Descrizione:* Il Business Owner visualizza il logo della tecnologia.
 
-- *Attore principale:* Business Owner
-- *Descrizione:* Il Business Owner consulta una stima dei costi associati al progetto o alle sue repository.
-- *Precondizioni:* Il Business Owner sta visualizzando la vista repository del progetto (#link(<UCBO2.2>)[[UCBO2.2]]).
-- *Trigger:* Il Business Owner cerca informazioni sui costi.
+- *Trigger:* Viene caricata la lista dello stack tecnologico (#link(<UCBO2.4>)[[UCBO2.4]]).
+
 - *Scenario principale:*
-  + Il sistema visualizza una stima dei costi (se calcolabile dal sistema).
-  + Il Business Owner legge il valore per comprendere l'impatto finanziario.
-- *Postcondizioni:* Il Business Owner ha una stima dei costi del progetto.
+  + Il sistema mostra il logo della tecnologia utilizzata.
+
+- *Scenario alternativo:*
+  - Non viene identificato un logo per la tecnolgia identificata:
+    + Viene mostrata un immagine di default. 
+
+- *Postcondizioni:* Il Business Owner ha visualizzato il logo della tecnologia descritta.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCBO2.3: Visualizzazione lista del team di sviluppo 
+=== UCBO2.4.3 - Visualizzazione nome tecnologia <UCBO2.4.3>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza il nome della tecnologia.
+
+- *Trigger:* Viene caricata la lista dello stack tecnologico (#link(<UCBO2.4>)[[UCBO2.4]]).
+
+- *Scenario principale:*
+  + Il sistema mostra il nome della tecnologia utilizzata.
+
+- *Postcondizioni:* Il Business Owner ha visualizzato il nome della tecnologia descritta.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.4.4 - Visualizzazione utilizzo tecnologia <UCBO2.4.4>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza l'utilizzo che la tecnologia ha all'interno del progetto.
+
+- *Trigger:* Viene caricata la lista dello stack tecnologico (#link(<UCBO2.4>)[[UCBO2.4]]).
+
+- *Scenario principale:*
+  + Il sistema mostra l'utilizzo che la tecnologia ha all'interno del progetto (backend, frontend, database, framework ecc.).
+
+- *Scenario alternativo:*
+  - Non viene identificato un utilizzo per la tecnolgia identificata:
+    + Viene mostrata la scritta N.D. (Non disponibile).
+
+- *Postcondizioni:* Il Business Owner ha visualizzato l'utilizzo che la tecnologia ha all'interno del progetto.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.5 - Visualizzazione lista del team di sviluppo 
 #align(center, [#image("../../asset/UC/business-owner/UCBO2.3.png", height: 6cm)])
-<UCBO2.3>
+<UCBO2.5>
 
 - *Attore principale:* Business Owner
 
@@ -3419,15 +3650,106 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
 - *Precondizioni:* Il Business Owner è entrato in un progetto (#link(<UCBO2>)[[UCBO2]]).
   
-- *Trigger:* Il Business Owner accede alla sezione "Team" del progetto.
+- *Trigger:* Viene caricata la pagina di dettaglio di un progetto.
   
 - *Scenario principale:*
-  + Il sistema visualizza una lista dei membri del team di sviluppo con Nome e Ruolo.
-  + Il Business Owner può visualizzare le *statistiche dei singoli developer* (*<\<include>>* #link(<UCBO3>)[[UCBO3]]).
+  + Il sistema visualizza una lista dei membri del team di sviluppo (*<\<include>>* #link(<UCBO2.5.1>)[[UCBO2.5.1]]).
+
+- *Scenari alternativi:*
+  - Non è possibile recuperare la lista dei membri del progetto:
+    + Il sistema mostra un messaggio N.D. (Non disponibile).
   
-- *Postcondizioni:* Il Business Owner conosce la composizione del team del progetto.
+- *Postcondizioni:* Il Business Owner ha visualizzato la composizione del team del progetto.
   
-- *Inclusioni:* #link(<UCBO3>)[[UCBO3]]
+- *Inclusioni:* #link(<UCBO2.5.1>)[[UCB2.5.1]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCB2.5.1 - Visualizzazione elemento lista del team di sviluppo <UCBO2.5.1>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner sta visualizzando il dettaglio di un elemento della lista dei componenti di un progetto (#link(<UCBO2.5>)[[UCBO2.5]]).
+
+- *Precondizioni:* Esiste almeno un developer appartenente al progetto.
+
+- *Trigger:* Viene caricata la lista che elenca il team di sviluppo del progetto.
+
+- *Scenario principale:*
+  + Il sistema mostra il nome del developer (*<\<include>>* #link(<UCBO2.5.2>)[[UCBO2.5.2]]).
+  + Il sistema mostra il ruolo del developer (*<\<include>>* #link(<UCBO2.5.3>)[[UCBO2.5.3]]). 
+  + Il Business Owner può visualizzare i dettagli del singolo developer (#link(<UCBO3>)[[UCBO3]]).
+
+- *Postcondizioni:* Il Business Owner ha visualizzato il singolo elemento della lista del team.
+
+- *Inclusioni:*
+  - #link(<UCBO2.5.2>)[[UCBO2.5.2]]
+  - #link(<UCBO2.5.3>)[[UCBO2.5.3]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.5.2 - Nome developer del team di sviluppo di un progetto <UCBO2.5.2>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza il nome di un membro del team di sviluppo del progetto.
+
+- *Precondizioni:* Il Business Owner sta visualizzando un elemento della lista del team di sviluppo di un progetto (#link(<UCBO2.5.1>)[[UCBO2.5.1]])
+
+- *Trigger:* Viene caricata la lista del team di sviluppo di un progetto.
+
+- *Scenario principale:*
+  + Il sistema mostra il nome dello sviluppatore.
+
+- *Postocondizioni:* Il Business Owner ha visualizzato il nome dello sviluppatore.
+
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.5.3 - Ruolo developer del team di sviluppo di un progetto <UCBO2.5.3>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner visualizza il ruolo di un membro del team di sviluppo del progetto.
+
+- *Precondizioni:* Il Business Owner sta visualizzando un elemento della lista del team di sviluppo di un progetto (#link(<UCBO2.5.1>)[[UCBO2.5.1]])
+
+- *Trigger:* Viene caricata la lista del team di sviluppo di un progetto.
+
+- *Scenario principale:*
+  + Il sistema mostra il ruolo dello sviluppatore per quel progetto.
+
+- *Postocondizioni:* Il Business Owner ha visualizzato il ruolo dello sviluppatore.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.6 - Annullamento operazione di aggiunta <UCBO2.6>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner decide di annullare l'operazione di aggiunta del budget complessivo (#link(<UCBO2.1>)[[UCBO2.1]]) o della spesa sostenuta (#link(<UCBO2.2>)[[UCBO2.2]]).
+
+- *Precondizioni:* Il Busindess Owner sta eseguendo un operazione di aggiunta budget complessivo o aggiunta spesa sostentuta.
+
+- *Trigger:* Il Business Owner preme il pulsante per annullare l'operazione.
+
+- *Scenario principale:*
+  + Il sistema annulla l'operazione. 
+  + Il sistema reindirizza il Business Owner alla pagina di dettaglio del progetto.
+
+- *Postcondizioni:* Il Business Owner si trova nella pagina di dettaglio del progetto.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO2.7 - Inserimento spese <UCBO2.7>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner inserisce il budget nello spazio dedicato.
+
+- *Precondizioni:* Il Business Owner sta eseguendo la procedura di aggiunta del budget complessivo per un progetto.
+
+- *Trigger:* Viene caricato il pop-up per l'aggiunta del budget.
+
+- *Scenario principale:*
+  + Il Business Owner inserisce la cifra desiderata.
+
+- *Postcondizioni:* Il budget complessivo è stato inserito nello spazio dedicato.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -3442,20 +3764,22 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
 - *Descrizione:* Il Business Owner consulta le statistiche e informazioni dettagliate di uno specifico developer del team.
   
-- *Precondizioni:* Il Business Owner sta visualizzando la lista del team (#link(<UCBO2.3>)[[UCBO2.3]]).
+- *Precondizioni:* Il Business Owner sta visualizzando un elemento dalla lista del team (#link(<UCBO2.5.1>)[[UCBO2.5.1]]).
   
-- *Trigger:* Il Business Owner seleziona un developer dalla lista del team.
+- *Trigger:* Il Business Owner seleziona la voce di dettaglio del developer dalla lista del team.
   
 - *Scenario principale:*
-  + Il Business Owner vede il *numero di progetti* a cui il developer ha lavorato e sta lavorando (*<\<include>>* #link(<UCBO3.1>)[[UCBO3.1]]).
-  + Il Business Owner vede il nome delle repository alle quali sta lavorando in base al progetto.
-  + Il Business Owner consulta i *linguaggi e tecnologie affini* del developer (*<\<include>>* #link(<UCBO3.2>)[[UCBO3.2]]).
+  + Il Business Owner visualizza il nome dello sviluppatore (*<\<include>>* #link(<UCBO2.5.2>)[[UCBO2.5.2]]). 
+  + Il Business Owner vede il numero di progetti a cui il developer ha lavorato e sta lavorando (*<\<include>>* #link(<UCBO3.1>)[[UCBO3.1]]).
+  + Il Business Owner consulta i linguaggi e tecnologie affini del developer (*<\<include>>* #link(<UCBO3.2>)[[UCBO3.2]]).
+  + Il Business Owner consulta i ruoli assumibili dal developer (*<\<include>>* #link(<UCBO3.3>)[[UCBO3.3]]).
   
 - *Postcondizioni:* Il Business Owner ha approfondito la conoscenza delle competenze e del carico di lavoro del developer.
   
 - *Inclusioni:* 
   - #link(<UCBO3.1>)[[UCBO3.1]]
   - #link(<UCBO3.2>)[[UCBO3.2]]
+  - #link(<UCBO3.3>)[[UCBO3.3]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3463,18 +3787,16 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Business Owner
   
-- *Descrizione:* Il Business Owner consulta l'elenco e il conteggio dei progetti associati al developer.
+- *Descrizione:* Il Business Owner il conteggio dei progetti associati al developer.
   
-- *Precondizioni:* Il Business Owner sta visualizzando le statistiche di un developer (#link(<UCBO3>)[[UCBO3]]).
+- *Precondizioni:* Il Business Owner sta visualizzando i dettagli del profilo di un developer (#link(<UCBO3>)[[UCBO3]]).
   
-- *Trigger:* Il Business Owner cerca informazioni sul carico di progetti del developer.
+- *Trigger:* Viene caricata la pagina di dettaglio del profilo di un developer.
   
 - *Scenario principale:*
-  + Il sistema visualizza:
-    - Numero totale di progetti in cui il developer ha lavorato
-    - Lista dei progetti (passati e attuali)
+    - Il sistema mostra il numero totale di progetti in cui il developer ha lavorato
   
-- *Postcondizioni:* Il Business Owner visualizza il coinvolgimento del developer nei vari progetti.
+- *Postcondizioni:* Il Business Owner visualizza il coinvolgimento del developer in vari progetti.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3485,17 +3807,33 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
 - *Descrizione:* Il Business Owner consulta le competenze tecnologiche del developer.
   
-- *Precondizioni:* Il Business Owner sta visualizzando le statistiche di un developer (#link(<UCBO3>)[[UCBO3]]).
+- *Precondizioni:* Il Business Owner sta visualizzando i dettagli del profilo di un developer (#link(<UCBO3>)[[UCBO3]]).
   
-- *Trigger:* Il Business Owner cerca informazioni sulle competenze tecniche del developer.
+- *Trigger:* Viene caricata la pagina di dettaglio del profilo di un developer.
   
 - *Scenario principale:*
-  + Il sistema visualizza:
-    - Linguaggi di programmazione conosciuti/utilizzati
-  
-  + Il Business Owner valuta le competenze tecniche del developer.
-  
+  + Il sistema mostra una lista con i linguaggi di programmazione conosciuti/utilizzati (*<\<include>>* #link(<UCBO2.4.1>)[[UCBO2.4.1]]).
+    
 - *Postcondizioni:* Il Business Owner conosce le competenze tecnologiche del developer.
+
+- *Inclusioni:*
+  - #link(<UCBO2.4.1>)[[UCBO2.4.1]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCBO3.3 - Consultazione ruoli developer <UCBO3.3>
+- *Attore principale:* Business Owner.
+
+- *Descrizione:* Il Business Owner consulta i ruoli assumibili da un developer.
+
+- *Precondizioni:* Il Business Owner sta visualizzando i dettagli del profilo di un developer (#link(<UCBO3>)[[UCBO3]]).
+
+- *Trigger:* Viene caricata la pagina di dettaglio del profilo di un developer.
+
+- *Scenario principale:*
+  + Il sistema mostra una stringa con i ruoli assumibili da developer.
+
+- *Postcondizioni:* Il Business Owner ha visualizzato i ruoli che il developer può assumere.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
