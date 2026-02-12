@@ -402,7 +402,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + La procedura di autenticazione viene interrotta.
-  + L'Utente è rendirizzato alla schermata iniziale.
+  + L'Utente è reindirizzato alla schermata iniziale.
 
 - *Postcondizioni:* L’utente non è autenticato e si trova nella pagina di login.
 
@@ -1376,7 +1376,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:* \
   - Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sui test.
-  - Al Developer vengono poposte remediation riguardante l'area di test, per ogni documento riportato. 
+  - Al Developer vengono proposte remediation riguardante l'area di test, per ogni documento riportato. 
   - Il Developer visualizza un pulsante per tornare alla pagina precedente.
   - Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sui test.
 
@@ -1585,7 +1585,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - Il sistema rileva che la remediation non è più valida (*<\<extend>>* #link(<UCD6.5>)[[UCD6.5]]).
   - Uno o più file sono stati modificati sulla repository dopo la generazione della remediation (*<\<extend>>* #link(<UCD6.6>)[[UCD6.6]]).
   
-- *Postcondizioni:* è stata avviata una richiesta di pull request su github che previsualizza l'aggiornamento del repository secondo remediation.
+- *Postcondizioni:* è stata avviata una richiesta di pull request su github, il Developer dovrà accettarla.
 
 - *Inclusioni:*
   - #link(<UCD6.4>)[[UCD6.4]]
@@ -2746,7 +2746,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Project Manager preme il pulsante per annullare l'inserimento dei repository al progetto.
 
 - *Scenario principale:*
-  + Il Project Manager preme il pulsante per annullare l'operaizone di aggiunta repository.
+  + Il Project Manager preme il pulsante per annullare l'operazione di aggiunta repository.
   - Il sistema ripristina lo stato precedente all'aggiunta dei repository.
 
 - *Postcondizioni:* Il processo di aggiunta repository è stato annullato. Lo stato del sistema è coerente con la situazione precedente all’avvio dell'aggiunta repository.
@@ -2851,7 +2851,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Project Manager accede alla sezione "Aggiungi repository" all'interno della gestione progetto.
 
 - *Scenario principale:*
-  + Il Project Manager visualizza una lista contenente i repository appartenenti ai Developer, facenti perte del progetto selezionato.
+  + Il Project Manager visualizza una lista contenente i repository appartenenti ai Developer, facenti parte del progetto selezionato.
   + Il Project Manager può scorrere la lista per individuare i repository di interesse.
 
 - *Postcondizioni:* Il Project Manager visualizza l'elenco dei repository potenzialmente associabili al progetto.
@@ -2907,7 +2907,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Project Manager sta gestendo un progetto esistente al quale è associato almeno un Developer.
 
-- *Trigger:* Il Project Manager seleizona la voce "Developer" sui dettagli del progetto.
+- *Trigger:* Il Project Manager seleziona la voce "Developer" sui dettagli del progetto.
 
 - *Scenario principale:*
   + Il Project Manager consulta l'elenco dei Developer che partecipano attualmente al progetto.
@@ -2941,7 +2941,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il Project Manager visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* Il Project Manager ha rimossp un developer dal progetto e ne sta visualizzando la lista aggiornata.
+- *Postcondizioni:* Il Project Manager ha rimosso un developer dal progetto e ne sta visualizzando la lista aggiornata.
 
 - *Estensioni:* 
   - #link(<UCPM1.8.1>)[[UCPM1.8.1]]
@@ -2962,7 +2962,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Project Manager preme il pulsante per annullare la rimozione del developer dal progetto.
 
 - *Scenario principale:*
-  + Il Project Manager preme il pulsante per annullare l'operaizone di rimoizone developer.
+  + Il Project Manager preme il pulsante per annullare l'operaizone di rimozione developer.
   - Il sistema ripristina lo stato precedente alla rimozione del developer.
 
 - *Postcondizioni:* Il processo di rimozione developer è stato annullato. Lo stato del sistema è coerente con la situazione precedente all’avvio della rimozione developer.
@@ -3130,11 +3130,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore principale:* Project Manager.
 
-- *Descrizione:* Il Project Manager clicca sul link per il rendirizzamento al profilo GitHub del developer che sta visualizzando, Il Project Manager ne visualizza il prifilo su GitHub.
+- *Descrizione:* Il Project Manager clicca sul link per il reindirizzamento al profilo GitHub del developer che sta visualizzando, Il Project Manager ne visualizza il profilo su GitHub.
 
 - *Precondizioni:* Il Project Manager sta visualizzando il profilo di un membro del team #link(<UCPM3.1>)[[UCPM3.1]].
 
-- *Trigger:* Il Project Manager clicca sul link del profilo GutHub
+- *Trigger:* Il Project Manager clicca sul link del profilo GitHub
 
 - *Scenario principale:*
   + Il Project Manager individua il link al profilo GitHub tra le informazioni del Developer.
@@ -3178,7 +3178,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Project Manager esamina la composizione tecnologica del progetto, individuando i framework e le librerie utilizzate nei vari repository per valutarne la coerenza e la distribuzione.
 
-- *Precondizioni:* IIl Project Manager sta consultando la panoramica dello stack tecnologico del progetto (#link(<UCPM4>)[[UCPM4]]).
+- *Precondizioni:* Il Project Manager sta consultando la panoramica dello stack tecnologico del progetto (#link(<UCPM4>)[[UCPM4]]).
 
 - *Trigger:* Il Project Manager si concentra sui framework e sulle librerie.
 
@@ -3228,7 +3228,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Project Manager si concentra sui consigli dell'AI.
 
 - *Scenario principale:*
-  + Il Project Manager consulta le proposte di ottimizzazione, riguardanti nuovi frameqork e nuove librerie, fornite dall'intelligenza artificiale.
+  + Il Project Manager consulta le proposte di ottimizzazione, riguardanti nuovi framework e nuove librerie, fornite dall'intelligenza artificiale.
   + Il Project Manager analizza le motivazioni tecniche a supporto di ogni suggerimento..
   + Il Project Manager valuta il potenziale impatto dei suggerimenti sulle tempistiche e sulle risorse del team.
 
@@ -3682,7 +3682,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 [R-14-F-O],[L'utente deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
 [R-15-F-D],[L'utente deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
 
-[R-92-F-P],[L'utente deve poter cercare un repisitory in una barra di ricerca],[#link(<UC7>)[UC7]],
+[R-92-F-P],[L'utente deve poter cercare un repository in una barra di ricerca],[#link(<UC7>)[UC7]],
 
 // DEV
 [R-78-F-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
@@ -3739,7 +3739,7 @@ remediation a seguito di un analisi sui test per un repository],[#link(<UCD6>)[U
 [R-83-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.4>)[UC10.4]]),
 [R-84-F-D],[Il Project Manager deve poter visualizzare i dettagli di un progetto],[#link(<UCPM2.1>)[UCPM2.1]],
 [R-85-F-D],[Il Project Manager deve poter visualizzare i dettagli di un suo progetto],[#link(<UCPM2.1>)[UCPM2.1]],
-[R-86-F-D],[Il Project Manager deve poter visualizzare, tra le altre informaizoni del progetto, l'elenco dei repository che lo compongono],([#link(<UCPM2.1>)[UCPM2.1], #link(<UC5.9>)[UC5.9]]),
+[R-86-F-D],[Il Project Manager deve poter visualizzare, tra le altre informazioni del progetto, l'elenco dei repository che lo compongono],([#link(<UCPM2.1>)[UCPM2.1], #link(<UC5.9>)[UC5.9]]),
 [R-87-F-D],[Il Project Manager deve poter creare un nuovo progetto],[#link(<UCPM1.2>)[UCPM1.2]],
 [R-88-F-D],[Il Project Manager deve poter inserire il nome del progetto],[#link(<UCPM1.2.1>)[UCPM1.2.1]],
 [R-89-F-D],[Il Project Manager deve poter modificare il nome di un progetto],[#link(<UCPM1.2.2>)[UCPM1.2.2]],
@@ -3755,7 +3755,7 @@ remediation a seguito di un analisi sui test per un repository],[#link(<UCD6>)[U
 [R-100-F-D],[Il Project Manager deve poter visualizzare e gestire gli attuali membri del team],[#link(<UCPM1.7>)[UCPM1.7]],
 [R-101-F-D],[Il Project Manager deve poter rimuovere un developer dal progetto],[#link(<UCPM1.8>)[UCPM1.8]],
 [R-102-F-D],[Il Project Manager deve poter annullare la rimozione di un developer dal progetto],[#link(<UCPM1.8.1>)[UCPM1.8.1]],
-[R-103-F-D],[Il Project Manager deve poter visualizzare le compoetenze del team su un progetto],[#link(<UCPM3>)[UCPM3]],
+[R-103-F-D],[Il Project Manager deve poter visualizzare le competenze del team su un progetto],[#link(<UCPM3>)[UCPM3]],
 [R-104-F-D],[Il Project Manager deve poter visualizzare il profilo di un membro del team (developer)],[#link(<UCPM3.1>)[UCPM3.1]],
 [R-105-F-D],[Il Project Manager deve poter visualizzare il profilo GitHub di un membro del team (developer)],[#link(<UCPM3.5>)[UCPM3.5]],
 [R-106-F-D],[Il Project Manager deve poter visualizzare le icone delle tecnologie di competenza, accanto al nome dei developer],[#link(<UCPM3.2>)[UCPM3.2]],
@@ -3767,7 +3767,7 @@ remediation a seguito di un analisi sui test per un repository],[#link(<UCD6>)[U
 [R-112-F-D],[Il Project Manager deve poter visualizzare lo stack tecnologico utilizzato in un progetto],[#link(<UCPM4>)[UCPM4]],
 [R-113-F-D],[Il Project Manager deve poter visualizzare l'elenco dei: framework e librerie,  utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.1>)[UCPM4.1]],
 [R-114-F-D],[Il Project Manager deve poter visualizzare l'elenco di segnalazioni a: framework e librerie con rischi di sicurezza o deprecate, utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.2>)[UCPM4.2]],
-[R-115-F-D],[Il Project Manager deve poter visualizzare suggerimenti generati dall'IA per la sostituzione di framework e librerie, utilizzate nello stack tecnologico di un progetto],[#link(<UCPM4.3>)[UCM4.3]],
+[R-115-F-D],[Il Project Manager deve poter visualizzare suggerimenti generati dall'IA per la sostituzione di framework e librerie, utilizzate nello stack tecnologico di un progetto],[#link(<UCPM4.3>)[UCPM4.3]],
 // BO
 )
 
