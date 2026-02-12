@@ -2764,10 +2764,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Project Manager sta consultando lo stack tecnologico (#link(<UCPM4>)[[UCPM4]]).
 
-- *Trigger:* Il Project Manager si concentra sui consigli dell'IA.
+- *Trigger:* Il Project Manager si concentra sui consigli dell'AI.
 
 - *Scenario principale:*
-  + Il Project Manager prende atto dei consigli da parte dell'IA. 
+  + Il Project Manager prende atto dei consigli da parte dell'AI. 
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -2785,7 +2785,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Business Owner accede alla home page dell'applicazione che mostra una panoramica aggregata di tutti i progetti.
   
-- *Precondizioni:* Il Business Owner è autenticato nel sistema ed siste almeno un progetto nel sistema.
+- *Precondizioni:* Il Business Owner è autenticato nel sistema ed esiste almeno un progetto nel sistema.
   
 - *Trigger:* Viene caricata la home page del sistema dopo aver effettuato l'accesso accede all'applicazione.
   
@@ -2978,7 +2978,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
 - *Scenario principale:*
   + Il Business Owner vede il *numero di progetti* a cui il developer ha lavorato e sta lavorando (*<\<include>>* #link(<UCBO3.1>)[[UCBO3.1]]).
-  + Il Busness Owner vede il nome delle repository alle quali sta lavorando in base al progetto.
+  + Il Business Owner vede il nome delle repository alle quali sta lavorando in base al progetto.
   + Il Business Owner consulta i *linguaggi e tecnologie affini* del developer (*<\<include>>* #link(<UCBO3.2>)[[UCBO3.2]]).
   
 - *Postcondizioni:* Il Business Owner ha approfondito la conoscenza delle competenze e del carico di lavoro del developer.
@@ -3053,7 +3053,7 @@ Ciascun diagramma fornisce una visione dettagliata degli aspetti dinamici dei pr
   ),
 
   
-  [*Descrizione*], [È una descrizione generale del *processo di business* che il corrispondendente Diagramma di Attività schematizza.],
+  [*Descrizione*], [È una descrizione generale del *processo di business* che il corrispondente Diagramma di Attività schematizza.],
   [*Precondizioni*], [Definiscono lo stato in cui devono trovarsi obbligatoriamente il sistema e l'ambiente circostante prima che il Diagramma di Attività possa essere eseguito.],
   [*Postcondizioni*], [Descrivono lo stato finale del sistema una volta che il Diagramma di Attività raggiunge un *nodo finale*.],
   [*Trigger*], [Attività Iniziale che dà avvio all'esecuzione del Diagramma di Attività. Questo innesco può manifestarsi in tre modi:
@@ -3120,7 +3120,7 @@ Ciascun diagramma fornisce una visione dettagliata degli aspetti dinamici dei pr
 + *Nodo di Decisione*: L’utente valuta le informazioni visualizzate:
   - Consultazione Storico:  L'utente seleziona un report passato.
     - *\u{27F6}*: Il sistema visualizza il dettaglio dello storico.
-  - *Esportazione*: L'utente richede un report e il sistema genera un rieplogo in un qualche formato.
+  - *Esportazione*: L'utente richiede un report e il sistema genera un riepilogo in un qualche formato.
 + *Fine Attività*
 
 
