@@ -173,7 +173,7 @@
 
 - *Precondizioni:* L'Utente è autenticato e sta eseguendo l'operazione di cambio ruolo #link(<UC3>)[[UC3]].
 
-- *Trigger:* L'utente selzione il tasto per uscire dall'operazione di Cambio Ruolo.
+- *Trigger:* L'utente seleziona il tasto per uscire dall'operazione di Cambio Ruolo.
 
 - *Scenario principale:* 
 + Il sistema reindirizza l'utente alla pagina di visualizzazione Area Personale.
@@ -223,7 +223,7 @@
 
 - *Precondizioni:* L'Utente è autenticato e sta eseguendo l'operazione di logout #link(<UC4>)[[UC4]].
 
-- *Trigger:* L'utente selziona il tasto per annullare l'operazione di logout.
+- *Trigger:* L'utente seleziona il tasto per annullare l'operazione di logout.
 
 - *Scenario principale:* 
 + Il sistema reindirizza l'utente alla pagina di visualizzazione Area Personale.
@@ -325,7 +325,7 @@
 
 - *Precondizioni:* Il Developer visualizza l'interfaccia per l'inserimento dei dati del repository.
 
-- *Trigger:* Il Developer selziona il tasto per l'annullamento di aggiunta di repoitory.
+- *Trigger:* Il Developer seleziona il tasto per l'annullamento di aggiunta di repository.
 
 - *Scenario principale:* 
   + Il Developer viene reindirizzato alla dashboard principale della piattaforma _Code Guardian_.
@@ -343,12 +343,12 @@
 
 - *Descrizione:* Il Developer desidera visualizzare la lista delle proprie Repository presenti sulla piattaforma _Code Guardian_. Le repository non fanno parte di un progetto.
 
-- *Precondizioni:* Il Developer si trova all'interno della daashboard.
+- *Precondizioni:* Il Developer si trova all'interno della dashboard.
 
 - *Trigger:* Caricamento della schermata della dashboard.
 
 - *Scenario principale:*
-  + Il sistema visualizza all'intero della dasboard una sezione contente la lista delle repository.
+  + Il sistema visualizza all'intero della dashboard una sezione contente la lista delle repository.
   + L'utente può scorrere per visualizzare tutte le repository presenti.
 
 - *Scenari alternativi:* \
@@ -367,12 +367,12 @@
 
 - *Descrizione:* Il Developer desidera visualizzare la lista dei progetti ai quali partecipa presenti sulla piattaforma _Code Guardian_.
 
-- *Precondizioni:* Il Developer si trova all'interno della daashboard.
+- *Precondizioni:* Il Developer si trova all'interno della dashboard.
 
 - *Trigger:* Caricamento della schermata della dashboard.
 
 - *Scenario principale:*
-  + Il sistema visualizza all'intero della dasboard una sezione contente la lista dei progetti.
+  + Il sistema visualizza all'intero della dashboard una sezione contente la lista dei progetti.
   + L'utente può scorrere per visualizzare tutti i progetti presenti.
   
 - *Scenari alternativi:* \
@@ -401,7 +401,7 @@
   + Il sistema mostra l'intestazione del progetto.
   + Il sistema mostra i widget aggregati (Analisi Sicurezza, Test, OWASP).
   + Il sistema mostra l'elenco dei Repository che compongono il progetto con i relativi indicatori di stato.
-  + Il sistma mostra il pulsante per tornare alla cisualizzazione della lista dei progetti. 
+  + Il sistema mostra il pulsante per tornare alla visualizzazione della lista dei progetti. 
   
 - *Scenari alternativi:* \
   Al passo 1: 
@@ -420,7 +420,7 @@
 
 #pagebreak()
 
-=== UCD5 - Visalizzazione Dettagli Repository
+=== UCD5 - visualizzazione Dettagli Repository
 <UCD5>
 - *Attore principale:* Developer.
 
@@ -436,7 +436,7 @@
   + Il sistema mostra l'opzione di visualizzazione delle proposte di remediation (*<\<extend>>* #link(<UCD6>)[[UCD6]]).
   + Il sistema mostra l'opzione di visualizzazione delle analisi precedenti (*<\<extend>>* #link(<UCD14>)[[UCD14]]).
   + Il sistema mostra l'opzione per avviare un Analisi sul repository (*<\<extend>>* #link(<UCD15>)[[UCD15]]).
-  + Il sistma mostra il pulsante per tornare alla pagina precedente. 
+  + Il sistema mostra il pulsante per tornare alla pagina precedente. 
   
 - *Scenari alternativi:* \
   Al passo 1: 
@@ -689,7 +689,7 @@
 - *Trigger:* Il Developer seleziona il file che gli interessa consultare.
 
 - *Scenario principale:* \
-  - Il sistema mostra il contenuto del file con le differenze tra il file presente e la proposta applicaile (_diff_). 
+  - Il sistema mostra il contenuto del file con le differenze tra il file presente e la proposta applicabile (_diff_). 
   - Il sistema mostra il path che il file seguirà all'interno del repository (*<\<extend>>* #link(<UCD6.1.2>)[[UCD6.1.2]]).
   - Il sistema mostra un pulsante per accettare la proposta dell'agente (*<\<extend>>* #link(<UCD6.2.1>)[[UCD6.2.1]]).
   - Il sistema mostra un pulsante per tornare alla pagina precedente.
@@ -713,7 +713,7 @@
 
 - *Descrizione:* Il Developer vuole cambiare la destinazione di uno specifico file nel contesto di una proposta di remediation.
 
-- *Precondizioni:* Il Developer sta visualizzando la proposta di remdiation relativa ad un singolo file #link(<UCD6.1>)[[UCD6.1]].
+- *Precondizioni:* Il Developer sta visualizzando la proposta di remediation relativa ad un singolo file #link(<UCD6.1>)[[UCD6.1]].
 
 - *Trigger:* Il Developer seleziona il pulsante per il cambio path.
 
@@ -743,7 +743,7 @@
 
 - *Precondizioni:* Il Developer annulla il Caso d'Uso #link(<UCD6.1.2>)[[UCD6.1.2]].
 
-- *Trigger:* Il Developer seleziona l’opzione di annullamento dell'inserimeno del path.
+- *Trigger:* Il Developer seleziona l’opzione di annullamento dell'inserimento del path.
 
 - *Scenario principale:*
   - Il Developer seleziona l’opzione di annullamento.
@@ -912,9 +912,9 @@
 
 - *Descrizione:* Il Developer visualizza le operazioni che sono in corso .
 
-- *Precondizioni:* Il Developer vuole visualizzare tutte le operaizioni da lui avviate e non ancora concluse. 
+- *Precondizioni:* Il Developer vuole visualizzare tutte le operazioni da lui avviate e non ancora concluse. 
 
-- *Trigger:* Il Developer si trova nella dashboard e seleziona la voce 'Procedimenti in Corso'.
+- *Trigger:* Il Developer si trova nella dashboard e seleziona la voce "Procedimenti in Corso".
 
 - *Scenario principale:*
   - Il sistema mostra l'opzione per visualizzare le Remediation avviate e le Analisi avviate .
@@ -963,10 +963,10 @@
 
 - *Precondizioni:* Il Developer vuole visualizzare le remediation da lui avviate e non ancora confermate tramite merge con il Repository coinvolto. 
 
-- *Trigger:* Il Developer si trova nella sezione 'Procedimenti in Corso' e seleziona la voce di Remediation in Corso.
+- *Trigger:* Il Developer si trova nella sezione "Procedimenti in Corso" e seleziona la voce di Remediation in Corso.
 
 - *Scenario principale:*
-  - Il sistema mostra la lista dei branch aperti per effettuare remdiation ai quali non è stata accettata la pull request.
+  - Il sistema mostra la lista dei branch aperti per effettuare remediation ai quali non è stata accettata la pull request.
   - Il sistema mostra i nomi delle repository su cui un branch sta effettuando l'operazione.
   - Il sistema mostra la data relativa all'avvio del processo di remediation.
   - Il sistema mostra un pulsante per tornare alla pagina precedente
@@ -992,7 +992,7 @@
 
 - *Precondizioni:* Il Developer vuole visualizzare le analisi da lui avviate e non ancora confermate tramite merge con il Repository coinvolto. 
 
-- *Trigger:* Il Developer si trova nella sezione 'Procedimenti in Corso' e seleziona la voce di Analisi in Corso.
+- *Trigger:* Il Developer si trova nella sezione "Procedimenti in corso" e seleziona la voce di Analisi in Corso.
 
 - *Scenario principale:*
   - Il sistema mostra la lista repository sulle quali sono state avviate delle Analisi.
@@ -1037,7 +1037,7 @@
   - Si verifica un errore durante il caricamento della pagina.
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
-  - Il Developer non conferma l'operazoine di interruzione (*<\<extend>>* #link(<UCD11>)[[UCD11]]).
+  - Il Developer non conferma l'operazione di interruzione (*<\<extend>>* #link(<UCD11>)[[UCD11]]).
 
 - *Postcondizioni:* Una Remediation in atto è stata interrotta.
 
@@ -1069,7 +1069,7 @@
   - Si verifica un errore durante il caricamento della pagina.
     - Il sistema mostra un messaggio di errore.
     - Il caso d'uso termina senza successo.
-  - Il Developer non conferma l'operazoine di interruzione (*<\<extend>>* #link(<UCD11>)[[UCD11]]).
+  - Il Developer non conferma l'operazione di interruzione (*<\<extend>>* #link(<UCD11>)[[UCD11]]).
 
 - *Postcondizioni:* Un'Analisi in atto è stata interrotta.
 

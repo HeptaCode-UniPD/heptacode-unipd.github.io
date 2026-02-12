@@ -1,17 +1,17 @@
 Project Manager
 - In generale si fa un abuso di extends
-- da rivedere lo scenario principale dell'uc 9
+- da rivedere lo scenario principale dello UC 9
 
 Business Owner
 - In generale si fa un abuso di extends
-- l'uc 10.1 forse non ha senso
+- lo uc 10.1 forse non ha senso
 - uc 11 e 11.1 sono praticamente la stessa cosa e se collegati praticamente descrivono il flusso, non un uc
-- uc 11.2.1 e simili non credo abbiano senso, perchè non descrivono un'interazione e lo scopo dell'utente (in questo caso pm), ma semplicemente un ragionamento (ripensandoci forse vanno bene, tipo visualiza titolo del brano nell'appello visto durante la simulazione esame)
+- uc 11.2.1 e simili non credo abbiano senso, perché non descrivono un'interazione e lo scopo dell'utente (in questo caso pm), ma semplicemente un ragionamento (ripensandoci forse vanno bene, tipo visualizza titolo del brano nell'appello visto durante la simulazione esame)
 - per la issue 11.3.1 se si vuole si possono suddividere ulteriormente nelle tre diversi tipi di issue
 
 pagebreak()
 
-- UC 8 da capire cos'è (forse la home), probabilmente anche l'uc8.2 va come estensione e non nei scenari alternativi
+- UC 8 da capire cos'è (forse la home), probabilmente anche lo uc8.2 va come estensione e non nei scenari alternativi
 - UC 8.1 sembra corretto, ma cambierei da extend UC9 a include UC9
 
 == Specifica dei casi d'uso - Project Manager
@@ -96,7 +96,7 @@ pagebreak()
 
 - *Descrizione:* Il Project Manager visualizza l'elenco completo di tutte le repository collegate al progetto.
 
-- *Precondizioni:* l'utente sta visualizzando un progetto e si concentra sulla lista delle repositoy.
+- *Precondizioni:* l'utente sta visualizzando un progetto e si concentra sulla lista delle repository.
 
 - *Trigger:* L'utente seleziona la voce "Repository" dal selettore di vista.
 
@@ -128,7 +128,7 @@ pagebreak()
 
 - *Scenario principale:*
   + Il sistema visualizza una lista dei membri del team a cui viene associata un'icona delle tecnologie di loro competenza.
-  + Il Project Manager può selezionare un membro specifico per approfondirne il profilo (*<\<inclue>>* #link(<UCPM3.1>)[[UCPM3.1]]).
+  + Il Project Manager può selezionare un membro specifico per approfondirne il profilo (*<\<include>>* #link(<UCPM3.1>)[[UCPM3.1]]).
 
 - *Postcondizioni:* Il Project Manager ha analizzato la mappatura delle competenze all'interno del team del progetto.
 
@@ -148,8 +148,8 @@ pagebreak()
 
 - *Scenario principale:*
   + Il Project Manager visualizza il profilo dell'utente.
-  + Il Project Manage visualiza le statistiche di contribuzione (*<\<inclue>>* #link(<UCPM3.1.1>)[[UCPM3.1.1]]).
-  + Il Project Manager visualizza i linguaggi maggiormente utilizzati dall'utente (*<\<inclue>>* #link(<UCPM3.1.2>)[[UCPM3.1.2]]).
+  + Il Project Manage visualizza le statistiche di contribuzione (*<\<include>>* #link(<UCPM3.1.1>)[[UCPM3.1.1]]).
+  + Il Project Manager visualizza i linguaggi maggiormente utilizzati dall'utente (*<\<include>>* #link(<UCPM3.1.2>)[[UCPM3.1.2]]).
 
 // anche qui si possono aggiungere degli UC più specificiper entrambe le parti dello scenario principali. Quindi UC10.1.1 per visuallizare il profilo utente, UC10.1.2 per visualizzare le statistiche di contribuzione e UC1.1.3 per informazioni sui linguaggi affini.
 

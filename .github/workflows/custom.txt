@@ -83,3 +83,9 @@ ucx
 dall'ia
 rifattorizzazione
 kpi
+ucbo
+ucpm
+ucd
+responsività
+uml
+dev
