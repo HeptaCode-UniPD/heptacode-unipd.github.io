@@ -13,10 +13,11 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("0.14.0", "2026-02.12", "Amerigo Vegliante", "", "Sistemazione AD e Riorganizzazione Indice")
   ("0.13.0", "2026-02-12", "Angela Favaro", "", "Stesura UC finale Business Owner"),
   ("0.12.0", "2026-02-12", "Angela Canazza", "Angela Favaro", "Stesura UC finale Project Manager"),
   ("0.11.0", "2026-02-12", "Amerigo Vegliante", "", "Stesura Diagrammi di Attività"),
-  ("0.10.0", "2026-02-10", "Angela Favaro", "", "Stesura iniziale requisiti funzionali"),
+  ("0.10.0", "2026-02-10", "Angela Favaro", "Amerigo Vegliante", "Stesura iniziale requisiti funzionali"),
   ("0.10.0", "2026-02-10", "Nicola Simionato", "Angela Favaro", "Modifica UC Project Manager e Business Owner"),
   ("0.9.0", "2026-02-09", "Angela Favaro", "Laura Venturini", "Aggiunta requisiti funzionali user e dev"),
   ("0.8.1", "2026-02-07", "Angela Canazza", "Angela Favaro", "Modifica UC di Utente e Developer"),
@@ -3962,13 +3963,15 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 #pagebreak()
 
-= Diagrammi di Attività
+= Processi di Business
 
 == Introduzione
 
-Mentre i Casi d’Uso definiscono "cosa" il sistema debba fare, i Diagrammi di Attività si pongono l'obiettivo di descrivere il "come", focalizzandosi sulla logica procedurale e sul flusso di controllo dei processi di business di Code Guardian. Essi rappresentano la traduzione dinamica dei requisiti, permettendo di visualizzare non solo la sequenza temporale delle operazioni, ma anche le condizioni decisionali e le ramificazioni del flusso.\
-L'utilizzo di questa modellazione UML è cruciale per evidenziare la natura reattiva della piattaforma; in particolare, i diagrammi che seguono sono stati progettati per esaltare il supporto all'elaborazione parallela. Attraverso l'uso di nodi di Fork e Join, viene descritto come il sistema sia in grado di eseguire simultaneamente controlli di sicurezza, analisi di qualità e validazione documentale, ottimizzando le prestazioni e riducendo il tempo di feedback per lo sviluppatore.\
-Ciascun diagramma fornisce una visione dettagliata degli aspetti dinamici dei principali casi d'uso, fungendo da ponte tra la specifica funzionale e l'architettura logica del software. Di seguito vengono presentati i flussi relativi all'analisi post-push, alla gestione proattiva delle correzioni e al monitoraggio tramite dashboard.
+La sezione Processi di Business si pone l'obiettivo di modellare la logica operativa che governa il funzionamento della piattaforma Code Guardian. Se i Casi d’Uso definiscono le interazioni tra attori e sistema, i processi qui descritti delineano la logica procedurale che permette di trasformare un evento tecnico (come un commit di codice) in un risultato di business (software sicuro, di qualità e documentato).
+
+Attraverso l’utilizzo dei Diagrammi di Attività UML, vengono descritti gli aspetti dinamici del sistema, fornendo una visione d'insieme di come le diverse macro-funzionalità interagiscano tra loro. Un elemento distintivo di questi processi è il supporto all’elaborazione parallela: l'architettura di Code Guardian è concepita per minimizzare i tempi d'attesa attraverso l'uso di nodi di Fork e Join, permettendo l'esecuzione simultanea di audit qualitativi, scansioni di sicurezza e verifiche di conformità.
+
+Questa modellazione permette di analizzare non solo il flusso standard delle attività, ma anche le ramificazioni decisionali e le Sub-activity (come il processo di Remediation), garantendo che ogni fase del ciclo di vita del software sia monitorata, efficiente e allineata agli obiettivi di qualità prefissati.
 
 #v(1em)
 
@@ -3990,6 +3993,7 @@ Ciascun diagramma fornisce una visione dettagliata degli aspetti dinamici dei pr
   - *Nodo Iniziale*.
   - *Segnale Accettato*.
   - *Segnale Temporale*],
+  [*Flusso Procedurale*],[rappresenta l'architettura dinamica del sistema, definendo l'ordine logico e il comportamento "vivo" delle operazioni. Esso specifica come il controllo passi tra le diverse attività, gestendo i bivi decisionali e la sincronizzazione dei processi paralleli per trasformare ogni evento scatenante in un risultato di business coerente e ottimizzato.],
 )
 
 == Diagrammi
@@ -3997,35 +4001,31 @@ Ciascun diagramma fornisce una visione dettagliata degli aspetti dinamici dei pr
 === AD1 - Flusso di Esecuzione Analisi Integrata (Post-PUSH)
 
 ==== Descrizione Attività
+
 - *Titolo*: Flusso di Esecuzione Analisi Integrata (Post-PUSH)
 - *Descrizione*: Il processo descrive l'attivazione e l'esecuzione coordinata dei controlli di qualità, sicurezza e documentazione in seguito a una modifica del codice.
-- *Precondizioni*: Il sistema ha ricevuto una notifica di push e ha salvato il contenuto del commit nel proprio ambiente.
-- *Trigger*: Rilevamento di una modifica del repository.
-- *Postcondizioni*: Lo stato del repository è aggiornato nella Dashboard e l'utente ha ricevuto un feedback immediato sulla qualità dell'ultimo commit.
+- *Precondizioni*: Il sistema ha ricevuto una notifica di push e ha clonato il contenuto del commit nel proprio ambiente di analisi.
+- *Trigger*: Rilevamento di un evento di PUSH nel repository.
+- *Postcondizioni*: I risultati dell'audit sono consolidati, il database è aggiornato e l'utente ha ricevuto il feedback sulla qualità del codice.
 
-==== Flusso Procedurale:
-+ *Azione*: Il sistema identifica i file modificati e le dipendenze coinvolte.
-+ *Fork*: Il sistema lancia simultaneamente tre flussi indipendenti quali:
-  - *Analisi Qualità*: Fase in cui si effettua _Analisi Statica_ del codice.
-    - _Code Smell_.
-    - Rilevazione Bug.
-    - _Code Coverage_ su Test esistenti.
-  - *Analisi Sicurezza*:
-    - _Secret Scanning_ per rilevare credenziali o token.
-    - Analisi Vulnerabilità note di dipendenze.
-    - Controllo conformità agli standard OWASP.
-  - *Validazione Documentale*:
-    - Verifica presenza di un file README.md.
-    - Controllo coerenza tra codice e specifiche OpenAPI/Swagger.
-+ *Join*: Il sistema attende il completamento di tutti i rami precedentemente menzionati prima di procedere.
-+ *Azione*: Produzione di un Report di Qualità dati i risultati dei tre rami di Analisi e Validazione.
-+ *Nodo di Decisione*: Il sistema valuta i risultati ottenuti.
-  - *Criticità Rilevate*:
-    + *Sub-Activity*: Remediation Proattiva.
-  - *Successo o Warning*:
-    + *Finalizzazione*.
-+ *Azione*: Aggiornamento della Dashboard con nuovi parametri e invio notifica allo sviluppatore.
-+ *Fine Attività*.
+==== Flusso Procedurale
+
++ *Azione*: Il sistema identifica i file modificati e le dipendenze coinvolte per ottimizzare l'ambito dell'analisi.
++ *Fork*: Il sistema avvia simultaneamente i tre flussi di controllo indipendenti:
+  - *Analisi Qualità*: Esecuzione di analisi statica per il rilevamento di Code Smell, bug logici e calcolo della Code Coverage.
+  - *Analisi Sicurezza*: Scansione dei segreti (token/password), analisi delle vulnerabilità nelle dipendenze e controllo standard OWASP.
+  - *Validazione Documentale*: Verifica della presenza della documentazione obbligatoria (README) e coerenza con le specifiche API.
+
++ *Join*: Il sistema sincronizza i risultati attendendo il completamento di tutti i rami di analisi.
++ *Azione*: Produzione del Report di Qualità integrato basato sui dati aggregati dai flussi paralleli.
++ *Nodo di Decisione*: Il sistema valuta la gravità dei risultati ottenuti:
+  - *Criticità Risolvibili*: Vengono rilevati errori per i quali il sistema può proporre una correzione.
+    + *Sub-Activity*: Invocazione del processo di "Remediation Proattiva".
+  - *Successo o Warning*: Non sono presenti criticità bloccanti o i problemi rilevati richiedono solo una segnalazione.
+    + *Azione*: Esecuzione della fase di Finalizzazione (consolidamento dati).
+
++ *Azione*: Aggiornamento dello stato del commit nella Dashboard e invio della notifica di feedback allo sviluppatore.
++ *Fine Attività*
 
 === AD2 - Monitoraggio: Dashboard e Storico
 
@@ -4034,50 +4034,54 @@ Ciascun diagramma fornisce una visione dettagliata degli aspetti dinamici dei pr
 - *Titolo*: Visualizzazione Stato di Salute e Analisi Storica
 - *Descrizione*: Il processo descrive le operazioni di recupero e aggregazione dati che il sistema compie per fornire all'utente una panoramica della qualità del software.
 - *Precondizioni*: L’utente ha effettuato l’accesso alla piattaforma Code Guardian.
-- *Trigger*: L’utente accede alla sezione Dashboard o seleziona un gruppo di progetti/repository.
+- *Trigger*: L’utente accede alla sezione Dashboard di un progetto.
 - *Postcondizioni*: L’utente ha ottenuto una conoscenza approfondita dello stato attuale e dell'andamento temporale della qualità del software gestito.
 
 ==== Flusso Procedurale
 
-+ *Azione*: Il sistema identifica i repository associati al profilo utente o al gruppo selezionato.
++ *Azione*: Il sistema identifica il repository selezionato e le relative analisi associate.
 + *Fork*: Il sistema interroga i database per recuperare informazioni distinte in modo simultaneo:
-  - *Visione Aggregata*: Recupero metriche dell'ultima analisi (Code Smell, Vulnerabilità, Coverage).
-  - *Storico Analisi*: Recupero dei report storici dai commit precedenti.
-    - Elaborazione dei trend di evoluzione della qualità nel tempo.
+  - *Ultima Analisi*: Recupero delle metriche relative all'ultima analisi (Code Smell, Vulnerabilità, Coverage).
+  - *Storico Analisi*: Recupero dei report storici derivanti dai commit precedenti.
+
 + *Join*: Il sistema attende il completamento di entrambi i recuperi dati per garantire una vista coerente.
-+ *Azione*: Il sistema genera la vista grafica (grafici di trend, tabelle e contatori di stato).
++ *Azione*: Il sistema genera la vista grafica (tabelle e contatori di stato).
 + *Azione*: Visualizzazione della Dashboard centralizzata all'utente.
 + *Nodo di Decisione*: L’utente valuta le informazioni visualizzate:
-  - Consultazione Storico:  L'utente seleziona un report passato.
-    - *\u{27F6}*: Il sistema visualizza il dettaglio dello storico.
-  - *Esportazione*: L'utente richiede un report e il sistema genera un riepilogo in un qualche formato.
-+ *Fine Attività*
+  - *Consultazione Storico*: L'utente seleziona un report passato.
+    + *Azione*: Il sistema visualizza il dettaglio dello storico selezionato.
+  - *Esportazione*: L'utente richiede un report.
+    + *Azione*: Il sistema genera un riepilogo in formato documentale.
 
++ *Fine Attività*
 
 === AD3 - Ciclo di Remediation Proattiva
 
 ==== Descrizione Attività
 
 - *Titolo*: Gestione Suggerimenti e Creazione Pull Request
-- *Descrizione*: Il processo descrive come il sistema interviene attivamente per risolvere le criticità rilevate, automatizzando la proposta di codice e la gestione del repository.
-- *Precondizioni*: L’Audit Automatico completato.
+- *Descrizione*: Il processo descrive l'intervento attivo del sistema per risolvere le criticità rilevate, automatizzando la proposta di codice e la gestione del repository tramite operazioni Git.
+- *Precondizioni*: L’Audit Automatico è stato completato e ha individuato vulnerabilità o bug risolvibili.
 - *Trigger*: Il sistema rileva criticità risolvibili nell'ultimo audit effettuato.
-- *Postcondizioni*: Il repository contiene una proposta di modifica concreta che non ha richiesto scrittura manuale da parte dello sviluppatore.
+- *Postcondizioni*: Il repository contiene una proposta di modifica (Pull Request) pronta per il merge, minimizzando l'intervento manuale dello sviluppatore.
 
-==== Flusso Procedurale:
+==== Flusso Procedurale
 
-+ *Azione*: Il sistema elabora lo snippet di codice correttivo e prepara i metadati della modifica
-+ *Fork*:
-  - *Interfaccia*: Caricamento del _Suggerimento di Correzione_ con visualizzazione del _diff_ nella dashboard.
-  - *Sistema*: Verifica lo stato del repository e dei permessi di creazione branch.
-+ *Join*: Il sistema è pronto a ricevere l'input dell'utente.
-+ *Nodo di Decisione*: L'utente valuta la risposta.
-  - *Rifiuto*: Utente scarta il suggerimento.
-    - *Fine Attività*
-  - *Approvazione*: L'utente accetta la correzione proposta.
-    + *Azione*: Il sistema crea un proprio branch dedicato con le modifiche effettuate.
-    + *Azione*: Il sistema apre una Pull Request verso il ramo principale.
-+ *Fine Attività*.
++ *Azione*: Il sistema genera lo snippet di codice correttivo.
++ *Azione*: Prepara i metadati necessari per la modifica.
++ *Fork*: Il sistema avvia parallelamente la preparazione dell'ambiente e della visualizzazione:
+  - *Interfaccia*: Caricamento del Suggerimento di Correzione con visualizzazione "diff" nella Dashboard utente.
+  - *Sistema*: Verifica dello stato del repository e validazione dei permessi per la creazione di nuovi branch.
+
++ *Join*: Il sistema sincronizza i rami e si pone in attesa dell'input dell'utente.
++ *Nodo di Decisione*: L'utente valuta la proposta di correzione visualizzata:
+  - *Rifiuto*: L'utente scarta il suggerimento poiché ritenuto non idoneo o non necessario.
+    + *Fine Attività*.
+  - *Approvazione*: L'utente accetta la correzione selezionando "Applica".
+    + *Azione*: Il sistema crea un proprio branch dedicato contenente le modifiche effettuate.
+    + *Azione*: Il sistema apre una Pull Request verso il ramo principale e invia una notifica di conferma.
+
++ *Fine Attività*
 
 #pagebreak()
 
