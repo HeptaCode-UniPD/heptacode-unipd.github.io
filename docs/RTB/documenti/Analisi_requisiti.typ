@@ -579,7 +579,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 #pagebreak()
 
-=== UC5 - visualizzazione dettagli repository
+=== UC5 - Visualizzazione dettagli repository
 #align(center, [#image("../../asset/UC/developer/UCD5.png", width: 100%)])
 <UC5>
 - *Attore principale:* Utente.
@@ -600,7 +600,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + L'Utente visualizza un pulsante per l'eliminazione del repository (#link(<UC11>)[[UC11]]). 
   + L'Utente visualizza un pulsante per tornare alla pagina precedente. 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - L'Utente visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC10]]).
+    - L'Utente visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* L'Utente visualizza i dati aggregati del repository.
@@ -614,7 +614,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   - #link(<UC5.4>)[[UC5.4]]
   
 - *Estensioni:*
-  - #link(<UC4>)[[UC10]]
+  - #link(<UC4>)[[UC4]]
 
 - *Generalizzazioni:*
   - #link(<UCD5>)[[UCD5]]
@@ -886,7 +886,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + L'Utente visualizza un messaggio di conferma dell’avvenuta aggiunta.
 
 - *Scenari alternativi:* \
-  - Al passo 1 o 2: L'Utente decide di annullare l’operazione #link(<UC8.1>)[[UC8.1]].
+  - Al passo 1 o 2: L'Utente decide di annullare l’operazione (*<\<extend>>* #link(<UC8.1>)[[UC8.1]]).
   - Al passo 3: L'URL inserito corrisponde ad un repository privato ma non ha un token valido associato (*<\<extend>>* #link(<UC8.0.1>)[[UC8.0.1]]).
   - Al passo 3: URL del repository non valido *<\<extend>>* #link(<UC8.3>)[[UC8.3]].
   - Si verifica un errore durante il collegamento con GitHub.
@@ -1053,7 +1053,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + L'Utente visualizza l'intestazione del progetto (*<\<include>>* #link(<UC10.1>)[[UC10.1]]).
-  + L'Utente visualizza il widget delle statistiche di analisi documentazione(*<\<include>>* #link(<UC5>)[[UC5]]).
+  + L'Utente visualizza il widget delle statistiche di analisi documentazione(*<\<include>>* #link(<UC10.2>)[[UC10.2]]).
   + L'Utente visualizza il widget delle statistiche di test (*<\<include>>* #link(<UC10.3>)[[UC10.3]]). 
   + L'Utente visualizza il widget delle statistiche di correttezza OWASP (*<\<include>>* #link(<UC10.4>)[[UC10.4]]).
   + L'Utente visualizza l'elenco dei repository che compongono il progetto (*<\<include>>* #link(<UC5.8>)[[UC5.8]]).
@@ -1321,7 +1321,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 #pagebreak()
 
-=== UCD5 - visualizzazione dettagli repository developer
+=== UCD5 - Visualizzazione dettagli repository developer
 #align(center, [#image("../../asset/UC/developer/UCD5.png", width: 100%)])
 <UCD5>
 - *Attore principale:* Developer.
@@ -1595,7 +1595,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   // + Il sistema interagisce con GitHub per creare un nuovo branch dedicato.
   // + Il sistema applica automaticamente le modifiche al file nel branch.
   // + Il sistema avvia una pull request verso il branch di destinazione del repository.
-  + Il Developer viene notificato della corretta creazione della pull request (*<\<include>>* #link(<UCD6.4>)[[UCD6.4]]).
+  + Il Developer viene notificato della corretta creazione della pull request (*<\<include>>* #link(<UCD6.2.1>)[[UCD6.2.1]]).
 
 - *Scenari alternativi*
   - GitHub non è raggiungibile o restituisce un errore (*<\<extend>>* #link(<UCD6.4>)[[UCD6.4]])
@@ -1876,7 +1876,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + Il Developer attiva il comando di interruzione per fermare l'integrazione del codice suggerito.
   + Il Developer osserva la chiusura della Pull Request associata direttamente a GitHub.
-  + Il Developer prende atto della notifica che conferma l'avvenuta interruzione della procedura (*<\<extend>>* #link(<UCD9.1>)[[UCD9.1]]).
+  + Il Developer prende atto della notifica che conferma l'avvenuta interruzione della procedura (*<\<include>>* #link(<UCD9.1>)[[UCD9.1]]).
   
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -2204,7 +2204,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
-    - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC10]]).
+    - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il Developer visualizza i risultati dell'ultima analisi svolta relativa ai vari agenti.
@@ -2421,10 +2421,10 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   - #link(<UCD15.7>)[[UCD15.7]]
 
 - *Generalizzazioni:*
-  - #link(<UCD15.2>)[[UCD15.1]]
-  - #link(<UCD15.3>)[[UCD15.2]]
-  - #link(<UCD15.4>)[[UCD15.3]]
-  - #link(<UCD15.5>)[[UCD15.4]]
+  - #link(<UCD15.2>)[[UCD15.2]]
+  - #link(<UCD15.3>)[[UCD15.3]]
+  - #link(<UCD15.4>)[[UCD15.4]]
+  - #link(<UCD15.5>)[[UCD15.5]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2665,7 +2665,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM1.3 - Aggiunta repository a progetto 
+=== UCPM1.3 - Aggiunta repository a progetto
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
 
 <UCPM1.3>
@@ -2725,7 +2725,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 
-=== UCPM1.4 - Aggiunta developer a progetto 
+=== UCPM1.4 - Aggiunta developer a progetto
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
 
 <UCPM1.4>
@@ -2900,7 +2900,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM1.8 - Rimozione developer da progetto 
+=== UCPM1.8 - Rimozione developer da progetto
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
 <UCPM1.8>
 
