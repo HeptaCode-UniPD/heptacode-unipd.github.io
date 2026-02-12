@@ -430,24 +430,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* L’utente non è autenticato e rimane sulla pagina di login.
 
 #line(length: 100%, stroke: 0.5pt + gray)
-
-=== UC1.5 - Annullamento autenticazione GitHub
-<UC1.5>
-- *Attore principale:* Utente.
-
-- *Descrizione:* L’utente interrompe la procedura di autorizzazione sul portale esterno GitHub.
-
-- *Precondizioni:* L’utente è stato reindirizzato alla pagina di autorizzazione di GitHub.
-
-- *Trigger:* L'utente nega l'autorizzazione o chiude la finestra del provider.
-
-- *Scenario principale:*
-  + L'Utente viene riportato alla dashboard di _Code Guardian_.
-
-- *Postcondizioni:* Nessun dato viene sincronizzato, l'utente torna alla dashboard.
-  
 #line(length: 100%, stroke: 0.5pt + gray)
-#line(length: 100%, stroke: 0.5pt + gray)
+#pagebreak()
 
 === UC2 - Visualizzazione area personale
 #align(center, [#image("../../asset/UC/user/UC2.png", height: 7cm)])
@@ -1269,7 +1253,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il Developer visualizza la dashboard con i repository aggiunti.
 
 - *Scenari alternativi:* \
-  - Al passo 1: Il Developer esprime la volontà di annullare l'autenticazione (*<\<extend>>* #link(<UC1.5>)[[UC1.5]]).
+  - Al passo 1: Il Developer esprime la volontà di annullare l'autenticazione (*<\<extend>>* #link(<UCD2.2>)[[UCD2.2]]).
   - Al passo 2: Si verifica un errore durante la procedura.
     - Il Developer visualizza un messaggio di errore.
     - Il Developer viene reindirizzato alla dashboard.
@@ -1281,7 +1265,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Estensioni:* 
   - #link(<UCD2.1>)[[UCD2.1]].
-  - #link(<UC1.5>)[[UC1.5]].
+  - #link(<UCD2.2>)[[UCD2.2]].
   - #link(<UC8.0.1>)[[UC8.0.1]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -1307,6 +1291,23 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #pagebreak()
 
+=== UCD2.2 - Annullamento autenticazione GitHub
+<UCD2.2>
+- *Attore principale:* Utente.
+
+- *Descrizione:* L’utente interrompe la procedura di autorizzazione sul portale esterno GitHub.
+
+- *Precondizioni:* L’utente è stato reindirizzato alla pagina di autorizzazione di GitHub.
+
+- *Trigger:* L'utente nega l'autorizzazione o chiude la finestra del provider.
+
+- *Scenario principale:*
+  + L'Utente viene riportato alla dashboard di _Code Guardian_.
+
+- *Postcondizioni:* Nessun dato viene sincronizzato, l'utente torna alla dashboard.
+  
+#line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD5 - visualizzazione dettagli repository developer
 #align(center, [#image("../../asset/UC/developer/UCD5.png", width: 100%)])
@@ -4049,7 +4050,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-3-F-O],[L'utente deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
   [R-4-F-O],[L'utente deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
   [R-5-F-O],[L'utente deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
-  [R-7-F-D],[L'utente può annullare l'autenticazione con il provider esterno GitHub],[#link(<UC1.5>)[UC1.5]],
+  [R-7-F-D],[L'utente può annullare l'autenticazione con il provider esterno GitHub],[#link(<UCD2.2>)[UCD2.2]],
 
   [R-16-F-O],[L'utente deve poter inserire un repository pubblico al sistema],[#link(<UC8>)[UC8]],
   [R-17-F-D],[L'utente deve poter inserire un repository privato al sistema],[#link(<UC8.0.1>)[UC8.0.1]],
