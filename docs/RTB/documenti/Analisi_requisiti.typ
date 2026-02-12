@@ -4050,7 +4050,6 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-3-F-O],[L'utente deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
   [R-4-F-O],[L'utente deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
   [R-5-F-O],[L'utente deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
-  [R-7-F-D],[L'utente può annullare l'autenticazione con il provider esterno GitHub],[#link(<UCD2.2>)[UCD2.2]],
 
   [R-16-F-O],[L'utente deve poter inserire un repository pubblico al sistema],[#link(<UC8>)[UC8]],
   [R-17-F-D],[L'utente deve poter inserire un repository privato al sistema],[#link(<UC8.0.1>)[UC8.0.1]],
@@ -4087,6 +4086,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   // DEV
   [R-78-F-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
   [R-6-F-D],[Il Developer può sincronizzare il proprio account GitHub],[#link(<UCD2>)[UCD2]],
+  [R-7-F-D],[L'utente può annullare l'autenticazione con il provider esterno GitHub],[#link(<UCD2.2>)[UCD2.2]],
   [R-8-F-D],[Il Developer deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UCD2.1>)[UCD2.1]],
 
 
