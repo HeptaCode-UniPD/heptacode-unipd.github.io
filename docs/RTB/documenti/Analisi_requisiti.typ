@@ -236,7 +236,7 @@ Per garantire la fattibilità del progetto entro le scadenze accademiche e focal
 
 - *Integrazione esclusiva GitHub:* Il sistema supporta unicamente _repository_ ospitati sulla piattaforma _GitHub_, utilizzando le sue API specifiche per l'autenticazione e la gestione del codice. Non sono previste integrazioni con altri provider in questa fase.
 
-- *remediation semi-automatica:* Per motivi di sicurezza e affidabilità, le azioni di correzione del codice proposte dagli agenti non verranno mai applicate automaticamente sul _branch_ principale. Il sistema si limita a generare _pull request_ o _snippet_ di codice che richiedono la revisione e l'approvazione umana.
+- *Remediation semi-automatica:* Per motivi di sicurezza e affidabilità, le azioni di correzione del codice proposte dagli agenti non verranno mai applicate automaticamente sul _branch_ principale. Il sistema si limita a generare _pull request_ o _snippet_ di codice che richiedono la revisione e l'approvazione umana.
 
 - *Limiti dell'Intelligenza Artificiale:* Essendo il sistema basato su _Large Language Models_ (LLM), i suggerimenti di analisi e refactoring sono soggetti ai limiti intrinseci di tale tecnologia, inclusa la possibilità di "allucinazioni" (suggerimenti sintatticamente corretti ma semanticamente errati) o falsi positivi nell'individuazione delle vulnerabilità.
 
@@ -315,13 +315,12 @@ Gli attori rappresentano le entità, umane o sistemiche, che interagiscono con l
 Oltre agli attori umani, la piattaforma interagisce con un sistema esterno che agisce come _trigger_ per il processo di analisi principale:
 
 - *GitHub*: Questo sistema esterno è un attore non umano che avvia il flusso di lavoro di analisi automatica. Ogni evento di `PUSH` su un repository monitorato viene intercettato da _Code Guardian_, attivando l'orchestrazione degli agenti di audit.
-- [Altro ...]
-
-La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni tra questi attori e la piattaforma _Code Guardian_.
 
 #pagebreak()
 
 == Specifica dei casi d'uso - Utente
+
+La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli attori e la piattaforma _Code Guardian_.
 
 === UC1 - Accesso alla piattaforma
 #align(center, [#image("../../asset/UC/user/UC1.png", height: 7cm)])
@@ -338,8 +337,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + L'utente visualizza l’interfaccia per l’inserimento dei dati personali.
   + L'utente visualizza l'input per lo username.
   + L'utente visualizza l'input per la password.
-  + L’utente inserisce lo username (*<\<include>>* #link(<UC1.0.1>)[UC1.0.1]).
-  + L’utente inserisce la password (*<\<include>>* #link(<UC1.0.2>)[UC1.0.2]).
+  + L’utente inserisce lo username (*<\<include>>* #link(<UC1.0.1>)[[UC1.0.1]]).
+  + L’utente inserisce la password (*<\<include>>* #link(<UC1.0.2>)[[UC1.0.2]]).
   + L’utente preme il pulsante di accesso.
   + L'utente viene autenticato e reindirizzato alla propria dashboard personale.
 
@@ -349,13 +348,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* L’utente è autenticato e visualizza la dashboard.
 
-- *Estensioni:* 
-  - #link(<UC1.1>)[[UC1.1]].
-  - #link(<UC1.2>)[[UC1.2]].
-
 - *Inclusioni*
   - #link(<UC1.0.1>)[[UC1.0.1]]
   - #link(<UC1.0.2>)[[UC1.0.2]]
+
+- *Estensioni:* 
+  - #link(<UC1.1>)[[UC1.1]].
+  - #link(<UC1.2>)[[UC1.2]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -457,6 +456,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - #link(<UC2.3>)[[UC2.3]]
   - #link(<UC3>)[[UC3]]
 
+#line(length: 100%, stroke: 0.5pt + gray)
+
 === UC2.1 - Visualizzazione nome utente
 <UC2.1>
 - *Attore principale:* Utente.
@@ -556,6 +557,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* L'utente è autenticato e si trova nella propria area personale senza aver effettuato il logout.
 
+#line(length: 100%, stroke: 0.5pt + gray)
+
 === UC4 - Errore generico
 <UC4>
 - *Attore principale:* Utente.
@@ -573,6 +576,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
    
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
+#pagebreak()
 
 === UC5 - visualizzazione dettagli repository
 #align(center, [#image("../../asset/UC/developer/UCD5.png", width: 100%)])
@@ -677,6 +681,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* L'Utente è a conoscenza dello stato della correttezza OWASP, tramite l'indice percentuale di correttezza.
 
+#line(length: 100%, stroke: 0.5pt + gray)
+
 === UC5.5 - Visualizzazione nome repository
 <UC5.5>
 - *Attore principale*: Utente.
@@ -726,6 +732,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
 - *Postcondizioni*: L'Utente ha visualizzato l’indicatore  di visibilità del repository.
 
+#line(length: 100%, stroke: 0.5pt + gray)
+
 === UC5.8 - Visualizzazione informazioni generali repository
 <UC5.8>
 - *Attore principale*: Utente.
@@ -755,6 +763,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Generalizzazioni:*
   - #link(<UC5.9>)[[UC5.9]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.9 - Visualizzazione informazioni generali repository filtro progetto
 <UC5.9>
@@ -884,13 +894,13 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* Il repository è stato aggiunto alla piattaforma e l'utente lo può visualizzare nella sua lista.
 
+- *Inclusioni:* #link(<UC8.2>)[[UC8.2]]
+
 - *Estensioni:* 
   - #link(<UC8.0.1>)[[UC8.0.1]]
   - #link(<UC8.1>)[[UC8.1]]
   - #link(<UC8.3>)[[UC8.3]]
   - #link(<UC4>)[[UC4]]
-
-- *Inclusioni:* #link(<UC8.2>)[[UC8.2]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -912,7 +922,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   //per diagramma di attività
 
 - *Scenari alternativi:*
-- Il token inserito non è valido (*<\<extend>>* #link(<UC8.0.2>)[[UC8.0.2]]).
+  - Il token inserito non è valido (*<\<extend>>* #link(<UC8.0.2>)[[UC8.0.2]]).
 
 - *Postcondizioni:* Il profilo dell'Utente è aggiornato con un token valido, permettendo l'importazione di repository privati.
   
@@ -954,6 +964,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* L'Utente si trova nuovamente nella dashboard senza aver aggiunto un repository.
   
+#line(length: 100%, stroke: 0.5pt + gray)
+
 === UC8.2 - Inserimento URL repository
 <UC8.2>
 - *Attore principale:* Utente.
@@ -1288,8 +1300,6 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* La dashboard rimane invariata rispetto allo stato precedente all'operazione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
-#line(length: 100%, stroke: 0.5pt + gray)
-#pagebreak()
 
 === UCD2.2 - Annullamento autenticazione GitHub
 <UCD2.2>
@@ -1308,6 +1318,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
+#pagebreak()
 
 === UCD5 - visualizzazione dettagli repository developer
 #align(center, [#image("../../asset/UC/developer/UCD5.png", width: 100%)])
@@ -1332,6 +1343,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il Developer visualizza i dati aggregati del repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
+#pagebreak()
 
 === UCD6 - Visualizzazione proposta remediation
 #align(center, [#image("../../asset/UC/developer/UCD6.png", width: 100%)])
@@ -1595,10 +1608,10 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - #link(<UCD6.4>)[[UCD6.4]]
 
 - *Estensioni:* 
-  - #link(<UCD6.3>)[UCD6.3]
-  - #link(<UCD6.4>)[UCD6.4]
-  - #link(<UCD6.5>)[UCD6.5]
-  - #link(<UCD6.6>)[UCD6.6]
+  - #link(<UCD6.3>)[[UCD6.3]]
+  - #link(<UCD6.4>)[[UCD6.4]]
+  - #link(<UCD6.5>)[[UCD6.5]]
+  - #link(<UCD6.6>)[[UCD6.6]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1608,7 +1621,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer riceve un messaggio di avvenuta creazione di una pull request all'interno di GitHub.
 
-- *Trigger:* Il Developer accetta una proposta di remediation #link(<UCD6.2>)[UCD6.2] e il sistema ha inviato la pull request a GitHub
+- *Trigger:* Il Developer accetta una proposta di remediation #link(<UCD6.2>)[[UCD6.2]] e il sistema ha inviato la pull request a GitHub
 
 - *Scenario principale:*
   + Il Developer visualizza un messaggio di pull request andata a buon fine.
@@ -1621,9 +1634,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 <UCD6.3>
 - *Attore principale:* Developer
 
-- *Descrizione:* Il Developer desidera annullare l'accettazione della proposta di remediation #link(<UCD6.2>)[UCD6.2].
+- *Descrizione:* Il Developer desidera annullare l'accettazione della proposta di remediation #link(<UCD6.2>)[[UCD6.2]].
 
-- *Precondizioni:* Il Developer ha avviato il caso d’uso #link(<UCD6.2>)[UCD6.2] e la pull request non è ancora stata creata.
+- *Precondizioni:* Il Developer ha avviato il caso d’uso #link(<UCD6.2>)[[UCD6.2]] e la pull request non è ancora stata creata.
 
 - *Trigger:* Il Developer seleziona l’opzione di annullamento durante il processo di accettazione della remediation.
 
@@ -1642,9 +1655,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Attore secondario:* GitHub
 
-- *Descrizione:* Il sistema gestisce il fallimento del tentativo di applicazione di una remediation #link(<UCD6.2>)[UCD6.2] a causa di problemi di connettività o errori restituiti da GitHub.
+- *Descrizione:* Il sistema gestisce il fallimento del tentativo di applicazione di una remediation #link(<UCD6.2>)[[UCD6.2]] a causa di problemi di connettività o errori restituiti da GitHub.
 
-- *Precondizioni:* Il Developer ha richiesto l'applicazione di una proposta di remediation #link(<UCD6.2>)[UCD6.2] e il sistema ha tentato di comunicare con GitHub.
+- *Precondizioni:* Il Developer ha richiesto l'applicazione di una proposta di remediation #link(<UCD6.2>)[[UCD6.2]] e il sistema ha tentato di comunicare con GitHub.
 
 - *Trigger:* GitHub non è raggiungibile o risponde con un codice di errore.
 
@@ -1665,7 +1678,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il sistema impedisce l'applicazione di una remediation se rileva che la proposta non è più coerente con lo stato attuale del codice a causa di nuovi push o di un'analisi più recente ancora in corso.
 
-- *Precondizioni:*Il Developer ha tentato di accettare una proposta di remediation #link(<UCD6.2>)[UCD6.2]. Esiste una versione più recente del codice o un'analisi pendente che rende obsoleta la proposta attuale.
+- *Precondizioni:*Il Developer ha tentato di accettare una proposta di remediation #link(<UCD6.2>)[[UCD6.2]]. Esiste una versione più recente del codice o un'analisi pendente che rende obsoleta la proposta attuale.
 
 - *Trigger:* Il sistema effettua un controllo di integrità prima dell'invio della richiesta a GitHub.
 
@@ -1690,7 +1703,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il sistema rileva un conflitto tecnico tra la proposta di remediation e lo stato attuale dei file nel repository (modifiche locali non ancora sincronizzate o commit disallineati), impedendo l'applicazione automatica.
 
-- *Precondizioni:*Il Developer ha avviato l'accettazione della remediation #link(<UCD6.2>)[UCD6.2]. Sono state apportate modifiche ai file oggetto della remediation che generano un conflitto di merge.
+- *Precondizioni:*Il Developer ha avviato l'accettazione della remediation #link(<UCD6.2>)[[UCD6.2]]. Sono state apportate modifiche ai file oggetto della remediation che generano un conflitto di merge.
 
 - *Trigger:* Il sistema rileva un errore di conflitto durante il tentativo di applicazione delle modifiche sulla repository.
 
@@ -1855,7 +1868,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Developer desidera interrompere un'operazione di remediation in corso. L’interruzione comporta la revoca o il rifiuto della pull request generata automaticamente dal sistema tramite bot su GitHub.
 
-- *Precondizioni:* Il Developer ha avviato una remediation #link(<UCD6.2>)[UCD6.2].
+- *Precondizioni:* Il Developer ha avviato una remediation #link(<UCD6.2>)[[UCD6.2]].
 
 - *Trigger:* Il Developer seleziona l’opzione di interruzione del processo di remediation.
 
@@ -2113,6 +2126,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* Il Developer visualizza lo stato della correttezza OWASP al relativo al periodo selezionato.
 
+#line(length: 100%, stroke: 0.5pt + gray)
+
 === UCD12.4 - Visualizzazione storico lista remediation
 <UCD12.4>
 - *Attore principale:* Developer
@@ -2222,7 +2237,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
-    - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC10]]).
+    - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
   - Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore N.D. (Non Disponibile).
 
@@ -2232,7 +2247,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - #link(<UCD6.0.1>)[[UCD6.0.1]]
 
 - *Estensioni:*
-  - #link(<UC4>)[[UC10]]
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2255,7 +2270,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
-    - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC10]]).
+    - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
   - Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore N.D. (Non Disponibile).
 
@@ -2265,7 +2280,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - #link(<UCD6.0.2>)[[UCD6.0.2]]
 
 - *Estensioni:*
-  - #link(<UC4>)[[UC10]]
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2288,7 +2303,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
-    - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC10]]).
+    - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
   - Se non è presente un'analisi per la sessione richiesta, il grafico viene mostrato con il valore N.D. (Non Disponibile).
 
@@ -2298,7 +2313,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - #link(<UCD6.0.3>)[[UCD6.0.3]]
 
 - *Estensioni:*
-  - #link(<UC4>)[[UC10]]
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -2399,16 +2414,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 *Postcondizioni:* Il Developer ha avviato un analisi all'interno del repository.
 
+- *Estensioni:* 
+  - #link(<UC4>)[[UC4]]
+  - #link(<UCD15.6>)[[UCD15.6]]
+  - #link(<UCD15.7>)[[UCD15.7]]
+
 - *Generalizzazioni:*
   - #link(<UCD15.2>)[[UCD15.1]]
   - #link(<UCD15.3>)[[UCD15.2]]
   - #link(<UCD15.4>)[[UCD15.3]]
   - #link(<UCD15.5>)[[UCD15.4]]
 
-- *Estensioni:* 
-  - #link(<UC4>)[[UC4]]
-  - #link(<UCD15.6>)[[UCD15.6]]
-  - #link(<UCD15.7>)[[UCD15.7]]
+#line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD15.2 - Avvio analisi generale
 <UCD15.2>
@@ -2431,6 +2448,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   - #link(<UCD15.3>)[[UCD15.3]]
   - #link(<UCD15.4>)[[UCD15.4]]
   - #link(<UCD15.5>)[[UCD15.5]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD15.3 - Avvio analisi di test di una repository
 <UCD15.3>
@@ -2501,6 +2520,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   
   *Postcondizioni:* Il sistema non avvia alcuna nuova analisi. Lo stato della repository rimane invariato e l'utente è informato dell'impedimento.
 
+#line(length: 100%, stroke: 0.5pt + gray)
+
 === UCD15.7 - Annullamento procedura avvio analisi
 <UCD15.7>
 - *Attore principale:* Developer.
@@ -2519,7 +2540,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
-
+#pagebreak()
 == Specifica dei casi d'uso - Project Manager
 
 === UCPM1 - Accesso alla dashboard generale PM
@@ -2826,6 +2847,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* Il Project Manager visualizza l'elenco dei potenziali collaboratori disponibili per l'inserimento nel team.
 
+- *Inclusioni*
+  - #link(<UCPM1.6.1>)[[UCPM1.6.1]]
+
 #line(length: 100%, stroke: 0.5pt + gray)
 
 
@@ -2847,6 +2871,8 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* Il Project Manager visualizza correttamente l'identità del Developer.
 
+#line(length: 100%, stroke: 0.5pt + gray)
+
 === UCPM1.7 - Gestione membri del team
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
 <UCPM1.7>
@@ -2861,12 +2887,17 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Scenario principale:*
   + Il Project Manager consulta l'elenco dei Developer che partecipano attualmente al progetto.
-  + Il Project Manager identifica ogni singolo profilo tramite i dati identificativi (nome, cognome e foto) (<<include>> #link(<UCPM1.6.1>)[[UCPM1.6.1]]).
+  + Il Project Manager identifica ogni singolo profilo tramite i dati identificativi (nome, cognome e foto) (*<\<include>>* #link(<UCPM1.6.1>)[[UCPM1.6.1]]).
   + Il Project Manager individua, per ogni collaboratore in elenco, l'opzione dedicata alla rimozione dal progetto.
   + Per ogni voce, il Project Manager visualizza un pulsante per eliminare il Developer.
   + Il Project Manager visualizza il pulsante per aggiungere nuovi Developer
 
 - *Postcondizioni:* Il Project Manager è consapevole degli attuali membri del team, facenti parte del progetto selezionato precedentemente.
+
+- *Inclusioni*
+  - #link(<UCPM1.6.1>)[[UCPM1.6.1]]
+
+#line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.8 - Rimozione developer da progetto 
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
@@ -2895,6 +2926,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Estensioni:* 
   - #link(<UCPM1.8.1>)[[UCPM1.8.1]]
+  - #link(<UC4>)[[UC4]]
 
   #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2945,7 +2977,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Estensioni:* 
   - #link(<UC4>)[[UC4]]
-  - #link(<UCPM1.9.1>)[[UCPM1.9.1]]
+  - #link(<UC1.1>)[[UC11.1]]
 
 
   #line(length: 100%, stroke: 0.5pt + gray)
@@ -2957,7 +2989,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Project Manager desidera annullare l'operazione di eliminazione di un progetto.
 
-- *Precondizioni:* Il Project Manager ha avviato il caso d’uso #link(<UCPM1.9>)[UCPM1.9].
+- *Precondizioni:* Il Project Manager ha avviato il caso d’uso #link(<UCPM1.9>)[[UCPM1.9]].
 
 - *Trigger:* Il Project Manager seleziona l’opzione di annullamento durante il processo di eliminazione.
 
@@ -2985,7 +3017,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Caricamento della schermata della dashboard. Il selettore di vista è impostato su "Progetti".
 
 - *Scenario principale:*
-  + Il Project Manager visualizza i dati come descritto in #link(<UC9>)[[UC9]].
+  + Il Project Manager visualizza i dati (*<\<include>>* #link(<UC9>)[[UC9]]).
   + Il Project Manager deve, per ogni progetto:
         - Il widget delle statistiche di analisi documentazione (*<\<include>>* #link(<UC10.2>)[[UC10.2]]).
         - Il widget delle statistiche di analisi di test (*<\<include>>* #link(<UC10.3>)[[UC10.3]]).
@@ -2994,6 +3026,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il Project Manager scorre la lista dei progetti in cui è coinvolto.
 
 - *Inclusioni:* 
+  - #link(<UC9>)[[UC9]]
   - #link(<UC10.2>)[[UC10.2]]
   - #link(<UC10.3>)[[UC10.3]]
   - #link(<UC10.4>)[[UC10.4]]
@@ -3013,7 +3046,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Project Manager clicca sulla card di un progetto.
 
 - *Scenario principale:*
-  + Il Project Manager visualizza i dati come descritto in #link(<UC10>)[[UC10]].
+  + Il Project Manager visualizza i dati (*<\<include>>* #link(<UC10>)[[UC10]]).
   + Il Project Manager visualizza il pulsante "Modifica intestazione".
   + Il Project Manager visualizza il pulsante "Aggiungi repository" sui cui può premere per inserire delle repository al progetto.
   + Il Project Manager visualizza il pulsante "Gestisci developer", su cui può premere per consultare la lista degli sviluppatori facenti parte del progetto.
@@ -3030,7 +3063,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* L'Utente visualizza i dati aggregati del progetto.
 
 - *Inclusioni:* 
+  - #link(<UC10>)[[UC10]])
   - #link(<UC5.9>)[[UC5.9]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -3059,7 +3096,11 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* Il Project Manager ha analizzato la mappatura delle competenze all'interno del team del progetto.
 
-- *Inclusioni:* #link(<UCPM3.2>)[[UC3.2]].
+- *Inclusioni:* 
+  - #link(<UCPM3.2>)[[UC3.2]].
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3091,6 +3132,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
    - #link(<UCPM1.6.1>)[[UCPM1.6.1]].
    - #link(<UCPM3.3>)[[UCPM3.3]].
    - #link(<UCPM3.4>)[[UCPM3.4]].
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3234,6 +3278,14 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* Il Project Manager ha preso visione dello stato tecnologico del progetto analizzato.
 
+- *Inclusioni:*
+  - #link(<UCPM4.1>)[[UCPM4.1]]
+  - #link(<UCPM4.2>)[[UCPM4.2]]
+  - #link(<UCPM4.3>)[[UCPM4.3]]
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
+
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM4.1 - Vedi framework e librerie
@@ -3258,6 +3310,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il Project Manager ha acquisito piena consapevolezza della struttura tecnologica del progetto e della distribuzione dei componenti software.
+
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3304,6 +3359,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Project Manager ha acquisito una visione strategica sui possibili miglioramenti tecnologici suggeriti dall'intelligenza artificiale.
 
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
+
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3339,7 +3397,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Inclusioni:* 
   - #link(<UC9>)[[UC9]]
   - #link(<UCBO1.1>)[[UCBO1.1]]; 
-- 
+
 - *Estensioni:*
   - #link(<UC4>)[[UC4]].
 
@@ -3840,6 +3898,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Postcondizioni:* Il Business Owner ha approfondito la conoscenza delle competenze e del carico di lavoro del developer.
   
 - *Inclusioni:* 
+  - #link(<UCBO2.5.2>)[[UCBO2.5.2]]
   - #link(<UCBO3.1>)[[UCBO3.1]]
   - #link(<UCBO3.2>)[[UCBO3.2]]
   - #link(<UCBO3.3>)[[UCBO3.3]]
