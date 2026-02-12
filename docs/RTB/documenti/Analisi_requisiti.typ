@@ -3579,7 +3579,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il sistema mostra il logo della tecnologia (*<\<include>>* #link(<UCBO2.4.2>)[[UCBO2.4.2]]).
   + Il sistema mostra il nome della tecnologia (*<\<include>>* #link(<UCBO2.4.3>)[[UCBO2.4.3]]).
-  + Il sistema ne mostra l'utilizzo all'interno del progetto (backend / frontend / database ecc.) (*<\<include>>* #link(<UCBO2.4.4>)[[UCBO2.4.4]]).
+  + Il sistema ne mostra l'utilizzo (backend / frontend / database ecc.) (*<\<include>>* #link(<UCBO2.4.4>)[[UCBO2.4.4]]).
 
 - *Postcondizioni:* Il Business Owner ha visualizzato lo stack tecnologico.
 
@@ -3625,18 +3625,18 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 === UCBO2.4.4 - Visualizzazione utilizzo tecnologia <UCBO2.4.4>
 - *Attore principale:* Business Owner.
 
-- *Descrizione:* Il Business Owner visualizza l'utilizzo che la tecnologia ha all'interno del progetto.
+- *Descrizione:* Il Business Owner visualizza il/i campo/i di applicazione della tecnologia.
 
 - *Trigger:* Viene caricata la lista dello stack tecnologico (#link(<UCBO2.4>)[[UCBO2.4]]).
 
 - *Scenario principale:*
-  + Il sistema mostra l'utilizzo che la tecnologia ha all'interno del progetto (backend, frontend, database, framework ecc.).
+  + Il sistema mostra il/i campo/i di applicazione della tecnologia (backend, frontend, database, framework ecc.).
 
 - *Scenario alternativo:*
-  - Non viene identificato un utilizzo per la tecnolgia identificata:
+  - Non viene identificato un campo di applicazione per la tecnolgia identificata:
     + Viene mostrata la scritta N.D. (Non disponibile).
 
-- *Postcondizioni:* Il Business Owner ha visualizzato l'utilizzo che la tecnologia ha all'interno del progetto.
+- *Postcondizioni:* Il Business Owner ha visualizzato il campo di utilizzo della tecnologia.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3665,7 +3665,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCB2.5.1 - Visualizzazione elemento lista del team di sviluppo <UCBO2.5.1>
+=== UCBO2.5.1 - Visualizzazione elemento lista del team di sviluppo <UCBO2.5.1>
 - *Attore principale:* Business Owner.
 
 - *Descrizione:* Il Business Owner sta visualizzando il dettaglio di un elemento della lista dei componenti di un progetto (#link(<UCBO2.5>)[[UCBO2.5]]).
@@ -3753,9 +3753,9 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
+#pagebreak()
 
-
-=== UCBO3: Visualizzazione statistiche singoli developer 
+=== UCBO3: Visualizzazione dettaglio singolo developer 
 #align(center, [#image("../../asset/UC/business-owner/UCBO3.png", height: 5cm)])
 
 <UCBO3>
@@ -3771,7 +3771,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Business Owner visualizza il nome dello sviluppatore (*<\<include>>* #link(<UCBO2.5.2>)[[UCBO2.5.2]]). 
   + Il Business Owner vede il numero di progetti a cui il developer ha lavorato e sta lavorando (*<\<include>>* #link(<UCBO3.1>)[[UCBO3.1]]).
-  + Il Business Owner consulta i linguaggi e tecnologie affini del developer (*<\<include>>* #link(<UCBO3.2>)[[UCBO3.2]]).
+  + Il Business Owner consulta le tecnologie affini del developer (*<\<include>>* #link(<UCBO3.2>)[[UCBO3.2]]).
   + Il Business Owner consulta i ruoli assumibili dal developer (*<\<include>>* #link(<UCBO3.3>)[[UCBO3.3]]).
   
 - *Postcondizioni:* Il Business Owner ha approfondito la conoscenza delle competenze e del carico di lavoro del developer.
@@ -3979,134 +3979,157 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   align: (left, left, left),
   fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
   
-  table.header(
-  [*Codice*], [*Descrizione*], [*Fonti*]),
+  table.header([*Codice*], [*Descrizione*], [*Fonti*]),
   //NOTA: i requisiti non dovrebbero cambiare, al massimo se ne aggiungono, ma i riferienti agli UC molto probabilmente cambiano
   // UTENTE GENERICO
-[R-1-F-O],[L'utente deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
-[R-2-F-O],[L'utente deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
-[R-3-F-O],[L'utente deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
-[R-4-F-O],[L'utente deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
-[R-5-F-O],[L'utente deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
-[R-7-F-D],[L'utente può annullare l'autenticazione con il provider esterno GitHub],[#link(<UC1.5>)[UC1.5]],
+  [R-1-F-O],[L'utente deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
+  [R-2-F-O],[L'utente deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
+  [R-3-F-O],[L'utente deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
+  [R-4-F-O],[L'utente deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
+  [R-5-F-O],[L'utente deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
+  [R-7-F-D],[L'utente può annullare l'autenticazione con il provider esterno GitHub],[#link(<UC1.5>)[UC1.5]],
 
-[R-16-F-O],[L'utente deve poter inserire un repository pubblico al sistema],[#link(<UC8>)[UC8]],
-[R-17-F-D],[L'utente deve poter inserire un repository privato al sistema],[#link(<UC8.0.1>)[UC8.0.1]],
-[R-18-F-D],[L'utente deve poter inserire il Personal Access Token collegato al proprio account],[#link(<UC8.0.1>)[UC8.0.1]],
-[R-19-F-D],[L'utente deve ricevere un messaggio di errore in caso di token inserito non valido],[#link(<UC8.0.2>)[UC8.0.2]],
-[R-20-F-O],[L'utente deve poter annullare l'inserimento di un repository],[#link(<UC8.1>)[UC8.1]],
-[R-21-F-O],[L'utente deve poter inserire l'URL del repository],[#link(<UC8.2>)[UC8.2]],
-[R-22-F-O],[L'utente deve ricevere un messaggio di errore nel caso di URL non valido],[#link(<UC8.3>)[UC8.3]],
-[R-23-F-O],[L'utente deve poter visualizzare la lista dei propri repository personali],[#link(<UC6>)[UC6]],
-[R-24-F-O],[L'utente deve poter selezionare una preferenza sulla tipologia di repository che desidera visualizzare],[#link(<UC6.1>)[UC6.1]],
-[R-25-F-O],[L'utente deve poter visualizzare il nome di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.5>)[UC5.5]],
-[R-26-F-D],[L'utente deve poter visualizzare il nome del progetto associato al repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.6>)[UC5.6]],
-[R-27-F-O],[L'utente deve poter visualizzare l’indicatore  di visibilità di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.7>)[UC5.7]],
-[R-28-F-O],[L'utente deve poter visualizzare la lista dei progetti ai quali contribuisce],[#link(<UC9>)[UC9]],
-[R-29-F-O],[L'utente deve poter visualizzare il nome di un progetto],[#link(<UC10.1>)[UC10.1]],
-[R-30-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sulla documentazione di un progetto],[#link(<UC10>)[UC10], #link(<UC10.2>)[UC10.2]],
-[R-31-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sui test di un progetto],[#link(<UC10>)[UC10], #link(<UC10.3>)[UC10.3]],
-[R-32-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi OWASP di un progetto],[#link(<UC10>)[UC10], #link(<UC10.4>)[UC10.4]],
-[R-33-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sulla documentazione di un repository],[ #link(<UC5.1>)[UC5.1]],
-[R-34-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sui test di un repository],[#link(<UC5.2>)[UC5.2]],
-[R-35-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi OWASP di un repository],[#link(<UC5.4>)[UC5.4]],
-[R-36-F-O],[L'utente deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
+  [R-16-F-O],[L'utente deve poter inserire un repository pubblico al sistema],[#link(<UC8>)[UC8]],
+  [R-17-F-D],[L'utente deve poter inserire un repository privato al sistema],[#link(<UC8.0.1>)[UC8.0.1]],
+  [R-18-F-D],[L'utente deve poter inserire il Personal Access Token collegato al proprio account],[#link(<UC8.0.1>)[UC8.0.1]],
+  [R-19-F-D],[L'utente deve ricevere un messaggio di errore in caso di token inserito non valido],[#link(<UC8.0.2>)[UC8.0.2]],
+  [R-20-F-O],[L'utente deve poter annullare l'inserimento di un repository],[#link(<UC8.1>)[UC8.1]],
+  [R-21-F-O],[L'utente deve poter inserire l'URL del repository],[#link(<UC8.2>)[UC8.2]],
+  [R-22-F-O],[L'utente deve ricevere un messaggio di errore nel caso di URL non valido],[#link(<UC8.3>)[UC8.3]],
+  [R-23-F-O],[L'utente deve poter visualizzare la lista dei propri repository personali],[#link(<UC6>)[UC6]],
+  [R-24-F-O],[L'utente deve poter selezionare una preferenza sulla tipologia di repository che desidera visualizzare],[#link(<UC6.1>)[UC6.1]],
+  [R-25-F-O],[L'utente deve poter visualizzare il nome di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.5>)[UC5.5]],
+  [R-26-F-D],[L'utente deve poter visualizzare il nome del progetto associato al repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.6>)[UC5.6]],
+  [R-27-F-O],[L'utente deve poter visualizzare l’indicatore  di visibilità di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.7>)[UC5.7]],
+  [R-28-F-O],[L'utente deve poter visualizzare la lista dei progetti ai quali contribuisce],[#link(<UC9>)[UC9]],
+  [R-29-F-O],[L'utente deve poter visualizzare il nome di un progetto],[#link(<UC10.1>)[UC10.1]],
+  [R-30-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sulla documentazione di un progetto],[#link(<UC10>)[UC10], #link(<UC10.2>)[UC10.2]],
+  [R-31-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sui test di un progetto],[#link(<UC10>)[UC10], #link(<UC10.3>)[UC10.3]],
+  [R-32-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi OWASP di un progetto],[#link(<UC10>)[UC10], #link(<UC10.4>)[UC10.4]],
+  [R-33-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sulla documentazione di un repository],[ #link(<UC5.1>)[UC5.1]],
+  [R-34-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sui test di un repository],[#link(<UC5.2>)[UC5.2]],
+  [R-35-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi OWASP di un repository],[#link(<UC5.4>)[UC5.4]],
+  [R-36-F-O],[L'utente deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
 
-[R-9-F-O],[L'utente deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
-[R-10-F-O],[L'utente deve poter visualizzare il proprio nome utente],[#link(<UC2.1>)[UC2.1]],
-[R-11-F-O],[L'utente deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
-[R-12-F-O],[L'utente deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
-[R-13-F-O],[L'utente deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
-[R-14-F-O],[L'utente deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
-[R-15-F-D],[L'utente deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
+  [R-9-F-O],[L'utente deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
+  [R-10-F-O],[L'utente deve poter visualizzare il proprio nome utente],[#link(<UC2.1>)[UC2.1]],
+  [R-11-F-O],[L'utente deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
+  [R-12-F-O],[L'utente deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
+  [R-13-F-O],[L'utente deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
+  [R-14-F-O],[L'utente deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
+  [R-15-F-D],[L'utente deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
 
-[R-92-F-P],[L'utente deve poter cercare un repository in una barra di ricerca],[#link(<UC7>)[UC7]],
+  [R-92-F-P],[L'utente deve poter cercare un repository in una barra di ricerca],[#link(<UC7>)[UC7]],
 
-// DEV
-[R-78-F-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
-[R-6-F-D],[Il Developer può sincronizzare il proprio account GitHub],[#link(<UCD2>)[UCD2]],
-[R-8-F-D],[Il Developer deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UCD2.1>)[UCD2.1]],
+  // DEV
+  [R-78-F-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
+  [R-6-F-D],[Il Developer può sincronizzare il proprio account GitHub],[#link(<UCD2>)[UCD2]],
+  [R-8-F-D],[Il Developer deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UCD2.1>)[UCD2.1]],
 
 
-[R-37-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi OWASP per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.2>)[UCD6.0.2]],
-[R-38-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi sulla documentazione per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.3>)[UCD6.0.3]],
-[R-39-F-O],[Il Developer deve essere n grado di visualizzare il dettaglio del file sul quale è stata proposto un cambiamento],[#link(<UCD6.1>)[UCD6.1]],
-[R-40-F-D],[Il Developer deve poter cambiare il path di destinazione del file sul quale è stata proposta un remediation],[#link(<UCD6.1.2>)[UCD6.1.2]],
-[R-41-F-D],[Il Developer deve poter inserire il uovo path all'interno del sistema],[#link(<UCD6.1.5>)[UCD6.1.5]],
-[R-42-F-D],[Il Developer deve poter annullare il cambio di path di un file nel contesto di una proposta di remediation],[#link(<UCD6.1.3>)[UCD6.1.3]],
-[R-43-F-D],[Il Developer deve visualizzare un messaggio di errore nel caso abbia inserito un path non valido per un file, nel contesto di una proposta di remediation],[#link(<UCD6.1.4>)[UCD6.1.4]],
-[R-44-F-D],[Il Developer deve poter accettare una proposta di remediation],[#link(<UCD6.2>)[UCD6.2]],
-[R-45-F-D],[Il Developer deve ricevere una notifica una volta che è stata inviata con successo una pull request sul repository GitHub],[#link(<UCD6.2.1>)[UCD6.2.1]],
-[R-46-F-D],[Il Developer deve poter annullare l'accettazione di una proposta di remediation],[#link(<UCD6.3>)[UCD6.3]],
-[R-47-F-D],[Il Developer deve ricevere un messaggio di errore nel caso di fallimento dell'accettazione della remediation],[#link(<UCD6.4>)[UCD6.4]],
-[R-48-F-D],[Il Developer deve essere informato se la remediation proposta on è più coerente con lo stato del sistema, e quindi non può essere effettuata],[#link(<UCD6.5>)[UCD6.5], #link(<UCD6.6>)[UCD6.6]],
-[R-49-F-O],[Il Developer deve poter eliminare un repository dal sistema],[#link(<UC11>)[UC11]],
-[R-50-F-O],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[#link(<UC11.1>)[UC11.1]],
-[R-51-F-D],[Il Developer deve poter visualizzare la lista dei procedimenti in corso all'interno del sistema],[#link(<UCD8>)[UCD8], #link(<UCD8.1>)[UCD8.1]],
-[R-52-F-D],[Il Developer deve visualizzare il nome del repository sul quale sta avvenendo il procedimento],[#link(<UCD8.1>)[UCD8.1], #link(<UC5.5>)[UC5.5]],
-[R-53-F-D],[Il Developer deve visualizzare la data di avvio di ogni elemento dalla lista dei procedimenti in corso in corso.],[#link(<UCD8.1>)[UCD8.1], #link(<UCD8.4>)[UCD8.4]],
-[R-54-F-D],[Il Developer deve visualizzare il nome branch aperto di ogni elemento della lista delle remediation in corso.],[#link(<UCD8.2>)[UCD8.2], #link(<UCD8.2.1>)[UCD8.2.1]],
-[R-55-F-D],[Il Developer deve poter interrompere una remediation avviata],[#link(<UCD8.2>)[UCD8.2], #link(<UCD9>)[UCD9]],
-[R-56-F-D],[Il Developer deve visualizzare un messaggio di avvenuta interruzione di una remediation in corso, in caso ne abbia richiesto la stessa],[#link(<UCD9.1>)[UCD9.1]],
-[R-57-F-D],[Il Developer deve poter annullare un analisi in corso all'interno del sistema],[#link(<UCD8.3>)[UCD8.3], #link(<UCD10>)[UCD10]],
-[R-58-F-D],[Il Developer deve visualizzare un messaggio di avvenuto annullamento di un analisi in corso],[#link(<UCD10.1>)[UCD10.1]],
-[R-59-F-D],[Il Developer deve visualizzare una lista con le ultime analisi portate a termine],[#link(<UCD11>)[UCD11]],
-[R-60-F-D],[Il Developer deve visualizzare il nome del repository sul quale un analisi  stata terminata],[#link(<UCD11.1>)[UCD11.1], #link(<UC5.5>)[UC5.5]],
-[R-61-F-D],[Il Developer deve visualizzare la data di completamento di un'analisi terminata],[#link(<UCD11.1>)[UCD11.1], #link(<UCD11.1.1>)[UCD11.1.1]],
-[R-62-F-D],[Il Developer deve poter visualizzare la specifica di una analisi portata a termine all'interno di un repository, che non sia l'ultima],[#link(<UCD12>)[UCD12]],
-[R-63-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi sulla documentazione],[#link(<UCD12.1>)[UCD12.1]],
-[R-64-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi sui test],[#link(<UCD12.2>)[UCD12.2]],
-[R-65-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi OWASP],[#link(<UCD12.3>)[UCD12.3]],
-[R-66-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare le proposte di remediation elaborate in seguito all'analisi],[#link(<UCD12.4>)[UCD12.4]],
-[R-67-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare la proposta di remediation specifica inerente ad un singolo file],[#link(<UCD12.4.1>)[UCD12.4.1]],
-[R-68-F-O],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository per l'area test],[#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1]],
-[R-69-F-O],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository],[#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1], #link(<UCD13.2>)[UCD13.2], #link(<UCD13.3>)[UCD13.3]],
-[R-70-F-D],[Il Developer deve poter visualizzare la data di fine di un analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD11.1.1>)[UCD11.1.1]],
-[R-71-F-D],[Il Developer deve poter visualizzare la lo stato di un analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD14.1>)[UCD14.1]],
-[R-72-F-O],[Il Developer deve poter avviare un analisi generale all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.2>)[UCD15.2]],
-[R-73-F-O],[Il Developer deve poter avviare un sui test all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.3>)[UCD15.3]],
-[R-74-F-O],[Il Developer deve poter avviare un analisi sulla documentazione all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.4>)[UCD15.4]],
-[R-75-F-O],[Il Developer deve poter avviare un analisi OWASP all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.5>)[UCD15.5]],
-[R-76-F-O],[Il Developer deve ricevere un messaggio di errore nel caso si verificasse un conflitto con un'altra analisi all'avvio di un'analisi],[#link(<UCD15.6>)[UCD15.6]],
-[R-77-F-O],[Il Developer deve poter annullare l'avvio di un analisi],[#link(<UCD15.7>)[UCD15.7]],
-// PM 
-[R-79-F-D],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[#link(<UCPM1>)[UCPM1]],
-[R-80-F-D],[Il Project Manager deve poter visualizzare la lista dei propri progetti],[#link(<UCPM2>)[UCPM2]],
-[R-81-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.2>)[UC10.2]]),
-[R-82-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.3>)[UC10.3]]),
-[R-83-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.4>)[UC10.4]]),
-[R-84-F-D],[Il Project Manager deve poter visualizzare i dettagli di un progetto],[#link(<UCPM2.1>)[UCPM2.1]],
-[R-85-F-D],[Il Project Manager deve poter visualizzare i dettagli di un suo progetto],[#link(<UCPM2.1>)[UCPM2.1]],
-[R-86-F-D],[Il Project Manager deve poter visualizzare, tra le altre informazioni del progetto, l'elenco dei repository che lo compongono],([#link(<UCPM2.1>)[UCPM2.1], #link(<UC5.9>)[UC5.9]]),
-[R-87-F-D],[Il Project Manager deve poter creare un nuovo progetto],[#link(<UCPM1.2>)[UCPM1.2]],
-[R-88-F-D],[Il Project Manager deve poter inserire il nome del progetto],[#link(<UCPM1.2.1>)[UCPM1.2.1]],
-[R-89-F-D],[Il Project Manager deve poter modificare il nome di un progetto],[#link(<UCPM1.2.2>)[UCPM1.2.2]],
-[R-90-F-D],[Il Project Manager deve poter ricevere un errore, se il nuovo nome del progetto che si sta inserendo è già presente per quell'utente],[#link(<UCPM1.2.3>)[UCPM1.2.3]],
-[R-91-F-D],[Il Project Manager deve poter aggiungere un repository al progetto],[#link(<UCPM1.3>)[UCPM1.3]],
-[R-93-F-D],[Il Project Manager deve poter visualizzare una lista di repository da poter aggiungere al progetto],[#link(<UCPM1.5>)[UCPM1.5]],
-[R-94-F-D],[Il Project Manager deve poter annullare l'operazione di aggiunta repository al progetto],[#link(<UCPM1.3.1>)[UCPM1.3.1]],
-[R-95-F-D],[Il Project Manager deve poter aggiungere dei developer al progetto],[#link(<UCPM1.4>)[UCPM1.4]],
-[R-96-F-D],[Il Project Manager deve poter cercare il nome di un developer su una barra di ricerca ],[#link(<UCPM1.4.2>)[UCPM1.4.2]],
-[R-97-F-D],[Il Project Manager deve poter visualizzare una lista di developer da poter aggiungere al progetto],[#link(<UCPM1.6>)[UCPM1.6]],
-[R-98-F-D],[Il Project Manager deve poter annullare l'aggiunta dei developer al progetto],[#link(<UCPM1.4.1>)[UCPM1.4.1]],
-[R-99-F-D],[Il Project Manager deve poter visualizzare il nome e la foto profilo di un developer],[#link(<UCPM1.6.1>)[UCPM1.6.1]],
-[R-100-F-D],[Il Project Manager deve poter visualizzare e gestire gli attuali membri del team],[#link(<UCPM1.7>)[UCPM1.7]],
-[R-101-F-D],[Il Project Manager deve poter rimuovere un developer dal progetto],[#link(<UCPM1.8>)[UCPM1.8]],
-[R-102-F-D],[Il Project Manager deve poter annullare la rimozione di un developer dal progetto],[#link(<UCPM1.8.1>)[UCPM1.8.1]],
-[R-103-F-D],[Il Project Manager deve poter visualizzare le competenze del team su un progetto],[#link(<UCPM3>)[UCPM3]],
-[R-104-F-D],[Il Project Manager deve poter visualizzare il profilo di un membro del team (developer)],[#link(<UCPM3.1>)[UCPM3.1]],
-[R-105-F-D],[Il Project Manager deve poter visualizzare il profilo GitHub di un membro del team (developer)],[#link(<UCPM3.5>)[UCPM3.5]],
-[R-106-F-D],[Il Project Manager deve poter visualizzare le icone delle tecnologie di competenza, accanto al nome dei developer],[#link(<UCPM3.2>)[UCPM3.2]],
-[R-107-F-D],[Il Project Manager deve poter visualizzare le statistiche di contribuzione di un membro del team],[#link(<UCPM3.3>)[UCPM3.3], #link(<UCPM3.3.1>)[UCPM3.3.1], #link(<UCPM3.3.2>)[UCPM3.3.2]],
-[R-108-F-D],[Il Project Manager deve poter visualizzare i linguaggi maggiormente utilizzati da un membro del team],[#link(<UCPM3.4>)[UCPM3.4]],
-[R-109-F-D],[Il Project Manager deve poter visualizzare i linguaggi maggiormente utilizzati da un membro del team],[#link(<UCPM3.4>)[UCPM3.4]],
-[R-110-F-D],[Il Project Manager deve poter visualizzare il numero di commit effettuati da un membro del team],[#link(<UCPM3.3.1>)[UCPM3.3.1]],
-[R-111-F-D],[Il Project Manager deve poter visualizzare il numero di pull request gestite da un membro del team],[#link(<UCPM3.3.2>)[UCPM3.3.2]],
-[R-112-F-D],[Il Project Manager deve poter visualizzare lo stack tecnologico utilizzato in un progetto],[#link(<UCPM4>)[UCPM4]],
-[R-113-F-D],[Il Project Manager deve poter visualizzare l'elenco dei: framework e librerie,  utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.1>)[UCPM4.1]],
-[R-114-F-D],[Il Project Manager deve poter visualizzare l'elenco di segnalazioni a: framework e librerie con rischi di sicurezza o deprecate, utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.2>)[UCPM4.2]],
-[R-115-F-D],[Il Project Manager deve poter visualizzare suggerimenti generati dall'IA per la sostituzione di framework e librerie, utilizzate nello stack tecnologico di un progetto],[#link(<UCPM4.3>)[UCPM4.3]],
-// BO
+  [R-37-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi OWASP per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.2>)[UCD6.0.2]],
+  [R-38-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi sulla documentazione per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.3>)[UCD6.0.3]],
+  [R-39-F-O],[Il Developer deve essere n grado di visualizzare il dettaglio del file sul quale è stata proposto un cambiamento],[#link(<UCD6.1>)[UCD6.1]],
+  [R-40-F-D],[Il Developer deve poter cambiare il path di destinazione del file sul quale è stata proposta un remediation],[#link(<UCD6.1.2>)[UCD6.1.2]],
+  [R-41-F-D],[Il Developer deve poter inserire il uovo path all'interno del sistema],[#link(<UCD6.1.5>)[UCD6.1.5]],
+  [R-42-F-D],[Il Developer deve poter annullare il cambio di path di un file nel contesto di una proposta di remediation],[#link(<UCD6.1.3>)[UCD6.1.3]],
+  [R-43-F-D],[Il Developer deve visualizzare un messaggio di errore nel caso abbia inserito un path non valido per un file, nel contesto di una proposta di remediation],[#link(<UCD6.1.4>)[UCD6.1.4]],
+  [R-44-F-D],[Il Developer deve poter accettare una proposta di remediation],[#link(<UCD6.2>)[UCD6.2]],
+  [R-45-F-D],[Il Developer deve ricevere una notifica una volta che è stata inviata con successo una pull request sul repository GitHub],[#link(<UCD6.2.1>)[UCD6.2.1]],
+  [R-46-F-D],[Il Developer deve poter annullare l'accettazione di una proposta di remediation],[#link(<UCD6.3>)[UCD6.3]],
+  [R-47-F-D],[Il Developer deve ricevere un messaggio di errore nel caso di fallimento dell'accettazione della remediation],[#link(<UCD6.4>)[UCD6.4]],
+  [R-48-F-D],[Il Developer deve essere informato se la remediation proposta on è più coerente con lo stato del sistema, e quindi non può essere effettuata],[#link(<UCD6.5>)[UCD6.5], #link(<UCD6.6>)[UCD6.6]],
+  [R-49-F-O],[Il Developer deve poter eliminare un repository dal sistema],[#link(<UC11>)[UC11]],
+  [R-50-F-O],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[#link(<UC11.1>)[UC11.1]],
+  [R-51-F-D],[Il Developer deve poter visualizzare la lista dei procedimenti in corso all'interno del sistema],[#link(<UCD8>)[UCD8], #link(<UCD8.1>)[UCD8.1]],
+  [R-52-F-D],[Il Developer deve visualizzare il nome del repository sul quale sta avvenendo il procedimento],[#link(<UCD8.1>)[UCD8.1], #link(<UC5.5>)[UC5.5]],
+  [R-53-F-D],[Il Developer deve visualizzare la data di avvio di ogni elemento dalla lista dei procedimenti in corso in corso.],[#link(<UCD8.1>)[UCD8.1], #link(<UCD8.4>)[UCD8.4]],
+  [R-54-F-D],[Il Developer deve visualizzare il nome branch aperto di ogni elemento della lista delle remediation in corso.],[#link(<UCD8.2>)[UCD8.2], #link(<UCD8.2.1>)[UCD8.2.1]],
+  [R-55-F-D],[Il Developer deve poter interrompere una remediation avviata],[#link(<UCD8.2>)[UCD8.2], #link(<UCD9>)[UCD9]],
+  [R-56-F-D],[Il Developer deve visualizzare un messaggio di avvenuta interruzione di una remediation in corso, in caso ne abbia richiesto la stessa],[#link(<UCD9.1>)[UCD9.1]],
+  [R-57-F-D],[Il Developer deve poter annullare un analisi in corso all'interno del sistema],[#link(<UCD8.3>)[UCD8.3], #link(<UCD10>)[UCD10]],
+  [R-58-F-D],[Il Developer deve visualizzare un messaggio di avvenuto annullamento di un analisi in corso],[#link(<UCD10.1>)[UCD10.1]],
+  [R-59-F-D],[Il Developer deve visualizzare una lista con le ultime analisi portate a termine],[#link(<UCD11>)[UCD11]],
+  [R-60-F-D],[Il Developer deve visualizzare il nome del repository sul quale un analisi  stata terminata],[#link(<UCD11.1>)[UCD11.1], #link(<UC5.5>)[UC5.5]],
+  [R-61-F-D],[Il Developer deve visualizzare la data di completamento di un'analisi terminata],[#link(<UCD11.1>)[UCD11.1], #link(<UCD11.1.1>)[UCD11.1.1]],
+  [R-62-F-D],[Il Developer deve poter visualizzare la specifica di una analisi portata a termine all'interno di un repository, che non sia l'ultima],[#link(<UCD12>)[UCD12]],
+  [R-63-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi sulla documentazione],[#link(<UCD12.1>)[UCD12.1]],
+  [R-64-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi sui test],[#link(<UCD12.2>)[UCD12.2]],
+  [R-65-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi OWASP],[#link(<UCD12.3>)[UCD12.3]],
+  [R-66-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare le proposte di remediation elaborate in seguito all'analisi],[#link(<UCD12.4>)[UCD12.4]],
+  [R-67-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare la proposta di remediation specifica inerente ad un singolo file],[#link(<UCD12.4.1>)[UCD12.4.1]],
+  [R-68-F-O],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository per l'area test],[#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1]],
+  [R-69-F-O],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository],[#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1], #link(<UCD13.2>)[UCD13.2], #link(<UCD13.3>)[UCD13.3]],
+  [R-70-F-D],[Il Developer deve poter visualizzare la data di fine di un analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD11.1.1>)[UCD11.1.1]],
+  [R-71-F-D],[Il Developer deve poter visualizzare la lo stato di un analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD14.1>)[UCD14.1]],
+  [R-72-F-O],[Il Developer deve poter avviare un analisi generale all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.2>)[UCD15.2]],
+  [R-73-F-O],[Il Developer deve poter avviare un sui test all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.3>)[UCD15.3]],
+  [R-74-F-O],[Il Developer deve poter avviare un analisi sulla documentazione all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.4>)[UCD15.4]],
+  [R-75-F-O],[Il Developer deve poter avviare un analisi OWASP all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.5>)[UCD15.5]],
+  [R-76-F-O],[Il Developer deve ricevere un messaggio di errore nel caso si verificasse un conflitto con un'altra analisi all'avvio di un'analisi],[#link(<UCD15.6>)[UCD15.6]],
+  [R-77-F-O],[Il Developer deve poter annullare l'avvio di un analisi],[#link(<UCD15.7>)[UCD15.7]],
+  // PM 
+  [R-79-F-D],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[#link(<UCPM1>)[UCPM1]],
+  [R-80-F-D],[Il Project Manager deve poter visualizzare la lista dei propri progetti],[#link(<UCPM2>)[UCPM2]],
+  [R-81-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.2>)[UC10.2]]),
+  [R-82-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.3>)[UC10.3]]),
+  [R-83-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.4>)[UC10.4]]),
+  [R-84-F-D],[Il Project Manager deve poter visualizzare i dettagli di un progetto],[#link(<UCPM2.1>)[UCPM2.1]],
+  [R-85-F-D],[Il Project Manager deve poter visualizzare i dettagli di un suo progetto],[#link(<UCPM2.1>)[UCPM2.1]],
+  [R-86-F-D],[Il Project Manager deve poter visualizzare, tra le altre informazioni del progetto, l'elenco dei repository che lo compongono],([#link(<UCPM2.1>)[UCPM2.1], #link(<UC5.9>)[UC5.9]]),
+  [R-87-F-D],[Il Project Manager deve poter creare un nuovo progetto],[#link(<UCPM1.2>)[UCPM1.2]],
+  [R-88-F-D],[Il Project Manager deve poter inserire il nome del progetto],[#link(<UCPM1.2.1>)[UCPM1.2.1]],
+  [R-89-F-D],[Il Project Manager deve poter modificare il nome di un progetto],[#link(<UCPM1.2.2>)[UCPM1.2.2]],
+  [R-90-F-D],[Il Project Manager deve poter ricevere un errore, se il nuovo nome del progetto che si sta inserendo è già presente per quell'utente],[#link(<UCPM1.2.3>)[UCPM1.2.3]],
+  [R-91-F-D],[Il Project Manager deve poter aggiungere un repository al progetto],[#link(<UCPM1.3>)[UCPM1.3]],
+  [R-93-F-D],[Il Project Manager deve poter visualizzare una lista di repository da poter aggiungere al progetto],[#link(<UCPM1.5>)[UCPM1.5]],
+  [R-94-F-D],[Il Project Manager deve poter annullare l'operazione di aggiunta repository al progetto],[#link(<UCPM1.3.1>)[UCPM1.3.1]],
+  [R-95-F-D],[Il Project Manager deve poter aggiungere dei developer al progetto],[#link(<UCPM1.4>)[UCPM1.4]],
+  [R-96-F-D],[Il Project Manager deve poter cercare il nome di un developer su una barra di ricerca ],[#link(<UCPM1.4.2>)[UCPM1.4.2]],
+  [R-97-F-D],[Il Project Manager deve poter visualizzare una lista di developer da poter aggiungere al progetto],[#link(<UCPM1.6>)[UCPM1.6]],
+  [R-98-F-D],[Il Project Manager deve poter annullare l'aggiunta dei developer al progetto],[#link(<UCPM1.4.1>)[UCPM1.4.1]],
+  [R-99-F-D],[Il Project Manager deve poter visualizzare il nome e la foto profilo di un developer],[#link(<UCPM1.6.1>)[UCPM1.6.1]],
+  [R-100-F-D],[Il Project Manager deve poter visualizzare e gestire gli attuali membri del team],[#link(<UCPM1.7>)[UCPM1.7]],
+  [R-101-F-D],[Il Project Manager deve poter rimuovere un developer dal progetto],[#link(<UCPM1.8>)[UCPM1.8]],
+  [R-102-F-D],[Il Project Manager deve poter annullare la rimozione di un developer dal progetto],[#link(<UCPM1.8.1>)[UCPM1.8.1]],
+  [R-103-F-D],[Il Project Manager deve poter visualizzare le competenze del team su un progetto],[#link(<UCPM3>)[UCPM3]],
+  [R-104-F-D],[Il Project Manager deve poter visualizzare il profilo di un membro del team (developer)],[#link(<UCPM3.1>)[UCPM3.1]],
+  [R-105-F-D],[Il Project Manager deve poter visualizzare il profilo GitHub di un membro del team (developer)],[#link(<UCPM3.5>)[UCPM3.5]],
+  [R-106-F-D],[Il Project Manager deve poter visualizzare le icone delle tecnologie di competenza, accanto al nome dei developer],[#link(<UCPM3.2>)[UCPM3.2]],
+  [R-107-F-D],[Il Project Manager deve poter visualizzare le statistiche di contribuzione di un membro del team],[#link(<UCPM3.3>)[UCPM3.3], #link(<UCPM3.3.1>)[UCPM3.3.1], #link(<UCPM3.3.2>)[UCPM3.3.2]],
+  [R-108-F-D],[Il Project Manager deve poter visualizzare i linguaggi maggiormente utilizzati da un membro del team],[#link(<UCPM3.4>)[UCPM3.4]],
+  [R-109-F-D],[Il Project Manager deve poter visualizzare i linguaggi maggiormente utilizzati da un membro del team],[#link(<UCPM3.4>)[UCPM3.4]],
+  [R-110-F-D],[Il Project Manager deve poter visualizzare il numero di commit effettuati da un membro del team],[#link(<UCPM3.3.1>)[UCPM3.3.1]],
+  [R-111-F-D],[Il Project Manager deve poter visualizzare il numero di pull request gestite da un membro del team],[#link(<UCPM3.3.2>)[UCPM3.3.2]],
+  [R-112-F-D],[Il Project Manager deve poter visualizzare lo stack tecnologico utilizzato in un progetto],[#link(<UCPM4>)[UCPM4]],
+  [R-113-F-D],[Il Project Manager deve poter visualizzare l'elenco dei: framework e librerie,  utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.1>)[UCPM4.1]],
+  [R-114-F-D],[Il Project Manager deve poter visualizzare l'elenco di segnalazioni a: framework e librerie con rischi di sicurezza o deprecate, utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.2>)[UCPM4.2]],
+  [R-115-F-D],[Il Project Manager deve poter visualizzare suggerimenti generati dall'IA per la sostituzione di framework e librerie, utilizzate nello stack tecnologico di un progetto],[#link(<UCPM4.3>)[UCPM4.3]],
+  // BO
+  [R-116-F-D],[Il Business Owner deve poter visualizzare la lista dei propri progetti],[#link(<UCBO1>)[UCBO1], #link(<UC9>)[UC9]],
+  [R-117-F-D],[Il Business Owner deve poter visualizzare il budget complessivo per il proprio progetto],[#link(<UCBO1>)[UCBO1], #link(<UCBO1.1>)[UCBO1.1], #link(<UCBO1.1.1>)[UCBO1.1.1]],
+  [R-118-F-D],[Il Business Owner deve visualizzare le spese affrontate per un progetto],[#link(<UCBO1>)[UCBO1], #link(<UCBO1.1>)[UCBO1.1], #link(<UCBO1.1.2>)[UCBO1.1.2]],
+  [R-119-F-D],[Il Business Owner deve poter comparare il budget a disposizione con le spese affrontate],[#link(<UCBO1>)[UCBO1], #link(<UCBO1.1>)[UCBO1.1], #link(<UCBO1.1.3>)[UCBO1.1.3]],
+  [R-120-F-D],[Il Business Owner deve visualizzare il dettaglio di un progetto],[#link(<UCBO2>)[UCBO2]],
+  [R-121-F-D],[Il Business Owner deve visualizzare il nome di un progetto],[#link(<UC10.1>)[UC10.1]],
+  [R-122-F-D],[Il Business Owner deve poter aggiungere il budget complessivo per un progetto],[#link(<UCBO2.1>)[UCBO2.1], #link(<UCBO2.7>)[UCBO2.7]],
+  [R-123-F-D],[Il Business Owner deve poter annullare l'aggiunta del budget complessivo],[#link(<UCBO2.6>)[UCBO2.6]],
+  [R-124-F-D],[Il Business Owner deve poter aggiungere la spesa sostenuta per un progetto],[#link(<UCBO2.2>)[UCBO2.2], #link(<UCBO2.7>)[UCBO2.7]],
+  [R-125-F-D],[Il Business Owner deve poter annullare l'aggiunta della spesa sostenuta per un progetto],[#link(<UCBO2.6>)[UCBO2.6]],
+  [R-126-F-D],[Il Business Owner deve visualizzare l nome del Project Manager di un progetto],[#link(<UCBO2.3>)[UCBO2.3], #link(<UCBO2.3.1>)[UCBO2.3.1]],
+  [R-127-F-D],[Il Business Owner deve visualizzare la mail di contatto del Project Manager di un progetto],[#link(<UCBO2.3>)[UCBO2.3], #link(<UCBO2.3.2>)[UCBO2.3.2]],
+  [R-128-F-D],[Il Business Owner deve visualizzare la data di creazione di un progetto],[#link(<UCBO2.3>)[UCBO2.3], #link(<UCBO2.3.3>)[UCBO2.3.3]],
+  [R-129-F-D],[Il Business Owner deve poter visualizzare la lista delle tecnologie utilizzate in un progetto],[#link(<UCBO2.4>)[UCBO2.4]],
+  [R-130-F-D],[Il Business Owner deve visualizzare, per ogni elemento di una lista di stack tecnologico, il logo della tecnologia],[#link(<UCBO2.4.2>)[UCBO2.4.2]],
+  [R-131-F-D],[Il Business Owner deve visualizzare, per ogni elemento di una lista di stack tecnologico, il nome della tecnologia],[#link(<UCBO2.4.3>)[UCBO2.4.3]],
+  [R-131-F-D],[Il Business Owner deve visualizzare, per ogni elemento di una lista di stack tecnologico, il l'utilizzo che si fa della tecnologia],[#link(<UCBO2.4.4>)[UCBO2.4.4]],
+  [R-132-F-D],[Il Business Owner deve visualizzare la lista del team di sviluppo che a parte di un progetto],[#link(<UCBO2.5>)[UCBO2.5]],
+  [R-133-F-D],[Il Business Owner, per ogni elemento della lista del team di sviluppo, deve visualizzare il nome dello sviluppatore],[#link(<UCBO2.5.1>)[UCBO2.5.1], #link(<UCBO2.5.2>)[UCBO2.5.2]],
+  [R-134-F-D],[Il Business Owner, per ogni elemento della lista del team di sviluppo, deve visualizzare il ruolo dello sviluppatore all'interno di un progetto],[#link(<UCBO2.5.1>)[UCBO2.5.1], #link(<UCBO2.5.3>)[UCBO2.5.3]],
+  [R-135-F-D],[Il Business Owner deve visualizzare i dettagli di un developer che lavora ad un suo progetto],[#link(<UCBO3>)[UCBO3]],
+  [R-136-F-D],[Il Business Owner deve visualizzare il numero di progetti ai quali lo sviluppatore ha preso parte],[#link(<UCBO3.1>)[UCBO3.1]],
+  [R-137-F-D],[Il Business Owner deve visualizzare le tecnologie che uno sviluppatore può utilizzare],[#link(<UCBO3.2>)[UCBO3.2]],
+  [R-138-F-D],[Il Business Owner deve visualizzare i ruoli che uno sviluppatore può assumere],[#link(<UCBO3.3>)[UCBO3.3]],
 )
 
 == Requisiti di vincolo
