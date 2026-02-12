@@ -3672,7 +3672,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 [R-33-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sulla documentazione di un repository],[ #link(<UC5.1>)[UC5.1]],
 [R-34-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sui test di un repository],[#link(<UC5.2>)[UC5.2]],
 [R-35-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi OWASP di un repository],[#link(<UC5.4>)[UC5.4]],
-[R-36-F-O],[L'utente deve visualizzare la lista dei file sui quali è stata proposta 
+[R-36-F-O],[L'utente deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
 
 [R-9-F-O],[L'utente deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
 [R-10-F-O],[L'utente deve poter visualizzare il proprio nome utente],[#link(<UC2.1>)[UC2.1]],
@@ -3689,7 +3689,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 [R-6-F-D],[Il Developer può sincronizzare il proprio account GitHub],[#link(<UCD2>)[UCD2]],
 [R-8-F-D],[Il Developer deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UCD2.1>)[UCD2.1]],
 
-remediation a seguito di un analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
+
 [R-37-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi OWASP per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.2>)[UCD6.0.2]],
 [R-38-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi sulla documentazione per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.3>)[UCD6.0.3]],
 [R-39-F-O],[Il Developer deve essere n grado di visualizzare il dettaglio del file sul quale è stata proposto un cambiamento],[#link(<UCD6.1>)[UCD6.1]],
