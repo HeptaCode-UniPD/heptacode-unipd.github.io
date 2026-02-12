@@ -2643,7 +2643,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM1.3 - Aggiunta repository a progetto 
+=== UCPM1.3 - Aggiunta repository a progetto
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
 
 <UCPM1.3>
@@ -2703,7 +2703,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 
-=== UCPM1.4 - Aggiunta developer a progetto 
+=== UCPM1.4 - Aggiunta developer a progetto
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
 
 <UCPM1.4>
@@ -2868,7 +2868,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Postcondizioni:* Il Project Manager è consapevole degli attuali membri del team, facenti parte del progetto selezionato precedentemente.
 
-=== UCPM1.8 - Rimozione developer da progetto 
+=== UCPM1.8 - Rimozione developer da progetto
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
 <UCPM1.8>
 
