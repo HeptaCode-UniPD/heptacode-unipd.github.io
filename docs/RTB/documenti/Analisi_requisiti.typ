@@ -3369,7 +3369,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #pagebreak()
 
-=== UCBO2: Accedere progetto singolo 
+=== UCBO2 - Accedere progetto singolo 
 #align(center, [#image("../../asset/UC/business-owner/UCBO2.png", height: 7cm)])
 
 <UCBO2>
@@ -3385,7 +3385,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il Business Owner visualizza il nome del progetto (*<\<include>>* #link(<UC10.1>)[[UC10.1]]).
   + Il Business Owner visualizza l'opzione di aggiunta del budget complessivo (#link(<UCBO2.1>)[[UCBO2.1]]).
-  + Il Business Owner visualizza l'opzioine di aggiunta spese sostenute (#link(<UCBO2.2>)[[UCBO2.2]]).
+  + Il Business Owner visualizza l'opzione di aggiunta spese sostenute (#link(<UCBO2.2>)[[UCBO2.2]]).
   + Il sistema mostra un indicatore che mostra budget totale allocato (*<\<include>>* #link(<UCBO1.1.1>)[[UCBO1.1.1]]).
   + Il sistema mostra un indicatore che mostra le spese sostenute (*<\<include>>* #link(<UCBO1.1.2>)[[UCBO1.1.2]]).
   + Il sistema mostra un grafico a riempimento che confronta la spesa totale e il budget allocato (*<\<include>>* #link(<UCBO1.1.3>)[[UCBO1.1.3]]).
@@ -3414,7 +3414,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Precondizioni:* Il Business Owner è autenticato e sta visualizzando le specifiche di un progetto.
 
-- *Trigger:* Il Business Owner seleziona l'opzione di aggiunta buget complessivo.
+- *Trigger:* Il Business Owner seleziona l'opzione di aggiunta budget complessivo.
 
 - *Scenario principale:*
   + Il sistema apre una finestra pop-up per l'inserimento del budget.
@@ -3471,7 +3471,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCBO2.3 - Visualzzazione informazioni Project Manager <UCBO2.3>
+=== UCBO2.3 - Visualizzazione informazioni Project Manager <UCBO2.3>
 - *Attore principale:* Business Owner.
 
 - *Descrizione:* Il Business Owner visualizza le informazioni sul Project Manager di un progetto.
@@ -3559,7 +3559,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra un insieme di elementi che descrivono lo stack tecnologico usato (*<\<include>>* #link(<UCBO2.4.1>)[[UCBO2.4.1]]).
 
 - *Scenari alternativi:*
-  - Non è possibile recuperare lo stack tecnolgico del progetto:
+  - Non è possibile recuperare lo stack tecnologico del progetto:
     + Il sistema mostra un messaggio N.D. (Non disponibile).
   
 - *Postcondizioni:* Il Business Owner visualizza lo stack tecnologico usato nel progetto.
@@ -3601,7 +3601,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra il logo della tecnologia utilizzata.
 
 - *Scenario alternativo:*
-  - Non viene identificato un logo per la tecnolgia identificata:
+  - Non viene identificato un logo per la tecnologia identificata:
     + Viene mostrata un immagine di default. 
 
 - *Postcondizioni:* Il Business Owner ha visualizzato il logo della tecnologia descritta.
@@ -3633,7 +3633,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
   + Il sistema mostra il/i campo/i di applicazione della tecnologia (backend, frontend, database, framework ecc.).
 
 - *Scenario alternativo:*
-  - Non viene identificato un campo di applicazione per la tecnolgia identificata:
+  - Non viene identificato un campo di applicazione per la tecnologia identificata:
     + Viene mostrata la scritta N.D. (Non disponibile).
 
 - *Postcondizioni:* Il Business Owner ha visualizzato il campo di utilizzo della tecnologia.
@@ -3699,7 +3699,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il sistema mostra il nome dello sviluppatore.
 
-- *Postocondizioni:* Il Business Owner ha visualizzato il nome dello sviluppatore.
+- *Postcondizioni:* Il Business Owner ha visualizzato il nome dello sviluppatore.
 
 
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -3716,7 +3716,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Scenario principale:*
   + Il sistema mostra il ruolo dello sviluppatore per quel progetto.
 
-- *Postocondizioni:* Il Business Owner ha visualizzato il ruolo dello sviluppatore.
+- *Postcondizioni:* Il Business Owner ha visualizzato il ruolo dello sviluppatore.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3725,7 +3725,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 - *Descrizione:* Il Business Owner decide di annullare l'operazione di aggiunta del budget complessivo (#link(<UCBO2.1>)[[UCBO2.1]]) o della spesa sostenuta (#link(<UCBO2.2>)[[UCBO2.2]]).
 
-- *Precondizioni:* Il Busindess Owner sta eseguendo un operazione di aggiunta budget complessivo o aggiunta spesa sostentuta.
+- *Precondizioni:* Il business Owner sta eseguendo un operazione di aggiunta budget complessivo o aggiunta spesa sostenuta.
 
 - *Trigger:* Il Business Owner preme il pulsante per annullare l'operazione.
 
@@ -3755,7 +3755,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 #pagebreak()
 
-=== UCBO3: Visualizzazione dettaglio singolo developer 
+=== UCBO3 - Visualizzazione dettaglio singolo developer 
 #align(center, [#image("../../asset/UC/business-owner/UCBO3.png", height: 5cm)])
 
 <UCBO3>
@@ -3783,7 +3783,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCBO3.1: Visualizzazione numero progetti dello sviluppatore <UCBO3.1>
+=== UCBO3.1 - Visualizzazione numero progetti dello sviluppatore <UCBO3.1>
 
 - *Attore principale:* Business Owner
   
@@ -3801,7 +3801,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 #line(length: 100%, stroke: 0.5pt + gray)
 
 
-=== UCBO3.2: Visualizzazione linguaggi e tecnologie affini <UCBO3.2>
+=== UCBO3.2 - Visualizzazione linguaggi e tecnologie affini <UCBO3.2>
 
 - *Attore principale:* Business Owner
   
