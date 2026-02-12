@@ -2962,7 +2962,7 @@ La sezione seguente dettaglia i casi d'uso specifici, descrivendo le interazioni
 - *Trigger:* Il Project Manager preme il pulsante per annullare la rimozione del developer dal progetto.
 
 - *Scenario principale:*
-  + Il Project Manager preme il pulsante per annullare l'operaizone di rimozione developer.
+  + Il Project Manager preme il pulsante per annullare l'operazione di rimozione developer.
   - Il sistema ripristina lo stato precedente alla rimozione del developer.
 
 - *Postcondizioni:* Il processo di rimozione developer è stato annullato. Lo stato del sistema è coerente con la situazione precedente all’avvio della rimozione developer.
