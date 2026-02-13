@@ -1421,11 +1421,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [4 → 2], [], [], [], [50€],
-      [_Angela Canazza_], [], [], [4 → 2], [], [], [], [50€],
-      [_Riccardo Baldin_], [], [4 → 1], [], [], [], [], [20€],
-      [_Alberto Reginato_], [], [], [4 → 2], [], [], [], [50€],
+      [_Angela Canazza_], [], [], [4 → 3], [], [], [], [50€],
+      [_Riccardo Baldin_], [], [4 → 2], [], [], [], [], [20€],
+      [_Alberto Reginato_], [], [], [4 → 3], [], [], [], [50€],
       [_Nicola Simionato_], [], [], [4 → 2], [], [], [], [50€],
-      [_Amerigo Vegliante_], [3 → 1], [], [], [], [], [2 → 1], [45€],
+      [_Amerigo Vegliante_], [3 → 2], [], [], [], [], [2 → 1], [45€],
       [_Laura Venturini_], [], [], [2], [], [], [2 → 1], [65€],
     ) ]] <tab:RetrospettivaSprint5>
 
@@ -1494,12 +1494,12 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
       [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [4 → 2], [], [1 → 0], [], [], [40€],
-      [_Angela Canazza_], [3 → 2], [], [], [1 → 0], [], [], [60€],
+      [_Angela Favaro_], [], [4], [], [1 → 0], [], [], [40€],
+      [_Angela Canazza_], [3], [], [], [1 → 0], [], [], [60€],
       [_Riccardo Baldin_], [], [], [4], [1 → 0], [], [], [100€],
       [_Alberto Reginato_], [], [], [4], [1 → 0], [], [], [100€],
       [_Nicola Simionato_], [], [], [], [4 → 0], [], [2], [30€],
-      [_Amerigo Vegliante_], [], [], [6 → 4], [1 → 0], [], [], [100€],
+      [_Amerigo Vegliante_], [], [], [6], [1 → 0], [], [], [100€],
       [_Laura Venturini_], [], [], [], [4 → 0], [], [2], [30€],
     ) ]] <tab:RetrospettivaSprint6>
 
