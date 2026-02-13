@@ -13,7 +13,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("0.14.0", "2026-02.12", "Amerigo Vegliante", "", "Sistemazione AD e Riorganizzazione Indice")
+  ("0.14.0", "2026-02.12", "Amerigo Vegliante", "", "Sistemazione AD e Riorganizzazione Indice"),
   ("0.13.0", "2026-02-12", "Angela Favaro", "", "Stesura UC finale Business Owner"),
   ("0.12.0", "2026-02-12", "Angela Canazza", "Angela Favaro", "Stesura UC finale Project Manager"),
   ("0.11.0", "2026-02-12", "Amerigo Vegliante", "", "Stesura Diagrammi di Attività"),
@@ -1355,7 +1355,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation che l'agente ha svolto per l'analisi sul repository.
 
-- *Precondizioni:* Il Developer sta visualizzando la dashboard di dettaglio del repository #link(<UCD5>)[[UCD5]], dove deve essere stata eseguita almeno un analisi.
+- *Precondizioni:* Il Developer sta visualizzando la dashboard di dettaglio del repository #link(<UCD5>)[[UCD5]], dove deve essere stata eseguita almeno un'analisi.
 
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione proposta remediation per il repository.
 
@@ -1388,7 +1388,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation relative ai test sul repository. 
 
-- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area test sulla dashboard di dettaglio del repository #link(<UCD13.1>)[[UCD13.1]]. Deve essere stata eseguita almeno un analisi relativa ai test.
+- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area test sulla dashboard di dettaglio del repository #link(<UCD13.1>)[[UCD13.1]]. Deve essere stata eseguita almeno un'analisi relativa ai test.
 
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
@@ -1415,7 +1415,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation delle OWASP sul repository. 
 
-- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area OWASP sulla dashboard di dettaglio del repository #link(<UCD13.2>)[[UCD13.2]]. Deve essere stata eseguita almeno un analisi OWASP.
+- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area OWASP sulla dashboard di dettaglio del repository #link(<UCD13.2>)[[UCD13.2]]. Deve essere stata eseguita almeno un'analisi OWASP.
 
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
@@ -1440,7 +1440,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation relative alla documentazione sul repository. 
 
-- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area documentazione sulla dashboard di dettaglio del repository #link(<UCD13.3>)[[UCD13.3]]. Deve essere stata eseguita almeno un analisi sulla documentazione.
+- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area documentazione sulla dashboard di dettaglio del repository #link(<UCD13.3>)[[UCD13.3]]. Deve essere stata eseguita almeno un'analisi sulla documentazione.
 
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
@@ -1827,9 +1827,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 <UCD8.3>
 - *Attore principale:* Developer
 
-- *Descrizione:* Il Developer visualizza un analisi avviata.
+- *Descrizione:* Il Developer visualizza un'analisi avviata.
 
-- *Precondizioni:* Il Developer vuole visualizzare un analisi da lui avviata e non ancora terminata. 
+- *Precondizioni:* Il Developer vuole visualizzare un'analisi da lui avviata e non ancora terminata. 
 
 - *Trigger:* Il Developer si trova nella sezione dei procedimenti in corso.
 
@@ -1837,7 +1837,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Developer visualizza i dati come descritto in #link(<UCD8.1>)[[UCD8.1]].
   + Il Developer visualizza un pulsante annullare un'analisi in corso (#link(<UCD10>)[[UCD10]]).
 
-- *Postcondizioni:* Il Developer sta visualizzando un analisi in atto nel sistema.
+- *Postcondizioni:* Il Developer sta visualizzando un'analisi in atto nel sistema.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1911,9 +1911,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 <UCD10>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer annulla un analisi in corso da lui precedentemente avviata.
+- *Descrizione:* Il Developer annulla un'analisi in corso da lui precedentemente avviata.
 
-- *Precondizioni:* Il Developer sta visualizzando un analisi in corso (#link(<UCD8.3>)[[UCD8.3]]).
+- *Precondizioni:* Il Developer sta visualizzando un'analisi in corso (#link(<UCD8.3>)[[UCD8.3]]).
 
 - *Trigger:* Il Developer seleziona l'opzione di interruzione dell'analisi avviata.
 
@@ -1943,9 +1943,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer visualizza il messaggio di avvenuta cancellazione di un analisi precedentemente avviata.
+- *Descrizione:* Il Developer visualizza il messaggio di avvenuta cancellazione di un'analisi precedentemente avviata.
 
-- *Precondizioni:* Il Developer ha espresso il desiderio di eliminare un analisi avviata.
+- *Precondizioni:* Il Developer ha espresso il desiderio di eliminare un'analisi avviata.
 
 - *Trigger:* Il sistema ha interrotto l'operazione di analisi di uno o più agenti.
 
@@ -1997,7 +1997,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il developer visualizza un elemento all'interno della lista delle ultime analisi portate a termine.
 
-- *Precondizioni:* Deve essere stata portata a termine almeno un analisi.
+- *Precondizioni:* Deve essere stata portata a termine almeno un'analisi.
 
 - *Scenario principale:*
   + Il Developer visualizza il nome del repository analizzato (*<\<include>>* #link(<UC5.5>)[[UC5.5]]).
@@ -2016,9 +2016,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer visualizza la data di conclusione di un analisi da lui avviata.
+- *Descrizione:* Il Developer visualizza la data di conclusione di un'analisi da lui avviata.
 
-- *Precondizioni:* Deve essere portata a termine almeno un analisi.
+- *Precondizioni:* Deve essere portata a termine almeno un'analisi.
 
 - *Scenario principale:*
   + Il Developer visualizza la data di completamento dell'analisi.
@@ -2355,7 +2355,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer visualizza lo stato di un analisi passata effettuata in un determinato repository.
+- *Descrizione:* Il Developer visualizza lo stato di un'analisi passata effettuata in un determinato repository.
 
 - *Precondizioni:* Il Developer sta visualizzando la lista dello storico delle analisi effettuare in un repository (#link(<UCD14>)[[UCD14]])
 
@@ -2398,7 +2398,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 <UCD15.1>
 - *Attore principale:* Developer.
 
-- *Descrizione:* Il Developer avvia un analisi all'interno di un repository.
+- *Descrizione:* Il Developer avvia un'analisi all'interno di un repository.
 
 - *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare.
 
@@ -2410,10 +2410,10 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   - Si verifica un errore durante il caricamento della conferma.
     - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
-  - Si verifica un conflitto in quanto c'è già un analisi in corso in qualche area della repository (*<\<extend>>* #link(<UCD15.6>)[[UCD15.6]]).
-  - Il Developer annulla l'avvio di un analisi (*<\<extend>>* #link(<UCD15.7>)[[UCD15.7]])
+  - Si verifica un conflitto in quanto c'è già un'analisi in corso in qualche area della repository (*<\<extend>>* #link(<UCD15.6>)[[UCD15.6]]).
+  - Il Developer annulla l'avvio di un'analisi (*<\<extend>>* #link(<UCD15.7>)[[UCD15.7]])
 
-*Postcondizioni:* Il Developer ha avviato un analisi all'interno del repository.
+*Postcondizioni:* Il Developer ha avviato un'analisi all'interno del repository.
 
 - *Estensioni:* 
   - #link(<UC4>)[[UC4]]
@@ -2535,9 +2535,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + Il Developer non visualizza l'avvio di alcuna analisi.
-  + Il Developer è reindirizzato alla pagina di selezione di un analisi (#link(<UCD15>)[[UCD15]]).
+  + Il Developer è reindirizzato alla pagina di selezione di un'analisi (#link(<UCD15>)[[UCD15]]).
 
-- *Postcondizioni:* Nessun analisi è stata avviata nell'ambito del repository di riferimento.
+- *Postcondizioni:* Nessun'analisi è stata avviata nell'ambito del repository di riferimento.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -4134,7 +4134,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-33-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sulla documentazione di un repository],[ #link(<UC5.1>)[UC5.1]],
   [R-34-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi sui test di un repository],[#link(<UC5.2>)[UC5.2]],
   [R-35-F-O],[L'utente deve poter visualizzare le statistiche dell'analisi OWASP di un repository],[#link(<UC5.4>)[UC5.4]],
-  [R-36-F-O],[L'utente deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
+  [R-36-F-O],[L'utente deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un'analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
 
   [R-9-F-O],[L'utente deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
   [R-10-F-O],[L'utente deve poter visualizzare il proprio nome utente],[#link(<UC2.1>)[UC2.1]],
@@ -4153,18 +4153,18 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-8-F-D],[Il Developer deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UCD2.1>)[UCD2.1]],
 
 
-  [R-37-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi OWASP per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.2>)[UCD6.0.2]],
-  [R-38-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un analisi sulla documentazione per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.3>)[UCD6.0.3]],
+  [R-37-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un'analisi OWASP per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.2>)[UCD6.0.2]],
+  [R-38-F-O],[Il Developer deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un'analisi sulla documentazione per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.3>)[UCD6.0.3]],
   [R-39-F-O],[Il Developer deve essere in grado di visualizzare il dettaglio del file sul quale è stata proposto un cambiamento],[#link(<UCD6.1>)[UCD6.1]],
   [R-40-F-D],[Il Developer deve poter cambiare il path di destinazione del file sul quale è stata proposta un remediation],[#link(<UCD6.1.2>)[UCD6.1.2]],
-  [R-41-F-D],[Il Developer deve poter inserire il uovo path all'interno del sistema],[#link(<UCD6.1.5>)[UCD6.1.5]],
+  [R-41-F-D],[Il Developer deve poter inserire il nuovo path all'interno del sistema],[#link(<UCD6.1.5>)[UCD6.1.5]],
   [R-42-F-D],[Il Developer deve poter annullare il cambio di path di un file nel contesto di una proposta di remediation],[#link(<UCD6.1.3>)[UCD6.1.3]],
   [R-43-F-D],[Il Developer deve visualizzare un messaggio di errore nel caso abbia inserito un path non valido per un file, nel contesto di una proposta di remediation],[#link(<UCD6.1.4>)[UCD6.1.4]],
   [R-44-F-D],[Il Developer deve poter accettare una proposta di remediation],[#link(<UCD6.2>)[UCD6.2]],
   [R-45-F-D],[Il Developer deve ricevere una notifica una volta che è stata inviata con successo una pull request sul repository GitHub],[#link(<UCD6.2.1>)[UCD6.2.1]],
   [R-46-F-D],[Il Developer deve poter annullare l'accettazione di una proposta di remediation],[#link(<UCD6.3>)[UCD6.3]],
   [R-47-F-D],[Il Developer deve ricevere un messaggio di errore nel caso di fallimento dell'accettazione della remediation],[#link(<UCD6.4>)[UCD6.4]],
-  [R-48-F-D],[Il Developer deve essere informato se la remediation proposta on è più coerente con lo stato del sistema, e quindi non può essere effettuata],[#link(<UCD6.5>)[UCD6.5], #link(<UCD6.6>)[UCD6.6]],
+  [R-48-F-D],[Il Developer deve essere informato se la remediation proposta non è più coerente con lo stato del sistema, e quindi non può essere effettuata],[#link(<UCD6.5>)[UCD6.5], #link(<UCD6.6>)[UCD6.6]],
   [R-49-F-O],[Il Developer deve poter eliminare un repository dal sistema],[#link(<UC11>)[UC11]],
   [R-50-F-O],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[#link(<UC11.1>)[UC11.1]],
   [R-51-F-D],[Il Developer deve poter visualizzare la lista dei procedimenti in corso all'interno del sistema],[#link(<UCD8>)[UCD8], #link(<UCD8.1>)[UCD8.1]],
@@ -4173,26 +4173,26 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-54-F-D],[Il Developer deve visualizzare il nome branch aperto di ogni elemento della lista delle remediation in corso.],[#link(<UCD8.2>)[UCD8.2], #link(<UCD8.2.1>)[UCD8.2.1]],
   [R-55-F-D],[Il Developer deve poter interrompere una remediation avviata],[#link(<UCD8.2>)[UCD8.2], #link(<UCD9>)[UCD9]],
   [R-56-F-D],[Il Developer deve visualizzare un messaggio di avvenuta interruzione di una remediation in corso, in caso ne abbia richiesto la stessa],[#link(<UCD9.1>)[UCD9.1]],
-  [R-57-F-D],[Il Developer deve poter annullare un analisi in corso all'interno del sistema],[#link(<UCD8.3>)[UCD8.3], #link(<UCD10>)[UCD10]],
-  [R-58-F-D],[Il Developer deve visualizzare un messaggio di avvenuto annullamento di un analisi in corso],[#link(<UCD10.1>)[UCD10.1]],
+  [R-57-F-D],[Il Developer deve poter annullare un'analisi in corso all'interno del sistema],[#link(<UCD8.3>)[UCD8.3], #link(<UCD10>)[UCD10]],
+  [R-58-F-D],[Il Developer deve visualizzare un messaggio di avvenuto annullamento di un'analisi in corso],[#link(<UCD10.1>)[UCD10.1]],
   [R-59-F-D],[Il Developer deve visualizzare una lista con le ultime analisi portate a termine],[#link(<UCD11>)[UCD11]],
-  [R-60-F-D],[Il Developer deve visualizzare il nome del repository sul quale un analisi  stata terminata],[#link(<UCD11.1>)[UCD11.1], #link(<UC5.5>)[UC5.5]],
+  [R-60-F-D],[Il Developer deve visualizzare il nome del repository sul quale un'analisi è stata terminata],[#link(<UCD11.1>)[UCD11.1], #link(<UC5.5>)[UC5.5]],
   [R-61-F-D],[Il Developer deve visualizzare la data di completamento di un'analisi terminata],[#link(<UCD11.1>)[UCD11.1], #link(<UCD11.1.1>)[UCD11.1.1]],
-  [R-62-F-D],[Il Developer deve poter visualizzare la specifica di una analisi portata a termine all'interno di un repository, che non sia l'ultima],[#link(<UCD12>)[UCD12]],
+  [R-62-F-D],[Il Developer deve poter visualizzare la specifica di un'analisi portata a termine all'interno di un repository, che non sia l'ultima],[#link(<UCD12>)[UCD12]],
   [R-63-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi sulla documentazione],[#link(<UCD12.1>)[UCD12.1]],
   [R-64-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi sui test],[#link(<UCD12.2>)[UCD12.2]],
   [R-65-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi OWASP],[#link(<UCD12.3>)[UCD12.3]],
   [R-66-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare le proposte di remediation elaborate in seguito all'analisi],[#link(<UCD12.4>)[UCD12.4]],
   [R-67-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare la proposta di remediation specifica inerente ad un singolo file],[#link(<UCD12.4.1>)[UCD12.4.1]],
   [R-69-F-O],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository],[#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1], #link(<UCD13.2>)[UCD13.2], #link(<UCD13.3>)[UCD13.3]],
-  [R-70-F-D],[Il Developer deve poter visualizzare la data di fine di un analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD11.1.1>)[UCD11.1.1]],
-  [R-71-F-D],[Il Developer deve poter visualizzare la lo stato di un analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD14.1>)[UCD14.1]],
-  [R-72-F-O],[Il Developer deve poter avviare un analisi generale all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.2>)[UCD15.2]],
-  [R-73-F-O],[Il Developer deve poter avviare un analisi sui test all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.3>)[UCD15.3]],
-  [R-74-F-O],[Il Developer deve poter avviare un analisi sulla documentazione all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.4>)[UCD15.4]],
-  [R-75-F-O],[Il Developer deve poter avviare un analisi OWASP all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.5>)[UCD15.5]],
+  [R-70-F-D],[Il Developer deve poter visualizzare la data di fine di un'analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD11.1.1>)[UCD11.1.1]],
+  [R-71-F-D],[Il Developer deve poter visualizzare la lo stato di un'analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD14.1>)[UCD14.1]],
+  [R-72-F-O],[Il Developer deve poter avviare un'analisi generale all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.2>)[UCD15.2]],
+  [R-73-F-O],[Il Developer deve poter avviare un'analisi sui test all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.3>)[UCD15.3]],
+  [R-74-F-O],[Il Developer deve poter avviare un'analisi sulla documentazione all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.4>)[UCD15.4]],
+  [R-75-F-O],[Il Developer deve poter avviare un'analisi OWASP all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.5>)[UCD15.5]],
   [R-76-F-O],[Il Developer deve ricevere un messaggio di errore nel caso si verificasse un conflitto con un'altra analisi all'avvio di un'analisi],[#link(<UCD15.6>)[UCD15.6]],
-  [R-77-F-O],[Il Developer deve poter annullare l'avvio di un analisi],[#link(<UCD15.7>)[UCD15.7]],
+  [R-77-F-O],[Il Developer deve poter annullare l'avvio di un'analisi],[#link(<UCD15.7>)[UCD15.7]],
 
   // PM 
   [R-79-F-O],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[#link(<UCPM1>)[UCPM1]],
