@@ -33,6 +33,12 @@
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]
   ),
 
+  "0.6.0",
+  "2026/02/10",
+  "Riccardo Baldin",
+  "",
+  "Completamento capitoli vuoti",
+
   "0.5.0",
   "2026/01/06",
   "Angela Canazza",
@@ -77,7 +83,7 @@
 #set page(
   numbering: "1",
   header: [
-    #align(left)[HeptaCode #h(57%) Norme di Progetto v. 0.1.1]
+    #align(left)[HeptaCode #h(57%) Norme di Progetto v. 0.6.0]
     #line(length: 100%, stroke: black)
   ],
 )
@@ -243,11 +249,7 @@ I termini utilizzati nell'esposizione dei casi d'uso sono i seguenti:
   - *Inclusioni*: Relazione di dipendenza forte in cui un Caso d'Uso base incorpora il comportamento di un altro Caso d'Uso per poter portare a termine la propria funzione;
   - *Estensioni*: Identifica una relazione in cui un Caso d'Uso può arricchire o modificare il comportamento di un Caso d'Uso base, ma solo qualora si verifichino specifiche condizioni o scelte discrezionali dell'utente. A differenza dell'inclusione, questa aggiunta funzionale è del tutto opzionale;
   - *Generalizzazione*: Relazione di ereditarietà tra un elemento più generico, detto padre, e uno più specifico, detto figlio.
-
-*Requisiti*
-
-*Metriche*
-
+  
 ==== Progettazione
 L'attività di progettazione serve per definire l'architettura logica del prodotto, cercando una soluzione tecnica che soddisfi tutti gli stakeholder. Inoltre, suddivide il sistema in singole componenti dalla complessità individuale minore possibile in modo da facilitare la successiva fase di codifica. \ La progettazione avviene in contemporanea al rilevamento dei requisiti e si basa su di essi per definire le scelte architetturali più adatte; la realizzazione dell'architettura inizia con lo sviluppo del Proof of Concept, cioè della dimostrazione della Fattibilità della soluzione ipotizzata e della compatibilità tra le tecnologie adottate. Per effettuarla, i progettisti del team dovranno decidere di quali tecnologie avvalersi dopo aver analizzato le alternative possibili. 
   \ \
@@ -262,10 +264,42 @@ L'architettura progettata deve avere le seguenti proprietà:
 La documentazione relativa alla progettazione verrà redatta dai progettisti. Questi membri del team dovranno assicurarsi di documentare il Proof of Concept, di conseguenza le scelte tecnologiche effettuate, le motivazioni di tali scelte e la definizione delle componenti architetturali del sistema. \ Inoltre, per  la Product Baseline dovranno essere documentati i test eseguiti per validare il Proof of Concept e i risultati ottenuti, i design pattern che si pensano adatti all'implementazione del sistema e la definizione delle classi usate nel Proof of Concept. 
 
 *Metriche*
+Per garantire che l'architettura sia manutenibile e modulare, il team monitora le seguenti metriche di progettazione:
+- Accoppiamento: misura il grado di dipendenza tra i moduli. Si deve tendere a un accoppiamento debole per facilitare la modifica dei componenti senza effetti a catena.
+
+- Coesione: misura quanto le responsabilità di un singolo modulo siano correlate tra loro. Si persegue un'alta coesione (un modulo fa una sola cosa bene).
+
+- Complessità Ciclotomatica: utilizzata per valutare la complessità dei flussi logici progettati, con l'obiettivo di mantenere i componenti testabili.
 
 *Diagrammi UML*
+Il team utilizza il linguaggio UML (Unified Modeling Language) per visualizzare e documentare l'architettura. I diagrammi richiesti per ogni componente sono:
+
+- Diagrammi delle Classi: per descrivere la struttura statica del sistema, le gerarchie di ereditarietà e le relazioni tra oggetti.
+
+- Diagrammi di Sequenza: per modellare le interazioni dinamiche tra gli oggetti nel tempo, particolarmente utili per descrivere il flusso dei dati durante l'audit dei repository.
+
+- Diagrammi dei Componenti: per rappresentare l'organizzazione e le dipendenze tra i moduli software.
 
 *Design Pattern*
+Per risolvere problemi di progettazione ricorrenti e garantire la scalabilità di Code Guardian, il team adotta i seguenti pattern:
+
+- *Pattern Creazionali:*
+
+  - Singleton: per la gestione di risorse condivise come la connessione al database.
+
+  - Factory: per istanziare diversi tipi di agenti di analisi in base al linguaggio del repository.
+
+- *Pattern Strutturali:*
+
+  - Adapter: per interfacciare il sistema con le diverse API di GitHub o altri provider di versionamento.
+
+- *Pattern Comportamentali:*
+
+  - Strategy: per cambiare dinamicamente l'algoritmo di analisi (es. sicurezza vs. qualità del codice) senza modificare il core dell'agente.
+
+  - Observer: per notificare all'utente o ai sistemi di logging l'avanzamento dell'audit in tempo reale.
+
+Il gruppo non esclude la possibilità di adottare _pattern_ aggiuntivi qualora se sorgesse la necessità.
 
 ==== Codifica
 Attività designata ai Programmatori, i quali devono rendere codice sorgente di qualità ciò che viene deciso durante la progettazione del prodotto.
@@ -293,8 +327,8 @@ Al fine di garantire la manutenibilità del codice gli Sviluppatori dovranno att
 *Metriche*
 
 Per rendere oggettiva la qualità del software prodotto, il codice verrà monitorato tramite le seguenti metriche:
-- ?? complessità ciclomatica
-- ?? campi delle classi
+- *Complessità Ciclomatica (MPD07):* Monitorata per garantire che ogni funzione rimanga testabile e atomica (limite accettabile $<= 15$).
+- *Campi delle Classi:* Si limita il numero di attributi per classe per favorire la coesione e rispettare il principio di singola responsabilità.
 
 = Processi di Supporto
 <processi-di-supporto>
@@ -389,7 +423,8 @@ Per condividere i documenti tra i membri essi vengono caricati nella repository 
 
 ==== Metriche
 
-?? istituire le metriche di valutazione dei documenti (periodi lunghi / parole lunghe / etc)
+- *Indice di Gulpease (MPD14):* Utilizzato per misurare la leggibilità dei documenti in lingua italiana. Il team mira a un valore $\ge 50$ per garantire che la documentazione sia accessibile.
+- *Densità di Errori Ortografici (MPC15):* Conteggio degli errori rilevati tramite tool di linting o revisione umana. Il valore accettabile è rigorosamente 0.
 
 ==  Processo di Verifica
 
@@ -462,8 +497,6 @@ Lo scopo del PoC è:
 - *Riduzione del rischio*: identificare tempestivamente eventuali limiti tecnici o architetturali prima della fase di sviluppo intensivo;
 - *Feedback immediato*: fornire all'azienda e ai docenti una prova tangibile del funzionamento, permettendo di validare la direzione intrapresa.
 
-==== Va aggiunto qualcos'altro??
-
 == Processo di Gestione della Configurazione
 Il processo assicura l'integrità degli artefatti e la tracciabilità delle evoluzioni, permettendo al gruppo di lavorare in parallelo minimizzando i conflitti e garantendo la riproducibilità di ogni versione rilasciata.
 
@@ -497,33 +530,55 @@ La sincronizzazione del lavoro tra i membri del gruppo è gestita attraverso:
 == Processo di Gestione della Qualità
 
 === Obiettivi
+L'obiettivo principale è garantire che il prodotto finale CodeGuardian e i processi utilizzati per realizzarlo soddisfino i requisiti di qualità prestabiliti.
 
+Il team punta a:
+
+- Prevenzione dei difetti: identificare potenziali problemi nelle fasi iniziali di pianificazione e progettazione.
+
+- Miglioramento continuo: utilizzare i dati raccolti dalle metriche per ottimizzare le performance del team.
+
+- Soddisfazione degli stakeholder: assicurare che il software sia affidabile, sicuro e conforme alle richieste di _Var Group_.
 === Descrizione
 ==== PDCA
 
 *Plan*
 #pad(left: 2em)[
-  // scrivi qui
+  Definizione degli obiettivi di qualità e dei processi necessari per ottenere i risultati attesi.
 ]
 *Do*
 #pad(left: 2em)[
-  // scrivi qui
+  Attuazione dei processi definiti e raccolta dei dati necessari per le misurazioni.
 ]
 *Check*
 #pad(left: 2em)[ 
-  // scrivi qui
+  Monitoraggio e misurazione dei processi e dei prodotti rispetto agli obiettivi e ai requisiti.
 ]
 *Act*
 #pad(left: 2em)[ 
-  // scrivi qui
+  Adozione di azioni correttive per migliorare continuamente le prestazioni dei processi.
 ]
 
 ==== Strumenti
+Per la gestione della qualità, il gruppo utilizza:
+
+- GitHub Actions: per l'esecuzione automatica dei test e il calcolo del Code Coverage ad ogni Pull Request.
+
+- Linter: per il monitoraggio statico della qualità del codice (complessità, densità commenti, aderenza agli standard).
+
+- Fogli di calcolo / Dashboard: per l'aggregazione delle metriche di processo e la generazione di grafici di andamento per le Revisioni di Avanzamento.
 
 ==== Struttura delle Metriche
+Ogni metrica all'interno delle norme è identificata da un codice univoco:
+
+- *MPC (Metrica di Processo):* valuta l'efficienza delle attività e l'uso delle risorse.
+
+- *MPD (Metrica di Prodotto):* valuta le caratteristiche intere ed esterne del software e della documentazione.
+
+Ogni metrica deve essere corredata da: Nome, Formula, Valore Accettabile (soglia minima di conformità) e Valore Ottimale (obiettivo di eccellenza).
 
 ==== Struttura degli Obiettivi
-
+Gli obiettivi di qualità sono derivati dallo standard ISO/IEC 9126. Per ogni caratteristica di qualità, il team definisce degli obiettivi misurabili tramite una o più metriche. Il superamento dei "Valori Accettabili" attiva immediatamente una fase di _Act_ nel ciclo PDCA per riportare il parametro sotto controllo.
 ==== Metriche
 
 = Processi Organizzativi
@@ -554,7 +609,7 @@ Il Responsabile definisce le attività necessarie per realizzare il processo. \
 Le attività descrivono i compiti previsti e i prodotti software da consegnare. 
 Inoltre specificano tutti gli elementi utili a garantire una corretta esecuzione del processo, tra cui:
 - le tempistiche per completare le attività;
-- la stima dell’impegno richiesto;
+- la stima dell'impegno richiesto;
 - le risorse necessarie;
 - la distribuzione dei compiti;
 - le responsabilità assegnate;
@@ -564,7 +619,7 @@ Inoltre specificano tutti gli elementi utili a garantire una corretta esecuzione
 - le risorse infrastrutturali e l'ambiente operativo necessari.
 ==== Controllo ed Esecuzione
 Il responsabile avvia il piano per raggiungere gli obiettivi prefissati, mantenendo il controllo sull'intero processo. \
-Durante l'esecuzione, deve monitorare i progressi, fornendo aggiornamenti interni e (se necessario) ai professori o all’azienda. \ 
+Durante l'esecuzione, deve monitorare i progressi, fornendo aggiornamenti interni e (se necessario) ai professori o all'azienda. \ 
 #pad(left: 2em)[*Se sorgono problemi:* \
 il Responsabile deve analizzarli e risolverli. 
 Eventuali soluzioni possono comportare modifiche ai piani, e spetta al Responsabile valutare e controllare l'impatto di questi cambiamenti. \
@@ -577,9 +632,9 @@ Deve inoltre analizzare i risultati delle valutazioni dei prodotti software, del
 per _accertarsi che gli obiettivi siano stati raggiunti e che i piani siano stati portati a termine_.
 ==== Chiusura dell'Attività
 Una volta completati tutti i prodotti software, le attività e i compiti, il Responsabile deve _verificare_ se il 
-processo può considerarsi terminato, seguendo i criteri definiti nel contratto o nelle procedure dell’organizzazione.
+processo può considerarsi terminato, seguendo i criteri definiti nel contratto o nelle procedure dell'organizzazione.
 Inoltre, deve controllare che i risultati e la documentazione relativi ai prodotti software, alle attività e ai compiti siano completi, 
-archiviare tutto all’interno del repository del gruppo e pubblicare la documentazione nel sito.
+archiviare tutto all'interno del repository del gruppo e pubblicare la documentazione nel sito.
 
 == Processo di Miglioramento
 Processo per stabilire, valutare, misurare, controllare e migliorare un processo del ciclo di vita del software.
@@ -885,7 +940,6 @@ $ "ETC" = "BAC" - "EV" $
 === Verifica e validazione
 
 ==== MPC11 - Code Coverage (CC)
-- *Codice*: 
 - *Formula*:
 $ "CC" = "Codice testato" / "Codice totale" * 100 $
 - *Valore accettabile*: $>=80%$
@@ -893,7 +947,6 @@ $ "CC" = "Codice testato" / "Codice totale" * 100 $
 - *Descrizione*: L'indice di Code Coverage misura la percentuale di codice sorgente che viene eseguita durante l'esecuzione dei test automatici. Indica quanto il codice è stato verificato dal processo di testing.
 
 ==== MPC12 - Test Success Rate (TSR)
-- *Codice*: MPC13
 - *Formula*:
 $ "TSR" = "Test passati"/ "Test totali" * 100 $
 - *Valore accettabile*: $100%$
@@ -901,7 +954,6 @@ $ "TSR" = "Test passati"/ "Test totali" * 100 $
 - *Descrizione*: L'indice Test Success Rate misura la percentuale dei test superati rispetto a quelli totali. 
 
 ==== MPC13 - Statement Coverage (SC)
-- *Codice*: 
 - *Formula*:
 $ "SC" = ("Linee eseguite") / "Linee totali" * 100 $
 - *Valore accettabile*: $>=90%$
@@ -909,7 +961,6 @@ $ "SC" = ("Linee eseguite") / "Linee totali" * 100 $
 - *Descrizione*: L'indice Statement Coverage misura la percentuale di istruzioni elementari eseguire dai test.
 
 ==== MPC14 - Branch Coverage (BC)
-- *Codice*: 
 - *Formula*:
 $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 - *Valore accettabile*: $>=70%$
@@ -1011,8 +1062,8 @@ Un valore elevato indica che la funzione ha troppe logiche condizionali (if, loo
 
 - *Formula*:
 $ "CD" = ("CM" / "CL") dot 100 $
-- *Valore accettabile*: $<=15% $
-- *Valore ottimale*: $<=5%$
+- *Valore accettabile*: $>=10%$
+- *Valore ottimale*: $>=15%$
 - *Descrizione*:L'indice rappresenta il rapporto percentuale tra le righe di commento e il totale delle righe di codice presenti in un modulo. Misura quanto il codice è documentato inline.
 - *Legenda*:
   - *CM*: Numero di righe di commento (Comment Lines);
@@ -1038,17 +1089,17 @@ $ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
  $ "Indice Gulpease" = 89 + (300 dot "numero di frasi"- 10 dot "numero delle lettere") / "numero di parole" $
 - *Valore $>=$80*: La complessità del testo è molto semplice e adatta a lettori che hanno completato la scuola primaria.  
 - *Valore tra 60 e 80*:  La complessità del testo è di media difficoltà e adatta a lettori che hanno completato la scuola dell'obbligo.  
-- *Valore tra 40 e 60*:  La complessità del testo è di abbastanza complessa e adatta a lettori che hanno almeno un istruzione di livello superiore.  
-- *Valore $<$40*:   La complessità del testo complessa e adatta a lettori che hanno un livello di istruzione universitaria.  
+- *Valore tra 40 e 60*:  La complessità del testo è abbastanza complessa e adatta a lettori che hanno almeno un istruzione di livello superiore.  
+- *Valore $<$40*:   La complessità del testo è complessa e adatta a lettori che hanno un livello di istruzione universitaria.  
 - *Valore accettabile*: $>=50$
 - *Valore ottimale*: $>=70$
 - *Descrizione*:  L'Indice Gulpease è un indice di leggibilità del testo. Tale indice serve per classificare la difficoltà di lettura di un testo per un lettore medio. La formula tiene conto del numero di lettere, parole e frasi nel testo.
 
 === Affidabilità
 
-==== MPD15 - Error Rate
+==== MPD15 - Test Failure Rate
 - *Formula*:
-$ "ROS" = "Test eseguiti"/"Test falliti" dot 100 $ 
-- *Valore accettabile*: $30%$
-- *Valore ottimale*: $15%$
+$ "TFR" = "Test falliti"/"Test eseguiti" dot 100 $ 
+- *Valore accettabile*: $<= 15%$
+- *Valore ottimale*: $ <=5%$
 - *Descrizione*: L'indice di Error Rate indica la percentuale di errori durante l'esecuzione. Gli eventuali errori verranno riportati dai programmatori al fine di calcolare il valore della metrica.
