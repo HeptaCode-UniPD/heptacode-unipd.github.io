@@ -4129,7 +4129,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
   
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
-  //NOTA: i requisiti non dovrebbero cambiare, al massimo se ne aggiungono, ma i riferienti agli UC molto probabilmente cambiano
+
   // UTENTE GENERICO
   [R-1-F-O],[L'Utente deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
   [R-2-F-O],[L'Utente deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
@@ -4221,8 +4221,8 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-79-F-O],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[#link(<UCPM1>)[UCPM1]],
   [R-80-F-O],[Il Project Manager deve poter visualizzare la lista dei propri progetti],[#link(<UCPM2>)[UCPM2]],
   [R-81-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.2>)[UC10.2]]),
-  [R-82-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.3>)[UC10.3]]),
-  [R-83-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.4>)[UC10.4]]),
+  [R-82-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi delldei test],([#link(<UCPM2>)[UCPM2], #link(<UC10.3>)[UC10.3]]),
+  [R-83-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della correttezza OWASP],([#link(<UCPM2>)[UCPM2], #link(<UC10.4>)[UC10.4]]),
   [R-84-F-O],[Il Project Manager deve poter visualizzare i dettagli di un progetto],[#link(<UCPM2.1>)[UCPM2.1]],
   [R-86-F-O],[Il Project Manager deve poter visualizzare, tra le altre informazioni del progetto, l'elenco dei repository che lo compongono],([#link(<UCPM2.1>)[UCPM2.1], #link(<UC5.9>)[UC5.9]]),
   [R-87-F-O],[Il Project Manager deve poter creare un nuovo progetto],[#link(<UCPM1.2>)[UCPM1.2]],
@@ -4246,11 +4246,11 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-106-F-D],[Il Project Manager deve poter visualizzare le icone delle tecnologie di competenza, accanto al nome dei developer],[#link(<UCPM3.2>)[UCPM3.2]],
   [R-107-F-D],[Il Project Manager deve poter visualizzare le statistiche di contribuzione di un membro del team],[#link(<UCPM3.3>)[UCPM3.3], #link(<UCPM3.3.1>)[UCPM3.3.1], #link(<UCPM3.3.2>)[UCPM3.3.2]],
   [R-108-F-D],[Il Project Manager deve poter visualizzare i linguaggi di programmazione maggiormente utilizzati da un membro del team],[#link(<UCPM3.4>)[UCPM3.4]],
-  [R-109-F-D],[Il Project Manager deve poter visualizzare i linguaggi maggiormente utilizzati da un membro del team],[#link(<UCPM3.4>)[UCPM3.4]],
+ 
   [R-110-F-D],[Il Project Manager deve poter visualizzare il numero di commit effettuati da un membro del team],[#link(<UCPM3.3.1>)[UCPM3.3.1]],
   [R-111-F-D],[Il Project Manager deve poter visualizzare il numero di pull request gestite da un membro del team],[#link(<UCPM3.3.2>)[UCPM3.3.2]],
   [R-112-F-D],[Il Project Manager deve poter visualizzare lo stack tecnologico utilizzato in un progetto],[#link(<UCPM4>)[UCPM4]],
-  [R-113-F-D],[Il Project Manager deve poter visualizzare l'elenco dei: framework e librerie,  utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.1>)[UCPM4.1]],
+  [R-113-F-D],[Il Project Manager deve poter visualizzare l'elenco di framework e librerie,  utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.1>)[UCPM4.1]],
   [R-114-F-D],[Il Project Manager deve poter visualizzare l'elenco di segnalazioni a: framework e librerie con rischi di sicurezza o deprecate, utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.2>)[UCPM4.2]],
   [R-115-F-D],[Il Project Manager deve poter visualizzare suggerimenti generati dall'IA per la sostituzione di framework e librerie, utilizzate nello stack tecnologico di un progetto],[#link(<UCPM4.3>)[UCPM4.3]],
   [R-139-F-O],[Il Project Manager deve poter eliminare un progetto di sua proprietà],[#link(<UCPM1.9>)[UCPM1.9]],
@@ -4272,7 +4272,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-129-F-D],[Il Business Owner deve poter visualizzare la lista delle tecnologie utilizzate in un progetto],[#link(<UCBO2.4>)[UCBO2.4]],
   [R-130-F-D],[Il Business Owner deve visualizzare, per ogni elemento di una lista di stack tecnologico, il logo della tecnologia],[#link(<UCBO2.4.2>)[UCBO2.4.2]],
   [R-131-F-D],[Il Business Owner deve visualizzare, per ogni elemento di una lista di stack tecnologico, il nome della tecnologia],[#link(<UCBO2.4.3>)[UCBO2.4.3]],
-  [R-131-F-D],[Il Business Owner deve visualizzare, per ogni elemento di una lista di stack tecnologico, l'utilizzo che si fa della tecnologia],[#link(<UCBO2.4.4>)[UCBO2.4.4]],
+  [R-109-F-D],[Il Business Owner deve visualizzare, per ogni elemento di una lista di stack tecnologico, l'utilizzo che si fa della tecnologia],[#link(<UCBO2.4.4>)[UCBO2.4.4]],
   [R-132-F-D],[Il Business Owner deve poter visualizzare la lista del team di sviluppo che fa parte di un progetto],[#link(<UCBO2.5>)[UCBO2.5]],
   [R-133-F-D],[Il Business Owner, per ogni elemento della lista del team di sviluppo, deve visualizzare il nome dello sviluppatore],[#link(<UCBO2.5.1>)[UCBO2.5.1], #link(<UCBO2.5.2>)[UCBO2.5.2]],
   [R-134-F-D],[Il Business Owner, per ogni elemento della lista del team di sviluppo, deve visualizzare il ruolo dello sviluppatore all'interno di un progetto],[#link(<UCBO2.5.1>)[UCBO2.5.1], #link(<UCBO2.5.3>)[UCBO2.5.3]],
