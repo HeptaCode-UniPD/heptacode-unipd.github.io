@@ -269,7 +269,7 @@ Per garantire che l'architettura sia manutenibile e modulare, il team monitora l
 
 - Coesione: misura quanto le responsabilità di un singolo modulo siano correlate tra loro. Si persegue un'alta coesione (un modulo fa una sola cosa bene).
 
-- Complessità Ciclotomatica: utilizzata per valutare la complessità dei flussi logici progettati, con l'obiettivo di mantenere i componenti testabili.
+- Complessità Ciclomatica: utilizzata per valutare la complessità dei flussi logici progettati, con l'obiettivo di mantenere i componenti testabili.
 
 *Diagrammi UML*
 Il team utilizza il linguaggio UML (Unified Modeling Language) per visualizzare e documentare l'architettura. I diagrammi richiesti per ogni componente sono:
