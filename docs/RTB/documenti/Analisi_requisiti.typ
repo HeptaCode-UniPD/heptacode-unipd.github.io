@@ -2550,7 +2550,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Developer non visualizza l'avvio di alcuna analisi.
   + Il Developer è reindirizzato alla pagina di selezione di un'analisi (#link(<UCD15>)[[UCD15]]).
 
-- *Postcondizioni:* Nessun'analisi è stata avviata nell'ambito del repository di riferimento.
+- *Postcondizioni:* Nessuna analisi è stata avviata nell'ambito del repository di riferimento.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -4221,7 +4221,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-79-F-O],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[#link(<UCPM1>)[UCPM1]],
   [R-80-F-O],[Il Project Manager deve poter visualizzare la lista dei propri progetti],[#link(<UCPM2>)[UCPM2]],
   [R-81-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.2>)[UC10.2]]),
-  [R-82-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi delldei test],([#link(<UCPM2>)[UCPM2], #link(<UC10.3>)[UC10.3]]),
+  [R-82-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi dei test],([#link(<UCPM2>)[UCPM2], #link(<UC10.3>)[UC10.3]]),
   [R-83-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della correttezza OWASP],([#link(<UCPM2>)[UCPM2], #link(<UC10.4>)[UC10.4]]),
   [R-84-F-O],[Il Project Manager deve poter visualizzare i dettagli di un progetto],[#link(<UCPM2.1>)[UCPM2.1]],
   [R-86-F-O],[Il Project Manager deve poter visualizzare, tra le altre informazioni del progetto, l'elenco dei repository che lo compongono],([#link(<UCPM2.1>)[UCPM2.1], #link(<UC5.9>)[UC5.9]]),
