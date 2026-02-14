@@ -4191,7 +4191,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-85-F-P],[L'Utente deve poter visualizzare un repository sulla piattaforma esterna GitHub],[#link(<UC5.10>)[UC5.10]],
 
   // DEV
-  [R-78-F-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
+  [R-78-Q-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
   [R-6-F-D],[Il Developer può sincronizzare il proprio account GitHub],[#link(<UCD2>)[UCD2]],
   [R-7-F-D],[L'Utente può annullare l'autenticazione con il provider esterno GitHub],[#link(<UCD2.2>)[UCD2.2]],
   [R-8-F-D],[Il Developer deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UCD2.1>)[UCD2.1]],
@@ -4239,7 +4239,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-77-F-O],[Il Developer deve poter annullare l'avvio di un'analisi],[#link(<UCD15.7>)[UCD15.7]],
 
   // PM 
-  [R-79-F-O],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[#link(<UCPM1>)[UCPM1]],
+  [R-79-Q-O],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[#link(<UCPM1>)[UCPM1]],
   [R-80-F-O],[Il Project Manager deve poter visualizzare la lista dei propri progetti],[#link(<UCPM2>)[UCPM2]],
   [R-81-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.2>)[UC10.2]]),
   [R-82-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il widget sull'analisi dei test],([#link(<UCPM2>)[UCPM2], #link(<UC10.3>)[UC10.3]]),
@@ -4277,7 +4277,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-139-F-O],[Il Project Manager deve poter eliminare un progetto di sua proprietà],[#link(<UCPM1.9>)[UCPM1.9]],
   [R-140-F-O],[Il Project Manager deve poter annullare l'eliminazione di un progetto di sua proprietà],[#link(<UCPM1.9.1>)[UCPM1.9.1]],
   // BO
-  [R-116-F-D],[Il Business Owner deve poter visualizzare la lista dei propri progetti],[#link(<UCBO1>)[UCBO1], #link(<UC9>)[UC9]],
+  [R-116-Q-D],[Il Business Owner deve poter visualizzare la lista dei propri progetti],[#link(<UCBO1>)[UCBO1], #link(<UC9>)[UC9]],
   [R-117-F-D],[Il Business Owner deve poter visualizzare il budget complessivo per il proprio progetto],[#link(<UCBO1>)[UCBO1], #link(<UCBO1.1>)[UCBO1.1], #link(<UCBO1.1.1>)[UCBO1.1.1]],
   [R-118-F-D],[Il Business Owner deve visualizzare le spese affrontate per un progetto],[#link(<UCBO1>)[UCBO1], #link(<UCBO1.1>)[UCBO1.1], #link(<UCBO1.1.2>)[UCBO1.1.2]],
   [R-119-F-D],[Il Business Owner deve poter comparare il budget a disposizione con le spese affrontate],[#link(<UCBO1>)[UCBO1], #link(<UCBO1.1>)[UCBO1.1], #link(<UCBO1.1.3>)[UCBO1.1.3]],
