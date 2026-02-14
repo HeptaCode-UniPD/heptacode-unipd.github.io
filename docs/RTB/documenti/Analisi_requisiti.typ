@@ -593,6 +593,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + L'Utente visualizza l'intestazione del repository (*<\<include>>* #link(<UC5.5>)[[UC5.5]]).
   +  L'Utente visualizza il nome del progetto associato al repository (*<\<include>>* #link(<UC5.6>)[[UC5.6]]).
+  +  L'Utente visualizza il il link al repository GitHub.
   +  L'Utente visualizza l’indicatore  di visibilità del repository (*<\<include>>* #link(<UC5.7>)[[UC5.7]]).
   + L'Utente visualizza il widget delle statistiche di analisi documentazione (*<\<include>>* #link(<UC5.1>)[[UC5.1]]).
   + L'Utente visualizza il widget delle statistiche di analisi di test (*<\<include>>* #link(<UC5.2>)[[UC5.2]]).
@@ -785,8 +786,27 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Postcondizioni:* L'Utente visualizza solo i repository pertinenti al progetto selezionato.
   
 #line(length: 100%, stroke: 0.5pt + gray)
-#line(length: 100%, stroke: 0.5pt + gray)
 
+=== UC5.10 - Reindirizzamento al repository GitHub 
+<UC5.10>
+
+- *Attore principale:* Utente.
+
+- *Descrizione:* L'Utente ha effettuato l'accesso.  L'Utente clicca sul link per il reindirizzamento al repository GitHub che sta visualizzando.
+
+- *Precondizioni:* L'Utente sta visualizzando i dettagli di un repository sulla piattaforma _Code Guardian_ #link(<UC5>)[[UC5]].
+
+- *Trigger:* L'Utente clicca sul link del repository GitHub
+
+- *Scenario principale:*
+  + L'Utente individua il link al repository GitHub tra le informazioni del repository.
+  + L'Utente clicca il collegamento per visualizzare il repository all'interno dello spazio GitHub, potendone analizzare i commit e le contribuzioni generali.
+  + L'Utente consulta le informazioni desiderate direttamente sulla piattaforma esterna GitHub.
+
+- *Postcondizioni:* L'Utente ha effettuato l'accesso alla pagina GitHub esterna relativa al repository di interesse.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
 #pagebreak()
 
 === UC6 - Visualizzazione lista repository personali
@@ -4168,6 +4188,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-15-F-D],[L'Utente deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
 
   [R-92-F-P],[L'Utente deve poter cercare un repository in una barra di ricerca],[#link(<UC7>)[UC7]],
+  [R-85-F-P],[L'Utente deve poter visualizzare un repository sulla piattaforma esterna GitHub],[#link(<UC5.10>)[UC5.10]],
 
   // DEV
   [R-78-F-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
