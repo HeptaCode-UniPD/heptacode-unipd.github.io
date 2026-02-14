@@ -1421,11 +1421,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [4 → 2], [], [], [], [50€],
-      [_Angela Canazza_], [], [], [4 → 3], [], [], [], [50€],
-      [_Riccardo Baldin_], [], [4 → 2], [], [], [], [], [20€],
-      [_Alberto Reginato_], [], [], [4 → 3], [], [], [], [50€],
-      [_Nicola Simionato_], [], [], [4 → 2], [], [], [], [50€],
-      [_Amerigo Vegliante_], [3 → 2], [], [], [], [], [2 → 1], [45€],
+      [_Angela Canazza_], [], [], [4 → 3], [], [], [], [75€],
+      [_Riccardo Baldin_], [], [4 → 3], [], [], [], [], [60€],
+      [_Alberto Reginato_], [], [], [4 → 3], [], [], [], [75€],
+      [_Nicola Simionato_], [], [], [4 → 3], [], [], [], [75€],
+      [_Amerigo Vegliante_], [3 → 1], [], [], [], [], [2], [60€],
       [_Laura Venturini_], [], [], [2], [], [], [2 → 1], [65€],
     ) ]] <tab:RetrospettivaSprint5>
 
@@ -1436,7 +1436,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   #image("../../asset/GANTT/sprint5-gantt.png")
   ]<GANTT-Sprint5>
 
-#underline[Spese della settimana]: 330€ \ #underline[Spesa totale]: *2.430€*
+#underline[Spese della settimana]: 460€ \ #underline[Spesa totale]: *2.560€*
 
 === Sprint 6
 #table(
@@ -1494,12 +1494,12 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
       [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [4], [], [1 → 0], [], [], [40€],
-      [_Angela Canazza_], [3], [], [], [1 → 0], [], [], [60€],
+      [_Angela Favaro_], [], [4], [], [1 → 0], [], [], [80€],
+      [_Angela Canazza_], [3], [], [], [1 → 0], [], [], [90€],
       [_Riccardo Baldin_], [], [], [4], [1 → 0], [], [], [100€],
       [_Alberto Reginato_], [], [], [4], [1 → 0], [], [], [100€],
       [_Nicola Simionato_], [], [], [], [4 → 0], [], [2], [30€],
-      [_Amerigo Vegliante_], [], [], [6], [1 → 0], [], [], [100€],
+      [_Amerigo Vegliante_], [], [], [6], [1 → 0], [], [], [150€],
       [_Laura Venturini_], [], [], [], [4 → 0], [], [2], [30€],
     ) ]] <tab:RetrospettivaSprint6>
 
@@ -1510,7 +1510,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   #image("../../asset/GANTT/sprint6-gantt.png")
   ]<GANTT-Sprint6>
 
-#underline[Spese della settimana]: 460€ \ #underline[Spesa totale]: *2.890€*
+#underline[Spese della settimana]: 580€ \ #underline[Spesa totale]: *3.140€*
 
 === Sprint 7
 #table(
@@ -1533,7 +1533,6 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     1. RR1 - Comprensione errata dei requisiti (@tab:RR1);
     2. RO8 - Mancanza di confronto con l'azienda (@tab:RO8);
-    3. RO2 - Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2);
   ],
 
   [_Mitigazione_],
@@ -1570,13 +1569,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
       [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [], [4], [2 → 0], [], [], [100€],
-      [_Angela Canazza_], [], [6 → 2], [], [], [], [], [40€],
-      [_Riccardo Baldin_], [4 → 2], [], [], [], [], [], [60€],
-      [_Alberto Reginato_], [], [], [0 → 2], [6 → 0], [2], [], [80€],
+      [_Angela Favaro_], [], [], [4 → 6], [2 → 0], [], [], [150€],
+      [_Angela Canazza_], [], [6], [], [], [], [], [120€],
+      [_Riccardo Baldin_], [4], [], [], [], [], [], [120€],
+      [_Alberto Reginato_], [], [], [0 → 3], [6 → 0], [2 → 8], [], [195€],
       [_Nicola Simionato_], [], [], [3], [], [], [2.5], [112,5€],
-      [_Amerigo Vegliante_], [], [], [0 → 2], [7 → 0], [2], [], [80€],
-      [_Laura Venturini_], [], [], [0 → 2], [5 → 0], [], [2.5], [87,5€],
+      [_Amerigo Vegliante_], [], [], [0 → 7], [7 → 0], [2], [], [205€],
+      [_Laura Venturini_], [], [], [0 → 5], [5 → 0], [], [2.5], [162,5€],
     ) ]] <tab:RetrospettivaSprint7>
 
 *GANTT Diagram*
@@ -1587,7 +1586,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]<GANTT-Sprint7>
 
 
-#underline[Spese della settimana]: 560€ \ #underline[Spesa totale]: *3.450€*
+#underline[Spese della settimana]: 1.065€ \ #underline[Spesa totale]: *4.205€*
 
 === Sprint 8
 #table(
@@ -1640,13 +1639,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
       [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [], [0 → 2], [5 → 0], [], [3 → 2], [80€],
-      [_Angela Canazza_], [], [], [0 → 2], [6 → 0], [], [], [50€],
-      [_Riccardo Baldin_], [], [], [0 → 2], [6 → 0], [], [], [50€],
-      [_Alberto Reginato_], [], [], [], [6 → 0], [2 → 3], [3 → 1], [50€],
-      [_Nicola Simionato_], [6 → 2], [], [], [], [], [], [60€],
-      [_Amerigo Vegliante_], [], [], [4 → 2], [3 → 0], [], [], [50€],
-      [_Laura Venturini_], [], [6 → 2], [], [], [], [], [40€],
+      [_Angela Favaro_], [], [], [0 → 5], [5 → 0], [], [3], [170€],
+      [_Angela Canazza_], [], [], [0 → 5], [6 → 0], [], [], [125€],
+      [_Riccardo Baldin_], [], [], [0 → 5], [6 → 0], [], [], [125€],
+      [_Alberto Reginato_], [], [], [], [6 → 0], [2 → 6], [3], [135€],
+      [_Nicola Simionato_], [6 → 4], [], [], [], [], [], [120€],
+      [_Amerigo Vegliante_], [], [], [4], [3 → 0], [], [], [100€],
+      [_Laura Venturini_], [], [6 → 5], [], [], [], [], [100€],
     ) ]] <tab:RetrospettivaSprint8>
 
 *GANTT Diagram*
@@ -1656,7 +1655,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     // #image("../../asset/GANTT/sprint8-gantt.png")
   ]<GANTT-Sprint8>
 
-#underline[Spese della settimana]: 380€ \ #underline[Spesa totale]: *3.830€*
+#underline[Spese della settimana]: 875€ \ #underline[Spesa totale]: *5.080€*
 
 === Sprint 9
 #table(
@@ -1669,16 +1668,15 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [ 1. Riformulazione dei Casi d'Uso con aumento della granularità
-  2. Stesura dei requisiti
-  3. Stesura del capitolo 5 del Piano di Qualifica
-  4. Ultimazione del PoC
+  2. Stesura del capitolo 5 del Piano di Qualifica
+  3. Ultimazione del PoC
 
   ],
 
   [_Rischi incontrati_],
   [
-    1. Mancato rispetto delle tempistiche 
-    2. Rallentamento dovuto ad altri impegni personali o universitari
+    1. RO1 - Mancato rispetto delle tempistiche (@tab:RO1) 
+    2. RO2 - Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2)
   ],
 
   [_Mitigazione_],
@@ -1713,23 +1711,23 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
       [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [], [0 → 2], [8 → 0], [], [], [50€],
-      [_Angela Canazza_], [], [], [0 → 2], [8 → 0], [], [], [50€],
-      [_Riccardo Baldin_], [], [], [0 → 2], [8 → 0], [], [], [50€],
-      [_Alberto Reginato_], [], [], [], [4 → 0], [], [2], [30€],
-      [_Nicola Simionato_], [], [5 → 3], [3,5 → 3], [], [], [], [135€],
-      [_Amerigo Vegliante_], [], [], [], [5 → 0], [], [2], [30€],
-      [_Laura Venturini_], [6 → 2], [], [3,5 → 0], [], [], [], [60€],
+      [_Angela Favaro_], [], [], [0 → 7], [8 → 0], [], [], [175€],
+      [_Angela Canazza_], [], [], [0 → 7], [8 → 0], [], [], [175€],
+      [_Riccardo Baldin_], [], [], [0 → 5], [8 → 0], [], [], [125€],
+      [_Alberto Reginato_], [], [], [], [4 → 0], [0 → 4], [1,5], [82,5€],
+      [_Nicola Simionato_], [], [5], [3,5], [], [], [], [187,5€],
+      [_Amerigo Vegliante_], [], [], [], [5 → 0], [], [2 → 3], [45€],
+      [_Laura Venturini_], [6 → 4], [], [3,5 → 1,5], [], [], [], [157,5€],
     ) ]] <tab:RetrospettivaSprint9>
 
 *GANTT Diagram*
     #figure(
   caption: [Diagramma di GANTT dello Sprint 9],
   )[
-    // #image("../../asset/GANTT/sprint9-gantt.png")
+    #image("../../asset/GANTT/sprint9-gantt.png")
   ]<GANTT-Sprint8>
 
-#underline[Spese della settimana]: 405€ \ #underline[Spesa totale]: *4.235€*
+#underline[Spese della settimana]: 947,5€ \ #underline[Spesa totale]: *6.027,5€*
 === Sprint 10
 #table(
   columns: (auto, auto),
