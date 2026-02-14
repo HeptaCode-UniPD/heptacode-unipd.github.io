@@ -4193,7 +4193,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   // DEV
   [R-78-F-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
   [R-6-F-D],[Il Developer può sincronizzare il proprio account GitHub],[#link(<UCD2>)[UCD2]],
-  [R-7-F-D],[L'Utente può annullare l'autenticazione con il provider esterno GitHub],[#link(<UCD2.2>)[UCD2.2]],
+  [R-7-F-D],[Il Developer può annullare l'autenticazione con il provider esterno GitHub],[#link(<UCD2.2>)[UCD2.2]],
   [R-8-F-D],[Il Developer deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UCD2.1>)[UCD2.1]],
 
 
