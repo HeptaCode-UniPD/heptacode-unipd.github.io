@@ -554,10 +554,14 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
 In questa sezione sono riportate le misurazioni della qualità effettuate durante lo svolgimento delle attività dedicate al raggiungimento della Requirements and Technology Baseline. Inoltre, sono presenti i ragionamenti sulla differenza fra le tendenze attese e quelle effettivamente osservate. 
 == MPC01 e MPC02 - Schedule Variance e Cost Variance
 #figure(
-  image("../../asset/MPC01MPC02.png", width: 90%),
+  image("../../asset/MPC01.png", width: 90%),
   caption: [Grafico per periodo di Schedule Variance e Cost Variance]
 )
-Dal grafico si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV e CV hanno valore 0, invece a partire dal quinto sprint il team ha quasi sempre lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi. 
+#figure(
+  image("../../asset/MPC02.png", width: 90%),
+  caption: [Grafico per periodo di Schedule Variance e Cost Variance]
+)
+Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV e CV hanno valore 0, invece a partire dal quinto sprint il team ha quasi sempre lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi. 
 
  == MPC03 - Budget Variance 
 #figure(
@@ -578,7 +582,7 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
   image("../../asset/MPC06MPC07.png", width: 90%),
   caption: [Grafico per periodo di Planned Value ed Earned Value]
 )
-Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, il lavoro svolto non è però più in linea con la pianificazione iniziale a partire dal quinto sprint. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare parzialmente il debito accumulato. Nell'ottavo e nono sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
+Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è però più in linea con la pianificazione iniziale a partire dal quinto sprint. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare parzialmente il debito accumulato. Nell'ottavo e nono sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
 == MPC08 e MPC09 - Actual Cost ed Estimate to Complete
 #figure(
   image("../../asset/MPC08MPC09.png", width: 90%),
@@ -592,7 +596,7 @@ La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando 
   caption: [Grafico per periodo di Estimate at Completion]
 )
 L'attuale scostamento tra EAC e BAC rappresenta lo scenario in cui l'utilizzo dei ruoli rimanesse invariato. Tuttavia, poiché il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, questa stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
-Con il passaggio alla fase successiva (Sprint 9-13), che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un diminuimento progressivo del valore dell'EAC. La curva dell'EAC dovrebbe quindi convergere verso il BAC entro la fine del progetto.
+Con il passaggio alla fase successiva (Sprint 10-13), che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un diminuimento progressivo del valore dell'EAC. La curva dell'EAC dovrebbe quindi convergere verso il BAC entro la fine del progetto.
 == MPC15 - Correttezza ortografica
 #figure(
   image("../../asset/MPC15.png", width: 90%),
