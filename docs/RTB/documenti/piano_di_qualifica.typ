@@ -540,14 +540,14 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
   [*T-129-S*], [Verificare che il Business Owner possa visualizzare la lista di tecnologie utilizzate in un progetto], [R-129-F-D], [NI],
   [*T-130-S*], [Verificare che il Business Owner possa visualizzare il logo di ogni tecnologia presente nella lista dello stack tecnologico di un progetto], [R-130-F-D], [NI],
   [*T-131-S*], [Verificare che il Business Owner possa visualizzare il nome di ogni tecnologia presente nella lista dello stack tecnologico di un progetto], [R-121-F-D], [NI],
-  [*T- -S*], [Verificare che il Business Owner possa visualizzare l'utilizzo che si fa di ogni tecnologia presente nella lista dello stack tecnologico di un progetto], [R- -F-D], [NI],
-  [*T- -S*], [Verificare che il Business Owner possa visualizzare la lista contenente i membri del team di sviluppo di un progetto], [R- -F-D], [NI],
-  [*T- -S*], [Verificare che il Business Owner possa visualizzare il nome di ogni sviluppatore contenuto nella lista del team di sviluppo di un progetto], [R- -F-D], [NI],
-  [*T- -S*], [Verificare che il Business Owner possa visualizzare il ruolo all'interno del progetto di ogni sviluppatore contenuto nella lista del team di sviluppo], [R- -F-D], [NI],
-  [*T- -S*], [Verificare che il Business Owner possa visualizzare i dettagli di ogni sviluppatore contenuto nella lista del team di sviluppo di un progetto], [R- -F-D], [NI],
-  [*T- -S*], [Verificare che il Business Owner possa visualizzare il numero di progetti ai quali uno sviluppatore ha preso parte], [R- -F-D], [NI],
-  [*T- -S*], [Verificare che il Business Owner possa visualizzare le tecnologie che uno sviluppatore sa utilizzare], [R- -F-D], [NI],
-  [*T- -S*], [Verificare che il Business Owner possa visualizzare i ruoli che uno sviluppatore può assumere], [R- -F-D], [NI],
+  [*T-109-S*], [Verificare che il Business Owner possa visualizzare l'utilizzo che si fa di ogni tecnologia presente nella lista dello stack tecnologico di un progetto], [R-109-F-D], [NI],
+  [*T-132-S*], [Verificare che il Business Owner possa visualizzare la lista contenente i membri del team di sviluppo di un progetto], [R-132-F-D], [NI],
+  [*T-133-S*], [Verificare che il Business Owner possa visualizzare il nome di ogni sviluppatore contenuto nella lista del team di sviluppo di un progetto], [R-133-F-D], [NI],
+  [*T-134-S*], [Verificare che il Business Owner possa visualizzare il ruolo all'interno del progetto di ogni sviluppatore contenuto nella lista del team di sviluppo], [R-134-F-D], [NI],
+  [*T-135-S*], [Verificare che il Business Owner possa visualizzare i dettagli di ogni sviluppatore contenuto nella lista del team di sviluppo di un progetto], [R-135-F-D], [NI],
+  [*T-136-S*], [Verificare che il Business Owner possa visualizzare il numero di progetti ai quali uno sviluppatore ha preso parte], [R-136-F-D], [NI],
+  [*T-137-S*], [Verificare che il Business Owner possa visualizzare le tecnologie che uno sviluppatore sa utilizzare], [R-137-F-D], [NI],
+  [*T-138-S*], [Verificare che il Business Owner possa visualizzare i ruoli che uno sviluppatore può assumere], [R-138-F-D], [NI],
 )
 
 = Valutazione lavoro
