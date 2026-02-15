@@ -32,7 +32,7 @@
 #let lista-ruoli = (
     "Verificatore",   "Presente", //Angela Favaro
     "Verificatore",   "Presente", //Angela Canazza
-    "Verificatore",   "Presente", //Riccardo Baldin
+    "Verificatore",   "Assente", //Riccardo Baldin
     "Responsabile",   "Presente", //Alberto Reginato
     "Amministratore", "Presente", //Amerigo Vegliante
     "Progettista",   "Presente", //Nicola Simionato
