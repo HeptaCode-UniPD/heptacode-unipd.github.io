@@ -13,10 +13,11 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("0.14.0", "2026-02.12", "Amerigo Vegliante", "", "Sistemazione AD e Riorganizzazione Indice"),
-  ("0.13.0", "2026-02-12", "Angela Favaro", "", "Stesura UC finale Business Owner"),
+  ("0.15.0", "2026-02-15", "Angela Canazza", "Amerigo Vegliante", "Modifica gestione generalizzazione attori"),
+  ("0.14.0", "2026-02-12", "Amerigo Vegliante", "Angela Favaro", "Sistemazione AD e Riorganizzazione Indice"),
+  ("0.13.0", "2026-02-12", "Angela Favaro", "Angela Canazza", "Stesura UC finale Business Owner"),
   ("0.12.0", "2026-02-12", "Angela Canazza", "Angela Favaro", "Stesura UC finale Project Manager"),
-  ("0.11.0", "2026-02-12", "Amerigo Vegliante", "", "Stesura Diagrammi di Attività"),
+  ("0.11.0", "2026-02-12", "Amerigo Vegliante", "Angela Favaro", "Stesura Diagrammi di Attività"),
   ("0.10.0", "2026-02-10", "Angela Favaro", "Amerigo Vegliante", "Stesura iniziale requisiti funzionali"),
   ("0.10.0", "2026-02-10", "Nicola Simionato", "Angela Favaro", "Modifica UC Project Manager e Business Owner"),
   ("0.9.0", "2026-02-09", "Angela Favaro", "Laura Venturini", "Aggiunta requisiti funzionali user e dev"),
@@ -178,6 +179,16 @@ Il sistema fornisce un punto di accesso centralizzato per la consultazione dello
 Per creare un prodotto realmente utile è fondamentale in prima istanza comprendere le reali esigenze e necessità degli utenti finali a cui la piattaforma è destinata a rivolgersi. \
 L'analisi condotta durante la sessione di _Design Thinking_ ha permesso di identificare e definire *tre profili utente principali*, ciascuno con obiettivi e necessità specifiche. Le funzionalità della piattaforma sono state progettate per rispondere in modo mirato alle aspettative di queste _personas_.
 
+=== Utente Sconosciuto
+L' _Utente Sconosciuto_ identifica il soggetto che vuole alla piattaforma _Code Guardian_, l'utente non ancora validato la propria identità tramite il sistema di login.
+
+*Esigenze principali:* Effettuare correttamente l'autenticazione per accedere alle funzionalità riservate.
+
+=== Utente Registrato
+L'_Utente Registrato_ rappresenta tutti i profili che hanno completato con successo l'autenticazione sulla piattaforma _Code Guardian_. Tale utente è astratto e, in quanto tale, non viene mai istanziato direttamente: ogni utente registrato agisce nel sistema sotto un ruolo specifico (Developer, Project Manager o Business Owner). 
+
+*Esigenze principali:* Accedere a tutte le funzionalità e strumenti dell'area privata, comune tra le tre figure (Developer, Project Manager e Business Owner).
+
 === Developer
 Il _Developer_ è l'utente tecnico primario del sistema. Interagisce quotidianamente con i _repository_ di codice e ha bisogno di strumenti che lo supportino nel migliorare la qualità del suo lavoro in modo rapido ed efficiente.
 
@@ -209,7 +220,7 @@ Il _Business Owner_ è lo _stakeholder_ con una visione strategica. Il principal
 - Accedere a statistiche generali sulla salute e la sicurezza (es. copertura OWASP) dei progetti.
 - Ricevere suggerimenti strategici su nuove tecnologie.
 
-L'architettura e l'interfaccia utente di _Code Guardian_ sono state ideate per servire trasversalmente le esigenze di questi tre profili. Tuttavia, come verrà esposto in maniera più dettagliata nel capitolo #link(<Cap2.4>)[2.4, Limiti del sistema], l'implementazione corrente del prototipo si concentra verticalmente sulla _persona_ del *Developer*.
+L'architettura e l'interfaccia utente di _Code Guardian_ sono state ideate per servire trasversalmente le esigenze di questi cinque profili. Tuttavia, come verrà esposto in maniera più dettagliata nel capitolo #link(<Cap2.4>)[2.4, Limiti del sistema], l'implementazione corrente del prototipo si concentra verticalmente sulla _persona_ del *Developer* e dove strettamente necessario, sulla _personas_ del *Project Manager*.
 
 == Vincoli del Prodotto
 Lo sviluppo del progetto dovrà sottostare ad una serie di vincoli tecnici ed architetturali definiti dalla committente per garantire la qualità, la manutenibilità e la corretta consegna del prodotto finale.
@@ -233,15 +244,14 @@ Infine, l'infrastruttura operativa sarà fortemente integrata con l'ecosistema *
 == Limiti del Sistema <Cap2.4>
 Per garantire la fattibilità del progetto entro le scadenze accademiche e focalizzare lo sviluppo sul valore _core_, sono stati definiti i seguenti confini operativi che delimitano il perimetro del prototipo realizzato:
 
-- *Focalizzazione sul profilo Developer:* l'implementazione corrente supporta verticalmente le funzionalità operative dedicate al _Developer_. Le *dashboard* strategiche, le metriche di costo e le viste aggregate dedicate ai profili _Project Manager_ e _Business Owner_ sono considerate sviluppi futuri e non sono incluse in questa versione.
+- *Focalizzazione sul profilo Developer:* l'implementazione corrente supporta verticalmente le funzionalità operative dedicate al _Developer_. Le *dashboard* strategiche, le metriche di costo e le viste aggregate dedicate ai profili _Project Manager_ e _Business Owner_ sono considerate sviluppi futuri e non sono incluse in questa versione. 
+  \ Tuttavia, la figura del _Project Manager_ risulta già indispensabile per consentire la corretta creazione e gestione dei progetti. Questi ultimi vengono visualizzati dai Developer, pur rimanendo sotto l'esclusiva responsabilità gestionale del profilo manageriale.
 
 - *Integrazione esclusiva GitHub:* Il sistema supporta unicamente _repository_ ospitati sulla piattaforma _GitHub_, utilizzando le sue API specifiche per l'autenticazione e la gestione del codice. Non sono previste integrazioni con altri provider in questa fase.
 
 - *Remediation semi-automatica:* Per motivi di sicurezza e affidabilità, le azioni di correzione del codice proposte dagli agenti non verranno mai applicate automaticamente sul _branch_ principale. Il sistema si limita a generare _pull request_ o _snippet_ di codice che richiedono la revisione e l'approvazione umana.
 
 - *Limiti dell'Intelligenza Artificiale:* Essendo il sistema basato su _Large Language Models_ (LLM), i suggerimenti di analisi e refactoring sono soggetti ai limiti intrinseci di tale tecnologia, inclusa la possibilità di "allucinazioni" (suggerimenti sintatticamente corretti ma semanticamente errati) o falsi positivi nell'individuazione delle vulnerabilità.
-
-- [Altro...]
 
 #pagebreak()
 
@@ -289,8 +299,13 @@ Gli attori rappresentano le entità, umane o sistemiche, che interagiscono con l
 #v(0.5cm)
 
 #figure(
-  image("../../asset/Diagramma_utenti.png", width: 35%),
-  caption: [Gerarchia degli attori: Developer, Project Manager e Business Owner come specializzazioni dell'Utente generico.], 
+  image("../../asset/utente_sconosciuto.png", width: 16%),
+  caption: [Utente Sconosciuto.], 
+) <fig-sconosciuto>
+
+#figure(
+  image("../../asset/Diagramma_utenti.png", width: 60%),
+  caption: [Gerarchia degli attori: Developer, Project Manager e Business Owner come specializzazioni dell'Utente Registrato.], 
 ) <fig-attori>
 
 #v(1.5cm)
@@ -304,7 +319,9 @@ Gli attori rappresentano le entità, umane o sistemiche, che interagiscono con l
   table.header(
      [*Campo*], [*Descrizione*],
   ),
-  [*Utente*], [Rappresenta un generico utilizzatore umano della piattaforma. È un attore astratto che generalizza le funzionalità comuni condivise da Developer, Project Manager e Business Owner, i quali ereditano da esso (#link(<fig-attori>)[Figure 1]).],
+  [*Utente Sconosciuto*], [Rappresenta un generico umano, che non ha ancora effettuato l'accesso alla piattaforma (#link(<fig-sconosciuto>)[Figure 1]).],
+
+  [*Utente Registrato*], [Rappresenta un generico utilizzatore umano della piattaforma, che ha effettuato l'accesso alla piattaforma. È un attore astratto che generalizza le funzionalità comuni condivise da Developer, Project Manager e Business Owner, i quali ereditano da esso (#link(<fig-attori>)[Figure 2]).],
   
   [*Developer*], [È l'operatore tecnico principale del sistema. Il suo focus è il miglioramento continuo della qualità del codice, la standardizzazione della documentazione, la verifica della conformità agli standard di sicurezza (es. OWASP) e l'applicazione dei suggerimenti di remediation proposti dalla piattaforma.],
   
@@ -319,14 +336,14 @@ Oltre agli attori umani, la piattaforma interagisce con un sistema esterno che a
 
 #pagebreak()
 
-== Specifica dei casi d'uso - Utente
+== Specifica dei casi d'uso - Utente Sconosciuto
 
 La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli attori e la piattaforma _Code Guardian_.
 
 === UC1 - Accesso alla piattaforma
 #align(center, [#image("../../asset/UC/user/uc1.png")])
 <UC1>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Sconosciuto.
 
 - *Descrizione:* L’utente accede a _Code Guardian_.
 
@@ -361,7 +378,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC1.0.1 - Inserimento username
 <UC1.0.1>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Sconosciuto.
   
 - *Descrizione:* L'utente inserisce il proprio username.
   
@@ -378,7 +395,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC1.0.2 - Inserimento password
 <UC1.0.2>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Sconosciuto.
 
 - *Descrizione:* L'utente inserisce la propria password.
   
@@ -395,7 +412,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC1.1 - Annullamento accesso alla piattaforma
 <UC1.1>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Sconosciuto.
 
 - *Descrizione:* L'utente annulla la procedura di accesso alla piattaforma _Code Guardian_.
 
@@ -405,7 +422,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + La procedura di autenticazione viene interrotta.
-  + L'Utente è reindirizzato alla schermata iniziale.
+  + L'Utente Sconosciuto è reindirizzato alla schermata iniziale.
 
 - *Postcondizioni:* L’utente non è autenticato e si trova nella pagina di login.
 
@@ -414,7 +431,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC1.2 - Credenziali errate
 <UC1.2>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Sconosciuto.
 
 - *Descrizione:* Il sistema gestisce l'inserimento di credenziali non valide, notificando l'utente.
 
@@ -425,7 +442,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + La richiesta di accesso viene invalidata.
   + L'utente visualizza un messaggio di errore (esempio. "Email o password errati").
-  + I campi sensibili vengono svuotati e l'Utente può effettuare un nuovo tentativo.
+  + I campi sensibili vengono svuotati e l'Utente Sconosciuto può effettuare un nuovo tentativo.
 
 - *Postcondizioni:* L’utente non è autenticato e rimane sulla pagina di login.
 
@@ -433,10 +450,12 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 #pagebreak()
 
+== Specifica dei casi d'uso - Utente Registrato
+
 === UC2 - Visualizzazione area personale
 #align(center, [#image("../../asset/UC/user/uc2.png", height: 7cm)])
 <UC2>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
 - *Descrizione:* L'utente vuole visualizzare la propria area personale.
 
@@ -461,7 +480,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC2.1 - Visualizzazione nome utente
 <UC2.1>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
 - *Descrizione:* L'utente vuole visualizzare il proprio nome utente.
 
@@ -478,7 +497,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 === UC2.2 - Visualizzazione email
 <UC2.2>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
 - *Descrizione:* L'utente vuole visualizzare la propria email.
 
@@ -494,7 +513,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 === UC2.3 - Visualizzazione ruolo
 <UC2.3>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
 - *Descrizione:* L'utente vuole visualizzare il proprio ruolo.
 
@@ -515,7 +534,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 === UC3 - Logout
 #align(center, [#image("../../asset/UC/user/uc3.png", width: 15cm)])
 <UC3>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
 - *Descrizione:* Permette all'utente di terminare la sessione di lavoro corrente.
 
@@ -545,35 +564,36 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC3.1 - Annullamento logout
 <UC3.1>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* Gestisce il caso in cui l'Utente decida di annullare l'operazione di logout.
+- *Descrizione:* Gestisce il caso in cui l'Utente Registrato decida di annullare l'operazione di logout.
 
-- *Precondizioni:* L'Utente è autenticato e sta eseguendo l'operazione di logout #link(<UC3>)[[UC3]].
+- *Precondizioni:* L'Utente Registrato è autenticato e sta eseguendo l'operazione di logout #link(<UC3>)[[UC3]].
 
 - *Trigger:* L'utente seleziona il tasto per annullare l'operazione di logout.
 
 - *Scenario principale:* 
-+ L'Utente viene reindirizzato alla pagina di visualizzazione area personale.
++ L'Utente Registrato viene reindirizzato alla pagina di visualizzazione area personale.
 
 - *Postcondizioni:* L'utente è autenticato e si trova nella propria area personale senza aver effettuato il logout.
 
 #line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
 
 === UC4 - Errore generico
 <UC4>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
   
-- *Descrizione:* L'utente visualizza un messaggio di errore nel caso il sistema non sia in grado di eseguire un'operazione.
+- *Descrizione:* L'utente Registrato visualizza un messaggio di errore nel caso il sistema non sia in grado di eseguire un'operazione.
 
-- *Precondizioni:* L'utente si trova all'interno della piattaforma Code Guardian e sta attendendo l'esecuzione di un'operazione.
+- *Precondizioni:* L'utente Registrato si trova all'interno della piattaforma Code Guardian e sta attendendo l'esecuzione di un'operazione.
 
-- *Trigger:* L'utente seleziona un'operazione da eseguire.
+- *Trigger:* L'utente Registrato seleziona un'operazione da eseguire.
 
 - *Scenario principale:*
   + Viene mostrato un messaggio di errore.
   
-- *Postcondizioni:* L'utente rimane nello stato precedente alla selezione dell'operazione.
+- *Postcondizioni:* L'utente Registrato rimane nello stato precedente alla selezione dell'operazione.
    
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -582,29 +602,29 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 === UC5 - Visualizzazione dettagli repository
 #align(center, [#image("../../asset/UC/user/uc5.png", width: 100%)])
 <UC5>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* L'Utente ha effettuato l'accesso. L'Utente vuole accedere alla vista di uno specifico repository.
+- *Descrizione:* L'Utente Registrato vuole accedere alla vista di uno specifico repository.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso. Esiste almeno un repository all'interno del sistema a cui l'Utente ha accesso.
+- *Precondizioni:* Esiste almeno un repository all'interno del sistema a cui l'Utente Registrato ha accesso.
 
-- *Trigger:* L'Utente clicca su un repository nella dashboard (#link(<UC6>)[[UC6]]) o su un repository nei dettagli di un progetto (#link(<UC9>)[[UCD3]]).
+- *Trigger:* L'Utente Registrato clicca su un repository nella dashboard (#link(<UC6>)[[UC6]]) o su un repository nei dettagli di un progetto (#link(<UC9>)[[UCD3]]).
 
 - *Scenario principale:*
-  + L'Utente visualizza l'intestazione del repository (*<\<include>>* #link(<UC5.5>)[[UC5.5]]).
-  +  L'Utente visualizza il nome del progetto associato al repository (*<\<include>>* #link(<UC5.6>)[[UC5.6]]).
-  +  L'Utente visualizza il il link al repository GitHub.
-  +  L'Utente visualizza l’indicatore  di visibilità del repository (*<\<include>>* #link(<UC5.7>)[[UC5.7]]).
-  + L'Utente visualizza il widget delle statistiche di analisi documentazione (*<\<include>>* #link(<UC5.1>)[[UC5.1]]).
-  + L'Utente visualizza il widget delle statistiche di analisi di test (*<\<include>>* #link(<UC5.2>)[[UC5.2]]).
-  + L'Utente visualizza il widget delle statistiche correttezza OWASP (*<\<include>>* #link(<UC5.4>)[[UC5.4]]).
-  + L'Utente visualizza un pulsante per l'eliminazione del repository (#link(<UC11>)[[UC11]]). 
-  + L'Utente visualizza un pulsante per tornare alla pagina precedente. 
+  + L'Utente Registrato visualizza l'intestazione del repository (*<\<include>>* #link(<UC5.5>)[[UC5.5]]).
+  +  L'Utente Registrato visualizza il nome del progetto associato al repository (*<\<include>>* #link(<UC5.6>)[[UC5.6]]).
+  +  L'Utente Registrato visualizza il il link al repository GitHub.
+  +  L'Utente Registrato visualizza l’indicatore  di visibilità del repository (*<\<include>>* #link(<UC5.7>)[[UC5.7]]).
+  + L'Utente Registrato visualizza il widget delle statistiche di analisi documentazione (*<\<include>>* #link(<UC5.1>)[[UC5.1]]).
+  + L'Utente Registrato visualizza il widget delle statistiche di analisi di test (*<\<include>>* #link(<UC5.2>)[[UC5.2]]).
+  + L'Utente Registrato visualizza il widget delle statistiche correttezza OWASP (*<\<include>>* #link(<UC5.4>)[[UC5.4]]).
+  + L'Utente Registrato visualizza un pulsante per l'eliminazione del repository (#link(<UC11>)[[UC11]]). 
+  + L'Utente Registrato visualizza un pulsante per tornare alla pagina precedente. 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - L'Utente visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+    - L'Utente Registrato visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* L'Utente visualizza i dati aggregati del repository.
+- *Postcondizioni:* L'Utente Registrato visualizza i dati aggregati del repository.
 
 - *Inclusioni:* 
   - #link(<UC5.5>)[[UC5.5]]
@@ -624,70 +644,70 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC5.1 - Visualizzazione widget analisi documentazione repository
 <UC5.1>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* Il sistema mostra all'Utente un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi della documentazione effettuata.
+- *Descrizione:* Il sistema mostra all'Utente Registrato un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi della documentazione effettuata.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso. L'Utente si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
+- *Precondizioni:* L'Utente Registrato si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
 
 - *Trigger:* Caricamento della schermata di dettaglio del repository.
 
 - *Scenario principale:*
-  + L'Utente rileva il valore percentuale del widget che rappresenta il livello di correttezza dei documenti analizzati.
-  + L'Utente osserva l'eventuale variazione del dato rispetto alle sessioni precedenti.
+  + L'Utente Registrato rileva il valore percentuale del widget che rappresenta il livello di correttezza dei documenti analizzati.
+  + L'Utente Registrato osserva l'eventuale variazione del dato rispetto alle sessioni precedenti.
   
 - *Scenari alternativi:* \
   Se non sono presenti analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
-- *Postcondizioni:* L'Utente è a conoscenza dello stato della documentazione, tramite l'indice percentuale di correttezza.
+- *Postcondizioni:* L'Utente Registrato è a conoscenza dello stato della documentazione, tramite l'indice percentuale di correttezza.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.2 - Visualizzazione widget analisi test repository
 <UC5.2>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* Il sistema mostra al Utente un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi dei test effettuata.
+- *Descrizione:* Il sistema mostra al Utente Registrato un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi dei test effettuata.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso. L'Utente si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
+- *Precondizioni:* L'Utente Registrato si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
 
 - *Trigger:* Caricamento della schermata di dettaglio della repository.
 
 - *Scenario principale:*
-  + L'Utente rileva, dal widget, la percentuale di correttezza risultante dall'ultima scansione disponibile.
-  + L'Utente interpreta il dato per determinare se la copertura e l'esecuzione dei test soddisfano i requisiti di progetto.
+  + L'Utente Registrato rileva, dal widget, la percentuale di correttezza risultante dall'ultima scansione disponibile.
+  + L'Utente Registrato interpreta il dato per determinare se la copertura e l'esecuzione dei test soddisfano i requisiti di progetto.
   
 - *Scenari alternativi:* \
   Se non sono presenti analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
-- *Postcondizioni:* L'Utente è a conoscenza dello stato dei test, tramite l'indice percentuale di correttezza.
+- *Postcondizioni:* L'Utente Registrato è a conoscenza dello stato dei test, tramite l'indice percentuale di correttezza.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.4 - Visualizzazione widget analisi OWASP repository
 <UC5.4>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* Il sistema mostra al Utente un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi OWASP effettuata.
+- *Descrizione:* Il sistema mostra al Utente Registrato un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi OWASP effettuata.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso. L'Utente si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
+- *Precondizioni:* L'Utente Registrato si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
 
 - *Trigger:* Caricamento della schermata di dettaglio del repository.
 
 - *Scenario principale:*
-+ L'Utente rileva, dal widget, l'esito percentuale che rappresenta il grado di sicurezza del codice analizzato.
-+ L'Utente valuta l'integrità del repository in base alla soglia di correttezza riscontrata.
++ L'Utente Registrato rileva, dal widget, l'esito percentuale che rappresenta il grado di sicurezza del codice analizzato.
++ L'Utente Registrato valuta l'integrità del repository in base alla soglia di correttezza riscontrata.
   
 - *Scenari alternativi:* \
   Se non sono presenti analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
-- *Postcondizioni:* L'Utente è a conoscenza dello stato della correttezza OWASP, tramite l'indice percentuale di correttezza.
+- *Postcondizioni:* L'Utente Registrato è a conoscenza dello stato della correttezza OWASP, tramite l'indice percentuale di correttezza.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.5 - Visualizzazione nome repository
 <UC5.5>
-- *Attore principale*: Utente.
+- *Attore principale*: Utente Registrato.
   
 - *Descrizione*: Il sistema mostra il nome di un singolo repository.
   
@@ -696,15 +716,15 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UC6>)[[UC6]] o da #link(<UC10>)[[UC10]]).
   
 - *Scenario principale*:
-  + L'Utente visualizza il nome del repository. 
+  + L'Utente Registrato visualizza il nome del repository. 
   
-- *Postcondizioni*: L'Utente ha visualizzato il nome di un repository.
+- *Postcondizioni*: L'Utente Registrato ha visualizzato il nome di un repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.6 - Visualizzazione nome progetto associato al repository
 <UC5.6>
-- *Attore principale*: Utente.
+- *Attore principale*: Utente Registrato.
   
 - *Descrizione*: Il sistema mostra il nome del progetto a cui appartiene un singolo repository.
   
@@ -713,15 +733,15 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UC6>)[[UC6]] o da #link(<UC10>)[[UC10]]).
   
 - *Scenario principale*:
-  + L'Utente visualizza il nome del progetto a cui appartiene il repository. 
+  + L'Utente Registrato visualizza il nome del progetto a cui appartiene il repository. 
   
-- *Postcondizioni*: L'Utente ha visualizzato il nome del progetto a cui appartiene il repository.
+- *Postcondizioni*: L'Utente Registrato ha visualizzato il nome del progetto a cui appartiene il repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.7 - Visualizzazione indicatore visibilità del repository
 <UC5.7>
-- *Attore principale*: Utente.
+- *Attore principale*: Utente Registrato.
   
 - *Descrizione*: Il sistema mostra l’indicatore  di visibilità associato al repository.
   
@@ -730,29 +750,29 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger*: Caricamento di una lista di repository (Dashboard globale o sezione progetti).
   
 - *Scenario principale*:
-  + L'Utente visualizza l’indicatore  di visibilità del repository. 
+  + L'Utente Registrato visualizza l’indicatore  di visibilità del repository. 
   
-- *Postcondizioni*: L'Utente ha visualizzato l’indicatore  di visibilità del repository.
+- *Postcondizioni*: L'Utente Registrato ha visualizzato l’indicatore  di visibilità del repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.8 - Visualizzazione informazioni generali repository
 #align(center, [#image("../../asset/UC/user/uc5-8.png", height: 7cm)])
 <UC5.8>
-- *Attore principale*: Utente.
+- *Attore principale*: Utente Registrato.
 
-- *Descrizione:* Il sistema mostra un riepilogo dei dati principali dei repository che l'Utente ha inserito all'interno della dashboard.
+- *Descrizione:* Il sistema mostra un riepilogo dei dati principali dei repository che l'Utente Registrato ha inserito all'interno della dashboard.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso. L'Utente dispone dell'accesso a repository presenti sulla piattaforma _Code Guardian_.
+- *Precondizioni:* L'Utente Registrato dispone dell'accesso a repository presenti sulla piattaforma _Code Guardian_.
 
 - *Trigger:* Caricamento di una lista di repository (Dashboard globale o sezione progetti).
 
 - *Scenario principale:*
-  + Per ogni elemento, l'Utente visualizza il nome del repository (*<\<include>>* #link(<UC5.5>)[[UC5.5]]).
-  + L'Utente visualizza il nome del progetto associato (se esistente) (*<\<include>>* #link(<UC5.6>)[[UC5.6]]).
-  + L'Utente visualizza l’indicatore  di visibilità (Pubblica/Privata) (*<\<include>>* #link(<UC5.7>)[[UC5.7]]).
+  + Per ogni elemento, l'Utente Registrato visualizza il nome del repository (*<\<include>>* #link(<UC5.5>)[[UC5.5]]).
+  + L'Utente Registrato visualizza il nome del progetto associato (se esistente) (*<\<include>>* #link(<UC5.6>)[[UC5.6]]).
+  + L'Utente Registrato visualizza l’indicatore  di visibilità (Pubblica/Privata) (*<\<include>>* #link(<UC5.7>)[[UC5.7]]).
 
-- *Postcondizioni:* L'Utente visualizza una panoramica sintetica dei repository.
+- *Postcondizioni:* L'Utente Registrato visualizza una panoramica sintetica dei repository.
   
 - *Inclusioni:*
   - #link(<UC5.5>)[[UC5.5]]
@@ -771,39 +791,39 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC5.9 - Visualizzazione informazioni generali repository filtro progetto
 <UC5.9>
-- *Attore principale*: Utente.
+- *Attore principale*: Utente Registrato.
 
 - *Descrizione:* Specializzazione di #link(<UC5.8>)[[UC5.8]] in cui la lista mostrata è limitata esclusivamente ai repository appartenenti al progetto correntemente visualizzato.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'utente sta visualizzando il dettaglio di uno specifico progetto.
+- *Precondizioni:*  L'utente sta visualizzando il dettaglio di uno specifico progetto.
 
 - *Trigger:* Caricamento della dashboard di dettaglio progetto.
 
 - *Scenario principale:*
-  + L'Utente visualizza i dati come descritto in #link(<UC5.8>)[[UC5.8]].
-  + l'Utente visualizza i soli repository che appartengono al progetto selezionato.
+  + L'Utente Registrato visualizza i dati come descritto in #link(<UC5.8>)[[UC5.8]].
+  + l'Utente Registrato visualizza i soli repository che appartengono al progetto selezionato.
 
-- *Postcondizioni:* L'Utente visualizza solo i repository pertinenti al progetto selezionato.
+- *Postcondizioni:* L'Utente Registrato visualizza solo i repository pertinenti al progetto selezionato.
   
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.10 - Reindirizzamento al repository GitHub 
 <UC5.10>
 
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* L'Utente ha effettuato l'accesso.  L'Utente clicca sul link per il reindirizzamento al repository GitHub che sta visualizzando.
+- *Descrizione:*  L'Utente Registrato clicca sul link per il reindirizzamento al repository GitHub che sta visualizzando.
 
-- *Precondizioni:* L'Utente sta visualizzando i dettagli di un repository sulla piattaforma _Code Guardian_ #link(<UC5>)[[UC5]].
+- *Precondizioni:* L'Utente Registrato sta visualizzando i dettagli di un repository sulla piattaforma _Code Guardian_ #link(<UC5>)[[UC5]].
 
-- *Trigger:* L'Utente clicca sul link del repository GitHub
+- *Trigger:* L'Utente Registrato clicca sul link del repository GitHub
 
 - *Scenario principale:*
-  + L'Utente individua il link al repository GitHub tra le informazioni del repository.
-  + L'Utente clicca il collegamento per visualizzare il repository all'interno dello spazio GitHub, potendone analizzare i commit e le contribuzioni generali.
-  + L'Utente consulta le informazioni desiderate direttamente sulla piattaforma esterna GitHub.
+  + L'Utente Registrato individua il link al repository GitHub tra le informazioni del repository.
+  + L'Utente Registrato clicca il collegamento per visualizzare il repository all'interno dello spazio GitHub, potendone analizzare i commit e le contribuzioni generali.
+  + L'Utente Registrato consulta le informazioni desiderate direttamente sulla piattaforma esterna GitHub.
 
-- *Postcondizioni:* L'Utente ha effettuato l'accesso alla pagina GitHub esterna relativa al repository di interesse.
+- *Postcondizioni:* L'Utente Registrato ha effettuato l'accesso alla pagina GitHub esterna relativa al repository di interesse.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -812,25 +832,25 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 === UC6 - Visualizzazione lista repository personali
 #align(center, [#image("../../asset/UC/user/uc6.png", height: 7cm)])
 <UC6>
-- *Attore principale*: Utente.
+- *Attore principale*: Utente Registrato.
 
-- *Descrizione:* L'Utente desidera visualizzare la lista dei repository importati sulla piattaforma _Code Guardian_.
+- *Descrizione:* L'Utente Registrato desidera visualizzare la lista dei repository importati sulla piattaforma _Code Guardian_.
 
-- *Precondizioni:* L'Utente si trova all'interno della dashboard.
+- *Precondizioni:* L'Utente Registrato si trova all'interno della dashboard.
 
 - *Trigger:* Caricamento della schermata della dashboard. Il selettore di vista è impostato su "Repository".
 
 - *Scenario principale:*
-  + L'Utente visualizza una barra di ricerca per il nome dei repository (*<\<include>>* #link(<UC7>)[[UC7]]).
-  + L'Utente visualizza un menù a tendina per selezionare la tipologia di repository che desidera (tutti/senza progetto) (*<\<include>>* #link(<UC6.1>)[[UC6.1]]).
-  + L'Utente visualizza, all'interno della dashboard, una sezione contente la lista dei repository (*<\<include>>* #link(<UC5.8>)[[UC5.8]]).
-  + L'Utente può scorrere per visualizzare tutti i repository presenti.
+  + L'Utente Registrato visualizza una barra di ricerca per il nome dei repository (*<\<include>>* #link(<UC7>)[[UC7]]).
+  + L'Utente Registrato visualizza un menù a tendina per selezionare la tipologia di repository che desidera (tutti/senza progetto) (*<\<include>>* #link(<UC6.1>)[[UC6.1]]).
+  + L'Utente Registrato visualizza, all'interno della dashboard, una sezione contente la lista dei repository (*<\<include>>* #link(<UC5.8>)[[UC5.8]]).
+  + L'Utente Registrato può scorrere per visualizzare tutti i repository presenti.
 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-  - L'Utente visualizza un messaggio d'errore *<\<extend>>* #link(<UC4>)[[UC4]].
+  - L'Utente Registrato visualizza un messaggio d'errore *<\<extend>>* #link(<UC4>)[[UC4]].
   - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* L'Utente visualizza la lista dei propri Repository.
+- *Postcondizioni:* L'Utente Registrato visualizza la lista dei propri Repository.
   
 - *Inclusioni:* 
   - #link(<UC6.1>)[[UC6.1]]
@@ -844,45 +864,43 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC6.1 - Selezione preferenza repository
 <UC6.1>
-- *Attore principale*: Utente.
+- *Attore principale*: Utente Registrato.
 
-- *Descrizione:* L'Utente desidera selezionare una preferenza per i repository da visualizzare, presenti sulla piattaforma _Code Guardian_.
+- *Descrizione:* L'Utente Registrato desidera selezionare una preferenza per i repository da visualizzare, presenti sulla piattaforma _Code Guardian_.
 
-- *Precondizioni:* L'Utente si trova all'interno della dashboard.
+- *Precondizioni:* L'Utente Registrato si trova all'interno della dashboard.
 
 - *Trigger:* L'utente seleziona la tendina del filtro repository.
 
 - *Scenario principale:*
   + L'utente seleziona la preferenza di visualizzazione che desidera (tutti/senza progetto).
-  + L'Utente visualizza la pagina ricaricata con i repository che soddisfano l'opzione selezionata.
+  + L'Utente Registrato visualizza la pagina ricaricata con i repository che soddisfano l'opzione selezionata.
 
 - *Postcondizioni:* Il Developer visualizza la lista dei repository desiderati.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
-#pagebreak()
-
 === UC7 - Ricerca nome repository 
 
 <UC7>
 
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* L'Utente filtra la lista dei repository disponibili tramite una barra di ricerca per individuare rapidamente un elemento specifico.
+- *Descrizione:* L'Utente Registrato filtra la lista dei repository disponibili tramite una barra di ricerca per individuare rapidamente un elemento specifico.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'Utente visualizza una lista di repository che contiene almeno un elemento.
+- *Precondizioni:*  L'Utente Registrato visualizza una lista di repository che contiene almeno un elemento.
 
-- *Trigger:* L'Utente digita dei caratteri all'interno del campo di ricerca/filtro.
+- *Trigger:* L'Utente Registrato digita dei caratteri all'interno del campo di ricerca/filtro.
 
 - *Scenario principale*:
-  + L'Utente inserisce una stringa di testo (nome o cognome) nella barra di ricerca.
-  + L'Utente visualizza solo i repository che corrispondono alla ricerca.
+  + L'Utente Registrato inserisce una stringa di testo (nome o cognome) nella barra di ricerca.
+  + L'Utente Registrato visualizza solo i repository che corrispondono alla ricerca.
 
 - *Scenario principale:*
-  + Nessun risultato trovato: Se nessun repository corrisponde alla stringa inserita, l'Utente visualizza un messaggio informativo (es. "Nessun repository corrisponde alla ricerca").
+  + Nessun risultato trovato: Se nessun repository corrisponde alla stringa inserita, l'Utente Registrato visualizza un messaggio informativo (es. "Nessun repository corrisponde alla ricerca").
 
-- *Postcondizioni:* L'Utente visualizza la lista filtrata dei repository.
+- *Postcondizioni:* L'Utente Registrato visualizza la lista filtrata dei repository.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -892,26 +910,26 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 === UC8 - Aggiungi singolo repository
 #align(center, [#image("../../asset/UC/user/uc8.png", width: 100%)])
 <UC8>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* L'Utente vuole registrare un nuovo repository _GitHub_ nella piattaforma.
+- *Descrizione:* L'Utente Registrato vuole registrare un nuovo repository _GitHub_ nella piattaforma.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'Utente è all'interno della dashboard.
+- *Precondizioni:*  L'Utente Registrato è all'interno della dashboard.
 
-- *Trigger:* L'Utente seleziona l'opzione di aggiunta repository dalla dashboard.
+- *Trigger:* L'Utente Registrato seleziona l'opzione di aggiunta repository dalla dashboard.
 
 - *Scenario principale:*
-  + L'Utente visualizza l’interfaccia per l’inserimento dei dati del repository.
-  + L'Utente inserisce l'URL del repository _GitHub_ *<\<include>>* #link(<UC8.2>)[[UC8.2]].
-  + L'Utente conferma l'operazione.
-  + L'Utente visualizza un messaggio di conferma dell’avvenuta aggiunta.
+  + L'Utente Registrato visualizza l’interfaccia per l’inserimento dei dati del repository.
+  + L'Utente Registrato inserisce l'URL del repository _GitHub_ *<\<include>>* #link(<UC8.2>)[[UC8.2]].
+  + L'Utente Registrato conferma l'operazione.
+  + L'Utente Registrato visualizza un messaggio di conferma dell’avvenuta aggiunta.
 
 - *Scenari alternativi:* \
-  - Al passo 1 o 2: L'Utente decide di annullare l’operazione (*<\<extend>>* #link(<UC8.1>)[[UC8.1]]).
+  - Al passo 1 o 2: L'Utente Registrato decide di annullare l’operazione (*<\<extend>>* #link(<UC8.1>)[[UC8.1]]).
   - Al passo 3: L'URL inserito corrisponde ad un repository privato ma non ha un token valido associato (*<\<extend>>* #link(<UC8.0.1>)[[UC8.0.1]]).
   - Al passo 3: URL del repository non valido *<\<extend>>* #link(<UC8.3>)[[UC8.3]].
   - Si verifica un errore durante il collegamento con GitHub.
-      - L'Utente visualizza un messaggio di errore *<\<extend>>* #link(<UC4>)[[UC4]].
+      - L'Utente Registrato visualizza un messaggio di errore *<\<extend>>* #link(<UC4>)[[UC4]].
       - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Il repository è stato aggiunto alla piattaforma e l'utente lo può visualizzare nella sua lista.
@@ -929,24 +947,24 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 === UC8.0.1 - Inserimento token repository
 #align(center, [#image("../../asset/UC/user/uc8-0-1.png", width: 90%)])
 <UC8.0.1>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* L'Utente inserisce il proprio Personal Access Token GitHub per consentire alla piattaforma l'accesso alle proprie risorse private.
+- *Descrizione:* L'Utente Registrato inserisce il proprio Personal Access Token GitHub per consentire alla piattaforma l'accesso alle proprie risorse private.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  Il sistema ha rilevato l'assenza di un token valido durante un'operazione di aggiunta o sincronizzazione.
+- *Precondizioni:*  Il sistema ha rilevato l'assenza di un token valido durante un'operazione di aggiunta o sincronizzazione.
 
 - *Trigger:* Richiesta del sistema a seguito di un tentativo di accesso a repository privati.
 
 - *Scenario principale:*
-  + L'Utente visualizza l'interfaccia di inserimento per il token GitHub.
-  + L'Utente inserisce il proprio token.
+  + L'Utente Registrato visualizza l'interfaccia di inserimento per il token GitHub.
+  + L'Utente Registrato inserisce il proprio token.
   // + Il sistema salva il token associandolo stabilmente al profilo dell'utente.
   //per diagramma di attività
 
 - *Scenari alternativi:*
   - Il token inserito non è valido (*<\<extend>>* #link(<UC8.0.2>)[[UC8.0.2]]).
 
-- *Postcondizioni:* Il profilo dell'Utente è aggiornato con un token valido, permettendo l'importazione di repository privati.
+- *Postcondizioni:* Il profilo dell'Utente Registrato è aggiornato con un token valido, permettendo l'importazione di repository privati.
   
 - *Estensioni:* 
   - #link(<UC8.0.2>)[[UC8.0.2]]
@@ -955,52 +973,52 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC8.0.2 - Token inserito non valido
 <UC8.0.2>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* Il sistema notifica all'Utente che il token inserito non è valido o ha permessi insufficienti.
+- *Descrizione:* Il sistema notifica all'Utente Registrato che il token inserito non è valido o ha permessi insufficienti.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  Il sistema ha fallito la validazione del token in #link(<UC8.0.1>)[[UC8.0.1]].
+- *Precondizioni:*  Il sistema ha fallito la validazione del token in #link(<UC8.0.1>)[[UC8.0.1]].
 
 - *Trigger:* Il token inserito non è riconosciuto da GitHub o è scaduto.
 
 - *Scenario principale:*
-  + All'Utente viene mostrato un messaggio di errore, indicando la causa del fallimento.
-  + L'Utente è invitato a inserire un nuovo token o a verificare i permessi di quello attuale.
+  + All'Utente Registrato viene mostrato un messaggio di errore, indicando la causa del fallimento.
+  + L'Utente Registrato è invitato a inserire un nuovo token o a verificare i permessi di quello attuale.
 
-- *Postcondizioni:* L'Utente può tentare nuovamente l'inserimento o annullare l'operazione.
+- *Postcondizioni:* L'Utente Registrato può tentare nuovamente l'inserimento o annullare l'operazione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC8.1 - Annullamento aggiungi singola repository
 <UC8.1>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* L'Utente decide di annullare l'operazione di aggiunta di un repository nel proprio profilo.
+- *Descrizione:* L'Utente Registrato decide di annullare l'operazione di aggiunta di un repository nel proprio profilo.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'Utente visualizza l'interfaccia per l'inserimento dei dati del repository.
+- *Precondizioni:*  L'Utente Registrato visualizza l'interfaccia per l'inserimento dei dati del repository.
 
-- *Trigger:* L'Utente seleziona il tasto per l'annullamento dell'aggiunta repository.
+- *Trigger:* L'Utente Registrato seleziona il tasto per l'annullamento dell'aggiunta repository.
 
 - *Scenario principale:* 
-  + L'Utente viene reindirizzato alla dashboard principale della piattaforma _Code Guardian_.
+  + L'Utente Registrato viene reindirizzato alla dashboard principale della piattaforma _Code Guardian_.
 
-- *Postcondizioni:* L'Utente si trova nuovamente nella dashboard senza aver aggiunto un repository.
+- *Postcondizioni:* L'Utente Registrato si trova nuovamente nella dashboard senza aver aggiunto un repository.
   
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC8.2 - Inserimento URL repository
 <UC8.2>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* L'Utente vuole inserire l'URL del repository GitHub da aggiungere alla piattaforma.
+- *Descrizione:* L'Utente Registrato vuole inserire l'URL del repository GitHub da aggiungere alla piattaforma.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  Il repository da aggiungere non è presente nella piattaforma.
+- *Precondizioni:*  Il repository da aggiungere non è presente nella piattaforma.
 
-- *Trigger:* L'Utente seleziona l'opzione di aggiunta repository dalla dashboard.
+- *Trigger:* L'Utente Registrato seleziona l'opzione di aggiunta repository dalla dashboard.
 
 - *Scenario principale:*
-  + L'Utente visualizza l’interfaccia per l’inserimento dei dati del repository.
-  + L'Utente inserisce l'URL del repository _GitHub_.
+  + L'Utente Registrato visualizza l’interfaccia per l’inserimento dei dati del repository.
+  + L'Utente Registrato inserisce l'URL del repository _GitHub_.
 
 - *Postcondizioni:* È stato indicato un URL nell'input per il link del repository da aggiungere.
 
@@ -1008,18 +1026,18 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC8.3 - URL non valido
 <UC8.3>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
 - *Descrizione:* Segnalazione al developer della mancata validità dell'URL inserito, per l'aggiunta di un repository.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'URL inserito, per aggiungere un repository alla piattaforma, non è valido.
+- *Precondizioni:*  L'URL inserito, per aggiungere un repository alla piattaforma, non è valido.
 
-- *Trigger:* L'Utente seleziona l'opzione di aggiunta repository dalla dashboard, l'URL inserito non è valido.
+- *Trigger:* L'Utente Registrato seleziona l'opzione di aggiunta repository dalla dashboard, l'URL inserito non è valido.
 
 - *Scenario principale:*
-  + All'Utente viene mostrato un messaggio di errore.
+  + All'Utente Registrato viene mostrato un messaggio di errore.
 
-- *Postcondizioni:* L'Utente può effettuare un nuovo tentativo di inserimento URL.
+- *Postcondizioni:* L'Utente Registrato può effettuare un nuovo tentativo di inserimento URL.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -1028,24 +1046,24 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 === UC9 - Visualizzazione lista progetti
 #align(center, [#image("../../asset/UC/user/uc9.png", height: 7cm)])
 <UC9>
-- *Attore principale*: Utente.
+- *Attore principale*: Utente Registrato.
 
-- *Descrizione:* L'Utente desidera visualizzare la lista dei progetti ai quali partecipa, presenti sulla piattaforma _Code Guardian_.
+- *Descrizione:* L'Utente Registrato desidera visualizzare la lista dei progetti ai quali partecipa, presenti sulla piattaforma _Code Guardian_.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'Utente si trova all'interno della dashboard.
+- *Precondizioni:*  L'Utente Registrato si trova all'interno della dashboard.
 
 - *Trigger:* Caricamento della schermata della dashboard. Il selettore di vista è impostato su "Progetti".
 
 - *Scenario principale:*
-  + L'Utente visualizza, all'intero della dashboard, una sezione contente la lista dei progetti. 
-  + Per ogni progetto, l'Utente ne vede il nome (*<\<include>>* #link(<UC10.1>)[[UC10.1]]).
+  + L'Utente Registrato visualizza, all'intero della dashboard, una sezione contente la lista dei progetti. 
+  + Per ogni progetto, l'Utente Registrato ne vede il nome (*<\<include>>* #link(<UC10.1>)[[UC10.1]]).
   + L'utente può scorrere per visualizzare tutti i progetti presenti.
   
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
   - All'utente viene mostrato un messaggio d'errore *<\<extend>>* #link(<UC4>)[[UC4]].
   - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* L'Utente visualizza la lista dei progetti in cui è coinvolto.
+- *Postcondizioni:* L'Utente Registrato visualizza la lista dei progetti in cui è coinvolto.
   
 - *Inclusioni:*
   - #link(<UC10.1>)[[UC10.1]]
@@ -1065,29 +1083,29 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 <UC10>
 #align(center, [#image("../../asset/UC/user/uc10.png", width: 100%)])
 
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* L'Utente vuole accedere alla vista di uno specifico progetto.
+- *Descrizione:* L'Utente Registrato vuole accedere alla vista di uno specifico progetto.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  Esiste almeno un progetto creato a cui l'Utente è associato.
+- *Precondizioni:*  Esiste almeno un progetto creato a cui l'Utente Registrato è associato.
 
-- *Trigger:* L'Utente clicca sulla card di un progetto.
+- *Trigger:* L'Utente Registrato clicca sulla card di un progetto.
 
 - *Scenario principale:*
-  + L'Utente visualizza l'intestazione del progetto (*<\<include>>* #link(<UC10.1>)[[UC10.1]]).
-  + L'Utente visualizza il widget delle statistiche di analisi documentazione(*<\<include>>* #link(<UC10.2>)[[UC10.2]]).
-  + L'Utente visualizza il widget delle statistiche di test (*<\<include>>* #link(<UC10.3>)[[UC10.3]]). 
-  + L'Utente visualizza il widget delle statistiche di correttezza OWASP (*<\<include>>* #link(<UC10.4>)[[UC10.4]]).
-  + L'Utente visualizza l'elenco dei repository che compongono il progetto (*<\<include>>* #link(<UC5.8>)[[UC5.8]]).
-  + L'Utente visualizza il pulsante per tornare alla visualizzazione della lista dei progetti. 
+  + L'Utente Registrato visualizza l'intestazione del progetto (*<\<include>>* #link(<UC10.1>)[[UC10.1]]).
+  + L'Utente Registrato visualizza il widget delle statistiche di analisi documentazione(*<\<include>>* #link(<UC10.2>)[[UC10.2]]).
+  + L'Utente Registrato visualizza il widget delle statistiche di test (*<\<include>>* #link(<UC10.3>)[[UC10.3]]). 
+  + L'Utente Registrato visualizza il widget delle statistiche di correttezza OWASP (*<\<include>>* #link(<UC10.4>)[[UC10.4]]).
+  + L'Utente Registrato visualizza l'elenco dei repository che compongono il progetto (*<\<include>>* #link(<UC5.8>)[[UC5.8]]).
+  + L'Utente Registrato visualizza il pulsante per tornare alla visualizzazione della lista dei progetti. 
   
 - *Scenari alternativi:* \
   Al passo 1: 
   - Si verifica un errore durante il caricamento della pagina.
-    - L'Utente visualizza un messaggio di errore *<\<extend>>* #link(<UC4>)[[UC4]].
+    - L'Utente Registrato visualizza un messaggio di errore *<\<extend>>* #link(<UC4>)[[UC4]].
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* L'Utente visualizza i dati aggregati del progetto.
+- *Postcondizioni:* L'Utente Registrato visualizza i dati aggregati del progetto.
 
 - *Inclusioni:* 
   - #link(<UC10.1>)[[UC10.1]]
@@ -1105,81 +1123,81 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC10.1 - Visualizzazione nome singolo progetto
 <UC10.1>
-- *Attore principale*: Utente. 
+- *Attore principale*: Utente Registrato. 
   
-- *Descrizione*: L'Utente visualizza il nome del progetto.
+- *Descrizione*: L'Utente Registrato visualizza il nome del progetto.
   
 - *Precondizioni*: Il sistema sta mostrando un elemento da una lista di progetto o la schermata di dettaglio di un progetto.
   
 - *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UC9>)[[UCD3]] o da #link(<UC10>)[[UC10]]).
   
 - *Scenario principale*:
-  + L'Utente visualizza il nome del un progetto. 
+  + L'Utente Registrato visualizza il nome del un progetto. 
   
-- *Postcondizioni*: L'Utente ha visualizzato il nome del progetto.
+- *Postcondizioni*: L'Utente Registrato ha visualizzato il nome del progetto.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC10.2 - Visualizzazione widget analisi documentazione progetto
 <UC10.2>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* Il sistema mostra all'Utente un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi della documentazione effettuata.
+- *Descrizione:* Il sistema mostra all'Utente Registrato un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi della documentazione effettuata.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'Utente ha effettuato l'accesso e si trova nella visualizzazione di dettaglio del progetto.
+- *Precondizioni:*  L'Utente Registrato ha effettuato l'accesso e si trova nella visualizzazione di dettaglio del progetto.
 
 - *Trigger:* Caricamento della schermata di dettaglio del progetto.
 
 - *Scenario principale:*
-  + L'Utente prende visualizza la media percentuale di correttezza, data dall'insieme dei dati dei repository coinvolti.
-  + L'Utente valuta la coerenza della documentazione a livello globale per determinare se il progetto rispetti gli standard di qualità definiti.
+  + L'Utente Registrato prende visualizza la media percentuale di correttezza, data dall'insieme dei dati dei repository coinvolti.
+  + L'Utente Registrato valuta la coerenza della documentazione a livello globale per determinare se il progetto rispetti gli standard di qualità definiti.
   
 - *Scenari alternativi:* \
   Se non sono presenti analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
-- *Postcondizioni:* L'Utente è a conoscenza dello stato della documentazione, tramite l'indice percentuale di correttezza.
+- *Postcondizioni:* L'Utente Registrato è a conoscenza dello stato della documentazione, tramite l'indice percentuale di correttezza.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC10.3 - Visualizzazione widget analisi test progetto
 <UC10.3>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* Il sistema mostra all'Utente un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi sui test effettuati.
+- *Descrizione:* Il sistema mostra all'Utente Registrato un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi sui test effettuati.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso e si trova nella visualizzazione di dettaglio del progetto.
+- *Precondizioni:* L'Utente Registrato ha effettuato l'accesso e si trova nella visualizzazione di dettaglio del progetto.
 
 - *Trigger:* Caricamento della schermata di dettaglio del progetto.
 
 - *Scenario principale:*
-  + L'Utente visualizza il valore percentuale medio, rappresentante lo stato di salute dei test per l'intero insieme di repository.
-  + L'Utente interpreta il dato complessivo per determinare se la stabilità del codice a livello di progetto sia conforme agli obiettivi prefissati.
+  + L'Utente Registrato visualizza il valore percentuale medio, rappresentante lo stato di salute dei test per l'intero insieme di repository.
+  + L'Utente Registrato interpreta il dato complessivo per determinare se la stabilità del codice a livello di progetto sia conforme agli obiettivi prefissati.
   
 - *Scenari alternativi:* \
   Se non sono presenti analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
-- *Postcondizioni:* L'Utente è a conoscenza dello stato dei test, tramite l'indice percentuale di correttezza.
+- *Postcondizioni:* L'Utente Registrato è a conoscenza dello stato dei test, tramite l'indice percentuale di correttezza.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC10.4 - Visualizzazione widget analisi OWASP progetto
 <UC10.4>
-- *Attore principale:* Utente.
+- *Attore principale:* Utente Registrato.
 
-- *Descrizione:* Il sistema mostra all'Utente un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi OWASP.
+- *Descrizione:* Il sistema mostra all'Utente Registrato un widget contenente l'esito percentuale relativo alla correttezza dell'ultima analisi OWASP.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso e si trova nella visualizzazione di dettaglio del progetto.
+- *Precondizioni:* L'Utente Registrato ha effettuato l'accesso e si trova nella visualizzazione di dettaglio del progetto.
 
 - *Trigger:* Caricamento della schermata di dettaglio del progetto.
 
 - *Scenario principale:*
-  + L'Utente visualizza la percentuale di correttezza aggregata, che esprime la correttezza OWASP del codice sorgente complessivo.
-  + L'Utente valuta la postura di sicurezza del progetto per identificare la necessità di interventi correttivi distribuiti.
+  + L'Utente Registrato visualizza la percentuale di correttezza aggregata, che esprime la correttezza OWASP del codice sorgente complessivo.
+  + L'Utente Registrato valuta la postura di sicurezza del progetto per identificare la necessità di interventi correttivi distribuiti.
   
 - *Scenari alternativi:* \
   Se non sono presenti analisi pregresse, il widget viene mostrato con il valore N.D. (Non Disponibile) o un messaggio informativo.
 
-- *Postcondizioni:* L'Utente è a conoscenza dello stato della correttezza OWASP, tramite l'indice percentuale di correttezza.
+- *Postcondizioni:* L'Utente Registrato è a conoscenza dello stato della correttezza OWASP, tramite l'indice percentuale di correttezza.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -1190,22 +1208,22 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #align(center, [#image("../../asset/UC/user/uc11.png", width: 100%)])
 
 <UC11>
-- *Attore principale:* Utente
+- *Attore principale:* Utente Registrato
 
-- *Descrizione:* L'Utente elimina una repository associata al suo account dal sistema.
+- *Descrizione:* L'Utente Registrato elimina una repository associata al suo account dal sistema.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'Utente sta visualizzando la lista di repository #link(<UC6>)[[UC6]] o sta visualizzando i dettagli di una repository #link(<UCD5>)[[UCD5]].
+- *Precondizioni:*  L'Utente Registrato sta visualizzando la lista di repository #link(<UC6>)[[UC6]] o sta visualizzando i dettagli di una repository #link(<UCD5>)[[UCD5]].
 
-- *Trigger:* L'Utente seleziona il tasto di cancellazione repository.
+- *Trigger:* L'Utente Registrato seleziona il tasto di cancellazione repository.
 
 - *Scenario principale:*
-  - Viene chiesta conferma dell'operazione all'Utente.
-  - La repository e tutti i dati ad essa annessi, vengono rimossi dal sistema, l'Utente non li potrà più visualizzare.
+  - Viene chiesta conferma dell'operazione all'Utente Registrato.
+  - La repository e tutti i dati ad essa annessi, vengono rimossi dal sistema, l'Utente Registrato non li potrà più visualizzare.
 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-    - All'Utente viene mostrato un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+    - All'Utente Registrato viene mostrato un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
-  Al passo 1: L'Utente sceglie di annullare l'operazione di eliminazione (*<\<extend>>* #link(<UC11.1>)[[UC11.1]]).
+  Al passo 1: L'Utente Registrato sceglie di annullare l'operazione di eliminazione (*<\<extend>>* #link(<UC11.1>)[[UC11.1]]).
 
 - *Postcondizioni:* Il Repository è stato correttamente eliminato dal sistema insieme ai dati ad esso associati.
 
@@ -1217,16 +1235,16 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC11.1 - Annullamento eliminazione singola repository
 <UC11.1>
-- *Attore principale:* Utente
+- *Attore principale:* Utente Registrato
 
-- *Descrizione:* L'Utente desidera annullare l'operazione di eliminazione di una repository.
+- *Descrizione:* L'Utente Registrato desidera annullare l'operazione di eliminazione di una repository.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'Utente ha avviato il caso d’uso #link(<UC11>)[UC11].
+- *Precondizioni:*  L'Utente Registrato ha avviato il caso d’uso #link(<UC11>)[UC11].
 
-- *Trigger:* L'Utente seleziona l’opzione di annullamento durante il processo di eliminazione.
+- *Trigger:* L'Utente Registrato seleziona l’opzione di annullamento durante il processo di eliminazione.
 
 - *Scenario principale:*
-  - L'Utente seleziona l’opzione di annullamento dell'eliminazione.
+  - L'Utente Registrato seleziona l’opzione di annullamento dell'eliminazione.
   - La pagina viene visualizzata nello stato precedente alla richiesta di eliminazione.
 
 - *Postcondizioni:* Il processo di eliminazione è stato annullato. Lo stato del sistema è coerente con la situazione precedente all’avvio dell'eliminazione.
@@ -1308,7 +1326,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UCD2.1 - Annullamento sincronizzazione
 <UCD2.1>
-- *Attore principale:* Utente.
+- *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer annulla l'importazione dei repository prima della conferma finale.
 
@@ -3046,7 +3064,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Project Manager desidera visualizzare la lista dei progetti ai quali partecipa, presenti sulla piattaforma _Code Guardian_.
 
-- *Precondizioni:* L'Utente ha effettuato l'accesso.  L'Utente si trova all'interno della dashboard.
+- *Precondizioni:*  L'Utente si trova all'interno della dashboard.
 
 - *Trigger:* Caricamento della schermata della dashboard. Il selettore di vista è impostato su "Progetti".
 
@@ -4150,45 +4168,46 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
 
-  // UTENTE GENERICO
-  [R-1-F-O],[L'Utente deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
-  [R-2-F-O],[L'Utente deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
-  [R-3-F-O],[L'Utente deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
-  [R-4-F-O],[L'Utente deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
-  [R-5-F-O],[L'Utente deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
+  // UTENTE SCONOSCIUTO
+  [R-1-F-O],[L'Utente Sconosciuto deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
+  [R-2-F-O],[L'Utente Sconosciuto deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
+  [R-3-F-O],[L'Utente Sconosciuto deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
+  [R-4-F-O],[L'Utente Sconosciuto deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
+  [R-5-F-O],[L'Utente Sconosciuto deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
 
-  [R-16-F-O],[L'Utente deve poter inserire un repository pubblico al sistema],[#link(<UC8>)[UC8]],
-  [R-17-F-D],[L'Utente deve poter inserire un repository privato al sistema],[#link(<UC8.0.1>)[UC8.0.1]],
-  [R-18-F-D],[L'Utente deve poter inserire il Personal Access Token collegato al proprio account],[#link(<UC8.0.1>)[UC8.0.1]],
-  [R-19-F-D],[L'Utente deve ricevere un messaggio di errore in caso di token inserito non valido],[#link(<UC8.0.2>)[UC8.0.2]],
-  [R-20-F-O],[L'Utente deve poter annullare l'inserimento di un repository],[#link(<UC8.1>)[UC8.1]],
-  [R-21-F-O],[L'Utente deve poter inserire l'URL del repository],[#link(<UC8.2>)[UC8.2]],
-  [R-22-F-O],[L'Utente deve ricevere un messaggio di errore nel caso di URL non valido],[#link(<UC8.3>)[UC8.3]],
-  [R-23-F-O],[L'Utente deve poter visualizzare la lista dei propri repository personali],[#link(<UC6>)[UC6]],
-  [R-24-F-O],[L'Utente deve poter selezionare una preferenza sulla tipologia di repository che desidera visualizzare],[#link(<UC6.1>)[UC6.1]],
-  [R-25-F-O],[L'Utente deve poter visualizzare il nome di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.5>)[UC5.5]],
-  [R-26-F-D],[L'Utente deve poter visualizzare il nome del progetto associato al repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.6>)[UC5.6]],
-  [R-27-F-O],[L'Utente deve poter visualizzare l’indicatore  di visibilità di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.7>)[UC5.7]],
-  [R-28-F-O],[L'Utente deve poter visualizzare la lista dei progetti ai quali contribuisce],[#link(<UC9>)[UC9]],
-  [R-29-F-O],[L'Utente deve poter visualizzare il nome di un progetto],[#link(<UC10.1>)[UC10.1]],
-  [R-30-F-O],[L'Utente deve poter visualizzare le statistiche dell'analisi sulla documentazione di un progetto],[#link(<UC10>)[UC10], #link(<UC10.2>)[UC10.2]],
-  [R-31-F-O],[L'Utente deve poter visualizzare le statistiche dell'analisi sui test di un progetto],[#link(<UC10>)[UC10], #link(<UC10.3>)[UC10.3]],
-  [R-32-F-O],[L'Utente deve poter visualizzare le statistiche dell'analisi OWASP di un progetto],[#link(<UC10>)[UC10], #link(<UC10.4>)[UC10.4]],
-  [R-33-F-O],[L'Utente deve poter visualizzare le statistiche dell'analisi sulla documentazione di un repository],[ #link(<UC5.1>)[UC5.1]],
-  [R-34-F-O],[L'Utente deve poter visualizzare le statistiche dell'analisi sui test di un repository],[#link(<UC5.2>)[UC5.2]],
-  [R-35-F-O],[L'Utente deve poter visualizzare le statistiche dell'analisi OWASP di un repository],[#link(<UC5.4>)[UC5.4]],
-  [R-36-F-O],[L'Utente deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un'analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
+  // UTENTE REGISTRATO
+  [R-16-F-O],[L'Utente Registrato deve poter inserire un repository pubblico al sistema],[#link(<UC8>)[UC8]],
+  [R-17-F-D],[L'Utente Registrato deve poter inserire un repository privato al sistema],[#link(<UC8.0.1>)[UC8.0.1]],
+  [R-18-F-D],[L'Utente Registrato deve poter inserire il Personal Access Token collegato al proprio account],[#link(<UC8.0.1>)[UC8.0.1]],
+  [R-19-F-D],[L'Utente Registrato deve ricevere un messaggio di errore in caso di token inserito non valido],[#link(<UC8.0.2>)[UC8.0.2]],
+  [R-20-F-O],[L'Utente Registrato deve poter annullare l'inserimento di un repository],[#link(<UC8.1>)[UC8.1]],
+  [R-21-F-O],[L'Utente Registrato deve poter inserire l'URL del repository],[#link(<UC8.2>)[UC8.2]],
+  [R-22-F-O],[L'Utente Registrato deve ricevere un messaggio di errore nel caso di URL non valido],[#link(<UC8.3>)[UC8.3]],
+  [R-23-F-O],[L'Utente Registrato deve poter visualizzare la lista dei propri repository personali],[#link(<UC6>)[UC6]],
+  [R-24-F-O],[L'Utente Registrato deve poter selezionare una preferenza sulla tipologia di repository che desidera visualizzare],[#link(<UC6.1>)[UC6.1]],
+  [R-25-F-O],[L'Utente Registrato deve poter visualizzare il nome di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.5>)[UC5.5]],
+  [R-26-F-D],[L'Utente Registrato deve poter visualizzare il nome del progetto associato al repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.6>)[UC5.6]],
+  [R-27-F-O],[L'Utente Registrato deve poter visualizzare l’indicatore  di visibilità di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.7>)[UC5.7]],
+  [R-28-F-O],[L'Utente Registrato deve poter visualizzare la lista dei progetti ai quali contribuisce],[#link(<UC9>)[UC9]],
+  [R-29-F-O],[L'Utente Registrato deve poter visualizzare il nome di un progetto],[#link(<UC10.1>)[UC10.1]],
+  [R-30-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sulla documentazione di un progetto],[#link(<UC10>)[UC10], #link(<UC10.2>)[UC10.2]],
+  [R-31-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sui test di un progetto],[#link(<UC10>)[UC10], #link(<UC10.3>)[UC10.3]],
+  [R-32-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi OWASP di un progetto],[#link(<UC10>)[UC10], #link(<UC10.4>)[UC10.4]],
+  [R-33-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sulla documentazione di un repository],[ #link(<UC5.1>)[UC5.1]],
+  [R-34-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sui test di un repository],[#link(<UC5.2>)[UC5.2]],
+  [R-35-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi OWASP di un repository],[#link(<UC5.4>)[UC5.4]],
+  [R-36-F-O],[L'Utente Registrato deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un'analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
 
-  [R-9-F-O],[L'Utente deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
-  [R-10-F-O],[L'Utente deve poter visualizzare il proprio nome Utente],[#link(<UC2.1>)[UC2.1]],
-  [R-11-F-O],[L'Utente deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
-  [R-12-F-O],[L'Utente deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
-  [R-13-F-O],[L'Utente deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
-  [R-14-F-O],[L'Utente deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
-  [R-15-F-D],[L'Utente deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
+  [R-9-F-O],[L'Utente Registrato deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
+  [R-10-F-O],[L'Utente Registrato deve poter visualizzare il proprio nome Utente Registrato],[#link(<UC2.1>)[UC2.1]],
+  [R-11-F-O],[L'Utente Registrato deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
+  [R-12-F-O],[L'Utente Registrato deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
+  [R-13-F-O],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
+  [R-14-F-O],[L'Utente Registrato deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
+  [R-15-F-D],[L'Utente Registrato deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
 
-  [R-92-F-P],[L'Utente deve poter cercare un repository in una barra di ricerca],[#link(<UC7>)[UC7]],
-  [R-85-F-P],[L'Utente deve poter visualizzare un repository sulla piattaforma esterna GitHub],[#link(<UC5.10>)[UC5.10]],
+  [R-92-F-P],[L'Utente Registrato deve poter cercare un repository in una barra di ricerca],[#link(<UC7>)[UC7]],
+  [R-85-F-P],[L'Utente Registrato deve poter visualizzare un repository sulla piattaforma esterna GitHub],[#link(<UC5.10>)[UC5.10]],
 
   // DEV
   [R-78-Q-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
