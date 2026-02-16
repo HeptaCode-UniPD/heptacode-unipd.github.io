@@ -963,9 +963,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [2 marzo 2026 - 8 marzo 2026],
+  [_Intervallo temporale_], [2 marzo 2026 - 15 marzo 2026],
 
-  [_Giorni di sprint_], [7],
+  [_Giorni di sprint_], [14],
 
   [_Attività previste_],
   [
@@ -1017,9 +1017,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [9 marzo 2026 - 15 marzo 2026],
+  [_Intervallo temporale_], [16 marzo 2026 - 26 marzo 2026],
 
-  [_Giorni di sprint_], [7],
+  [_Giorni di sprint_], [10],
 
   [_Attività previste_],
   [
@@ -1381,13 +1381,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     2. Continuazione stesura Use Case e finitura della sezione Developer;
     3. Inizio stesure Use Case per sezioni opzionali (Business Owner, Project Manager);
     4. Aggiornamento Glossario.
-    5. Non è stato possibile concludere con successo la milestone interna UCB a seguito dei rallentamenti incontrati. 
   ],
 
   [_Rischi incontrati_],
   [
     1. RO1 - Mancato rispetto delle tempistiche (@tab:RO1);
     2. RO2 - Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2);
+    3. Non è stato possibile concludere secondo i tempi previsti la milestone interna UCB a seguito dei rallentamenti incontrati.  
   ],
 
   [_Mitigazione_],
@@ -1606,7 +1606,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Rischi incontrati_],
   [
-    1.
+    1. Non è stato possibile concludere nei tempi previsti la milestone RTB a seguito dei rallentamenti incontrati.  
   ],
 
   [_Mitigazione_],
