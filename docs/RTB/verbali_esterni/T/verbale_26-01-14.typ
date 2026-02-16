@@ -15,7 +15,7 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("1.0.0", "2025-11-20", "Nicola Simionato", "Angela Favaro", "Stesura documento")
+  ("1.0.0", "2025-02-14", "Nicola Simionato", "Angela Favaro", "Stesura documento")
 )
 
 // switchare in 'true' SSE l’incontro si è tenuto online
@@ -25,7 +25,7 @@
 // modificare SSE non si è fatto in modalità telematica
 //NB: se non è alla sede VarGroup di Via Salboro scrivere il nuovo luogo comprendendo l’articolo
 
-#let luogo = "Server Microsoft Teams"
+#let luogo = "Il server Microsoft Teams"
 
 
 // ruolo e presenza abbastanza intuitivo
