@@ -3,6 +3,7 @@
 #set text(size: 12pt)
 #set page(numbering: "1")
 #align(top + right, [#image("../../asset/logo.svg", width: 3.5cm)])
+Padova, 17 febbraio 2026 \
 Alla cortese attenzione dei professori \
 Tullio Vardanega, \
 Riccardo Cardin.
@@ -20,7 +21,7 @@ Repository di gruppo: " + link("https://github.com/HeptaCode-UniPD/heptacode-uni
 \
 \
 
-Con la presente il *gruppo 7, Hepta Code*, in data *16 febbraio 2026*, inoltra formalmente la propria richiesta di partecipazione alla revisione della Requirement Technology Baseline per la proposta di progetto "*Code Guardian: Piattaforma ad agenti per l’audit e la remediation dei repository software*", presentata dall'azienda *VarGroup*.
+Con la presente il *gruppo 7, Hepta Code*, inoltra formalmente la propria richiesta di partecipazione alla revisione della Requirement Technology Baseline per la proposta di progetto "*Code Guardian: Piattaforma ad agenti per l’audit e la remediation dei repository software*", presentata dall'azienda *VarGroup*.
 
 Negli ultimi mesi, il team ha redatto e reso disponibili le versioni ufficiali della documentazione per la milestone RTB. Il materiale è consultabile nella pagina ufficiale di #link("https://heptacode-unipd.github.io", "HeptaCode") o all'interno del repository GitHub #link("https://github.com/HeptaCode-UniPD/heptacode-unipd.github.io", "https://github.com/HeptaCode-UniPD/heptacode-unipd.github.io"). Nello specifico, la release comprende:
 
