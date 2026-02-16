@@ -60,7 +60,7 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 // VERSIONE CORRETTA: Nessuna parentesi tonda per ogni riga, tutto su un'unica lista piatta!
 #let decisione-azione = (
-  "Fine stesura AdR", "Angela F. e Angela C si occuperanno della parte dei resuititi, Amerigo V. si occuperà dei diagrammi di attività, Nicola S. si occuperà della stesura dei grafici UML.",
+  "Fine stesura AdR", "Angela F. e Angela C si occuperanno della parte dei requisiti, Amerigo V. si occuperà dei diagrammi di attività, Nicola S. si occuperà della stesura dei grafici UML.",
   "Stesura finale Piano di Qualifica","Se ne occuperà Laura V.",
   "Stesura finale Norme di Progetto","Se ne occuperò Riccardo B.",
   "Valutazione aggiunta feature al PoC", "Invio email di chiarimento al docente",
