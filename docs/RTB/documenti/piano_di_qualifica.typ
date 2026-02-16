@@ -104,7 +104,7 @@
         fill: white,
         stroke: none
       )],
-      [Piano di Qualifica],
+      [Piano di Qualifica v1.0.0],
     )
     #line(length: 100%, stroke: black)
   ],
