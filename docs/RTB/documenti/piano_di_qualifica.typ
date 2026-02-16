@@ -5,6 +5,13 @@
 
 #show: applica-glossario
 
+#let tabella-viola(..args) = {
+  show table.cell.where(y: 0): set text(white, weight: "bold")
+  table(
+    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
+    ..args
+  )
+}
 
 #v(1fr)
 #align(center, [
@@ -22,7 +29,7 @@
 
 #pagebreak()
 #text(size: 17pt, weight: "bold")[Registro delle modifiche:]
-#table(
+#tabella-viola(
   columns: (auto, auto, auto, auto, auto),
   inset: 9pt,
   align: horizon,
@@ -104,6 +111,7 @@
   ],
 )
 #counter(page).update(1)
+
 = Introduzione
 == Scopo del documento
 Il presente documento, Piano di Qualifica, descrive in dettaglio le strategie di verifica e validazione adottate per garantire la qualità del prodotto finale e dei processi realizzativi.\
@@ -134,7 +142,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
 == Processi primari
 === Fornitura
 #figure(
-  table(
+  tabella-viola(
     columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
@@ -171,7 +179,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
 == Processi di supporto
 === Verifica e validazione
 #figure(
-  table(
+  tabella-viola(
     columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
@@ -202,7 +210,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
 
 === Documentazione
 #figure(
-  table(
+  tabella-viola(
     columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
@@ -221,7 +229,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
 == Processi organizzativi
 === Miglioramento
 #figure(
-  table(
+  tabella-viola(
     columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
@@ -267,7 +275,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
 - Miglioramento continuo tramite l'Analisi dei rischi e l'ottimizzazione dei processi iterazione dopo iterazione. L'approccio operativo segue il principio del "fail fast"#super[G].
 == Funzionalità
 #figure(
-  table(
+  tabella-viola(
     columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
@@ -294,7 +302,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
 
 == Efficienza
 #figure(
-  table(
+  tabella-viola(
     columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
@@ -321,7 +329,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
 
 == Manutenibilità
 #figure(
-  table(
+  tabella-viola(
     columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
@@ -360,7 +368,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
 
 == Usabilità
 #figure(
-  table(
+  tabella-viola(
     columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
@@ -383,7 +391,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
 
 == Affidabilità
 #figure(
-  table(
+  tabella-viola(
     columns: (auto, 1.5fr, 1fr, 1fr),
     inset: 9pt,
     align: horizon,
@@ -411,13 +419,9 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
 
 - *Test di Regressione*: a seguito di un test andato male e di una relativa correzione,ci si accerta che la correzione non causi errori nelle parti del sistema che dipendono da essa;
 
-- *Test di Accettazione*: Validazione esterna con il committente rispetto al Capitolato.
-== Test di Sistema
-#table(
+- *Test di Accettazione*
+#tabella-viola(
   columns: (2cm, auto, 3cm ,2cm),
-  inset: 7pt,
-  align: (center + horizon, center+ horizon, center + horizon, center + horizon),
-  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
   
   table.header([*Codice*], [*Descrizione*], [*Requisito di riferimento*], [*Stato del test*]),
   [*T-1-S*], [Verificare che l'Utente Sconosciuto non autentificato possa accedere alla piattaforma], [R-1-F-O], [NI],
@@ -622,7 +626,7 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
 
 == Valutazione organizzativa
 #figure(
-  table(
+  tabella-viola(
     columns: (auto, auto),
     inset: 9pt,
     align: horizon,
@@ -658,7 +662,7 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
 
  == Valutazione tecnologica
 //  #figure(
-//   table(
+//   tabella-viola(
 //     columns: (auto, auto, auto),
 //     inset: 9pt,
 //     align: horizon,
