@@ -22,6 +22,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("1.0.0","2026-02-16","Amerigo Vegliante","Angela Favaro","Prima versione AdR"),
   ("0.15.0", "2026-02-15", "Angela Canazza", "Amerigo Vegliante", "Modifica gestione generalizzazione attori"),
   ("0.14.0", "2026-02-12", "Amerigo Vegliante", "Angela Favaro", "Sistemazione AD e Riorganizzazione Indice"),
   ("0.13.0", "2026-02-12", "Angela Favaro", "Angela Canazza", "Stesura UC finale Business Owner"),
@@ -347,7 +348,7 @@ Oltre agli attori umani, la piattaforma interagisce con un sistema esterno che a
 La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli attori e la piattaforma _Code Guardian_.
 
 === UC1 - Accesso alla piattaforma
-#align(center, [#image("../../asset/UC/user/UC1.png")])
+#align(center, [#image("../../asset/UC/user/uc1.png")])
 <UC1>
 - *Attore principale:* Utente Sconosciuto.
 
@@ -459,7 +460,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 == Specifica dei casi d'uso - Utente Registrato
 
 === UC2 - Visualizzazione area personale
-#align(center, [#image("../../asset/UC/user/UC2.png", height: 7cm)])
+#align(center, [#image("../../asset/UC/user/uc2.png", height: 7cm)])
 <UC2>
 - *Attore principale:* Utente Registrato.
 
@@ -538,7 +539,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UC3 - Logout
-#align(center, [#image("../../asset/UC/user/UC3.png", width: 15cm)])
+#align(center, [#image("../../asset/UC/user/uc3.png", width: 15cm)])
 <UC3>
 - *Attore principale:* Utente Registrato.
 
