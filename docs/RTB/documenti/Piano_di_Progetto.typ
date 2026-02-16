@@ -23,7 +23,7 @@
   align: horizon,
   table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
 
-  "1.0.0",
+  "0.14.0",
   "2026/02/12", 
   "Laura Venturini", 
   "Angela Favaro", 
