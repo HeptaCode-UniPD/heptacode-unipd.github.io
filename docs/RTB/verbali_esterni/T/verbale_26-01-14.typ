@@ -15,6 +15,7 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
+  ("2.0.0", "2025-02-14", "Nicola Simionato", "Angela Favaro", "Adattamento modifiche template"),
   ("1.0.0", "2025-02-14", "Nicola Simionato", "Angela Favaro", "Stesura documento")
 )
 
@@ -22,10 +23,9 @@
 #let distanza = true
 
 
-// modificare SSE non si è fatto in modalità telematica
 //NB: se non è alla sede VarGroup di Via Salboro scrivere il nuovo luogo comprendendo l’articolo
-
-#let luogo = "Il server Microsoft Teams"
+// se fatto in modalità telematica scrivere solo la piattaforma utilizzata
+#let luogo = "Microsoft Teams"
 
 
 // ruolo e presenza abbastanza intuitivo
@@ -46,8 +46,12 @@
 // ora di fine dell’incontro
 #let fine = "15:30"
 
-
-
+// nome e ruolo abbastanza intuitivo
+//esempio: "Stefano Dindo", "Rappresentante VarGroup"
+#let partecipanti-esterni = (
+  "Federico Pivetta", "Rappresentante VarGroup",
+  "Francesco Battistella", "Rappresentante VarGroup"
+)
 
 #let corpo = [= Argomenti trattati
 Gli argomenti discussi nell’incontro sono stati:
