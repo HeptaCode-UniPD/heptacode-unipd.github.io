@@ -38,7 +38,7 @@ Negli ultimi mesi, il team ha redatto e reso disponibili le versioni ufficiali d
 [
  \ *Documenti interni*
 - #link("https://heptacode-unipd.github.io/docs/RTB/documenti/norme_di_progetto.pdf", "Norme di Progetto v1.0.0"),
-- #link("..", "Glossario v2.0.0")],
+- #link("https://heptacode-unipd.github.io/docs/RTB/Glossario.pdf", "Glossario v2.0.0")],
 [ \ *Verbali esterni*],
 [ \ *Verbali interni* ]
 )
