@@ -11,6 +11,15 @@ Domande per Cardin sul file:
 
 #show table.cell: block.with(breakable: true)
 
+#let tabella-viola(..args) = {
+  show table.cell.where(y: 0): set text(white, weight: "bold")
+  table(
+    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
+    ..args
+  )
+}
+
+
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
   ("0.15.0", "2026-02-15", "Angela Canazza", "Amerigo Vegliante", "Modifica gestione generalizzazione attori"),
@@ -75,11 +84,10 @@ Domande per Cardin sul file:
 
 #text(size: 18pt, weight: "bold")[Registro delle modifiche]
 
-#table(
+#tabella-viola(
   columns: (auto, auto, auto, auto, 1fr),
   inset: 10pt,
   align: (center, center, center, center, left),
-  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
   
   table.header(
   [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*],
@@ -267,11 +275,10 @@ Per garantire chiarezza e coerenza, vengono definiti nella seguente tabella i te
 
 #v(1em)
 
-#table(
+#tabella-viola(
   columns: (auto, 1fr),
   inset: 10pt,
   align: (left, left),
-  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
   
   table.header(
      [*Campo*], [*Descrizione*],
@@ -310,11 +317,10 @@ Gli attori rappresentano le entità, umane o sistemiche, che interagiscono con l
 
 #v(1.5cm)
 
-#table(
+#tabella-viola(
   columns: (auto, 1fr),
   inset: 10pt,
   align: (left, left),
-  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
 
   table.header(
      [*Campo*], [*Descrizione*],
@@ -4036,11 +4042,10 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 
 #v(1em)
 
-#table(
+#tabella-viola(
   columns: (auto, 1fr),
   inset: 10pt,
   align: (left, left),
-  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
   
   table.header(
      [*Campo*], [*Descrizione*],
@@ -4060,6 +4065,8 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 == Diagrammi
 
 === AD1 - Flusso di Esecuzione Analisi Integrata (Post-PUSH)
+
+#align(center, [#image("../../asset/AD/AD1.png", width: 100%)])
 
 ==== Descrizione Attività
 
@@ -4090,6 +4097,8 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 
 === AD2 - Monitoraggio: Dashboard e Storico
 
+#align(center, [#image("../../asset/AD/AD2.png", width: 100%)])
+
 ==== Descrizione Attività
 
 - *Titolo*: Visualizzazione Stato di Salute e Analisi Storica
@@ -4117,6 +4126,8 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 + *Fine Attività*
 
 === AD3 - Ciclo di Remediation Proattiva
+
+#align(center, [#image("../../asset/AD/AD3.png", width: 90%)])
 
 ==== Descrizione Attività
 
@@ -4160,11 +4171,11 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 
 == Requisiti funzionali
 
-#table(
+#tabella-viola(
   columns: (auto, auto, 3cm),
   inset: 10pt,
   align: (left, left, left),
-  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
+   
   
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
 
@@ -4324,11 +4335,11 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 
 == Requisiti di vincolo
 
-#table(
+#tabella-viola(
   columns: (auto, auto, 5.4cm),
   inset: 10pt,
   align: (left, left, left),
-  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
+   
   
   table.header(
   [*Codice*], [*Descrizione*], [*Fonti*],
@@ -4344,11 +4355,11 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 
 == Requisiti di qualità
 
-#table(
+#tabella-viola(
   columns: (auto, auto, 5.4cm),
   inset: 10pt,
   align: (left, left, left),
-  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
+   
   
   table.header(
   [*Codice*], [*Descrizione*], [*Fonti*],
@@ -4368,11 +4379,11 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 
 == Requisiti di aspettativa
 
-#table(
+#tabella-viola(
   columns: (auto, auto, auto),
   inset: 10pt,
   align: (left, left, left),
-  fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none }, 
+   
   
   table.header(
   [*Codice*], [*Descrizione*],[*Fonti*],
