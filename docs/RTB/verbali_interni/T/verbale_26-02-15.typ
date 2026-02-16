@@ -14,7 +14,7 @@
   //   ("1.0.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("0.1.0", "2026-02-15", "Amerigo Vegliante", "Angela Favaro", "Stesura relazione dell'incontro")
+  ("1.0.0", "2026-02-15", "Amerigo Vegliante", "Angela Favaro", "Stesura relazione dell'incontro")
 )
 
 // switchare in 'true' SSE l'incontro non si è tenuto su Discord

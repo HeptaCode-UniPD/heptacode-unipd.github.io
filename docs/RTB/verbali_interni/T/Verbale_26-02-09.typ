@@ -13,7 +13,7 @@
 
 // VERSIONE CORRETTA: Nessuna doppia parentesi! Lista piatta.
 #let modifiche = (
-  "0.1.0", "2026-02-09", "Alberto Reginato", "Angela Favaro", "Stesura verbale"
+  "1.0.0", "2026-02-09", "Alberto Reginato", "Angela Favaro", "Stesura verbale"
 )
 
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord

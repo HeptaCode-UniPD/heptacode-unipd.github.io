@@ -15,7 +15,7 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("0.1.0", "2025-11-20", "Nicola Simionato", "", "Prima stesura documento")
+  ("1.0.0", "2025-11-20", "Nicola Simionato", "Angela Favaro", "Stesura documento")
 )
 
 // switchare in 'true' SSE l'incontro si è tenuto online
@@ -60,14 +60,14 @@ Gli argomenti discussi nell'incontro sono stati:
 
 == Gestione dei ruoli developer, project manager e business owner
 
-L'argomento principale è stato quello riguardante i 3 ruoli individuati duranti lo scorso incontro con l'azienda. Le domande sono state accompagnato dalla condivisione dei casi d'uso scritti fino a quel momento.
+L'argomento principale è stato quello riguardante i 3 ruoli individuati duranti lo scorso incontro con l'azienda. Le domande sono state accompagnate dalla condivisione dei casi d'uso scritti fino a quel momento.
 Inizialmente il team aveva strutturato la gestione del ruolo in modo autonomo da parte del singolo utente, attraverso questo incontro si è capito invece che ogni utente non deve poter decidere da solo il proprio ruolo ma è già legato ai progetti ai quali è assegnato.
 
 == Proposta di gestione delle repository private
 
 Trovandosi a dover interagire con la piattaforma GitHub ci si è imbattuti nel problema delle repository private.
 L'idea sorta in primo luogo era quella di utilizzare i token che si possono creare nella piattaforma, tuttavia è stato chiesto all'azienda se utilizzassero la funzionalità GitHub App per facilitare la gestione di ruoli e delle repository.
-Tuttavia in seguito anche al consiglio dell'azienda si è optato per l'utilizzo dei token.
+In seguito anche al consiglio dell'azienda si è optato per l'*utilizzo dei token*.
 
 == Idea del PoC e la sua specificità
 
