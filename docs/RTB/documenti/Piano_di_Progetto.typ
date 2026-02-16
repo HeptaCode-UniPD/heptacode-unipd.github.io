@@ -1596,22 +1596,24 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [12 gennaio 2026 – 25 gennaio 2026],
-  [_Responsabile_],[],
+  [_Responsabile_],[Nicola Simionato],
   [_Giorni di sprint_], [14],
 
   [_Attività Svolte_],
   [
-    1. Conclusione milestone UCB
+    1. Revisione Casi d'Uso con azienda
+    2. Inizio riscrittura PoC secondo nuove indicazioni
+    3. Inizio PoC
   ],
 
   [_Rischi incontrati_],
   [
-    1. Non è stato possibile concludere nei tempi previsti la milestone RTB a seguito dei rallentamenti incontrati.  
+    1. Poco tempo a disposizione a causa degli esami universitari.
   ],
 
   [_Mitigazione_],
   [
-    1.
+    1. Ridistribuzione delle ore negli sprint successivi.
   ]
 )
 
