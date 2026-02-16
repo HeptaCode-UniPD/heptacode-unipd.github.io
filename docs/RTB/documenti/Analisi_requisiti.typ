@@ -87,8 +87,20 @@ Domande per Cardin sul file:
 #pagebreak()
 
 
-
 #outline(title: "Indice dei contenuti")
+
+#pagebreak()
+#outline(
+  title: "Indice delle tabelle",
+  target: figure.where(kind: table),
+)
+
+#pagebreak()
+
+#outline(
+  title: "Indice delle figure",
+  target: figure.where(kind : image),
+)
 
 #pagebreak()
 #set page(numbering: "1") 
@@ -264,26 +276,32 @@ Per garantire chiarezza e coerenza, vengono definiti nella seguente tabella i te
 
 #v(1em)
 
-#tabella-viola(
-  columns: (auto, 1fr),
-  inset: 10pt,
-  align: (left, left),
-  
-  table.header(
-     [*Campo*], [*Descrizione*],
-  ),
+#figure(
+  caption: [Descrizione dei componenti di uno Use Case],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <tabella-componenti-UC>
+  #tabella-viola(
+    columns: (auto, 1fr),
+    inset: 10pt,
+    align: (left, left),
+    
+    table.header(
+      [*Campo*], [*Descrizione*],
+    ),
 
-  [*Identificatore*],[È un codice univoco, strutturato secondo la notazione gerarchica UCx.y (o UCx.y.z per casi specifici),, che viene assegnato a ogni singolo Caso d'Uso per individuarlo in modo inequivocabile all'interno dell'intera documentazione di progetto. La sua funzione primaria è quella di garantire una rapida rintracciabilità dei requisiti lungo tutto il ciclo di vita del software senza ambiguità.],
-   [*Scenario \ principale*], [È il flusso ideale (_Happy Path_). Descrive cosa succede quando l'interazione tra l'attore e il sistema procede linearmente verso il successo senza intoppi],
-  [*Scenario \ secondario*], [Comprende tutti i percorsi alternativi o le gestioni delle eccezioni che si discostano dal flusso principale. Descrive come il sistema deve comportarsi quando si verificano errori o quando l'utente effettua scelte opzionali diverse da quelle standard.],
-  [*Precondizioni*], [Definiscono lo stato in cui devono trovarsi obbligatoriamente il sistema e l'ambiente circostante prima che il Caso d'Uso possa essere eseguito. Rappresentano i vincoli e i requisiti indispensabili che si assumono come veri all'inizio dell'interazione.],
-  [*Postcondizioni*], [Descrivono lo stato finale del sistema una volta che il Caso d'Uso è stato completato con successo.],
-  [*Trigger*], [Evento scatenante specifico che dà avvio all'esecuzione del Caso d'Uso. Questo innesco può manifestarsi come un'azione esplicita e volontaria dell'attore oppure può essere un evento temporale o condizionale interno al sistema che si attiva automaticamente al sopraggiungere di un determinato orario o stato.],
-  [*Attori \ principali*], [Sono coloro che interagiscono attivamente con il Sistema e svolgono l’azione indicata dal Caso d’Uso. Essi sono sempre gli iniziatori del processo.],
-  [*Attori \ secondari*], [Entità esterna al sistema (una persona, un altro sistema software o un dispositivo hardware). Non avvia il processo ma viene sollecitata dal sistema stesso per fornire servizi necessari al completamento dell'operazione. Ha un ruolo reattivo e partecipa all'interazione solo in risposta ad una richiesta del sistema.],
-  [*Inclusioni*], [Definisce una relazione di dipendenza forte in cui un Caso d'Uso base incorpora obbligatoriamente il comportamento di un altro Caso d'Uso per poter portare a termine la propria funzione.],
-  [*Estensioni*], [Identifica una relazione in cui un Caso d'Uso può arricchire o modificare il comportamento di un Caso d'Uso base, ma solo qualora si verifichino specifiche condizioni o scelte discrezionali dell'utente. A differenza dell'inclusione, questa aggiunta funzionale è del tutto opzionale.],
-  [*Generalizzazione*],[Relazione di ereditarietà tra un elemento più generico, detto padre, e uno più specifico, detto figlio, che stabilisce un legame logico di tipo "_is-a_" tra le due entità. L'elemento figlio eredita il comportamento dell'elemento padre, ma si riserva la facoltà di sovrascrivere o arricchire tali caratteristiche],
+    [*Identificatore*],[È un codice univoco, strutturato secondo la notazione gerarchica UCx.y (o UCx.y.z per casi specifici),, che viene assegnato a ogni singolo Caso d'Uso per individuarlo in modo inequivocabile all'interno dell'intera documentazione di progetto. La sua funzione primaria è quella di garantire una rapida rintracciabilità dei requisiti lungo tutto il ciclo di vita del software senza ambiguità.],
+    [*Scenario \ principale*], [È il flusso ideale (_Happy Path_). Descrive cosa succede quando l'interazione tra l'attore e il sistema procede linearmente verso il successo senza intoppi],
+    [*Scenario \ secondario*], [Comprende tutti i percorsi alternativi o le gestioni delle eccezioni che si discostano dal flusso principale. Descrive come il sistema deve comportarsi quando si verificano errori o quando l'utente effettua scelte opzionali diverse da quelle standard.],
+    [*Precondizioni*], [Definiscono lo stato in cui devono trovarsi obbligatoriamente il sistema e l'ambiente circostante prima che il Caso d'Uso possa essere eseguito. Rappresentano i vincoli e i requisiti indispensabili che si assumono come veri all'inizio dell'interazione.],
+    [*Postcondizioni*], [Descrivono lo stato finale del sistema una volta che il Caso d'Uso è stato completato con successo.],
+    [*Trigger*], [Evento scatenante specifico che dà avvio all'esecuzione del Caso d'Uso. Questo innesco può manifestarsi come un'azione esplicita e volontaria dell'attore oppure può essere un evento temporale o condizionale interno al sistema che si attiva automaticamente al sopraggiungere di un determinato orario o stato.],
+    [*Attori \ principali*], [Sono coloro che interagiscono attivamente con il Sistema e svolgono l’azione indicata dal Caso d’Uso. Essi sono sempre gli iniziatori del processo.],
+    [*Attori \ secondari*], [Entità esterna al sistema (una persona, un altro sistema software o un dispositivo hardware). Non avvia il processo ma viene sollecitata dal sistema stesso per fornire servizi necessari al completamento dell'operazione. Ha un ruolo reattivo e partecipa all'interazione solo in risposta ad una richiesta del sistema.],
+    [*Inclusioni*], [Definisce una relazione di dipendenza forte in cui un Caso d'Uso base incorpora obbligatoriamente il comportamento di un altro Caso d'Uso per poter portare a termine la propria funzione.],
+    [*Estensioni*], [Identifica una relazione in cui un Caso d'Uso può arricchire o modificare il comportamento di un Caso d'Uso base, ma solo qualora si verifichino specifiche condizioni o scelte discrezionali dell'utente. A differenza dell'inclusione, questa aggiunta funzionale è del tutto opzionale.],
+    [*Generalizzazione*],[Relazione di ereditarietà tra un elemento più generico, detto padre, e uno più specifico, detto figlio, che stabilisce un legame logico di tipo "_is-a_" tra le due entità. L'elemento figlio eredita il comportamento dell'elemento padre, ma si riserva la facoltà di sovrascrivere o arricchire tali caratteristiche],
 )
 
 Il paragrafo successivo andrà ad identificare invece gli attori che interagiranno con il sistema.
@@ -306,23 +324,29 @@ Gli attori rappresentano le entità, umane o sistemiche, che interagiscono con l
 
 #v(1.5cm)
 
-#tabella-viola(
-  columns: (auto, 1fr),
-  inset: 10pt,
-  align: (left, left),
+#figure(
+  caption: [Descrizione degli attori e del loro ruolo nel sistema],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <tabella-attori>
+    #tabella-viola(
+      columns: (auto, 1fr),
+      inset: 10pt,
+      align: (left, left),
 
-  table.header(
-     [*Campo*], [*Descrizione*],
-  ),
-  [*Utente Sconosciuto*], [Rappresenta un generico umano, che non ha ancora effettuato l'accesso alla piattaforma (#link(<fig-sconosciuto>)[Figure 1]).],
+      table.header(
+        [*Campo*], [*Descrizione*],
+      ),
+      [*Utente Sconosciuto*], [Rappresenta un generico umano, che non ha ancora effettuato l'accesso alla piattaforma (#link(<fig-sconosciuto>)[Figure 1]).],
 
-  [*Utente Registrato*], [Rappresenta un generico utilizzatore umano della piattaforma, che ha effettuato l'accesso alla piattaforma. È un attore astratto che generalizza le funzionalità comuni condivise da Developer, Project Manager e Business Owner, i quali ereditano da esso (#link(<fig-attori>)[Figure 2]).],
-  
-  [*Developer*], [È l'operatore tecnico principale del sistema. Il suo focus è il miglioramento continuo della qualità del codice, la standardizzazione della documentazione, la verifica della conformità agli standard di sicurezza (es. OWASP) e l'applicazione dei suggerimenti di remediation proposti dalla piattaforma.],
-  
-  [*Project \ Manager*], [Ha la responsabilità di supervisionare uno o più progetti. Utilizza il sistema per monitorare metriche aggregate sulla qualità, confrontare lo stato di salute di diversi repository e tracciare la produttività e la conformità del team agli standard qualitativi.],
-  
-  [*Business \ Owner*], [È uno stakeholder con una visione strategica, interessato a indicatori di alto livello e non tecnici. Utilizza dashboard aggregate per valutare la qualità complessiva dei progetti, l'efficienza dei team e la salute generale degli asset software aziendali.]
+      [*Utente Registrato*], [Rappresenta un generico utilizzatore umano della piattaforma, che ha effettuato l'accesso alla piattaforma. È un attore astratto che generalizza le funzionalità comuni condivise da Developer, Project Manager e Business Owner, i quali ereditano da esso (#link(<fig-attori>)[Figure 2]).],
+      
+      [*Developer*], [È l'operatore tecnico principale del sistema. Il suo focus è il miglioramento continuo della qualità del codice, la standardizzazione della documentazione, la verifica della conformità agli standard di sicurezza (es. OWASP) e l'applicazione dei suggerimenti di remediation proposti dalla piattaforma.],
+      
+      [*Project \ Manager*], [Ha la responsabilità di supervisionare uno o più progetti. Utilizza il sistema per monitorare metriche aggregate sulla qualità, confrontare lo stato di salute di diversi repository e tracciare la produttività e la conformità del team agli standard qualitativi.],
+      
+      [*Business \ Owner*], [È uno stakeholder con una visione strategica, interessato a indicatori di alto livello e non tecnici. Utilizza dashboard aggregate per valutare la qualità complessiva dei progetti, l'efficienza dei team e la salute generale degli asset software aziendali.]
 )
 
 Oltre agli attori umani, la piattaforma interagisce con un sistema esterno che agisce come _trigger_ per il processo di analisi principale:
@@ -336,7 +360,7 @@ Oltre agli attori umani, la piattaforma interagisce con un sistema esterno che a
 La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli attori e la piattaforma _Code Guardian_.
 
 === UC1 - Accesso alla piattaforma
-#align(center, [#image("../../asset/UC/user/UC1.png")])
+#figure( [#image("../../asset/UC/user/UC1.png")], caption: [UC1 - Accesso alla piattaforma],)
 <UC1>
 - *Attore principale:* Utente Sconosciuto.
 
@@ -448,7 +472,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 == Specifica dei casi d'uso - Utente Registrato
 
 === UC2 - Visualizzazione area personale
-#align(center, [#image("../../asset/UC/user/UC2.png", height: 7cm)])
+#figure( [#image("../../asset/UC/user/UC2.png", height: 7cm)] , caption: [UC2 - Visualizzazione area personale])
 <UC2>
 - *Attore principale:* Utente Registrato.
 
@@ -527,7 +551,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UC3 - Logout
-#align(center, [#image("../../asset/UC/user/UC3.png", width: 15cm)])
+#figure( [#image("../../asset/UC/user/UC3.png", width: 15cm)], caption: [UC3 - Logout])
 <UC3>
 - *Attore principale:* Utente Registrato.
 
@@ -595,8 +619,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UC5 - Visualizzazione dettagli repository
-#align(center, [#image("../../asset/UC/user/uc5.png", width: 100%)])
+#figure([#image("../../asset/UC/user/uc5.png", width: 100%)], caption: [UC5 - Visualizzazione dettagli repository])
 <UC5>
+
 - *Attore principale:* Utente Registrato.
 
 - *Descrizione:* L'Utente Registrato vuole accedere alla vista di uno specifico repository.
@@ -752,7 +777,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.8 - Visualizzazione informazioni generali repository
-#align(center, [#image("../../asset/UC/user/uc5-8.png", height: 7cm)])
+#figure([#image("../../asset/UC/user/uc5-8.png", height: 7cm)],  caption: [UC5.8 - Visualizzazione informazioni generali repository])
 <UC5.8>
 - *Attore principale*: Utente Registrato.
 
@@ -825,8 +850,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UC6 - Visualizzazione lista repository personali
-#align(center, [#image("../../asset/UC/user/uc6.png", height: 7cm)])
+#figure([#image("../../asset/UC/user/uc6.png", height: 7cm)], caption: [UC6 - Visualizzazione lista repository personali])
 <UC6>
+
 - *Attore principale*: Utente Registrato.
 
 - *Descrizione:* L'Utente Registrato desidera visualizzare la lista dei repository importati sulla piattaforma _Code Guardian_.
@@ -875,6 +901,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
+#pagebreak()
 
 === UC7 - Ricerca nome repository 
 
@@ -903,7 +930,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UC8 - Aggiungi singolo repository
-#align(center, [#image("../../asset/UC/user/uc8.png", width: 100%)])
+#figure([#image("../../asset/UC/user/uc8.png", width: 100%)], caption: [UC8 - Aggiungi repository])
 <UC8>
 - *Attore principale:* Utente Registrato.
 
@@ -940,7 +967,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC8.0.1 - Inserimento token repository
-#align(center, [#image("../../asset/UC/user/uc8-0-1.png", width: 90%)])
+#figure([#image("../../asset/UC/user/uc8-0-1.png", width: 90%)], caption: [UC8.0.1 - Inserimento token repository])
 <UC8.0.1>
 - *Attore principale:* Utente Registrato.
 
@@ -1039,7 +1066,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UC9 - Visualizzazione lista progetti
-#align(center, [#image("../../asset/UC/user/uc9.png", height: 7cm)])
+#figure([#image("../../asset/UC/user/uc9.png", height: 7cm)], caption: [UC9 - Visualizzazione lista progetti])
 <UC9>
 - *Attore principale*: Utente Registrato.
 
@@ -1076,7 +1103,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC10 - Visualizzazione dettagli progetto
 <UC10>
-#align(center, [#image("../../asset/UC/user/uc10.png", width: 100%)])
+#figure([#image("../../asset/UC/user/uc10.png", width: 100%)], caption: [UC10 - Visualizzazione dettagli progetto])
 
 - *Attore principale:* Utente Registrato.
 
@@ -1200,7 +1227,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UC11 - Eliminazione singola repository
-#align(center, [#image("../../asset/UC/user/uc11.png", width: 100%)])
+#figure([#image("../../asset/UC/user/uc11.png", width: 100%)], caption: [UC11 - Eliminazione singola repository])
 
 <UC11>
 - *Attore principale:* Utente Registrato
@@ -1246,11 +1273,12 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
+#pagebreak()
 
 == Specifica dei casi d'uso - developer
 
 === UCD1 - Accesso alla dashboard generale Dev
-#align(center, [#image("../../asset/UC/developer/UCD1.png", height: 5cm)])
+#figure([#image("../../asset/UC/developer/UCD1.png", height: 5cm)], caption: [UCD1 - Accesso alla dashboard generale Dev])
  <UCD1>
 
 - *Attore principale:* Developer.
@@ -1282,7 +1310,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 
 === UCD2 - Sincronizzazione repository GitHub
-#align(center, [#image("../../asset/UC/developer/UCD2.png", width: 100%)])
+#figure([#image("../../asset/UC/developer/UCD2.png", width: 100%)], caption: [UCD2 - Sincronizzazione repository GitHub])
 <UCD2>
 - *Attore principale:* Developer.
 
@@ -1383,7 +1411,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD6 - Visualizzazione proposta remediation
-#align(center, [#image("../../asset/UC/developer/UCD6.png", width: 100%)])
+#figure([#image("../../asset/UC/developer/UCD6.png", width: 100%)], caption: [UCD6 - Visualizzazione proposta remediation])
 
 <UCD6>
 - *Attore principale:* Developer
@@ -1525,7 +1553,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD6.1.2 - Cambio percorso di destinazione file 
-#align(center, [#image("../../asset/UC/developer/ucd6-1-2.png", width: 100%)])
+#figure([#image("../../asset/UC/developer/ucd6-1-2.png", width: 100%)], caption: [UCD6.1.2 - Cambio percorso di destinazione file])
 
 <UCD6.1.2>
 - *Attore principale:* Developer
@@ -1609,7 +1637,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD6.2 - Accettazione proposta remediation 
-#align(center, [#image("../../asset/UC/developer/ucd6-2.png", width: 100%)])
+#figure([#image("../../asset/UC/developer/ucd6-2.png", width: 100%)], caption: [UCD6.2 - Accettazione proposta remediation])
 
 <UCD6.2>
 - *Attore principale:* Developer.
@@ -1762,7 +1790,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD8 - Procedimenti in corso
-#align(center, [#image("../../asset/UC/developer/UCD8.png", width: 100%)])
+#figure([#image("../../asset/UC/developer/UCD8.png", width: 100%)], caption: [UCD8 - Procedimenti in corso])
 
 <UCD8>
 - *Attore principale:* Developer
@@ -1795,7 +1823,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD8.1 - Visualizzazione elemento lista operazioni in corso
-#align(center, [#image("../../asset/UC/developer/ucd8-1.png", height: 7cm)])
+#figure([#image("../../asset/UC/developer/ucd8-1.png", height: 7cm)], caption: [UCD8.1 - Visualizzazione elemento lista operazioni in corso])
 <UCD8.1>
 - *Attore principale:* Developer.
 
@@ -1822,7 +1850,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD8.2 - Visualizzazione remediation avviata
-#align(center, [#image("../../asset/UC/developer/ucd8-2.png")])
+#figure([#image("../../asset/UC/developer/ucd8-2.png")], caption: [UCD8.2 - Visualizzazione remediation avviata])
 <UCD8.2>
 - *Attore principale:* Developer
 
@@ -1899,7 +1927,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD9 - Interrompi remediation avviata
-#align(center, [#image("../../asset/UC/developer/ucd9.png")])
+#figure([#image("../../asset/UC/developer/ucd9.png")], caption: [UCD9 - Interrompi remediation avviata])
 <UCD9>
 - *Attore principale:* Developer.
 
@@ -1946,7 +1974,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD10 - Interrompi analisi avviata
-#align(center, [#image("../../asset/UC/developer/ucd10.png")])
+#figure([#image("../../asset/UC/developer/ucd10.png")], caption: [UCD10 - Interrompi analisi avviata])
 <UCD10>
 - *Attore principale:* Developer.
 
@@ -2000,7 +2028,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD11 - Visualizzazione lista ultimi repository analizzati
-#align(center, [#image("../../asset/UC/developer/ucd11.png", height: 7cm)])
+#figure([#image("../../asset/UC/developer/ucd11.png", height: 7cm)], caption: [UCD11 - Visualizzazione lista ultimi repository analizzati])
 <UCD11>
 - *Attore principale:* Developer
 
@@ -2031,7 +2059,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD11.1 - Visualizzazione elemento lista ultime analisi terminate
-#align(center, [#image("../../asset/UC/developer/ucd11.png", height: 7cm)])
+#figure([#image("../../asset/UC/developer/ucd11.png", height: 7cm)], caption: [UCD11.1 - Visualizzazione elemento lista ultime analisi temrinate])
 <UCD11.1>
 
 - *Attore principale:* Developer.
@@ -2071,7 +2099,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD12 - Visualizzazione dettaglio storico analisi su singola repository
-#align(center, [#image("../../asset/UC/developer/UCD12.png", height: 7cm)])
+#figure([#image("../../asset/UC/developer/UCD12.png", height: 7cm)], caption: [UCD12 - Visualizzazione dettaglio storico analisi su singola repository])
 <UCD12>
 - *Attore principale:* Developer
 
@@ -2228,7 +2256,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD13 - Visualizzazione dettagli ultima analisi repository
-#align(center, [#image("../../asset/UC/developer/UCD13.png", width: 100%)])
+#figure([#image("../../asset/UC/developer/UCD13.png", width: 100%)], caption: [UCD13 - Visualizzazione dettagli ultima analisi repository])
 
 <UCD13>
 - *Attore principale:* Developer.
@@ -2262,7 +2290,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD13.1 - Visualizzazione dettagli ultima analisi area test
-#align(center, [#image("../../asset/UC/developer/ucd13-1.png", width: 100%)])
+#figure([#image("../../asset/UC/developer/ucd13-1.png", width: 100%)], caption: [UCD13.1 - Visualizzazione dettagli ultima analisi area test])
 
 <UCD13.1>
 - *Attore principale:* Developer.
@@ -2295,7 +2323,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD13.2 - Visualizzazione dettagli ultima analisi area OWASP
-#align(center, [#image("../../asset/UC/developer/ucd13-2.png", width: 100%)])
+#figure([#image("../../asset/UC/developer/ucd13-2.png", width: 100%)], caption: [UCD13.2 - Visualizzazione dettagli ultima analisi area OWASP] )
 
 <UCD13.2>
 - *Attore principale:* Developer.
@@ -2328,7 +2356,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD13.3 - Visualizzazione dettagli ultima analisi area documentazione
-#align(center, [#image("../../asset/UC/developer/ucd13-3.png", width: 100%)])
+#figure([#image("../../asset/UC/developer/ucd13-3.png", width: 100%)], caption: [UCD13.3 - Visualizzazione dettagli analisi area documentazione])
 
 <UCD13.3>
 - *Attore principale:* Developer.
@@ -2364,7 +2392,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD14 - Visualizzazione storico delle analisi sul repository
-#align(center, [#image("../../asset/UC/developer/ucd14.png", height: 7cm)])
+#figure([#image("../../asset/UC/developer/ucd14.png", height: 7cm)], caption: [UCD14 - Visualizzaizone storico analisi sul repository])
 <UCD14>
 - *Attore principale:* Developer
 
@@ -2438,8 +2466,8 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD15.1 - Avvio analisi 
-#align(center, [#image("../../asset/UC/developer/ucd15-1.png")])
-#align(center, [#image("../../asset/UC/developer/ucd15-1rep.png", height: 7cm)])
+#figure([#image("../../asset/UC/developer/ucd15-1.png")], caption: [UCD15.1 - Avvio analisi - estensioni])
+#figure([#image("../../asset/UC/developer/ucd15-1rep.png", height: 7cm)], caption: [UCD15.1 - Avvio analisi - generalizzazioni])
 <UCD15.1>
 - *Attore principale:* Developer.
 
@@ -2474,7 +2502,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD15.2 - Avvio analisi generale
-#align(center, [#image("../../asset/UC/developer/ucd15-2.png", height: 7cm)])
+#figure([#image("../../asset/UC/developer/ucd15-2.png", height: 7cm)], caption: [UCD15.2 - Avvio analisi generale])
 <UCD15.2>
 - *Attore principale:* Developer.
 
@@ -2591,7 +2619,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 == Specifica dei casi d'uso - Project Manager
 
 === UCPM1 - Accesso alla dashboard generale PM
-#align(center, [#image("../../asset/UC/project-manager/UCPM1.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/UCPM1.png", height: 5cm)], caption: [UCPM1 - Accesso alla dashboard generale PM])
  <UCPM1>
 
 - *Attore principale:* Project Manager.
@@ -2620,7 +2648,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.2 - Creazione nuovo progetto 
-#align(center, [#image("../../asset/UC/project-manager/ucpm1-2.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/ucpm1-2.png", height: 5cm)], caption: [UCPM1.2 - Creazione nuovo progetto])
 
 <UCPM1.2>
 
@@ -2645,7 +2673,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.2.1 - Inserimento nome progetto 
-#align(center, [#image("../../asset/UC/project-manager/ucpm1-2-1&1-2-2.png")])
+#figure([#image("../../asset/UC/project-manager/ucpm1-2-1&1-2-2.png")], caption: [UCPM1.2.1 - Inserimento nome progetto])
 
 <UCPM1.2.1>
 
@@ -2712,7 +2740,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.3 - Aggiunta repository a progetto
-#align(center, [#image("../../asset/UC/project-manager/ucpm1-3.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/ucpm1-3.png", height: 5cm)], caption: [UCPM1.3 - Aggiunta repository a progetto])
 
 <UCPM1.3>
 
@@ -2772,7 +2800,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 
 === UCPM1.4 - Aggiunta developer a progetto
-#align(center, [#image("../../asset/UC/project-manager/ucpm1-4.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/ucpm1-4.png", height: 5cm)], caption: [UCPM1.4 - Aggiunta developer a progetto])
 
 <UCPM1.4>
 
@@ -2878,7 +2906,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 
 === UCPM1.6 - Lista developer da selezionare 
-#align(center, [#image("../../asset/UC/project-manager/ucpm1-6.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/ucpm1-6.png", height: 5cm)], caption: [UCPM1.6 - Lista developer da selezionare])
 <UCPM1.6>
 
 - *Attore principale:* Project Manager.
@@ -2947,7 +2975,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.8 - Rimozione developer da progetto
-#align(center, [#image("../../asset/UC/project-manager/ucpm1-8.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/ucpm1-8.png", height: 5cm)], caption: [UCPM1.8 - Rimozione developer da progetto])
 <UCPM1.8>
 
 - *Attore principale:* Project Manager.
@@ -2999,7 +3027,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.9 - Eliminazione progetto 
-#align(center, [#image("../../asset/UC/project-manager/ucpm1-9.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/ucpm1-9.png", height: 5cm)], caption: [UCPM1.9 - Eliminazione progetto])
 <UCPM1.9>
 
 - *Attore principale:* Project Manager.
@@ -3052,7 +3080,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCPM2 - Visualizzazione lista progetti 
-#align(center, [#image("../../asset/UC/project-manager/UCPM2.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/UCPM2.png", height: 5cm)], caption: [UCPM2 - Visualizzazione lista progetti])
 <UCPM2>
 
 - *Attore principale*: Project Manager.
@@ -3081,7 +3109,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM2.1 - Visualizzazione dettagli progetto PM
-#align(center, [#image("../../asset/UC/project-manager/ucpm2-1.png")])
+#figure([#image("../../asset/UC/project-manager/ucpm2-1.png")], caption: [UCPM2.1 - Visualizzazione dettagli progetto PM])
 <UCPM2.1>
 
 - *Attore principale:* Project Manager.
@@ -3121,7 +3149,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCPM3 - Visualizzazione mappatura competenze 
-#align(center, [#image("../../asset/UC/project-manager/UCPM3.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/UCPM3.png", height: 5cm)], caption: [UCPM3 - Visualizzazione mappatura competenze])
 <UCPM3>
 
 - *Attore principale:* Project Manager.
@@ -3152,7 +3180,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM3.1 - Visualizzazione dettagli membro del team
-#align(center, [#image("../../asset/UC/project-manager/ucpm3-1.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/ucpm3-1.png", height: 5cm)], caption: [UCPM3.1 - Visualizzazione dettagli membro del team])
 <UCPM3.1>
 
 - *Attore principale:* Project Manager.
@@ -3205,7 +3233,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM3.3 - Visualizzazione statistiche membro del team
-#align(center, [#image("../../asset/UC/project-manager/ucpm3-3.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/ucpm3-3.png", height: 5cm)], caption: [UCPM3.3 - Visualizzazione statistiche membro del team])
 <UCPM3.3>
 
 - *Attore principale:* Project Manager.
@@ -3306,7 +3334,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCPM4 - Stack tecnologico e suggerimenti
-#align(center, [#image("../../asset/UC/project-manager/ucpm4.png", height: 5cm)])
+#figure([#image("../../asset/UC/project-manager/ucpm4.png", height: 5cm)], caption: [UCPM4 - Stack tecnologico e suggerimenti])
  <UCPM4>
 - *Attore principale:* Project Manager.
 
@@ -3420,7 +3448,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 == Specifica dei casi d'uso - Business Owner
 
 === UCBO1 - Visualizzazione dashboard home con statistiche 
-#align(center, [#image("../../asset/UC/business-owner/UCBO1.png")])
+#figure([#image("../../asset/UC/business-owner/UCBO1.png")], caption: [UCBO1 - Visualizzazione dashboard home con statistiche])
 
 <UCBO1>
 
@@ -3454,7 +3482,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO1.1 - Visualizzazione rapporto budget vs spesa complessivo <UCBO1.1>
-#align(center, [#image("../../asset/UC/business-owner/ucbo1-1.png")])
+#figure([#image("../../asset/UC/business-owner/ucbo1-1.png")], caption: [UCBO1.1 - Visualizzazione rapporto budget vs spesa complessivo ])
 
 - *Attore principale:* Business Owner
   
@@ -3542,7 +3570,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCBO2 - Accedere progetto singolo 
-#align(center, [#image("../../asset/UC/business-owner/UCBO2.png", height: 7cm)])
+#figure([#image("../../asset/UC/business-owner/UCBO2.png", height: 7cm)], caption: [UCBO2 - Accedere progetto singolo])
 
 <UCBO2>
 
@@ -3580,7 +3608,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO2.1 - Aggiunta budget complessivo <UCBO2.1>
-#align(center, [#image("../../asset/UC/business-owner/ucbo2-1.png", height: 7cm)])
+#figure([#image("../../asset/UC/business-owner/ucbo2-1.png", height: 7cm)], caption: [UCBO2.1 - Aggiunta budget complessivo])
 - *Attore principale:* Business Owner.
 
 - *Descrizione:* Il Business Owner inserisce il budget complessivo per il progetto.
@@ -3613,7 +3641,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO2.2 - Aggiunta spese sostenute <UCBO2.2>
-#align(center, [#image("../../asset/UC/business-owner/ucbo2-2.png", height: 7cm)])
+#figure([#image("../../asset/UC/business-owner/ucbo2-2.png", height: 7cm)], caption: [UCBO2.2 - Aggiunta spese sostenute])
 - *Attore principale:* Business Owner.
 
 - *Descrizione:* Il Business Owner inserisce il le spese sostenute per il progetto.
@@ -3646,7 +3674,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO2.3 - Visualizzazione informazioni Project Manager <UCBO2.3>
-#align(center, [#image("../../asset/UC/business-owner/ucbo2-3.png", height: 7cm)])
+#figure([#image("../../asset/UC/business-owner/ucbo2-3.png", height: 7cm)], caption: [UCBO2.3 - Visualizzazione informazioni Project Manager])
 - *Attore principale:* Business Owner.
 
 - *Descrizione:* Il Business Owner visualizza le informazioni sul Project Manager di un progetto.
@@ -3718,7 +3746,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO2.4 - Visualizzare lista stack tecnologico usato nel progetto
-#align(center, [#image("../../asset/UC/business-owner/ucbo2-4.png")])
+#figure([#image("../../asset/UC/business-owner/ucbo2-4.png")], caption: [UCBO2.4 - Visualizzare lista stack tecnologico usato nel progetto])
 
 <UCBO2.4>
 
@@ -3745,7 +3773,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO2.4.1 - Visualizzazione elemento lista dello stack tecnologico <UCBO2.4.1>
-#align(center, [#image("../../asset/UC/business-owner/ucbo2-4-1.png", height: 7cm)])
+#figure([#image("../../asset/UC/business-owner/ucbo2-4-1.png", height: 7cm)], caption: [UCBO2.4.1 - Visualizzazione elemento lista dello stack tecnologico])
 - *Attore principale:* Business Owner.
 
 - *Descrizione:* Il Business Owner visualizza un singolo elemento tra la lista di tecnologie utilizzate.
@@ -3817,7 +3845,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO2.5 - Visualizzazione lista del team di sviluppo
-#align(center, [#image("../../asset/UC/business-owner/ucbo2-5.png")])
+#figure([#image("../../asset/UC/business-owner/ucbo2-5.png")], caption: [UCBO2.5 - Visualizzazione lista del team di sviluppo])
 <UCBO2.5>
 
 - *Attore principale:* Business Owner
@@ -3842,7 +3870,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO2.5.1 - Visualizzazione elemento lista del team di sviluppo <UCBO2.5.1>
-#align(center, [#image("../../asset/UC/business-owner/ucbo2-5-1.png")])
+#figure([#image("../../asset/UC/business-owner/ucbo2-5-1.png")], caption: [UCBO2.5.1 - Visualizzazione elemento lista del team di sviluppo])
 - *Attore principale:* Business Owner.
 
 - *Descrizione:* Il Business Owner sta visualizzando il dettaglio di un elemento della lista dei componenti di un progetto (#link(<UCBO2.5>)[[UCBO2.5]]).
@@ -3933,7 +3961,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCBO3 - Visualizzazione dettaglio singolo developer 
-#align(center, [#image("../../asset/UC/business-owner/UCBO3.png", height: 5cm)])
+#figure([#image("../../asset/UC/business-owner/UCBO3.png", height: 5cm)], caption: [UCBO3 - Visualizzazione dettaglio singolo developer])
 
 <UCBO3>
 
@@ -3980,7 +4008,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 
 === UCBO3.2 - Visualizzazione linguaggi e tecnologie affini <UCBO3.2>
-#align(center, [#image("../../asset/UC/business-owner/ucbo3-2.png", height: 5cm)])
+#figure([#image("../../asset/UC/business-owner/ucbo3-2.png", height: 5cm)], caption: [UCBO3.2 - Visualizzazione linguaggi e tecnologie affini])
 
 - *Attore principale:* Business Owner
   
@@ -4031,6 +4059,12 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 
 #v(1em)
 
+#figure(
+  caption: [Composizione dei Diagrammi di Attività],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <diagrammi-attività>
 #tabella-viola(
   columns: (auto, 1fr),
   inset: 10pt,
@@ -4055,7 +4089,7 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 
 === AD1 - Flusso di Esecuzione Analisi Integrata (Post-PUSH)
 
-#align(center, [#image("../../asset/AD/AD1.png", width: 100%)])
+#figure([#image("../../asset/AD/AD1.png", width: 100%)], caption: [AD1 - Flusso di Esecuzione Analisi Integrata (Post-PUSH)])
 
 ==== Descrizione Attività
 
@@ -4086,7 +4120,7 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 
 === AD2 - Monitoraggio: Dashboard e Storico
 
-#align(center, [#image("../../asset/AD/AD2.png", width: 100%)])
+#figure([#image("../../asset/AD/AD2.png", width: 100%)], caption: [AD2 - Monitoraggio: Dashboard e Storico])
 
 ==== Descrizione Attività
 
@@ -4116,7 +4150,7 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 
 === AD3 - Ciclo di Remediation Proattiva
 
-#align(center, [#image("../../asset/AD/AD3.png", width: 90%)])
+#figure([#image("../../asset/AD/AD3.png", width: 90%)], caption: [AD3 - Ciclo di Remediation Proattiva])
 
 ==== Descrizione Attività
 
@@ -4160,6 +4194,12 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 
 == Requisiti funzionali
 
+#figure(
+  caption: [Requisiti funzionali],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <requisiti-funzionali>
 #tabella-viola(
   columns: (auto, auto, 3cm),
   inset: 10pt,
@@ -4321,9 +4361,14 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-137-F-O],[Il Business Owner deve poter visualizzare le tecnologie che uno sviluppatore può utilizzare],[#link(<UCBO3.2>)[UCBO3.2]],
   [R-138-F-O],[Il Business Owner deve poter visualizzare i ruoli che uno sviluppatore può assumere],[#link(<UCBO3.3>)[UCBO3.3]],
 )
-
+#pagebreak()
 == Requisiti di vincolo
-
+#figure(
+  caption: [Requisiti di vincolo],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <requisiti-vincolo>
 #tabella-viola(
   columns: (auto, auto, 5.4cm),
   inset: 10pt,
@@ -4341,9 +4386,14 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-7-V-O],[È necessario che l'utilizzo dell'architettura cloud AWS per la gestione degli agenti], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
   ),
 )
-
+#pagebreak()
 == Requisiti di qualità
-
+#figure(
+  caption: [Requisiti di qualità],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <requisiti-qualità>
 #tabella-viola(
   columns: (auto, auto, 5.4cm),
   inset: 10pt,
