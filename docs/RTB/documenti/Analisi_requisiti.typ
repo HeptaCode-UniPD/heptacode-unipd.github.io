@@ -2059,7 +2059,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD11.1 - Visualizzazione elemento lista ultime analisi terminate
-#figure([#image("../../asset/UC/developer/ucd11.png", height: 7cm)], caption: [UCD11.1 - Visualizzazione elemento lista ultime analisi temrinate])
+#figure([#image("../../asset/UC/developer/ucd11.png", height: 7cm)], caption: [UCD11.1 - Visualizzazione elemento lista ultime analisi terminate])
 <UCD11.1>
 
 - *Attore principale:* Developer.
@@ -2392,7 +2392,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD14 - Visualizzazione storico delle analisi sul repository
-#figure([#image("../../asset/UC/developer/ucd14.png", height: 7cm)], caption: [UCD14 - Visualizzaizone storico analisi sul repository])
+#figure([#image("../../asset/UC/developer/ucd14.png", height: 7cm)], caption: [UCD14 - Visualizzazione storico analisi sul repository])
 <UCD14>
 - *Attore principale:* Developer
 
