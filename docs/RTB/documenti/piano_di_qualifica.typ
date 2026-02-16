@@ -685,7 +685,7 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Tecnologia*], [*Problema*], [*Conromisura*],
+      [*Tecnologia*], [*Problema*], [*Contromisura*],
     "AWS", 
     "Mancanza di esperienza del servizio, dovuto anche ai suoi costi, che ne hanno limitato l'uso prima del progetto.", 
     "Partecipazione a sessioni di mentoring aziendale e pratica mediante lo sviluppo del Proof of Concept (POC).",
@@ -699,4 +699,4 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
   kind: table
 )
  == Considerazioni finali
-L'attività di monitoraggio svolta durante la fase di RTB ha confermato l'importanza del Piano di Qualifica come strumento decisionale e non solo documentale. Sebbene questa fase abbia comportato un assorbimento di risorse superiore alle attese a causa della sessione d'esami, la stabilità dell'Estimate to Complete (ETC) conferma la sostenibilità complessiva del progetto. L'implementazione di contromisure tecnologiche e organizzative ha già prodotto risultati tangibili, come l'azzeramento degli errori ortografici e l'automazione della gestione dei termini del glossario. Il team riconosce le criticità emerse nelle fasi iniziali e si impegna a incrementare il rigore metodologico durante la fase di sviluppo, puntando a far convergere le stime di costo verso il budget inizialmente previsto. Questa consapevolezza dei propri limiti attuali guiderà il gruppo _Hepta Code_ verso il raggiungimento degli standard di qualità attesi per il prodotto _Code Guardian_.
+L'attività di monitoraggio svolta durante la fase di RTB ha confermato l'importanza del Piano di Qualifica come strumento decisionale e non solo documentale. Sebbene questa fase abbia comportato un assorbimento di risorse superiore alle attese a causa della sessione di esami, la stabilità dell'Estimate to Complete (ETC) conferma la sostenibilità complessiva del progetto. L'implementazione di contromisure tecnologiche e organizzative ha già prodotto risultati tangibili, come l'azzeramento degli errori ortografici e l'automazione della gestione dei termini del glossario. Il team riconosce le criticità emerse nelle fasi iniziali e si impegna a incrementare il rigore metodologico durante la fase di sviluppo, puntando a far convergere le stime di costo verso il budget inizialmente previsto. Questa consapevolezza dei propri limiti attuali guiderà il gruppo _Hepta Code_ verso il raggiungimento degli standard di qualità attesi per il prodotto _Code Guardian_.
