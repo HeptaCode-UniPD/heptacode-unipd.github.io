@@ -4066,6 +4066,8 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 
 === AD1 - Flusso di Esecuzione Analisi Integrata (Post-PUSH)
 
+#align(center, [#image("../../asset/AD/AD1.png", width: 100%)])
+
 ==== Descrizione Attività
 
 - *Titolo*: Flusso di Esecuzione Analisi Integrata (Post-PUSH)
@@ -4095,6 +4097,8 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 
 === AD2 - Monitoraggio: Dashboard e Storico
 
+#align(center, [#image("../../asset/AD/AD2.png", width: 100%)])
+
 ==== Descrizione Attività
 
 - *Titolo*: Visualizzazione Stato di Salute e Analisi Storica
@@ -4122,6 +4126,8 @@ Questa modellazione permette di analizzare non solo il flusso standard delle att
 + *Fine Attività*
 
 === AD3 - Ciclo di Remediation Proattiva
+
+#align(center, [#image("../../asset/AD/AD3.png", width: 90%)])
 
 ==== Descrizione Attività
 
