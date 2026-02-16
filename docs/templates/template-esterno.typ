@@ -7,7 +7,7 @@
   ora_inizio: "00:00",
   ora_fine: "00:00",
   ruoli-presenza: (),
-  partecipanti-esterni: (),
+  partecipanti-esterni: (("Stefano Dindo", "Rappresentante VarGroup")),
   testo: "",
   lista_decisioni: (("",""))
 ) = {
