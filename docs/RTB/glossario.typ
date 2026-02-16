@@ -27,6 +27,12 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
+  "2.0.0",
+  "2026/02/16",
+  "Angela Canazza",
+  "Angela Favaro",
+  "Rilascio versione 2.0.0 per RTB",
+
   "1.2.0",
   "2025/12/21",
   "Alberto Reginato",
