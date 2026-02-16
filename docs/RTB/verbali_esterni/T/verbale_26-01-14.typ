@@ -25,7 +25,7 @@
 // modificare SSE non si è fatto in modalità telematica
 //NB: se non è alla sede VarGroup di Via Salboro scrivere il nuovo luogo comprendendo l’articolo
 
-#let luogo = "la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD"
+#let luogo = "Server Microsoft Teams"
 
 
 // ruolo e presenza abbastanza intuitivo
