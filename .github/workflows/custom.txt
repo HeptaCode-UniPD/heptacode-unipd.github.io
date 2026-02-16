@@ -186,3 +186,17 @@ istanziato
 brainstorming
 retrospettivasprint
 args
+dall'international
+pab
+pertt
+ucb
+poc
+ui
+adr
+casouso
+manutenibile
+multipiattaforma
+nosql
+rilasciabile
+uc
+un'api
