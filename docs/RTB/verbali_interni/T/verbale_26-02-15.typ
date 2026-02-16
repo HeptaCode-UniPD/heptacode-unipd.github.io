@@ -14,7 +14,7 @@
   //   ("1.0.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("0.1.0", "2026-02-15", "Amerigo Vegliante", "", "Stesura relazione dell'incontro")
+  ("0.1.0", "2026-02-15", "Amerigo Vegliante", "Angela Favaro", "Stesura relazione dell'incontro")
 )
 
 // switchare in 'true' SSE l'incontro non si è tenuto su Discord
@@ -56,6 +56,19 @@ Gli argomenti discussi nell'incontro sono stati:
 Il gruppo ha discusso le modalità di esposizione per la milestone Requirements and Technology Baseline (RTB). Per garantire un coinvolgimento attivo di tutti i componenti e dimostrare una conoscenza trasversale del progetto, è stata concordata una suddivisione equa delle parti.
 
 Ogni membro si occuperà di esporre un’area specifica (gestionale, tecnica o analitica), mantenendo però una visione d'insieme. Per facilitare il coordinamento e assicurarsi che ogni membro sia allineato sulle scelte progettuali degli altri, è stata approvata la creazione di un foglio condiviso. In questo documento, ogni componente redigerà una sintesi della propria sezione, permettendo agli altri di acquisire familiarità con i contenuti dell'intero gruppo.
+#table(
+  columns: (auto, auto), 
+  inset: 10pt,               
+  align: horizon,            
+  
+  [*Membro del gruppo*], [*Ruolo nella presentazione*], 
+  [Angela Favaro],[Introduzione sul capitolato],
+  [Amerigo Vegliante],[Descrizione scelta tecnologie Frontend],
+  [Riccardo Baldin],[Descrizione tecnologie Backend],
+  [Nicola Simionato],[Descrizione scelta docker e AWS],
+  [Laura Venturini],[Descrizione scelta LLM],
+  [Alberto Reginato],[Descrizione e presentazione PoC]
+)
 
 == Decisione su quando presentare candidatura RTB
 A seguito di un'analisi dello stato di avanzamento dei documenti e dei materiali tecnici, il gruppo ha valutato la prontezza del materiale prodotto finora. È emersa la volontà collettiva di procedere con la candidatura ufficiale in tempi brevi per ottimizzare i tempi della revisione.
@@ -63,7 +76,7 @@ A seguito di un'analisi dello stato di avanzamento dei documenti e dei materiali
 Il gruppo ha deliberato all'unanimità di presentare la candidatura per la presentazione RTB entro la scadenza del 16-02-2026. Questo margine permetterà di rifinire gli ultimi dettagli della presentazione e del materiale di supporto nelle ore immediatamente successive all'incontro odierno.
 
 = Conclusione
-L'incontro si conclude alle ore 11:00. Il gruppo si dichiara soddisfatto della pianificazione stabilita e si impegna a completare le descrizioni sul foglio condiviso entro la fine della giornata, così da procedere alla formalizzazione della candidatura come previsto.
+L'incontro si conclude alle ore 11:00. Il gruppo si impegna a completare le descrizioni sul foglio condiviso entro la fine della giornata, così da procedere alla formalizzazione della candidatura come previsto.
 
 ]
 

@@ -20,7 +20,7 @@
 #let distanza = true
 
 // modificare SE E SOLO SE non si è fatto in modalità telematica
-#let luogo = "la _Quiet Room_ del complesso Paolotti"
+#let luogo = "Server Discord di Gruppo"
 
 // ruolo e presenza 
 #let lista-ruoli = (
