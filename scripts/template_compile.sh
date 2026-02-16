@@ -18,6 +18,8 @@ generate_typ_content() {
 // Importa i dati (percorso relativo al file temporaneo)
 #import "$data_path" as dati 
 
+#import "../../../templates/glossario_termini.typ": applica-glossario
+
 #show: doc => template(doc,
     data: dati.giorno,
     ordine_del_giorno: dati.odg,
@@ -27,7 +29,7 @@ generate_typ_content() {
     ora_inizio: dati.inizio,
     ora_fine: dati.fine,
     ruoli-presenza: dati.lista-ruoli,
-    testo: dati.corpo,
+    testo: applica-glossario(dati.corpo),
     lista_decisioni: dati.decisione-azione
 )
 EOF
