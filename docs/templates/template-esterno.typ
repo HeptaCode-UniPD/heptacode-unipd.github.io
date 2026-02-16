@@ -7,6 +7,7 @@
   ora_inizio: "00:00",
   ora_fine: "00:00",
   ruoli-presenza: (),
+  partecipanti-esterni: (("Stefano Dindo", "Rappresentante VarGroup")),
   testo: "",
   lista_decisioni: (("",""))
 ) = {
@@ -70,7 +71,7 @@
   v(0.2cm)
 
   if on-line{
-    [La riunione si è tenuta in modalità telematica tramite la piattaforma Google Meet dalle *#ora_inizio* alle *#ora_fine*]
+    [La riunione si è tenuta in modalità telematica tramite la piattaforma *#new-luogo* dalle *#ora_inizio* alle *#ora_fine*]
   }else{
     [La riunione si è tenuta in presenza presso ] 
     if new-luogo != "la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD "{ [#new-luogo ] } else { [la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD ] } 
@@ -131,9 +132,8 @@
     table.header(
       [*Nome*], [*Ruolo*]
     ),
-    
-    "Stefano Dindo",
-    "Rappresentante VarGroup"
+    "Federico Pivetta", "Referente Vargroup",
+    "Francesco Battistella", "Referente VarGroup",
   )
  
   pagebreak()
