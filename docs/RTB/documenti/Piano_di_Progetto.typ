@@ -23,85 +23,91 @@
   align: horizon,
   table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
 
-  "0.2.0",
+  "1.0.0",
+  "2026/02/12", 
+  "Laura Venturini", 
+  "Angela Favaro", 
+  "Aggiormaneto diagrammi GANTT",
+
+  "0.13.0",
   "2026/02/10", 
   "Angela Favaro", 
-  "", 
+  "Laura Venturini", 
   "Sistemazione rendicontazione ore effettive",
 
-  "0.1.7",
+  "0.12.0",
   "2026/01/05", 
   "Angela Canazza", 
   "Laura Venturini", 
   "Aggiunto trascorso Sprint 6",
 
-  "0.1.6",
+  "0.11.0",
   "2026/01/05", 
   "Amerigo Vegliante", 
   "Laura Venturini", 
   "Aggiunto trascorso Sprint 5",
 
-  "0.1.5",
+  "0.10.0",
   "2025/12/31", 
   "Nicola Simionato", 
   "Laura Venturini", 
   "Aggiunto trascorso Sprint 1 (sezione 5.4.1).",
 
-  "0.1.4",
+  "0.9.0",
   "2025/12/29", 
   "Angela Favaro", 
   "Amerigo Vegliante", 
   "Aggiunto trascorso Sprint 4",
 
-  "0.1.3", 
+  "0.8.0", 
   "2025/12/22", 
   "Angela Favaro", 
   "Amerigo Vegliante", 
   "Conclusione capitolo ‘Analisi e gestione dei rischi’",
 
-  "0.1.2", 
+  "0.7.0", 
   "2025/12/21", 
   "Alberto Reginato", 
   "Amerigo Vegliante", 
   "Aggiornamento sprint trascorso",
 
-  "0.1.1", 
+  "0.6.1", 
   "2025/12/17", 
   "Angela Favaro", 
   "Amerigo Vegliante", 
   "Uniformazione documento allo standard del gruppo",
 
-  "0.1.0",
+  "0.6.0",
   "2025/12/14",
   "Laura Venturini",
   "Nicola Simionato",
   "Aggiunti capitoli ‘Processi e metodologie’, ‘Risorse e strumenti’ e ‘Analisi e gestione dei rischi’",
 
-  "0.0.5", 
+  "0.5.0", 
   "2025/12/14", 
   "Angela Favaro", 
   "Nicola Simionato", 
   "Aggiunta diagrammi PERT e correzione analisi Sprint",
 
-  "0.0.4", 
+  "0.4.0", 
   "2025/12/08", 
   "Angela Favaro", 
   "Nicola Simionato", 
   "Calcolo dei costi",
 
-  "0.0.3", 
+  "0.3.0", 
   "2025/12/03", 
   "Angela Favaro", 
   "Alberto Reginato", 
   "Suddivisione e stesura sprint per PB",
 
-  "0.0.2", 
+  "0.2.0", 
   "2025/12/02", 
   "Angela Favaro", 
   "Alberto Reginato", 
   "Suddivisione e stesura sprint per RTB",
 
-  "0.0.1", 
+  "0.1.0", 
   "2025/12/01", 
   "Angela Favaro", 
   "Alberto Reginato", 
@@ -306,7 +312,7 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
 1. *Preventivo a finire:* pianificazione del lavoro ideale, secondo tempistiche ritenute ottimali.
 2. *Trascorso:* ciò che realmente è accaduto durante gli sprint.
 
-== Calendario di massima
+== Calendario preventivo
 #figure(
   caption: [Tappe principali del calendario di progetto],
 )[
@@ -315,9 +321,9 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
 == Milestones programmate
 Di seguito elencate le milestone con i punti da considerare per poterle ritenere concluse.
 1. _UCB (Use Case Baseline)_:
-  - Conclusione stesura degli Use Case.
+  - Conclusione della prima stesura degli Use Case.
 2. _RTB (Requirements & Technology Baseline)_:
-  - Documento _Analisi dei Requisiti_ (tecnologie, i framework, le librerie adottate, e ne dimostra adeguatezza e interoperabilità).
+  - Conclusione del documento _Analisi dei Requisiti_ (tecnologie, i framework, le librerie adottate, e ne dimostra adeguatezza e interoperabilità).
   - _Proof of Concept_, demo eseguibile.
 3. _PAB (Progettazione & Analisi Baseline)_:
   - Conclusione attività di progettazione.
@@ -330,12 +336,7 @@ Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’i
 - I ruoli che ogni membro dovrà rappresentare. \
 Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro.
 === UCB - _Use Case Baseline_
-#figure(
-  caption: [$text("Diagramma di PERT")_G$ della milestone UCB],
-)[
-  #image("../../asset/PERT-UCB.png"),
-]<PERT-UCB>
-#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 novembre 2025*. La suddetta data è stata scelta insieme all’azienda appaltante a seguito del nostro primo incontro in data _20 novembre 2025_. \ #underline[La data ultima] per il conseguimento della milestone è prevista in data *28 dicembre 2025*
+#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 novembre 2025*. La suddetta data è stata scelta insieme all’azienda appaltante a seguito del nostro primo incontro in data _20 novembre 2025_. \ #underline[La data ultima prevista] per il conseguimento della milestone è prevista in data *28 dicembre 2025*
 
 ==== Sprint 1
 #table(
@@ -619,8 +620,8 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 680€ \ #underline[Spesa totale]: *2.780€*
 
 === RTB - _Requirements and Technology Baseline_
-#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *29 dicembre 2025*.
-\ #underline[La data ultima] per il conseguimento della milestone; quindi per la presentazione di ciò che è stato prodotto ai professori Cardin e Vardanega è prevista in data *25 gennaio 2026*.
+#underline[La data di inizio attività prevista] per il conseguimento della prima milestone (_UCB_) è *29 dicembre 2025*.
+\ #underline[La data ultima prevista] per il conseguimento della milestone; quindi per la presentazione di ciò che è stato prodotto ai professori Cardin e Vardanega è prevista in data *25 gennaio 2026*.
 ==== Sprint 6
 #table(
   columns: (auto, auto),
@@ -786,7 +787,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
 #underline[Spese della settimana]: 1.200€ \ #underline[Spesa totale]: *5.935*
 === PAB - _Progettazione & Analisi Baseline_
-#underline[La data di inizio attività] per il conseguimento della terza milestone (_PAB_) è *26 gennaio 2026*, a seguito dei colloqui con i professori per la conferma del superamento dei requisiti della milestone RTB. \ #underline[La data ultima prevista] per gli sprint del PAB è *22 febbraio 2026*.
+#underline[La data di inizio attività prevista] per il conseguimento della terza milestone (_PAB_) è *26 gennaio 2026*, a seguito dei colloqui con i professori per la conferma del superamento dei requisiti della milestone RTB. \ #underline[La data ultima prevista] per gli sprint del PAB è *22 febbraio 2026*.
 
 ==== Sprint 9
 #table(
@@ -902,7 +903,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *8.812,5€*
 
 === PB - _Product Baseline_
-#underline[La data di inizio attività] per il conseguimento dell ultima milestone (_PAB_) è *23 febbraio 2026*. \ #underline[La data ultima prevista] per il conseguimento della milestone PB e, di conseguenza, per la consegna del progetto è il *15 marzo 2026*.
+#underline[La data di inizio attività prevista] per il conseguimento dell ultima milestone (_PAB_) è *23 febbraio 2026*. \ #underline[La data ultima prevista] per il conseguimento della milestone PB e, di conseguenza, per la consegna del progetto è il *15 marzo 2026*.
 ==== Sprint 11
 #table(
   columns: (auto, auto),
@@ -1380,6 +1381,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     2. Continuazione stesura Use Case e finitura della sezione Developer;
     3. Inizio stesure Use Case per sezioni opzionali (Business Owner, Project Manager);
     4. Aggiornamento Glossario.
+    5. Non è stato possibile concludere con successo la milestone interna UCB a seguito dei rallentamenti incontrati. 
   ],
 
   [_Rischi incontrati_],
@@ -1599,7 +1601,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [
-
+    1. Conclusione mileston UCB
   ],
 
   [_Rischi incontrati_],
