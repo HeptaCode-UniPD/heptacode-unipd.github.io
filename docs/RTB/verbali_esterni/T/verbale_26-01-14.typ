@@ -49,8 +49,8 @@
 // nome e ruolo abbastanza intuitivo
 //esempio: "Stefano Dindo", "Rappresentante VarGroup"
 #let partecipanti-esterni = (
-  "Federico Pivetta", "Rappresentante VarGroup",
-  "Francesco Battistella", "Rappresentante VarGroup"
+  ("Federico Pivetta", "Rappresentante VarGroup"),
+  ("Francesco Battistella", "Rappresentante VarGroup")
 )
 
 #let corpo = [= Argomenti trattati
