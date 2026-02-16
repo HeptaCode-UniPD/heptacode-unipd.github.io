@@ -1,6 +1,14 @@
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3": chart
 
+#let tabella-viola(..args) = {
+  show table.cell.where(y: 0): set text(white, weight: "bold")
+  table(
+    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
+    ..args
+  )
+}
+
 #v(1fr)
 #align(center, [
   #image("../../asset/logo.svg")
@@ -17,7 +25,7 @@
 
 #pagebreak()
 #text(size: 17pt, weight: "bold")[Registro delle modifiche:]
-#table(
+#tabella-viola(
   columns: (auto, auto, auto, auto, auto),
   inset: 9pt,
   align: horizon,
@@ -244,21 +252,21 @@ Ad ogni suddivisione di periodo (_sprint_) i membri turneranno; in questo modo t
   caption: [Stima delle ore individuali per ruolo in totale.],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+      
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Totale*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Totale*]]],
 
       [_Angela Favaro_], [7], [10], [15], [16], [21], [23], [*92*],
       [_Angela Canazza_], [9], [6], [15], [15], [21,5], [25,5], [*92*],
@@ -339,7 +347,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 novembre 2025*. La suddetta data è stata scelta insieme all’azienda appaltante a seguito del nostro primo incontro in data _20 novembre 2025_. \ #underline[La data ultima prevista] per il conseguimento della milestone è prevista in data *28 dicembre 2025*
 
 ==== Sprint 1
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -360,27 +368,20 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 1],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [1], [], [], [], [25€],
       [_Angela Canazza_], [], [], [1], [], [], [], [25€],
@@ -395,7 +396,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 252,5€ \ #underline[Spesa totale]: *252,5€*
 
 ==== Sprint 2
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -419,27 +420,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 2],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [2], [], [], [], [50€],
       [_Angela Canazza_], [], [], [2], [], [], [], [50€],
@@ -453,7 +448,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 435€ \ #underline[Spesa totale]: *687,5€*
 
 ==== Sprint 3
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -473,27 +468,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 3],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [4], [], [], [], [100€],
       [_Angela Canazza_], [], [], [4], [], [], [], [100€],
@@ -507,7 +496,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 672,5€ \ #underline[Spesa totale]: *1.360€*
 
 ==== Sprint 4
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -530,27 +519,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 4],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [3], [], [], [], [], [], [90€],
       [_Angela Canazza_], [], [], [4], [], [], [1,5], [122,5€],
@@ -564,7 +547,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 740€ \ #underline[Spesa totale]: *2100€*
 
 ==== Sprint 5
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -586,27 +569,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 5],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [4], [], [], [], [100€],
       [_Angela Canazza_], [], [], [4], [], [], [], [100€],
@@ -623,7 +600,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[La data di inizio attività prevista] per il conseguimento della prima milestone (_UCB_) è *29 dicembre 2025*.
 \ #underline[La data ultima prevista] per il conseguimento della milestone; quindi per la presentazione di ciò che è stato prodotto ai professori Cardin e Vardanega è prevista in data *25 gennaio 2026*.
 ==== Sprint 6
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -644,27 +621,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 6],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [4], [], [1], [], [], [105€],
       [_Angela Canazza_], [3], [], [], [1], [], [], [115€],
@@ -678,7 +649,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 905€ \ #underline[Spesa totale]: *3.685€*
 
 ==== Sprint 7
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -698,27 +669,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 7],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [4], [2], [], [], [150€],
       [_Angela Canazza_], [], [6], [], [], [], [], [120€],
@@ -732,7 +697,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 1.050€ \ #underline[Spesa totale]: *4.735€*
 
 ==== Sprint 8
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -754,27 +719,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 8],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [], [5], [], [3], [170€],
       [_Angela Canazza_], [], [], [], [6], [2], [], [180€],
@@ -790,7 +749,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[La data di inizio attività prevista] per il conseguimento della terza milestone (_PAB_) è *26 gennaio 2026*, a seguito dei colloqui con i professori per la conferma del superamento dei requisiti della milestone RTB. \ #underline[La data ultima prevista] per gli sprint del PAB è *22 febbraio 2026*.
 
 ==== Sprint 9
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -812,27 +771,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 9],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [], [8], [], [], [200€],
       [_Angela Canazza_], [], [], [], [8], [], [], [200€],
@@ -846,7 +799,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 1.332,5€ \ #underline[Spesa totale]: *7.267,5€*
 
 ==== Sprint 10
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -869,27 +822,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 10],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [], [], [11], [5], [240€],
       [_Angela Canazza_], [], [], [], [], [], [10], [150€],
@@ -905,7 +852,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 === PB - _Product Baseline_
 #underline[La data di inizio attività prevista] per il conseguimento dell ultima milestone (_PAB_) è *23 febbraio 2026*. \ #underline[La data ultima prevista] per il conseguimento della milestone PB e, di conseguenza, per la consegna del progetto è il *15 marzo 2026*.
 ==== Sprint 11
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -925,27 +872,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 11],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [4], [], [], [], [], [], [120€],
       [_Angela Canazza_], [], [], [], [], [], [14], [210€],
@@ -959,7 +900,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 1.092,5€ \ #underline[Spesa totale]: *9.905€*
 
 ==== Sprint 12
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -979,27 +920,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 12],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [6], [], [], [], [5], [195€],
       [_Angela Canazza_], [], [], [], [], [19.5], [], [292,5€],
@@ -1013,7 +948,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *11.450€*
 
 ==== Sprint 13
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1035,27 +970,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Stima delle ore individuali per ruolo allo Sprint 13],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [], [], [10], [10], [300€],
       [_Angela Canazza_], [6], [], [], [], [], [], [180€],
@@ -1070,7 +999,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
 == Trascorso
 === Sprint 1
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1102,27 +1031,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Ore individuali effettive per ruolo allo Sprint 1],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [1], [], [], [], [25€],
       [_Angela Canazza_], [], [], [1], [], [], [], [25€],
@@ -1143,7 +1066,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 252,5€ \ #underline[Spesa totale]: *252,5€*
 
 === Sprint 2
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1175,27 +1098,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Ore individuali effettive per ruolo allo Sprint 2],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [2], [], [], [], [50€],
       [_Angela Canazza_], [], [], [2], [], [], [], [50€],
@@ -1216,7 +1133,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 435€ \ #underline[Spesa totale]: *687,5€*
 
 === Sprint 3
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1251,27 +1168,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Ore individuali effettive per ruolo allo Sprint 3],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [4], [], [], [], [100€],
       [_Angela Canazza_], [], [], [4], [], [], [], [100€],
@@ -1292,7 +1203,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 672,5€ \ #underline[Spesa totale]: *1.360€*
 
 === Sprint 4
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1326,27 +1237,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Ore individuali effettive per ruolo allo Sprint 4],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [3], [], [], [], [], [], [90€],
       [_Angela Canazza_], [], [], [4], [], [], [1,5], [122,5€],
@@ -1367,7 +1272,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 740€ \ #underline[Spesa totale]: *2100€*
 
 === Sprint 5
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1400,27 +1305,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Ore individuali effettive per ruolo allo Sprint 5],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [4 → 2], [], [], [], [50€],
       [_Angela Canazza_], [], [], [4 → 3], [], [], [], [75€],
@@ -1441,7 +1340,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 460€ \ #underline[Spesa totale]: *2.560€*
 
 === Sprint 6
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1474,27 +1373,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Ore individuali effettive per ruolo allo Sprint 6],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [4], [], [1 → 0], [], [], [80€],
       [_Angela Canazza_], [3], [], [], [1 → 0], [], [], [90€],
@@ -1515,7 +1408,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 580€ \ #underline[Spesa totale]: *3.140€*
 
 === Sprint 7
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1549,27 +1442,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Ore individuali effettive per ruolo allo Sprint 7],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [4 → 6], [2 → 0], [], [], [150€],
       [_Angela Canazza_], [], [6], [], [], [], [], [120€],
@@ -1591,7 +1478,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 1.065€ \ #underline[Spesa totale]: *4.205€*
 
 === Sprint 8
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1619,27 +1506,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Ore individuali effettive per ruolo allo Sprint 8],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [0 → 5], [5 → 0], [], [3], [170€],
       [_Angela Canazza_], [], [], [0 → 5], [6 → 0], [], [], [125€],
@@ -1660,7 +1541,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 #underline[Spese della settimana]: 875€ \ #underline[Spesa totale]: *5.080€*
 
 === Sprint 9
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1691,27 +1572,21 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   caption: [Ore individuali effettive per ruolo allo Sprint 9],
   kind: table,
 )[
-  #table(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
   #align(center)[
-    #table(
+    #tabella-viola(
       columns: 8,
-      fill: (row, col) => {
-        if col == 0 and row <= 6 {
-          rgb("#BB85E1")
-        } else if (row == 7 and col == 0) {
-          rgb("#9856D8")
-        }
-      },
+
       stroke: 0.5pt,
       align: center,
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Nome, Cognome*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Resp.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Ammin.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Analista*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Progett.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Programm.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Verif.*]]],
-      [#text(fill: rgb("#f5f5f7"))[#strong[*Costo*]]],
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [0 → 7], [8 → 0], [], [], [175€],
       [_Angela Canazza_], [], [], [0 → 7], [8 → 0], [], [], [175€],
@@ -1731,7 +1606,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
 #underline[Spese della settimana]: 947,5€ \ #underline[Spesa totale]: *6.027,5€*
 === Sprint 10
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1756,7 +1631,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 )
 
 === Sprint 11
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1781,7 +1656,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 )
 
 === Sprint 12
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1806,7 +1681,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 )
 
 === Sprint 13
-#table(
+#tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
@@ -1870,11 +1745,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Comprensione errata dei requisiti],
   kind: table,
 )[
-  #table(
+  #tabella-viola(
     columns: 2,
-    fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+    
     align: (left, center),
-    table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*RR1: Comprensione errata dei requisiti* ]],
+    table.cell(colspan: 2, align: center)[#text[*RR1: Comprensione errata dei requisiti* ]],
     [ *Descrizione*  ],
     align(
       left,
@@ -1899,11 +1774,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Assenza di priorità dei requisiti],
   kind: table,
 )[
-  #table(
+  #tabella-viola(
     columns: 2,
-    fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+    
     align: (left, center),
-    table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[* RR2: Assenza di priorità dei requisiti* ]],
+    table.cell(colspan: 2, align: center)[#text[* RR2: Assenza di priorità dei requisiti* ]],
     [ *Descrizione*  ],
     align(
       left,
@@ -1931,11 +1806,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Strumenti e tecnologie sconosciute],
   kind: table,
 )[
-  #table(
+  #tabella-viola(
     columns: 2,
-    fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+    
     align: (left, center),
-    table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*RT1: Strumenti e tecnologie sconosciute*]],
+    table.cell(colspan: 2, align: center)[#text[*RT1: Strumenti e tecnologie sconosciute*]],
     [ *Descrizione*  ],
     align(
       left,
@@ -1960,13 +1835,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Problemi di integrazione fra componenti],
   kind: table,
 )[
-  \ #table(
+  \ #tabella-viola(
     columns: 2,
-    fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+    
     align: (left, center),
-    table.cell(colspan: 2, align: center)[#text(
-      fill: rgb("#f5f5f7"),
-    )[ *RT2: Problemi di integrazione fra componenti * ]],
+    table.cell(colspan: 2, align: center)[#text[ *RT2: Problemi di integrazione fra componenti * ]],
     [ *Descrizione*  ],
     align(
       left,
@@ -1990,11 +1863,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Qualità insufficiente del codice],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[* RT3: Qualità insufficiente del codice*] ],
+  table.cell(colspan: 2, align: center)[#text[* RT3: Qualità insufficiente del codice*] ],
   [ *Descrizione*  ],
   align(left)[ Il codice prodotto non rispetta gli standard concordati dal team, è inefficiente o inaffidabile ],
   [ *Probabilità*  ],
@@ -2017,11 +1890,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Codice poco comprensibile],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*RT4: Codice poco comprensibile* ]],
+  table.cell(colspan: 2, align: center)[#text[*RT4: Codice poco comprensibile* ]],
   [ *Descrizione*  ],
   align(
     left,
@@ -2046,11 +1919,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Test insufficienti],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*RT5: Test insufficienti* ]],
+  table.cell(colspan: 2, align: center)[#text[*RT5: Test insufficienti* ]],
   [ *Descrizione*  ],
   align(
     left,
@@ -2075,11 +1948,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Gestione inadeguata della sicurezza],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*RT6: Gestione inadeguata della sicurezza *]],
+  table.cell(colspan: 2, align: center)[#text[*RT6: Gestione inadeguata della sicurezza *]],
   [ *Descrizione*  ],
   align(
     left,
@@ -2106,11 +1979,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Mancato rispetto delle tempistiche],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*RO1: Mancato rispetto delle tempistiche *]],
+  table.cell(colspan: 2, align: center)[#text[*RO1: Mancato rispetto delle tempistiche *]],
   [ *Descrizione*  ],
   align(
     left,
@@ -2135,13 +2008,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Rallentamento dovuto ad altri impegni personali o universitari],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(
-    fill: rgb("#f5f5f7"),
-  )[*RO2: Rallentamento dovuto ad altri impegni personali o universitari*] ],
+  table.cell(colspan: 2, align: center)[#text[*RO2: Rallentamento dovuto ad altri impegni personali o universitari*] ],
   [ *Descrizione*  ],
   align(
     left,
@@ -2166,11 +2037,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Distribuzione dei compiti non equilibrata],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*RO3: Distribuzione dei compiti non equilibrata*]],
+  table.cell(colspan: 2, align: center)[#text[*RO3: Distribuzione dei compiti non equilibrata*]],
   [ *Descrizione*  ],
   align(
     left,
@@ -2195,11 +2066,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Scarso coordinamento del team],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*RO4: Scarso coordinamento del team*]],
+  table.cell(colspan: 2, align: center)[#text[*RO4: Scarso coordinamento del team*]],
   [ *Descrizione*  ],
   align(
     left,
@@ -2224,13 +2095,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Mancanza di monitoraggio dello stato di avanzamento],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(
-    fill: rgb("#f5f5f7"),
-  )[*RO5: Mancanza di monitoraggio dello stato di avanzamento*]],
+  table.cell(colspan: 2, align: center)[#text[*RO5: Mancanza di monitoraggio dello stato di avanzamento*]],
   [ *Descrizione*  ],
   align(
     left,
@@ -2254,11 +2123,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Documentazione non aggiornata],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*RO6: Documentazione non aggiornata*]],
+  table.cell(colspan: 2, align: center)[#text[*RO6: Documentazione non aggiornata*]],
   [ *Descrizione*  ],
   align(
     left,
@@ -2283,13 +2152,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Opinioni divergenti su decisioni da prendere],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(
-    fill: rgb("#f5f5f7"),
-  )[*RO7: Opinioni divergenti su decisioni da prendere* ]],
+  table.cell(colspan: 2, align: center)[#text[*RO7: Opinioni divergenti su decisioni da prendere* ]],
   [ *Descrizione*  ],
   align(
     left,
@@ -2314,11 +2181,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   caption: [Rischio Mancanza di confronto con l'azienda],
   kind: table,
 )[
-#table(
+#tabella-viola(
   columns: 2,
-  fill: (row, col) => if col == 0 { rgb("#9856D8") } else { none },
+  
   align: (left, center),
-  table.cell(colspan: 2, align: center)[#text(fill: rgb("#f5f5f7"))[*RO8: Mancanza di confronto con l'azienda* ]],
+  table.cell(colspan: 2, align: center)[#text[*RO8: Mancanza di confronto con l'azienda* ]],
   [ *Descrizione*  ],
   align(
     left,
