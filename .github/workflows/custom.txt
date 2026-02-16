@@ -60,7 +60,6 @@ js
 rtb
 dall'ai
 dell'ai
-<<<<<<< HEAD
 gantt
 pdp
 pert
@@ -139,30 +138,56 @@ tfr
 creazionali
 istanziare
 linter
-
-
 gantt
 nomedocumento
 nomegruppo
 pdp
 poc
 txt
-<<<<<<< HEAD
 ucb
 calendarizzazione
 gantt
 ndp
 octokit
 uml
-=======
-  adr
-  containerizzato
-  dall'ia
-  dall'llm
-  gitingest
-  l'rtb
-  ndp
-  openai
-  uc
->>>>>>> verbale-8gennaio2026
+adr
+containerizzato
+dall'ia
+dall'llm
+gitingest
+l'rtb
+ndp
+openai
+uc
 battistella
+all'audit
+all'url
+dell'url
+l'url
+ciclomatica
+committati
+identificare
+indicatori
+l'
+openapi
+postcondizioni
+prioritizzare
+proattiva
+reindirizzamento
+reportistica
+rimodellazione
+tracciabilità
+uc
+ucx
+dall'ia
+rifattorizzazione
+kpi
+ucbo
+ucpm
+ucd
+responsività
+uml
+dev
+ucb
+dell'audit
+istanziato
