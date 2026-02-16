@@ -103,7 +103,25 @@ Domande per Cardin sul file:
 )
 
 #pagebreak()
-#set page(numbering: "1") 
+#set page(numbering: "1",
+  header: [
+    #set table(
+      stroke: none,
+    )
+    #table(
+      columns: 3,
+      [Hepta Code],
+      [#rect(
+        width: 100%,
+        height: 1pt,
+        fill: white,
+        stroke: none,
+      )],
+      [Analisi dei Requisiti v1.0.0],
+    )
+    #line(length: 100%, stroke: black)
+  ],
+) 
 #counter(page).update(1)  
 #set heading(numbering: "1.")
 

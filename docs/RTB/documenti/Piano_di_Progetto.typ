@@ -170,7 +170,7 @@
         fill: white,
         stroke: none,
       )],
-      [Piano di Progetto v. 0.1.1],
+      [Piano di Progetto v. 1.0.0],
     )
     #line(length: 100%, stroke: black)
   ],

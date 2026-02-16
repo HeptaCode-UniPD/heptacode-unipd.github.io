@@ -93,10 +93,22 @@
 
 #pagebreak()
 
-#set page(
-  numbering: "1",
+#set page(numbering: "1",
   header: [
-    #align(left)[HeptaCode #h(57%) Norme di Progetto v. 1.0.0]
+    #set table(
+      stroke: none,
+    )
+    #table(
+      columns: 3,
+      [Hepta Code],
+      [#rect(
+        width: 100%,
+        height: 1pt,
+        fill: white,
+        stroke: none,
+      )],
+      [Norme di Progetto v1.0.0],
+    )
     #line(length: 100%, stroke: black)
   ],
 )
