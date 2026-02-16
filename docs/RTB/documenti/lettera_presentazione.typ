@@ -31,7 +31,7 @@ Negli ultimi mesi, il team ha redatto e reso disponibili le versioni ufficiali d
 *Candidatura*
 - Lettera di presentazione RTB (il presente documento),
 *Documenti esterni*
-- #link("..", "Piano di Qualifica v1.0.0"),
+- #link("https://heptacode-unipd.github.io/docs/RTB/documenti/piano_di_qualifica.pdf", "Piano di Qualifica v1.0.0"),
 - #link("https://heptacode-unipd.github.io/docs/RTB/documenti/Piano_di_Progetto.pdf", "Piano di Progetto v1.0.0"),
 - #link("https://heptacode-unipd.github.io/docs/RTB/documenti/Analisi_requisiti.pdf", "Analisi dei Requisiti v1.0.0"),
   ], 
