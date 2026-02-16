@@ -7,7 +7,7 @@
   ora_inizio: "00:00",
   ora_fine: "00:00",
   ruoli-presenza: (),
-  // partecipanti-esterni: (("Stefano Dindo", "Rappresentante VarGroup")),
+  partecipanti-esterni: (("Stefano Dindo", "Rappresentante VarGroup")),
   testo: "",
   lista_decisioni: (("",""))
 ) = {
@@ -132,7 +132,8 @@
     table.header(
       [*Nome*], [*Ruolo*]
     ),
-    ..partecipanti-esterni,
+    "Federico Pivetta", "Referente Vargroup",
+    "Francesco Battistella", "Rappresentante VarGroup",
   )
  
   pagebreak()
@@ -151,9 +152,7 @@
     table.header(
       [*Decisione*], [*Azione*]
     ),
-    
-    "Federico Pivetta", "Referente Vargroup",
-    "Francesco Battistella", "Referente VarGroup",
+    ..lista_decisioni,
   )
 
   pagebreak()
