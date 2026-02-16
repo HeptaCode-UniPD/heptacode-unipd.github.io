@@ -15,8 +15,8 @@
   //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
   //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
 #let modifiche = (
-  ("2.0.0", "2025-02-14", "Nicola Simionato", "Angela Favaro", "Adattamento modifiche template"),
-  ("1.0.0", "2025-02-14", "Nicola Simionato", "Angela Favaro", "Stesura documento")
+  "2.0.0", "2025-02-14", "Nicola Simionato", "Angela Favaro", "Adattamento modifiche template",
+  "1.0.0", "2025-02-14", "Nicola Simionato", "Angela Favaro", "Stesura documento"
 )
 
 // switchare in 'true' SSE l’incontro si è tenuto online
