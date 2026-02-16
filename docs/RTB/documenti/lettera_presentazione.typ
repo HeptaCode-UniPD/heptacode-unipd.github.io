@@ -4,9 +4,7 @@
 #set page(numbering: "1")
 #align(top + right, [#image("../../asset/logo.svg", width: 3.5cm)])
 Padova, 17 febbraio 2026 \
-Alla cortese attenzione dei professori \
-Tullio Vardanega, \
-Riccardo Cardin.
+Alla cortese attenzione dei professori Cardin e Vardanega
 \
 \
 \
