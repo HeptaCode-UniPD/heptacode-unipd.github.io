@@ -83,7 +83,7 @@
 #set page(
   numbering: "1",
   header: [
-    #align(left)[HeptaCode #h(57%) Norme di Progetto v. 0.6.0]
+    #align(left)[HeptaCode #h(57%) Norme di Progetto v. 1.0.0]
     #line(length: 100%, stroke: black)
   ],
 )
