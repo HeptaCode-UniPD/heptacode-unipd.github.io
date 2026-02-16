@@ -1,6 +1,14 @@
 #show link: set text(fill: color.linear-rgb(121, 1, 238))
 #show link: underline
 
+#let tabella-viola(..args) = {
+  show table.cell.where(y: 0): set text(white, weight: "bold")
+  table(
+    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
+    ..args
+  )
+}
+
 #v(1fr)
 #align(center, [
   #set text(lang: "it")
@@ -25,7 +33,7 @@
 
 #text(size:17pt, weight: "bold")[Registro delle modifiche:]
 #set text(size: 11pt, lang: "it")
-#table(
+#tabella-viola(
   columns: (auto, auto, auto, auto, auto),
   inset: 9pt,
   align: horizon,
