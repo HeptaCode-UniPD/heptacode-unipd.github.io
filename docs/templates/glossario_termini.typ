@@ -1,5 +1,5 @@
 // 1. Legge il contenuto del file glossario come semplice testo
-#let contenuto-glossario = read("../CC/glossario.typ")
+#let contenuto-glossario = read("../RTB/glossario.typ")
 
 // Cerca la stringa esatta usata file e cattura il contenuto tra [ ]
 #let pattern = regex("heading\(level: 2, outlined: false\)\[(.*?)\]")

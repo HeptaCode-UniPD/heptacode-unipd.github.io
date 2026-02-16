@@ -96,7 +96,7 @@ Metodologia che mira ad identificare rapidamente un malfunzionamento all'interno
 Software di versionamento distribuito dei file di una cartella, utilizzabile da linea di comando.
 
 #heading(level: 2, outlined: false)[GitHub]
-Servizio web basato su git. Permette il versionamento dei file di un progetto online, aprendo quindi la collaborazione di più persone sui file. Offre inoltre diversi altri servizi come l'Issue Tracking System, la possibilità di gestire organizzazioni oppure hostare siti web.
+Servizio web basato su git. Permette il versionamento dei file di un progetto online, aprendo quindi la collaborazione di più persone sui file. Offre inoltre diversi altri servizi come l'Issue_G Tracking System, la possibilità di gestire organizzazioni oppure hostare siti web.
 
 #heading(level: 2, outlined: false)[GitHub Action (GHA)]
 Sistema di automazione offerto da GitHub e personalizzabile. Permette, al trigger di determinati eventi, di eseguire script ad esempio per la compilazione di file sorgenti oppure testare il software.
