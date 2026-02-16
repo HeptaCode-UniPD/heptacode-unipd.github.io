@@ -133,7 +133,7 @@
       [*Nome*], [*Ruolo*]
     ),
     "Federico Pivetta", "Referente Vargroup",
-    "Francesco Battistella", "Rappresentante VarGroup",
+    "Francesco Battistella", "Referente VarGroup",
   )
  
   pagebreak()
