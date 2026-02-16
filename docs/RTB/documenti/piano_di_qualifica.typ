@@ -16,6 +16,11 @@
   #text(size: 37.5pt, weight: "bold")[Piano di Qualifica]
   
   #v(2.0cm)
+  #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
+
+  #align(center,
+  [#text(12pt)[Piano di Qualifica del gruppo 7: _Hepta Code_, relativo al capitolato _Code Guardian_ proposto dall'azienda _Var Group_.]]
+  )
 ])
 #v(1fr)
 #counter(page).update(0)
@@ -29,11 +34,12 @@
   table.header(
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
   ),
-  "0.5",
+  "0.5.0",
   "2026/02/14",
   "Laura Venturini", 
   "Angela Canazza",
   "Stesura del capitolo 5",
+  
   "0.4.2",
   "2026/02/13",
   "Laura Venturini", 
