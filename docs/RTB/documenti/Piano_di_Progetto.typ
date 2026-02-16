@@ -23,6 +23,12 @@
   align: horizon,
   table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
 
+  "1.0.0",
+  "2026/02/16", 
+  "Nicola Simionato", 
+  "Angela Favaro", 
+  "Aggiunto trascorso Sprint 8",
+
   "0.14.0",
   "2026/02/12", 
   "Laura Venturini", 
@@ -1608,7 +1614,8 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Rischi incontrati_],
   [
-    1. Poco tempo a disposizione a causa degli esami universitari.
+    1. RO1 - Mancato rispetto delle tempistiche (@tab:RO1) 
+    2. RO2 - Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2)
   ],
 
   [_Mitigazione_],
@@ -1656,7 +1663,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     #figure(
   caption: [Diagramma di GANTT dello Sprint 8],
   )[
-    // #image("../../asset/GANTT/sprint8-gantt.png")
+    #image("../../asset/GANTT/sprint8-gantt.png")
   ]<GANTT-Sprint8>
 
 #underline[Spese della settimana]: 875€ \ #underline[Spesa totale]: *5.080€*
