@@ -7,7 +7,8 @@ Domande per Cardin sul file:
 */
 
 
-#show link: it => text(fill: rgb("#6a00f4"), it)
+#show link: set text(fill: color.linear-rgb(121, 1, 238))
+#show link: underline
 
 #show table.cell: block.with(breakable: true)
 
@@ -18,6 +19,25 @@ Domande per Cardin sul file:
     ..args
   )
 }
+
+#v(1fr)
+#align(center, [
+  #image("../../asset/logo.svg")
+  #set text(lang: "it")
+
+  #v(1.5cm)
+
+  #text(size: 25pt, weight: "bold")[Analisi dei Requisiti]
+
+  #v(2.0cm)
+  #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
+
+  #align(center,
+  [#text(12pt)[Il presente documento contiene l'_analisi dei Requisiti_ redatta dal gruppo _Hepta Code_ per il capitolato C2 proposto da _Var Group_.]]
+  )
+])
+#v(1fr)
+#counter(page).update(1)
 
 
 #let storia_modifiche = (
@@ -48,42 +68,9 @@ Domande per Cardin sul file:
   ("0.1.0", "2025-12-15", "Alberto Reginato", "Angela Canazza", "Creazione struttura del documento e prima bozza"),
 )
 
-#let versione = storia_modifiche.first().at(0)
-#let data_versione = storia_modifiche.first().at(1)
-#let titolo = "analisi dei requisiti"
-#let gruppo = "Hepta Code"
-
-#set page(
-  footer: context [
-    #align(center)[
-      #line(length: 100%)
-      #counter(page).display("1")
-      di
-      #counter(page).final().first()
-    ]
-  ]
-)
-
-#set heading(numbering: "1.1")
-
-\
-
-
-#align(center, [#image("../../asset/logo.svg", width: 8cm)])
-
-#v(2cm)
-
-#align(center)[
-  #text(weight: "bold", size: 17pt)[Descrizione] \
-  #v(0.5em)
-  #block(width: 80%)[
-    Il presente documento contiene l'_analisi dei Requisiti_ redatta dal gruppo _Hepta Code_ per il capitolato C2 proposto da _Var Group_.
-  ]
-]
-
 #pagebreak()
 
-#text(size: 18pt, weight: "bold")[Registro delle modifiche]
+#text(size: 17pt, weight: "bold")[Registro delle modifiche]
 
 #tabella-viola(
   columns: (auto, auto, auto, auto, 1fr),
@@ -104,6 +91,9 @@ Domande per Cardin sul file:
 #outline(title: "Indice dei contenuti")
 
 #pagebreak()
+#set page(numbering: "1") 
+#counter(page).update(1)  
+#set heading(numbering: "1.")
 
 = Introduzione
 == Scopo del Documento
@@ -140,14 +130,12 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
 
 === Riferimenti Normativi
 - _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/progetto/C2.pdf")[Capitolato])
-- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("...")[Norme di progetto]).
-- [Altro ...]
+- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/RTB/documenti/norme_di_progetto.pdf")[Norme di progetto]).
 
 === Riferimenti Informativi
 - Verbale Interno: #link("https://heptacode-unipd.github.io/docs/RTB/verbali_esterni/vargroup_1.pdf")[Primo Incontro di Design Thinking]
 - Slide di lezione: #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[analisi dei requisiti]
 - Documento interno: #link("https://heptacode-unipd.github.io/docs/CC/glossario.pdf")[Glossario]
-- [Altro ...]
 Questa introduzione delinea il contesto e gli scopi del progetto. Il capitolo seguente procederà con una descrizione dettagliata del prodotto, delle sue funzionalità e dei vincoli che ne guideranno la realizzazione.
 
 #pagebreak()

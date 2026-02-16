@@ -23,16 +23,15 @@
 
 #pagebreak()
 
-#text(size:17pt, weight: "bold")[Registro delle modifiche:]
-#set text(size: 11pt, lang: "it")
-#table(
-  columns: (auto, auto, auto, auto, auto),
-  inset: 9pt,
-  align: horizon,
-  table.header(
-    [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]
-  ),
+#let tabella-viola(..args) = {
+  show table.cell.where(y: 0): set text(white, weight: "bold")
+  table(
+    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
+    ..args
+  )
+}
 
+#let storia_modifiche = (
   "1.0.0",
   "2026/02/10",
   "Riccardo Baldin",
@@ -76,6 +75,20 @@
   "Impostazione struttura del Documento"
 )
 
+#text(size: 17pt, weight: "bold")[Registro delle modifiche]
+
+#tabella-viola(
+  columns: (auto, auto, auto, auto, 1fr),
+  inset: 10pt,
+  align: (center, center, center, center, left),
+  
+  table.header(
+  [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*],
+  ),
+
+  ..storia_modifiche.flatten()
+)
+
 #counter(page).update(0)
 
 #pagebreak()
@@ -88,7 +101,7 @@
   ],
 )
 
-#outline(title: "Indice")
+#outline(title: "Indice dei contenuti")
 #set heading(numbering: "1.")
 
 #pagebreak()
