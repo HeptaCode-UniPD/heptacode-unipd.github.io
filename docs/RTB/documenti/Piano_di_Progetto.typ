@@ -27,7 +27,7 @@
   "2026/02/12", 
   "Laura Venturini", 
   "Angela Favaro", 
-  "Aggiormaneto diagrammi GANTT",
+  "Aggiornamento diagrammi GANTT",
 
   "0.13.0",
   "2026/02/10", 
@@ -1601,7 +1601,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [
-    1. Conclusione mileston UCB
+    1. Conclusione milestoneUCB
   ],
 
   [_Rischi incontrati_],
