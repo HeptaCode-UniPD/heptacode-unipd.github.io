@@ -181,3 +181,6 @@ ucd
 responsività
 dev
 istanziato
+brainstorming
+retrospettivasprint
+args
