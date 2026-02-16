@@ -2,7 +2,7 @@
 #set par(justify: true)
 #set text(size: 12pt)
 #set page(numbering: "1")
-#align(top + right, [#image("../asset/logo.svg", width: 3.5cm)])
+#align(top + right, [#image("../../asset/logo.svg", width: 3.5cm)])
 Alla cortese attenzione dei professori \
 Tullio Vardanega, \
 Riccardo Cardin.
