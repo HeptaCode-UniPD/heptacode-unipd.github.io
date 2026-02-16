@@ -341,7 +341,7 @@ Oltre agli attori umani, la piattaforma interagisce con un sistema esterno che a
 La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli attori e la piattaforma _Code Guardian_.
 
 === UC1 - Accesso alla piattaforma
-#align(center, [#image("../../asset/UC/user/uc1.png")])
+#align(center, [#image("../../asset/UC/user/UC1.png")])
 <UC1>
 - *Attore principale:* Utente Sconosciuto.
 
@@ -453,7 +453,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 == Specifica dei casi d'uso - Utente Registrato
 
 === UC2 - Visualizzazione area personale
-#align(center, [#image("../../asset/UC/user/uc2.png", height: 7cm)])
+#align(center, [#image("../../asset/UC/user/UC2.png", height: 7cm)])
 <UC2>
 - *Attore principale:* Utente Registrato.
 
@@ -532,7 +532,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UC3 - Logout
-#align(center, [#image("../../asset/UC/user/uc3.png", width: 15cm)])
+#align(center, [#image("../../asset/UC/user/UC3.png", width: 15cm)])
 <UC3>
 - *Attore principale:* Utente Registrato.
 
