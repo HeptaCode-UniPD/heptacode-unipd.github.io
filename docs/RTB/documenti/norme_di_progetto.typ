@@ -33,10 +33,10 @@
     [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]
   ),
 
-  "0.6.0",
+  "1.0.0",
   "2026/02/10",
   "Riccardo Baldin",
-  "",
+  "Angela Favaro",
   "Completamento capitoli vuoti",
 
   "0.5.0",
