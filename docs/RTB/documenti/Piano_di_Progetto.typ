@@ -1601,7 +1601,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [
-    1. Conclusione milestoneUCB
+    1. Conclusione milestone UCB
   ],
 
   [_Rischi incontrati_],
