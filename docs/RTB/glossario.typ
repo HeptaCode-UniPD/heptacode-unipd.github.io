@@ -81,11 +81,22 @@
 #set page(
   numbering: "1",
   header: [
-    #align(left)[HeptaCode #h(78%) Glossario]
-    #v(2pt)
+    #set table(
+      stroke: none,
+    )
+    #table(
+      columns: 3,
+      [Hepta Code],
+      [#rect(
+        width: 100%,
+        height: 1pt,
+        fill: white,
+        stroke: none,
+      )],
+      [Glossario v2.0.0],
+    )
     #line(length: 100%, stroke: black)
   ],
-  
 )
 
 = Scopo del Documento
