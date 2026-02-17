@@ -89,10 +89,15 @@
   ..storia_modifiche.flatten()
 )
 
-#counter(page).update(0)
+
 
 #pagebreak()
 
+#outline(title: "Indice dei contenuti")
+
+#pagebreak()
+#counter(page).update(1)
+#set heading(numbering: "1.")
 #set page(numbering: "1",
   header: [
     #set table(
@@ -112,11 +117,6 @@
     #line(length: 100%, stroke: black)
   ],
 )
-
-#outline(title: "Indice dei contenuti")
-#set heading(numbering: "1.")
-
-#pagebreak()
 
 = Introduzione
 

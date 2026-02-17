@@ -134,7 +134,6 @@
 )
 
 #pagebreak()
-
 #set text(size: 11pt, lang: "it")
 #show figure.caption: set text(9pt)
 

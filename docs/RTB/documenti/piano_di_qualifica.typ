@@ -90,9 +90,8 @@
 
 #set text(size: 11pt, lang: "it")
 #show figure.caption: set text(9pt)
-
 //Indice capitoli
-#outline(title: "Indice")
+#outline(title: "Indice dei contenuti")
 #set heading(numbering: "1.")
 #pagebreak()
 

@@ -85,8 +85,6 @@ Domande per Cardin sul file:
 )
 
 #pagebreak()
-
-
 #outline(title: "Indice dei contenuti")
 
 #pagebreak()
@@ -121,7 +119,7 @@ Domande per Cardin sul file:
     )
     #line(length: 100%, stroke: black)
   ],
-) 
+)
 #counter(page).update(1)  
 #set heading(numbering: "1.")
 
@@ -159,11 +157,13 @@ L'uso del glossario è raccomandato per garantire la piena coerenza semantica du
 Questa sezione elenca i documenti utilizzati come base per la stesura della presente analisi.
 
 === Riferimenti Normativi
-- _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/progetto/C2.pdf")[Capitolato])
+- _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2p.pdf")[Capitolato])
 - _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/RTB/documenti/norme_di_progetto.pdf")[Norme di progetto]).
 
 === Riferimenti Informativi
-- Verbale Interno: #link("https://heptacode-unipd.github.io/docs/RTB/verbali_esterni/vargroup_1.pdf")[Primo Incontro di Design Thinking]
+- Verbale Interno: 
+  - #link("https://heptacode-unipd.github.io/docs/RTB/verbali_esterni/vargroup_1.pdf")[Primo incontro di Design Thinking]
+  - #link("https://heptacode-unipd.github.io/docs/RTB/verbali_esterni/vargroup_2.pdf")[Secondo incontro di Design Thinking]
 - Slide di lezione: #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[analisi dei requisiti]
 - Documento interno: #link("https://heptacode-unipd.github.io/docs/CC/glossario.pdf")[Glossario]
 Questa introduzione delinea il contesto e gli scopi del progetto. Il capitolo seguente procederà con una descrizione dettagliata del prodotto, delle sue funzionalità e dei vincoli che ne guideranno la realizzazione.
@@ -255,7 +255,6 @@ Lo sviluppo del progetto dovrà sottostare ad una serie di vincoli tecnici ed ar
 === Vincoli di progetto
 - *Copertura dei test*: Il codice sorgente della piattaforma dovrà essere coperto per un minimo del *70%* da test di unità automatizzati.
 - *Modularità*: L'applicativo dovrà essere progettato e realizzato con un'architettura modulare, per facilitare l'estensione futura delle sue funzionalità (ad esempio, con nuovi agenti).
-- [Altro ...]
 
 === Tecnologie di Sviluppo
 In accordo con le linee guida fornite dal proponente _VarGroup_, il team ha definito uno _stack_ tecnologico mirato a garantire modularità e scalabilità.
