@@ -616,6 +616,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
+#pagebreak()
 === UC4 - Errore generico
 <UC4>
 - *Attore principale:* Utente Registrato.
