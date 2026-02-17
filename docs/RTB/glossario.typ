@@ -16,8 +16,6 @@
 ])
 #v(1fr)
 
-#counter(page).update(1)
-
 #pagebreak()
 
 #let tabella-viola(..args) = {
@@ -74,9 +72,12 @@
   ..storia_modifiche.flatten()
 )
 
-#counter(page).update(0)
+#pagebreak()
+
+#outline(title: "Indice")
 
 #pagebreak()
+#counter(page).update(1)
 #set page(
   numbering: "1",
   header: [
@@ -86,11 +87,6 @@
   ],
   
 )
-
-#outline(title: "Indice")
-#set heading(level: 1, numbering: none)
-
-#pagebreak()
 
 = Scopo del Documento
 Il fine di questo documento è tenere traccia di tutti i termini, ambigui o meno, che possono apparire all'interno della documentazione o nei meeting e darne una definizione quanto più precisa, in modo che le risorse e i discorsi fatti possano essere compresi facilmente.
