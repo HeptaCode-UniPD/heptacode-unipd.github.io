@@ -165,7 +165,7 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
   - #link("https://heptacode-unipd.github.io/docs/RTB/verbali_esterni/vargroup_1.pdf")[Primo incontro di Design Thinking]
   - #link("https://heptacode-unipd.github.io/docs/RTB/verbali_esterni/vargroup_2.pdf")[Secondo incontro di Design Thinking]
 - Slide di lezione: #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/T05.pdf")[analisi dei requisiti]
-- Documento interno: #link("https://heptacode-unipd.github.io/docs/CC/glossario.pdf")[Glossario]
+- Documento interno: #link("https://heptacode-unipd.github.io/docs/RTB/glossario.pdf")[Glossario]
 Questa introduzione delinea il contesto e gli scopi del progetto. Il capitolo seguente procederà con una descrizione dettagliata del prodotto, delle sue funzionalità e dei vincoli che ne guideranno la realizzazione.
 
 #pagebreak()
