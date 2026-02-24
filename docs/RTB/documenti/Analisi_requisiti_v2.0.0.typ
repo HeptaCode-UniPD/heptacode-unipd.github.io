@@ -1393,7 +1393,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Estensioni:* 
   - #link(<UCD2.1>)[[UCD2.1]].
   - #link(<UCD2.2>)[[UCD2.2]].
-  - #link(<UC8.0.1>)[[UC8.0.1]].
 - *Generalizzazioni:* #link(<UCD2.0.1>)[[UCD2.0.1]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -2911,7 +2910,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Inclusioni:* 
   - #link(<UCPM1.6>)[[UCPM1.6]]
-  - #link(<UCPM1.4.2>)[[UCPM1.4.2]]
 
 - *Estensioni:* 
   - #link(<UCPM1.4.1>)[[UCPM1.4.1]]
