@@ -45,7 +45,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("1.1.0","2026-02-24","Angela Canazza","Angela Favaro","Prima correzzione UC, secondo quanto segnalato"),
+  ("1.1.0","2026-02-24","Angela Canazza","Angela Favaro","Prima correzione UC, secondo quanto segnalato"),
   ("1.0.0","2026-02-16","Amerigo Vegliante","Angela Favaro","Prima versione AdR"),
   ("0.15.0", "2026-02-15", "Angela Canazza", "Amerigo Vegliante", "Modifica gestione generalizzazione attori"),
   ("0.14.0", "2026-02-12", "Amerigo Vegliante", "Angela Favaro", "Sistemazione AD e Riorganizzazione Indice"),
@@ -1377,7 +1377,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Attore secondario:* GitHub.
 
-- *Descrizione:* Il Developer sincronizza i propri privvati repository GitHub con la piattaforma _Code Guardian_.
+- *Descrizione:* Il Developer sincronizza i propri privati repository GitHub con la piattaforma _Code Guardian_.
 
 - *Precondizioni:* Il Developer ha effettuato l’accesso a _Code Guardian_ ed è in possesso di un account GitHub. Il developer possiede dei repository GitHub privati da sincronizzare.
 
@@ -1957,7 +1957,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Developer visualizza i dati come descritto in #link(<UCD8.1>)[[UCD8.1]].
   + Il Developer visualizza un pulsante annullare un'analisi in corso (#link(<UCD10>)[[UCD10]]).
 
-- *Postcondizioni:* Il Developer sta visualizzando quale enalisi è in atto nel sistema.
+- *Postcondizioni:* Il Developer sta visualizzando quale analisi è in atto nel sistema.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
