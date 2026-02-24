@@ -263,13 +263,39 @@ Lo sviluppo del progetto dovrà sottostare ad una serie di vincoli tecnici ed ar
 === Tecnologie di Sviluppo
 In accordo con le linee guida fornite dal proponente _VarGroup_, il team ha definito uno _stack_ tecnologico mirato a garantire modularità e scalabilità.
 
-La logica _core_ della piattaforma, costituita dall'architettura multi-agente e dai flussi di orchestrazione, sarà sviluppata adottando un approccio ibrido basato su *Node.js* e *Python*. Questa scelta permette di coniugare l'efficienza nella gestione asincrona degli eventi (tipica di Node.js) con le potenti capacità di analisi dati e _machine learning_ offerte dall'ecosistema Python, fondamentali per gli agenti di _audit_.
+La logica core della piattaforma sarà sviluppata adottando un approccio "full-stack" basato sul linguaggio TypeScript. Nello specifico, il backend è ingegnerizzato tramite il framework *NestJS* eseguito in ambiente Node.js. Questa scelta permette di sfruttare un'architettura solida e orientata ai servizi, mantenendo al contempo l'efficienza nella gestione asincrona degli eventi tipica di Node.js. Le potenti capacità di analisi del codice non sono delegate a un ambiente locale separato, bensì gestite integrando direttamente le API del servizio cloud *AWS Bedrock*, demandando al cloud l'onere computazionale dell'Intelligenza Artificiale.
 
-L'interfaccia utente, punto di accesso principale per _Developer_ e _Project Manager_, sarà realizzata come _Single Page Application_ (SPA) utilizzando il framework *React.js*. L'obiettivo è fornire una *dashboard* reattiva e dinamica, capace di visualizzare in tempo reale i risultati delle analisi e i suggerimenti di _remediation_.
+L’interfaccia utente, punto di accesso principale per _Developer_ e _Project Manager_, sarà realizzata come _Single Page Application_ (SPA) utilizzando la libreria *React.js*. L’obiettivo è fornire una dashboard reattiva e dinamica, capace di visualizzare in tempo reale, tramite flussi streaming (SSE), i risultati delle analisi e i suggerimenti generati dall'agente.
 
-Per quanto riguarda la persistenza dei dati, la scelta è ricaduta su *MongoDB*. La natura *schema-less* di questo database documentale garantisce la flessibilità necessaria per memorizzare report di analisi dalla struttura eterogenea. Inoltre, le sue funzionalità native supportano efficacemente il tracciamento delle diverse *versioni* dei dati e offrono componenti di *ricerca vettoriale*, determinanti per potenziare le capacità di recupero contestuale delle informazioni da parte degli agenti intelligenti.
+Per quanto riguarda la persistenza dei dati, la scelta è ricaduta su *MongoDB*. La natura _schema-less_ di questo database documentale garantisce la flessibilità necessaria per memorizzare report di analisi dalla struttura eterogenea.
 
-Infine, l'infrastruttura operativa sarà fortemente integrata con l'ecosistema *GitHub*: le *GitHub Actions* gestiranno i flussi di _CI/CD_ e l'innesco degli agenti, mentre l'architettura _cloud_ sottostante sarà ospitata sui servizi *AWS* (_Amazon Web Services_), garantendo la disponibilità e le risorse computazionali necessarie per l'esecuzione parallela degli agenti.
+Infine l’infrastruttura operativa si avvarrà di *Docker* per la containerizzazione di tutti i servizi (Frontend, Backend, Database), garantendo ambienti di sviluppo e produzione identici e facilmente riproducibili, e sarà fortemente integrata con l'ecosistema *GitHub*: le *GitHub Actions* gestiranno i flussi di _CI/CD_ e l'innesco degli agenti. L'architettura _cloud_ sottostante sarà ospitata sui servizi *AWS* (_Amazon Web Services_), garantendo la disponibilità e le risorse computazionali necessarie per l'esecuzione parallela degli agenti.
+
+#tabella-viola(
+  columns: (auto, auto, 1fr),
+  inset: 10pt,
+  align: (left),
+  
+  table.header(
+     [*Tecnologia*], [*Versione Scelta*], [*Destinazione d'Uso*]
+  ),
+
+  [*Node.js*],[v24.x (LTS)],[Ambiente di runtime di base per l'esecuzione del backend.],
+  [*NestJS*],[v11.x],[Framework per lo sviluppo dell'architettura e delle API backend.],
+  [*TypeScript*],[v5.x],[Linguaggio di programmazione tipizzato usato per Backend e Frontend.],
+  [*React*],[v19.x],[Libreria per lo sviluppo della UI del frontend.],
+  [*MongoDB*],[v8.x],[Database NoSQL documentale per la persistenza dello storico analisi.],
+  [*Docker Engine*],[v29.x],[Strumento di containerizzazione dell'applicativo.],
+  [*AWS Bedrock*],[-],[Servizio Cloud per l'invocazione dei modelli AI.],
+)
+
+=== Ambiente di Esecuzione e Browser Supportati
+L'applicativo web dovrà essere accessibile e garantire la corretta visualizzazione e funzionalità sui seguenti browser:
+- Google Chrome (v. 120 o superiore)
+- Mozilla Firefox (v. 121 o superiore)
+- Microsoft Edge (v. 120 o superiore)
+- Apple Safari (v. 17 o superiore)
+I dispositivi client supportati includono sistemi desktop equipaggiati con sistemi operativi Windows 10/11, macOS 13+ o distribuzioni Linux moderne.
 
 == Limiti del Sistema <Cap2.4>
 Per garantire la fattibilità del progetto entro le scadenze accademiche e focalizzare lo sviluppo sul valore _core_, sono stati definiti i seguenti confini operativi che delimitano il perimetro del prototipo realizzato:
@@ -4417,31 +4443,42 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-138-F-O],[Il Business Owner deve poter visualizzare i ruoli che uno sviluppatore può assumere],[#link(<UCBO3.3>)[UCBO3.3]],
 )
 #pagebreak()
+
 == Requisiti di vincolo
-#figure(
-  caption: [Requisiti di vincolo],
-  kind: table,
-  supplement: [Tabella],
-  rect(width: 0pt, height: 0pt, stroke: none) 
-) <requisiti-vincolo>
+
 #tabella-viola(
-  columns: (auto, auto, 5.4cm),
+  columns: (auto, 1fr, 1fr),
   inset: 10pt,
-  align: (left, left, left),
+  align: (x, y) => (center, left, left).at(x),
    
-  
   table.header(
-  [*Codice*], [*Descrizione*], [*Fonti*],
-  [R-1-V-O],[È necessario usare Git come software di versionamento], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
-  [R-2-V-O],[È necessario che l'applicativo sia realizzato in ottica modulare], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
-  [R-3-V-O],[È necessario che l'utilizzo di Node.js e Typescript per il backend], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
-  [R-4-V-O],[È necessario che l'utilizzo di React.js per il frontend], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
-  [R-5-V-O],[È necessario che l'utilizzo di MongoDB per la gestione database], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
-  [R-6-V-O],[È necessario che l'utilizzo di GitHub Actions per l'integrazione dell'applicativo], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto]  Sezione "Tecnologie"],
-  [R-7-V-O],[È necessario che l'utilizzo dell'architettura cloud AWS per la gestione degli agenti], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+    [*Codice*], [*Descrizione*], [*Fonti*]
   ),
+
+  [R-1-V-O], [È necessario l'utilizzo di Node.js (v. 24.x LTS) e TypeScript (v. 5.x) per lo sviluppo del backend.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  
+  [R-2-V-O], [L'architettura backend e le API devono essere sviluppate utilizzando il framework NestJS (v. 11.x).], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  
+  [R-3-V-O], [È necessario l'utilizzo della libreria React.js (v. 19.x) per lo sviluppo del frontend.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  
+  [R-4-V-O], [È necessario l'utilizzo di MongoDB (v. 6.x) per la gestione della persistenza dei dati.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  
+  [R-5-V-O], [È necessario l'utilizzo di GitHub Actions per l'integrazione continua (CI/CD) dell'applicativo.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  
+  [R-6-V-O], [È necessario l'utilizzo dell'architettura cloud AWS (incluso AWS Bedrock) per la gestione degli agenti AI.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  
+  [R-7-V-O], [Il sistema deve essere containerizzato utilizzando Docker Engine (v. 24.x o compatibile).], [Decisione Interna],
+  
+  [R-8-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Google Chrome (v. 120 o superiore).], [Decisione Interna],
+  
+  [R-9-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Mozilla Firefox (v. 121 o superiore).], [Decisione Interna],
+  
+  [R-10-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Microsoft Edge (v. 120 o superiore).], [Decisione Interna],
+  
+  [R-11-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Apple Safari (v. 17 o superiore).], [Decisione Interna]
 )
 #pagebreak()
+
 == Requisiti di qualità
 #figure(
   caption: [Requisiti di qualità],
@@ -4467,7 +4504,8 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-8-Q-O],[È necessario redigere una documentazione sul Bug reporting], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
   [R-9-Q-O],[È necessario fornire il codice  prodotto in formato sorgente utilizzando sistemi di versionamento del codice come Git o repository online ( github, bitbucket ...)], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
   [R-10-Q-O],[È necessario redigere la documentazione tecnica formata da: "R-6-Q-O", "R-7-Q-O", "R-8-Q-O" e "R-9-Q-O"], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
-  [R-11-Q-O],[È necessario soddisfare tutte le metriche presenti nel documento "Norme di Progetto"],[Analisi interna]
+  [R-11-Q-O],[È necessario soddisfare tutte le metriche presenti nel documento "Norme di Progetto"],[Analisi interna],
+  [R-12-Q-O],[È necessario usare Git come software di versionamento], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
   ),
 )
 
