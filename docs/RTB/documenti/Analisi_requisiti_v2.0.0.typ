@@ -30,6 +30,9 @@ Domande per Cardin sul file:
   #text(size: 25pt, weight: "bold")[Analisi dei Requisiti]
 
   #v(2.0cm)
+  #align(center, text(size: 15pt, weight: "bold")[Versione 2.0.0])
+
+  #v(2.0cm)
   #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
 
   #align(center,

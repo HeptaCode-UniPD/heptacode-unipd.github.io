@@ -21,6 +21,9 @@
   #v(1.5cm)
   
   #text(size: 25pt, weight: "bold")[Piano di Qualifica]
+
+  #v(2.0cm)
+  #align(center, text(size: 15pt, weight: "bold")[Versione 1.0.0])
   
   #v(2.0cm)
   #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
