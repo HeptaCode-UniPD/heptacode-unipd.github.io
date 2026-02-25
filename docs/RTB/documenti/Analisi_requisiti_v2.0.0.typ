@@ -1479,7 +1479,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Developer avvia la procedura di sincronizzazione.
   + Il Developer completa l'autenticazione tramite il provider esterno GitHub.
   + Il Developer conferma l'operazione di sincronizzazione finale.
-  + Il Developer visualizza l'interfaccia di inserimento per il token GitHub *<\<extend>>* #link(<UC8.0.1>)[[UC8.0.1]].
+  + Il Developer visualizza l'interfaccia di inserimento per il token GitHub *<\<include>>* #link(<UC8.0.1>)[[UC8.0.1]].
   + Il Developer visualizza la dashboard con i repository aggiunti.
 
 - *Scenari alternativi:* \
@@ -2210,7 +2210,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD11.1 - Visualizzazione elemento lista ultime analisi terminate
-#figure([#image("../../asset/UC/developer/ucd11.png", height: 7cm)], caption: [UCD11.1 - Visualizzazione elemento lista ultime analisi terminate])
+#figure([#image("../../asset/UC/developer/ucd11-1.png", height: 7cm)], caption: [UCD11.1 - Visualizzazione elemento lista ultime analisi terminate])
 <UCD11.1>
 
 - *Attore principale:* Developer.
