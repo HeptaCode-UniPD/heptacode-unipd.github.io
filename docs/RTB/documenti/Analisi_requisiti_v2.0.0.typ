@@ -45,6 +45,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("1.3.0","2026-02-25","Amerigo Vegliante","","Fix azione iniziale AD1"),
   ("1.2.0","2026-02-24","Alberto Reginato","Angela Favaro","Aggiunta versioni tecnologie, OS e browser supportati"),
   ("1.1.0","2026-02-24","Angela Canazza","Angela Favaro","Prima correzione UC, secondo quanto segnalato"),
   ("1.0.0","2026-02-16","Amerigo Vegliante","Angela Favaro","Prima versione AdR"),
