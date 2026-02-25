@@ -3,9 +3,8 @@
 #set text(size: 12pt)
 #set page(numbering: "1")
 #align(top + right, [#image("../../asset/logo.svg", width: 3.5cm)])
-Alla cortese attenzione dei professori \
-Tullio Vardanega, \
-Riccardo Cardin.
+Padova, 17 febbraio 2026 \
+Alla cortese attenzione dei professori Cardin e Vardanega
 \
 \
 \
@@ -20,28 +19,26 @@ Repository di gruppo: " + link("https://github.com/HeptaCode-UniPD/heptacode-uni
 \
 \
 
-Con la presente il *gruppo 7, Hepta Code*, in data *16 febbraio 2026*, inoltra formalmente la propria richiesta di partecipazione alla revisione della Requirement Technology Baseline per la proposta di progetto "*Code Guardian: Piattaforma ad agenti per l’audit e la remediation dei repository software*", presentata dall'azienda *VarGroup*.
+Con la presente il *gruppo 7, Hepta Code*, inoltra formalmente la propria richiesta di partecipazione alla revisione della Requirement Technology Baseline per la proposta di progetto "*Code Guardian: Piattaforma ad agenti per l’audit e la remediation dei repository software*", presentata dall'azienda *VarGroup*.
 
 Negli ultimi mesi, il team ha redatto e reso disponibili le versioni ufficiali della documentazione per la milestone RTB. Il materiale è consultabile nella pagina ufficiale di #link("https://heptacode-unipd.github.io", "HeptaCode") o all'interno del repository GitHub #link("https://github.com/HeptaCode-UniPD/heptacode-unipd.github.io", "https://github.com/HeptaCode-UniPD/heptacode-unipd.github.io"). Nello specifico, la release comprende:
 
-#grid(
-  columns: (1fr),
-  column-gutter: 20pt,
-  [
-*Candidatura*
-- Lettera di presentazione RTB (il presente documento),
-*Documenti esterni*
-- #link("../docs/RTB/documenti/piano_di_qualifica.pdf", "Piano di Qualifica v1.0.0"),
-- #link("../docs/RTB/documenti/Piano_di_Progetto.pdf", "Piano di Progetto v1.0.0"),
-- #link("../docs/RTB/documenti/Analisi_requisiti.pdf", "Analisi dei Requisiti v1.0.0"),
-  ], 
-[
- \ *Documenti interni*
-- #link("../docs/RTB/documenti/norme_di_progetto.pdf", "Norme di Progetto v1.0.0"),
-- #link("../docs/RTB/documenti/glossario.pdf", "Glossario v2.0.0")],
-[ \ *Verbali esterni*],
-[ \ *Verbali interni* ]
-)
+- *Candidatura*
+  - Lettera di presentazione RTB (il presente documento), 
+
+- *Documenti esterni*
+  - #link("https://heptacode-unipd.github.io/docs/RTB/documenti/piano_di_qualifica.pdf", "Piano di Qualifica v1.0.0"),
+  - #link("https://heptacode-unipd.github.io/docs/RTB/documenti/Piano_di_Progetto.pdf", "Piano di Progetto v1.0.0"),
+  - #link("https://heptacode-unipd.github.io/docs/RTB/documenti/Analisi_requisiti.pdf", "Analisi dei Requisiti v1.0.0"),
+  
+- *Documenti interni*
+  - #link("https://heptacode-unipd.github.io/docs/RTB/documenti/norme_di_progetto.pdf", "Norme di Progetto v1.0.0"),
+  - #link("https://heptacode-unipd.github.io/docs/RTB/glossario.pdf", "Glossario v2.0.0"),
+  
+- *Verbali esterni*
+
+- *Verbali interni*
+
 
 Inoltre, il gruppo ha predisposto un *Proof of Concept (PoC)* per la validazione delle scelte tecnologiche, disponibile al seguente link: #link("https://github.com/HeptaCode-UniPD/PoC", "https://github.com/HeptaCode-UniPD/PoC").
 

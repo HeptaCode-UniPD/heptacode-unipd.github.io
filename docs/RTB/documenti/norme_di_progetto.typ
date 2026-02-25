@@ -11,6 +11,9 @@
   #text(size: 25pt, weight: "bold")[Norme di Progetto]
 
   #v(2.0cm)
+  #align(center, text(size: 15pt, weight: "bold")[Versione 1.0.0])
+
+  #v(2.0cm)
   #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
 
   #align(center,
@@ -23,16 +26,15 @@
 
 #pagebreak()
 
-#text(size:17pt, weight: "bold")[Registro delle modifiche:]
-#set text(size: 11pt, lang: "it")
-#table(
-  columns: (auto, auto, auto, auto, auto),
-  inset: 9pt,
-  align: horizon,
-  table.header(
-    [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]
-  ),
+#let tabella-viola(..args) = {
+  show table.cell.where(y: 0): set text(white, weight: "bold")
+  table(
+    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
+    ..args
+  )
+}
 
+#let storia_modifiche = (
   "1.0.0",
   "2026/02/10",
   "Riccardo Baldin",
@@ -76,22 +78,48 @@
   "Impostazione struttura del Documento"
 )
 
-#counter(page).update(0)
+#text(size: 17pt, weight: "bold")[Registro delle modifiche]
+
+#tabella-viola(
+  columns: (auto, auto, auto, auto, 1fr),
+  inset: 10pt,
+  align: (center, center, center, center, left),
+  
+  table.header(
+  [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*],
+  ),
+
+  ..storia_modifiche.flatten()
+)
+
+
 
 #pagebreak()
 
-#set page(
-  numbering: "1",
+#outline(title: "Indice dei contenuti")
+
+#pagebreak()
+#counter(page).update(1)
+#set heading(numbering: "1.")
+#set page(numbering: "1",
   header: [
-    #align(left)[HeptaCode #h(57%) Norme di Progetto v. 1.0.0]
+    #set table(
+      stroke: none,
+    )
+    #table(
+      columns: 3,
+      [Hepta Code],
+      [#rect(
+        width: 100%,
+        height: 1pt,
+        fill: white,
+        stroke: none,
+      )],
+      [Norme di Progetto v1.0.0],
+    )
     #line(length: 100%, stroke: black)
   ],
 )
-
-#outline(title: "Indice")
-#set heading(numbering: "1.")
-
-#pagebreak()
 
 = Introduzione
 

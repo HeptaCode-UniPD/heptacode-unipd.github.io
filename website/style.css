@@ -134,6 +134,7 @@ summary {
     color: var(--articlecolor);
     font-size: 1.5em;
     margin: 0em 1.5em;
+    margin-bottom: 0.8em;
     padding: 0.4em 0em;
     border-bottom: solid var(--bordercolor) 0.1em;
     display: flex;
@@ -160,6 +161,9 @@ details{
     margin-bottom: 0.8em;
 }
 
+details section{
+    column-count: 2;
+}
 
 #lettera{
     background-color: var(--bgsection);
@@ -167,14 +171,17 @@ details{
     padding: 0.5em;
 }
 
+details article:first-of-type{
+    margin-top: 0;
+}
+
 details article{
     background-color: var(--bgarticle);
     border-radius: 1.5em;
     margin: 1em;
     padding: 0.5em;
+    break-inside: avoid;
 }
-
-
 
 article ul{
     margin:0.5em 3em;
