@@ -847,11 +847,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   - #link(<UC5.6>)[[UC5.6]]
   - #link(<UC5.7>)[[UC5.7]]
 
-- *Estensioni:*
-  - #link(<UC5.5>)[[UC5.5]]
-  - #link(<UC5.6>)[[UC5.6]]
-  - #link(<UC5.7>)[[UC5.7]]
-
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.10 - Reindirizzamento al repository GitHub 
