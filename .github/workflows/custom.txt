@@ -218,3 +218,6 @@ pv
 sv
 args
 poc
+lts
+macos
+nestjs
