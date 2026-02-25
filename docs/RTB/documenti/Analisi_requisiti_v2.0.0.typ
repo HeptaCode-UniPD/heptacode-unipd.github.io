@@ -1225,7 +1225,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC10 - Visualizzazione dettagli progetto
 <UC10>
-#figure([#image("../../asset/UC/user/uc10.png", width: 100%)], caption: [UC10 - Visualizzazione dettagli progetto])
+//#figure([#image("../../asset/UC/user/uc10.png", width: 100%)], caption: [UC10 - Visualizzazione dettagli progetto])
 
 - *Attore principale:* Utente Registrato.
 
@@ -2800,7 +2800,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Postcondizioni:* Il Project Manager visualizza la lista progetti.
 
 - *Inclusioni:* 
-  - #link(<UCPM2>)[[UCPM1.1]]
+  - #link(<UCPM2>)[[UCPM2]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2821,11 +2821,13 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Project Manager inserisce i dati necessari per il progetto:
     - Nome del progetto (*<\<include>>* #link(<UCPM1.2.1>)[[UCPM1.2.1]]).
     
-- *Scenari alternativi:* Il sistema non rileva progetti: mostra uno stato vuoto e invita a creare il primo progetto tramite il pulsante "Nuovo progetto".
+- *Scenari alternativi:* 
+  - Il sistema non rileva progetti: mostra uno stato vuoto e invita a creare il primo progetto tramite il pulsante "Nuovo progetto".
 
 - *Postcondizioni:* Il Project Manager crea un nuovo progetto.
 
-- *Estensioni:* #link(<UCPM1.2.3>)[[UCPM1.2.3]].
+- *Inclusioni:* 
+  - #link(<UCPM1.2.1>)[[UCPM1.2.1]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2910,8 +2912,8 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Project Manager si trova sulla visualizzazione del progetto e preme il pulsante per l'aggiunta di repository.
 
 - *Scenario principale:*
-  + Il Project Manager visualizza una barra di ricerca per il nome dei repository (*<\<include>>* #link(<UC7>)[[UC7]]).
-  + Il Project Manager visualizza una lista di repository tra cui cercare.(*<\<include>>* #link(<UCPM1.5>)[[UCPM1.5]]). 
+  + Il Project Manager visualizza una barra di ricerca per il nome dei repository con cui può interagire (#link(<UC7>)[[UC7]]).
+  + Il Project Manager visualizza una lista di repository che possono essere aggiunte. (*<\<include>>* #link(<UCPM1.5>)[[UCPM1.5]]). 
   + Il Project Manager seleziona i repository che desidera.
   + Il Project Manager conferma l'inserimento dei repository. //nota: i repository vengono aggiunti anche alle repository importate dal PM, qua serve un diagramma delle attività
   + Il Project Manager visualizza, nel progetto, i repository che ha inserito.
@@ -2925,7 +2927,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Postcondizioni:* Il Project Manager ha aggiunto delle repository al progetto e ne sta visualizzando la lista.
 
 - *Inclusioni:* 
-  - #link(<UC7>)[[UC7]]
   - #link(<UCPM1.5>)[[UCPM1.5]]
 
 - *Estensioni:* 
@@ -2949,7 +2950,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + Il Project Manager preme il pulsante per annullare l'operazione di aggiunta repository.
-  - Il sistema ripristina lo stato precedente all'aggiunta dei repository.
+  + Il sistema ripristina lo stato precedente all'aggiunta dei repository.
 
 - *Postcondizioni:* Il processo di aggiunta repository è stato annullato. Lo stato del sistema è coerente con la situazione precedente all’avvio dell'aggiunta repository.
 
@@ -2970,6 +2971,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Project Manager si trova sulla visualizzazione di "Gestione Developer" e preme il pulsante per la sua aggiunta.
 
 - *Scenario principale:*
+  + Il Project Manager visualizza una barra per la ricerca di un developer (#link(<UCPM1.4.2>)[[UCPM1.4.2]]). 
   + Il Project Manager visualizza una lista di developer tra cui cercare.(*<\<include>>* #link(<UCPM1.6>)[[UCPM1.6]]). 
   + Il Project Manager seleziona i developer che desidera.
   + Il Project Manager seleziona il ruolo del developer all'interno del progetto (tra i ruoli disponibili nel profilo del developer).
@@ -3019,7 +3021,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Attore principale:* Project Manager.
 
-- *Descrizione:* Il Project Manager filtra la lista dei developer disponibili tramite una barra di ricerca.
+- *Descrizione:* Il Project Manager filtra una lista dei developer disponibili tramite barra di ricerca.
 
 - *Precondizioni:* Il Project Manager visualizza una lista di developer che contiene almeno un elemento.
 
@@ -3051,7 +3053,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + Il Project Manager visualizza una lista contenente i repository appartenenti ai Developer, facenti parte del progetto selezionato.
-  + Il Project Manager può scorrere la lista per individuare i repository di interesse.
 
 - *Postcondizioni:* Il Project Manager visualizza l'elenco dei repository potenzialmente associabili al progetto.
 
@@ -3146,7 +3147,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Attore principale:* Project Manager.
 
-- *Descrizione:* Il Project Manager revisiona i componenti attuali del team di progetto e, se necessario, escludere specifici collaboratori.
+- *Descrizione:* Il Project Manager revisiona i componenti attuali del team di progetto e, se necessario, esclude specifici collaboratori.
 
 - *Precondizioni:* Il Project Manager sta gestendo un progetto esistente al quale è associato almeno un Developer.
 
@@ -3235,16 +3236,17 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Progetto e tutte le relazioni con i diversi repository e developer vengono rimossi dal sistema, il Project Manager non li potrà più visualizzare.
 
 
-- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
+- *Scenari alternativi:* 
+  - Si verifica un errore durante il caricamento della pagina.
     - Al Project Manager viene mostrato un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
-  Al passo 1: Il Project Manager sceglie di annullare l'operazione di eliminazione (*<\<extend>>* #link(<UCPM1.9.1>)[[UCPM1.9.1]]).
+  - Al passo 1: Il Project Manager sceglie di annullare l'operazione di eliminazione (*<\<extend>>* #link(<UCPM1.9.1>)[[UCPM1.9.1]]).
 
 - *Postcondizioni:* Il Project Manager ha eliminato correttamente il progetto dal sistema.
 
 - *Estensioni:* 
   - #link(<UC4>)[[UC4]]
-  - #link(<UC1.1>)[[UC11.1]]
+  - #link(<UCPM1.9.1>)[[UCPM1.9.1]]
 
 
   #line(length: 100%, stroke: 0.5pt + gray)
@@ -3286,9 +3288,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + Il Project Manager visualizza i dati (*<\<include>>* #link(<UC9>)[[UC9]]).
   + Il Project Manager vede, per ogni progetto:
-        - Il grafico percentuale delle statistiche di analisi documentazione (*<\<include>>* #link(<UC10.2>)[[UC10.2]]).
-        - Il grafico percentuale delle statistiche di analisi di test (*<\<include>>* #link(<UC10.3>)[[UC10.3]]).
-        - Il grafico percentuale delle statistiche correttezza OWASP (*<\<include>>* #link(<UC10.4>)[[UC10.4]]).
+        - Percentuali di analisi documentazione (*<\<include>>* #link(<UC10.2>)[[UC10.2]]).
+        - Percentuali di analisi di test (*<\<include>>* #link(<UC10.3>)[[UC10.3]]).
+        - Percentuali analisi OWASP (*<\<include>>* #link(<UC10.4>)[[UC10.4]]).
 
 - *Postcondizioni:* Il Project Manager scorre la lista dei progetti in cui è coinvolto.
 
@@ -3320,7 +3322,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Project Manager visualizza il pulsante "Team & Competenze", su cui può premere per approfondire le competenze del team.
   + Il Project Manager visualizza il pulsante "Stack tecnologico", su cui può premere per analizzare le tecnologie utilizzate nel progetto e ricevere suggerimenti.
   + Il Project Manager visualizza il pulsante "Elimina progetto".
-  + Il Project Manager visualizza l'elenco dei repository che compongono il progetto con i relativi indicatori di stato (*<\<include>>* #link(<UC5.9>)[[UC5.9]]). 
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -3331,7 +3332,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Inclusioni:* 
   - #link(<UC10>)[[UC10]])
-  - #link(<UC5.9>)[[UC5.9]]
 
 - *Estensioni:*
   - #link(<UC4>)[[UC4]]
@@ -3387,7 +3387,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Project Manager visualizza il link al profilo GitHub del Developer.
   + Il Project Manager visualizza i dettagli generali del developer (*<\<include>>* #link(<UCPM1.6.1>)[[UCPM1.6.1]]).
   + Il Project Manager visualizza le statistiche di contribuzione (*<\<include>>* #link(<UCPM3.3>)[[UCPM3.3]]).
-  + Il Project Manager visualizza i linguaggi maggiormente utilizzati dal Developer(*<\<include>>* #link(<UCPM3.4>)[[UCPM3.4]]).
+  + Il Project Manager visualizza i linguaggi conosciuti dal Developer(*<\<include>>* #link(<UCPM3.4>)[[UCPM3.4]]).
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -4496,7 +4496,6 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-82-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il grafico percentuale sull'analisi dei test],([#link(<UCPM2>)[UCPM2], #link(<UC10.3>)[UC10.3]]),
   [R-83-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il grafico percentuale sull'analisi della correttezza OWASP],([#link(<UCPM2>)[UCPM2], #link(<UC10.4>)[UC10.4]]),
   [R-84-F-O],[Il Project Manager deve poter visualizzare i dettagli di un progetto],[#link(<UCPM2.1>)[UCPM2.1]],
-  [R-86-F-O],[Il Project Manager deve poter visualizzare, tra le altre informazioni del progetto, l'elenco dei repository che lo compongono],([#link(<UCPM2.1>)[UCPM2.1], #link(<UC5.9>)[UC5.9]]),
   [R-87-F-O],[Il Project Manager deve poter creare un nuovo progetto],[#link(<UCPM1.2>)[UCPM1.2]],
   [R-88-F-O],[Il Project Manager deve poter inserire il nome del progetto],[#link(<UCPM1.2.1>)[UCPM1.2.1]],
   [R-89-F-D],[Il Project Manager deve poter modificare il nome di un progetto],[#link(<UCPM1.2.2>)[UCPM1.2.2]],
