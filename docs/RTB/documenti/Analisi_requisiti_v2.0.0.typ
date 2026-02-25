@@ -925,6 +925,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC6.2 - Visualizzazione singolo repository dalla lista personale
+#figure([#image("../../asset/UC/user/uc6-2.png", height: 7cm)], caption: [UC6.2 - Visualizzazione singolo repository dalla lista personale])
 <UC6.2>
 
 - *Attore principale*: Utente Registrato.
@@ -1016,43 +1017,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UC8.0.3 - Aggiungi singolo repository privato
-<UC8.0.3>
-- *Attore principale:* Utente Registrato.
-
-- *Descrizione:* L'Utente Registrato vuole registrare un nuovo repository privato _GitHub_ nella piattaforma.
-
-- *Precondizioni:*  L'Utente Registrato è all'interno della dashboard.
-
-- *Trigger:* L'Utente Registrato seleziona l'opzione di aggiunta repository dalla dashboard.
-
-- *Scenario principale:*
-  + L'Utente Registrato visualizza l’interfaccia per l’inserimento dei dati del repository.
-  + L'Utente Registrato inserisce l'URL del repository _GitHub_ *<\<include>>* #link(<UC8.2>)[[UC8.2]].
-  + L'utente inserisce il token per l'accesso al repository *<\<include>>* #link(<UC8.0.1>)[[UC8.0.1]]
-  + L'Utente Registrato conferma l'operazione.
-  + L'Utente Registrato visualizza un messaggio di conferma dell’avvenuta aggiunta.
-
-- *Scenari alternativi:* \
-  - Al passo 1 o 2: L'Utente Registrato decide di annullare l’operazione (*<\<extend>>* #link(<UC8.1>)[[UC8.1]]).
-  - Al passo 3: URL del repository non valido *<\<extend>>* #link(<UC8.3>)[[UC8.3]].
-  - Si verifica un errore durante il collegamento con GitHub.
-      - L'Utente Registrato visualizza un messaggio di errore *<\<extend>>* #link(<UC4>)[[UC4]].
-      - Il caso d'uso termina senza successo.
-
-- *Postcondizioni:* Il repository è stato aggiunto alla piattaforma e l'utente lo può visualizzare nella sua lista.
-
-- *Inclusioni:* 
-  - #link(<UC8.2>)[[UC8.2]]
-  - #link(<UC8.0.3>)[[UC8.0.3]]
-
-- *Estensioni:* 
-  - #link(<UC8.1>)[[UC8.1]]
-  - #link(<UC8.3>)[[UC8.3]]
-  - #link(<UC4>)[[UC4]]
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
 === UC8.0.1 - Inserimento token repository
 #figure([#image("../../asset/UC/user/uc8-0-1.png", width: 90%)], caption: [UC8.0.1 - Inserimento token repository])
 <UC8.0.1>
@@ -1098,6 +1062,44 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + L'Utente Registrato è invitato a inserire un nuovo token o a verificare i permessi di quello attuale.
 
 - *Postcondizioni:* L'Utente Registrato può tentare nuovamente l'inserimento o annullare l'operazione.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC8.0.3 - Aggiungi singolo repository privato
+#figure([#image("../../asset/UC/user/uc8-0-3.png", width: 90%)], caption: [UC8.0.3 - Aggiungi singolo repository privato])
+<UC8.0.3>
+- *Attore principale:* Utente Registrato.
+
+- *Descrizione:* L'Utente Registrato vuole registrare un nuovo repository privato _GitHub_ nella piattaforma.
+
+- *Precondizioni:*  L'Utente Registrato è all'interno della dashboard.
+
+- *Trigger:* L'Utente Registrato seleziona l'opzione di aggiunta repository dalla dashboard.
+
+- *Scenario principale:*
+  + L'Utente Registrato visualizza l’interfaccia per l’inserimento dei dati del repository.
+  + L'Utente Registrato inserisce l'URL del repository _GitHub_ *<\<include>>* #link(<UC8.2>)[[UC8.2]].
+  + L'utente inserisce il token per l'accesso al repository *<\<include>>* #link(<UC8.0.1>)[[UC8.0.1]]
+  + L'Utente Registrato conferma l'operazione.
+  + L'Utente Registrato visualizza un messaggio di conferma dell’avvenuta aggiunta.
+
+- *Scenari alternativi:* \
+  - Al passo 1 o 2: L'Utente Registrato decide di annullare l’operazione (*<\<extend>>* #link(<UC8.1>)[[UC8.1]]).
+  - Al passo 3: URL del repository non valido *<\<extend>>* #link(<UC8.3>)[[UC8.3]].
+  - Si verifica un errore durante il collegamento con GitHub.
+      - L'Utente Registrato visualizza un messaggio di errore *<\<extend>>* #link(<UC4>)[[UC4]].
+      - Il caso d'uso termina senza successo.
+
+- *Postcondizioni:* Il repository è stato aggiunto alla piattaforma e l'utente lo può visualizzare nella sua lista.
+
+- *Inclusioni:* 
+  - #link(<UC8.2>)[[UC8.2]]
+  - #link(<UC8.0.1>)[[UC8.0.1]]
+
+- *Estensioni:* 
+  - #link(<UC8.1>)[[UC8.1]]
+  - #link(<UC8.3>)[[UC8.3]]
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1189,6 +1191,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC9.1 - Visualizzazione singolo elemento da lista progetti
+#figure([#image("../../asset/UC/user/uc9-1.png", height: 7cm)], caption: [UC9.1 - Visualizzazione singolo elemento da lista progetti])
 <UC9.1>
 
 - *Attore principale*: Utente Registrato.
@@ -1221,7 +1224,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UC10 - Visualizzazione dettagli progetto
 <UC10>
-//#figure([#image("../../asset/UC/user/uc10.png", width: 100%)], caption: [UC10 - Visualizzazione dettagli progetto])
+#figure([#image("../../asset/UC/user/uc10.png", width: 100%)], caption: [UC10 - Visualizzazione dettagli progetto])
 
 - *Attore principale:* Utente Registrato.
 
@@ -1464,6 +1467,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD2.0.1 - Sincronizzazione repository private GitHub
+#figure([#image("../../asset/UC/developer/UCD2-0-1.png", width: 100%)], caption: [UCD2.0.1 - Sincronizzazione repository private GitHub])
 <UCD2.0.1>
 - *Attore principale:* Developer.
 
