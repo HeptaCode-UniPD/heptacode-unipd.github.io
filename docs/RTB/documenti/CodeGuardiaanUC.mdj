@@ -62665,7 +62665,7 @@
 											"top": 3780,
 											"width": 125,
 											"height": 52,
-											"text": "UC10.4 Visualizzazione widget analisi OWASP progetto",
+											"text": "UC10.4 Visualizzazione percentualeanalisi OWASP progetto",
 											"wordWrap": true
 										},
 										{
@@ -62880,7 +62880,7 @@
 											"top": 3684,
 											"width": 114,
 											"height": 52,
-											"text": "UC10.3 Visualizzazione widget analisi test progetto",
+											"text": "UC10.3 Visualizzazione percentualeanalisi test progetto",
 											"wordWrap": true
 										},
 										{
@@ -83238,7 +83238,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 522,
-											"top": -514,
+											"top": -530,
 											"height": 13
 										},
 										{
@@ -83250,7 +83250,7 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1664,
-											"top": 524,
+											"top": 516,
 											"width": 120,
 											"height": 52,
 											"text": "UCPM1.6 Visualizzazione lista developer da selezionare",
@@ -83266,7 +83266,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 522,
-											"top": -514,
+											"top": -530,
 											"width": 322.740234375,
 											"height": 13,
 											"text": "(from Visualizzazione Project Manager - CodeGuardian)"
@@ -83281,7 +83281,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 522,
-											"top": -514,
+											"top": -530,
 											"horizontalAlignment": 1,
 											"wordWrap": true
 										}
@@ -83289,7 +83289,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1659,
-									"top": 517,
+									"top": 509,
 									"width": 130,
 									"height": 64,
 									"stereotypeLabel": {
@@ -83318,7 +83318,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 469,
-									"top": -269,
+									"top": -277,
 									"width": 10,
 									"height": 10
 								},
@@ -83335,7 +83335,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 469,
-									"top": -269,
+									"top": -277,
 									"width": 10,
 									"height": 10
 								},
@@ -83352,7 +83352,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 469,
-									"top": -269,
+									"top": -277,
 									"width": 10,
 									"height": 10
 								},
@@ -83369,7 +83369,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 469,
-									"top": -269,
+									"top": -277,
 									"width": 10,
 									"height": 10
 								},
@@ -83386,7 +83386,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 469,
-									"top": -269,
+									"top": -277,
 									"width": 10,
 									"height": 10
 								}
@@ -83398,7 +83398,7 @@
 							"parentStyle": false,
 							"containerChangeable": true,
 							"left": 1632,
-							"top": 504,
+							"top": 496,
 							"width": 184,
 							"height": 90,
 							"nameCompartment": {
@@ -83657,8 +83657,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1851,
-									"top": 523,
+									"left": 1852,
+									"top": 519,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -83678,8 +83678,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1824,
-									"top": 524,
+									"left": 1825,
+									"top": 520,
 									"width": 55.65625,
 									"height": 13,
 									"alpha": 1.5707956125091824,
@@ -83703,7 +83703,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 1852,
-									"top": 552,
+									"top": 549,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -83722,7 +83722,7 @@
 								"$ref": "AAAAAAGcUucGvzJ98Yw="
 							},
 							"lineStyle": 1,
-							"points": "1817:546;1887:543",
+							"points": "1817:541;1887:540",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGcUueB7UaoXlE="
@@ -83756,8 +83756,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1595,
-									"top": 529,
+									"left": 1594,
+									"top": 526,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -83778,8 +83778,8 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1595,
-									"top": 514,
+									"left": 1594,
+									"top": 511,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -83801,7 +83801,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 1595,
-									"top": 559,
+									"top": 555,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -83823,7 +83823,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 1585,
-									"top": 529,
+									"top": 526,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -83845,7 +83845,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 1587,
-									"top": 516,
+									"top": 513,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -83866,8 +83866,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1581,
-									"top": 557,
+									"left": 1582,
+									"top": 554,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -83889,7 +83889,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 1604,
-									"top": 529,
+									"top": 526,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -83909,8 +83909,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1602,
-									"top": 516,
+									"left": 1601,
+									"top": 512,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -83931,7 +83931,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": false,
 									"left": 1609,
-									"top": 556,
+									"top": 553,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -83981,7 +83981,7 @@
 								"$ref": "AAAAAAGcUubQBiKp/HY="
 							},
 							"lineStyle": 1,
-							"points": "1560:551;1631:550",
+							"points": "1560:549;1631:546",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGcUuenB1A69I8="
@@ -87053,7 +87053,7 @@
 											"top": 1044,
 											"width": 114,
 											"height": 52,
-											"text": "UC10.3 Visualizzazione widget analisi test progetto",
+											"text": "UC10.3 Visualizzazione percentualeanalisi test progetto",
 											"wordWrap": true
 										},
 										{
@@ -87268,7 +87268,7 @@
 											"top": 1140,
 											"width": 125,
 											"height": 52,
-											"text": "UC10.4 Visualizzazione widget analisi OWASP progetto",
+											"text": "UC10.4 Visualizzazione percentualeanalisi OWASP progetto",
 											"wordWrap": true
 										},
 										{
@@ -93379,8 +93379,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1789,
-									"top": 618,
+									"left": 1788,
+									"top": 614,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -93400,8 +93400,8 @@
 									},
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1799,
-									"top": 599,
+									"left": 1800,
+									"top": 596,
 									"width": 53.49169921875,
 									"height": 13,
 									"alpha": 4.103893167176027,
@@ -93424,8 +93424,8 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"parentStyle": false,
-									"left": 1808,
-									"top": 595,
+									"left": 1809,
+									"top": 591,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -93444,7 +93444,7 @@
 								"$ref": "AAAAAAGcloN7skImMQA="
 							},
 							"lineStyle": 1,
-							"points": "1820:631;1778:595",
+							"points": "1823:631;1775:587",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGcloOjX13tBYo="
@@ -93471,7 +93471,7 @@
 								"$ref": "AAAAAAGcloOKyk26rZU="
 							},
 							"lineStyle": 1,
-							"points": "1743:647;1799:613"
+							"points": "1740:647;1799:609"
 						},
 						{
 							"_type": "UMLUseCaseView",
@@ -94787,7 +94787,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGbxCTgJ5+50G0="
 							},
-							"name": "UC10.3 Visualizzazione widget analisi test progetto"
+							"name": "UC10.3 Visualizzazione percentualeanalisi test progetto"
 						},
 						{
 							"_type": "UMLUseCase",
@@ -94795,7 +94795,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGbxCTgJ5+50G0="
 							},
-							"name": "UC10.4 Visualizzazione widget analisi OWASP progetto"
+							"name": "UC10.4 Visualizzazione percentualeanalisi OWASP progetto"
 						},
 						{
 							"_type": "UMLUseCase",
