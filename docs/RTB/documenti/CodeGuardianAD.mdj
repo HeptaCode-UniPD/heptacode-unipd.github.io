@@ -25787,9 +25787,9 @@
 											"parentStyle": true,
 											"left": 30.55908203125,
 											"top": 5,
-											"width": 62.8037109375,
+											"width": 101.791015625,
 											"height": 13,
-											"text": "Interaction1"
+											"text": "SequenceDiagram1"
 										},
 										{
 											"_type": "LabelView",
@@ -40791,7 +40791,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": -496,
-											"top": 512,
+											"top": 496,
 											"height": 13
 										},
 										{
@@ -40803,10 +40803,10 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 213,
-											"top": 303,
+											"top": 295,
 											"width": 135,
-											"height": 13,
-											"text": "Notifica di Push",
+											"height": 26,
+											"text": "Notifica di Push nel Repository",
 											"wordWrap": true
 										},
 										{
@@ -40819,7 +40819,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": -496,
-											"top": 512,
+											"top": 496,
 											"width": 160.0078125,
 											"height": 13,
 											"text": "(from PostPUSH)"
@@ -40834,7 +40834,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": -496,
-											"top": 512,
+											"top": 496,
 											"horizontalAlignment": 1,
 											"wordWrap": true
 										}
@@ -40842,9 +40842,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 208,
-									"top": 296,
+									"top": 288,
 									"width": 145,
-									"height": 25,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUxonNHAjp00="
 									},
@@ -40863,221 +40863,13 @@
 							"parentStyle": false,
 							"containerChangeable": true,
 							"left": 208,
-							"top": 296,
+							"top": 288,
 							"width": 144,
-							"height": 41,
+							"height": 54,
 							"nameCompartment": {
 								"$ref": "AAAAAAGcUxonM3Aivj4="
 							},
 							"wordWrap": true
-						},
-						{
-							"_type": "UMLActionView",
-							"_id": "AAAAAAGcUyDfl3CZBoo=",
-							"_parent": {
-								"$ref": "AAAAAAGcUxkpT2+XiTk="
-							},
-							"model": {
-								"$ref": "AAAAAAGcUyDflnCX5p4="
-							},
-							"subViews": [
-								{
-									"_type": "UMLNameCompartmentView",
-									"_id": "AAAAAAGcUyDfl3Ca8dg=",
-									"_parent": {
-										"$ref": "AAAAAAGcUyDfl3CZBoo="
-									},
-									"model": {
-										"$ref": "AAAAAAGcUyDflnCX5p4="
-									},
-									"subViews": [
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAGcUyDfl3CbtfY=",
-											"_parent": {
-												"$ref": "AAAAAAGcUyDfl3Ca8dg="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"parentStyle": true,
-											"left": -252.9365234375,
-											"top": -16,
-											"height": 13
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAGcUyDfl3CcCY8=",
-											"_parent": {
-												"$ref": "AAAAAAGcUyDfl3Ca8dg="
-											},
-											"font": "Arial;13;1",
-											"parentStyle": true,
-											"left": 37,
-											"top": 295,
-											"width": 151,
-											"height": 26,
-											"text": "Push modifica sulla Repository",
-											"wordWrap": true
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAGcUyDfl3Cd6Uo=",
-											"_parent": {
-												"$ref": "AAAAAAGcUyDfl3Ca8dg="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"parentStyle": true,
-											"left": -252.9365234375,
-											"top": -16,
-											"width": 100.40087890625,
-											"height": 13,
-											"text": "(from PostPUSH)"
-										},
-										{
-											"_type": "LabelView",
-											"_id": "AAAAAAGcUyDfl3CeaXA=",
-											"_parent": {
-												"$ref": "AAAAAAGcUyDfl3Ca8dg="
-											},
-											"visible": false,
-											"font": "Arial;13;0",
-											"parentStyle": true,
-											"left": -252.9365234375,
-											"top": -16,
-											"horizontalAlignment": 1,
-											"wordWrap": true
-										}
-									],
-									"font": "Arial;13;0",
-									"parentStyle": true,
-									"left": 32,
-									"top": 288,
-									"width": 161,
-									"height": 38,
-									"stereotypeLabel": {
-										"$ref": "AAAAAAGcUyDfl3CbtfY="
-									},
-									"nameLabel": {
-										"$ref": "AAAAAAGcUyDfl3CcCY8="
-									},
-									"namespaceLabel": {
-										"$ref": "AAAAAAGcUyDfl3Cd6Uo="
-									},
-									"propertyLabel": {
-										"$ref": "AAAAAAGcUyDfl3CeaXA="
-									}
-								}
-							],
-							"font": "Arial;13;0",
-							"parentStyle": false,
-							"showShadow": false,
-							"containerChangeable": true,
-							"left": 32,
-							"top": 288,
-							"width": 160,
-							"height": 54,
-							"nameCompartment": {
-								"$ref": "AAAAAAGcUyDfl3Ca8dg="
-							},
-							"wordWrap": true
-						},
-						{
-							"_type": "UMLControlFlowView",
-							"_id": "AAAAAAGcUyLLlXC6a+8=",
-							"_parent": {
-								"$ref": "AAAAAAGcUxkpT2+XiTk="
-							},
-							"model": {
-								"$ref": "AAAAAAGcUyLLlXC53SI="
-							},
-							"subViews": [
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAGcUyLLlXC7BVw=",
-									"_parent": {
-										"$ref": "AAAAAAGcUyLLlXC6a+8="
-									},
-									"model": {
-										"$ref": "AAAAAAGcUyLLlXC53SI="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"parentStyle": false,
-									"left": 200,
-									"top": 295,
-									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAGcUyLLlXC6a+8="
-									},
-									"edgePosition": 1
-								},
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAGcUyLLlXC8t+o=",
-									"_parent": {
-										"$ref": "AAAAAAGcUyLLlXC6a+8="
-									},
-									"model": {
-										"$ref": "AAAAAAGcUyLLlXC53SI="
-									},
-									"visible": null,
-									"font": "Arial;13;0",
-									"parentStyle": false,
-									"left": 200,
-									"top": 280,
-									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 30,
-									"hostEdge": {
-										"$ref": "AAAAAAGcUyLLlXC6a+8="
-									},
-									"edgePosition": 1
-								},
-								{
-									"_type": "EdgeLabelView",
-									"_id": "AAAAAAGcUyLLlXC9Q4U=",
-									"_parent": {
-										"$ref": "AAAAAAGcUyLLlXC6a+8="
-									},
-									"model": {
-										"$ref": "AAAAAAGcUyLLlXC53SI="
-									},
-									"visible": false,
-									"font": "Arial;13;0",
-									"parentStyle": false,
-									"left": 200,
-									"top": 325,
-									"height": 13,
-									"alpha": -1.5707963267948966,
-									"distance": 15,
-									"hostEdge": {
-										"$ref": "AAAAAAGcUyLLlXC6a+8="
-									},
-									"edgePosition": 1
-								}
-							],
-							"font": "Arial;13;0",
-							"parentStyle": false,
-							"head": {
-								"$ref": "AAAAAAGcUxonM3Aho8M="
-							},
-							"tail": {
-								"$ref": "AAAAAAGcUyDfl3CZBoo="
-							},
-							"points": "192:316;208:316",
-							"showVisibility": true,
-							"nameLabel": {
-								"$ref": "AAAAAAGcUyLLlXC7BVw="
-							},
-							"stereotypeLabel": {
-								"$ref": "AAAAAAGcUyLLlXC8t+o="
-							},
-							"propertyLabel": {
-								"$ref": "AAAAAAGcUyLLlXC9Q4U="
-							}
 						},
 						{
 							"_type": "UMLActionView",
@@ -44736,7 +44528,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGcUxkpTm+W2ko="
 					},
-					"name": "Notifica di Push",
+					"name": "Notifica di Push nel Repository",
 					"kind": "acceptSignal"
 				},
 				{
@@ -50267,6 +50059,5 @@
 				}
 			]
 		}
-	],
-	"documentVersion": 1
+	]
 }
