@@ -4507,6 +4507,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-11-Q-O],[È necessario soddisfare tutte le metriche presenti nel documento "Norme di Progetto"],[Analisi interna],
   [R-12-Q-O],[È necessario usare Git come software di versionamento], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
   ),
+  [R-13-Q-O],[È necessario fornire un manuale d’uso per l’utente],[Analisi interna], 
 )
 
 == Requisiti di aspettativa
