@@ -3036,7 +3036,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCPM1.5 - Visualizzazione ista repository da selezionare 
+=== UCPM1.5 - Visualizzazione lista repository da selezionare 
 // #align(center, [#image("../../asset/UC/project-manager/UCPM1.1.png", height: 5cm)])
 <UCPM1.5>
 
