@@ -607,7 +607,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UC3 - Logout
-#figure( [#image("../../asset/UC/user/UC3.png", width: 15cm)], caption: [UC3 - Logout])
+#figure( [#image("../../asset/UC/user/UC3.png", width: 13cm)], caption: [UC3 - Logout])
 <UC3>
 - *Attore principale:* Utente Registrato.
 
@@ -834,7 +834,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC5.8 - Visualizzazione informazioni generali repository
-#figure([#image("../../asset/UC/user/uc5-8.png", height: 7cm)],  caption: [UC5.8 - Visualizzazione informazioni generali repository])
+#figure([#image("../../asset/UC/user/uc5-8.png", height: 8cm)],  caption: [UC5.8 - Visualizzazione informazioni generali repository])
 <UC5.8>
 - *Attore principale*: Utente Registrato.
 
@@ -1407,7 +1407,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 == Specifica dei casi d'uso - developer
 
 === UCD1 - Accesso alla dashboard generale Dev
-#figure([#image("../../asset/UC/developer/UCD1.png", height: 5cm)], caption: [UCD1 - Accesso alla dashboard generale Dev])
+#figure([#image("../../asset/UC/developer/UCD1.png", height: 6cm)], caption: [UCD1 - Accesso alla dashboard generale Dev])
  <UCD1>
 
 - *Attore principale:* Developer.
@@ -1983,7 +1983,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD8.1 - Visualizzazione elemento lista operazioni in corso
-#figure([#image("../../asset/UC/developer/ucd8-1.png", height: 7cm)], caption: [UCD8.1 - Visualizzazione elemento lista operazioni in corso])
+#figure([#image("../../asset/UC/developer/ucd8-1.png", height: 8cm)], caption: [UCD8.1 - Visualizzazione elemento lista operazioni in corso])
 <UCD8.1>
 - *Attore principale:* Developer.
 
@@ -2262,7 +2262,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD12 - Visualizzazione dettaglio storico analisi su singola repository
-#figure([#image("../../asset/UC/developer/UCD12.png", height: 7cm)], caption: [UCD12 - Visualizzazione dettaglio storico analisi su singola repository])
+#figure([#image("../../asset/UC/developer/UCD12.png", height: 9cm)], caption: [UCD12 - Visualizzazione dettaglio storico analisi su singola repository])
 <UCD12>
 - *Attore principale:* Developer
 
@@ -2452,7 +2452,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD13.1 - Visualizzazione dettagli ultima analisi area test
-#figure([#image("../../asset/UC/developer/ucd13-1.png", width: 100%)], caption: [UCD13.1 - Visualizzazione dettagli ultima analisi area test])
+#figure([#image("../../asset/UC/developer/ucd13-1.png", width: 13cm)], caption: [UCD13.1 - Visualizzazione dettagli ultima analisi area test])
 
 <UCD13.1>
 - *Attore principale:* Developer.
@@ -2486,7 +2486,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD13.2 - Visualizzazione dettagli ultima analisi area OWASP
-#figure([#image("../../asset/UC/developer/ucd13-2.png", width: 100%)], caption: [UCD13.2 - Visualizzazione dettagli ultima analisi area OWASP] )
+#figure([#image("../../asset/UC/developer/ucd13-2.png", width: 13cm)], caption: [UCD13.2 - Visualizzazione dettagli ultima analisi area OWASP] )
 
 <UCD13.2>
 - *Attore principale:* Developer.
@@ -2519,7 +2519,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD13.3 - Visualizzazione dettagli ultima analisi area documentazione
-#figure([#image("../../asset/UC/developer/ucd13-3.png", width: 100%)], caption: [UCD13.3 - Visualizzazione dettagli analisi area documentazione])
+#figure([#image("../../asset/UC/developer/ucd13-3.png", width: 13cm)], caption: [UCD13.3 - Visualizzazione dettagli analisi area documentazione])
 
 <UCD13.3>
 - *Attore principale:* Developer.
@@ -2783,7 +2783,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 == Specifica dei casi d'uso - Project Manager
 
 === UCPM1 - Accesso alla dashboard generale PM
-#figure([#image("../../asset/UC/project-manager/UCPM1.png", height: 5cm)], caption: [UCPM1 - Accesso alla dashboard generale PM])
+#figure([#image("../../asset/UC/project-manager/UCPM1.png", height: 6cm)], caption: [UCPM1 - Accesso alla dashboard generale PM])
  <UCPM1>
 
 - *Attore principale:* Project Manager.
@@ -2965,7 +2965,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 
 === UCPM1.4 - Aggiunta developer a progetto
-#figure([#image("../../asset/UC/project-manager/ucpm1-4.png", height: 8cm)], caption: [UCPM1.4 - Aggiunta developer a progetto])
+#figure([#image("../../asset/UC/project-manager/ucpm1-4.png", height: 7cm)], caption: [UCPM1.4 - Aggiunta developer a progetto])
 
 <UCPM1.4>
 
@@ -3067,7 +3067,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UCPM1.6 - Consultazione developer da aggiungere a progetto
 <UCPM1.6>
-#figure([#image("../../asset/UC/project-manager/ucpm1-6.png", height: 5cm)], caption: [UCPM1.6 - Lista developer da selezionare])
+#figure([#image("../../asset/UC/project-manager/ucpm1-6.png", height: 7cm)], caption: [UCPM1.6 - Lista developer da selezionare])
 - *Attore principale:* Project Manager.
 
 - *Descrizione:* Il Project Manager consulta l'elenco dei developer per associarli al progetto in fase di configurazione.
@@ -3175,7 +3175,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.8 - Rimozione developer da progetto
-#figure([#image("../../asset/UC/project-manager/ucpm1-8.png", height: 5cm)], caption: [UCPM1.8 - Rimozione developer da progetto])
+#figure([#image("../../asset/UC/project-manager/ucpm1-8.png", height: 7cm)], caption: [UCPM1.8 - Rimozione developer da progetto])
 <UCPM1.8>
 
 - *Attore principale:* Project Manager.
@@ -3227,7 +3227,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.9 - Eliminazione progetto 
-#figure([#image("../../asset/UC/project-manager/ucpm1-9.png", height: 5cm)], caption: [UCPM1.9 - Eliminazione progetto])
+#figure([#image("../../asset/UC/project-manager/ucpm1-9.png", height: 6cm)], caption: [UCPM1.9 - Eliminazione progetto])
 <UCPM1.9>
 
 - *Attore principale:* Project Manager.
@@ -3281,7 +3281,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCPM2 - Visualizzazione lista progetti 
-#figure([#image("../../asset/UC/project-manager/UCPM2.png", height: 5cm)], caption: [UCPM2 - Visualizzazione lista progetti])
+#figure([#image("../../asset/UC/project-manager/UCPM2.png", height: 6cm)], caption: [UCPM2 - Visualizzazione lista progetti])
 <UCPM2>
 
 - *Attore principale*: Project Manager.
@@ -3310,7 +3310,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM2.1 - Visualizzazione dettagli progetto PM
-#figure([#image("../../asset/UC/project-manager/ucpm2-1.png")], caption: [UCPM2.1 - Visualizzazione dettagli progetto PM])
+#figure([#image("../../asset/UC/project-manager/ucpm2-1.png", height: 6cm)], caption: [UCPM2.1 - Visualizzazione dettagli progetto PM])
 <UCPM2.1>
 
 - *Attore principale:* Project Manager.
@@ -3348,7 +3348,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCPM3 - Visualizzazione mappatura competenze 
-#figure([#image("../../asset/UC/project-manager/UCPM3.png", height: 5cm)], caption: [UCPM3 - Visualizzazione mappatura competenze])
+#figure([#image("../../asset/UC/project-manager/UCPM3.png", height: 6cm)], caption: [UCPM3 - Visualizzazione mappatura competenze])
 <UCPM3>
 
 - *Attore principale:* Project Manager.
@@ -3379,7 +3379,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM3.1 - Visualizzazione dettagli membro del team
-#figure([#image("../../asset/UC/project-manager/ucpm3-1.png", height: 5cm)], caption: [UCPM3.1 - Visualizzazione dettagli membro del team])
+#figure([#image("../../asset/UC/project-manager/ucpm3-1.png", height: 8cm)], caption: [UCPM3.1 - Visualizzazione dettagli membro del team])
 <UCPM3.1>
 
 - *Attore principale:* Project Manager.
@@ -3432,7 +3432,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM3.3 - Visualizzazione statistiche membro del team
-#figure([#image("../../asset/UC/project-manager/ucpm3-3.png", height: 5cm)], caption: [UCPM3.3 - Visualizzazione statistiche membro del team])
+#figure([#image("../../asset/UC/project-manager/ucpm3-3.png", height: 7cm)], caption: [UCPM3.3 - Visualizzazione statistiche membro del team])
 <UCPM3.3>
 
 - *Attore principale:* Project Manager.
@@ -3533,7 +3533,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCPM4 - Stack tecnologico e suggerimenti
-#figure([#image("../../asset/UC/project-manager/ucpm4.png", height: 5cm)], caption: [UCPM4 - Stack tecnologico e suggerimenti])
+#figure([#image("../../asset/UC/project-manager/ucpm4.png", height: 9cm)], caption: [UCPM4 - Stack tecnologico e suggerimenti])
  <UCPM4>
 - *Attore principale:* Project Manager.
 
@@ -3769,7 +3769,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCBO2 - Accedere progetto singolo 
-#figure([#image("../../asset/UC/business-owner/UCBO2.png", height: 7cm)], caption: [UCBO2 - Accedere progetto singolo])
+#figure([#image("../../asset/UC/business-owner/UCBO2.png", height: 8cm)], caption: [UCBO2 - Accedere progetto singolo])
 
 <UCBO2>
 
@@ -3807,7 +3807,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO2.1 - Aggiunta budget complessivo <UCBO2.1>
-#figure([#image("../../asset/UC/business-owner/ucbo2-1.png", height: 7cm)], caption: [UCBO2.1 - Aggiunta budget complessivo])
+#figure([#image("../../asset/UC/business-owner/ucbo2-1.png", height: 6cm)], caption: [UCBO2.1 - Aggiunta budget complessivo])
 - *Attore principale:* Business Owner.
 
 - *Descrizione:* Il Business Owner inserisce il budget complessivo per il progetto.
@@ -3840,7 +3840,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCBO2.2 - Aggiunta spese sostenute <UCBO2.2>
-#figure([#image("../../asset/UC/business-owner/ucbo2-2.png", height: 7cm)], caption: [UCBO2.2 - Aggiunta spese sostenute])
+#figure([#image("../../asset/UC/business-owner/ucbo2-2.png", height: 6cm)], caption: [UCBO2.2 - Aggiunta spese sostenute])
 - *Attore principale:* Business Owner.
 
 - *Descrizione:* Il Business Owner inserisce il le spese sostenute per il progetto.
@@ -4160,7 +4160,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCBO3 - Visualizzazione dettaglio singolo developer 
-#figure([#image("../../asset/UC/business-owner/UCBO3.png", height: 5cm)], caption: [UCBO3 - Visualizzazione dettaglio singolo developer])
+#figure([#image("../../asset/UC/business-owner/UCBO3.png", height: 8cm)], caption: [UCBO3 - Visualizzazione dettaglio singolo developer])
 
 <UCBO3>
 
@@ -4207,7 +4207,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 
 === UCBO3.2 - Visualizzazione linguaggi e tecnologie affini <UCBO3.2>
-#figure([#image("../../asset/UC/business-owner/ucbo3-2.png", height: 5cm)], caption: [UCBO3.2 - Visualizzazione linguaggi e tecnologie affini])
+#figure([#image("../../asset/UC/business-owner/ucbo3-2.png", height: 4cm)], caption: [UCBO3.2 - Visualizzazione linguaggi e tecnologie affini])
 
 - *Attore principale:* Business Owner
   
