@@ -45,8 +45,9 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("1.4.0","2026-02-25","Laura Venturini","","Fix requisiti"),
-  ("1.3.0","2026-02-25","Amerigo Vegliante","","Fix azione iniziale AD1"),
+  ("1.4.0","2026-02-25","Nicola Simionato","Angela Favaro","Sistemazione diagrammi UML dei Casi d'Uso"),
+  ("1.4.0","2026-02-25","Laura Venturini","Angela Favaro","Sistemazione requisiti secondo quanto segnalato"),
+  ("1.3.0","2026-02-25","Amerigo Vegliante","Angela Favaro","Fix azione iniziale AD1"),
   ("1.2.0","2026-02-24","Alberto Reginato","Angela Favaro","Aggiunta versioni tecnologie, OS e browser supportati"),
   ("1.1.0","2026-02-24","Angela Canazza","Angela Favaro","Prima correzione UC, secondo quanto segnalato"),
   ("1.0.0","2026-02-16","Amerigo Vegliante","Angela Favaro","Prima versione AdR"),
@@ -274,23 +275,29 @@ Per quanto riguarda la persistenza dei dati, la scelta è ricaduta su *MongoDB*.
 
 Infine l’infrastruttura operativa si avvarrà di *Docker* per la containerizzazione di tutti i servizi (Frontend, Backend, Database), garantendo ambienti di sviluppo e produzione identici e facilmente riproducibili, e sarà fortemente integrata con l'ecosistema *GitHub*: le *GitHub Actions* gestiranno i flussi di _CI/CD_ e l'innesco degli agenti. L'architettura _cloud_ sottostante sarà ospitata sui servizi *AWS* (_Amazon Web Services_), garantendo la disponibilità e le risorse computazionali necessarie per l'esecuzione parallela degli agenti.
 
-#tabella-viola(
-  columns: (auto, auto, 1fr),
-  inset: 10pt,
-  align: (left),
-  
-  table.header(
-     [*Tecnologia*], [*Versione Scelta*], [*Destinazione d'Uso*]
-  ),
+#figure(
+  caption: [Descrizione delle tecnologie e relative versioni in uso.],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <tabella-tecnologie>
+  #tabella-viola(
+    columns: (auto, auto, 1fr),
+    inset: 10pt,
+    align: (left),
+    
+    table.header(
+      [*Tecnologia*], [*Versione Scelta*], [*Destinazione d'Uso*]
+    ),
 
-  [*Node.js*],[v24.x (LTS)],[Ambiente di runtime di base per l'esecuzione del backend.],
-  [*NestJS*],[v11.x],[Framework per lo sviluppo dell'architettura e delle API backend.],
-  [*TypeScript*],[v5.x],[Linguaggio di programmazione tipizzato usato per Backend e Frontend.],
-  [*React*],[v19.x],[Libreria per lo sviluppo della UI del frontend.],
-  [*MongoDB*],[v8.x],[Database NoSQL documentale per la persistenza dello storico analisi.],
-  [*Docker Engine*],[v29.x],[Strumento di containerizzazione dell'applicativo.],
-  [*AWS Bedrock*],[-],[Servizio Cloud per l'invocazione dei modelli AI.],
-)
+    [*Node.js*],[v24.x (LTS)],[Ambiente di runtime di base per l'esecuzione del backend.],
+    [*NestJS*],[v11.x],[Framework per lo sviluppo dell'architettura e delle API backend.],
+    [*TypeScript*],[v5.x],[Linguaggio di programmazione tipizzato usato per Backend e Frontend.],
+    [*React*],[v19.x],[Libreria per lo sviluppo della UI del frontend.],
+    [*MongoDB*],[v8.x],[Database NoSQL documentale per la persistenza dello storico analisi.],
+    [*Docker Engine*],[v29.x],[Strumento di containerizzazione dell'applicativo.],
+    [*AWS Bedrock*],[-],[Servizio Cloud per l'invocazione dei modelli AI.],
+  )
 
 === Ambiente di Esecuzione e Browser Supportati
 L'applicativo web dovrà essere accessibile e garantire la corretta visualizzazione e funzionalità sui seguenti browser:
@@ -926,7 +933,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC6.2 - Visualizzazione singolo repository dalla lista personale
-#figure([#image("../../asset/UC/user/uc6-2.png", height: 7cm)], caption: [UC6.2 - Visualizzazione singolo repository dalla lista personale])
+#figure([#image("../../asset/UC/user/uc6-2.png", height: 5cm)], caption: [UC6.2 - Visualizzazione singolo repository dalla lista personale])
 <UC6.2>
 
 - *Attore principale*: Utente Registrato.
@@ -1192,7 +1199,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UC9.1 - Visualizzazione singolo elemento da lista progetti
-#figure([#image("../../asset/UC/user/uc9-1.png", height: 7cm)], caption: [UC9.1 - Visualizzazione singolo elemento da lista progetti])
+#figure([#image("../../asset/UC/user/uc9-1.png", height: 5cm)], caption: [UC9.1 - Visualizzazione singolo elemento da lista progetti])
 <UC9.1>
 
 - *Attore principale*: Utente Registrato.
@@ -4556,6 +4563,12 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
 
 == Requisiti di vincolo
 
+#figure(
+  caption: [Requisiti di vincolo],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <requisiti-vincolo>
 #tabella-viola(
   columns: (auto, 1fr, 1fr),
   inset: 10pt,
@@ -4620,8 +4633,13 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-13-Q-O],[È necessario fornire un manuale d’uso per l’utente],[Analisi interna], 
 )
 
-== Requisiti di aspettativa
-
+== Requisiti non funzionali
+#figure(
+  caption: [Requisiti non funzionali],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <requisiti-aspettativa>
 #tabella-viola(
   columns: (auto, auto, auto),
   inset: 10pt,
