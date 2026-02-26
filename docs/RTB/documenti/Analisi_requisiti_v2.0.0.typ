@@ -1475,7 +1475,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD2.0.1 - Sincronizzazione repository private GitHub
-#figure([#image("../../asset/UC/developer/UCD2-0-1.png", width: 100%)], caption: [UCD2.0.1 - Sincronizzazione repository private GitHub])
+#figure([#image("../../asset/UC/developer/ucd2-0-1.png", width: 100%)], caption: [UCD2.0.1 - Sincronizzazione repository private GitHub])
 <UCD2.0.1>
 - *Attore principale:* Developer.
 
