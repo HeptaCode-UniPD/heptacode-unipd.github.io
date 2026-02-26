@@ -45,6 +45,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("1.4.0","2026-02-25","Laura Venturini","","Fix requisiti"),
   ("1.3.0","2026-02-25","Amerigo Vegliante","","Fix azione iniziale AD1"),
   ("1.2.0","2026-02-24","Alberto Reginato","Angela Favaro","Aggiunta versioni tecnologie, OS e browser supportati"),
   ("1.1.0","2026-02-24","Angela Canazza","Angela Favaro","Prima correzione UC, secondo quanto segnalato"),
@@ -121,7 +122,7 @@ Domande per Cardin sul file:
         fill: white,
         stroke: none,
       )],
-      [Analisi dei Requisiti v1.0.0],
+      [Analisi dei Requisiti v2.0.0],
     )
     #line(length: 100%, stroke: black)
   ],
@@ -4629,10 +4630,8 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   
   table.header(
   [*Codice*], [*Descrizione*],[*Fonti*],
-  [R-1-A-O],[L'utente deve riuscire ad orientarsi velocemente all'interno dell'applicativo],[Analisi interna],
-  [R-2-A-O],[Il tempo di caricamento della piattaforma deve essere breve],[Analisi interna],
-  [R-3-A-O],[La responsività all'interazione del sistema deve essere breve (es. cambio pagine, pulsanti)],[Analisi interna],
-  [R-4-A-O],[Il tempo di risposta medio degli agenti non deve superare i 15 minuti],[Analisi interna],
-  [R-5-A-O],[L'applicativo deve essere gradevole alla vista],[Analisi interna],
+  [R-1-A-O],[Il tempo di caricamento della piattaforma deve essere minore o uguale a 10 secondi],[Analisi interna],
+  [R-2-A-O],[La responsività all'interazione del sistema deve essere minore o uguale a 15 secondi (es. cambio pagine, pulsanti)],[Analisi interna],
+  [R-3-A-O],[Il tempo di risposta medio degli agenti non deve superare i 15 minuti],[Analisi interna],
   ),
 )
