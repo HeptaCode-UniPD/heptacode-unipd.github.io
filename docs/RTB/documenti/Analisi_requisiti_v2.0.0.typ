@@ -45,7 +45,7 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("2.0.0","2026-02-27","Angela Favaro","Angela Canazza","Mini fix casi d'uso per versione 2.0"),
+  ("2.0.0","2026-02-27","Angela Favaro","Nicola Simionato","Mini fix casi d'uso per versione 2.0"),
   ("1.5.0","2026-02-25","Nicola Simionato","Angela Favaro","Sistemazione diagrammi UML dei Casi d'Uso"),
   ("1.4.0","2026-02-25","Laura Venturini","Angela Favaro","Sistemazione requisiti secondo quanto segnalato"),
   ("1.3.0","2026-02-25","Amerigo Vegliante","Angela Favaro","Fix azione iniziale AD1"),
