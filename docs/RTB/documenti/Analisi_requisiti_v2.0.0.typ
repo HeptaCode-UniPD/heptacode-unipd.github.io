@@ -4616,7 +4616,8 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   
   [R-10-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Microsoft Edge (v. 120 o superiore).], [Decisione Interna],
   
-  [R-11-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Apple Safari (v. 17 o superiore).], [Decisione Interna]
+  [R-11-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Apple Safari (v. 17 o superiore).], [Decisione Interna],
+  [R-12-V-O],[Il sistema deve interrompere automaticamente l’elaborazione se il tempo di risposta di un agente supera 60 minuti consecutivi],[Decisione interna]
 )
 #pagebreak()
 
@@ -4651,9 +4652,9 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-13-Q-O],[È necessario fornire un manuale d’uso per l’utente],[Analisi interna], 
 )
 
-== Requisiti non funzionali
+== Requisiti di aspettativa
 #figure(
-  caption: [Requisiti non funzionali],
+  caption: [Requisiti di aspettativa],
   kind: table,
   supplement: [Tabella],
   rect(width: 0pt, height: 0pt, stroke: none) 
@@ -4667,7 +4668,6 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   table.header(
   [*Codice*], [*Descrizione*],[*Fonti*],
   [R-1-A-O],[Il tempo di caricamento della piattaforma deve essere minore o uguale a 10 secondi],[Analisi interna],
-  [R-2-A-O],[La responsività all'interazione del sistema deve essere minore o uguale a 15 secondi (es. cambio pagine, pulsanti)],[Analisi interna],
-  [R-3-A-O],[Il tempo di risposta medio degli agenti non deve superare i 15 minuti],[Analisi interna],
+  [R-2-A-O],[La responsività all'interazione del sistema deve essere minore o uguale a 15 secondi (es. cambio pagine, pulsanti)],[Analisi interna]
   ),
 )
