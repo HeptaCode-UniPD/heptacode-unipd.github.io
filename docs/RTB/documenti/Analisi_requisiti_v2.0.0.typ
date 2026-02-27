@@ -3378,7 +3378,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Project Manager seleziona il pulsante "Team & Competenze".
 
 - *Scenario principale:*
-  + Il Project Manager visualizza, per ogni memebro del team, delle icone grafiche che indicano le tecnologie di competenza. (*<\<include>>* #link(<UCPM3.2>)[[UCPM3.2]]).
+  + Il Project Manager visualizza, per ogni membro del team, delle icone grafiche che indicano le tecnologie di competenza. (*<\<include>>* #link(<UCPM3.2>)[[UCPM3.2]]).
   + Il Project Manager visualizza la lista dei developer associati al progetto, su cui può per approfondirne il profilo (#link(<UCPM3.1>)[[UCPM3.1]]).
 
 - *Scenari alternativi:*
