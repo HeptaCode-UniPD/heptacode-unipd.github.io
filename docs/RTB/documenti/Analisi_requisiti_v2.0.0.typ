@@ -45,7 +45,8 @@ Domande per Cardin sul file:
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("2.0.0","2026-02-25","Nicola Simionato","Angela Favaro","Sistemazione diagrammi UML dei Casi d'Uso"),
+  ("2.0.0","2026-02-27","Angela Favaro","Angela Canazza","Mini fix casi d'uso per versione 2.0"),
+  ("1.5.0","2026-02-25","Nicola Simionato","Angela Favaro","Sistemazione diagrammi UML dei Casi d'Uso"),
   ("1.4.0","2026-02-25","Laura Venturini","Angela Favaro","Sistemazione requisiti secondo quanto segnalato"),
   ("1.3.0","2026-02-25","Amerigo Vegliante","Angela Favaro","Fix azione iniziale AD1"),
   ("1.2.0","2026-02-24","Alberto Reginato","Angela Favaro","Aggiunta versioni tecnologie, OS e browser supportati"),
@@ -625,7 +626,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenari alternativi:* \
   Al passo 1:
-  + L’utente annulla l’operazione di logout. Il sistema interrompe l’operazione #link(<UC3.1>)[[UC3.1]].
+  + L’utente annulla l’operazione di logout. Il sistema interrompe l’operazione (*<<\extends>>* #link(<UC3.1>)[[UC3.1]]).
   Al passo 2:
   + Si verifica un errore durante la terminazione della sessione.
     - Il Project Manager visualizza un messaggio di errore.
@@ -725,7 +726,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il sistema mostra all'Utente Registrato un grafico percentuale contenente l'esito percentuale relativo alla correttezza dell'ultima analisi della documentazione effettuata.
 
-- *Precondizioni:* L'Utente Registrato si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
+- *Precondizioni:* L'Utente Registrato si trova nella visualizzazione di dettaglio del repository.
 
 - *Trigger:* Caricamento della schermata di dettaglio del repository.
 
@@ -746,7 +747,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il sistema mostra al Utente Registrato un grafico percentuale contenente l'esito percentuale relativo alla correttezza dell'ultima analisi dei test effettuata.
 
-- *Precondizioni:* L'Utente Registrato si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
+- *Precondizioni:* L'Utente Registrato si trova nella visualizzazione di dettaglio del repository.
 
 - *Trigger:* Caricamento della schermata di dettaglio della repository.
 
@@ -767,7 +768,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il sistema mostra al Utente Registrato un grafico percentuale contenente l'esito percentuale relativo alla correttezza dell'ultima analisi OWASP effettuata.
 
-- *Precondizioni:* L'Utente Registrato si trova nella visualizzazione di dettaglio del repository (#link(<UCD5>)[[UCD5]]).
+- *Precondizioni:* L'Utente Registrato si trova nella visualizzazione di dettaglio del repository.
 
 - *Trigger:* Caricamento della schermata di dettaglio del repository.
 
@@ -790,7 +791,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   
 - *Precondizioni*: Il sistema sta mostrando un elemento da una lista di repository o la schermata di dettaglio di un repository.
   
-- *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UC6>)[[UC6]] o da #link(<UC10>)[[UC10]]).
+- *Trigger*: Caricamento della lista di repository (da #link(<UC6>)[[UC6]] o da #link(<UC10>)[[UC10]]).
   
 - *Scenario principale*:
   + L'Utente Registrato visualizza il nome del repository. 
@@ -807,7 +808,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   
 - *Precondizioni*: Il sistema sta mostrando un elemento da una lista di repository o la schermata di dettaglio di un repository.
   
-- *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UC6>)[[UC6]] o da #link(<UC10>)[[UC10]]).
+- *Trigger*: Caricamento della lista di repository (da #link(<UC6>)[[UC6]] o da #link(<UC10>)[[UC10]]).
   
 - *Scenario principale*:
   + L'Utente Registrato visualizza il nome del progetto a cui appartiene il repository. 
@@ -865,7 +866,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:*  L'Utente Registrato clicca sul link per il reindirizzamento al repository GitHub che sta visualizzando.
 
-- *Precondizioni:* L'Utente Registrato sta visualizzando i dettagli di un repository sulla piattaforma _Code Guardian_ #link(<UC5>)[[UC5]].
+- *Precondizioni:* L'Utente Registrato sta visualizzando i dettagli di un repository sulla piattaforma _Code Guardian_, è presente almeno un repository all'interno della piattaforma.
 
 - *Trigger:* L'Utente Registrato clicca sul link del repository GitHub
 
@@ -894,8 +895,8 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + L'Utente Registrato visualizza una barra di ricerca per il nome dei repository.
-  + L'Utente Registrato visualizza un menù a tendina per selezionare la tipologia di repository che desidera (tutti/senza progetto).
-  + L'Utente Registrato visualizza, all'interno della dashboard, una sezione contente la lista dei repository (*<\<include>>* #link(<UC5.8>)[[UC5.8]]).
+  + L'Utente Registrato visualizza un menù per selezionare la tipologia di repository che desidera (tutti/senza progetto) #link(<UC6.1>)[[UC6.1]].
+  + L'Utente Registrato visualizza, all'interno della dashboard, una lista contenente i repository (*<<\include>>* #link(<UC6.2>)[[UC6.2]]).
   + L'Utente Registrato può scorrere per visualizzare tutti i repository presenti.
 
 - *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
@@ -905,7 +906,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Postcondizioni:* L'Utente Registrato visualizza la lista dei propri Repository.
   
 - *Inclusioni:* 
-  - #link(<UC6.1>)[[UC6.1]]
   - #link(<UC6.2>)[[UC6.2]]
 
 - *Estensioni:*
@@ -1014,14 +1014,16 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Postcondizioni:* Il repository è stato aggiunto alla piattaforma e l'utente lo può visualizzare nella sua lista.
 
-- *Inclusioni:* #link(<UC8.2>)[[UC8.2]]
+- *Inclusioni:* 
+  - #link(<UC8.2>)[[UC8.2]]
 
 - *Estensioni:* 
   - #link(<UC8.1>)[[UC8.1]]
   - #link(<UC8.3>)[[UC8.3]]
   - #link(<UC4>)[[UC4]]
 
-- *Generalizzazioni:* #link(<UC8.0.3>)[[UC8.0.3]]
+- *Generalizzazioni:* 
+  - #link(<UC8.0.3>)[[UC8.0.3]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1038,7 +1040,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + L'Utente Registrato visualizza l’interfaccia per l’inserimento dei dati del repository.
-  + L'Utente Registrato inserisce l'URL del repository _GitHub_ *<\<include>>* #link(<UC8.2>)[[UC8.2]].
+  + L'Utente Registrato inserisce l'URL del repository _GitHub_ (*<\<include>>* #link(<UC8.2>)[[UC8.2]]).
   + L'Utente Registrato conferma l'operazione.
   + L'Utente Registrato visualizza l'interfaccia di inserimento per il token GitHub.
   + L'Utente Registrato inserisce il proprio token.
@@ -1049,6 +1051,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   - Il token inserito non è valido (*<\<extend>>* #link(<UC8.0.2>)[[UC8.0.2]]).
 
 - *Postcondizioni:* Il profilo dell'Utente Registrato è aggiornato con un token valido, permettendo l'importazione di repository privati.
+
+- *Inclusioni:*
+  - #link(<UC8.2>)[[UC8.2]]
   
 - *Estensioni:* 
   - #link(<UC8.0.2>)[[UC8.0.2]]
@@ -1178,11 +1183,12 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + L'Utente Registrato visualizza, all'intero della dashboard, una sezione contente la lista dei progetti. 
-  + Per ogni progetto, l'Utente Registrato ne vede il nome (*<\<include>>* #link(<UC10.1>)[[UC10.1]]).
+  + Per ogni progetto, l'Utente Registrato ne le informazioni generiche (*<\<include>>* #link(<UC9.1>)[[UC9.1]]).
   + L'utente può scorrere per visualizzare tutti i progetti presenti.
   
-- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
-  - All'utente viene mostrato un messaggio d'errore *<\<extend>>* #link(<UC4>)[[UC4]].
+- *Scenari alternativi:* \
+   Si verifica un errore durante il caricamento della pagina.
+  - All'utente viene mostrato un messaggio d'errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
   - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* L'Utente Registrato visualizza la lista dei progetti in cui è coinvolto.
@@ -1253,7 +1259,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenari alternativi:* \
   Al passo 1: 
   - Si verifica un errore durante il caricamento della pagina.
-    - L'Utente Registrato visualizza un messaggio di errore *<\<extend>>* #link(<UC4>)[[UC4]].
+    - L'Utente Registrato visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* L'Utente Registrato visualizza i dati aggregati del progetto.
@@ -1280,7 +1286,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   
 - *Precondizioni*: Il sistema sta mostrando un elemento da una lista di progetto o la schermata di dettaglio di un progetto.
   
-- *Trigger*: Caricamento della lista di repository (che essa sia da #link(<UC9>)[[UCD3]] o da #link(<UC10>)[[UC10]]).
+- *Trigger*: Caricamento della lista di repository o pagina di dettaglio repository.
   
 - *Scenario principale*:
   + L'Utente Registrato visualizza il nome del un progetto. 
@@ -1371,10 +1377,12 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   - Viene chiesta conferma dell'operazione all'Utente Registrato.
   - La repository e tutti i dati ad essa annessi, vengono rimossi dal sistema, l'Utente Registrato non li potrà più visualizzare.
 
-- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
+- *Scenari alternativi:* \ 
+  Si verifica un errore durante il caricamento della pagina.
     - All'Utente Registrato viene mostrato un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
-  Al passo 1: L'Utente Registrato sceglie di annullare l'operazione di eliminazione (*<\<extend>>* #link(<UC11.1>)[[UC11.1]]).
+  Al passo 1: \
+  - L'Utente Registrato sceglie di annullare l'operazione di eliminazione (*<\<extend>>* #link(<UC11.1>)[[UC11.1]]).
 
 - *Postcondizioni:* Il Repository è stato correttamente eliminato dal sistema insieme ai dati ad esso associati.
 
@@ -1432,6 +1440,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Inclusioni:* 
   - #link(<UC6>)[[UC6]]
 
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
+
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1470,7 +1481,8 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Estensioni:* 
   - #link(<UCD2.1>)[[UCD2.1]].
   - #link(<UCD2.2>)[[UCD2.2]].
-- *Generalizzazioni:* #link(<UCD2.0.1>)[[UCD2.0.1]].
+- *Generalizzazioni:*
+  -  #link(<UCD2.0.1>)[[UCD2.0.1]].
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1583,13 +1595,14 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione proposta remediation per il repository.
 
 - *Scenario principale:* \
-  - Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area test (*<\<include>>* #link(<UCD6.0.1>)[[UCD6.0.1]]).
-  - Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area OWASP. (*<\<include>>* #link(<UCD6.0.2>)[[UCD6.0.2]]).
-  - Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area documentazione (*<\<include>>* #link(<UCD6.0.3>)[[UCD6.0.3]]).
-  - Il Developer visualizza un pulsante per accettare tutte le proposte di remediation (#link(<UCD6.2>)[[UCD6.2]])
-  - Il Developer visualizza un pulsante per tornare alla pagina precedente.
+  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area test (*<\<include>>* #link(<UCD6.0.1>)[[UCD6.0.1]]).
+  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area OWASP. (*<\<include>>* #link(<UCD6.0.2>)[[UCD6.0.2]]).
+  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area documentazione (*<\<include>>* #link(<UCD6.0.3>)[[UCD6.0.3]]).
+  + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation (#link(<UCD6.2>)[[UCD6.2]])
+  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
 
-- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
+- *Scenari alternativi:* \
+  Si verifica un errore durante il caricamento della pagina.
     - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
@@ -1616,12 +1629,13 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
 - *Scenario principale:* \
-  - Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sui test.
-  - Al Developer vengono proposte remediation riguardante l'area di test, per ogni documento riportato. 
-  - Il Developer visualizza un pulsante per tornare alla pagina precedente.
-  - Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sui test.
+  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sui test.
+  + Al Developer vengono proposte remediation riguardante l'area di test, per ogni documento riportato. 
+  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
+  + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sui test.
 
-- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
+- *Scenari alternativi:* \ 
+  Si verifica un errore durante il caricamento della pagina.
     - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
@@ -1643,12 +1657,13 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
 - *Scenario principale:* \
-  - Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sull'analisi OWASP.
-  - AL Developer vengono proposte delle remediation riguardante l'analisi OWASP, per ogni documento riportato. 
-  - Il Developer visualizza un pulsante per tornare alla pagina precedente.
-  - Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sull'analisi OWASP.
+  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sull'analisi OWASP.
+  + AL Developer vengono proposte delle remediation riguardante l'analisi OWASP, per ogni documento riportato. 
+  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
+  + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sull'analisi OWASP.
 
-- *Scenari alternativi:*Si verifica un errore durante il caricamento della pagina.
+- *Scenari alternativi:* \
+  Si verifica un errore durante il caricamento della pagina.
     - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
@@ -1668,12 +1683,13 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
 - *Scenario principale:* \
-  - Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sulla documentazione.
-  - Al Developer vengono proposte remediation riguardante l'area di documentazione, per ogni documento riportato. 
-  - Il Developer visualizza un pulsante per tornare alla pagina precedente.
-  - Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sulla documentazione.
+  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sulla documentazione.
+  + Al Developer vengono proposte remediation riguardante l'area di documentazione, per ogni documento riportato. 
+  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
+  + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sulla documentazione.
 
-- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
+- *Scenari alternativi:*\
+  Si verifica un errore durante il caricamento della pagina.
     - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
@@ -1695,10 +1711,10 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Developer seleziona il file che gli interessa consultare.
 
 - *Scenario principale:* \
-  - Il Developer visualizza il contenuto del file con le differenze tra il file presente e la proposta applicabile (_diff_). 
-  - Il Developer visualizza il path che il file seguirà all'interno del repository.
-  - Il Developer visualizza un pulsante per accettare la proposta dell'agente (#link(<UCD6.2>)[[UCD6.2]]).
-  - Il Developer visualizza un pulsante per tornare alla pagina precedente.
+  + Il Developer visualizza il contenuto del file con le differenze tra il file presente e la proposta applicabile (_diff_). 
+  + Il Developer visualizza il path che il file seguirà all'interno del repository.
+  + Il Developer visualizza un pulsante per accettare la proposta dell'agente (#link(<UCD6.2>)[[UCD6.2]]).
+  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
 
 - *Scenari alternativi:* \
   - Si verifica un errore durante il caricamento della pagina.
@@ -1725,13 +1741,14 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Developer seleziona il pulsante per il cambio path.
 
 - *Scenario principale:* \
-  - Il Developer visualizza un campo sul quale inserire il nuovo path.
-  - Il Developer inserisce il path all'interno del campo (*<\<include>>* #link(<UCD6.1.5>)[[UCD6.1.5]]).
-  - Il Developer conferma l'operazione.
+  + Il Developer visualizza un campo sul quale inserire il nuovo path.
+  + Il Developer inserisce il path all'interno del campo (*<\<include>>* #link(<UCD6.1.5>)[[UCD6.1.5]]).
+  + Il Developer conferma l'operazione.
 
 - *Scenari alternativi:*
   - Il Developer decide di annullare l'operazione (*<\<extend>>* #link(<UCD6.1.3>)[[UCD6.1.3]])
-  Al passo 3: Il path inserito non è valido (*<\<extend>>* #link(<UCD6.1.4>)[[UCD6.1.4]])
+  Al passo 3: \
+  - Il path inserito non è valido (*<\<extend>>* #link(<UCD6.1.4>)[[UCD6.1.4]])
 - *Postcondizioni:* Il file ha un nuovo path all'interno del campo di destinazione. 
 
 - *Inclusioni:*
@@ -1743,7 +1760,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.1.3 Annullamento cambio percorso di destinazione file
+=== UCD6.1.3 - Annullamento cambio percorso di destinazione file
 <UCD6.1.3>
 - *Attore principale:* Developer
 
@@ -1754,14 +1771,14 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Developer seleziona l’opzione di annullamento dell'inserimento del path.
 
 - *Scenario principale:*
-  - Il Developer seleziona l’opzione di annullamento.
-  - Il Developer vedrà ancora il percorso di destinazione originale.
+  + Il Developer seleziona l’opzione di annullamento.
+  + Il Developer vedrà ancora il percorso di destinazione originale.
 
 - *Postcondizioni:* Il processo di inserimento del nuovo path è stato annullato. Lo stato del sistema è coerente con la situazione precedente all’avvio dell’accettazione.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-=== UCD6.1.4 Nuovo percorso non valido
+=== UCD6.1.4 - Nuovo percorso non valido
 <UCD6.1.4>
 - *Attore principale:* Developer
 
@@ -1772,8 +1789,8 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il percorso inserito non è valido.
 
 - *Scenario principale:*
-  - Il Developer visualizza un messaggio di errore.
-  - Viene data la possibilità di effettuare un nuovo tentativo.
+  + Il Developer visualizza un messaggio di errore.
+  + Viene data la possibilità di effettuare un nuovo tentativo.
 
 - *Postcondizioni:* Il developer è a conoscenza che il percorso inserito non è valido, ha la possibilità di inserirne un altro o di annullare l'operazione.
 
@@ -1818,18 +1835,15 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   // + Il sistema interagisce con GitHub per creare un nuovo branch dedicato.
   // + Il sistema applica automaticamente le modifiche al file nel branch.
   // + Il sistema avvia una pull request verso il branch di destinazione del repository.
-  + Il Developer viene notificato della corretta creazione della pull request (*<\<include>>* #link(<UCD6.2.1>)[[UCD6.2.1]]).
+  + Il Developer viene notificato della corretta creazione della pull request (#link(<UCD6.2.1>)[[UCD6.2.1]]).
 
 - *Scenari alternativi*
   - GitHub non è raggiungibile o restituisce un errore (*<\<extend>>* #link(<UCD6.4>)[[UCD6.4]])
-  - Al passo 1: Annullamento accettazione. Il Developer viene reindirizzato alla pagina precedente (*<\<extend>>* #link(<UCD6.3>)[[UCD6.3]]).
+  - Annullamento accettazione. Il Developer viene reindirizzato alla pagina precedente (*<\<extend>>* #link(<UCD6.3>)[[UCD6.3]]).
   - Il sistema rileva che la remediation non è più valida (*<\<extend>>* #link(<UCD6.5>)[[UCD6.5]]).
   - Uno o più file sono stati modificati sulla repository dopo la generazione della remediation (*<\<extend>>* #link(<UCD6.6>)[[UCD6.6]]).
   
 - *Postcondizioni:* è stata avviata una richiesta di pull request su github, il Developer dovrà accettarla.
-
-- *Inclusioni:*
-  - #link(<UCD6.4>)[[UCD6.4]]
 
 - *Estensioni:* 
   - #link(<UCD6.3>)[[UCD6.3]]
@@ -1962,8 +1976,8 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Developer si trova nella dashboard e seleziona la voce per visualizzare i procedimenti in corso.
 
 - *Scenario principale:*
-  + Il Developer visualizza l'elenco delle operazioni di remediation attualmente in corso all'interno del sistema (*<\<include>>* #link(<UCD8.2>)[[UCD8.2]]).
-  + Il Developer visualizza l'elenco delle operazioni di analisi attualmente in corso all'interno del sistema (*<\<include>>* #link(<UCD8.3>)[[UCD8.3]]).
+  + Il Developer visualizza l'elenco delle operazioni di remediation attualmente in corso all'interno del sistema (*<\<include>>* #link(<UCD8.1>)[[UCD8.1]]).
+  + Il Developer visualizza l'elenco delle operazioni di analisi attualmente in corso all'interno del sistema (*<\<include>>* #link(<UCD8.1>)[[UCD8.1]]).
   + Il Developer visualizza il tasto per tornare all pagina precedente.
 
 - *Scenari alternativi:*
@@ -1974,8 +1988,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Postcondizioni:* Il Developer ha visualizzato tutte le operazioni in corso all'interno del sistema.
   
 - *Inclusioni:*
-  - #link(<UCD8.2>)[[UCD8.2]]
-  - #link(<UCD8.3>)[[UCD8.3]]
+  - #link(<UCD8.1>)[[UCD8.1]]
   
 - *Estensioni:*
   - #link(<UC4>)[[UC4]]
@@ -1999,13 +2012,13 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Postcondizioni:* Il Developer ha visualizzato un singolo procedimento in corso all'interno del sistema.
 
-- *Generalizzazioni:* 
-  - #link(<UCD8.2>)[[UCD8.2]])
-  - #link(<UCD8.3>)[[UCD8.3]])
-
 - *Inclusioni:*
   - #link(<UC5.5>)[[UC5.5]]
   - #link(<UCD8.4>)[[UCD8.4]]
+
+- *Generalizzazioni:* 
+  - #link(<UCD8.2>)[[UCD8.2]])
+  - #link(<UCD8.3>)[[UCD8.3]])
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2103,7 +2116,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + Il Developer attiva il comando di interruzione per fermare l'integrazione del codice suggerito.
   + Il Developer osserva la chiusura della Pull Request associata direttamente a GitHub.
-  + Il Developer prende atto della notifica che conferma l'avvenuta interruzione della procedura (*<\<include>>* #link(<UCD9.1>)[[UCD9.1]]).
+  + Il Developer prende atto della notifica che conferma l'avvenuta interruzione della procedura (#link(<UCD9.1>)[[UCD9.1]]).
   
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -2111,9 +2124,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* Una remediation in atto è stata interrotta.
-
-- *Inclusioni:* 
- - #link(<UCD9.1>)[[UCD9.1]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2151,7 +2161,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + Il Developer attiva il comando di interruzione per arrestare il processo di scansione corrente.
   + Il Developer osserva l'immediata cessazione delle attività da parte degli agenti coinvolti.
-  + Il Developer riceve e prende atto del messaggio di conferma relativo all'avvenuta interruzione dell'analisi (*<\<include>>* #link(<UCD10.1>)[[UCD10.1]]).
+  + Il Developer riceve e prende atto del messaggio di conferma relativo all'avvenuta interruzione dell'analisi (#link(<UCD10.1>)[[UCD10.1]]).
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il processo.
@@ -2159,9 +2169,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
     - Il caso d'uso termina senza successo.
   
 - *Postcondizioni:* L'analisi selezionata è stata annullata, il Developer visualizza la lista delle operazioni in corso.
-
-- *Inclusioni:*
-  - #link(<UCD10.1>)[[UCD10.1]]
 
 - *Estensioni:*
   - #link(<UC4>)[[UC4]]
@@ -2640,8 +2647,8 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare.
 
 - *Scenario principale*:
-  - Il Developer visualizza la richiesta si conferma per l'avvio dell'analisi.
-  - Il Developer conferma l'avvio dell'analisi.
+  + Il Developer visualizza la richiesta si conferma per l'avvio dell'analisi.
+  + Il Developer conferma l'avvio dell'analisi.
 
 - *Scenari alternativi*
   - Si verifica un errore durante il caricamento della conferma.
@@ -2809,6 +2816,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Inclusioni:* 
   - #link(<UCPM2>)[[UCPM2]]
 
+- *Estensioni:*
+  - #link(<UC4>)[[UC4]]
+
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.2 - Creazione nuovo progetto 
@@ -2855,9 +2865,12 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Project Manager inserisce il nome desiderato per il nuovo progetto.
 
 - *Scenario alternativo:*
-  + Il nome inserito risulta già esistente (*<\<extend>>* #link(<UCPM1.2.3>)[[UCPM1.2.3]]).
+  - Il nome inserito risulta già esistente (*<\<extend>>* #link(<UCPM1.2.3>)[[UCPM1.2.3]]).
 
 - *Postcondizioni:* Il Project Manager ha inserito un nome valido e univoco per il progetto.
+
+- *Estensioni:*
+  - #link(<UCPM1.2.3>)[[UCPM1.2.3]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -2872,15 +2885,18 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Precondizioni:* Esiste almeno un progetto associato al profilo del Project Manager.
 
-- *Trigger:* Il Project Manager seleziona l'opzione di modifica del nome all'interno del caso d'uso #link(<UCPM1.2.3>)[[UCPM1.2.3]].
+- *Trigger:* Il Project Manager seleziona l'opzione di modifica del nome del progetto.
 
 - *Scenario principale:*
   + Il Project Manager inserisce il nuovo nome per il progetto selezionato.
 
-- *Scenario alternativo:*
-  Il nome inserito risulta già esistente (*<\<extend>>* #link(<UCPM1.2.3>)[[UCPM1.2.3]]).
+- *Scenario alternativo:* \
+  - Il nome inserito risulta già esistente (*<\<extend>>* #link(<UCPM1.2.3>)[[UCPM1.2.3]]).
 
 - *Postcondizioni*: Il nome del progetto è stato aggiornato correttamente e risulta univoco rispetto agli altri progetti dell'utente.
+
+- *Estensioni:*
+  - #link(<UCPM1.2.3>)[[UCPM1.2.3]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3067,7 +3083,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 === UCPM1.6 - Consultazione developer da aggiungere a progetto
 <UCPM1.6>
-#figure([#image("../../asset/UC/project-manager/ucpm1-6.png", height: 7cm)], caption: [UCPM1.6 - Lista developer da selezionare])
 - *Attore principale:* Project Manager.
 
 - *Descrizione:* Il Project Manager consulta l'elenco dei developer per associarli al progetto in fase di configurazione.
@@ -3077,7 +3092,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Project Manager accede alla sezione di aggiunta developer all'interno della gestione developer.
 
 - *Scenario principale:*
-  + Il Project Manager visualizza una lista dei profili developer (*<\<include>>* #link(<UCPM1.6.1>)[[UCPM1.6.1]]).
+  + Il Project Manager visualizza una lista dei profili developer (*<\<include>>* #link(<UCPM1.6.2>)[[UCPM1.6.2]]).
   + Il Project Manager visualizza una barra di ricerca per il nome dei developer (#link(<UCPM1.4.2>)[[UCPM1.4.2]]).
 
 - *Scenari alternativi:*
@@ -3087,14 +3102,16 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Postcondizioni:* Il Project Manager consulta dei potenziali collaboratori disponibili per l'inserimento nel team.
 
-- *Inclusioni:* #link(<UCPM1.6.1>)[[UCPM1.6.1]]
-- *Estensioni:* #link(<UC4>)[[UC4]]
+- *Inclusioni:* 
+  - #link(<UCPM1.6.1>)[[UCPM1.6.1]]
+- *Estensioni:* 
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCPM1.6.2 - Visualizzazione lista developer da selezionare 
 <UCPM1.6.2>
-
+#figure([#image("../../asset/UC/project-manager/ucpm1-6.png", height: 7cm)], caption: [UCPM1.6.2 - Lista developer da selezionare])
 - *Attore principale:* Project Manager.
 
 - *Descrizione:* Il Project Manager visualizza l'elenco dei developer per associarli al progetto in fase di configurazione.
@@ -3113,8 +3130,10 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Postcondizioni:* Il Project Manager visualizza l'elenco dei potenziali collaboratori disponibili per l'inserimento nel team.
 
-- *Inclusioni:* #link(<UCPM1.6.1>)[[UCPM1.6.1]]
-- *Estensioni:* #link(<UC4>)[[UC4]]
+- *Inclusioni:* 
+  - #link(<UCPM1.6.1>)[[UCPM1.6.1]]
+- *Estensioni:* 
+  - #link(<UC4>)[[UC4]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -3293,7 +3312,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Caricamento della schermata della dashboard. Il selettore di vista è impostato su "Progetti".
 
 - *Scenario principale:*
-  + Il Project Manager visualizza i dati (*<\<include>>* #link(<UC9>)[[UC9]]).
+  + Il Project Manager visualizza i dati come in #link(<UC9>)[[UC9]].
   + Il Project Manager vede, per ogni progetto:
         - Percentuali di analisi documentazione (*<\<include>>* #link(<UC10.2>)[[UC10.2]]).
         - Percentuali di analisi di test (*<\<include>>* #link(<UC10.3>)[[UC10.3]]).
@@ -3302,7 +3321,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Postcondizioni:* Il Project Manager scorre la lista dei progetti in cui è coinvolto.
 
 - *Inclusioni:* 
-  - #link(<UC9>)[[UC9]]
   - #link(<UC10.2>)[[UC10.2]]
   - #link(<UC10.3>)[[UC10.3]]
   - #link(<UC10.4>)[[UC10.4]]
@@ -3360,8 +3378,8 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Project Manager seleziona il pulsante "Team & Competenze".
 
 - *Scenario principale:*
-  + Il Project Manager visualizza una lista dei membri del team a cui vengono associate delle icone sulle tecnologie di loro competenza. (*<\<include>>* #link(<UCPM3.2>)[[UCPM3.2]]).
-  + Il Project Manager visualizza la lista dei developer associati al progetto, su cui può per approfondirne il profilo #link(<UCPM3.1>)[[UCPM3.1]].
+  + Il Project Manager visualizza, per ogni memebro del team, delle icone grafiche che indicano le tecnologie di competenza. (*<\<include>>* #link(<UCPM3.2>)[[UCPM3.2]]).
+  + Il Project Manager visualizza la lista dei developer associati al progetto, su cui può per approfondirne il profilo (#link(<UCPM3.1>)[[UCPM3.1]]).
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
