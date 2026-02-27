@@ -2101,7 +2101,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #pagebreak()
 
 === UCD9 - Interrompi remediation avviata
-#figure([#image("../../asset/UC/developer/ucd9.png")], caption: [UCD9 - Interrompi remediation avviata])
+// #figure([#image("../../asset/UC/developer/ucd9.png")], caption: [UCD9 - Interrompi remediation avviata])
 <UCD9>
 - *Attore principale:* Developer.
 
