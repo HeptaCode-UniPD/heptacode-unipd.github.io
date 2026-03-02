@@ -227,10 +227,10 @@ Abbiamo scelto di lavorare al progetto utilizzando l’approccio Agile basato su
 - Feedback più veloce: questo metodo impone un contatto più frequente con l’azienda proponente, permettendo di avere un riscontro sull'adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
 == Struttura del ciclo di vita
 Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all’11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; sarà invece di due settimane durante il periodo di sessione d’esami che va dal 12 gennaio al 22 febbraio 2026. \ Per ogni Sprint, sono previsti:
-- uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi, che vengono scritti nello *Sprint Backlog*;
-- uno *Sprint Review*, in cui si esamina il lavoro completato dopo uno Sprint e si raccoglie feedback e si aggiorna il *Product Backlog*, che contiene tutte le task da completare per completare il progetto;
-- uno *Sprint Retrospective*, in cui il team ragiona su ciò che può essere migliorato in confronto allo Sprint appena finito.
-- un  aggiornamento asincrono via Telegram ogni tre giorni al posto del Daily Scrum per monitorare l’avanzamento del lavoro.
+- uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi;
+- uno *Sprint Review*, in cui si esamina il lavoro completato dopo uno Sprint e si aggiorna il *Product Backlog*, che contiene tutte le task da completare per completare il progetto;
+- uno *Sprint Retrospective*, in cui il team ragiona su ciò che può essere migliorato in confronto allo Sprint appena finito;
+- un  aggiornamento asincrono via Telegram almeno ogni tre giorni al posto del Daily Scrum per monitorare l’avanzamento del lavoro.
 
 #pagebreak()
 
@@ -330,15 +330,9 @@ Nel grafico in figura @fig:torta vengono analizzate le percentuali della riparti
 
 = Pianificazione temporale
 Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel corso del tempo.\ Sono stati calcolati un totale di _*tredici*_ sprint. \ La divisione del paragrafo in due sotto-paragrafi riporta:
-1. *Preventivo a finire:* pianificazione del lavoro ideale, secondo tempistiche ritenute ottimali.
+1. *Preventivo a finire:* pianificazione preventiva del lavoro, verrà aggiornato di sprint in sprint nel breve termine (massimo due sprint successivi) in base al ritmo e alle difficoltà incontrate. 
 2. *Trascorso:* ciò che realmente è accaduto durante gli sprint.
 
-== Calendario preventivo
-#figure(
-  caption: [Tappe principali del calendario di progetto],
-)[
-  #image("../../asset/timeline_generale.png"),
-]<fig:CalendarioProgetto>
 == Milestones programmate
 Di seguito elencate le milestone con i punti da considerare per poterle ritenere concluse.
 1. _UCB (Use Case Baseline)_:
@@ -347,19 +341,16 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   - Conclusione del documento _Analisi dei Requisiti_ (tecnologie, i framework, le librerie adottate, e ne dimostra adeguatezza e interoperabilità).
   - _Proof of Concept_, demo eseguibile.
 3. _PAB (Progettazione & Analisi Baseline)_:
-  - Conclusione attività di progettazione.
-  - Conclusione stesura definitiva _Analisi dei requisiti_.
+  - Conclusione attività di progettazione e analisi.
 4. _PB (Product Baseline)_:
   - Consegna del progetto validato.
-== Preventivo a finire
+== Sprint 
 Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team. In questo sotto-paragrafo verranno esplicitati:
 - Le attività che si dovranno svolgere ad ogni sprint.
 - I ruoli che ogni membro dovrà rappresentare. \
 Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro.
-=== UCB - _Use Case Baseline_
-#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 novembre 2025*. La suddetta data è stata scelta insieme all’azienda appaltante a seguito del nostro primo incontro in data _20 novembre 2025_. \ #underline[La data ultima prevista] per il conseguimento della milestone è prevista in data *28 dicembre 2025*
-
-==== Sprint 1
+=== Sprint 1
+==== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -376,6 +367,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Studio della documentazione adeguata al progetto.
     - Attività di analisi dei Casi d'uso preliminare.
   ],
+  [_Milestones attive_], [UCB, RTB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 1],
@@ -407,619 +399,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
 
 #underline[Spese della settimana]: 252,5€ \ #underline[Spesa totale]: *252,5€*
-
-==== Sprint 2
-#tabella-viola(
+==== Trascorso
+#table(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [1 dicembre 2025 - 7 dicembre 2025],
-
-  [_Giorni di sprint_], [7],
-
-  [_Attività previste_],
-  [
-    - Studio individuale della sintassi e l’utilizzo dei Casi d’Uso.
-    - Continuazione e intensificazione dell’attività di Analisi dei Requisiti in gruppo.
-    - Divisione dei compiti per una prima stesura dei documenti tra:
-      - Piano di Progetto (PdP).
-      - Piano di Qualifica (PdQ).
-      - Norme di Progetto.
-      - Analisi dei Requisiti (AR).
-    - Decisioni provvisorie sulle tecnologie utilizzabili per il progetto.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 2],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [], [2], [], [], [], [50€],
-      [_Angela Canazza_], [], [], [2], [], [], [], [50€],
-      [_Riccardo Baldin_], [], [], [2], [], [], [1], [65€],
-      [_Alberto Reginato_], [], [2], [2], [], [], [], [90€],
-      [_Nicola Simionato_], [], [], [2], [], [], [], [50€],
-      [_Amerigo Vegliante_], [], [], [2], [], [], [], [50€],
-      [_Laura Venturini_], [1], [], [2], [], [], [], [80€],
-    ) ]] <tab:PrevisioneSprint2>
-
-#underline[Spese della settimana]: 435€ \ #underline[Spesa totale]: *687,5€*
-
-==== Sprint 3
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [8 dicembre 2025 - 14 dicembre 2025],
-
-  [_Giorni di sprint_], [7],
-
-  [_Attività previste_],
-  [
-    - Attività di formazione su Backend da parte dell’azienda committente.
-    - Continuazione da parte del team completo dell’Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
-    - Avanzamento stesura dei documenti per milestone RTB.
-    - Studio individuale sulle tecnologie discusse dal team.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 3],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [], [4], [], [], [], [100€],
-      [_Angela Canazza_], [], [], [4], [], [], [], [100€],
-      [_Riccardo Baldin_], [], [], [4], [], [], [], [100€],
-      [_Alberto Reginato_], [3], [], [], [], [], [1,5], [112,5€],
-      [_Nicola Simionato_], [], [3], [], [], [], [], [60€],
-      [_Amerigo Vegliante_], [], [], [4], [], [], [], [100€],
-      [_Laura Venturini_], [], [], [4], [], [], [], [100€],
-    ) ]] <tab:PrevisioneSprint3>
-
-#underline[Spese della settimana]: 672,5€ \ #underline[Spesa totale]: *1.360€*
-
-==== Sprint 4
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [15 dicembre 2025 - 21 dicembre 2025],
-
-  [_Giorni di sprint_], [7],
-
-  [_Attività previste_],
-  [
-    - Attività di formazione su Frontend, AWS ed introduzione alla parte AI da parte dell’azienda committente.
-    - Continuazione di:
-      - Analisi dei Requisiti.
-      - Stesura della documentazione.
-    - Revisione sulle decisioni prese riguardo alle tecnologie adatte al progetto.
-    - Continuazione stesura di Use Case.
-    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 4],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [3], [], [], [], [], [], [90€],
-      [_Angela Canazza_], [], [], [4], [], [], [1,5], [122,5€],
-      [_Riccardo Baldin_], [], [], [6], [], [], [], [150€],
-      [_Alberto Reginato_], [], [], [5], [], [], [], [125€],
-      [_Nicola Simionato_], [], [], [2], [], [], [], [50€],
-      [_Amerigo Vegliante_], [], [4], [], [], [], [1,5], [102,5€],
-      [_Laura Venturini_], [], [], [4], [], [], [], [100€],
-    ) ]] <tab:PrevisioneSprint4>
-
-#underline[Spese della settimana]: 740€ \ #underline[Spesa totale]: *2100€*
-
-==== Sprint 5
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [22 dicembre 2025 - 28 dicembre 2025],
-
-  [_Giorni di sprint_], [7],
-
-  [_Attività previste_],
-  [
-    - Scelta definitiva delle tecnologie da utilizzare per il progetto.
-    - Inizio studio delle tecnologie scelte.
-    - Continuazione dell’attività di Analisi dei Requisiti.
-    - Continuazione stesura dei documenti.
-    _Milestone "UCB":_
-    Aver completato i Casi d’Uso.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 5],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [], [4], [], [], [], [100€],
-      [_Angela Canazza_], [], [], [4], [], [], [], [100€],
-      [_Riccardo Baldin_], [], [4], [], [], [], [], [80€],
-      [_Alberto Reginato_], [], [], [4], [], [], [], [100€],
-      [_Nicola Simionato_], [], [], [4], [], [], [], [100€],
-      [_Amerigo Vegliante_], [3], [], [], [], [], [2], [120€],
-      [_Laura Venturini_], [], [], [2], [], [], [2], [80€],
-    ) ]] <tab:PrevisioneSprint5>
-
-#underline[Spese della settimana]: 680€ \ #underline[Spesa totale]: *2.780€*
-
-=== RTB - _Requirements and Technology Baseline_
-#underline[La data di inizio attività prevista] per il conseguimento della prima milestone (_UCB_) è *29 dicembre 2025*.
-\ #underline[La data ultima prevista] per il conseguimento della milestone; quindi per la presentazione di ciò che è stato prodotto ai professori Cardin e Vardanega è prevista in data *25 gennaio 2026*.
-==== Sprint 6
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [29 dicembre 2025 - 4 gennaio 2026],
-
-  [_Giorni di sprint_], [7],
-
-  [_Attività previste_],
-  [
-    - Inizio attività di produzione del _Proof of Concept (PoC)")_.
-    - Continuazione stesura della documentazione.
-    - Continuazione attività di Analisi dei Requisiti.
-    - Inizio dell’attività di Progettazione.
-    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 6],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [4], [], [1], [], [], [105€],
-      [_Angela Canazza_], [3], [], [], [1], [], [], [115€],
-      [_Riccardo Baldin_], [], [], [4], [1], [], [], [125€],
-      [_Alberto Reginato_], [], [], [4], [1], [], [], [125€],
-      [_Nicola Simionato_], [], [], [], [4], [], [2], [130€],
-      [_Amerigo Vegliante_], [], [], [6], [1], [], [2], [205€],
-      [_Laura Venturini_], [], [], [], [4], [], [], [100€],
-    ) ]] <tab:PrevisioneSprint6>
-
-#underline[Spese della settimana]: 905€ \ #underline[Spesa totale]: *3.685€*
-
-==== Sprint 7
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [5 gennaio 2026 - 11 gennaio 2026],
-
-  [_Giorni di sprint_], [7],
-
-  [_Attività previste_],
-  [
-    In questo sprint tutti i ruoli devono essere operativi e il team deve dimostrare la capacità di generare valore per lo sviluppo del progetto.
-    - Continuazione di sviluppo e verifica del PoC.
-    - Continuazione e conclusione stesura della documentazione.
-    - Continuazione attività di Analisi e Progettazione.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 7],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [], [4], [2], [], [], [150€],
-      [_Angela Canazza_], [], [6], [], [], [], [], [120€],
-      [_Riccardo Baldin_], [4], [], [], [], [], [], [120€],
-      [_Alberto Reginato_], [], [], [], [6], [2], [], [180€],
-      [_Nicola Simionato_], [], [], [3], [], [], [2.5], [112,5€],
-      [_Amerigo Vegliante_], [], [], [], [7], [2], [], [205€],
-      [_Laura Venturini_], [], [], [], [5], [], [2.5], [162,5€],
-    ) ]] <tab:PrevisioneSprint7>
-
-#underline[Spese della settimana]: 1.050€ \ #underline[Spesa totale]: *4.735€*
-
-==== Sprint 8
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [12 gennaio 2026 - 25 gennaio 2026],
-
-  [_Giorni di sprint_], [14],
-
-  [_Attività previste_],
-  [
-    Ultimo sprint previsto prima della consegna del _PoC_.
-    - Conclusione dello sviluppo e della verifica del PoC.
-    - Continuazione attività di Progettazione.
-    - Revisione e validazione dei documenti prodotti per la milestone RTB.
-    - Colloquio conclusivo per la revisione del progetto con i professori.
-    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 8],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [], [], [5], [], [3], [170€],
-      [_Angela Canazza_], [], [], [], [6], [2], [], [180€],
-      [_Riccardo Baldin_], [], [], [], [6], [2], [], [180€],
-      [_Alberto Reginato_], [], [], [], [6], [], [3], [195€],
-      [_Nicola Simionato_], [6], [], [], [], [], [], [180€],
-      [_Amerigo Vegliante_], [], [], [4], [3], [], [], [175€],
-      [_Laura Venturini_], [], [6], [], [], [], [], [120€],
-    ) ]] <tab:PrevisioneSprint8>
-
-#underline[Spese della settimana]: 1.200€ \ #underline[Spesa totale]: *5.935*
-=== PAB - _Progettazione & Analisi Baseline_
-#underline[La data di inizio attività prevista] per il conseguimento della terza milestone (_PAB_) è *26 gennaio 2026*, a seguito dei colloqui con i professori per la conferma del superamento dei requisiti della milestone RTB. \ #underline[La data ultima prevista] per gli sprint del PAB è *22 febbraio 2026*.
-
-==== Sprint 9
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [26 gennaio 2026 - 8 febbraio 2026],
-
-  [_Giorni di sprint_], [14],
-
-  [_Attività previste_],
-  [
-    - Continuazione dell’attività di Progettazione.
-    - Ultime fasi di attività di Analisi dei Requisiti.
-    Inoltre, in ordine cronologico:
-    1. Modifiche o migliorie della documentazione prodotta per la milestone RTB a seguito dei suggerimenti proposti dopo la prima milestone.
-    2. Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-    3. Allineamento di tutti i componenti del gruppo sulle attività che sono state svolte e che verranno svolte; chi ha avuto maggiore esperienza chiarirà i dubbi a chi ne ha avuta meno nei diversi ambiti (Analisi, Progettazione, Sviluppo e Verifica).
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 9],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [], [], [8], [], [], [200€],
-      [_Angela Canazza_], [], [], [], [8], [], [], [200€],
-      [_Riccardo Baldin_], [], [], [], [8], [], [], [200€],
-      [_Alberto Reginato_], [], [], [], [4], [], [1,5], [122,5€],
-      [_Nicola Simionato_], [], [5], [3,5], [], [], [], [187,5€],
-      [_Amerigo Vegliante_], [], [], [], [5], [], [2], [155€],
-      [_Laura Venturini_], [6], [], [3,5], [], [], [], [267,5€],
-    ) ]] <tab:PrevisioneSprint9>
-
-#underline[Spese della settimana]: 1.332,5€ \ #underline[Spesa totale]: *7.267,5€*
-
-==== Sprint 10
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [9 febbraio 2026 - 22 febbraio 2026],
-
-  [_Giorni di sprint_], [14],
-
-  [_Attività previste_],
-  [
-    - Conclusione attività di Analisi e Progettazione.
-    - Studio della documentazione necessaria per la prossima milestone _PB_.
-    - Sviluppo Backend e verifica del codice prodotto.
-    - Sviluppo Frontend e verifica del codice prodotto.
-    - Training degli agenti.
-    _Milestone "(PAB)"_:
-    Conclusione attività di Progettazione ed Analisi.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 10],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [], [], [], [11], [5], [240€],
-      [_Angela Canazza_], [], [], [], [], [], [10], [150€],
-      [_Riccardo Baldin_], [], [], [], [], [9], [5], [210€],
-      [_Alberto Reginato_], [4], [], [], [], [], [5], [195€],
-      [_Nicola Simionato_], [], [], [], [8], [8], [], [320€],
-      [_Amerigo Vegliante_], [], [4], [], [], [], [7], [185€],
-      [_Laura Venturini_], [], [], [], [5], [8], [], [245€],
-    ) ]] <tab:PrevisioneSprint10>
-
-#underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *8.812,5€*
-
-=== PB - _Product Baseline_
-#underline[La data di inizio attività prevista] per il conseguimento dell ultima milestone (_PAB_) è *23 febbraio 2026*. \ #underline[La data ultima prevista] per il conseguimento della milestone PB e, di conseguenza, per la consegna del progetto è il *15 marzo 2026*.
-==== Sprint 11
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [23 febbraio 2026 - 1 marzo 2026],
-
-  [_Giorni di sprint_], [7],
-
-  [_Attività previste_],
-  [
-    - Sviluppo della documentazione per la milestone _PB_.
-    - Sviluppo Backend e verifica del codice prodotto.
-    - Sviluppo Frontend e verifica del codice prodotto.
-    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 11],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [4], [], [], [], [], [], [120€],
-      [_Angela Canazza_], [], [], [], [], [], [14], [210€],
-      [_Riccardo Baldin_], [], [4], [], [], [], [], [80€],
-      [_Alberto Reginato_], [], [], [], [], [15,5], [], [232,5€],
-      [_Nicola Simionato_], [], [], [], [], [9], [], [135€],
-      [_Amerigo Vegliante_], [], [], [], [], [10], [], [150€],
-      [_Laura Venturini_], [], [], [], [], [], [11], [165€],
-    ) ]] <tab:PrevisioneSprint11>
-
-#underline[Spese della settimana]: 1.092,5€ \ #underline[Spesa totale]: *9.905€*
-
-==== Sprint 12
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [2 marzo 2026 - 15 marzo 2026],
-
-  [_Giorni di sprint_], [14],
-
-  [_Attività previste_],
-  [
-    - Valutazione di aggiunta requisiti opzionali valutati in sede di analisi.
-    - Sviluppo Backend e verifica del codice.
-    - Sviluppo Frontend e verifica del codice.
-    - Continuazione sviluppo documentazione.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 12],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [6], [], [], [], [5], [195€],
-      [_Angela Canazza_], [], [], [], [], [19.5], [], [292,5€],
-      [_Riccardo Baldin_], [], [], [], [], [], [15], [225€],
-      [_Alberto Reginato_], [], [], [], [], [], [15.5], [232,5€],
-      [_Nicola Simionato_], [], [], [], [], [5], [10], [225€],
-      [_Amerigo Vegliante_], [5], [], [], [], [], [], [150€],
-      [_Laura Venturini_], [], [], [], [], [15], [], [225€],
-    ) ]] <tab:PrevisioneSprint12>
-
-#underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *11.450€*
-
-==== Sprint 13
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [16 marzo 2026 - 26 marzo 2026],
-
-  [_Giorni di sprint_], [10],
-
-  [_Attività previste_],
-  [
-    Ultimo sprint previsto.
-    - Conclusione attività di sviluppo e validazione Frontend e Backend.
-    - Conclusione stesura documentazione adeguata alla consegna del progetto.
-    - Validazione dei risultati prodotti durante gli Sprint.
-    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-    - *Consegna del progetto previsto in data 15 marzo 2026*.
-  ],
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 13],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [], [], [], [10], [10], [300€],
-      [_Angela Canazza_], [6], [], [], [], [], [], [180€],
-      [_Riccardo Baldin_], [], [], [], [], [11], [5], [240€],
-      [_Alberto Reginato_], [], [6], [], [], [], [], [120€],
-      [_Nicola Simionato_], [], [], [], [], [], [13], [195€],
-      [_Amerigo Vegliante_], [], [], [], [], [9], [7], [240€],
-      [_Laura Venturini_], [], [], [], [], [], [8], [120€],
-    ) ]] <tab:PrevisioneSprint13>
-
-#underline[Spese della settimana]: 1.410€ \ #underline[Spesa totale]: *12.845€*
-
-== Trascorso
-=== Sprint 1
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
-  [_Responsabile_], [Nicola Simionato],
-  [_Giorni di sprint_], [7],
-
   [_Attività Svolte_],
   [
     1. Individuazione e studio documenti necessari per la RTB.
@@ -1077,16 +461,67 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]<GANTT-Sprint1>
 
 #underline[Spese della settimana]: 252,5€ \ #underline[Spesa totale]: *252,5€*
+#pagebreak()
 
 === Sprint 2
+==== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [1 dicembre 2025 – 7 dicembre 2025],
-  [_Responsabile_], [Laura Venturini],
+  [_Intervallo temporale_], [1 dicembre 2025 - 7 dicembre 2025],
+
   [_Giorni di sprint_], [7],
 
+  [_Attività previste_],
+  [
+    - Studio individuale della sintassi e l’utilizzo dei Casi d’Uso.
+    - Continuazione e intensificazione dell’attività di Analisi dei Requisiti in gruppo.
+    - Divisione dei compiti per una prima stesura dei documenti tra:
+      - Piano di Progetto (PdP).
+      - Piano di Qualifica (PdQ).
+      - Norme di Progetto.
+      - Analisi dei Requisiti (AR).
+    - Decisioni provvisorie sulle tecnologie utilizzabili per il progetto.
+  ],
+  [_Milestones attive_], [UCB, RTB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 2],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [2], [], [], [], [50€],
+      [_Angela Canazza_], [], [], [2], [], [], [], [50€],
+      [_Riccardo Baldin_], [], [], [2], [], [], [1], [65€],
+      [_Alberto Reginato_], [], [2], [2], [], [], [], [90€],
+      [_Nicola Simionato_], [], [], [2], [], [], [], [50€],
+      [_Amerigo Vegliante_], [], [], [2], [], [], [], [50€],
+      [_Laura Venturini_], [1], [], [2], [], [], [], [80€],
+    ) ]] <tab:PrevisioneSprint2>
+
+#underline[Spese della settimana]: 435€ \ #underline[Spesa totale]: *687,5€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
   [_Attività Svolte_],
   [
   1. Studio individuale della sintassi e l’utilizzo dei Casi d’Uso.
@@ -1144,16 +579,63 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]<GANTT-Sprint2>
 
 #underline[Spese della settimana]: 435€ \ #underline[Spesa totale]: *687,5€*
+#pagebreak()
 
 === Sprint 3
+==== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [8 dicembre 2025 - 14 dicembre 2025],
-  [_Responsabile_], [Alberto Reginato],
+
   [_Giorni di sprint_], [7],
 
+  [_Attività previste_],
+  [
+    - Attività di formazione su Backend da parte dell’azienda committente.
+    - Continuazione da parte del team completo dell’Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
+    - Avanzamento stesura dei documenti per milestone RTB.
+    - Studio individuale sulle tecnologie discusse dal team.
+  ],
+  [_Milestones attive_], [UCB, RTB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 3],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [4], [], [], [], [100€],
+      [_Angela Canazza_], [], [], [4], [], [], [], [100€],
+      [_Riccardo Baldin_], [], [], [4], [], [], [], [100€],
+      [_Alberto Reginato_], [3], [], [], [], [], [1,5], [112,5€],
+      [_Nicola Simionato_], [], [3], [], [], [], [], [60€],
+      [_Amerigo Vegliante_], [], [], [4], [], [], [], [100€],
+      [_Laura Venturini_], [], [], [4], [], [], [], [100€],
+    ) ]] <tab:PrevisioneSprint3>
+
+#underline[Spese della settimana]: 672,5€ \ #underline[Spesa totale]: *1.360€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
   [_Attività Svolte_],
   [
     1. Formazione con l'azienda proponente su backend;
@@ -1214,16 +696,65 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]<GANTT-Sprint3>
 
 #underline[Spese della settimana]: 672,5€ \ #underline[Spesa totale]: *1.360€*
+#pagebreak()
 
 === Sprint 4
+==== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [15 dicembre 2025 – 21 dicembre 2025],
-  [_Responsabile_], [Angela Favaro],
+  [_Intervallo temporale_], [15 dicembre 2025 - 21 dicembre 2025],
+
   [_Giorni di sprint_], [7],
 
+  [_Attività previste_],
+  [
+    - Attività di formazione su Frontend, AWS ed introduzione alla parte AI da parte dell’azienda committente.
+    - Continuazione di:
+      - Analisi dei Requisiti.
+      - Stesura della documentazione.
+    - Revisione sulle decisioni prese riguardo alle tecnologie adatte al progetto.
+    - Continuazione stesura di Use Case.
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+  ],
+  [_Milestones attive_], [UCB, RTB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 4],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [3], [], [], [], [], [], [90€],
+      [_Angela Canazza_], [], [], [4], [], [], [1,5], [122,5€],
+      [_Riccardo Baldin_], [], [], [6], [], [], [], [150€],
+      [_Alberto Reginato_], [], [], [5], [], [], [], [125€],
+      [_Nicola Simionato_], [], [], [2], [], [], [], [50€],
+      [_Amerigo Vegliante_], [], [4], [], [], [], [1,5], [102,5€],
+      [_Laura Venturini_], [], [], [4], [], [], [], [100€],
+    ) ]] <tab:PrevisioneSprint4>
+
+#underline[Spese della settimana]: 740€ \ #underline[Spesa totale]: *2100€*
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
   [_Attività Svolte_],
   [
     1. Formazione con l'azienda proponente su Frontend, AWS ed AI;
@@ -1283,16 +814,63 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]<GANTT-Sprint4>
 
 #underline[Spese della settimana]: 740€ \ #underline[Spesa totale]: *2100€*
+#pagebreak()
 
 === Sprint 5
+==== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [22 dicembre 2025 – 28 dicembre 2025],
-  [_Responsabile_],[Amerigo Vegliante],
+  [_Intervallo temporale_], [22 dicembre 2025 - 28 dicembre 2025],
+
   [_Giorni di sprint_], [7],
 
+  [_Attività previste_],
+  [
+    - Scelta definitiva delle tecnologie da utilizzare per il progetto.
+    - Inizio studio delle tecnologie scelte.
+    - Continuazione dell’attività di Analisi dei Requisiti.
+    - Continuazione stesura dei documenti.
+    
+  ],
+  [_Milestones attive_], [UCB, RTB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 5],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [4], [], [], [], [100€],
+      [_Angela Canazza_], [], [], [4], [], [], [], [100€],
+      [_Riccardo Baldin_], [], [4], [], [], [], [], [80€],
+      [_Alberto Reginato_], [], [], [4], [], [], [], [100€],
+      [_Nicola Simionato_], [], [], [4], [], [], [], [100€],
+      [_Amerigo Vegliante_], [3], [], [], [], [], [2], [120€],
+      [_Laura Venturini_], [], [], [2], [], [], [2], [80€],
+    ) ]] <tab:PrevisioneSprint5>
+
+#underline[Spese della settimana]: 680€ \ #underline[Spesa totale]: *2.780€*
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
   [_Attività Svolte_],
   [
     1. Continuazione stesura documentazione: PdP, AdR e NdP;
@@ -1350,21 +928,69 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   #image("../../asset/GANTT/sprint5-gantt.png")
   ]<GANTT-Sprint5>
 
-#underline[Spese della settimana]: 460€ \ #underline[Spesa totale]: *2.560€*
+#underline[Spese della settimana]: 460€ / 680€ \ #underline[Spesa totale]: *2.560€ / 2.780€*
+#pagebreak()
 
 === Sprint 6
+==== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [29 dicembre 2025 – 4 gennaio 2026],
-  [_Responsabile_],[Angela Canazza],
+  [_Intervallo temporale_], [29 dicembre 2025 - 4 gennaio 2026],
+
   [_Giorni di sprint_], [7],
 
+  [_Attività previste_],
+  [
+    - Inizio attività di produzione del _Proof of Concept (PoC)_.
+    - Continuazione stesura della documentazione.
+    - Continuazione attività di Analisi dei Requisiti.
+    - Inizio dell’attività di Progettazione.
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+  ],
+  [_Milestones attive_], [UCB, RTB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 6],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [2], [1], [], [], [], [65€],
+      [_Angela Canazza_], [2], [], [1], [], [], [], [85€],
+      [_Riccardo Baldin_], [], [], [3], [], [], [], [75€],
+      [_Alberto Reginato_], [], [], [3], [], [], [], [75€],
+      [_Nicola Simionato_], [], [], [1], [], [], [2], [55€],
+      [_Amerigo Vegliante_], [], [], [3], [], [], [2], [105€],
+      [_Laura Venturini_], [], [], [1], [], [], [], [25€],
+    ) ]] <tab:PrevisioneSprint6>
+
+#underline[Spese della settimana]: 485€ \ #underline[Spesa totale]: *3.045€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
   [_Attività Svolte_],
   [1. Continuazione stesura documentazione PdP, AdR e NdP;
-  2. Conclusione scrittura Use Case per Developer, Business Owner e Project Manager
-  3. Aggiornamento Glossario
+  1. Conclusione scrittura Use Case per Developer, Business Owner e Project Manager
+  2. Aggiornamento Glossario
   ],
 
   [_Rischi incontrati_],
@@ -1402,13 +1028,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [4], [], [1 → 0], [], [], [80€],
-      [_Angela Canazza_], [3], [], [], [1 → 0], [], [], [90€],
-      [_Riccardo Baldin_], [], [], [4], [1 → 0], [], [], [100€],
-      [_Alberto Reginato_], [], [], [4], [1 → 0], [], [], [100€],
-      [_Nicola Simionato_], [], [], [], [4 → 0], [], [2], [30€],
-      [_Amerigo Vegliante_], [], [], [6], [1 → 0], [], [], [150€],
-      [_Laura Venturini_], [], [], [], [4 → 0], [], [2], [30€],
+      [_Angela Favaro_], [], [2 → 1], [1], [], [], [], [45€],
+      [_Angela Canazza_], [2 → 1], [], [1], [], [], [], [55€],
+      [_Riccardo Baldin_], [], [], [3 → 2], [], [], [], [50€],
+      [_Alberto Reginato_], [], [], [3 → 2], [], [], [], [50€],
+      [_Nicola Simionato_], [], [], [1], [], [], [2 → 1,5], [47,5€],
+      [_Amerigo Vegliante_], [], [], [3 → 2], [], [], [2 → 1,5], [72,5€],
+      [_Laura Venturini_], [], [], [1], [], [], [], [25€],
     ) ]] <tab:RetrospettivaSprint6>
 
 *GANTT Diagram*
@@ -1418,17 +1044,63 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   #image("../../asset/GANTT/sprint6-gantt.png")
   ]<GANTT-Sprint6>
 
-#underline[Spese della settimana]: 580€ \ #underline[Spesa totale]: *3.140€*
+#underline[Spese della settimana]: 345€ / 485€ \ #underline[Spesa totale]: *2.905€ / 3.045€*
+#pagebreak()
 
 === Sprint 7
+==== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [5 gennaio 2026 - 11 gennaio 2026],
-  [_Responsabile_],[Riccardo Baldin],
+
   [_Giorni di sprint_], [7],
 
+  [_Attività previste_],
+  [
+    In questo sprint tutti i ruoli devono essere operativi e il team deve dimostrare la capacità di generare valore per lo sviluppo del progetto.
+    - Continuazione di sviluppo e verifica del PoC.
+    - Continuazione e conclusione stesura della documentazione.
+    - Continuazione attività di Analisi e Progettazione.
+  ],
+  [_Milestones attive_], [UCB, RTB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 7],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [4], [2], [], [], [150€],
+      [_Angela Canazza_], [], [6], [], [], [], [], [120€],
+      [_Riccardo Baldin_], [4], [], [], [], [], [], [120€],
+      [_Alberto Reginato_], [], [], [], [6], [2], [], [180€],
+      [_Nicola Simionato_], [], [], [3], [], [], [2.5], [112,5€],
+      [_Amerigo Vegliante_], [], [], [], [7], [2], [], [205€],
+      [_Laura Venturini_], [], [], [], [5], [], [2.5], [162,5€],
+    ) ]] <tab:PrevisioneSprint7>
+
+#underline[Spese della settimana]: 1.050€ \ #underline[Spesa totale]: *4.735€*
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
   [_Attività Svolte_],
   [
     1. Progettazione e Programmazione del PoC
@@ -1489,15 +1161,65 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
 
 #underline[Spese della settimana]: 1.065€ \ #underline[Spesa totale]: *4.205€*
+#pagebreak()
 
 === Sprint 8
+==== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [12 gennaio 2026 – 25 gennaio 2026],
-  [_Responsabile_],[Nicola Simionato],
+  [_Intervallo temporale_], [12 gennaio 2026 - 25 gennaio 2026],
+
   [_Giorni di sprint_], [14],
+
+  [_Attività previste_],
+  [
+    Ultimo sprint previsto prima della consegna del _PoC_.
+    - Conclusione dello sviluppo e della verifica del PoC.
+    - Continuazione attività di Progettazione.
+    - Revisione e validazione dei documenti prodotti per la milestone RTB.
+    - Colloquio conclusivo per la revisione del progetto con i professori.
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+  ],
+  [_Milestones attive_], [UCB, RTB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 8],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [], [5], [], [3], [170€],
+      [_Angela Canazza_], [], [], [], [6], [2], [], [180€],
+      [_Riccardo Baldin_], [], [], [], [6], [2], [], [180€],
+      [_Alberto Reginato_], [], [], [], [6], [], [3], [195€],
+      [_Nicola Simionato_], [6], [], [], [], [], [], [180€],
+      [_Amerigo Vegliante_], [], [], [4], [3], [], [], [175€],
+      [_Laura Venturini_], [], [6], [], [], [], [], [120€],
+    ) ]] <tab:PrevisioneSprint8>
+
+#underline[Spese della settimana]: 1.200€ \ #underline[Spesa totale]: *5.935*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
 
   [_Attività Svolte_],
   [
@@ -1555,20 +1277,70 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]<GANTT-Sprint8>
 
 #underline[Spese della settimana]: 875€ \ #underline[Spesa totale]: *5.080€*
+#pagebreak()
 
 === Sprint 9
+==== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [26 gennaio 2026 - 8 febbraio 2026],
-  [_Responsabile_],[Laura Venturini],
+
   [_Giorni di sprint_], [14],
+
+  [_Attività previste_],
+  [
+    - Continuazione dell’attività di Progettazione.
+    - Ultime fasi di attività di Analisi dei Requisiti.
+    Inoltre, in ordine cronologico:
+    1. Modifiche o migliorie della documentazione prodotta per la milestone RTB a seguito dei suggerimenti proposti dopo la prima milestone.
+    2. Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+    3. Allineamento di tutti i componenti del gruppo sulle attività che sono state svolte e che verranno svolte; chi ha avuto maggiore esperienza chiarirà i dubbi a chi ne ha avuta meno nei diversi ambiti (Analisi, Progettazione, Sviluppo e Verifica).
+  ],
+  [_Milestones attive_], [UCB, RTB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 9],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [], [8], [], [], [200€],
+      [_Angela Canazza_], [], [], [], [8], [], [], [200€],
+      [_Riccardo Baldin_], [], [], [], [8], [], [], [200€],
+      [_Alberto Reginato_], [], [], [], [4], [], [1,5], [122,5€],
+      [_Nicola Simionato_], [], [5], [3,5], [], [], [], [187,5€],
+      [_Amerigo Vegliante_], [], [], [], [5], [], [2], [155€],
+      [_Laura Venturini_], [6], [], [3,5], [], [], [], [267,5€],
+    ) ]] <tab:PrevisioneSprint9>
+
+#underline[Spese della settimana]: 1.332,5€ \ #underline[Spesa totale]: *7.267,5€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
 
   [_Attività Svolte_],
   [ 1. Riformulazione dei Casi d'Uso con aumento della granularità
-  2. Stesura del capitolo 5 del Piano di Qualifica
-  3. Ultimazione del PoC
+  1. Stesura del capitolo 5 del Piano di Qualifica
+  2. Ultimazione del PoC
 
   ],
 
@@ -1621,90 +1393,66 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]<GANTT-Sprint8>
 
 #underline[Spese della settimana]: 947,5€ \ #underline[Spesa totale]: *6.027,5€*
+#pagebreak()
+
 === Sprint 10
+==== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
   [_Intervallo temporale_], [9 febbraio 2026 - 22 febbraio 2026],
-  [_Responsabile_],[],
-  [_Giorni di sprint_], [7],
 
-  [_Attività Svolte_],
+  [_Giorni di sprint_], [14],
+
+  [_Attività previste_],
   [
-
+    - Conclusione attività di Analisi e Progettazione.
+    - Studio della documentazione necessaria per la prossima milestone _PB_.
+    - Sviluppo Backend e verifica del codice prodotto.
+    - Sviluppo Frontend e verifica del codice prodotto.
+    - Training degli agenti.
+    _Milestone "(PAB)"_:
+    Conclusione attività di Progettazione ed Analisi.
   ],
-
-  [_Rischi incontrati_],
-  [
-    1.
-  ],
-
-  [_Mitigazione_],
-  [
-    1.
-  ]
+  [_Milestones attive_], [RTB]
 )
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 10],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
 
-=== Sprint 11
-#tabella-viola(
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [], [], [11], [5], [240€],
+      [_Angela Canazza_], [], [], [], [], [], [10], [150€],
+      [_Riccardo Baldin_], [], [], [], [], [9], [5], [210€],
+      [_Alberto Reginato_], [4], [], [], [], [], [5], [195€],
+      [_Nicola Simionato_], [], [], [], [8], [8], [], [320€],
+      [_Amerigo Vegliante_], [], [4], [], [], [], [7], [185€],
+      [_Laura Venturini_], [], [], [], [5], [8], [], [245€],
+    ) ]] <tab:PrevisioneSprint10>
+
+#underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *8.812,5€*
+
+==== Trascorso
+#table(
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [23 febbraio 2026 – 1 marzo 2026],
-  [_Responsabile_],[],
-  [_Giorni di sprint_], [7],
-
-  [_Attività Svolte_],
-  [
-
-  ],
-
-  [_Rischi incontrati_],
-  [
-    1.
-  ],
-
-  [_Mitigazione_],
-  [
-    1.
-  ]
-)
-
-=== Sprint 12
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
-  [_Responsabile_],[],
-  [_Giorni di sprint_], [7],
-
-  [_Attività Svolte_],
-  [
-
-  ],
-
-  [_Rischi incontrati_],
-  [
-    1.
-  ],
-
-  [_Mitigazione_],
-  [
-    1.
-  ]
-)
-
-=== Sprint 13
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
-  [_Responsabile_],[],
-  [_Giorni di sprint_], [7],
-
   [_Attività Svolte_],
   [
 
@@ -1721,6 +1469,299 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   ]
 )
 #pagebreak()
+
+=== Sprint 11
+==== Preventivo a finire
+#tabella-viola(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], [23 febbraio 2026 - 1 marzo 2026],
+
+  [_Giorni di sprint_], [7],
+
+  [_Attività previste_],
+  [
+    - Sviluppo della documentazione per la milestone _PB_.
+    - Sviluppo Backend e verifica del codice prodotto.
+    - Sviluppo Frontend e verifica del codice prodotto.
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+  ],
+  [_Milestones attive_], [RTB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 11],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [4], [], [], [], [], [], [120€],
+      [_Angela Canazza_], [], [], [], [], [], [14], [210€],
+      [_Riccardo Baldin_], [], [4], [], [], [], [], [80€],
+      [_Alberto Reginato_], [], [], [], [], [15,5], [], [232,5€],
+      [_Nicola Simionato_], [], [], [], [], [9], [], [135€],
+      [_Amerigo Vegliante_], [], [], [], [], [10], [], [150€],
+      [_Laura Venturini_], [], [], [], [], [], [11], [165€],
+    ) ]] <tab:PrevisioneSprint11>
+
+#underline[Spese della settimana]: 1.092,5€ \ #underline[Spesa totale]: *9.905€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Attività Svolte_],
+  [
+
+  ],
+
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+
+  [_Mitigazione_],
+  [
+    1.
+  ]
+)
+#pagebreak()
+
+=== Sprint 12
+==== Preventivo a finire
+#tabella-viola(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], [2 marzo 2026 - 15 marzo 2026],
+
+  [_Giorni di sprint_], [14],
+
+  [_Attività previste_],
+  [
+    - Valutazione di aggiunta requisiti opzionali valutati in sede di analisi.
+    - Sviluppo Backend e verifica del codice.
+    - Sviluppo Frontend e verifica del codice.
+    - Continuazione sviluppo documentazione.
+  ],
+  [_Milestones attive_], [RTB, PAB, PB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 12],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [6], [], [], [], [5], [195€],
+      [_Angela Canazza_], [], [], [], [], [19.5], [], [292,5€],
+      [_Riccardo Baldin_], [], [], [], [], [], [15], [225€],
+      [_Alberto Reginato_], [], [], [], [], [], [15.5], [232,5€],
+      [_Nicola Simionato_], [], [], [], [], [5], [10], [225€],
+      [_Amerigo Vegliante_], [5], [], [], [], [], [], [150€],
+      [_Laura Venturini_], [], [], [], [], [15], [], [225€],
+    ) ]] <tab:PrevisioneSprint12>
+
+#underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *11.450€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Attività Svolte_],
+  [
+
+  ],
+
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+
+  [_Mitigazione_],
+  [
+    1.
+  ]
+)
+#pagebreak()
+
+=== Sprint 13
+==== Preventivo a finire
+#tabella-viola(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], [16 marzo 2026 - 26 marzo 2026],
+
+  [_Giorni di sprint_], [10],
+
+  [_Attività previste_],
+  [
+    Ultimo sprint previsto.
+    - Conclusione attività di sviluppo e validazione Frontend e Backend.
+    - Conclusione stesura documentazione adeguata alla consegna del progetto.
+    - Validazione dei risultati prodotti durante gli Sprint.
+    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+    - *Consegna del progetto previsto in data 15 marzo 2026*.
+  ],
+  [_Milestones attive_], [PAB, PB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 13],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [], [], [10], [10], [300€],
+      [_Angela Canazza_], [6], [], [], [], [], [], [180€],
+      [_Riccardo Baldin_], [], [], [], [], [11], [5], [240€],
+      [_Alberto Reginato_], [], [6], [], [], [], [], [120€],
+      [_Nicola Simionato_], [], [], [], [], [], [13], [195€],
+      [_Amerigo Vegliante_], [], [], [], [], [9], [7], [240€],
+      [_Laura Venturini_], [], [], [], [], [], [8], [120€],
+    ) ]] <tab:PrevisioneSprint13>
+
+#underline[Spese della settimana]: 1.410€ \ #underline[Spesa totale]: *12.845€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Attività Svolte_],
+  [
+
+  ],
+
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+
+  [_Mitigazione_],
+  [
+    1.
+  ]
+)
+#pagebreak()
+
+=== Sprint 14
+==== Preventivo a finire
+#tabella-viola(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], [16 marzo 2026 - 26 marzo 2026],
+
+  [_Giorni di sprint_], [10],
+
+  [_Attività previste_],
+  [
+    Ultimo sprint previsto.
+    - Conclusione attività di sviluppo e validazione Frontend e Backend.
+    - Conclusione stesura documentazione adeguata alla consegna del progetto.
+    - Validazione dei risultati prodotti durante gli Sprint.
+    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+    - *Consegna del progetto previsto in data 15 marzo 2026*.
+  ],
+  [_Milestones attive_], [PB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 13],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [], [], [10], [10], [300€],
+      [_Angela Canazza_], [6], [], [], [], [], [], [180€],
+      [_Riccardo Baldin_], [], [], [], [], [11], [5], [240€],
+      [_Alberto Reginato_], [], [6], [], [], [], [], [120€],
+      [_Nicola Simionato_], [], [], [], [], [], [13], [195€],
+      [_Amerigo Vegliante_], [], [], [], [], [9], [7], [240€],
+      [_Laura Venturini_], [], [], [], [], [], [8], [120€],
+    ) ]] <tab:PrevisioneSprint13>
+
+#underline[Spese della settimana]: 1.410€ \ #underline[Spesa totale]: *12.845€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Attività Svolte_],
+  [
+
+  ],
+
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+
+  [_Mitigazione_],
+  [
+    1.
+  ]
+)
+#pagebreak()
+
 = Analisi e gestione dei rischi
 Successivamente verranno illustrati:
 - i rischi rilevati per il progetto;
