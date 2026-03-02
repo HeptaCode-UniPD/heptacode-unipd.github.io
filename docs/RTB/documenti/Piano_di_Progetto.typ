@@ -1619,7 +1619,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
+  [_Intervallo temporale_], [9 febbraio 2026 - 22 febbraio 2026],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
@@ -1644,7 +1644,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [24 novembre 2025 – 30 novembre 2025],
+  [_Intervallo temporale_], [23 febbraio 2026 – 1 marzo 2026],
   [_Responsabile_],[],
   [_Giorni di sprint_], [7],
 
