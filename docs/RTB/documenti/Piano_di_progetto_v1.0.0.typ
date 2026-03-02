@@ -1,200 +1,55 @@
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3": chart
+#import "../../templates/template-documenti.typ": template_documenti, tabella-viola
+#import "../../templates/glossario_termini.typ": applica-glossario
 
-#let tabella-viola(..args) = {
-  show table.cell.where(y: 0): set text(white, weight: "bold")
-  table(
-    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
-    ..args
-  )
-}
-
-#v(1fr)
-#align(center, [
-  #image("../../asset/logo.svg")
-  #set text(lang: "it")
-
-  #v(1.5cm)
-
-  #text(size: 25pt, weight: "bold")[Piano di Progetto]
-
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Versione 1.0.0])
-
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
-
-  #align(center,
-  [#text(12pt)[Piano del progetto _Code Guardian_ del gruppo _Hepta Code_ con preventivo a finire e trascorso.]]
-  )
-])
-#v(1fr)
-#counter(page).update(0)
-
-#pagebreak()
-#text(size: 17pt, weight: "bold")[Registro delle modifiche:]
-#tabella-viola(
-  columns: (auto, auto, auto, auto, auto),
-  inset: 9pt,
-  align: horizon,
-  table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
-
-  "1.0.0",
-  "2026/02/16", 
-  "Nicola Simionato", 
-  "Angela Favaro", 
-  "Aggiunto trascorso Sprint 8",
-
-  "0.14.0",
-  "2026/02/12", 
-  "Laura Venturini", 
-  "Angela Favaro", 
-  "Aggiornamento diagrammi GANTT",
-
-  "0.13.0",
-  "2026/02/10", 
-  "Angela Favaro", 
-  "Laura Venturini", 
-  "Sistemazione rendicontazione ore effettive",
-
-  "0.12.0",
-  "2026/01/05", 
-  "Angela Canazza", 
-  "Laura Venturini", 
-  "Aggiunto trascorso Sprint 6",
-
-  "0.11.0",
-  "2026/01/05", 
-  "Amerigo Vegliante", 
-  "Laura Venturini", 
-  "Aggiunto trascorso Sprint 5",
-
-  "0.10.0",
-  "2025/12/31", 
-  "Nicola Simionato", 
-  "Laura Venturini", 
-  "Aggiunto trascorso Sprint 1 (sezione 5.4.1).",
-
-  "0.9.0",
-  "2025/12/29", 
-  "Angela Favaro", 
-  "Amerigo Vegliante", 
-  "Aggiunto trascorso Sprint 4",
-
-  "0.8.0", 
-  "2025/12/22", 
-  "Angela Favaro", 
-  "Amerigo Vegliante", 
-  "Conclusione capitolo ‘Analisi e gestione dei rischi’",
-
-  "0.7.0", 
-  "2025/12/21", 
-  "Alberto Reginato", 
-  "Amerigo Vegliante", 
-  "Aggiornamento sprint trascorso",
-
-  "0.6.1", 
-  "2025/12/17", 
-  "Angela Favaro", 
-  "Amerigo Vegliante", 
-  "Uniformazione documento allo standard del gruppo",
-
-  "0.6.0",
-  "2025/12/14",
-  "Laura Venturini",
-  "Nicola Simionato",
-  "Aggiunti capitoli ‘Processi e metodologie’, ‘Risorse e strumenti’ e ‘Analisi e gestione dei rischi’",
-
-  "0.5.0", 
-  "2025/12/14", 
-  "Angela Favaro", 
-  "Nicola Simionato", 
-  "Aggiunta diagrammi PERT e correzione analisi Sprint",
-
-  "0.4.0", 
-  "2025/12/08", 
-  "Angela Favaro", 
-  "Nicola Simionato", 
-  "Calcolo dei costi",
-
-  "0.3.0", 
-  "2025/12/03", 
-  "Angela Favaro", 
-  "Alberto Reginato", 
-  "Suddivisione e stesura sprint per PB",
-
-  "0.2.0", 
-  "2025/12/02", 
-  "Angela Favaro", 
-  "Alberto Reginato", 
-  "Suddivisione e stesura sprint per RTB",
-
-  "0.1.0", 
-  "2025/12/01", 
-  "Angela Favaro", 
-  "Alberto Reginato", 
-  "Prima stesura di struttura generale",
+#let storia_modifiche = (
+  ("1.0.0", "2026/02/16", "Nicola Simionato", "Angela Favaro", "Aggiunto trascorso Sprint 8"),
+  ("0.14.0", "2026/02/12", "Laura Venturini", "Angela Favaro", "Aggiornamento diagrammi GANTT"),
+  ("0.13.0", "2026/02/10",  "Angela Favaro",  "Laura Venturini",  "Sistemazione rendicontazione ore effettive"),
+  ("0.12.0", "2026/01/05",  "Angela Canazza",  "Laura Venturini",  "Aggiunto trascorso Sprint 6"),
+  ("0.11.0", "2026/01/05",  "Amerigo Vegliante",  "Laura Venturini",  "Aggiunto trascorso Sprint 5"),
+  ("0.10.0", "2025/12/31",  "Nicola Simionato",  "Laura Venturini",  "Aggiunto trascorso Sprint 1 (sezione 5.4.1)."),
+  ("0.9.0", "2025/12/29",  "Angela Favaro",  "Amerigo Vegliante",  "Aggiunto trascorso Sprint 4"),
+  ("0.8.0", "2025/12/22",  "Angela Favaro",  "Amerigo Vegliante",  "Conclusione capitolo 'Analisi e gestione dei rischi'"),
+  ("0.7.0", "2025/12/21",  "Alberto Reginato",  "Amerigo Vegliante",  "Aggiornamento sprint trascorso"),
+  ("0.6.1", "2025/12/17",  "Angela Favaro",  "Amerigo Vegliante",  "Uniformazione documento allo standard del gruppo"),
+  ("0.6.0", "2025/12/14", "Laura Venturini", "Nicola Simionato", "Aggiunti capitoli 'Processi e metodologie', 'Risorse e strumenti' e 'Analisi e gestione dei rischi'"),
+  ("0.5.0", "2025/12/14",  "Angela Favaro",  "Nicola Simionato",  "Aggiunta diagrammi PERT e correzione analisi Sprint"),
+  ("0.4.0", "2025/12/08",  "Angela Favaro",  "Nicola Simionato",  "Calcolo dei costi"),
+  ("0.3.0", "2025/12/03",  "Angela Favaro",  "Alberto Reginato",  "Suddivisione e stesura sprint per PB"),
+  ("0.2.0", "2025/12/02",  "Angela Favaro",  "Alberto Reginato",  "Suddivisione e stesura sprint per RTB"),
+  ("0.1.0", "2025/12/01",  "Angela Favaro",  "Alberto Reginato",  "Prima stesura di struttura generale")
 )
 
-#pagebreak()
-#set text(size: 11pt, lang: "it")
-#show figure.caption: set text(9pt)
-
-#outline(title: "Indice dei contenuti")
-#set heading(numbering: "1.")
-
-#pagebreak()
-#outline(
-  title: "Indice delle tabelle",
-  target: figure.where(kind: table),
+#show: doc => template_documenti(
+  titolo: "Piano di Progetto",
+  descrizione: "Il presente documento contiene il piano del progetto _Code Guardian_ del gruppo _Hepta Code_ con preventivo a finire e trascorso.",
+  modifiche: storia_modifiche,
+  lista_tabelle: true,
+  lista_figure: true,
+  doc
 )
 
-#pagebreak()
+#show: applica-glossario
 
-#outline(
-  title: "Indice delle figure",
-  target: figure.where(kind : image),
-)
-
-#pagebreak()
-#set page(
-  numbering: "1",
-  header: [
-    #set table(
-      stroke: none,
-    )
-    #table(
-      columns: 3,
-      [Hepta Code],
-      [#rect(
-        width: 100%,
-        height: 1pt,
-        fill: white,
-        stroke: none,
-      )],
-      [Piano di Progetto v1.0.0],
-    )
-    #line(length: 100%, stroke: black)
-  ],
-)
-#counter(page).update(1)
 = Introduzione
 Questo è un documento utile per avere una linea guida da seguire durante tutto lo svolgimento del progetto. \
 Il Piano di Progetto ha lo scopo di definire in modo chiaro, strutturato e verificabile come il progetto _Code Guardian_ dovrà essere realizzato.
 Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e per aggiornare contenuti errati o imprecisi.
 == Ambito del progetto
 In questa prima parte del documento è presente una breve introduzione al progetto di cui si farà riferimento in ogni paragrafo. Non vuole essere una spiegazione esplicativa e dettagliata dello stesso; per quello si può consultare il documento di _Analisi dei requisiti_ presente nel #link("https://heptacode-unipd.github.io", "sito del team Hepta Code"). \
-*Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un’organizzazione. \ Verranno utilizzati degli agenti che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository Git Hub. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \
+*Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l'intero ciclo di vita dei progetti che l'utente realizzerà all'interno di un'organizzazione. \ Verranno utilizzati degli agenti che consentono l'analisi della documentazione e del codice del progetto che si trova in una repository Git Hub. Ogni agente avrà un diverso ruolo all'interno della piattaforma. \
 Gli agenti fino ad ora pensati per _Code Guardian_ sono:
 1. Agente per il controllo del codice.
 2. Agente per il controllo della documentazione.
 3. Agente per il controllo delle prime 10 linee guida OWASP.
-\ Gli utenti / attori presi in esame per la creazione del progetto sono di tre tipi (lavoreranno insieme all’interno di uno stesso progetto):
+\ Gli utenti / attori presi in esame per la creazione del progetto sono di tre tipi (lavoreranno insieme all'interno di uno stesso progetto):
 - Business Owner;
 - Project Manager;
 - Sviluppatore
-Per ognuno dei tre verrà fornita un’interfaccia consona alle funzioni che più possono interessare loro riguardo lo stato di uno o più progetti di sviluppo. \
-\ Grazie a meccanismi AI e LLM , in base al dominio dell’utente, verranno:
+Per ognuno dei tre verrà fornita un'interfaccia consona alle funzioni che più possono interessare loro riguardo lo stato di uno o più progetti di sviluppo. \
+\ Grazie a meccanismi AI e LLM , in base al dominio dell'utente, verranno:
 - visualizzati gli errori rilevati;
 - forniti suggerimenti agli errori rilevati;
 - forniti suggerimenti per il miglioramento del progetto;
@@ -210,27 +65,27 @@ Ad ogni Sprint Retrospective si aggiornerà il _Trascorso_ con:
 - un riassunto di ciò che è accaduto durante lo sprint, diviso per punti;
 - le problematiche incontrate;
 - le misure di mitigazione attuate;
-- gli eventuali aggiornamenti all’_Analisi dei rischi_;
-- i Diagrammi di GANTT utili alla comprensione immediata dell’avanzamento del progetto.
-Verrà conseguentemente aggiornata l’_Analisi dei Rischi_ con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
+- gli eventuali aggiornamenti all'_Analisi dei rischi_;
+- i Diagrammi di GANTT utili alla comprensione immediata dell'avanzamento del progetto.
+Verrà conseguentemente aggiornata l'_Analisi dei Rischi_ con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
 #pagebreak()
 
 
 = Processi e metodologie
 == Modello di processo scelto
-Abbiamo scelto di lavorare al progetto utilizzando l’approccio Agile basato sul framework Scrum. È stato scelto tale modello per le seguenti ragioni:
-- Grazie a questo metodo si possono limitare gli sprechi di risorse: con la suddivisione di task molto granulari, l’introduzione di un errore è più facilmente individuabile e quindi è meno frequente che l’errore si propaghi in grosse parti del progetto.
+Abbiamo scelto di lavorare al progetto utilizzando l'approccio Agile basato sul framework Scrum. È stato scelto tale modello per le seguenti ragioni:
+- Grazie a questo metodo si possono limitare gli sprechi di risorse: con la suddivisione di task molto granulari, l'introduzione di un errore è più facilmente individuabile e quindi è meno frequente che l'errore si propaghi in grosse parti del progetto.
 - Lo stato del progetto, la suddivisione dei task da fare, le ore a disposizione e gli aspetti migliorabili sono chiari a tutti grazie alla Sprint Review, allo Sprint Retrospective e allo Sprint Planning.
-- Grazie allo Sprint Retrospective si può migliorare l’efficacia del team durante lo svolgimento del progetto e capire in quali aspetti è lacunoso.
+- Grazie allo Sprint Retrospective si può migliorare l'efficacia del team durante lo svolgimento del progetto e capire in quali aspetti è lacunoso.
 - Permette una gestione dei rischi più facile e il loro continuo monitoraggio, diminuendo la probabilità che si verifichino.
-- Il rilascio incrementale permette all’azienda cliente di vedere come sta avanzando il progetto.
-- Feedback più veloce: questo metodo impone un contatto più frequente con l’azienda proponente, permettendo di avere un riscontro sull'adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
+- Il rilascio incrementale permette all'azienda cliente di vedere come sta avanzando il progetto.
+- Feedback più veloce: questo metodo impone un contatto più frequente con l'azienda proponente, permettendo di avere un riscontro sull'adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
 == Struttura del ciclo di vita
-Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all’11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; sarà invece di due settimane durante il periodo di sessione d’esami che va dal 12 gennaio al 22 febbraio 2026. \ Per ogni Sprint, sono previsti:
+Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all'11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; sarà invece di due settimane durante il periodo di sessione d'esami che va dal 12 gennaio al 22 febbraio 2026. \ Per ogni Sprint, sono previsti:
 - uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi, che vengono scritti nello *Sprint Backlog*;
 - uno *Sprint Review*, in cui si esamina il lavoro completato dopo uno Sprint e si raccoglie feedback e si aggiorna il *Product Backlog*, che contiene tutte le task da completare per completare il progetto;
 - uno *Sprint Retrospective*, in cui il team ragiona su ciò che può essere migliorato in confronto allo Sprint appena finito.
-- un  aggiornamento asincrono via Telegram ogni tre giorni al posto del Daily Scrum per monitorare l’avanzamento del lavoro.
+- un  aggiornamento asincrono via Telegram ogni tre giorni al posto del Daily Scrum per monitorare l'avanzamento del lavoro.
 
 #pagebreak()
 
@@ -239,7 +94,7 @@ Questa sezione si occupa di descrivere quali sono e come vengono gestiti gli str
 == Risorse umane
 La gestione delle ore fra i membri del progetto è spiegata nella @Organizzazione (Organizzazione team).
 == Risorse materiali
-Ogni membro del team userà il proprio computer per lavorare al progetto. Inoltre, in caso di necessità, il team potrà usare i computer messi a disposizione dall’Università di Padova nelle aule informatiche:
+Ogni membro del team userà il proprio computer per lavorare al progetto. Inoltre, in caso di necessità, il team potrà usare i computer messi a disposizione dall'Università di Padova nelle aule informatiche:
 - _LabP036_ e _LabP140_ presso il _Complesso Paolotti_.
 - _LabTA_ presso _Torre Archimede_.
 == Strumenti Software
@@ -248,19 +103,19 @@ Gli strumenti di sviluppo che abbiamo deciso di usare sono:
 - *React* e *Typescript* per la parte Frontend;
 - *Node.js* per la parte Backend;
 - *MongoDB* per il Database;
-- *AWS* per l’architettura Cloud.
+- *AWS* per l'architettura Cloud.
 Per il controllo della versione usiamo *GitHub*.\
 Per implementare la Continuous Integration e la Continuous Delivery usiamo *GitHub Actions*.\ \
 Per la redazione dei documenti il linguaggio scelto è *Typst*.\ \
 Gli strumenti per la comunicazione sono invece:
 - *Discord* per le riunioni telematiche;
 - *Telegram* per avere un canale di comunicazione asincrona fra i  membri del team;
-- *Slack* e *Gmail* per comunicare con l’azienda proponente.
+- *Slack* e *Gmail* per comunicare con l'azienda proponente.
 #pagebreak()
 
 = Organizzazione del team
 #label("Organizzazione")
-Ad ogni suddivisione di periodo (_sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 gennaio 2026_ al _21 febbraio 2026_. \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
+Ad ogni suddivisione di periodo (_sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d'esami invernale che si svolgerà dal _19 gennaio 2026_ al _21 febbraio 2026_. \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un'intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l'opzione ritenuta più consona è quella di avvicinare tutti i membri ad un'uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
 #figure(
   caption: [Stima delle ore individuali per ruolo in totale.],
   kind: table,
@@ -352,12 +207,12 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 4. _PB (Product Baseline)_:
   - Consegna del progetto validato.
 == Preventivo a finire
-Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team. In questo sotto-paragrafo verranno esplicitati:
+Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all'interno del team. In questo sotto-paragrafo verranno esplicitati:
 - Le attività che si dovranno svolgere ad ogni sprint.
 - I ruoli che ogni membro dovrà rappresentare. \
-Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro.
+Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c'è qualcosa che blocca il lavoro.
 === UCB - _Use Case Baseline_
-#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 novembre 2025*. La suddetta data è stata scelta insieme all’azienda appaltante a seguito del nostro primo incontro in data _20 novembre 2025_. \ #underline[La data ultima prevista] per il conseguimento della milestone è prevista in data *28 dicembre 2025*
+#underline[La data di inizio attività] per il conseguimento della prima milestone (_UCB_) è *24 novembre 2025*. La suddetta data è stata scelta insieme all'azienda appaltante a seguito del nostro primo incontro in data _20 novembre 2025_. \ #underline[La data ultima prevista] per il conseguimento della milestone è prevista in data *28 dicembre 2025*
 
 ==== Sprint 1
 #tabella-viola(
@@ -370,9 +225,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    Inizio dell’attività di lavoro seguito del primo incontro con il committente.
-    - Studio in preparazione dell’attività di Analisi dei Requisiti.
-    - Primo approccio di gruppo all’analisi (tramite incontri interni organizzati come brainstorming).
+    Inizio dell'attività di lavoro seguito del primo incontro con il committente.
+    - Studio in preparazione dell'attività di Analisi dei Requisiti.
+    - Primo approccio di gruppo all'analisi (tramite incontri interni organizzati come brainstorming).
     - Studio della documentazione adeguata al progetto.
     - Attività di analisi dei Casi d'uso preliminare.
   ],
@@ -419,8 +274,8 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Studio individuale della sintassi e l’utilizzo dei Casi d’Uso.
-    - Continuazione e intensificazione dell’attività di Analisi dei Requisiti in gruppo.
+    - Studio individuale della sintassi e l'utilizzo dei Casi d'Uso.
+    - Continuazione e intensificazione dell'attività di Analisi dei Requisiti in gruppo.
     - Divisione dei compiti per una prima stesura dei documenti tra:
       - Piano di Progetto (PdP).
       - Piano di Qualifica (PdQ).
@@ -471,8 +326,8 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Attività di formazione su Backend da parte dell’azienda committente.
-    - Continuazione da parte del team completo dell’Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
+    - Attività di formazione su Backend da parte dell'azienda committente.
+    - Continuazione da parte del team completo dell'Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
     - Avanzamento stesura dei documenti per milestone RTB.
     - Studio individuale sulle tecnologie discusse dal team.
   ],
@@ -519,7 +374,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Attività di formazione su Frontend, AWS ed introduzione alla parte AI da parte dell’azienda committente.
+    - Attività di formazione su Frontend, AWS ed introduzione alla parte AI da parte dell'azienda committente.
     - Continuazione di:
       - Analisi dei Requisiti.
       - Stesura della documentazione.
@@ -572,10 +427,10 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     - Scelta definitiva delle tecnologie da utilizzare per il progetto.
     - Inizio studio delle tecnologie scelte.
-    - Continuazione dell’attività di Analisi dei Requisiti.
+    - Continuazione dell'attività di Analisi dei Requisiti.
     - Continuazione stesura dei documenti.
     _Milestone "UCB":_
-    Aver completato i Casi d’Uso.
+    Aver completato i Casi d'Uso.
   ],
 )
 #figure(
@@ -626,7 +481,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Inizio attività di produzione del _Proof of Concept (PoC)")_.
     - Continuazione stesura della documentazione.
     - Continuazione attività di Analisi dei Requisiti.
-    - Inizio dell’attività di Progettazione.
+    - Inizio dell'attività di Progettazione.
     - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ],
 )
@@ -772,7 +627,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Continuazione dell’attività di Progettazione.
+    - Continuazione dell'attività di Progettazione.
     - Ultime fasi di attività di Analisi dei Requisiti.
     Inoltre, in ordine cronologico:
     1. Modifiche o migliorie della documentazione prodotta per la milestone RTB a seguito dei suggerimenti proposti dopo la prima milestone.
@@ -1089,7 +944,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività Svolte_],
   [
-  1. Studio individuale della sintassi e l’utilizzo dei Casi d’Uso.
+  1. Studio individuale della sintassi e l'utilizzo dei Casi d'Uso.
   2. Inizio stesura del Piano di Progetto.
   3. Inizio stesura del Piano di Qualifica.
   4. Inizio stesura delle Norme di Progetto.
@@ -1769,7 +1624,7 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
     [ *Descrizione*  ],
     align(
       left,
-    )[ Il team potrebbe non comprendere in pieno o addirittura individuare in maniera errata i requisiti richiesti dall’azienda con il rischio di avere poi discrepanze fra quello che il cliente aveva richiesto e ciò che è stato effettivamente sviluppato.],
+    )[ Il team potrebbe non comprendere in pieno o addirittura individuare in maniera errata i requisiti richiesti dall'azienda con il rischio di avere poi discrepanze fra quello che il cliente aveva richiesto e ciò che è stato effettivamente sviluppato.],
     [ *Probabilità*  ],
     [ Bassa  ],
     [ *Impatto*],
@@ -1777,13 +1632,13 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
     [ *Piano di mitigazione*],
     align(
       left,
-    )[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli Use Cases per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
+    )[Il team ha avuto un meeting iniziale con l'azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli Use Cases per evitare linguaggio ambiguo e a mantenere il contatto con l'azienda per confronti riguardanti i requisiti.],
     [*Rilevamento*],
     [ ],
     [ *Piano di contingenza*],
     align(
       left,
-    )[Convocare una riunione immediata per identificare i requisiti sbagliati, capire fino a che punto sono errati e se si può mantenere parte del codice sviluppato, calcolare le ore necessarie per sistemarli e l’eventuale impatto sul budget. ],
+    )[Convocare una riunione immediata per identificare i requisiti sbagliati, capire fino a che punto sono errati e se si può mantenere parte del codice sviluppato, calcolare le ore necessarie per sistemarli e l'eventuale impatto sul budget. ],
   )] <tab:RR1>
 \
 #figure(
@@ -1810,7 +1665,7 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
     [*Rilevamento*],
     align(left)[Il rischio viene individuato durante le riunioni di avanzamento e le revisioni dei requisiti, quando emergono ritardi, 
       conflitti tra attività o frequenti cambi di focus nello sviluppo. 
-      Ulteriori segnali sono l’assenza di una chiara classificazione delle priorità nella documentazione dei requisiti o _difficoltà del team nel decidere quali requisiti implementare per primi_.],
+      Ulteriori segnali sono l'assenza di una chiara classificazione delle priorità nella documentazione dei requisiti o _difficoltà del team nel decidere quali requisiti implementare per primi_.],
     [ *Piano di contingenza*],
     align(
       left,
@@ -1840,11 +1695,11 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
       left,
     )[Durante la pianificazione degli sprint, verranno tenuti in considerazione i tempi necessari per imparare a utilizzare i nuovi strumenti e i rallentamenti che possono comportare. \ Inoltre, ogni membro dovrà imparare da autodidatta come si usano e le best practices delle tecnologie utilizzate *prima* di iniziare ad utilizzarle per il codice.   ],
     [*Rilevamento*],
-    align(left)[Il rischio è individuabile durante le review degli sprint e le riunioni di avanzamento, osservando ritardi, errori frequenti o difficoltà operative legate all’uso delle nuove tecnologie.],
+    align(left)[Il rischio è individuabile durante le review degli sprint e le riunioni di avanzamento, osservando ritardi, errori frequenti o difficoltà operative legate all'uso delle nuove tecnologie.],
     [ *Piano di contingenza*],
     align(
       left,
-    )[In caso il problema si verifichi nelle fasi iniziali dell’utilizzo del nuovo strumento, si può chiamare un meeting e valutare un eventuale cambio di tecnologia. Se avviene nelle fasi successive, interrompere lo sviluppo del progetto per approfondire il funzionamento delle nuove tecnologie. ],
+    )[In caso il problema si verifichi nelle fasi iniziali dell'utilizzo del nuovo strumento, si può chiamare un meeting e valutare un eventuale cambio di tecnologia. Se avviene nelle fasi successive, interrompere lo sviluppo del progetto per approfondire il funzionamento delle nuove tecnologie. ],
   )]<tab:RT1>
 
 #figure(
@@ -1869,9 +1724,9 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
       left,
     )[Documentare le API e i formati dei dati fra tutti i componenti. \ Implementare il processo di Integrazione Continua.],
     [*Rilevamento*],
-    align(left)[Il rischio viene rilevato durante le fasi di integrazione e di test, in particolare tramite l’esecuzione di test di integrazione automatizzati e manuali, l’analisi dei log di errore e il fallimento delle pipeline di Integrazione Continua.],
+    align(left)[Il rischio viene rilevato durante le fasi di integrazione e di test, in particolare tramite l'esecuzione di test di integrazione automatizzati e manuali, l'analisi dei log di errore e il fallimento delle pipeline di Integrazione Continua.],
     [*Piano di contingenza*],
-    align(left)[In caso di problemi di integrazione, sospendere temporaneamente l’implementazione di nuove funzionalità e dedicare il team 
+    align(left)[In caso di problemi di integrazione, sospendere temporaneamente l'implementazione di nuove funzionalità e dedicare il team 
       di sviluppo alla risoluzione delle incompatibilità. Effettuare un allineamento delle versioni delle librerie, correggere o ridefinire le interfacce tra i componenti.],
   )]<tab:RT2>
 
@@ -1893,13 +1748,13 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   [ *Piano di mitigazione*],
   align(
     left,
-  )[Il codice prodotto da un membro del team deve essere revisionato da almeno un altro membro del team e devono essere integrati strumenti per l’analisi statica del codice. La maggior parte del codice deve essere coperto da test. Inoltre, prima di usare nuovi linguaggi di programmazione, i membri dovranno studiare le loro best practices. ],
+  )[Il codice prodotto da un membro del team deve essere revisionato da almeno un altro membro del team e devono essere integrati strumenti per l'analisi statica del codice. La maggior parte del codice deve essere coperto da test. Inoltre, prima di usare nuovi linguaggi di programmazione, i membri dovranno studiare le loro best practices. ],
   [*Rilevamento*],
   align(left)[Il rischio viene rilevato attraverso il monitoraggio dei KPI e dei parametri di soglia definiti nel Piano di Qualifica. Nello specifico, si monitorano i report dei tool di analisi statica, l'esito delle procedure di code review e le metriche di copertura dei test (code coverage). Il superamento delle soglie di guardia identificate nel Piano di Qualifica attiva immediatamente lo stato di allerta.],
   [ *Piano di contingenza*],
   align(
     left,
-  )[Interrompere lo sviluppo dell’area del progetto coinvolta finché non si è identificato il problema e portato a un livello sufficiente la qualità del codice.],
+  )[Interrompere lo sviluppo dell'area del progetto coinvolta finché non si è identificato il problema e portato a un livello sufficiente la qualità del codice.],
 )]<tab:RT3>
 \
 #figure(
@@ -1943,7 +1798,7 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   [ *Descrizione*  ],
   align(
     left,
-  )[ Il testing è inadeguato o incompleto, di conseguenza c’è il rischio di rilasciare codice difettoso e un sistema instabile. ],
+  )[ Il testing è inadeguato o incompleto, di conseguenza c'è il rischio di rilasciare codice difettoso e un sistema instabile. ],
   [ *Probabilità*  ],
   [  Media ],
   [ *Impatto*],
@@ -2061,7 +1916,7 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   [ *Descrizione*  ],
   align(
     left,
-  )[ Vengono commessi errori di distribuzione dei compiti a causa dell’inesperienza nel valutare le tempistiche relative alle tasks dei membri del team e della sottovalutazione o sopravvalutazione del tempo necessario per finire alcuni compiti. Questo può portare i membri con un carico maggiore a non riuscire a rispettare le tempistiche o a presentare codice di qualità inferiore. ],
+  )[ Vengono commessi errori di distribuzione dei compiti a causa dell'inesperienza nel valutare le tempistiche relative alle tasks dei membri del team e della sottovalutazione o sopravvalutazione del tempo necessario per finire alcuni compiti. Questo può portare i membri con un carico maggiore a non riuscire a rispettare le tempistiche o a presentare codice di qualità inferiore. ],
   [ *Probabilità*  ],
   [ Bassa  ],
   [ *Impatto*],
@@ -2069,7 +1924,7 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   [ *Piano di mitigazione*],
   align(
     left,
-  )[Fare le stime del tempo necessario insieme e non assegnare questo compito a un’unica persona. \ Imporre un limite al numero di attività che una persona può svolgere nello stesso sprint. \ Confrontarsi nelle riunioni settimanali riguardo la mole di lavoro portata a termine e il tempo impiegato per farlo.],
+  )[Fare le stime del tempo necessario insieme e non assegnare questo compito a un'unica persona. \ Imporre un limite al numero di attività che una persona può svolgere nello stesso sprint. \ Confrontarsi nelle riunioni settimanali riguardo la mole di lavoro portata a termine e il tempo impiegato per farlo.],
   [*Rilevamento*],
   align(left)[Analisi del carico di lavoro durante le riunioni di coordinamento. Il rischio è rilevato se si nota un accumulo di task in stato "in progress" o "in review" assegnati alla stessa persona all'interno della _Project Board_, o se emergono colli di bottiglia che bloccano l'avanzamento degli altri membri.],
   [ *Piano di contingenza*],
@@ -2090,7 +1945,7 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   [ *Descrizione*  ],
   align(
     left,
-  )[ Il team non è organizzato adeguatamente, non c’è una assegnazione chiara dei compiti o delle date da rispettare per le scadenze. Ci sono comunicazione e coordinazione non sufficienti. ],
+  )[ Il team non è organizzato adeguatamente, non c'è una assegnazione chiara dei compiti o delle date da rispettare per le scadenze. Ci sono comunicazione e coordinazione non sufficienti. ],
   [ *Probabilità*  ],
   [ Bassa ],
   [ *Impatto*],
@@ -2119,7 +1974,7 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   [ *Descrizione*  ],
   align(
     left,
-  )[  I membri non vengono chiamati a rendere conto del loro progresso e del loro rendimento. Questo porta all’individuazione tardiva di problemi ed errori e può portare i membri a progredire più lentamente e ai ritardi individuali di accumularsi. ],
+  )[  I membri non vengono chiamati a rendere conto del loro progresso e del loro rendimento. Questo porta all'individuazione tardiva di problemi ed errori e può portare i membri a progredire più lentamente e ai ritardi individuali di accumularsi. ],
   [ *Probabilità*  ],
   [Media],
   [ *Impatto*],
@@ -2205,7 +2060,7 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   [ *Descrizione*  ],
   align(
     left,
-  )[ Non c'è un confronto regolare con l’azienda proponente per discutere i progressi del progetto, chiarire dubbi sui requisiti e ricevere feedback. Questo può portare a incomprensioni, sviluppo di funzionalità non richieste o mancato soddisfacimento delle aspettative dell’azienda. ],
+  )[ Non c'è un confronto regolare con l'azienda proponente per discutere i progressi del progetto, chiarire dubbi sui requisiti e ricevere feedback. Questo può portare a incomprensioni, sviluppo di funzionalità non richieste o mancato soddisfacimento delle aspettative dell'azienda. ],
   [ *Probabilità*  ],
   [  Bassa ],
   [ *Impatto*],
@@ -2222,8 +2077,8 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
   )[Contattare l'azienda il prima possibile per chiarire i dubbi e riallinearsi sulle aspettative. \ Valutare l'impatto sul progetto e pianificare le modifiche necessarie per soddisfare le richieste dell'azienda. ],
 )]<tab:RO8>
 == Monitoraggio dei rischi
-Il *responsabile* monitora lo stato di tutti i rischi; i *programmatori* e i *revisori* hanno parziale responsabilità nell’individuazione di rischi tecnici. \
-Per assicurarsi di individuare l’avveramento di un rischio il prima possibile si eseguiranno le seguenti attività:
-- *Riunioni periodiche* bimensili in cui si verifica lo stato dei rischi individuati, si discute se i piani di mitigazione e di contingenza sono efficaci ed eventualmente si individuano nuovi rischi, dopo delle quali si aggiorna l’analisi dei rischi del Piano di Progetto. In sostanza, si fa una rivalutazione periodica dei rischi.
+Il *responsabile* monitora lo stato di tutti i rischi; i *programmatori* e i *revisori* hanno parziale responsabilità nell'individuazione di rischi tecnici. \
+Per assicurarsi di individuare l'avveramento di un rischio il prima possibile si eseguiranno le seguenti attività:
+- *Riunioni periodiche* bimensili in cui si verifica lo stato dei rischi individuati, si discute se i piani di mitigazione e di contingenza sono efficaci ed eventualmente si individuano nuovi rischi, dopo delle quali si aggiorna l'analisi dei rischi del Piano di Progetto. In sostanza, si fa una rivalutazione periodica dei rischi.
 
 - Nel *Piano di Qualifica* verranno documentati  tutti i rischi che si concretizzano durante lo svolgimento del progetto.
