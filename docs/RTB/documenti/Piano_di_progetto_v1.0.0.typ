@@ -1365,11 +1365,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [_Riccardo Baldin_], [], [4], [], [], [], [], [80€],
       [_Alberto Reginato_], [], [], [], [2], [], [1], [65€],
       [_Nicola Simionato_], [], [], [], [2], [], [1], [65€],
-      [_Amerigo Vegliante_], [], [], [], [], [], [11], [165€],
-      [_Laura Venturini_], [], [], [], [], [], [11], [165€],
+      [_Amerigo Vegliante_], [], [], [], [], [], [5], [75€],
+      [_Laura Venturini_], [], [], [], [], [], [5], [75€],
     ) ]] <tab:PrevisioneSprint11>
 
-#underline[Spese della settimana]: 725€ \ #underline[Spesa totale]: *6.135€*
+#underline[Spese della settimana]: 545€ \ #underline[Spesa totale]: *xxx€*
 
 ==== Trascorso
 #table(
@@ -1398,6 +1398,40 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     5. Il team ha deciso di contattare l'azienda personalmente, mandando una copia dell'analisi dei requisiti effettuata ed approvata dal prof. Cardin.
   ]
 )
+
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 11],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [4 → 3], [], [], [], [], [0 → 3], [135€],
+      [_Angela Canazza_], [], [], [], [2 → 0], [], [1 → 4], [60€],
+      [_Riccardo Baldin_], [], [4], [], [], [], [], [80€],
+      [_Alberto Reginato_], [], [], [], [2 → 0], [], [1 → 4], [60€],
+      [_Nicola Simionato_], [], [], [], [2 → 0], [], [3 → 4], [60€],
+      [_Amerigo Vegliante_], [], [], [], [], [], [5], [75€],
+      [_Laura Venturini_], [], [], [], [], [], [5], [75€],
+    ) ]] <tab:PrevisioneSprint11>
+
+*GANTT Diagram*
+
+#underline[Spese della settimana]: 545€ / 545€ \ #underline[Spesa totale]: *xxx€ / xxx€*
+
 #pagebreak()
 
 === Sprint 12
