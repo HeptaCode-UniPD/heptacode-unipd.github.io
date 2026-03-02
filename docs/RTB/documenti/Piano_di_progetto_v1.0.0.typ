@@ -184,9 +184,23 @@ Nel grafico in figura @fig:torta vengono analizzate le percentuali della riparti
 #pagebreak()
 
 = Pianificazione temporale
-Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel corso del tempo.\ Sono stati calcolati un totale di _*tredici*_ sprint. \ La divisione del paragrafo in due sotto-paragrafi riporta:
-1. *Preventivo a finire:* pianificazione preventiva del lavoro, verrà aggiornato di sprint in sprint nel breve termine (massimo due sprint successivi) in base al ritmo e alle difficoltà incontrate. 
-2. *Trascorso:* ciò che realmente è accaduto durante gli sprint.
+Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel corso del tempo.\ 
+== Suddivisione e organizzazione degli sprint 
+Sono stati calcolati un totale di _*tredici*_ sprint. \ La divisione del paragrafo in due sotto-paragrafi riporta:
++ *Preventivo a finire:* \
+  Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team (nel breve periodo). Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro. \ Verranno esplicitati:
+  - Le attività che si dovranno svolgere ad ogni sprint.
+  - I ruoli che ogni membro dovrà rappresentare.
+  Il preventivo verrà aggiornato ad ogni sprint per i due sprint successivi. \
+  - Il costo pianificato per lo sprint.
++ *Trascorso:* ciò che realmente è accaduto durante gli sprint.
+  Per ogni percorso verrà effettuato:
+  - Analisi dei rischi incontrati e delle attività svolte.
+  - Come e se è stata effettuata mitigazione dei rischi riscontrati.
+  - Ore effettivamente svolte, rispetto a quelle previste.
+  - Diagramma di GANTT per mostrare l'avanzamento del progetto.
+  - Il costo effettivamente sostenuto dal team rispetto a quello pianificato.
+
 
 == Milestones programmate
 Di seguito elencate le milestone con i punti da considerare per poterle ritenere concluse.
@@ -199,11 +213,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   - Conclusione attività di progettazione e analisi.
 4. _PB (Product Baseline)_:
   - Consegna del progetto validato.
-== Sprint 
-Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team. In questo sotto-paragrafo verranno esplicitati:
-- Le attività che si dovranno svolgere ad ogni sprint.
-- I ruoli che ogni membro dovrà rappresentare. \
-Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro.
+== Sprint RTB
 === Sprint 1
 ==== Preventivo a finire
 #tabella-viola(
@@ -1324,7 +1334,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 // poi va il GANTT
 // infine le spese
 #pagebreak()
-
+== Sprint PB
 === Sprint 11
 ==== Preventivo a finire
 #tabella-viola(
