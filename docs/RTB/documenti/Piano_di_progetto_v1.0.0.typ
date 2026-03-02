@@ -1417,7 +1417,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Stesura v3.0.0 del documento AdR (con correzioni del prof. Cardin).
     - Sviluppo Backend e verifica del codice.
     - Sviluppo Frontend e verifica del codice.
-    - Inizio sviluppo documentazione per miletsone PB.
+    - Inizio sviluppo documentazione per milestone PB.
   ],
   [_Milestones attive_], [RTB, PAB, PB]
 )
