@@ -1,183 +1,38 @@
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3": chart
+#import "../../templates/template-documenti.typ": template_documenti, tabella-viola
+#import "../../templates/glossario_termini.typ": applica-glossario
 
-#let tabella-viola(..args) = {
-  show table.cell.where(y: 0): set text(white, weight: "bold")
-  table(
-    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
-    ..args
-  )
-}
-
-#v(1fr)
-#align(center, [
-  #image("../../asset/logo.svg")
-  #set text(lang: "it")
-
-  #v(1.5cm)
-
-  #text(size: 25pt, weight: "bold")[Piano di Progetto]
-
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Versione 1.0.0])
-
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
-
-  #align(center,
-  [#text(12pt)[Piano del progetto _Code Guardian_ del gruppo _Hepta Code_ con preventivo a finire e trascorso.]]
-  )
-])
-#v(1fr)
-#counter(page).update(0)
-
-#pagebreak()
-#text(size: 17pt, weight: "bold")[Registro delle modifiche:]
-#tabella-viola(
-  columns: (auto, auto, auto, auto, auto),
-  inset: 9pt,
-  align: horizon,
-  table.header([*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*]),
-
-  "1.0.0",
-  "2026/02/16", 
-  "Nicola Simionato", 
-  "Angela Favaro", 
-  "Aggiunto trascorso Sprint 8",
-
-  "0.14.0",
-  "2026/02/12", 
-  "Laura Venturini", 
-  "Angela Favaro", 
-  "Aggiornamento diagrammi GANTT",
-
-  "0.13.0",
-  "2026/02/10", 
-  "Angela Favaro", 
-  "Laura Venturini", 
-  "Sistemazione rendicontazione ore effettive",
-
-  "0.12.0",
-  "2026/01/05", 
-  "Angela Canazza", 
-  "Laura Venturini", 
-  "Aggiunto trascorso Sprint 6",
-
-  "0.11.0",
-  "2026/01/05", 
-  "Amerigo Vegliante", 
-  "Laura Venturini", 
-  "Aggiunto trascorso Sprint 5",
-
-  "0.10.0",
-  "2025/12/31", 
-  "Nicola Simionato", 
-  "Laura Venturini", 
-  "Aggiunto trascorso Sprint 1 (sezione 5.4.1).",
-
-  "0.9.0",
-  "2025/12/29", 
-  "Angela Favaro", 
-  "Amerigo Vegliante", 
-  "Aggiunto trascorso Sprint 4",
-
-  "0.8.0", 
-  "2025/12/22", 
-  "Angela Favaro", 
-  "Amerigo Vegliante", 
-  "Conclusione capitolo ‘Analisi e gestione dei rischi’",
-
-  "0.7.0", 
-  "2025/12/21", 
-  "Alberto Reginato", 
-  "Amerigo Vegliante", 
-  "Aggiornamento sprint trascorso",
-
-  "0.6.1", 
-  "2025/12/17", 
-  "Angela Favaro", 
-  "Amerigo Vegliante", 
-  "Uniformazione documento allo standard del gruppo",
-
-  "0.6.0",
-  "2025/12/14",
-  "Laura Venturini",
-  "Nicola Simionato",
-  "Aggiunti capitoli ‘Processi e metodologie’, ‘Risorse e strumenti’ e ‘Analisi e gestione dei rischi’",
-
-  "0.5.0", 
-  "2025/12/14", 
-  "Angela Favaro", 
-  "Nicola Simionato", 
-  "Aggiunta diagrammi PERT e correzione analisi Sprint",
-
-  "0.4.0", 
-  "2025/12/08", 
-  "Angela Favaro", 
-  "Nicola Simionato", 
-  "Calcolo dei costi",
-
-  "0.3.0", 
-  "2025/12/03", 
-  "Angela Favaro", 
-  "Alberto Reginato", 
-  "Suddivisione e stesura sprint per PB",
-
-  "0.2.0", 
-  "2025/12/02", 
-  "Angela Favaro", 
-  "Alberto Reginato", 
-  "Suddivisione e stesura sprint per RTB",
-
-  "0.1.0", 
-  "2025/12/01", 
-  "Angela Favaro", 
-  "Alberto Reginato", 
-  "Prima stesura di struttura generale",
+#let storia_modifiche = (
+  ("1.0.0", "2026/02/16", "Nicola Simionato", "Angela Favaro", "Aggiunto trascorso Sprint 8"),
+  ("0.14.0", "2026/02/12", "Laura Venturini", "Angela Favaro", "Aggiornamento diagrammi GANTT"),
+  ("0.13.0", "2026/02/10",  "Angela Favaro",  "Laura Venturini",  "Sistemazione rendicontazione ore effettive"),
+  ("0.12.0", "2026/01/05",  "Angela Canazza",  "Laura Venturini",  "Aggiunto trascorso Sprint 6"),
+  ("0.11.0", "2026/01/05",  "Amerigo Vegliante",  "Laura Venturini",  "Aggiunto trascorso Sprint 5"),
+  ("0.10.0", "2025/12/31",  "Nicola Simionato",  "Laura Venturini",  "Aggiunto trascorso Sprint 1 (sezione 5.4.1)."),
+  ("0.9.0", "2025/12/29",  "Angela Favaro",  "Amerigo Vegliante",  "Aggiunto trascorso Sprint 4"),
+  ("0.8.0", "2025/12/22",  "Angela Favaro",  "Amerigo Vegliante",  "Conclusione capitolo 'Analisi e gestione dei rischi'"),
+  ("0.7.0", "2025/12/21",  "Alberto Reginato",  "Amerigo Vegliante",  "Aggiornamento sprint trascorso"),
+  ("0.6.1", "2025/12/17",  "Angela Favaro",  "Amerigo Vegliante",  "Uniformazione documento allo standard del gruppo"),
+  ("0.6.0", "2025/12/14", "Laura Venturini", "Nicola Simionato", "Aggiunti capitoli 'Processi e metodologie', 'Risorse e strumenti' e 'Analisi e gestione dei rischi'"),
+  ("0.5.0", "2025/12/14",  "Angela Favaro",  "Nicola Simionato",  "Aggiunta diagrammi PERT e correzione analisi Sprint"),
+  ("0.4.0", "2025/12/08",  "Angela Favaro",  "Nicola Simionato",  "Calcolo dei costi"),
+  ("0.3.0", "2025/12/03",  "Angela Favaro",  "Alberto Reginato",  "Suddivisione e stesura sprint per PB"),
+  ("0.2.0", "2025/12/02",  "Angela Favaro",  "Alberto Reginato",  "Suddivisione e stesura sprint per RTB"),
+  ("0.1.0", "2025/12/01",  "Angela Favaro",  "Alberto Reginato",  "Prima stesura di struttura generale")
 )
 
-#pagebreak()
-#set text(size: 11pt, lang: "it")
-#show figure.caption: set text(9pt)
-
-#outline(title: "Indice dei contenuti")
-#set heading(numbering: "1.")
-
-#pagebreak()
-#outline(
-  title: "Indice delle tabelle",
-  target: figure.where(kind: table),
+#show: doc => template_documenti(
+  titolo: "Piano di Progetto",
+  descrizione: "Piano del progetto _Code Guardian_ del gruppo _Hepta Code_ con preventivo a finire e trascorso.",
+  modifiche: storia_modifiche,
+  lista_tabelle: true,
+  lista_figure: true,
+  doc
 )
 
-#pagebreak()
+#show: applica-glossario
 
-#outline(
-  title: "Indice delle figure",
-  target: figure.where(kind : image),
-)
-
-#pagebreak()
-#set page(
-  numbering: "1",
-  header: [
-    #set table(
-      stroke: none,
-    )
-    #table(
-      columns: 3,
-      [Hepta Code],
-      [#rect(
-        width: 100%,
-        height: 1pt,
-        fill: white,
-        stroke: none,
-      )],
-      [Piano di Progetto v1.0.0],
-    )
-    #line(length: 100%, stroke: black)
-  ],
-)
-#counter(page).update(1)
 = Introduzione
 Questo è un documento utile per avere una linea guida da seguire durante tutto lo svolgimento del progetto. \
 Il Piano di Progetto ha lo scopo di definire in modo chiaro, strutturato e verificabile come il progetto _Code Guardian_ dovrà essere realizzato.

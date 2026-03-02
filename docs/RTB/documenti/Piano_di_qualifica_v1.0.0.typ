@@ -1,136 +1,34 @@
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3": chart
-
+#import "../../templates/template-documenti.typ": template_documenti, tabella-viola
 #import "../../templates/glossario_termini.typ": applica-glossario
 
-#show: applica-glossario
+#let storia_modifiche = (
+  ("1.0.0", "2026/02/16", "Angela Canazza", "Angela Favaro",  "aggiunto capitolo 6.2 e conclusioni"),
 
-#let tabella-viola(..args) = {
-  show table.cell.where(y: 0): set text(white, weight: "bold")
-  table(
-    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
-    ..args
-  )
-}
+  ("0.5.0", "2026/02/14", "Laura Venturini",  "Angela Canazza", "Stesura del capitolo 5"),
 
-#v(1fr)
-#align(center, [
-  #image("../../asset/logo.svg")
-  #set text(lang: "it")
+  ("0.4.2", "2026/02/13", "Laura Venturini",  "Angela Canazza", "Stesura del paragrafo 4.1"),
+
+  ("0.4.1", "2026/01/09", "Angela Canazza",  "Laura Venturini", "Completamento dei capitolo 3 con l'inserimento delle metriche e stesura introduzione del capitolo 4"),
   
-  #v(1.5cm)
+  ("0.4.0", "2025/12/28", "Laura Venturini",  "Amerigo Vegliante", "Aggiunta di problemi incontrati e contromisure nella sezione 6.1 - Valutazione organizzativa"),
   
-  #text(size: 25pt, weight: "bold")[Piano di Qualifica]
-
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Versione 1.0.0])
+  ("0.3.0", "2025/12/15", "Angela Canazza",  "Amerigo Vegliante", "Stesura iniziale del capitolo 6 - Iniziative di miglioramento"),
   
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
-
-  #align(center,
-  [#text(12pt)[Piano di Qualifica del gruppo 7: _Hepta Code_, relativo al capitolato _Code Guardian_ proposto dall'azienda _Var Group_.]]
-  )
-])
-#v(1fr)
-#counter(page).update(0)
-
-#pagebreak()
-#text(size: 17pt, weight: "bold")[Registro delle modifiche:]
-#tabella-viola(
-  columns: (auto, auto, auto, auto, auto),
-  inset: 9pt,
-  align: horizon,
-  table.header(
-    [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
-  ),
-
-  "1.0.0",
-  "2026/02/16",
-  "Angela Canazza",
-  "Angela Favaro", 
-  "aggiunto capitolo 6.2 e conclusioni",
-
-  "0.5.0",
-  "2026/02/14",
-  "Laura Venturini", 
-  "Angela Canazza",
-  "Stesura del capitolo 5",
-
-  "0.4.2",
-  "2026/02/13",
-  "Laura Venturini", 
-  "Angela Canazza",
-  "Stesura del paragrafo 4.1",
-      "0.4.1",
-  "2026/01/09",
-  "Angela Canazza", 
-  "Laura Venturini",
-  "Completamento dei capitolo 3 con l'inserimento delle metriche e stesura introduzione del capitolo 4",
-    "0.4.0",
-  "2025/12/28",
-  "Laura Venturini", 
-  "Amerigo Vegliante",
-  "Aggiunta di problemi incontrati e contromisure nella sezione 6.1 - Valutazione organizzativa",
-  "0.3.0",
-  "2025/12/15",
-  "Angela Canazza", 
-  "Amerigo Vegliante",
-  "Stesura iniziale del capitolo 6 - Iniziative di miglioramento",
-  "0.2.0",
-  "2025/12/14",
-  "Angela Canazza",
-  "Nicola Simionato",
-  "Stesura iniziale di: qualità di processo, di prodotto e dei metodi di testing",
-  "0.1.0",
-  "2025/12/12",
-  "Nicola Simionato",
-  "Angela Canazza",
-  "Stesura dell'introduzione"
+  ("0.2.0", "2025/12/14", "Angela Canazza", "Nicola Simionato", "Stesura iniziale di: qualità di processo, di prodotto e dei metodi di testing"),
+  
+  ("0.1.0", "2025/12/12", "Nicola Simionato", "Angela Canazza", "Stesura dell'introduzione")
 )
 
-#pagebreak()
-
-#set text(size: 11pt, lang: "it")
-#show figure.caption: set text(9pt)
-//Indice capitoli
-#outline(title: "Indice dei contenuti")
-#set heading(numbering: "1.")
-#pagebreak()
-
-#outline(
-  title: "Indice delle tabelle",
-  target: figure.where(kind: table)
+#show: doc => template_documenti(
+  titolo: "Piano di Qualifica",
+  descrizione: "Il presente documento contiene il piano di qualifica del gruppo _Hepta Code_ relativo al capitolato _Code Guardian_ proposto dall'azienda _Var Group_.",
+  modifiche: storia_modifiche,
+  lista_tabelle: true,
+  lista_figure: true,
+  doc
 )
-#pagebreak()
-
-#outline(
-  title: "Indice delle figure",
-  target: figure.where(kind : image),
-)
-#pagebreak()
-
-#set page(
-  numbering: "1",
-  header: [
-    #set table(
-      stroke: none,
-    )
-    #table(
-      columns: 3,
-      [Hepta Code],
-      [#rect(
-        width: 100%, 
-        height: 1pt, 
-        fill: white,
-        stroke: none
-      )],
-      [Piano di Qualifica v1.0.0],
-    )
-    #line(length: 100%, stroke: black)
-  ],
-)
-#counter(page).update(1)
 
 = Introduzione
 == Scopo del documento

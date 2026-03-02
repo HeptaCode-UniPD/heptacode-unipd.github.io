@@ -25,12 +25,31 @@
   }
 }
 
-// 4. Definisce la funzione che si userà negli altri documenti
+// 4. Definisce la funzione con gestione dello stato
 #let applica-glossario(doc) = {
+  show heading: it => it
   if termini.len() > 0 {
+    // 1. Definiamo la regola di show
     show regex("(?i)\b(" + termini.join("|") + ")\b"): it => {
-      // Non mette la G se è già in un indice o titolo grande
-      it + super[G]
+      // Estraiamo la stringa pulita
+      let parola = lower(it.text)
+      let chiave = "usato-" + parola
+      
+      // Recuperiamo lo stato
+      let s = state(chiave, false)
+      
+      // Usiamo il context (Typst 0.11+) per leggere lo stato in modo sicuro
+      context {
+        if s.get() == false {
+          // Prima occorrenza
+          it
+          super[G]
+          s.update(true)
+        } else {
+          // Occorrenze successive
+          it
+        }
+      }
     }
     doc
   } else {
