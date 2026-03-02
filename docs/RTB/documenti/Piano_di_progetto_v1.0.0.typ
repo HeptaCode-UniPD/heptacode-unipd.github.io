@@ -4,10 +4,10 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("1.3.0", "2026/03/02", "Angela Favaro", "Alberto Reginato", "Modifica del documento su organizzazione Sprint"),
-  ("1.2.0", "2026/03/02", "Angela Favaro", "Alberto Reginato", "Aggiunto trascorso Sprint 11"),
-  ("1.1.0", "2026/03/02", "Alberto Reginato", "Angela Favaro", "Aggiunto trascorso Sprint 10"),
-  ("1.0.0", "2026/02/16", "Nicola Simionato", "Angela Favaro", "Aggiunto trascorso Sprint 8"),
+  ("0.18.0", "2026/03/02", "Angela Favaro", "Alberto Reginato", "Modifica del documento su organizzazione Sprint"),
+  ("0.17.0", "2026/03/02", "Angela Favaro", "Alberto Reginato", "Aggiunto trascorso Sprint 11"),
+  ("0.16.0", "2026/03/02", "Alberto Reginato", "Angela Favaro", "Aggiunto trascorso Sprint 10"),
+  ("0.15.0", "2026/02/16", "Nicola Simionato", "Angela Favaro", "Aggiunto trascorso Sprint 8"),
   ("0.14.0", "2026/02/12", "Laura Venturini", "Angela Favaro", "Aggiornamento diagrammi GANTT"),
   ("0.13.0", "2026/02/10",  "Angela Favaro",  "Laura Venturini",  "Sistemazione rendicontazione ore effettive"),
   ("0.12.0", "2026/01/05",  "Angela Canazza",  "Laura Venturini",  "Aggiunto trascorso Sprint 6"),
