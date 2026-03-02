@@ -19,6 +19,14 @@
   #text(size: 25pt, weight: "bold")[Piano di Progetto]
 
   #v(2.0cm)
+  #align(center, text(size: 15pt, weight: "bold")[Versione 1.0.0])
+
+  #v(2.0cm)
+  #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
+
+  #align(center,
+  [#text(12pt)[Piano del progetto _Code Guardian_ del gruppo _Hepta Code_ con preventivo a finire e trascorso.]]
+  )
 ])
 #v(1fr)
 #counter(page).update(0)
@@ -129,11 +137,10 @@
 )
 
 #pagebreak()
-
 #set text(size: 11pt, lang: "it")
 #show figure.caption: set text(9pt)
 
-#outline(title: "Indice")
+#outline(title: "Indice dei contenuti")
 #set heading(numbering: "1.")
 
 #pagebreak()
@@ -165,7 +172,7 @@
         fill: white,
         stroke: none,
       )],
-      [Piano di Progetto v. 0.1.1],
+      [Piano di Progetto v1.0.0],
     )
     #line(length: 100%, stroke: black)
   ],
