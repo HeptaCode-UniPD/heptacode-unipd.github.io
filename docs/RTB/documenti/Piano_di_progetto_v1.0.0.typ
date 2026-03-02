@@ -1319,6 +1319,10 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     1.
   ]
 )
+
+// sotto ci va la tabella con le ore effettiva
+// poi va il GANTT
+// infine le spese
 #pagebreak()
 
 === Sprint 11
