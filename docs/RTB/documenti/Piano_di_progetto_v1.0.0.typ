@@ -801,8 +801,7 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
     - Inizio attività di produzione del _Proof of Concept (PoC)_.
     - Continuazione stesura della documentazione.
     - Continuazione attività di Analisi dei Requisiti.
-    - Inizio dell’attività di Progettazione.
-    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
   ],
   [_Milestones attive_], [UCB, RTB]
 )
@@ -916,8 +915,8 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   [
     In questo sprint tutti i ruoli devono essere operativi e il team deve dimostrare la capacità di generare valore per lo sviluppo del progetto.
     - Continuazione di sviluppo e verifica del PoC.
-    - Continuazione e conclusione stesura della documentazione.
-    - Continuazione attività di Analisi e Progettazione.
+    - Continuazione stesura della documentazione (interna ed esterna).
+    - Continuazione attività di Analisi.
   ],
   [_Milestones attive_], [UCB, RTB]
 )
@@ -1030,12 +1029,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    Ultimo sprint previsto prima della consegna del _PoC_.
     - Conclusione dello sviluppo e della verifica del PoC.
-    - Continuazione attività di Progettazione.
-    - Revisione e validazione dei documenti prodotti per la milestone RTB.
-    - Colloquio conclusivo per la revisione del progetto con i professori.
-    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+    - Revisione dei documenti prodotti per la milestone RTB.
+    - Continuazione attività di Analisi.
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
+    - Previsto colloquio di aggiornamento con Var Group; quindi preparazione al colloquio per esprimere eventuali dubbi.
   ],
   [_Milestones attive_], [UCB, RTB]
 )
@@ -1146,12 +1144,11 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Continuazione dell’attività di Progettazione.
-    - Ultime fasi di attività di Analisi dei Requisiti.
+    - Finire la stesura del documento di Analisi dei Requisiti (e quindi fine della milestone UCB).
     Inoltre, in ordine cronologico:
-    1. Modifiche o migliorie della documentazione prodotta per la milestone RTB a seguito dei suggerimenti proposti dopo la prima milestone.
-    2. Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-    3. Allineamento di tutti i componenti del gruppo sulle attività che sono state svolte e che verranno svolte; chi ha avuto maggiore esperienza chiarirà i dubbi a chi ne ha avuta meno nei diversi ambiti (Analisi, Progettazione, Sviluppo e Verifica).
+    1. Continuazione stesura della documentazione prodotta per la milestone RTB.
+    2. Revisione del _Glossario_ ed eventuale aggiornamento.
+    3. Allineamento di tutti i componenti del gruppo sulle attività che sono state svolte e che verranno svolte; chi ha maggiore esperienza chiarirà i dubbi a chi ne ha avuta meno nei diversi ambiti (Analisi, Progettazione, Sviluppo e Verifica).
   ],
   [_Milestones attive_], [UCB, RTB]
 )
@@ -1262,13 +1259,12 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Conclusione attività di Analisi e Progettazione.
+    - Conclusione attività di Analisi e stesura della stessa.
     - Studio della documentazione necessaria per la prossima milestone _PB_.
-    - Sviluppo Backend e verifica del codice prodotto.
-    - Sviluppo Frontend e verifica del codice prodotto.
-    - Training degli agenti.
-    _Milestone "(PAB)"_:
-    Conclusione attività di Progettazione ed Analisi.
+    - Inizio studio per la Progettazione
+    - Verifica di tutti i documenti prodotti dal gruppo.
+    - Preparazione del colloquio con il prof. Cardin.
+    - Colloquio con il prof. Cardin.
   ],
   [_Milestones attive_], [RTB]
 )
@@ -1337,10 +1333,10 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Sviluppo della documentazione per la milestone _PB_.
-    - Sviluppo Backend e verifica del codice prodotto.
-    - Sviluppo Frontend e verifica del codice prodotto.
-    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+    - Inizio sviluppo della documentazione per la milestone _PB_.
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
+    - Stesura delle slide per la presentazione RTB.
+    - Previsto colloquio con prof. Vardanega per la conclusione RTB.
   ],
   [_Milestones attive_], [RTB]
 )
@@ -1365,15 +1361,15 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [4], [], [], [], [], [], [120€],
-      [_Angela Canazza_], [], [], [], [2], [], [1], [210€],
+      [_Angela Canazza_], [], [], [], [2], [], [1], [65€],
       [_Riccardo Baldin_], [], [4], [], [], [], [], [80€],
-      [_Alberto Reginato_], [], [], [], [2], [], [1], [232,5€],
-      [_Nicola Simionato_], [], [], [], [2], [], [1], [135€],
-      [_Amerigo Vegliante_], [], [], [], [], [], [11], [150€],
+      [_Alberto Reginato_], [], [], [], [2], [], [1], [65€],
+      [_Nicola Simionato_], [], [], [], [2], [], [1], [65€],
+      [_Amerigo Vegliante_], [], [], [], [], [], [11], [165€],
       [_Laura Venturini_], [], [], [], [], [], [11], [165€],
     ) ]] <tab:PrevisioneSprint11>
 
-#underline[Spese della settimana]: 1.092,5€ \ #underline[Spesa totale]: *9.905€*
+#underline[Spese della settimana]: 725€ \ #underline[Spesa totale]: *6.135€*
 
 ==== Trascorso
 #table(
@@ -1382,17 +1378,24 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-
+    - Attività di correzione a seguito del semaforo rosso del prof. Cardin (date da lacune di AdR).
+    - Riunione per decidere eventuali argomenti da portare al prof. Vardanega per il colloqui con lo stesso.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. RT1: Strumenti e tecnologie sconosciute (@tab:RT1)
+    2. RO1: Mancato rispetto delle tempistiche (@tab:RO1)
+    3. RO4: Scarso coordinamento del team (@tab:RO4)
+    4. RO8: Mancanza di confronto con l'azienda (@tab:RO8)
   ],
-
   [_Mitigazione_],
   [
-    1.
+    1. Vengono approfonditi gli studi specialmente per quanto riguarda le tecnologie Frontend (come detto durante il colloquio con il prof. Cardin).
+    2. In riunione ne abbiamo discusso e stiamo valutando un eventuale ridimensionamento dei requisiti obbligatori per riuscire a stare all'interno dei termini previsti.
+    3. Il team spesso, a causa di impegni personali o di studio, non riesce a coordinarsi per rispettare le tempistiche previste, allungando così i tempi. Per questi ultimi sprint il team si impegna a lavorare unicamente al progetto così da minimizzare le problematiche di tempistiche fino ad ora riscontrate.
+    4. Il team in riunione ha deciso che è necessario confrontarsi con il professore riguardo il fatto che l'azienda è assente. 
+    5. Il team ha deciso di contattare l'azienda personalmente, mandando una copia dell'analisi dei requisiti effettuata ed approvata dal prof. Cardin.
   ]
 )
 #pagebreak()
@@ -1409,10 +1412,12 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
 
   [_Attività previste_],
   [
-    - Valutazione di aggiunta requisiti opzionali valutati in sede di analisi.
+    - Previsto colloqui con il prof. Vardanega.
+    - Inizio attività di progettazione PAB.
+    - Stesura v3.0.0 del documento AdR (con correzioni del prof. Cardin).
     - Sviluppo Backend e verifica del codice.
     - Sviluppo Frontend e verifica del codice.
-    - Continuazione sviluppo documentazione.
+    - Inizio sviluppo documentazione per miletsone PB.
   ],
   [_Milestones attive_], [RTB, PAB, PB]
 )
@@ -1436,13 +1441,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [6], [], [], [], [5], [195€],
-      [_Angela Canazza_], [], [], [], [], [19.5], [], [292,5€],
-      [_Riccardo Baldin_], [], [], [], [], [], [15], [225€],
-      [_Alberto Reginato_], [], [], [], [], [], [15.5], [232,5€],
-      [_Nicola Simionato_], [], [], [], [], [5], [10], [225€],
-      [_Amerigo Vegliante_], [5], [], [], [], [], [], [150€],
-      [_Laura Venturini_], [], [], [], [], [15], [], [225€],
+      [_Angela Favaro_], [], [4], [], [10], [], [5], [195€],
+      [_Angela Canazza_], [], [], [], [], [20], [], [292,5€],
+      [_Riccardo Baldin_], [], [], [], [10], [], [15], [225€],
+      [_Alberto Reginato_], [], [], [], [10], [], [15.5], [232,5€],
+      [_Nicola Simionato_], [], [], [], [], [15], [10], [225€],
+      [_Amerigo Vegliante_], [4], [], [], [10], [], [], [150€],
+      [_Laura Venturini_], [], [], [], [], [20], [], [225€],
     ) ]] <tab:PrevisioneSprint12>
 
 #underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *11.450€*
@@ -1475,9 +1480,9 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [16 marzo 2026 - 26 marzo 2026],
+  [_Intervallo temporale_], [16 marzo 2026 - 30 marzo 2026],
 
-  [_Giorni di sprint_], [10],
+  [_Giorni di sprint_], [15],
 
   [_Attività previste_],
   [
@@ -1510,87 +1515,13 @@ Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [], [], [], [10], [10], [300€],
-      [_Angela Canazza_], [6], [], [], [], [], [], [180€],
-      [_Riccardo Baldin_], [], [], [], [], [11], [5], [240€],
+      [_Angela Favaro_], [], [], [], [], [25], [10], [300€],
+      [_Angela Canazza_], [6], [], [], [15], [], [], [180€],
+      [_Riccardo Baldin_], [], [], [], [], [25], [5], [240€],
       [_Alberto Reginato_], [], [6], [], [], [], [], [120€],
-      [_Nicola Simionato_], [], [], [], [], [], [13], [195€],
-      [_Amerigo Vegliante_], [], [], [], [], [9], [7], [240€],
-      [_Laura Venturini_], [], [], [], [], [], [8], [120€],
-    ) ]] <tab:PrevisioneSprint13>
-
-#underline[Spese della settimana]: 1.410€ \ #underline[Spesa totale]: *12.845€*
-
-==== Trascorso
-#table(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Attività Svolte_],
-  [
-
-  ],
-
-  [_Rischi incontrati_],
-  [
-    1.
-  ],
-
-  [_Mitigazione_],
-  [
-    1.
-  ]
-)
-#pagebreak()
-
-=== Sprint 14
-==== Preventivo a finire
-#tabella-viola(
-  columns: (auto, auto),
-  align: horizon,
-  stroke: 0.7pt,
-  [_Intervallo temporale_], [16 marzo 2026 - 26 marzo 2026],
-
-  [_Giorni di sprint_], [10],
-
-  [_Attività previste_],
-  [
-    Ultimo sprint previsto.
-    - Conclusione attività di sviluppo e validazione Frontend e Backend.
-    - Conclusione stesura documentazione adeguata alla consegna del progetto.
-    - Validazione dei risultati prodotti durante gli Sprint.
-    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-    - *Consegna del progetto previsto in data 15 marzo 2026*.
-  ],
-  [_Milestones attive_], [PB]
-)
-#figure(
-  caption: [Stima delle ore individuali per ruolo allo Sprint 13],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Costo*]]],
-
-      [_Angela Favaro_], [], [], [], [], [10], [10], [300€],
-      [_Angela Canazza_], [6], [], [], [], [], [], [180€],
-      [_Riccardo Baldin_], [], [], [], [], [11], [5], [240€],
-      [_Alberto Reginato_], [], [6], [], [], [], [], [120€],
-      [_Nicola Simionato_], [], [], [], [], [], [13], [195€],
-      [_Amerigo Vegliante_], [], [], [], [], [9], [7], [240€],
-      [_Laura Venturini_], [], [], [], [], [], [8], [120€],
+      [_Nicola Simionato_], [], [], [], [15], [], [13], [195€],
+      [_Amerigo Vegliante_], [], [], [], [], [25], [7], [240€],
+      [_Laura Venturini_], [], [], [], [15], [], [8], [120€],
     ) ]] <tab:PrevisioneSprint13>
 
 #underline[Spese della settimana]: 1.410€ \ #underline[Spesa totale]: *12.845€*
