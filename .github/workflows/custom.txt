@@ -221,3 +221,10 @@ poc
 lts
 macos
 nestjs
+
+'analisi
+'processi
+'risorse
+metodologie'
+rischi'
+strumenti'
