@@ -1,5 +1,5 @@
 #import "@preview/cetz:0.4.2"
-#import "@preview/cetz-plot:0.1.3": chart
+#import "@preview/cetz-plot:0.1.3"
 #import "../../templates/template-documenti.typ": template_documenti, tabella-viola
 #import "../../templates/glossario_termini.typ": applica-glossario
 
@@ -511,17 +511,183 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
 )
 Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto all'utilizzo dei ruoli più costosi durante la fase di RTB. Siccome dopo questa fase lavoreranno di più figure meno costose come programmatore e verificatore, il CPI dovrebbe arrivare a raggiungere il valore ottimale.
 
+
+
+
+
+
+
+
+
+
+
+
+
 == MPC06 e MPC07 - Planned Value ed Earned Value
-#figure(
-  image("../../asset/MPC06MPC07.png", width: 90%),
-  caption: [Grafico per periodo di Planned Value ed Earned Value]
+#let listaSpese = (
+(0, 0.00, 0.00),
+(1, 209.43, 209.43),
+(2, 568.45, 568.45),
+(3, 1116.96, 1116.96),
+(4, 1735.27, 1735.27),
+(5, 2313.70, 2134.18),
+(6, 3071.63, 2632.83),
+(7, 3989.13, 3610.16),
+(8, 5026.30, 4407.99),
+(9, 6113.34, 5235.73)
 )
-Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è però più in linea con la pianificazione iniziale a partire dal quinto sprint. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare parzialmente il debito accumulato. Nell'ottavo e nono sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
+
+#figure(
+  caption: [Tabella per periodo di Planned Value ed Earned Value],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Planned Value*], [*Earned Value*]),
+      ..listaSpese.map(riga => {
+        let (p, pv, ev) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+        (periodo-testo, [€#pv], [€#ev])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Planned Value ed Earned Value],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+      
+      let maxListaSpese = calc.max(..listaSpese.map(it => calc.max(it.at(1), it.at(2))))
+
+      plot.plot(
+        size: (11, 11),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 1000, 
+        y-min: 0,
+        y-max: calc.ceil(maxListaSpese / 1000) * 1000,
+        x-max: listaSpese.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [Euro (€)],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            listaSpese.map(it => (it.at(0), it.at(1))),
+            label: [Planned Value (PV)],
+            mark-style: (stroke: purple),
+            line: "spline"
+          )
+
+          plot.add(
+            listaSpese.map(it => (it.at(0), it.at(2))),
+            label: [Earned Value (EV)],
+            mark-style: (stroke: orange),
+            line: "spline"
+          )
+        }
+      )
+    })
+  )
+]
+Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è più in linea con la pianificazione iniziale a partire dal quinto sprint. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare parzialmente il debito accumulato. Nell'ottavo e nono sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
+
+
+
+
+
+
+
+
+
+
+
 == MPC08 e MPC09 - Actual Cost ed Estimate to Complete
-#figure(
-  image("../../asset/MPC08MPC09.png", width: 90%),
-  caption: [Grafico per periodo di Actual Cost ed Estimate to Complete]
+#let listaACETC = (
+(0,0), 
+(1, 252.50),
+(2, 687.50),
+(3, 1360.00), 
+(4, 2100.00),
+(5, 2560.00),
+(6, 3140.00),
+(7, 4205.00),
+(8, 5080.00),
+(9, 6027.50)
 )
+#let budgetTotale = 12845
+
+
+#figure(
+  caption: [Tabella per periodo di Actual Cost ed Estimate to Complete],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Actual Cost*], [*Estimate to Complete*]),
+        ..listaACETC.map(riga => {
+          let p = riga.at(0)
+          let ac = riga.at(1)
+          
+          let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+          
+          let etc = budgetTotale - ac 
+
+          (periodo-testo, [€ #ac], [€ #etc])
+        }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Actual Cost ed Estimate to Complete],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: * // [cite: 17]
+
+      plot.plot(
+        size: (10, 10), // [cite: 128, 176]
+        legend: "inner-north-east",
+        x-tick-step: 1, // [cite: 61, 63]
+        y-tick-step: 1000, 
+        y-min: 0, // [cite: 35]
+        y-max: calc.ceil(budgetTotale / 1000) * 1000, // [cite: 38]
+        x-max: listaACETC.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v], // [cite: 84, 86]
+        y-grid: true, // [cite: 107, 120]
+        y-label: [Euro (€)],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            listaACETC.map(it => (it.at(0), it.at(1))),
+            label: [Actual Cost (AC)],
+            mark-style: (stroke: purple), // [cite: 157, 162]
+            line: "spline"
+          )
+
+          plot.add(
+            listaACETC.map(it => (it.at(0), (budgetTotale - it.at(1)))),
+            label: [Estimate to Complete (ETC)],
+            mark-style: (stroke: orange), // [cite: 157, 162]
+            line: "spline"
+          )
+        }
+      )
+    })
+  )
+]
 La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare, in quanto allo sprint 9 non è ancora stata usata più di metà di budget.
 
 == MPC10 - Estimate at Completion
