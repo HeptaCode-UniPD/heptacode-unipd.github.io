@@ -484,31 +484,367 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
   [*T-138-S*], [Verificare che il Business Owner possa visualizzare i ruoli che uno sviluppatore può assumere], [R-138-F-O], [NI],
 )
 
+#pagebreak()
 = Valutazione lavoro
 In questa sezione sono riportate le misurazioni della qualità effettuate durante lo svolgimento delle attività dedicate al raggiungimento della Requirements and Technology Baseline. Inoltre, sono presenti i ragionamenti sulla differenza fra le tendenze attese e quelle effettivamente osservate. 
 == MPC01 e MPC02 - Schedule Variance e Cost Variance
-#figure(
-  image("../../asset/MPC01.png", width: 90%),
-  caption: [Grafico per periodo di Schedule Variance e Cost Variance]
+// schedule variance EV - PV
+#let listaEv-Pv = (
+// EARNED VALUE - PLANNED VALUE
+(0, 0.00,    0.00),
+(1, 209.43,  209.43),
+(2, 568.45,  568.45),
+(3, 1116.96, 1116.96),
+(4, 1735.27, 1735.27),
+(5, 2134.18, 2313.70),
+(6, 2632.83, 3071.63),
+(7, 3610.16, 3989.13),
+(8, 4407.99, 5026.30),
+(9, 5235.73, 6113.34)
 )
+
 #figure(
-  image("../../asset/MPC02.png", width: 90%),
-  caption: [Grafico per periodo di Schedule Variance e Cost Variance]
+  caption: [Tabella per periodo di Schedule Variance],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Earned Value*], [*Planned Value*], [*Schedule Variance*]),
+      ..listaEv-Pv.map(riga => {
+        let (p, ev, pv) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+
+        let sv = if p == 0 { 0.0 } else { ev - pv }
+        let sv-testo = calc.round(sv, digits: 2)
+
+        (periodo-testo, [€#ev], [€#pv], [€#sv-testo])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Schedule Variance],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-east",
+        x-tick-step: 1,
+        y-tick-step: 250, 
+        y-min: -1000,
+        y-max: 500,
+        x-max: listaEv-Pv.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [SV],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 0.0), (listaEv-Pv.at(-1).at(0), 0)),
+            label: [Target (0)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            listaEv-Pv.map(it => {
+              let (p, ev, pv) = it
+              let sv = if p == 0 { 0.0 } else { ev - pv }
+              (p,sv)
+            }),
+            label: [Schedule Variance (SV)],
+            style: (stroke: red),
+            line: "spline",
+            mark: "o",
+          )
+        }
+      )
+    })
+  )
+]
+//--------------------------------------------------------------------------------------------------------
+// cost variance EV - AC
+#let listaEv-Ac = (
+// EARNED VALUE - ACTUAL COST
+(0, 0.00,    0.00),
+(1, 209.43,  252.50),
+(2, 568.45,  687.50),
+(3, 1116.96, 1360.00),
+(4, 1735.27, 2100.00),
+(5, 2134.18, 2560.00),
+(6, 2632.83, 3140.00),
+(7, 3610.16, 4205.00),
+(8, 4407.99, 5080.00),
+(9, 5235.73, 6027.50)
 )
-Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV e CV hanno valore 0, invece a partire dal quinto sprint il team ha quasi sempre lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi. 
+
+#figure(
+  caption: [Tabella per periodo di Cost Variance],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Earned Value*], [*Actual Cost*], [*Cost Variance*]),
+      ..listaEv-Ac.map(riga => {
+        let (p, ev, ac) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+
+        let cv = if p == 0 { 0.0 } else { ev - ac }
+        let cv-testo = calc.round(cv, digits: 2)
+
+        (periodo-testo, [€#ev], [€#ac], [€#cv-testo])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Cost Variance],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      let min_AC = calc.min(..listaEv-Ac.map(it => ( it.at(1) - it.at(2))))
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-east",
+        x-tick-step: 1,
+        y-tick-step: 250, 
+        y-min: calc.floor(min_AC / 250) * 250,
+        y-max: 250,
+        x-max: listaEv-Ac.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [CV],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 0.0), (listaEv-Ac.at(-1).at(0), 0)),
+            label: [Target (0)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            listaEv-Ac.map(it => {
+              let (p, ev, ac) = it
+              let cv = if p == 0 { 0.0 } else { ev - ac }
+              (p,cv)
+            }),
+            label: [Cost Variance (CV)],
+            style: (stroke: red),
+            mark: "o",
+            line: "spline",
+          )
+        }
+      )
+    })
+  )
+]
+Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha quasi sempre lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi nei quali si prevede di lavorare in maniera più efficiente. 
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
 
  == MPC03 - Budget Variance 
+ #let listaPv-Ac = (
+// PLANNED VALUE - ACTUAL COST
+(0, 0.00,    0.00),
+(1, 209.43,  252.50),
+(2, 568.45,  687.50),
+(3, 1116.96, 1360.00),
+(4, 1735.27, 2100.00),
+(5, 2313.70, 2560.00),
+(6, 3071.63, 3140.00),
+(7, 3989.13, 4205.00),
+(8, 5026.30, 5080.00),
+(9, 6113.34, 6027.50)
+)
+
 #figure(
-  image("../../asset/MPC03.png", width: 90%),
-  caption: [Grafico per periodo di Budget Variance]
-) 
+  caption: [Tabella per periodo di Budget Variance],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Planned Value*], [*Actual Cost*], [*Budget Variance*]),
+      ..listaPv-Ac.map(riga => {
+        let (p, pv, ac) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+        let bv = if p == 0 or pv == 0 {
+          "0.00" 
+        } else {
+          let valore = 100 * (pv - ac) / pv
+          let arrotondato = calc.round(valore, digits: 2)
+          let s = str(arrotondato)
+          
+          if not s.contains(".") { s + ".00" }
+          else if s.split(".").at(1).len() == 1 { s + "0" }
+          else { s }
+        }
+        (periodo-testo, [€#pv], [€#ac], [#bv%])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Budget Variance],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      let min_BV = calc.min(..listaPv-Ac.enumerate().map(((i, it)) => {
+        if i == 0 {
+          0.0
+        } else {
+          100 * (it.at(1) - it.at(2)) / (it.at(1))
+        }
+      }))
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 0.1, 
+        y-min: -0.5,
+        y-max: 0.5,
+        x-max: listaPv-Ac.at(-1).at(0) + 0.25,
+        y-format: v => { if v == 0 { [0] } else { [#{v * 100}%] } },
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [BV],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 0.0), (listaPv-Ac.at(-1).at(0), 0.0)),
+            label: [Target (0.0)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            listaPv-Ac.map(it => {
+              let (p, pv, ac) = it
+              let bv = if p == 0 { 0.0 } else {  (pv - ac) / pv }
+              (p, bv)
+            }),
+            label: [Budget Variance (BV)],
+            style: (stroke: red),
+            mark: "o",
+            line: "spline",
+          )
+        }
+      )
+    })
+  )
+]
+
  La Budget Variance ha un valore negativo fino allo sprint 8 del RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase. Il miglioramento a partire dallo sprint 5 è dovuto alla riduzione del volume orario lavorato rispetto alla pianificazione originaria. Dovrebbe arrivare a 0 quando si recupereranno le ore e si inizieranno a utilizzare di più ruoli meno costosi.
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+
 == MPC05 - CPI
-#figure(
-  image("../../asset/MPC05.png", width: 90%),
-  caption: [Grafico per periodo di CPI]
+#let listaEv-Pv-CPI = (
+// EARNED VALUE - ACTUAL COST
+(0, 0.00,    0.00),
+(1, 209.43,  252.50),
+(2, 568.45,  687.50),
+(3, 1116.96, 1360.00),
+(4, 1735.27, 2100.00),
+(5, 2134.18, 2560.00),
+(6, 2632.83, 3140.00),
+(7, 3610.16, 4205.00),
+(8, 4407.99, 5080.00),
+(9, 5235.73, 6027.50)
 )
+
+#figure(
+  caption: [Tabella per periodo di Cost Performance Index],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Earned Value*], [*Actual Cost*], [*CPI*]),
+      ..listaEv-Pv-CPI.map(riga => {
+        let (p, ev, ac) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+        let cpi = if p == 0 {
+          "1.00" 
+        } else {
+          str(calc.round(ev / ac, digits: 2))
+        }
+        (periodo-testo, [€#ev], [€#ac], [#cpi])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Cost Performance Index],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 0.1, 
+        y-min: 0.5,
+        y-max: 1.5,
+        x-max: listaEv-Pv-CPI.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [CPI],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 1.0), (listaEv-Pv-CPI.at(-1).at(0), 1.0)),
+            label: [Target (1.0)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            listaEv-Pv-CPI.map(it => {
+              let (p, ev, ac) = it
+              let cpi = if p == 0 { 1.0 } else { ev / ac }
+              (p, cpi)
+            }),
+            label: [CPI],
+            style: (stroke: red),
+            mark: "o",
+            line: "spline",
+          )
+        }
+      )
+    })
+  )
+]
 Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto all'utilizzo dei ruoli più costosi durante la fase di RTB. Siccome dopo questa fase lavoreranno di più figure meno costose come programmatore e verificatore, il CPI dovrebbe arrivare a raggiungere il valore ottimale.
 
 
@@ -525,9 +861,9 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
 
 == MPC06 e MPC07 - Planned Value ed Earned Value
 #let listaSpese = (
-(0, 0.00, 0.00),
-(1, 209.43, 209.43),
-(2, 568.45, 568.45),
+(0, 0.00,    0.00),
+(1, 209.43,  209.43),
+(2, 568.45,  568.45),
 (3, 1116.96, 1116.96),
 (4, 1735.27, 1735.27),
 (5, 2313.70, 2134.18),
@@ -567,7 +903,7 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
       let maxListaSpese = calc.max(..listaSpese.map(it => calc.max(it.at(1), it.at(2))))
 
       plot.plot(
-        size: (11, 11),
+        size: (9, 9),
         legend: "inner-north-west",
         x-tick-step: 1,
         y-tick-step: 1000, 
@@ -582,15 +918,17 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
           plot.add(
             listaSpese.map(it => (it.at(0), it.at(1))),
             label: [Planned Value (PV)],
-            mark-style: (stroke: purple),
-            line: "spline"
+            mark-style: (stroke: blue),
+            line: "spline",
+            mark: "o"
           )
 
           plot.add(
             listaSpese.map(it => (it.at(0), it.at(2))),
             label: [Earned Value (EV)],
-            mark-style: (stroke: orange),
-            line: "spline"
+            mark-style: (stroke: red),
+            line: "spline",
+            mark: "o"
           )
         }
       )
@@ -603,26 +941,19 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
 
 
 
-
-
-
-
-
-
 == MPC08 e MPC09 - Actual Cost ed Estimate to Complete
 #let listaACETC = (
-(0,0), 
-(1, 252.50),
-(2, 687.50),
-(3, 1360.00), 
-(4, 2100.00),
-(5, 2560.00),
-(6, 3140.00),
-(7, 4205.00),
-(8, 5080.00),
-(9, 6027.50)
+(0, 0, 12845), 
+(1, 252.50, 12845-209.43),
+(2, 687.50, 12845-568.45),
+(3, 1360.00, 12845-1116.96), 
+(4, 2100.00, 12845-1735.27),
+(5, 2560.00, 12845-2134.18),
+(6, 3140.00, 12845-2632.83),
+(7, 4205.00, 12845-3610.16),
+(8, 5080.00, 12845-4407.99),
+(9, 6027.50, 12845-5235.73)
 )
-#let budgetTotale = 12845
 
 
 #figure(
@@ -638,11 +969,9 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
         ..listaACETC.map(riga => {
           let p = riga.at(0)
           let ac = riga.at(1)
-          
+          let etc= riga.at(2)
           let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
           
-          let etc = budgetTotale - ac 
-
           (periodo-testo, [€ #ac], [€ #etc])
         }).flatten()
     )
@@ -658,12 +987,12 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
       import cetz-plot: * // [cite: 17]
 
       plot.plot(
-        size: (10, 10), // [cite: 128, 176]
+        size: (9, 9), // [cite: 128, 176]
         legend: "inner-north-east",
         x-tick-step: 1, // [cite: 61, 63]
         y-tick-step: 1000, 
         y-min: 0, // [cite: 35]
-        y-max: calc.ceil(budgetTotale / 1000) * 1000, // [cite: 38]
+        y-max: calc.ceil(12845 / 1000) * 1000, // [cite: 38]
         x-max: listaACETC.at(-1).at(0) + 0.25,
         x-format: v => if v == 0 [Agg.] else [S. #v], // [cite: 84, 86]
         y-grid: true, // [cite: 107, 120]
@@ -673,15 +1002,17 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
           plot.add(
             listaACETC.map(it => (it.at(0), it.at(1))),
             label: [Actual Cost (AC)],
-            mark-style: (stroke: purple), // [cite: 157, 162]
-            line: "spline"
+            mark-style: (stroke: blue), // [cite: 157, 162]
+            line: "spline",
+            mark: "o"
           )
 
           plot.add(
-            listaACETC.map(it => (it.at(0), (budgetTotale - it.at(1)))),
+            listaACETC.map(it => (it.at(0), it.at(2))),
             label: [Estimate to Complete (ETC)],
-            mark-style: (stroke: orange), // [cite: 157, 162]
-            line: "spline"
+            mark-style: (stroke: red), // [cite: 157, 162]
+            line: "spline",
+            mark: "o"
           )
         }
       )
