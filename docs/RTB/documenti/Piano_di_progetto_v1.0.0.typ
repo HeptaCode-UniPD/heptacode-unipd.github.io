@@ -1348,7 +1348,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 )
 
 // sotto ci va la tabella con le ore effettiva
-// poi va il GANTT
+// poi va il GANTT (guarda la chat c'è scritto quale usare)
 // infine le spese
 #pagebreak()
 === Sprint 11
