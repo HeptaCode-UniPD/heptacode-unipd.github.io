@@ -1333,23 +1333,64 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-
+    1. Conclusione della stesura del documento di Analisi dei Requisiti.
+    2. Verifica dei documenti prodotti per prepararsi alla consegna.
+    3. Preparazione e svolgimento del colloquio con il prof. Cardin.
+    4. *Esito colloquio:* Il gruppo ha ricevuto un 'semaforo rosso' a causa di lacune rilevate all'interno del documento di Analisi dei Requisiti.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. RR1 - Comprensione errata dei requisiti (@tab:RR1). L'esito del colloquio ha fatto emergere errori di granularità e una modellazione errata di alcuni Casi d'Uso.
+    2. RO1 - Mancato rispetto delle tempistiche (@tab:RO1) 
+    3. RO2 - Rallentamento dovuto ad altri impegni personali o universitari (@tab:RO2)
   ],
 
   [_Mitigazione_],
   [
-    1.
+    1. Sono stati raccolti i feedback del professore durante la riunione.
+    2. Pianificazione di una revisione delle lacune emerse nell'AdR nello sprint successivo (Sprint 11).
   ]
 )
 
-// sotto ci va la tabella con le ore effettiva
-// poi va il GANTT (guarda la chat c'è scritto quale usare)
-// infine le spese
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 10],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [2], [], [], [10 → 9], [185€],
+      [_Angela Canazza_], [], [], [3], [], [], [5 → 4], [135€],
+      [_Riccardo Baldin_], [], [], [3], [], [], [5], [150€],
+      [_Alberto Reginato_], [4], [], [], [], [], [], [120€],
+      [_Nicola Simionato_], [], [], [3], [], [], [5], [150€],
+      [_Amerigo Vegliante_], [], [4], [], [], [], [], [80€],
+      [_Laura Venturini_], [], [], [3], [], [], [5], [150€],
+    ) ]] <tab:RetrospettivaSprint10>
+
+*GANTT Diagram*
+#figure(
+  caption: [Diagramma di GANTT dello Sprint 10],
+)[
+  #image("../../asset/GANTT/sprint10-gantt.png")
+]<GANTT-Sprint10>
+
+#underline[Spese della settimana]: 970€ / 1.000€ \ #underline[Spesa totale]: *5.380€ / 5.410€*
+
 #pagebreak()
 === Sprint 11
 ==== Preventivo a finire
