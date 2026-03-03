@@ -235,3 +235,6 @@ ceil
 listaacetc
 listaspese
 maxlistaspese
+listaev
+listapv
+str
