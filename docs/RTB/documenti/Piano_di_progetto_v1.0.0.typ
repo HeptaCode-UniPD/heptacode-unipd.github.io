@@ -1336,7 +1336,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     1. Conclusione della stesura del documento di Analisi dei Requisiti.
     2. Verifica dei documenti prodotti per prepararsi alla consegna.
     3. Preparazione e svolgimento del colloquio con il prof. Cardin.
-    4. *Esito colloquio:* Il gruppo ha ricevuto un 'semaforo rosso' a causa di lacune rilevate all'interno del documento di Analisi dei Requisiti.
+    4. *Esito colloquio:* Il gruppo ha ricevuto _semaforo rosso_ a causa di lacune rilevate all'interno del documento di Analisi dei Requisiti.
   ],
 
   [_Rischi incontrati_],
