@@ -112,7 +112,7 @@ def spellcheck_file(filepath, dictionary, verbose=False, project_root=None):
         print(f"  → Found {len(word_locations)} unique words, {len(misspelled)} misspelled")
         
         if misspelled:
-            print(f"{RED}\nMisspellings{RESET} in {filepath}:")
+            print(f"\n{RED}✗{RESET}Misspellings in {filepath}:")
             for word in sorted(misspelled.keys()):
                 lines = sorted(misspelled[word])
                 lines_str = ', '.join(map(str, lines[:5]))  # Show first 5 occurrences
@@ -134,7 +134,7 @@ def spellcheck_file(filepath, dictionary, verbose=False, project_root=None):
                 print(f"  {word}")
             return False
     
-    print(f"{GREEN}✓ No misspellings found in {filepath}{RESET}")
+    print(f"{GREEN}✓{RESET} No misspellings found in {filepath}")
     return True
 
 
@@ -231,10 +231,10 @@ def main():
     print(f"\nChecked {files_checked} files")
     
     if all_passed:
-        print(f"{GREEN}✓ All files passed spellcheck!{RESET}")
+        print(f"{GREEN}✓{RESET} All files passed spellcheck!")
         sys.exit(0)
     else:
-        print(F"{RED}✗ Some files have spelling errors{RESET}")
+        print(f"{RED}✗{RESET} Some files have spelling errors")
         sys.exit(1)
 
 
