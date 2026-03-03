@@ -228,3 +228,10 @@ nestjs
 metodologie'
 rischi'
 strumenti'
+
+agg
+budgettotale
+ceil
+listaacetc
+listaspese
+maxlistaspese
