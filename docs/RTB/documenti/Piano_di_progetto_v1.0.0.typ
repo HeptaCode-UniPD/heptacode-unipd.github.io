@@ -568,7 +568,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     #figure(
   caption: [Diagramma di GANTT dello Sprint 3],
   )[
-  #image("../../asset/GANTT/sprint3-gantt.jpg")
+  #image("../../asset/GANTT/sprint3-gantt.png")
   ]<GANTT-Sprint3>
 
 #underline[Spese della settimana]: 672,5€ / 672,5€ \ #underline[Spesa totale]: *1.360€ / 1.360€*
@@ -752,7 +752,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     1. Continuazione stesura documentazione: PdP, AdR e NdP;
     2. Continuazione stesura Use Case e finitura della sezione Developer;
     3. Inizio stesure Use Case per sezioni opzionali (Business Owner, Project Manager);
-    4. Aggiornamento Glossario.
+    4. Scelta stack tecnologico.
   ],
 
   [_Rischi incontrati_],
