@@ -4,6 +4,7 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
+  ("0.20.0", "2026/03/03", "Amerigo Vegliante", "Angela Favaro", "Aggiunta del resoconto trascorso RTB"),
   ("0.19.0", "2026/03/02", "Angela Favaro", "Alberto Reginato", "Modifica del documento su organizzazione Sprint"),
   ("0.18.0", "2026/03/02", "Angela Favaro", "Alberto Reginato", "Aggiunto trascorso Sprint 11"),
   ("0.17.0", "2026/03/02", "Alberto Reginato", "Angela Favaro", "Aggiunto trascorso Sprint 10"),
@@ -39,11 +40,11 @@
 #show: applica-glossario
 
 = Introduzione
-Questo è un documento utile per avere una linea guida da seguire durante tutto lo svolgimento del progetto. \
+Questo documento propone una linea guida da seguire durante tutto lo svolgimento del progetto. \
 Il Piano di Progetto ha lo scopo di definire in modo chiaro, strutturato e verificabile come il progetto _Code Guardian_ dovrà essere realizzato.
-Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e per aggiornare contenuti errati o imprecisi.
-== Ambito del progetto
-In questa prima parte del documento è presente una breve introduzione al progetto di cui si farà riferimento in ogni paragrafo. Non vuole essere una spiegazione esplicativa e dettagliata dello stesso; per quello si può consultare il documento di _Analisi dei requisiti_ presente nel #link("https://heptacode-unipd.github.io", "sito del team Hepta Code"). \
+Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e/o per aggiornare contenuti obsoleti.
+== Introduzione al progetto _Cose Guardian_
+Questa prima parte del documento non vuole essere una spiegazione esplicativa e dettagliata dello stesso; per quello si può consultare il documento di _Analisi dei requisiti_ presente nel #link("https://heptacode-unipd.github.io", "sito del team Hepta Code"). \ \
 *Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un’organizzazione. \ Verranno utilizzati degli agenti che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository Git Hub. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \
 Gli agenti fino ad ora pensati per _Code Guardian_ sono:
 1. Agente per il controllo del codice.
@@ -52,27 +53,29 @@ Gli agenti fino ad ora pensati per _Code Guardian_ sono:
 \ Gli utenti / attori presi in esame per la creazione del progetto sono di tre tipi (lavoreranno insieme all’interno di uno stesso progetto):
 - Business Owner;
 - Project Manager;
-- Sviluppatore
+- Sviluppatore.
 Per ognuno dei tre verrà fornita un’interfaccia consona alle funzioni che più possono interessare loro riguardo lo stato di uno o più progetti di sviluppo. \
 \ Grazie a meccanismi AI e LLM , in base al dominio dell’utente, verranno:
 - visualizzati gli errori rilevati;
 - forniti suggerimenti agli errori rilevati;
 - forniti suggerimenti per il miglioramento del progetto;
-- visualizzati dati statistici di interesse sul progetto.
+- visualizzate e calcolate percentuali statistiche di interesse sul progetto.
 \
 Gli ambiti tecnici di progetto sono quindi
 - implementazione e addestramento di agenti tramite utilizzo di _AI_ e _LLM_;
 - implementazione di una web-app.
 
-== Ruoli interni al documento
-Questo documento dovrà periodicamente essere aggiornato dal Responsabile e validato dal Verificatore.  \
-Ad ogni Sprint Retrospective si aggiornerà il _Trascorso_ con:
-- un riassunto di ciò che è accaduto durante lo sprint, diviso per punti;
-- le problematiche incontrate;
-- le misure di mitigazione attuate;
-- gli eventuali aggiornamenti all’_Analisi dei rischi_;
-- i Diagrammi di GANTT utili alla comprensione immediata dell’avanzamento del progetto.
-Verrà conseguentemente aggiornata l’_Analisi dei Rischi_ con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
+== Regole di aggiornamento del documento
+Questo documento dovrà periodicamente (cioè alla fine di ogni periodo o Sprint) essere aggiornato dal Responsabile e validato dal Verificatore.  \
+Ad ogni Sprint Retrospective:
++ Si aggiornerà il _Trascorso_ con:
+  - un riassunto di ciò che è accaduto durante lo sprint, diviso per punti;
+  - le problematiche incontrate;
+  - le misure di mitigazione attuate;
+  - gli eventuali aggiornamenti all’_Analisi dei rischi_;
+  - i Diagrammi di GANTT utili alla comprensione immediata dell’avanzamento del progetto.
++ Si aggiorneranno i due sprint immediatamente successivi a quello concluso. \ In questo modo gli obiettivi nel breve termine saranno sempre aggiornati secondo le esigenze che richiede il progetto in quel momento. 
+Verrà, all’occorrenza, aggiornata l’#link(<AdR>)[Analisi dei Rischi] con tutti i nuovi rischi futuri e/o presenti e le misure di mitigazione attuabili e/o da attuare.
 #pagebreak()
 
 
@@ -86,7 +89,7 @@ Abbiamo scelto di lavorare al progetto utilizzando l’approccio Agile basato su
 - Il rilascio incrementale permette all’azienda cliente di vedere come sta avanzando il progetto.
 - Feedback più veloce: questo metodo impone un contatto più frequente con l’azienda proponente, permettendo di avere un riscontro sull'adeguatezza dei requisiti individuati e del codice per implementare tali requisiti, senza essere costretti a modificare tutto alla fine.
 == Struttura del ciclo di vita
-Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint sarà di una settimana dal 24 novembre 2025 all’11 gennaio 2026 e poi dal 23 febbraio al 15 marzo 2026; sarà invece di due settimane durante il periodo di sessione d’esami che va dal 12 gennaio al 22 febbraio 2026. \ Per ogni Sprint, sono previsti:
+Dato che utilizziamo la metodologia Scrum, il ciclo di vita del progetto è suddiviso in brevi cicli autosufficienti chiamati Sprint. \ Abbiamo stabilito che la durata di uno Sprint potrà variare da una settimana al massimo di due settimane ciascuno. \ Per ogni Sprint, sono previsti:
 - uno *Sprint Planning*, in cui si pianifica lo Sprint e si stabiliscono i suoi obiettivi;
 - uno *Sprint Review*, in cui si esamina il lavoro completato dopo uno Sprint e si aggiorna il *Product Backlog*, che contiene tutte le task da completare per completare il progetto;
 - uno *Sprint Retrospective*, in cui il team ragiona su ciò che può essere migliorato in confronto allo Sprint appena finito;
@@ -103,7 +106,6 @@ Ogni membro del team userà il proprio computer per lavorare al progetto. Inoltr
 - _LabP036_ e _LabP140_ presso il _Complesso Paolotti_.
 - _LabTA_ presso _Torre Archimede_.
 == Strumenti Software
-[Da aggiornare con Glossario quando saranno definire]
 Gli strumenti di sviluppo che abbiamo deciso di usare sono:
 - *React* e *Typescript* per la parte Frontend;
 - *Node.js* per la parte Backend;
@@ -116,11 +118,13 @@ Gli strumenti per la comunicazione sono invece:
 - *Discord* per le riunioni telematiche;
 - *Telegram* per avere un canale di comunicazione asincrona fra i  membri del team;
 - *Slack* e *Gmail* per comunicare con l’azienda proponente.
+- *Microsoft Teams* per le riunioni telematiche con l'azienda proponente.
 #pagebreak()
 
 = Organizzazione del team
 #label("Organizzazione")
-Ad ogni suddivisione di periodo (_sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 gennaio 2026_ al _21 febbraio 2026_. \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali.
+Ad ogni suddivisione di periodo (_Sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 gennaio 2026_ al _21 febbraio 2026_. \ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ l’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive, calcolate a priori rispetto allo svolgimento del progetto, vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali. \ \
+
 #figure(
   caption: [Stima delle ore individuali per ruolo in totale.],
   kind: table,
@@ -143,7 +147,7 @@ Ad ogni suddivisione di periodo (_sprint_) i membri turneranno; in questo modo t
 
       [_Angela Favaro_], [7], [10], [15], [16], [21], [23], [*92*],
       [_Angela Canazza_], [9], [6], [15], [15], [21,5], [25,5], [*92*],
-      [_Riccardo Baldin_], [4], [8], [17], [15], [22], [26], [92],
+      [_Riccardo Baldin_], [4], [8], [17], [15], [22], [26], [*92*],
       [_Alberto Reginato_], [7], [8], [16], [17], [17,5], [26,5], [*92*],
       [_Nicola Simionato_], [7], [8], [15,5], [12], [22], [27,5], [*92*],
       [_Amerigo Vegliante_], [8], [8], [17], [16], [21], [22], [*92*],
@@ -184,7 +188,8 @@ Nel grafico in figura @fig:torta vengono analizzate le percentuali della riparti
       outer-label: (content: "%", radius: 120%),
     )
   })]] <fig:torta>
-
+\
+Durante lo svolgimento del progetto verranno segnalate le ore effettive svolte da ogni signolo componente per ogni singolo ruolo. \ Alla conclusione delle milestone RTB e PB verranno segnalate le ore totali effettivamente svolte.
 
 #pagebreak()
 
@@ -193,12 +198,11 @@ Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel c
 == Suddivisione e organizzazione degli sprint 
 Sono stati calcolati un totale di _*tredici*_ sprint. \ La divisione del paragrafo in due sotto-paragrafi riporta:
 + *Preventivo a finire:* \
-  Il preventivo rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team (nel breve periodo). Questo è utile soprattutto in fase di _Sprint Retrospective_ per comprendere se le tempistiche sono state rispettate o se, invece, c’è qualcosa che blocca il lavoro. \ Verranno esplicitati:
+  rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team (nel breve periodo). Il preventivo verrà aggiornato ad ogni sprint per i due sprint successivi. \ Verranno esplicitati:
   - Le attività che si dovranno svolgere ad ogni sprint.
   - I ruoli che ogni membro dovrà rappresentare.
-  Il preventivo verrà aggiornato ad ogni sprint per i due sprint successivi. \
   - Il costo pianificato per lo sprint.
-+ *Trascorso:* ciò che realmente è accaduto durante gli sprint.
++ *Trascorso:* \ rappresenta ciò che realmente è accaduto durante gli sprint.
   Per ogni percorso verrà effettuato:
   - Analisi dei rischi incontrati e delle attività svolte.
   - Come e se è stata effettuata mitigazione dei rischi riscontrati.
@@ -1339,7 +1343,6 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 // poi va il GANTT
 // infine le spese
 #pagebreak()
-== Sprint PB
 === Sprint 11
 ==== Preventivo a finire
 #tabella-viola(
@@ -1453,6 +1456,80 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 #pagebreak()
 
+== Resoconto RTB
+Rispetto a quanto originariamente pianificato, la conclusione della milestone RTB (e anche della milestone interna UCB) *ha subito un ritardo di circa 3 sprint* (corrispondenti ad un periodo di giorni ventuno); di conseguenza la data di consegna del progetto è stata spostata dal *16 marzo 2026* al *30 marzo 2026*. \ \
+Il ritardo è stato accumulato durante la sessione d'esami invernale. Le cause principali sono:
+- Carico di lavoro elevato durante la sessione d'esami.
+- Mancanza di comunicazione all'interno del gruppo.
+- Mancanza di una chiara e dettagliata organizzazione del lavoro, sia individuale che di gruppo, con conseguente difficoltà nel coordinamento.
+
+_Il gruppo, di unanime accordo, si impegna a dedicarsi totalmente al lavoro di progetto fino alla fine dello stesso; così da poter recuperare il ritardo accumulato e concludere la milestone PB secondo le tempistiche calcolate._ \ \
+In @tab:OreTotIndividualiRTB vengono riportate le ore effettivamente svolte per ogni ruolo durante il periodo trascorso. Ed in @fig:tortaRTB è possibile visionare la percentuale di ore dedicate a ciascun ruolo durante la milestone RTB.
+
+#figure(
+  caption: [Stima delle ore individuali per ruolo durante la milestone RTB.],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+      
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Totale*]]],
+
+      [_Angela Favaro_], [], [], [], [], [], [], [* /92*],
+      [_Angela Canazza_], [], [], [], [], [], [], [* /92*],
+      [_Riccardo Baldin_], [], [], [], [], [], [], [* /92*],
+      [_Alberto Reginato_], [], [], [], [], [], [], [* /92*],
+      [_Nicola Simionato_], [], [], [], [], [], [], [* /92*],
+      [_Amerigo Vegliante_], [], [], [], [], [], [], [* /92*],
+      [_Laura Venturini_], [], [], [], [], [], [], [* /92*],
+      [*Ore totali*], [* /49*], [* /56*], [* /112*], [* /105*], [* /148*], [* /174*],
+    ) ]] <tab:OreTotIndividualiRTB>
+
+#figure(
+  caption: [Percentuale ripartizione dei ruoli durante la milestone RTB.],
+)[
+  #let data = (
+    ([*Resp.*], 49),
+    ([*Amm.*], 56),
+    ([*Analista*], 112),
+    ([*Progett.*], 105),
+    ([*Programm.*], 148),
+    ([*Verif.*], 174),
+  )
+
+  #align(left)[#cetz.canvas({
+    let darkness = rgb("#9b66ff")
+    let dark = rgb("#a814e1")
+    let medium = rgb("#f365b0")
+    let light = rgb("#fba8b7")
+    let colortext = rgb("#1e0046")
+    let colors = gradient.linear(darkness, dark, medium, light)
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (content: (value, label) => [#text(colortext, label)], radius: 100%),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]] <fig:tortaRTB>
+
+#pagebreak()
+== Sprint PB
 === Sprint 12
 ==== Preventivo a finire
 #tabella-viola(
@@ -1632,6 +1709,7 @@ Successivamente verranno illustrati:
 
 
 == Analisi dei rischi
+<AdR>
 Ogni rischio ha:
 - una determinata probabilità di avverarsi, che può essere bassa, media o alta;
 - un livello di impatto che ha sul progetto, che corrisponde alla gravità del rischio e può essere anch'esso basso, medio o alto.
