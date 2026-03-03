@@ -189,7 +189,7 @@ Nel grafico in figura @fig:torta vengono analizzate le percentuali della riparti
     )
   })]] <fig:torta>
 \
-Durante lo svolgimento del progetto verranno segnalate le ore effettive svolte da ogni signolo componente per ogni singolo ruolo. \ Alla conclusione delle milestone RTB e PB verranno segnalate le ore totali effettivamente svolte.
+Durante lo svolgimento del progetto verranno segnalate le ore effettive svolte da ogni singolo componente per ogni singolo ruolo. \ Alla conclusione delle milestone RTB e PB verranno segnalate le ore totali effettivamente svolte.
 
 #pagebreak()
 
@@ -1458,8 +1458,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 == Resoconto RTB
 Rispetto a quanto originariamente pianificato, la conclusione della milestone RTB (e anche della milestone interna UCB) *ha subito un ritardo di circa 3 sprint* (corrispondenti ad un periodo di giorni ventuno); di conseguenza la data di consegna del progetto è stata spostata dal *16 marzo 2026* al *30 marzo 2026*. \ \
-Il ritardo è stato accumulato durante la sessione d'esami invernale. Le cause principali sono:
-- Carico di lavoro elevato durante la sessione d'esami.
+Il ritardo è stato accumulato durante la sessione d’esami invernale. Le cause principali sono:
+- Carico di lavoro elevato durante la sessione d’esami.
 - Mancanza di comunicazione all'interno del gruppo.
 - Mancanza di una chiara e dettagliata organizzazione del lavoro, sia individuale che di gruppo, con conseguente difficoltà nel coordinamento.
 

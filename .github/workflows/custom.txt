@@ -228,3 +228,5 @@ nestjs
 metodologie'
 rischi'
 strumenti'
+oretotindividualirtb
+tortartb
