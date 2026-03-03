@@ -1440,7 +1440,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
       [_Laura Venturini_], [], [], [], [], [], [5], [75€],
     ) ]] <tab:PrevisioneSprint11>
 
-#underline[Spese della settimana]: 545€ \ #underline[Spesa totale]: *xxx€*
+#underline[Spese della settimana]: 545€ \ #underline[Spesa totale]: *5.925€*
 
 ==== Trascorso
 #table(
@@ -1504,7 +1504,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 *GANTT Diagram*
 
-#underline[Spese della settimana]: 545€ / 545€ \ #underline[Spesa totale]: *xxx€ / xxx€*
+#underline[Spese della settimana]: 545€ / 545€ \ #underline[Spesa totale]: *5.925€ / 5.925€*
 
 #pagebreak()
 
