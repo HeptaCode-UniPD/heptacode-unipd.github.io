@@ -193,7 +193,7 @@ Durante lo svolgimento del progetto verranno segnalate le ore effettive svolte d
 
 #pagebreak()
 
-= Pianificazione temporale
+= Pianificazione e resoconto temporale
 Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel corso del tempo.\ 
 == Suddivisione e organizzazione degli sprint 
 Sono stati calcolati un totale di _*tredici*_ sprint. \ La divisione del paragrafo in due sotto-paragrafi riporta:
@@ -221,7 +221,9 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 3. _PAB (Progettazione & Analisi Baseline)_:
   - Conclusione attività di progettazione e analisi.
 4. _PB (Product Baseline)_:
-  - Consegna del progetto validato.
+  - Consegna del progetto.
+
+#pagebreak()
 == Sprint RTB
 === Sprint 1
 ==== Preventivo a finire
@@ -239,9 +241,9 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     - Studio in preparazione dell’attività di Analisi dei Requisiti.
     - Primo approccio di gruppo all’analisi (tramite incontri interni organizzati come brainstorming).
     - Studio della documentazione adeguata al progetto.
-    - Attività di analisi dei Casi d'uso preliminare.
+    - Attività di studio dei Casi d'uso.
   ],
-  [_Milestones attive_], [UCB, RTB]
+  [_Milestone attive_], [RTB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 1],
@@ -334,7 +336,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   #image("../../asset/GANTT/sprint1-gantt.png")
   ]<GANTT-Sprint1>
 
-#underline[Spese della settimana]: 252,5€ \ #underline[Spesa totale]: *252,5€*
+#underline[Spese della settimana]: 252,5€ / 252,5€ \ #underline[Spesa totale]: *252,5€ / 252,5€*
 #pagebreak()
 
 === Sprint 2
@@ -350,7 +352,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   [_Attività previste_],
   [
     - Studio individuale della sintassi e l’utilizzo dei Casi d’Uso.
-    - Continuazione e intensificazione dell’attività di Analisi dei Requisiti in gruppo.
+    - Inizio stesura dei primi Casi d'Uso.
     - Divisione dei compiti per una prima stesura dei documenti tra:
       - Piano di Progetto (PdP).
       - Piano di Qualifica (PdQ).
@@ -358,7 +360,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
       - Analisi dei Requisiti (AR).
     - Decisioni provvisorie sulle tecnologie utilizzabili per il progetto.
   ],
-  [_Milestones attive_], [UCB, RTB]
+  [_Milestone attive_], [UCB, RTB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 2],
@@ -452,7 +454,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   #image("../../asset/GANTT/sprint2-gantt.png")
   ]<GANTT-Sprint2>
 
-#underline[Spese della settimana]: 435€ \ #underline[Spesa totale]: *687,5€*
+#underline[Spese della settimana]: 435€ / 435€ \ #underline[Spesa totale]: *687,5€ / 687,5€*
 #pagebreak()
 
 === Sprint 3
@@ -468,11 +470,11 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   [_Attività previste_],
   [
     - Attività di formazione su Backend da parte dell’azienda committente.
-    - Continuazione da parte del team completo dell’Analisi dei Requisiti (con presenza anche di Responsabile ed Amministratore).
+    - Continuazione da parte del team dell’Analisi dei Requisiti.
     - Avanzamento stesura dei documenti per milestone RTB.
     - Studio individuale sulle tecnologie discusse dal team.
   ],
-  [_Milestones attive_], [UCB, RTB]
+  [_Milestone attive_], [UCB, RTB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 3],
@@ -569,7 +571,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   #image("../../asset/GANTT/sprint3-gantt.jpg")
   ]<GANTT-Sprint3>
 
-#underline[Spese della settimana]: 672,5€ \ #underline[Spesa totale]: *1.360€*
+#underline[Spese della settimana]: 672,5€ / 672,5€ \ #underline[Spesa totale]: *1.360€ / 1.360€*
 #pagebreak()
 
 === Sprint 4
@@ -592,7 +594,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     - Continuazione stesura di Use Case.
     - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
   ],
-  [_Milestones attive_], [UCB, RTB]
+  [_Milestone attive_], [UCB, RTB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 4],
@@ -687,7 +689,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   #image("../../asset/GANTT/sprint4-gantt.png")
   ]<GANTT-Sprint4>
 
-#underline[Spese della settimana]: 740€ \ #underline[Spesa totale]: *2100€*
+#underline[Spese della settimana]: 740€ / 740€ \ #underline[Spesa totale]: *2100€ / 2100€*
 #pagebreak()
 
 === Sprint 5
@@ -708,7 +710,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     - Continuazione stesura dei documenti.
     
   ],
-  [_Milestones attive_], [UCB, RTB]
+  [_Milestone attive_], [UCB, RTB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 5],
@@ -822,7 +824,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     - Continuazione attività di Analisi dei Requisiti.
     - Revisione del _Glossario_ ed eventuale aggiornamento.
   ],
-  [_Milestones attive_], [UCB, RTB]
+  [_Milestone attive_], [UCB, RTB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 6],
@@ -935,9 +937,9 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     In questo sprint tutti i ruoli devono essere operativi e il team deve dimostrare la capacità di generare valore per lo sviluppo del progetto.
     - Continuazione di sviluppo e verifica del PoC.
     - Continuazione stesura della documentazione (interna ed esterna).
-    - Continuazione attività di Analisi.
+    - Continuazione attività di Analisi e rilevazione Casi d'Uso.
   ],
-  [_Milestones attive_], [UCB, RTB]
+  [_Milestone attive_], [UCB, RTB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 7],
@@ -1050,11 +1052,11 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   [
     - Conclusione dello sviluppo e della verifica del PoC.
     - Revisione dei documenti prodotti per la milestone RTB.
-    - Continuazione attività di Analisi.
+    - Continuazione attività di Analisi e stesura Casi d'Uso.
     - Revisione del _Glossario_ ed eventuale aggiornamento.
-    - Previsto colloquio di aggiornamento con Var Group; quindi preparazione al colloquio per esprimere eventuali dubbi.
+    - Previsto colloquio di aggiornamento con Var Group; preparazione al colloquio per esprimere eventuali dubbi.
   ],
-  [_Milestones attive_], [UCB, RTB]
+  [_Milestone attive_], [UCB, RTB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 8],
@@ -1097,7 +1099,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   [
     1. Revisione Casi d'Uso con azienda
     2. Inizio riscrittura PoC secondo nuove indicazioni
-    3. Inizio PoC
+    3. Continuazione stesura documentazione: AdR e NdP.
+    4. Continuazione stesura Casi d'Uso.
   ],
 
   [_Rischi incontrati_],
@@ -1163,7 +1166,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
   [_Attività previste_],
   [
-    - Finire la stesura del documento di Analisi dei Requisiti (e quindi fine della milestone UCB).
+    - Finire la stesura del documento di Analisi dei Requisiti quindi *conclusione milestone UCB*.
+    - Ultimare il PoC secondo le nuove indicazione ricevute dall'azienda proponente.
     Inoltre, in ordine cronologico:
     1. Continuazione stesura della documentazione prodotta per la milestone RTB.
     2. Revisione del _Glossario_ ed eventuale aggiornamento.
@@ -1209,9 +1213,13 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   stroke: 0.7pt,
 
   [_Attività Svolte_],
-  [ 1. Riformulazione dei Casi d'Uso con aumento della granularità
-  1. Stesura del capitolo 5 del Piano di Qualifica
-  2. Ultimazione del PoC
+  [
+  1. Conclusione prima stesura di tutti i casi d'uso secondo i requisiti individuati. 
+  2. Riformulazione dei Casi d'Uso con aumento della granularità
+  3. Stesura del capitolo 5 del Piano di Qualifica
+  4. Ultimazione del PoC
+
+  *Conclusa milestone UCB*.
 
   ],
 
@@ -1401,6 +1409,9 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   [_Attività Svolte_],
   [
     - Attività di correzione a seguito del semaforo rosso del prof. Cardin (date da lacune di AdR).
+    - Stesura slide per presentazione RTB.
+    - Revisione del glossario.
+    - Script che automatizza la struttura dei documenti del gruppo.
     - Riunione per decidere eventuali argomenti da portare al prof. Vardanega per il colloqui con lo stesso.
   ],
 
@@ -1548,8 +1559,9 @@ In @tab:OreTotIndividualiRTB vengono riportate le ore effettivamente svolte per 
     - Sviluppo Backend e verifica del codice.
     - Sviluppo Frontend e verifica del codice.
     - Inizio sviluppo documentazione per milestone PB.
+    - Conclusione attività di progettazione ed analisi. 
   ],
-  [_Milestones attive_], [RTB, PAB, PB]
+  [_Milestones attive_], [PAB, PB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 12],
@@ -1623,7 +1635,7 @@ In @tab:OreTotIndividualiRTB vengono riportate le ore effettivamente svolte per 
     - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
     - *Consegna del progetto previsto in data 15 marzo 2026*.
   ],
-  [_Milestones attive_], [PAB, PB]
+  [_Milestones attive_], [PB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 13],
@@ -1735,9 +1747,9 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
     [ *Piano di mitigazione*],
     align(
       left,
-    )[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli Use Cases per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
+    )[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli Use Case per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
     [*Rilevamento*],
-    [ ],
+    [Il rischio viene individuato in fase di revisione del documento di Analisi dei Requisiti. Inoltre durante i colloqui con l'azienda proponente verranno discussi eventuali dubbi riguardo  i reqiusiti stilati. Un ulteriore segnale è la difficoltà del team nello stilare i requisiti in maniera chiara e dettagliata. ],
     [ *Piano di contingenza*],
     align(
       left,
