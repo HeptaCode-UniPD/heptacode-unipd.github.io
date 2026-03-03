@@ -129,7 +129,7 @@ def spellcheck_file(filepath, dictionary, verbose=False, project_root=None):
         print(f"  → Found {len(set(words))} unique words, {len(misspelled)} misspelled")
         
         if misspelled:
-            print(f"{RED}\nMisspellings{RESET} in {filepath}:")
+            print(f"\n{RED}✗{RESET} Misspellings in {filepath}:")
             for word in sorted(misspelled):
                 print(f"  {word}")
             return False
