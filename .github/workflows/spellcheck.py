@@ -112,7 +112,7 @@ def spellcheck_file(filepath, dictionary, verbose=False, project_root=None):
         print(f"  → Found {len(word_locations)} unique words, {len(misspelled)} misspelled")
         
         if misspelled:
-            print(f"\n{RED}✗{RESET}Misspellings in {filepath}:")
+            print(f"\n{RED}✗{RESET} Misspellings in {filepath}:")
             for word in sorted(misspelled.keys()):
                 lines = sorted(misspelled[word])
                 lines_str = ', '.join(map(str, lines[:5]))  # Show first 5 occurrences
