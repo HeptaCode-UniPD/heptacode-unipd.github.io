@@ -1749,7 +1749,7 @@ Abbiamo inoltre elaborato un _piano di mitigazione_ e un _piano di contingenza_ 
       left,
     )[Il team ha avuto un meeting iniziale con l’azienda proponente in cui sono stati individuati alcuni requisiti. Inoltre, si impegna a usare gli Use Case per evitare linguaggio ambiguo e a mantenere il contatto con l’azienda per confronti riguardanti i requisiti.],
     [*Rilevamento*],
-    [Il rischio viene individuato in fase di revisione del documento di Analisi dei Requisiti. Inoltre durante i colloqui con l'azienda proponente verranno discussi eventuali dubbi riguardo  i reqiusiti stilati. Un ulteriore segnale è la difficoltà del team nello stilare i requisiti in maniera chiara e dettagliata. ],
+    [Il rischio viene individuato in fase di revisione del documento di Analisi dei Requisiti. Inoltre durante i colloqui con l'azienda proponente verranno discussi eventuali dubbi riguardo  i requisiti stilati. Un ulteriore segnale è la difficoltà del team nello stilare i requisiti in maniera chiara e dettagliata. ],
     [ *Piano di contingenza*],
     align(
       left,
