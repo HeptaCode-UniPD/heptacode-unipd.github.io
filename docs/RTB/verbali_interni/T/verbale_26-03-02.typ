@@ -70,19 +70,18 @@ Ogni membro si occuperà di esporre un’area specifica (gestionale, tecnica o a
 
 
 == Decisione su quando presentare candidatura RTB
-Il gruppo, analizzando lo stato di avanzamento dei documenti, ha valutato la maturità dei prodotti. 
+È stato scelto di presentare la candidatura per la milestone RTB per il 6 marzo 2026. La scelta è motivata dalla necessità di validare formalmente l'analisi e le scelte tecnologiche effettuate (PoC) prima di procedere con lo sviluppo dell'MVP.
 
-È stato deciso all'unanimità di presentare la candidatura per la milestone di Requirements and Technology Baseline (RTB) entro la fine della settimana corrente. Questa scelta è motivata dalla necessità di ricevere un feedback formale prima di procedere con lo sviluppo intensivo del Minimum Viable Product (MVP), minimizzando così il rischio di dover rimettere mano all'architettura in una fase troppo avanzata.
+== Revisione documenti per presentazione RTB
+In vista dell'incontro con il proponente e il professore, il gruppo ha stabilito la necessità di una revisione accurata di tutto il materiale documentale prodotto. L'obiettivo è garantire la massima coerenza tra quanto descritto nell'Analisi dei Requisiti, i criteri di verifica esposti nel Piano di Qualifica e quanto verrà mostrato durante la presentazione della milestone.
 
 = Conclusione
-L'incontro si è concluso con la definizione di una timeline serrata per la revisione finale dei materiali di presentazione, fissando come obiettivo la prontezza operativa per il prossimo incontro di coordinamento.
+L'incontro si è concluso con la definizione della strategia comunicativa per la presentazione e la pianificazione delle ultime revisioni documentali necessarie per la candidatura.
 
 ]
 
 #let decisione-azione = (
   ("Presentazione candidatura RTB", "Invio del modulo di candidatura e notifica ai proponenti."),
   ("Suddivisione parti presentazione", "Creazione di un documento condiviso per la stesura dei contenuti specifici."),
-  ("Completamento grafici Piano di Qualifica", "Inserimento dei grafici relativi a MPC04 (RSI) e allo stato dei Test di Accettazione."),
-  ("Revisione slide", "Organizzazione di una sessione di prova dell'esposizione dei contenuti."),
-  ("Consolidamento repository", "Verifica della corretta alberazione dei file e della presenza dei PDF aggiornati.")
+  ("Revisione documenti pre-presentazione", "Controllo incrociato tra PdP e PdQ per garantire coerenza terminologica e metrica.")
 )
