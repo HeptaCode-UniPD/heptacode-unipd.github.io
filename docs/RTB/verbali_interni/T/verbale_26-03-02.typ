@@ -65,12 +65,12 @@ Ogni membro si occuperà di esporre un’area specifica (gestionale, tecnica o a
   [Nicola Simionato, Alberto Reginato],[Aggiornamento comprensione obbiettivi del capitolato rispetto alla candidatura],
   [Angela Canazza, Laura Venturini],[Modifiche apportate ai prodotti "in progress"],
   [Amerigo Vegliante, Riccardo Baldin],[Autovalutazione dell'andamento generale del lavoro di progetto.],
-  [Angela Favaro],[Consuntivo di periodo allo stato attuale e preventire a finire]
+  [Angela Favaro],[Consuntivo di periodo allo stato attuale e preventivo a finire]
 )
 
 
 == Decisione su quando presentare candidatura RTB
-È stato scelto di presentare la candidatura per la milestone RTB per il 6 marzo 2026. La scelta è motivata dalla necessità di validare formalmente l'analisi e le scelte tecnologiche effettuate (PoC) prima di procedere con lo sviluppo dell'MVP.
+È stato scelto di presentare la candidatura per la milestone RTB per il 6 marzo 2026. La scelta è motivata dalla necessità di validare formalmente l'analisi e le scelte tecnologiche effettuate (PoC) prima di procedere con lo sviluppo del MVP.
 
 == Revisione documenti per presentazione RTB
 In vista dell'incontro con il proponente e il professore, il gruppo ha stabilito la necessità di una revisione accurata di tutto il materiale documentale prodotto. L'obiettivo è garantire la massima coerenza tra quanto descritto nell'Analisi dei Requisiti, i criteri di verifica esposti nel Piano di Qualifica e quanto verrà mostrato durante la presentazione della milestone.
