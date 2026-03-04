@@ -487,21 +487,59 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
 #pagebreak()
 = Valutazione lavoro
 In questa sezione sono riportate le misurazioni della qualità effettuate durante lo svolgimento delle attività dedicate al raggiungimento della Requirements and Technology Baseline. Inoltre, sono presenti i ragionamenti sulla differenza fra le tendenze attese e quelle effettivamente osservate. 
+
+//LISTE PER FACILITARE LA CREAZIONE DI TABELLE E GRAFICI AUTOMATICI
+
+#let lista_Ac = (
+  0.00,     //AGGIUDICAZIONE 
+  252.50,   //SPRINT 1
+  687.50,   //SPRINT 2
+  1360,     //SPRINT 3
+  2100,     //SPRINT 4
+  2560,     //SPRINT 5
+  3140,     //SPRINT 6
+  4205,     //SPRINT 7
+  5080,     //SPRINT 8
+  6027.50,  //SPRINT 9
+  7150.52,  //SPRINT 10
+  7689.05,  //SPRINT 11
+)
+
+#let lista_Pv = (
+  0.00,     //AGGIUDICAZIONE 
+  209.43,   //SPRINT 1
+  568.45,   //SPRINT 2
+  1116.96,  //SPRINT 3
+  1735.27,  //SPRINT 4
+  2313.70,  //SPRINT 5
+  3071.63,  //SPRINT 6
+  3989.13,  //SPRINT 7
+  5026.30,  //SPRINT 8
+  6113.34,  //SPRINT 9
+  7150.52,  //SPRINT 10
+  7689.05,  //SPRINT 11 
+)
+
+#let lista_Ev = (
+  0.00,     //AGGIUDICAZIONE 
+  209.43,   //SPRINT 1
+  568.45,   //SPRINT 2
+  1116.96,  //SPRINT 3
+  1735.27,  //SPRINT 4
+  2134.18,  //SPRINT 5
+  2632.83,  //SPRINT 6
+  3610.16,  //SPRINT 7
+  4407.99,  //SPRINT 8
+  5235.73,  //SPRINT 9
+  6233.02,  //SPRINT 10
+  6871.28,  //SPRINT 11 
+)
+
 == MPC01 e MPC02 - Schedule Variance e Cost Variance
 // schedule variance EV - PV
-#let listaEv-Pv = (
-// EARNED VALUE - PLANNED VALUE
-(0, 0.00,    0.00),
-(1, 209.43,  209.43),
-(2, 568.45,  568.45),
-(3, 1116.96, 1116.96),
-(4, 1735.27, 1735.27),
-(5, 2134.18, 2313.70),
-(6, 2632.83, 3071.63),
-(7, 3610.16, 3989.13),
-(8, 4407.99, 5026.30),
-(9, 5235.73, 6113.34)
-)
+#let listaEv-Pv = range(lista_Ev.len()).map(i => {
+  (i, lista_Ev.at(i), lista_Pv.at(i))
+})
 
 #figure(
   caption: [Tabella per periodo di Schedule Variance],
@@ -572,19 +610,9 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
 ]
 //--------------------------------------------------------------------------------------------------------
 // cost variance EV - AC
-#let listaEv-Ac = (
-// EARNED VALUE - ACTUAL COST
-(0, 0.00,    0.00),
-(1, 209.43,  252.50),
-(2, 568.45,  687.50),
-(3, 1116.96, 1360.00),
-(4, 1735.27, 2100.00),
-(5, 2134.18, 2560.00),
-(6, 2632.83, 3140.00),
-(7, 3610.16, 4205.00),
-(8, 4407.99, 5080.00),
-(9, 5235.73, 6027.50)
-)
+#let listaEv-Ac = range(lista_Ev.len()).map(i => {
+  (i, lista_Ev.at(i), lista_Ac.at(i))
+})
 
 #figure(
   caption: [Tabella per periodo di Cost Variance],
@@ -660,19 +688,9 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
  == MPC03 - Budget Variance 
- #let listaPv-Ac = (
-// PLANNED VALUE - ACTUAL COST
-(0, 0.00,    0.00),
-(1, 209.43,  252.50),
-(2, 568.45,  687.50),
-(3, 1116.96, 1360.00),
-(4, 1735.27, 2100.00),
-(5, 2313.70, 2560.00),
-(6, 3071.63, 3140.00),
-(7, 3989.13, 4205.00),
-(8, 5026.30, 5080.00),
-(9, 6113.34, 6027.50)
-)
+#let listaPv-Ac = range(lista_Pv.len()).map(i => {
+  (i, lista_Pv.at(i), lista_Ac.at(i))
+})
 
 #figure(
   caption: [Tabella per periodo di Budget Variance],
@@ -763,19 +781,9 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
 == MPC05 - CPI
-#let listaEv-Ac-CPI = (
-// EARNED VALUE - ACTUAL COST
-(0, 0.00,    0.00),
-(1, 209.43,  252.50),
-(2, 568.45,  687.50),
-(3, 1116.96, 1360.00),
-(4, 1735.27, 2100.00),
-(5, 2134.18, 2560.00),
-(6, 2632.83, 3140.00),
-(7, 3610.16, 4205.00),
-(8, 4407.99, 5080.00),
-(9, 5235.73, 6027.50)
-)
+#let listaEv-Ac-CPI = range(lista_Ev.len()).map(i => {
+  (i, lista_Ev.at(i), lista_Ac.at(i))
+})
 
 #figure(
   caption: [Tabella per periodo di Cost Performance Index],
@@ -860,18 +868,10 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
 
 
 == MPC06 e MPC07 - Planned Value ed Earned Value
-#let listaSpese = (
-(0, 0.00,    0.00),
-(1, 209.43,  209.43),
-(2, 568.45,  568.45),
-(3, 1116.96, 1116.96),
-(4, 1735.27, 1735.27),
-(5, 2313.70, 2134.18),
-(6, 3071.63, 2632.83),
-(7, 3989.13, 3610.16),
-(8, 5026.30, 4407.99),
-(9, 6113.34, 5235.73)
-)
+#let listaSpese = range(lista_Ev.len()).map(i => {
+  (i, lista_Pv.at(i), lista_Ev.at(i))
+})
+
 
 #figure(
   caption: [Tabella per periodo di Planned Value ed Earned Value],
@@ -942,19 +942,9 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
 
 
 == MPC08 e MPC09 - Actual Cost ed Estimate to Complete
-#let listaACETC = (
-(0, 0, 12845), 
-(1, 252.50, 12845-209.43),
-(2, 687.50, 12845-568.45),
-(3, 1360.00, 12845-1116.96), 
-(4, 2100.00, 12845-1735.27),
-(5, 2560.00, 12845-2134.18),
-(6, 3140.00, 12845-2632.83),
-(7, 4205.00, 12845-3610.16),
-(8, 5080.00, 12845-4407.99),
-(9, 6027.50, 12845-5235.73)
-)
-
+#let listaACETC = range(lista_Ac.len()).map(i => {
+  (i, lista_Ac.at(i), 12845 -lista_Pv.at(i))
+})
 
 #figure(
   caption: [Tabella per periodo di Actual Cost ed Estimate to Complete],
@@ -1022,19 +1012,10 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
 La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare, in quanto allo sprint 9 non è ancora stata usata più di metà di budget.
 
 == MPC10 - Estimate at Completion
-#let listaEv-Ac-EAC = (
-// EARNED VALUE - ACTUAL COST
-(0, 0.00,    0.00),
-(1, 209.43,  252.50),
-(2, 568.45,  687.50),
-(3, 1116.96, 1360.00),
-(4, 1735.27, 2100.00),
-(5, 2134.18, 2560.00),
-(6, 2632.83, 3140.00),
-(7, 3610.16, 4205.00),
-(8, 4407.99, 5080.00),
-(9, 5235.73, 6027.50)
-)
+#let listaEv-Ac-EAC = range(lista_Ev.len()).map(i => {
+  (i, lista_Ev.at(i), lista_Ac.at(i))
+})
+
 
 #figure(
   caption: [Tabella per periodo di Estimate at Completion],
@@ -1106,11 +1087,50 @@ La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando 
 ]
 L'attuale scostamento tra EAC e BAC rappresenta lo scenario in cui l'utilizzo dei ruoli rimanesse invariato. Tuttavia, poiché il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, questa stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
 Con il passaggio alla fase successiva (Sprint 10-13), che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un diminuzione progressiva del valore dell'EAC. La curva dell'EAC dovrebbe quindi convergere verso il BAC entro la fine del progetto.
+
 == MPC15 - Correttezza ortografica
+
 #figure(
-  image("../../asset/MPC15.png", width: 90%),
-  caption: [Grafico per periodo della Correttezza ortografica]
-)
+  caption: [Grafico per periodo di Correttezza ortografica],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 1, 
+        y-min: 0,
+        y-max: 17.5,
+        x-max: lista_Ac.len() - 0.75,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [EAC],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 0), (listaEv-Ac-EAC.at(-1).at(0), 0)),
+            label: [Target (0)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            lista_Ac.enumerate().map(v => (v.at(0), 0)), 
+            label: [Correttezza Ortografica],
+            style: (stroke: red),
+            mark: "o",
+            line: "spline",
+          )
+        }
+      )
+    })
+  )
+]
+
 Grazie all'implementazione di uno spellchecker prima della pianificazione degli sprint, il numero di errori ortografici all'interno dei documenti ufficiali è sempre stato 0.
 
 
