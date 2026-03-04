@@ -1503,6 +1503,11 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     ) ]] <tab:PrevisioneSprint11>
 
 *GANTT Diagram*
+#figure(
+  caption: [Diagramma di GANTT dello Sprint 11],
+)[
+  #image("../../asset/GANTT/sprint11-gantt.png")
+]<GANTT-Sprint11>
 
 #underline[Spese della settimana]: 545€ / 545€ \ #underline[Spesa totale]: *5.925€ / 5.925€*
 
