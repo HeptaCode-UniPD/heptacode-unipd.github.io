@@ -25,7 +25,7 @@ Negli ultimi mesi, il team ha redatto e reso disponibili le versioni ufficiali d
 
 - *Candidatura*
   - #link("https://heptacode-unipd.github.io/docs/RTB/documenti/lettera_Cardin.pdf", "Lettera di presentazione prima parte - Prof. Cardin"),
-  - Lettera di presentazione RTB seconda part - Prof. Vardanega (il presente documento), 
+  - Lettera di presentazione RTB seconda parte - Prof. Vardanega (il presente documento), 
 
 - *Documenti esterni*
   - #link("https://heptacode-unipd.github.io/docs/RTB/documenti/Piano_di_qualifica_v1.0.0.pdf", "Piano di Qualifica v1.0.0"),
