@@ -141,7 +141,7 @@ Il capitolato per il progetto CodeGuardian ha come oggetto lo sviluppo di una pi
 Nello specifico, è richiesto l'utilizzo di LLM#super[G] (Large Language Models) per analizzare tre componenti fondamentali: la documentazione, il codice sorgente (tramite analisi statica e dinamica) e la conformità agli standard di sicurezza OWASP#super[G].
 == Riferimenti
 === Riferimenti normativi
-- #underline[#link("norme_di_progetto.pdf","Norme di progetto")]
+- #underline[#link("Norme_di_progetto_v1.0.0.pdf","Norme di progetto")]
 - Capitolato d'appalto: #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf","CodeGuardian")] 
 === Riferimenti informativi
 - #underline[#link("https://cdn.standards.iteh.ai/samples/35867/36860aa4caba4c84b26051db576456d3/ISO-IEC-90003-2004.pdf","Standard ISO/IEC 90003:2004")]
@@ -429,7 +429,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
 )
 
 = Metodi di testing
-Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_progetto.pdf","Norme di Progetto")], i test utilizzati per la verifica del codice saranno:
+Nel documento riguardante le #underline[#link("../documenti_esterni/Norme_di_progetto_v1.0.0.pdf","Norme di Progetto")], i test utilizzati per la verifica del codice saranno:
 
 - *Test di Unità*: Viene verificato che le singole attività atomiche e indipendenti, che compongono il sistema, funzionino correttamente;
 
