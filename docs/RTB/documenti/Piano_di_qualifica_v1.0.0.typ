@@ -30,6 +30,8 @@
   doc
 )
 
+#show: applica-glossario
+
 = Introduzione
 == Scopo del documento
 Il presente documento, Piano di Qualifica, descrive in dettaglio le strategie di verifica e validazione adottate per garantire la qualità del prodotto finale e dei processi realizzativi.\
