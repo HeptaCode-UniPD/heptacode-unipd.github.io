@@ -1538,26 +1538,26 @@ In @tab:OreTotIndividualiRTB vengono riportate le ore effettivamente svolte per 
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Totale*]]],
 
-      [_Angela Favaro_], [], [], [], [], [], [], [* /92*],
-      [_Angela Canazza_], [], [], [], [], [], [], [* /92*],
-      [_Riccardo Baldin_], [], [], [], [], [], [], [* /92*],
-      [_Alberto Reginato_], [], [], [], [], [], [], [* /92*],
-      [_Nicola Simionato_], [], [], [], [], [], [], [* /92*],
-      [_Amerigo Vegliante_], [], [], [], [], [], [], [* /92*],
-      [_Laura Venturini_], [], [], [], [], [], [], [* /92*],
-      [*Ore totali*], [* /49*], [* /56*], [* /112*], [* /105*], [* /148*], [* /174*],
+      [_Angela Favaro_], [6], [1], [19], [], [], [15], [*41 /92*],
+      [_Angela Canazza_], [1], [2], [23], [], [2], [11], [*39 /92*],
+      [_Riccardo Baldin_], [2], [7], [23], [], [2], [6], [*40 /92*],
+      [_Alberto Reginato_], [7], [2], [18], [], [2], [11,5], [*40,5 /92*],
+      [_Nicola Simionato_], [5], [6], [14], [], [], [11,5], [*36,5 /92*],
+      [_Amerigo Vegliante_], [1], [8], [14], [], [2], [12], [*37 /92*],
+      [_Laura Venturini_], [4], [6], [17], [], [], [14], [*41 /92*],
+      [*Ore totali*], [*26 /49*], [*32 /56*], [*128 /112*], [*0 /105*], [*8 /148*], [*81 /174*],
     ) ]] <tab:OreTotIndividualiRTB>
 
 #figure(
   caption: [Percentuale ripartizione dei ruoli durante la milestone RTB.],
 )[
   #let data = (
-    ([*Resp.*], 49),
-    ([*Amm.*], 56),
-    ([*Analista*], 112),
-    ([*Progett.*], 105),
-    ([*Programm.*], 148),
-    ([*Verif.*], 174),
+    ([*Resp.*], 26),
+    ([*Amm.*], 32),
+    ([*Analista*], 128),
+    ([*Progett.*], 0),
+    ([*Programm.*], 8),
+    ([*Verif.*], 81),
   )
 
   #align(left)[#cetz.canvas({
@@ -1579,6 +1579,9 @@ In @tab:OreTotIndividualiRTB vengono riportate le ore effettivamente svolte per 
       outer-label: (content: "%", radius: 120%),
     )
   })]] <fig:tortaRTB>
+
+\ \ 
+Il costo totale fino ad ora sostenuto è di *5.925€* su un tetto massimo di *12.845€*.
 
 #pagebreak()
 == Sprint PB
@@ -1624,13 +1627,13 @@ In @tab:OreTotIndividualiRTB vengono riportate le ore effettivamente svolte per 
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [4], [], [10], [], [5], [195€],
+      [_Angela Favaro_], [], [4], [], [12], [], [5], [195€],
       [_Angela Canazza_], [], [], [], [], [20], [], [292,5€],
-      [_Riccardo Baldin_], [], [], [], [10], [], [15], [225€],
-      [_Alberto Reginato_], [], [], [], [10], [], [15.5], [232,5€],
-      [_Nicola Simionato_], [], [], [], [], [15], [10], [225€],
-      [_Amerigo Vegliante_], [4], [], [], [10], [], [], [150€],
-      [_Laura Venturini_], [], [], [], [], [20], [], [225€],
+      [_Riccardo Baldin_], [], [], [], [12], [], [15], [225€],
+      [_Alberto Reginato_], [], [], [], [17], [], [16], [232,5€],
+      [_Nicola Simionato_], [], [], [], [], [15], [13], [225€],
+      [_Amerigo Vegliante_], [4], [], [], [15], [], [], [150€],
+      [_Laura Venturini_], [], [], [], [6], [20], [], [225€],
     ) ]] <tab:PrevisioneSprint12>
 
 #underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *11.450€*
@@ -1698,12 +1701,12 @@ In @tab:OreTotIndividualiRTB vengono riportate le ore effettivamente svolte per 
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [], [], [], [25], [10], [300€],
+      [_Angela Favaro_], [], [], [], [], [27], [10], [300€],
       [_Angela Canazza_], [6], [], [], [15], [], [], [180€],
-      [_Riccardo Baldin_], [], [], [], [], [25], [5], [240€],
-      [_Alberto Reginato_], [], [6], [], [], [], [], [120€],
+      [_Riccardo Baldin_], [], [], [], [], [27], [10], [240€],
+      [_Alberto Reginato_], [], [6], [], [10], [], [], [120€],
       [_Nicola Simionato_], [], [], [], [15], [], [13], [195€],
-      [_Amerigo Vegliante_], [], [], [], [], [25], [7], [240€],
+      [_Amerigo Vegliante_], [], [], [], [], [27], [7], [240€],
       [_Laura Venturini_], [], [], [], [15], [], [8], [120€],
     ) ]] <tab:PrevisioneSprint13>
 
