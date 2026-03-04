@@ -124,7 +124,8 @@ Gli strumenti per la comunicazione sono invece:
 = Organizzazione del team
 #label("Organizzazione")
 Ad ogni suddivisione di periodo (_Sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 gennaio 2026_ al _21 febbraio 2026_. 
-== Prima stima del monte ore per ruolo 
+#pagebreak()
+== Prima stima del monte ore totale per ruolo 
 Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ L’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive, calcolate a priori rispetto allo svolgimento del progetto, vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali. \ \
 
 #figure(
@@ -192,6 +193,72 @@ Nel grafico in figura @fig:torta vengono analizzate le percentuali della riparti
   })]] <fig:torta>
 \
 Durante lo svolgimento del progetto verranno segnalate le ore effettive svolte da ogni singolo componente per ogni singolo ruolo. \ Alla conclusione delle milestone RTB e PB verranno segnalate le ore totali effettivamente svolte.
+
+#pagebreak()
+== Seconda stima del monte ore totale per ruolo
+Considerando le ore effettivamente svolte durante il periodo di RTB, verrà proposta una seconda stima (presente in @tab:OreTotIndividuali2) delle ore di lavoro di ogni membro per ruolo. Questa stima viene comparata con la stima in @tab:OreTotIndividuali, che era stata effettuata all'inizio della milestone RTB. 
+
+#figure(
+  caption: [Seconda stima delle ore individuali per ruolo in totale rispetto alla @tab:OreTotIndividuali.],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+      
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Totale*]]],
+
+      [_Angela Favaro_], [7 → 6], [10 → 5], [15 → 19], [16 → 12], [21 → 20], [23 → 30], [*92 / 92*],
+      [_Angela Canazza_], [9 → 7], [6 → 2], [15 → 23], [15 → 15], [21,5 → 22], [25,5 → 22], [*91 / 92*],
+      [_Riccardo Baldin_], [4 → 2], [8 → 7], [17 → 23], [15 → 12], [22 → 22], [26 → 26], [*92 / 92*],
+      [_Alberto Reginato_], [7 → 7], [8 → 8], [16 → 18], [17 → 27], [17,5 → 16], [26,5 → 21,5], [*97,5 / 92*],
+      [_Nicola Simionato_], [7 → 5], [8 → 6], [15,5 → 14], [12 → 15], [22 → 15], [27,5 → 37,5], [*92,5 / 92*],
+      [_Amerigo Vegliante_], [8 → 5], [8 → 8], [17 → 14], [16 → 15], [21 → 29], [22 → 19], [*90 / 92*],
+      [_Laura Venturini_], [7 → 4], [8 → 6], [16,5 → 17], [14 → 21], [23 → 20], [23,5 → 22], [*90 /92*],
+      [*Ore totali*], [*36 / 49*], [*42 / 56*], [*128 / 112*], [*117 / 105*], [*144 / 148*], [*178 / 174*],
+    ) ]] <tab:OreTotIndividuali2>
+In @fig:torta2 è possibile visionare la percentuale di ore dedicate a ciascun ruolo secondo la nuova stima.
+#figure(
+  caption: [Percentuale ripartizione dei ruoli seconda stima.],
+)[
+  #let data = (
+    ([*Resp.*], 36),
+    ([*Amm.*], 42),
+    ([*Analista*], 128),
+    ([*Progett.*], 117),
+    ([*Programm.*], 144),
+    ([*Verif.*], 178),
+  )
+
+  #align(left)[#cetz.canvas({
+    let darkness = rgb("#9b66ff")
+    let dark = rgb("#a814e1")
+    let medium = rgb("#f365b0")
+    let light = rgb("#fba8b7")
+    let colortext = rgb("#1e0046")
+    let colors = gradient.linear(darkness, dark, medium, light)
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (content: (value, label) => [#text(colortext, label)], radius: 100%),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]] <fig:torta2>
 
 #pagebreak()
 
@@ -1593,7 +1660,7 @@ Il costo totale fino ad ora sostenuto è di *5.925€* su un tetto massimo di *1
 A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate le ore necessarie per ruolo per concludere la milestone PB ragionevolmente.
 
 #figure(
-  caption: [Stima delle ore individuali per ruolo durante la milestone PB.],
+  caption: [Preventivo a finire delle ore individuali per ruolo durante la milestone PB.],
   kind: table,
 )[
   #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
@@ -1621,71 +1688,6 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
       [_Laura Venturini_], [], [], [], [21], [20], [8], [*49*],
       [*Ore totali*], [*10*], [*10*], [], [*117*], [*136*], [*97*],
     ) ]] <tab:OreTotIndividualiPB>
-
-== Seconda stima del monte ore per ruolo
-Considerando le ore effettivamente scolte durante il periodo fino ad ora rendicontato verrà proposta una secondo preventivo a finire delle ore individuali per ruolo, presente in @tab:OreTotIndividuali2.
-
-#figure(
-  caption: [Seconda stima delle ore individuali per ruolo in totale rispetto alla @tab:OreTotIndividuali.],
-  kind: table,
-)[
-  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
-  #align(center)[
-    #tabella-viola(
-      columns: 8,
-      
-      stroke: 0.5pt,
-      align: center,
-      [#text[#strong[*Nome, Cognome*]]],
-      [#text[#strong[*Resp.*]]],
-      [#text[#strong[*Ammin.*]]],
-      [#text[#strong[*Analista*]]],
-      [#text[#strong[*Progett.*]]],
-      [#text[#strong[*Programm.*]]],
-      [#text[#strong[*Verif.*]]],
-      [#text[#strong[*Totale*]]],
-
-      [_Angela Favaro_], [7 → 6], [10 → 5], [15 → 19], [16 → 12], [21 → 20], [23 → 30], [*92 / 92*],
-      [_Angela Canazza_], [9 → 7], [6 → 2], [15 → 23], [15 → 15], [21,5 → 22], [25,5 → 22], [*91 / 92*],
-      [_Riccardo Baldin_], [4 → 2], [8 → 7], [17 → 23], [15 → 12], [22 → 22], [26 → 26], [*92 / 92*],
-      [_Alberto Reginato_], [7 → 7], [8 → 8], [16 → 18], [17 → 27], [17,5 → 16], [26,5 → 21,5], [*97,5 / 92*],
-      [_Nicola Simionato_], [7 → 5], [8 → 6], [15,5 → 14], [12 → 15], [22 → 15], [27,5 → 37,5], [*92,5 / 92*],
-      [_Amerigo Vegliante_], [8 → 5], [8 → 8], [17 → 14], [16 → 15], [21 → 29], [22 → 19], [*90 / 92*],
-      [_Laura Venturini_], [7 → 4], [8 → 6], [16,5 → 17], [14 → 21], [23 → 20], [23,5 → 22], [*90 /92*],
-      [*Ore totali*], [*36 / 49*], [*42 / 56*], [*128 / 112*], [*117 / 105*], [*144 / 148*], [*178 / 174*],
-    ) ]] <tab:OreTotIndividuali2>
-
-    #figure(
-  caption: [Percentuale ripartizione dei ruoli seconda stima.],
-)[
-  #let data = (
-    ([*Resp.*], 36),
-    ([*Amm.*], 42),
-    ([*Analista*], 128),
-    ([*Progett.*], 117),
-    ([*Programm.*], 144),
-    ([*Verif.*], 178),
-  )
-
-  #align(left)[#cetz.canvas({
-    let darkness = rgb("#9b66ff")
-    let dark = rgb("#a814e1")
-    let medium = rgb("#f365b0")
-    let light = rgb("#fba8b7")
-    let colortext = rgb("#1e0046")
-    let colors = gradient.linear(darkness, dark, medium, light)
-    chart.piechart(
-      data,
-      value-key: 1,
-      label-key: 0,
-      radius: 3,
-      stroke: black,
-      slice-style: colors,
-      inner-radius: 1,
-      inner-label: (content: (value, label) => [#text(colortext, label)], radius: 100%),
-      outer-label: (content: "%", radius: 120%),
-    )
-  })]] <fig:torta2>
 
 #pagebreak()
 == Sprint PB
