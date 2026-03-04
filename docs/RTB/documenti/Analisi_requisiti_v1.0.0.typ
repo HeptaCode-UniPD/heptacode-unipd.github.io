@@ -146,7 +146,7 @@ _Code Guardian_ mira quindi ad automatizzare e ottimizzare i processi di audit e
 
 La stesura del presente documento fa uso di una terminologia specifica, legata sia al dominio applicativo del progetto "_Code Guardian_" che agli standard dell'Ingegneria del Software. Per facilitare la lettura e assicurare che ogni concetto sia compreso in modo uniforme da tutti i destinatari (team di sviluppo, committente e proponente), è stato redatto un documento di supporto dedicato.
 
-Si faccia pertanto riferimento al #link("https://heptacode-unipd.github.io/docs/CC/glossario.pdf")[_Glossario_] per l'esplicitazione di:
+Si faccia pertanto riferimento al #link("https://heptacode-unipd.github.io/docs/RTB/glossario.pdf")[_Glossario_] per l'esplicitazione di:
 - *Acronimi e sigle* utilizzati per brevità nel testo;
 - *Termini tecnici* che potrebbero prestarsi a molteplici interpretazioni;
 - *Definizioni di dominio* specifiche per il contesto di audit e qualità del software.
@@ -158,7 +158,7 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
 
 === Riferimenti Normativi
 - _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2p.pdf")[Capitolato])
-- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/RTB/documenti/norme_di_progetto.pdf")[Norme di progetto]).
+- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/RTB/documenti/Norme_di_progetto_v1.0.0.pdf")[Norme di progetto]).
 
 === Riferimenti Informativi
 - Verbale Interno: 

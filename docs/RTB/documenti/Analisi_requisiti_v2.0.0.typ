@@ -81,7 +81,7 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
 
 === Riferimenti Normativi
 - _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2p.pdf")[Capitolato])
-- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/RTB/documenti/norme_di_progetto.pdf")[Norme di progetto v1.0.0]).
+- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/RTB/documenti/Norme_di_progetto_v1.0.0.pdf")[Norme di progetto v1.0.0]).
 
 === Riferimenti Informativi
 - Verbale Interno: 

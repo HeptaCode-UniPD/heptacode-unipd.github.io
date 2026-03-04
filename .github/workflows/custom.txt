@@ -222,7 +222,14 @@ poc
 lts
 macos
 nestjs
-
+agg
+ceil
+listaacetc
+listaev
+listapv
+listaspese
+maxlistaspese
+str
 'analisi
 'processi
 'risorse

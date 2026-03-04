@@ -1,5 +1,5 @@
 #import "@preview/cetz:0.4.2"
-#import "@preview/cetz-plot:0.1.3": chart
+#import "@preview/cetz-plot:0.1.3"
 #import "../../templates/template-documenti.typ": template_documenti, tabella-viola
 #import "../../templates/glossario_termini.typ": applica-glossario
 
@@ -30,6 +30,8 @@
   doc
 )
 
+#show: applica-glossario
+
 = Introduzione
 == Scopo del documento
 Il presente documento, Piano di Qualifica, descrive in dettaglio le strategie di verifica e validazione adottate per garantire la qualità del prodotto finale e dei processi realizzativi.\
@@ -39,7 +41,7 @@ Il capitolato per il progetto CodeGuardian ha come oggetto lo sviluppo di una pi
 Nello specifico, è richiesto l'utilizzo di LLM#super[G] (Large Language Models) per analizzare tre componenti fondamentali: la documentazione, il codice sorgente (tramite analisi statica e dinamica) e la conformità agli standard di sicurezza OWASP#super[G].
 == Riferimenti
 === Riferimenti normativi
-- #underline[#link("norme_di_progetto.pdf","Norme di progetto")]
+- #underline[#link("../documenti/Norme_di_progetto_v1.0.0.pdf","Norme di progetto")]
 - Capitolato d'appalto: #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf","CodeGuardian")] 
 === Riferimenti informativi
 - #underline[#link("https://cdn.standards.iteh.ai/samples/35867/36860aa4caba4c84b26051db576456d3/ISO-IEC-90003-2004.pdf","Standard ISO/IEC 90003:2004")]
@@ -327,7 +329,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
 )
 
 = Metodi di testing
-Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_progetto.pdf","Norme di Progetto")], i test utilizzati per la verifica del codice saranno:
+Nel documento riguardante le #underline[#link("../documenti/Norme_di_progetto_v1.0.0.pdf","Norme di Progetto")], i test utilizzati per la verifica del codice saranno:
 
 - *Test di Unità*: Viene verificato che le singole attività atomiche e indipendenti, che compongono il sistema, funzionino correttamente;
 
@@ -484,58 +486,653 @@ Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_pro
   [*T-138-S*], [Verificare che il Business Owner possa visualizzare i ruoli che uno sviluppatore può assumere], [R-138-F-O], [NI],
 )
 
+#pagebreak()
 = Valutazione lavoro
 In questa sezione sono riportate le misurazioni della qualità effettuate durante lo svolgimento delle attività dedicate al raggiungimento della Requirements and Technology Baseline. Inoltre, sono presenti i ragionamenti sulla differenza fra le tendenze attese e quelle effettivamente osservate. 
+
+//LISTE PER FACILITARE LA CREAZIONE DI TABELLE E GRAFICI AUTOMATICI
+
+#let lista_Ac = (
+  0.00,     //AGGIUDICAZIONE 
+  252.50,   //SPRINT 1
+  687.50,   //SPRINT 2
+  1360,     //SPRINT 3
+  2100,     //SPRINT 4
+  2560,     //SPRINT 5
+  3140,     //SPRINT 6
+  4205,     //SPRINT 7
+  5080,     //SPRINT 8
+  6027.50,  //SPRINT 9
+  7150.52,  //SPRINT 10
+  7689.05,  //SPRINT 11
+)
+
+#let lista_Pv = (
+  0.00,     //AGGIUDICAZIONE 
+  209.43,   //SPRINT 1
+  568.45,   //SPRINT 2
+  1116.96,  //SPRINT 3
+  1735.27,  //SPRINT 4
+  2313.70,  //SPRINT 5
+  3071.63,  //SPRINT 6
+  3989.13,  //SPRINT 7
+  5026.30,  //SPRINT 8
+  6113.34,  //SPRINT 9
+  7150.52,  //SPRINT 10
+  7689.05,  //SPRINT 11 
+)
+
+#let lista_Ev = (
+  0.00,     //AGGIUDICAZIONE 
+  209.43,   //SPRINT 1
+  568.45,   //SPRINT 2
+  1116.96,  //SPRINT 3
+  1735.27,  //SPRINT 4
+  2134.18,  //SPRINT 5
+  2632.83,  //SPRINT 6
+  3610.16,  //SPRINT 7
+  4407.99,  //SPRINT 8
+  5235.73,  //SPRINT 9
+  6233.02,  //SPRINT 10
+  6871.28,  //SPRINT 11 
+)
+
 == MPC01 e MPC02 - Schedule Variance e Cost Variance
+// schedule variance EV - PV
+#let listaEv-Pv = range(lista_Ev.len()).map(i => {
+  (i, lista_Ev.at(i), lista_Pv.at(i))
+})
+
 #figure(
-  image("../../asset/MPC01.png", width: 90%),
-  caption: [Grafico per periodo di Schedule Variance e Cost Variance]
-)
+  caption: [Tabella per periodo di Schedule Variance],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Earned Value*], [*Planned Value*], [*Schedule Variance*]),
+      ..listaEv-Pv.map(riga => {
+        let (p, ev, pv) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+
+        let sv = if p == 0 { 0.0 } else { ev - pv }
+        let sv-testo = calc.round(sv, digits: 2)
+
+        (periodo-testo, [€#ev], [€#pv], [€#sv-testo])
+      }).flatten()
+    )
+  )
+]
+
 #figure(
-  image("../../asset/MPC02.png", width: 90%),
-  caption: [Grafico per periodo di Schedule Variance e Cost Variance]
-)
-Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV e CV hanno valore 0, invece a partire dal quinto sprint il team ha quasi sempre lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi. 
+  caption: [Grafico per periodo di Schedule Variance],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-east",
+        x-tick-step: 1,
+        y-tick-step: 250, 
+        y-min: -1000,
+        y-max: 500,
+        x-max: listaEv-Pv.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [SV],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 0.0), (listaEv-Pv.at(-1).at(0), 0)),
+            label: [Target (0)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            listaEv-Pv.map(it => {
+              let (p, ev, pv) = it
+              let sv = if p == 0 { 0.0 } else { ev - pv }
+              (p,sv)
+            }),
+            label: [Schedule Variance (SV)],
+            style: (stroke: red),
+            line: "spline",
+            mark: "o",
+          )
+        }
+      )
+    })
+  )
+]
+//--------------------------------------------------------------------------------------------------------
+// cost variance EV - AC
+#let listaEv-Ac = range(lista_Ev.len()).map(i => {
+  (i, lista_Ev.at(i), lista_Ac.at(i))
+})
+
+#figure(
+  caption: [Tabella per periodo di Cost Variance],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Earned Value*], [*Actual Cost*], [*Cost Variance*]),
+      ..listaEv-Ac.map(riga => {
+        let (p, ev, ac) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+
+        let cv = if p == 0 { 0.0 } else { ev - ac }
+        let cv-testo = calc.round(cv, digits: 2)
+
+        (periodo-testo, [€#ev], [€#ac], [€#cv-testo])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Cost Variance],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      let min_AC = calc.min(..listaEv-Ac.map(it => ( it.at(1) - it.at(2))))
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-east",
+        x-tick-step: 1,
+        y-tick-step: 250, 
+        y-min: calc.floor(min_AC / 250) * 250,
+        y-max: 250,
+        x-max: listaEv-Ac.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [CV],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 0.0), (listaEv-Ac.at(-1).at(0), 0)),
+            label: [Target (0)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            listaEv-Ac.map(it => {
+              let (p, ev, ac) = it
+              let cv = if p == 0 { 0.0 } else { ev - ac }
+              (p,cv)
+            }),
+            label: [Cost Variance (CV)],
+            style: (stroke: red),
+            mark: "o",
+            line: "spline",
+          )
+        }
+      )
+    })
+  )
+]
+Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha quasi sempre lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi nei quali si prevede di lavorare in maniera più efficiente. 
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
 
  == MPC03 - Budget Variance 
+#let listaPv-Ac = range(lista_Pv.len()).map(i => {
+  (i, lista_Pv.at(i), lista_Ac.at(i))
+})
+
 #figure(
-  image("../../asset/MPC03.png", width: 90%),
-  caption: [Grafico per periodo di Budget Variance]
-) 
+  caption: [Tabella per periodo di Budget Variance],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Planned Value*], [*Actual Cost*], [*Budget Variance*]),
+      ..listaPv-Ac.map(riga => {
+        let (p, pv, ac) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+        let bv = if p == 0 or pv == 0 {
+          "0.00" 
+        } else {
+          let valore = 100 * (pv - ac) / pv
+          let arrotondato = calc.round(valore, digits: 2)
+          let s = str(arrotondato)
+          
+          if not s.contains(".") { s + ".00" }
+          else if s.split(".").at(1).len() == 1 { s + "0" }
+          else { s }
+        }
+        (periodo-testo, [€#pv], [€#ac], [#bv%])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Budget Variance],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      let min_BV = calc.min(..listaPv-Ac.enumerate().map(((i, it)) => {
+        if i == 0 {
+          0.0
+        } else {
+          100 * (it.at(1) - it.at(2)) / (it.at(1))
+        }
+      }))
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 0.1, 
+        y-min: -0.5,
+        y-max: 0.5,
+        x-max: listaPv-Ac.at(-1).at(0) + 0.25,
+        y-format: v => { if v == 0 { [0] } else { [#{v * 100}%] } },
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [BV],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 0.0), (listaPv-Ac.at(-1).at(0), 0.0)),
+            label: [Target (0.0)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            listaPv-Ac.map(it => {
+              let (p, pv, ac) = it
+              let bv = if p == 0 { 0.0 } else {  (pv - ac) / pv }
+              (p, bv)
+            }),
+            label: [Budget Variance (BV)],
+            style: (stroke: red),
+            mark: "o",
+            line: "spline",
+          )
+        }
+      )
+    })
+  )
+]
+
  La Budget Variance ha un valore negativo fino allo sprint 8 del RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase. Il miglioramento a partire dallo sprint 5 è dovuto alla riduzione del volume orario lavorato rispetto alla pianificazione originaria. Dovrebbe arrivare a 0 quando si recupereranno le ore e si inizieranno a utilizzare di più ruoli meno costosi.
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+
 == MPC05 - CPI
+#let listaEv-Ac-CPI = range(lista_Ev.len()).map(i => {
+  (i, lista_Ev.at(i), lista_Ac.at(i))
+})
+
 #figure(
-  image("../../asset/MPC05.png", width: 90%),
-  caption: [Grafico per periodo di CPI]
-)
+  caption: [Tabella per periodo di Cost Performance Index],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Earned Value*], [*Actual Cost*], [*CPI*]),
+      ..listaEv-Ac-CPI.map(riga => {
+        let (p, ev, ac) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+        let cpi = if p == 0 {
+          "1.00" 
+        } else {
+          str(calc.round(ev / ac, digits: 2))
+        }
+        (periodo-testo, [€#ev], [€#ac], [#cpi])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Cost Performance Index],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 0.1, 
+        y-min: 0.5,
+        y-max: 1.5,
+        x-max: listaEv-Ac-CPI.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [CPI],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 1.0), (listaEv-Ac-CPI.at(-1).at(0), 1.0)),
+            label: [Target (1.0)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            listaEv-Ac-CPI.map(it => {
+              let (p, ev, ac) = it
+              let cpi = if p == 0 { 1.0 } else { ev / ac }
+              (p, cpi)
+            }),
+            label: [CPI],
+            style: (stroke: red),
+            mark: "o",
+            line: "spline",
+          )
+        }
+      )
+    })
+  )
+]
 Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto all'utilizzo dei ruoli più costosi durante la fase di RTB. Siccome dopo questa fase lavoreranno di più figure meno costose come programmatore e verificatore, il CPI dovrebbe arrivare a raggiungere il valore ottimale.
 
+
+
+
+
+
+
+
+
+
+
+
+
 == MPC06 e MPC07 - Planned Value ed Earned Value
+#let listaSpese = range(lista_Ev.len()).map(i => {
+  (i, lista_Pv.at(i), lista_Ev.at(i))
+})
+
+
 #figure(
-  image("../../asset/MPC06MPC07.png", width: 90%),
-  caption: [Grafico per periodo di Planned Value ed Earned Value]
-)
-Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è però più in linea con la pianificazione iniziale a partire dal quinto sprint. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare parzialmente il debito accumulato. Nell'ottavo e nono sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
+  caption: [Tabella per periodo di Planned Value ed Earned Value],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Planned Value*], [*Earned Value*]),
+      ..listaSpese.map(riga => {
+        let (p, pv, ev) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+        (periodo-testo, [€#pv], [€#ev])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Planned Value ed Earned Value],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+      
+      let maxListaSpese = calc.max(..listaSpese.map(it => calc.max(it.at(1), it.at(2))))
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 1000, 
+        y-min: 0,
+        y-max: calc.ceil(maxListaSpese / 1000) * 1000,
+        x-max: listaSpese.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [Euro (€)],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            listaSpese.map(it => (it.at(0), it.at(1))),
+            label: [Planned Value (PV)],
+            mark-style: (stroke: blue),
+            line: "spline",
+            mark: "o"
+          )
+
+          plot.add(
+            listaSpese.map(it => (it.at(0), it.at(2))),
+            label: [Earned Value (EV)],
+            mark-style: (stroke: red),
+            line: "spline",
+            mark: "o"
+          )
+        }
+      )
+    })
+  )
+]
+Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è più in linea con la pianificazione iniziale a partire dal quinto sprint. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare parzialmente il debito accumulato. Nell'ottavo e nono sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
+
+
+
+
+
 == MPC08 e MPC09 - Actual Cost ed Estimate to Complete
+#let listaACETC = range(lista_Ac.len()).map(i => {
+  (i, lista_Ac.at(i), 12845 -lista_Pv.at(i))
+})
+
 #figure(
-  image("../../asset/MPC08MPC09.png", width: 90%),
-  caption: [Grafico per periodo di Actual Cost ed Estimate to Complete]
-)
+  caption: [Tabella per periodo di Actual Cost ed Estimate to Complete],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Actual Cost*], [*Estimate to Complete*]),
+        ..listaACETC.map(riga => {
+          let p = riga.at(0)
+          let ac = riga.at(1)
+          let etc= riga.at(2)
+          let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+          
+          (periodo-testo, [€ #ac], [€ #etc])
+        }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Actual Cost ed Estimate to Complete],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: * // [cite: 17]
+
+      plot.plot(
+        size: (9, 9), // [cite: 128, 176]
+        legend: "inner-north-east",
+        x-tick-step: 1, // [cite: 61, 63]
+        y-tick-step: 1000, 
+        y-min: 0, // [cite: 35]
+        y-max: calc.ceil(12845 / 1000) * 1000, // [cite: 38]
+        x-max: listaACETC.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v], // [cite: 84, 86]
+        y-grid: true, // [cite: 107, 120]
+        y-label: [Euro (€)],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            listaACETC.map(it => (it.at(0), it.at(1))),
+            label: [Actual Cost (AC)],
+            mark-style: (stroke: blue), // [cite: 157, 162]
+            line: "spline",
+            mark: "o"
+          )
+
+          plot.add(
+            listaACETC.map(it => (it.at(0), it.at(2))),
+            label: [Estimate to Complete (ETC)],
+            mark-style: (stroke: red), // [cite: 157, 162]
+            line: "spline",
+            mark: "o"
+          )
+        }
+      )
+    })
+  )
+]
 La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare, in quanto allo sprint 9 non è ancora stata usata più di metà di budget.
 
 == MPC10 - Estimate at Completion
+#let listaEv-Ac-EAC = range(lista_Ev.len()).map(i => {
+  (i, lista_Ev.at(i), lista_Ac.at(i))
+})
+
+
 #figure(
-  image("../../asset/MPC10.png", width: 90%),
-  caption: [Grafico per periodo di Estimate at Completion]
-)
+  caption: [Tabella per periodo di Estimate at Completion],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*BAC*], [*EAC*]),
+      ..listaEv-Ac-EAC.map(riga => {
+        let (p, ev, ac) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+        let eac = if p == 0 {
+          "12845" 
+        } else {
+          str(calc.round(12845/(ev / ac), digits: 2))
+        }
+        (periodo-testo, [€12845], [€#eac])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Estimate at Completion],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 1000, 
+        y-min: 10000,
+        y-max: 20000,
+        x-max: listaEv-Ac-EAC.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [EAC],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 12845), (listaEv-Ac-EAC.at(-1).at(0), 12845)),
+            label: [BAC (12845)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            listaEv-Ac-EAC.map(it => {
+              let (p, ev, ac) = it
+              let eac = if p == 0 { 12845 } else { 12845 / (ev / ac) }
+              (p, eac)
+            }),
+            label: [Estimate at Completion (EAC)],
+            style: (stroke: red),
+            mark: "o",
+            line: "spline",
+          )
+        }
+      )
+    })
+  )
+]
 L'attuale scostamento tra EAC e BAC rappresenta lo scenario in cui l'utilizzo dei ruoli rimanesse invariato. Tuttavia, poiché il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, questa stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
 Con il passaggio alla fase successiva (Sprint 10-13), che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un diminuzione progressiva del valore dell'EAC. La curva dell'EAC dovrebbe quindi convergere verso il BAC entro la fine del progetto.
+
 == MPC15 - Correttezza ortografica
+
 #figure(
-  image("../../asset/MPC15.png", width: 90%),
-  caption: [Grafico per periodo della Correttezza ortografica]
-)
+  caption: [Grafico per periodo di Correttezza ortografica],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 1, 
+        y-min: 0,
+        y-max: 17.5,
+        x-max: lista_Ac.len() - 0.75,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [EAC],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 0), (listaEv-Ac-EAC.at(-1).at(0), 0)),
+            label: [Target (0)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            lista_Ac.enumerate().map(v => (v.at(0), 0)), 
+            label: [Correttezza Ortografica],
+            style: (stroke: red),
+            mark: "o",
+            line: "spline",
+          )
+        }
+      )
+    })
+  )
+]
+
 Grazie all'implementazione di uno spellchecker prima della pianificazione degli sprint, il numero di errori ortografici all'interno dei documenti ufficiali è sempre stato 0.
 
 
