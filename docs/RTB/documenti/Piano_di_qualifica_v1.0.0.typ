@@ -763,7 +763,7 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
 == MPC05 - CPI
-#let listaEv-Pv-CPI = (
+#let listaEv-Ac-CPI = (
 // EARNED VALUE - ACTUAL COST
 (0, 0.00,    0.00),
 (1, 209.43,  252.50),
@@ -787,7 +787,7 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
       inset: 10pt,
       align: center + horizon,
       table.header([*Periodo*], [*Earned Value*], [*Actual Cost*], [*CPI*]),
-      ..listaEv-Pv-CPI.map(riga => {
+      ..listaEv-Ac-CPI.map(riga => {
         let (p, ev, ac) = riga
         let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
         let cpi = if p == 0 {
@@ -816,21 +816,21 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
         y-tick-step: 0.1, 
         y-min: 0.5,
         y-max: 1.5,
-        x-max: listaEv-Pv-CPI.at(-1).at(0) + 0.25,
+        x-max: listaEv-Ac-CPI.at(-1).at(0) + 0.25,
         x-format: v => if v == 0 [Agg.] else [S. #v],
         y-grid: true,
         y-label: [CPI],
         x-label: [Numero Sprint],
         {
           plot.add(
-            ((0, 1.0), (listaEv-Pv-CPI.at(-1).at(0), 1.0)),
+            ((0, 1.0), (listaEv-Ac-CPI.at(-1).at(0), 1.0)),
             label: [Target (1.0)],
             style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
             line: "spline",
           )
 
           plot.add(
-            listaEv-Pv-CPI.map(it => {
+            listaEv-Ac-CPI.map(it => {
               let (p, ev, ac) = it
               let cpi = if p == 0 { 1.0 } else { ev / ac }
               (p, cpi)
@@ -1022,10 +1022,88 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
 La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare, in quanto allo sprint 9 non è ancora stata usata più di metà di budget.
 
 == MPC10 - Estimate at Completion
-#figure(
-  image("../../asset/MPC10.png", width: 90%),
-  caption: [Grafico per periodo di Estimate at Completion]
+#let listaEv-Ac-EAC = (
+// EARNED VALUE - ACTUAL COST
+(0, 0.00,    0.00),
+(1, 209.43,  252.50),
+(2, 568.45,  687.50),
+(3, 1116.96, 1360.00),
+(4, 1735.27, 2100.00),
+(5, 2134.18, 2560.00),
+(6, 2632.83, 3140.00),
+(7, 3610.16, 4205.00),
+(8, 4407.99, 5080.00),
+(9, 5235.73, 6027.50)
 )
+
+#figure(
+  caption: [Tabella per periodo di Estimate at Completion],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*BAC*], [*EAC*]),
+      ..listaEv-Ac-EAC.map(riga => {
+        let (p, ev, ac) = riga
+        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
+        let eac = if p == 0 {
+          "12845" 
+        } else {
+          str(calc.round(12845/(ev / ac), digits: 2))
+        }
+        (periodo-testo, [€12845], [€#eac])
+      }).flatten()
+    )
+  )
+]
+
+#figure(
+  caption: [Grafico per periodo di Estimate at Completion],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (9, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 1000, 
+        y-min: 10000,
+        y-max: 20000,
+        x-max: listaEv-Ac-EAC.at(-1).at(0) + 0.25,
+        x-format: v => if v == 0 [Agg.] else [S. #v],
+        y-grid: true,
+        y-label: [EAC],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((0, 12845), (listaEv-Ac-EAC.at(-1).at(0), 12845)),
+            label: [BAC (12845)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            listaEv-Ac-EAC.map(it => {
+              let (p, ev, ac) = it
+              let eac = if p == 0 { 12845 } else { 12845 / (ev / ac) }
+              (p, eac)
+            }),
+            label: [Estimate at Completion (EAC)],
+            style: (stroke: red),
+            mark: "o",
+            line: "spline",
+          )
+        }
+      )
+    })
+  )
+]
 L'attuale scostamento tra EAC e BAC rappresenta lo scenario in cui l'utilizzo dei ruoli rimanesse invariato. Tuttavia, poiché il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, questa stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
 Con il passaggio alla fase successiva (Sprint 10-13), che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un diminuzione progressiva del valore dell'EAC. La curva dell'EAC dovrebbe quindi convergere verso il BAC entro la fine del progetto.
 == MPC15 - Correttezza ortografica
