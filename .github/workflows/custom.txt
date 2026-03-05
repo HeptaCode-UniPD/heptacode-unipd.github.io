@@ -229,6 +229,7 @@ listaev
 listapv
 listaspese
 maxlistaspese
+listagulpease
 str
 'analisi
 'processi

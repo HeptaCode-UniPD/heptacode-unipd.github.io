@@ -1114,7 +1114,7 @@ Con il passaggio alla fase successiva (Sprint 10-13), che prevede l'impiego di r
         x-label: [Numero Sprint],
         {
           plot.add(
-            ((0, 0), (listaEv-Ac-EAC.at(-1).at(0), 0)),
+            ((0, 0), (lista_Ac.len(), 0)),
             label: [Target (0)],
             style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
             line: "spline",
@@ -1135,6 +1135,69 @@ Con il passaggio alla fase successiva (Sprint 10-13), che prevede l'impiego di r
 
 Grazie all'implementazione di uno spellchecker prima della pianificazione degli sprint, il numero di errori ortografici all'interno dei documenti ufficiali è sempre stato 0.
 
+== MPD14 - Indice di Gulpease
+
+#import "../../../scripts/lista_gulpease.typ" : listaGulpease
+
+#figure(
+  caption: [Tabella indice di Gulpease dei documenti],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Documento*], [*Indice*]),
+      ..listaGulpease.map(riga => {
+        let (documento, indice) = riga
+        (documento, indice)
+      }).flatten()
+    )
+  )
+]
+
+#let dati = listaGulpease.enumerate().map(it => (it.at(0), float(it.at(1).at(1))))
+
+#let etichette = (
+  (0, "AdR"),
+  (1, "NdP"),
+  (2, "PdP"),
+  (3, "PdQ"),
+)
+
+#figure(
+  caption: [Indice di Gulpease dei documenti],
+  cetz.canvas({
+    import cetz-plot: *
+    plot.plot(
+      legend: "inner-north-west",
+      size: (12, 6),
+      x-label: [Documenti],
+      y-label: [Indice],
+      x-tick-step: none,
+      x-ticks: etichette,
+      y-ticks: (0, 20, 40, 60, 80, 100),
+      x-min: -0.5,
+      x-max: 3.5,
+      y-min: 0,
+      y-max: 100,
+      {
+        plot.add-bar(
+          dati,
+          bar-width: 0.5,
+        )
+        plot.add(
+          ((-0.5, 50), (3.5, 50)),
+          label: [Valore accettabile (50)],
+          style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+        )
+      }
+    )
+  })
+)
+
+Ogni documento presenza un indice di leggibilità superiore al limite inferiore di 50.
 
 = Iniziative di miglioramento
 La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durante lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
