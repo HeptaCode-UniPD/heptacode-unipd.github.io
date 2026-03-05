@@ -1,47 +1,5 @@
-/*
-Domande per Cardin sul file:
-1) Se ho una situazione in cui è possibile aprire un menù, completare un'azione dopodichè il sistema riporta alla schermata precedente è corretto inserire un include per lo uc della finestra precedente? (es UC10.3.2.1)
-2) In 6.3, ad esempio, è formalmente corretto fare riferimento ad una situazione precedente linkando lo uc a cui ci si riferisce o è meglio descrivere nuovamente la situazione?
-3) se la descrizione è "Il Developer vuole consultare un'analisi archiviata relativa all'area testing" allora non è corretto considerare l'azione di consultazione analisi archiviata come un include?
-4) Se l'utente è obbligato alla fine a tornare alla pagina precedente, è giusto inserirlo nel flusso principale?
-*/
-
-
-#show link: set text(fill: color.linear-rgb(121, 1, 238))
-#show link: underline
-
-#show table.cell: block.with(breakable: true)
-
-#let tabella-viola(..args) = {
-  show table.cell.where(y: 0): set text(white, weight: "bold")
-  table(
-    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
-    ..args
-  )
-}
-
-#v(1fr)
-#align(center, [
-  #image("../../asset/logo.svg")
-  #set text(lang: "it")
-
-  #v(1.5cm)
-
-  #text(size: 25pt, weight: "bold")[Analisi dei Requisiti]
-
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Versione 2.0.0])
-
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
-
-  #align(center,
-  [#text(12pt)[Il presente documento contiene l'_analisi dei Requisiti_ redatta dal gruppo _Hepta Code_ per il capitolato C2 proposto da _Var Group_.]]
-  )
-])
-#v(1fr)
-#counter(page).update(1)
-
+#import "../../templates/template-documenti.typ": template_documenti, tabella-viola
+#import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
@@ -77,60 +35,16 @@ Domande per Cardin sul file:
   ("0.1.0", "2025-12-15", "Alberto Reginato", "Angela Canazza", "Creazione struttura del documento e prima bozza"),
 )
 
-#pagebreak()
-
-#text(size: 17pt, weight: "bold")[Registro delle modifiche]
-
-#tabella-viola(
-  columns: (auto, auto, auto, auto, 1fr),
-  inset: 10pt,
-  align: (center, center, center, center, left),
-  
-  table.header(
-  [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*],
-  ),
-
-  ..storia_modifiche.flatten()
+#show: doc => template_documenti(
+  titolo: "Analisi dei Requisiti",
+  descrizione: "Il presente documento contiene l'_analisi dei Requisiti_ redatta dal gruppo _Hepta Code_ per il capitolato C2 proposto da _Var Group_.",
+  modifiche: storia_modifiche,
+  lista_tabelle: true,
+  lista_figure: true,
+  doc
 )
 
-#pagebreak()
-#outline(title: "Indice dei contenuti")
-
-#pagebreak()
-#outline(
-  title: "Indice delle tabelle",
-  target: figure.where(kind: table),
-)
-
-#pagebreak()
-
-#outline(
-  title: "Indice delle figure",
-  target: figure.where(kind : image),
-)
-
-#pagebreak()
-#set page(numbering: "1",
-  header: [
-    #set table(
-      stroke: none,
-    )
-    #table(
-      columns: 3,
-      [Hepta Code],
-      [#rect(
-        width: 100%,
-        height: 1pt,
-        fill: white,
-        stroke: none,
-      )],
-      [Analisi dei Requisiti v2.0.0],
-    )
-    #line(length: 100%, stroke: black)
-  ],
-)
-#counter(page).update(1)  
-#set heading(numbering: "1.")
+#show: applica-glossario
 
 = Introduzione
 == Scopo del Documento
