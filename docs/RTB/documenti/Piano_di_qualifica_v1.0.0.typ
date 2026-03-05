@@ -499,12 +499,12 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
   1360,     //SPRINT 3
   2100,     //SPRINT 4
   2560,     //SPRINT 5
-  3140,     //SPRINT 6
-  4205,     //SPRINT 7
-  5080,     //SPRINT 8
-  6027.50,  //SPRINT 9
-  7150.52,  //SPRINT 10
-  7689.05,  //SPRINT 11
+  2905,     //SPRINT 6
+  3265,     //SPRINT 7
+  3850,     //SPRINT 8
+  4410,  //SPRINT 9
+  5380,  //SPRINT 10
+  5925,  //SPRINT 11
 )
 
 #let lista_Pv = (
