@@ -43,7 +43,7 @@
 Questo documento propone una linea guida da seguire durante tutto lo svolgimento del progetto. \
 Il Piano di Progetto ha lo scopo di definire in modo chiaro, strutturato e verificabile come il progetto _Code Guardian_ dovrà essere realizzato.
 Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e/o per aggiornare contenuti obsoleti.
-== Introduzione al progetto _Cose Guardian_
+== Introduzione al progetto _Code Guardian_
 Questa prima parte del documento non vuole essere una spiegazione esplicativa e dettagliata dello stesso; per quello si può consultare il documento di _Analisi dei requisiti_ presente nel #link("https://heptacode-unipd.github.io", "sito del team Hepta Code"). \ \
 *Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un’organizzazione. \ Verranno utilizzati degli agenti che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository Git Hub. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \
 Gli agenti fino ad ora pensati per _Code Guardian_ sono:
@@ -218,14 +218,14 @@ Considerando le ore effettivamente svolte durante il periodo di RTB, verrà prop
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Totale*]]],
 
-      [_Angela Favaro_], [7 → 6], [10 → 5], [15 → 19], [16 → 12], [21 → 20], [23 → 30], [*92 / 92*],
-      [_Angela Canazza_], [9 → 7], [6 → 2], [15 → 23], [15 → 15], [21,5 → 22], [25,5 → 22], [*91 / 92*],
-      [_Riccardo Baldin_], [4 → 2], [8 → 7], [17 → 23], [15 → 12], [22 → 22], [26 → 26], [*92 / 92*],
-      [_Alberto Reginato_], [7 → 7], [8 → 8], [16 → 18], [17 → 27], [17,5 → 16], [26,5 → 21,5], [*97,5 / 92*],
-      [_Nicola Simionato_], [7 → 5], [8 → 6], [15,5 → 14], [12 → 15], [22 → 15], [27,5 → 37,5], [*92,5 / 92*],
-      [_Amerigo Vegliante_], [8 → 5], [8 → 8], [17 → 14], [16 → 15], [21 → 29], [22 → 19], [*90 / 92*],
-      [_Laura Venturini_], [7 → 4], [8 → 6], [16,5 → 17], [14 → 21], [23 → 20], [23,5 → 22], [*90 /92*],
-      [*Ore totali*], [*36 / 49*], [*42 / 56*], [*128 / 112*], [*117 / 105*], [*144 / 148*], [*178 / 174*],
+      [_Angela Favaro_], [7 → 10], [10 → 3], [15 → 19], [16 → 16], [21 → 19], [23 → 27], [*94 / 92*],
+      [_Angela Canazza_], [9 → 3], [6 → 2], [15 → 23], [15 → 15], [21,5 → 22], [25,5 → 25], [*90 / 92*],
+      [_Riccardo Baldin_], [4 → 2], [8 → 7], [17 → 23], [15 → 15], [22 → 22], [26 → 26], [*95 / 92*],
+      [_Alberto Reginato_], [7 → 7], [8 → 8], [16 → 18], [17 → 27], [17,5 → 16], [26,5 → 18,5], [*94,5 / 92*],
+      [_Nicola Simionato_], [7 → 5], [8 → 8], [15,5 → 14], [12 → 14], [22 → 15], [27,5 → 34,5], [*90,5 / 92*],
+      [_Amerigo Vegliante_], [8 → 3], [8 → 8], [17 → 14], [16 → 15], [21 → 29], [22 → 19], [*88 / 92*],
+      [_Laura Venturini_], [7 → 6], [8 → 6], [16,5 → 17], [14 → 15], [23 → 20], [23,5 → 29], [*93 /92*],
+      [*Ore totali*], [*36 / 49*], [*42 / 56*], [*128 / 112*], [*117 / 105*], [*143 / 148*], [*179 / 174*],
     ) ]] <tab:OreTotIndividuali2>
 In @fig:torta2 è possibile visionare la percentuale di ore dedicate a ciascun ruolo secondo la nuova stima.
 #figure(
@@ -236,8 +236,8 @@ In @fig:torta2 è possibile visionare la percentuale di ore dedicate a ciascun r
     ([*Amm.*], 42),
     ([*Analista*], 128),
     ([*Progett.*], 117),
-    ([*Programm.*], 144),
-    ([*Verif.*], 178),
+    ([*Programm.*], 143),
+    ([*Verif.*], 179),
   )
 
   #align(left)[#cetz.canvas({
@@ -1679,14 +1679,14 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Totale*]]],
 
-      [_Angela Favaro_], [], [4], [], [12], [20], [15], [*51*],
-      [_Angela Canazza_], [6], [], [], [15], [20], [11], [*52*],
-      [_Riccardo Baldin_], [], [], [], [12], [20], [20], [*52*],
-      [_Alberto Reginato_], [], [6], [], [27], [14], [10], [*57*],
-      [_Nicola Simionato_], [], [], [], [15], [15], [26], [*56*],
-      [_Amerigo Vegliante_], [4], [], [], [15], [27], [7], [*53*],
-      [_Laura Venturini_], [], [], [], [21], [20], [8], [*49*],
-      [*Ore totali*], [*10*], [*10*], [], [*117*], [*136*], [*97*],
+      [_Angela Favaro_], [4], [2], [], [16], [19], [12], [*53*],
+      [_Angela Canazza_], [2], [], [], [15], [20], [14], [*51*],
+      [_Riccardo Baldin_], [], [], [], [15], [20], [20], [*55*],
+      [_Alberto Reginato_], [], [6], [], [27], [14], [7], [*54*],
+      [_Nicola Simionato_], [], [2], [], [14], [15], [23], [*54*],
+      [_Amerigo Vegliante_], [2], [], [], [15], [27], [7], [*51*],
+      [_Laura Venturini_], [2], [], [], [15], [20], [15], [*52*],
+      [*Ore totali*], [*10*], [*10*], [], [*117*], [*135*], [*98*],
     ) ]] <tab:OreTotIndividualiPB>
 
 #pagebreak()
