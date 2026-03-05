@@ -4,7 +4,8 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("1.0.0", "2026/03/03", "Amerigo Vegliante", "Angela Favaro", "Aggiunta del resoconto trascorso RTB"),
+  ("1.0.0", "2026/03/05", "Amerigo Vegliante", "Angela Favaro", "Aggiunti preventivi per Sprint da 12 a 15"),
+  ("0.20.0", "2026/03/03", "Amerigo Vegliante", "Angela Favaro", "Aggiunta del resoconto trascorso RTB"),
   ("0.19.0", "2026/03/02", "Angela Favaro", "Alberto Reginato", "Modifica del documento su organizzazione Sprint"),
   ("0.18.0", "2026/03/02", "Angela Favaro", "Alberto Reginato", "Aggiunto trascorso Sprint 11"),
   ("0.17.0", "2026/03/02", "Alberto Reginato", "Angela Favaro", "Aggiunto trascorso Sprint 10"),
@@ -43,7 +44,7 @@
 Questo documento propone una linea guida da seguire durante tutto lo svolgimento del progetto. \
 Il Piano di Progetto ha lo scopo di definire in modo chiaro, strutturato e verificabile come il progetto _Code Guardian_ dovrà essere realizzato.
 Il documento verrà periodicamente versionato per aggiungere contenuti mancanti e/o per aggiornare contenuti obsoleti.
-== Introduzione al progetto _Cose Guardian_
+== Introduzione al progetto _Code Guardian_
 Questa prima parte del documento non vuole essere una spiegazione esplicativa e dettagliata dello stesso; per quello si può consultare il documento di _Analisi dei requisiti_ presente nel #link("https://heptacode-unipd.github.io", "sito del team Hepta Code"). \ \
 *Code Guardian* è pensato come strumento di supporto per i team di sviluppo, da utilizzare durante l’intero ciclo di vita dei progetti che l’utente realizzerà all’interno di un’organizzazione. \ Verranno utilizzati degli agenti che consentono l’analisi della documentazione e del codice del progetto che si trova in una repository Git Hub. Ogni agente avrà un diverso ruolo all’interno della piattaforma. \
 Gli agenti fino ad ora pensati per _Code Guardian_ sono:
@@ -218,14 +219,14 @@ Considerando le ore effettivamente svolte durante il periodo di RTB, verrà prop
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Totale*]]],
 
-      [_Angela Favaro_], [7 → 6], [10 → 5], [15 → 19], [16 → 12], [21 → 20], [23 → 30], [*92 / 92*],
-      [_Angela Canazza_], [9 → 7], [6 → 2], [15 → 23], [15 → 15], [21,5 → 22], [25,5 → 22], [*91 / 92*],
-      [_Riccardo Baldin_], [4 → 2], [8 → 7], [17 → 23], [15 → 12], [22 → 22], [26 → 26], [*92 / 92*],
-      [_Alberto Reginato_], [7 → 7], [8 → 8], [16 → 18], [17 → 27], [17,5 → 16], [26,5 → 21,5], [*97,5 / 92*],
-      [_Nicola Simionato_], [7 → 5], [8 → 6], [15,5 → 14], [12 → 15], [22 → 15], [27,5 → 37,5], [*92,5 / 92*],
-      [_Amerigo Vegliante_], [8 → 5], [8 → 8], [17 → 14], [16 → 15], [21 → 29], [22 → 19], [*90 / 92*],
-      [_Laura Venturini_], [7 → 4], [8 → 6], [16,5 → 17], [14 → 21], [23 → 20], [23,5 → 22], [*90 /92*],
-      [*Ore totali*], [*36 / 49*], [*42 / 56*], [*128 / 112*], [*117 / 105*], [*144 / 148*], [*178 / 174*],
+      [_Angela Favaro_], [7 → 10], [10 → 3], [15 → 19], [16 → 16], [21 → 19], [23 → 27], [*94 / 92*],
+      [_Angela Canazza_], [9 → 3], [6 → 2], [15 → 23], [15 → 15], [21,5 → 22], [25,5 → 25], [*90 / 92*],
+      [_Riccardo Baldin_], [4 → 2], [8 → 7], [17 → 23], [15 → 15], [22 → 22], [26 → 26], [*95 / 92*],
+      [_Alberto Reginato_], [7 → 7], [8 → 8], [16 → 18], [17 → 27], [17,5 → 16], [26,5 → 18,5], [*94,5 / 92*],
+      [_Nicola Simionato_], [7 → 5], [8 → 8], [15,5 → 14], [12 → 14], [22 → 15], [27,5 → 34,5], [*90,5 / 92*],
+      [_Amerigo Vegliante_], [8 → 3], [8 → 8], [17 → 14], [16 → 15], [21 → 29], [22 → 19], [*88 / 92*],
+      [_Laura Venturini_], [7 → 6], [8 → 6], [16,5 → 17], [14 → 15], [23 → 20], [23,5 → 29], [*93 /92*],
+      [*Ore totali*], [*36 / 49*], [*42 / 56*], [*128 / 112*], [*117 / 105*], [*143 / 148*], [*179 / 174*],
     ) ]] <tab:OreTotIndividuali2>
 In @fig:torta2 è possibile visionare la percentuale di ore dedicate a ciascun ruolo secondo la nuova stima.
 #figure(
@@ -236,8 +237,8 @@ In @fig:torta2 è possibile visionare la percentuale di ore dedicate a ciascun r
     ([*Amm.*], 42),
     ([*Analista*], 128),
     ([*Progett.*], 117),
-    ([*Programm.*], 144),
-    ([*Verif.*], 178),
+    ([*Programm.*], 143),
+    ([*Verif.*], 179),
   )
 
   #align(left)[#cetz.canvas({
@@ -1679,14 +1680,14 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Totale*]]],
 
-      [_Angela Favaro_], [], [4], [], [12], [20], [15], [*51*],
-      [_Angela Canazza_], [6], [], [], [15], [20], [11], [*52*],
-      [_Riccardo Baldin_], [], [], [], [12], [20], [20], [*52*],
-      [_Alberto Reginato_], [], [6], [], [27], [14], [10], [*57*],
-      [_Nicola Simionato_], [], [], [], [15], [15], [26], [*56*],
-      [_Amerigo Vegliante_], [4], [], [], [15], [27], [7], [*53*],
-      [_Laura Venturini_], [], [], [], [21], [20], [8], [*49*],
-      [*Ore totali*], [*10*], [*10*], [], [*117*], [*136*], [*97*],
+      [_Angela Favaro_], [4], [2], [], [16], [19], [12], [*53*],
+      [_Angela Canazza_], [2], [], [], [15], [20], [14], [*51*],
+      [_Riccardo Baldin_], [], [], [], [15], [20], [20], [*55*],
+      [_Alberto Reginato_], [], [6], [], [27], [14], [7], [*54*],
+      [_Nicola Simionato_], [], [2], [], [14], [15], [23], [*54*],
+      [_Amerigo Vegliante_], [2], [], [], [15], [27], [7], [*51*],
+      [_Laura Venturini_], [2], [], [], [15], [20], [15], [*52*],
+      [*Ore totali*], [*10*], [*10*], [], [*117*], [*135*], [*98*],
     ) ]] <tab:OreTotIndividualiPB>
 
 #pagebreak()
@@ -1697,19 +1698,16 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [2 marzo 2026 - 15 marzo 2026],
+  [_Intervallo temporale_], [2 marzo 2026 - 8 marzo 2026],
 
-  [_Giorni di sprint_], [14],
+  [_Giorni di sprint_], [7],
 
   [_Attività previste_],
   [
-    - Previsto colloqui con il prof. Vardanega.
-    - Inizio attività di progettazione PAB.
+    - Previsto colloquio con il prof. Vardanega.
+    - Attività di studio progettazione PAB.
     - Stesura v3.0.0 del documento AdR (con correzioni del prof. Cardin).
-    - Sviluppo Backend e verifica del codice.
-    - Sviluppo Frontend e verifica del codice.
-    - Inizio sviluppo documentazione per milestone PB.
-    - Conclusione attività di progettazione ed analisi. 
+    - Attività di studio delle tecnologie necessarie allo sviluppo.
   ],
   [_Milestones attive_], [PAB, PB]
 )
@@ -1733,16 +1731,16 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [4], [], [12], [], [5], [195€],
-      [_Angela Canazza_], [], [], [], [], [20], [11], [292,5€],
-      [_Riccardo Baldin_], [], [], [], [12], [], [10], [225€],
-      [_Alberto Reginato_], [], [], [], [17], [], [10], [232,5€],
-      [_Nicola Simionato_], [], [], [], [], [15], [13], [225€],
-      [_Amerigo Vegliante_], [4], [], [], [15], [], [], [150€],
-      [_Laura Venturini_], [], [], [], [6], [20], [], [225€],
+      [_Angela Favaro_], [], [2], [], [1], [], [2], [95€],
+      [_Angela Canazza_], [], [], [], [], [], [2], [30€],
+      [_Riccardo Baldin_], [], [], [], [1], [], [], [25€],
+      [_Alberto Reginato_], [], [], [], [1], [], [], [25€],
+      [_Nicola Simionato_], [], [], [], [], [], [2], [30€],
+      [_Amerigo Vegliante_], [2], [], [], [1], [], [], [85€],
+      [_Laura Venturini_], [], [], [], [], [], [2], [30€],
     ) ]] <tab:PrevisioneSprint12>
 
-#underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *11.450€*
+#underline[Spese della settimana]: 320€ \ #underline[Spesa totale]: *6.245€*
 
 ==== Trascorso
 #table(
@@ -1772,20 +1770,19 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [16 marzo 2026 - 30 marzo 2026],
+  [_Intervallo temporale_], [9 marzo 2026 - 15 marzo 2026],
 
-  [_Giorni di sprint_], [15],
+  [_Giorni di sprint_], [7],
 
   [_Attività previste_],
   [
-    Ultimo sprint previsto.
-    - Conclusione attività di sviluppo e validazione Frontend e Backend.
-    - Conclusione stesura documentazione adeguata alla consegna del progetto.
-    - Validazione dei risultati prodotti durante gli Sprint.
-    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-    - *Consegna del progetto previsto in data 15 marzo 2026*.
+    - Attività di sviluppo e validazione Frontend e Backend.
+    - Attività di progettazione.
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
+    - Inizio sviluppo documentazione per milestone PB:
+      - Specifica Tecnica.
   ],
-  [_Milestones attive_], [PB]
+  [_Milestones attive_], [PAB, PB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 13],
@@ -1807,16 +1804,166 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [], [], [], [20], [10], [300€],
-      [_Angela Canazza_], [6], [], [], [15], [], [], [180€],
-      [_Riccardo Baldin_], [], [], [], [], [20], [10], [240€],
-      [_Alberto Reginato_], [], [6], [], [10], [14], [], [120€],
-      [_Nicola Simionato_], [], [], [], [15], [], [13], [195€],
-      [_Amerigo Vegliante_], [], [], [], [], [27], [7], [240€],
-      [_Laura Venturini_], [], [], [], [15], [], [8], [120€],
+      [_Angela Favaro_], [], [], [], [15], [], [], [375€],
+      [_Angela Canazza_], [], [], [], [], [5], [6], [165€],
+      [_Riccardo Baldin_], [], [], [], [14], [], [10], [500€],
+      [_Alberto Reginato_], [], [], [], [16], [], [7], [505€],
+      [_Nicola Simionato_], [], [2], [], [], [5], [8], [235€],
+      [_Amerigo Vegliante_], [], [], [], [14], [], [], [350€],
+      [_Laura Venturini_], [2], [], [], [8], [5], [], [335€],
     ) ]] <tab:PrevisioneSprint13>
 
-#underline[Spese della settimana]: 1.410€ \ #underline[Spesa totale]: *12.845€*
+#underline[Spese della settimana]: 2.465€ \ #underline[Spesa totale]: *8.710€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Attività Svolte_],
+  [
+
+  ],
+
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+
+  [_Mitigazione_],
+  [
+    1.
+  ]
+)
+#pagebreak()
+
+=== Sprint 14
+==== Preventivo a finire
+#tabella-viola(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], [16 marzo 2026 - 22 marzo 2026],
+
+  [_Giorni di sprint_], [7],
+
+  [_Attività previste_],
+  [
+    - Attività di sviluppo e validazione Frontend e Backend.
+    - Attività di progettazione.
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
+    - Sviluppo documentazione per milestone PB:
+      - Specifica Tecnica (rilascio v1)
+      - Manuale utente
+    - Conclusione milestone PAB.
+  ],
+  [_Milestones attive_], [PB, PAB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 14],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [], [], [14], [5], [285€],
+      [_Angela Canazza_], [2], [], [], [10], [], [3], [355€],
+      [_Riccardo Baldin_], [], [], [], [], [15], [5], [300€],
+      [_Alberto Reginato_], [], [2], [], [10], [7], [], [395€],
+      [_Nicola Simionato_], [], [], [], [9], [], [13], [420€],
+      [_Amerigo Vegliante_], [], [], [], [], [15], [], [225€],
+      [_Laura Venturini_], [], [], [], [7], [], [4], [235€],
+    ) ]] <tab:PrevisioneSprint14>
+
+#underline[Spese della settimana]: 2.215€ \ #underline[Spesa totale]: *10.925€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Attività Svolte_],
+  [
+
+  ],
+
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+
+  [_Mitigazione_],
+  [
+    1.
+  ]
+)
+
+#pagebreak()
+
+=== Sprint 15
+==== Preventivo a finire
+#tabella-viola(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], [23 marzo 2026 - 30 marzo 2026],
+
+  [_Giorni di sprint_], [7],
+
+  [_Attività previste_],
+  [
+    Ultimo sprint previsto.
+    - Conclusione attività di sviluppo e validazione Frontend e Backend.
+    - Conclusione stesura documentazione adeguata alla consegna del progetto.
+    - Validazione dei risultati prodotti durante gli Sprint.
+    - Revisione finale del _Glossario_  ed eventuale aggiornamento.
+    - *Consegna del progetto previsto in data 30 marzo 2026*.
+  ],
+  [_Milestones attive_], [PB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 15],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [4], [], [], [], [5], [5], [270€],
+      [_Angela Canazza_], [], [], [], [5], [15], [3], [395€],
+      [_Riccardo Baldin_], [], [], [], [], [5], [5], [150€],
+      [_Alberto Reginato_], [], [4], [], [], [7], [], [185€],
+      [_Nicola Simionato_], [], [], [], [5], [10], [], [275€],
+      [_Amerigo Vegliante_], [], [], [], [], [12], [7], [285€],
+      [_Laura Venturini_], [], [], [], [], [15], [9], [360€],
+    ) ]] <tab:PrevisioneSprint15>
+
+#underline[Spese della settimana]: 1.920€ \ #underline[Spesa totale]: *12.845€*
 
 ==== Trascorso
 #table(
