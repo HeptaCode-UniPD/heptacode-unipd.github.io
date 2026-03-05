@@ -54,21 +54,21 @@ Gli argomenti discussi nell'incontro sono stati:
 - Revisione degli sprint (preventivo a finire).
 
 = Svolgimento
-=== Suddivisione ruoli per presentazione RTB (prof. Vardanega)
+== Suddivisione ruoli per presentazione RTB (prof. Vardanega)
 Abbiamo confermato quasi tutti i ruoli scelti (consultabili nel precedente verbale). Abbiamo cambiato un ruolo:
 - Laura Venturini farà la parte di Preventivo a finire e Consuntivo di periodo insieme ad Angela Favaro.
 Abbiamo revisionato le slide fino ad ora fatte apportando alcune modifiche a quelle ritenute lacunose o inadatte alla presentazione.
 Ci siamo accordati nel riunirci il giorno prima del colloquio con il professore per provare assieme la presentazione. Nel mentre ogni membro preparerà autonomamente la propria parte caricando le proprie slide nella presentazione condivisa sul Telegram.
 La mail per la richiesta di colloquio è stata mandata in data odierna (05 marzo 2026), rimaniamo in attesa della risposta.
-=== Studio per attività di progettazione
+== Studio per attività di progettazione
 Il team, di unanime accordo, ha stabilito che questo sprint proseguirà l'attività (*di tutti i membri del team*) di studio di progettazione, così da essere produttivi già nei prossimi giorni e cominciare a lavorare attivamente alla progettazione del prodotto.
-=== Comunicazioni con l'azienda _Var Group_
+== Comunicazioni con l'azienda _Var Group_
 Per facilitare la comprensione della progettazione e per dare un feedback su quanto prodotto fino ad ora abbiamo deciso di contattare l'azienda proponente tramite piattaforma Slack. Il messaggio è stato inviato in data 05 marzo 2026 i contenuti del messaggio sono i seguenti:
 - Comunicazione di completamento dell'attività di Analisi dei Requisiti.
 - Richiesta di informazioni e consigli riguardo l'attività di progettazione.
 - Richiesta di un eventuale colloquio per discutere i punti 1. e 2.
 
-=== Revisione degli sprint (preventivo a finire)
+== Revisione degli sprint (preventivo a finire)
 A seguito del Diario di Bordo svolto in data 04 Marzo 2026, abbiamo scelto di cambiare gli ultimi sprint preventivati per il progetto.
 *Da due diverranno quattro*, a cadenza settimanale (e non più bisettimanale), così da poter avere un controllo più efficacie sullo stato di avanzamento del progetto e sulla rendicontazione delle ore effettivamente svolte dal gruppo.
 Il Piano di Progetto verrà aggiornato di conseguenza entro il 05 marzo 2026.
@@ -84,7 +84,7 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 #let decisione-azione = ((
   "Inizio attività di progettazione","Studio individuale e ricerca di contatto con l'azienda proponente",
-  "Colloqui per conclusione RTB", "Invio mail di richiesta colloqui al prof. Vardanega",
+  "Colloquio per conclusione RTB", "Invio mail di richiesta colloquio al prof. Vardanega",
   "Maggiore controllo sullo stato di avanzamento del progetto", "Aumento degli sprint previsti all'interno del Piano di progetto"
 )
 )
