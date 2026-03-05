@@ -56,7 +56,7 @@ Gli argomenti discussi nell'incontro sono stati:
 = Svolgimento
 === Suddivisione ruoli per presentazione RTB (prof. Vardanega)
 Abbiamo confermato quasi tutti i ruoli scelti (consultabili nel precedente verbale). Abbiamo cambiato un ruolo:
-- Laura Venturini farà la parte di Preventivo a finire e Consuntivo di periodo inseime ad Angela Favaro.
+- Laura Venturini farà la parte di Preventivo a finire e Consuntivo di periodo insieme ad Angela Favaro.
 Abbiamo revisionato le slide fino ad ora fatte apportando alcune modifiche a quelle ritenute lacunose o inadatte alla presentazione.
 Ci siamo accordati nel riunirci il giorno prima del colloquio con il professore per provare assieme la presentazione. Nel mentre ogni membro preparerà autonomamente la propria parte caricando le proprie slide nella presentazione condivisa sul Telegram.
 La mail per la richiesta di colloquio è stata mandata in data odierna (05 marzo 2026), rimaniamo in attesa della risposta.
