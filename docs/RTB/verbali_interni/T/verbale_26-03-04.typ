@@ -64,9 +64,9 @@ La mail per la richiesta di colloquio è stata mandata in data odierna (05 marzo
 Il team, di unanime accordo, ha stabilito che questo sprint proseguirà l'attività (*di tutti i membri del team*) di studio di progettazione, così da essere produttivi già nei prossimi giorni e cominciare a lavorare attivamente alla progettazione del prodotto.
 == Comunicazioni con l'azienda _Var Group_
 Per facilitare la comprensione della progettazione e per dare un feedback su quanto prodotto fino ad ora abbiamo deciso di contattare l'azienda proponente tramite piattaforma Slack. Il messaggio è stato inviato in data 05 marzo 2026 i contenuti del messaggio sono i seguenti:
-- Comunicazione di completamento dell'attività di Analisi dei Requisiti.
-- Richiesta di informazioni e consigli riguardo l'attività di progettazione.
-- Richiesta di un eventuale colloquio per discutere i punti 1. e 2.
++ Comunicazione di completamento dell'attività di Analisi dei Requisiti.
++ Richiesta di informazioni e consigli riguardo l'attività di progettazione.
++ Richiesta di un eventuale colloquio per discutere i punti 1. e 2.
 
 == Revisione degli sprint (preventivo a finire)
 A seguito del Diario di Bordo svolto in data 04 Marzo 2026, abbiamo scelto di cambiare gli ultimi sprint preventivati per il progetto.
