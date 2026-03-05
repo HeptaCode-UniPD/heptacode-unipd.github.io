@@ -67,7 +67,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPC06",
@@ -104,7 +104,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPC11",
@@ -113,8 +113,8 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     "≥90%",
     "MPC12",
     "Test Success Rate",
-    "100%",
-    "100%",
+    "≥85%",
+    "≥100%",
     "MPC13",
     "Statement Coverage",
     "≥90%",
@@ -135,7 +135,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPC15",
@@ -154,7 +154,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPC01",
@@ -167,7 +167,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     "≥0€",
     "MPC03",
     "Budget Variance",
-    "-10%≥BV≤10%",
+    "-10%≤BV≤10%",
     "0%",
     "MPC04",
     "Requirements Stability Index",
@@ -200,7 +200,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPD01", 
@@ -227,7 +227,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPD04", 
@@ -236,7 +236,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     "≤5 secondi",
     "MPD05", 
     "Tempo medio di risposta (Sistema)",
-    "≤15 secondi",
+    "≤5 secondi",
     "≤2 secondi",
     "MPD06", 
     "Tempo medio di risposta (Elaborazione AI)",
@@ -254,12 +254,12 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPD07", 
     "Complessità Ciclomatica",
-    "≤5 ",
+    "≤15 ",
     "≤10",
     "MPD08", 
     "Parametri per metodo ",
@@ -275,8 +275,8 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     "≤80",
     "MPD11", 
     "Densità dei commenti",
-    "≤15%",
-    "≤5%",
+    "≥10%",
+    "≥15%",
     "MPD12",
     "Coefficient of Coupling",
     "≤0.4",
@@ -293,7 +293,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPD13", 
@@ -303,7 +303,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     "MPD14", 
     "Indice di Gulpease",
     "≥50",
-    "≥80"
+    "≥70"
   ),
   caption: [Metriche usabilità del prodotto],
   kind: table
@@ -316,13 +316,13 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPD15", 
-    "Error Rate",
-    "30%",
-    "15%"
+    "Test Failure Rate",
+    "≤15%",
+    "≤0%"
   ),
   caption: [Metriche affidabilità del prodotto],
   kind: table
@@ -762,6 +762,20 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
           )
 
           plot.add(
+            ((0, 0.1), (listaPv-Ac.at(-1).at(0), 0.1)),
+            label: [valore accettabile (+10%)],
+            style: (stroke: (paint: yellow, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            ((0, -0.1), (listaPv-Ac.at(-1).at(0), -0.1)),
+            label: [valore accettabile (-10%)],
+            style: (stroke: (paint: blue, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )                    
+
+          plot.add(
             listaPv-Ac.map(it => {
               let (p, pv, ac) = it
               let bv = if p == 0 { 0.0 } else {  (pv - ac) / pv }
@@ -943,9 +957,9 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
 
 
 
-== MPC08 e MPC09 - Actual Cost ed Estimate to Complete
+== MPC08 e MPC010 - Actual Cost ed Estimate to Complete
 #let listaACETC = range(lista_Ac.len()).map(i => {
-  (i, lista_Ac.at(i), 12845 -lista_Pv.at(i))
+  (i, lista_Ac.at(i), 12845 -lista_Ev.at(i))
 })
 
 #figure(
@@ -1013,7 +1027,7 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
 ]
 La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare, in quanto allo sprint 9 non è ancora stata usata più di metà di budget.
 
-== MPC10 - Estimate at Completion
+== MPC09 - Estimate at Completion
 #let listaEv-Ac-EAC = range(lista_Ev.len()).map(i => {
   (i, lista_Ev.at(i), lista_Ac.at(i))
 })
@@ -1191,6 +1205,12 @@ Grazie all'implementazione di uno spellchecker prima della pianificazione degli 
           ((-0.5, 50), (3.5, 50)),
           label: [Valore accettabile (50)],
           style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+        )
+
+        plot.add(
+          ((-0.5, 70), (3.5, 70)),
+          label: [valore ottimale (70)],
+          style: (stroke: (paint: red, dash: "dashed", thickness: 1.5pt)),
         )
       }
     )

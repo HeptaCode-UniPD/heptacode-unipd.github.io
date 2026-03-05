@@ -198,7 +198,7 @@ Per garantire che l'architettura sia manutenibile e modulare, il team monitora l
 
 - Coesione: misura quanto le responsabilità di un singolo modulo siano correlate tra loro. Si persegue un'alta coesione (un modulo fa una sola cosa bene).
 
-- Complessità Ciclomatica: utilizzata per valutare la complessità dei flussi logici progettati, con l'obiettivo di mantenere i componenti testabili.
+- Complessità Ciclomatica: utilizzata per valutare la complessità dei flussi logici progettati, con l'obiettivo di mantenere i componenti testabili (valore accettabile $<=15$, valore ottimale $<= 10$).
 
 *Diagrammi UML*
 Il team utilizza il linguaggio UML (Unified Modeling Language) per visualizzare e documentare l'architettura. I diagrammi richiesti per ogni componente sono:
@@ -256,7 +256,7 @@ Al fine di garantire la manutenibilità del codice gli Sviluppatori dovranno att
 *Metriche*
 
 Per rendere oggettiva la qualità del software prodotto, il codice verrà monitorato tramite le seguenti metriche:
-- *Complessità Ciclomatica (MPD07):* Monitorata per garantire che ogni funzione rimanga testabile e atomica (limite accettabile $<= 15$).
+- *Complessità Ciclomatica (MPD07):* Monitorata per garantire che ogni funzione rimanga testabile e atomica (valore accettabile $<=15$, valore ottimale $<= 10$).
 - *Campi delle Classi:* Si limita il numero di attributi per classe per favorire la coesione e rispettare il principio di singola responsabilità.
 
 = Processi di Supporto
@@ -300,7 +300,7 @@ Il gruppo produce sia documenti "interni", quindi destinati a rimanere in mano a
 
 ==== Struttura dei Documenti
 
-Il template della documentazione garantisce che ogni documento pubblicato presenti la seguente struttura prima del corpo del documento:
+Il template della documentazione garantisce che ogni documento pubblicato presenti la seguente struttura prima del corpo del documento, si noti che questa formattazione non è da applicare ai verbali, il quale template è descritto sotto:
 
 - *Prima Pagina*:
   - Logo del gruppo;
@@ -322,7 +322,7 @@ Il template della documentazione garantisce che ogni documento pubblicato presen
 
 ==== Struttura dei Verbali
 
-I template dei Verbali differiscono da quello della documentazione e seguono il seguente standard:
+I template dei Verbali differiscono da quelli della documentazione e seguono il seguente standard:
 
 - *Prima Pagina*:
   - Logo del gruppo;
@@ -335,7 +335,7 @@ I template dei Verbali differiscono da quello della documentazione e seguono il 
 - *Ubicazione e Partecipanti*:
   Viene dichiarato il luogo e l'orario dell'incontro e la partecipazione dei membri del gruppo e, nel caso di riunioni con terzi, di questi ultimi.
 
-- *Indici*:
+- *Indice dei Contenuti*:
   In seguito al Registro dei Cambiamenti ogni documento presenta esclusivamente l'Indice dei Contenuti, non essendo i verbali esageratamente corposi, sono facilmente navigabili anche senza l'ausilio degli altri due.
 
 ==== Convenzioni Stilistiche
@@ -353,7 +353,7 @@ Per condividere i documenti tra i membri essi vengono caricati nella repository 
 ==== Metriche
 
 - *Indice di Gulpease (MPD14):* Utilizzato per misurare la leggibilità dei documenti in lingua italiana. Il team mira a un valore $\ge 50$ per garantire che la documentazione sia accessibile.
-- *Densità di Errori Ortografici (MPC15):* Conteggio degli errori rilevati tramite tool di linting o revisione umana. Il valore accettabile è rigorosamente 0.
+- *Correttezza ortografica:* Conteggio degli errori rilevati tramite tool di linting o revisione umana. Il valore accettabile è rigorosamente 0.
 
 ==  Processo di Verifica
 
@@ -772,10 +772,10 @@ L'approccio adottato segue il ciclo di PDCA (Plan-Do-Check-Act): le misurazioni 
 
 ==== MPC01 - Schedule Variance (SV)
 - *Formula*:
-$ "SV" = ("EV" - "PV")/"PV" dot 100 $
-- *Valore accettabile*: $>=-10%$
-- *Valore ottimale*: $>=0%$
-- *Descrizione*: L'indicatore Schedule Variance rappresenta il rispetto della schedulazione delle attività di progetto pianificate nella baseline. Se il valore è superiore allo 0, vuol dire che la velocità di avanzamento del lavoro è superiore a quanto pianificato, viceversa se negativo.
+$ "SV" = ("EV" - "PV") $
+- *Valore accettabile*: $>= -10% "del" "PV"$
+- *Valore ottimale*: $0$
+- *Descrizione*: L'indicatore Schedule Variance rappresenta il divario, espresso in termini monetari, tra il valore del lavoro effettivamente realizzato (Earned Value) e quello del lavoro che era stato pianificato (Planned Value) alla data corrente. Se il valore è superiore a zero, significa che il team sta procedendo più velocemente rispetto alla pianificazione iniziale. Un valore negativo indica invece un ritardo, quantificando economicamente il lavoro ancora da recuperare per rientrare nella tabella di marcia.
 
 ====  MPC02 - Cost Variance (CV)
 - *Formula*:
@@ -793,7 +793,7 @@ $ "BV" = ("PV" - "AC")/"PV" dot 100 $
 
 ==== MPC04 - Requirements Stability Index (RSI)
 - *Formula*:
-$ "RSI" = (1- ("NRC"+"NRD"+"NRA")/"TNIR" dot 100) $
+$ "RSI" = ((1- ("NRC"+"NRD"+"NRA")/"TNIR") dot 100) $
 - *Valore accettabile*: $>=70%$
 - *Valore ottimale*: $100%$
 - *Descrizione*:L'indice Requirements Stability Index rappresenta le variazioni che i requisiti hanno subito durante lo svolgimento del progetto.
@@ -806,7 +806,7 @@ $ "RSI" = (1- ("NRC"+"NRD"+"NRA")/"TNIR" dot 100) $
 ==== MPC05 - Cost Performance Index (CPI)
 - *Formula*:
 $ "CPI" = "EV" / "AC" $
-- *Valore accettabile*: $>=95%$
+- *Valore accettabile*: $>=90%$
 - *Valore ottimale*: $100%$
 - *Descrizione*:L'indice di Cost Performance misura la resa del budget attraverso il rapporto tra: il valore del lavoro completato e il costo realmente sostenuto.
 
@@ -840,7 +840,7 @@ $ "EV" = "BAC" dot ("AH") / ("THP") $
 - *Formula*:
 $ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
 - *Valore accettabile*: $>=0€$
-- *Valore ottimale*: $<="AEC"$
+- *Valore ottimale*: $<="EAC"$
 - *Descrizione*: L'indice Actual Cost rappresenta il costo effettivamente sostenuto alla data corrente.
 - *Legenda*:
   - *AHR*: Actual Hours by Role;
@@ -878,7 +878,7 @@ $ "CC" = "Codice testato" / "Codice totale" * 100 $
 ==== MPC12 - Test Success Rate (TSR)
 - *Formula*:
 $ "TSR" = "Test passati"/ "Test totali" * 100 $
-- *Valore accettabile*: $100%$
+- *Valore accettabile*: $85%$
 - *Valore ottimale*:  $100%$
 - *Descrizione*: L'indice Test Success Rate misura la percentuale dei test superati rispetto a quelli totali. 
 
@@ -1030,5 +1030,5 @@ $ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
 - *Formula*:
 $ "TFR" = "Test falliti"/"Test eseguiti" dot 100 $ 
 - *Valore accettabile*: $<= 15%$
-- *Valore ottimale*: $ <=5%$
+- *Valore ottimale*: $ <=0%$
 - *Descrizione*: L'indice di Error Rate indica la percentuale di errori durante l'esecuzione. Gli eventuali errori verranno riportati dai programmatori al fine di calcolare il valore della metrica.
