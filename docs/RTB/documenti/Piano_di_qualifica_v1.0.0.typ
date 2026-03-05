@@ -509,32 +509,32 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
 
 #let lista_Pv = (
   0.00,     //AGGIUDICAZIONE 
-  209.43,   //SPRINT 1
-  568.45,   //SPRINT 2
-  1116.96,  //SPRINT 3
-  1735.27,  //SPRINT 4
-  2313.70,  //SPRINT 5
-  3071.63,  //SPRINT 6
-  3989.13,  //SPRINT 7
-  5026.30,  //SPRINT 8
-  6113.34,  //SPRINT 9
-  7150.52,  //SPRINT 10
-  7689.05,  //SPRINT 11 
+  203.12,   //SPRINT 1
+  551.33,   //SPRINT 2
+  1083.31,  //SPRINT 3
+  1683.00,  //SPRINT 4
+  2244.01,  //SPRINT 5
+  2650.25,  //SPRINT 6
+  3075.84,  //SPRINT 7
+  3598.15,  //SPRINT 8
+  4159.15,  //SPRINT 9
+  5165.08,  //SPRINT 10
+  5687.39,  //SPRINT 11 
 )
 
 #let lista_Ev = (
   0.00,     //AGGIUDICAZIONE 
-  209.43,   //SPRINT 1
-  568.45,   //SPRINT 2
-  1116.96,  //SPRINT 3
-  1735.27,  //SPRINT 4
-  2134.18,  //SPRINT 5
-  2632.83,  //SPRINT 6
-  3610.16,  //SPRINT 7
-  4407.99,  //SPRINT 8
-  5235.73,  //SPRINT 9
-  6233.02,  //SPRINT 10
-  6871.28,  //SPRINT 11 
+  203.12,   //SPRINT 1
+  551.33,   //SPRINT 2
+  1083.31,  //SPRINT 3
+  1683.00,  //SPRINT 4
+  2069.90,  //SPRINT 5
+  2360.08,  //SPRINT 6
+  2708.28,  //SPRINT 7
+  3230.59,  //SPRINT 8
+  3694.87,  //SPRINT 9
+  4662.12,  //SPRINT 10
+  5281.15,  //SPRINT 11 
 )
 
 == MPC01 e MPC02 - Schedule Variance e Cost Variance
