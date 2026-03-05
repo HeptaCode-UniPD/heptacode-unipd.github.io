@@ -1703,13 +1703,10 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
 
   [_Attività previste_],
   [
-    - Previsto colloqui con il prof. Vardanega.
-    - Inizio attività di progettazione PAB.
+    - Previsto colloquio con il prof. Vardanega.
+    - Attività di studio progettazione PAB.
     - Stesura v3.0.0 del documento AdR (con correzioni del prof. Cardin).
-    - Sviluppo Backend e verifica del codice.
-    - Sviluppo Frontend e verifica del codice.
-    - Inizio sviluppo documentazione per milestone PB.
-    - Conclusione attività di progettazione ed analisi. 
+    - Attività di studio delle tecnologie necessarie allo sviluppo.
   ],
   [_Milestones attive_], [PAB, PB]
 )
@@ -1778,14 +1775,13 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
 
   [_Attività previste_],
   [
-    Ultimo sprint previsto.
-    - Conclusione attività di sviluppo e validazione Frontend e Backend.
-    - Conclusione stesura documentazione adeguata alla consegna del progetto.
-    - Validazione dei risultati prodotti durante gli Sprint.
-    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-    - *Consegna del progetto previsto in data 15 marzo 2026*.
+    - Attività di sviluppo e validazione Frontend e Backend.
+    - Attività di progettazione.
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
+    - Inizio sviluppo documentazione per milestone PB:
+      - Specifica Tecnica.
   ],
-  [_Milestones attive_], [PB]
+  [_Milestones attive_], [PAB, PB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 13],
@@ -1852,13 +1848,15 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
 
   [_Attività previste_],
   [
-    - Conclusione attività di sviluppo e validazione Frontend e Backend.
-    - Conclusione stesura documentazione adeguata alla consegna del progetto.
-    - Validazione dei risultati prodotti durante gli Sprint.
-    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
-    - *Consegna del progetto previsto in data 15 marzo 2026*.
+    - Attività di sviluppo e validazione Frontend e Backend.
+    - Attività di progettazione.
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
+    - Sviluppo documentazione per milestone PB:
+      - Specifica Tecnica (rilascio v1)
+      - Manuale utente
+    - Conclusione milestone PAB.
   ],
-  [_Milestones attive_], [PB]
+  [_Milestones attive_], [PB, PAB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 14],
@@ -1930,7 +1928,7 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
     - Conclusione attività di sviluppo e validazione Frontend e Backend.
     - Conclusione stesura documentazione adeguata alla consegna del progetto.
     - Validazione dei risultati prodotti durante gli Sprint.
-    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+    - Revisione finale del _Glossario_  ed eventuale aggiornamento.
     - *Consegna del progetto previsto in data 30 marzo 2026*.
   ],
   [_Milestones attive_], [PB]
