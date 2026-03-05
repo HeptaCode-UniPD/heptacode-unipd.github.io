@@ -685,7 +685,7 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
     })
   )
 ]
-Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha quasi sempre lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi nei quali si prevede di lavorare in maniera più efficiente. 
+Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha spesso lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli ultimi cinque sprint nei quali si prevede di lavorare in maniera più efficiente. 
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -778,7 +778,7 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
   )
 ]
 
- La Budget Variance ha un valore negativo fino allo sprint 8 del RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase. Il miglioramento a partire dallo sprint 5 è dovuto alla riduzione del volume orario lavorato rispetto alla pianificazione originaria. Dovrebbe arrivare a 0 quando si recupereranno le ore e si inizieranno a utilizzare di più ruoli meno costosi.
+ La Budget Variance ha un valore negativo durante la fase RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase. Il miglioramento a partire dallo sprint 5 è dovuto alla riduzione del volume orario lavorato rispetto alla pianificazione originaria. Dovrebbe arrivare a 0 quando si recupereranno le ore e si inizieranno a utilizzare di più ruoli meno costosi.
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -937,7 +937,7 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
     })
   )
 ]
-Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è più in linea con la pianificazione iniziale a partire dal quinto sprint. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare parzialmente il debito accumulato. Nell'ottavo e nono sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
+Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è più in linea con la pianificazione iniziale a partire dal quinto sprint. In particolare, negli sprint attorno all'ottavo il valore prodotto è diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo il recupero di questo ritardo negli ultimi sprint, nei quali si prevede di lavorare per un maggior numero di ore.
 
 
 
@@ -1011,7 +1011,7 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
     })
   )
 ]
-La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare, in quanto allo sprint 9 non è ancora stata usata più di metà di budget.
+La spesa è cresciuta in maniera abbastanza lineare in questi sprint, rimanendo in linea con quanto programmato poiché le spese maggiori erano state previste per gli sprint successivi alla sessione di esami universitari. L'andamento della linea dell'ETC indica budget sufficiente a intensificare le attività produttive negli ultimi sprint, in quanto si dispone ancora di più metà del budget.
 
 == MPC10 - Estimate at Completion
 #let listaEv-Ac-EAC = range(lista_Ev.len()).map(i => {
@@ -1087,8 +1087,8 @@ La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando 
     })
   )
 ]
-L'attuale scostamento tra EAC e BAC rappresenta lo scenario in cui l'utilizzo dei ruoli rimanesse invariato. Tuttavia, poiché il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, questa stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
-Con il passaggio alla fase successiva (Sprint 10-13), che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un diminuzione progressiva del valore dell'EAC. La curva dell'EAC dovrebbe quindi convergere verso il BAC entro la fine del progetto.
+L'attuale scostamento tra EAC e BAC è dovuto al fatto che il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, quindi la stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
+La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quarto sprint. Con il passaggio alla fase successiva, che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un'ulteriore diminuzione progressiva del valore dell'EAC in maniera che esso coincida con il BAC al termine del progetto.
 
 == MPC15 - Correttezza ortografica
 
