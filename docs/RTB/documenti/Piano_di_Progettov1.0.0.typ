@@ -1697,9 +1697,9 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [2 marzo 2026 - 15 marzo 2026],
+  [_Intervallo temporale_], [2 marzo 2026 - 8 marzo 2026],
 
-  [_Giorni di sprint_], [14],
+  [_Giorni di sprint_], [7],
 
   [_Attività previste_],
   [
@@ -1733,16 +1733,16 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [4], [], [12], [], [5], [195€],
-      [_Angela Canazza_], [], [], [], [], [20], [11], [292,5€],
-      [_Riccardo Baldin_], [], [], [], [12], [], [10], [225€],
-      [_Alberto Reginato_], [], [], [], [17], [], [10], [232,5€],
-      [_Nicola Simionato_], [], [], [], [], [15], [13], [225€],
-      [_Amerigo Vegliante_], [4], [], [], [15], [], [], [150€],
-      [_Laura Venturini_], [], [], [], [6], [20], [], [225€],
+      [_Angela Favaro_], [], [2], [], [1], [], [2], [95€],
+      [_Angela Canazza_], [], [], [], [], [], [2], [30€],
+      [_Riccardo Baldin_], [], [], [], [1], [], [], [25€],
+      [_Alberto Reginato_], [], [], [], [1], [], [], [25€],
+      [_Nicola Simionato_], [], [], [], [], [], [2], [30€],
+      [_Amerigo Vegliante_], [2], [], [], [1], [], [], [85€],
+      [_Laura Venturini_], [], [], [], [], [], [2], [30€],
     ) ]] <tab:PrevisioneSprint12>
 
-#underline[Spese della settimana]: 1.545€ \ #underline[Spesa totale]: *11.450€*
+#underline[Spese della settimana]: 320€ \ #underline[Spesa totale]: *6.245€*
 
 ==== Trascorso
 #table(
@@ -1772,9 +1772,9 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [16 marzo 2026 - 30 marzo 2026],
+  [_Intervallo temporale_], [9 marzo 2026 - 15 marzo 2026],
 
-  [_Giorni di sprint_], [15],
+  [_Giorni di sprint_], [7],
 
   [_Attività previste_],
   [
@@ -1807,16 +1807,164 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [], [], [], [20], [10], [300€],
-      [_Angela Canazza_], [6], [], [], [15], [], [], [180€],
-      [_Riccardo Baldin_], [], [], [], [], [20], [10], [240€],
-      [_Alberto Reginato_], [], [6], [], [10], [14], [], [120€],
-      [_Nicola Simionato_], [], [], [], [15], [], [13], [195€],
-      [_Amerigo Vegliante_], [], [], [], [], [27], [7], [240€],
-      [_Laura Venturini_], [], [], [], [15], [], [8], [120€],
+      [_Angela Favaro_], [], [], [], [15], [], [], [375€],
+      [_Angela Canazza_], [], [], [], [], [5], [6], [165€],
+      [_Riccardo Baldin_], [], [], [], [14], [], [10], [500€],
+      [_Alberto Reginato_], [], [], [], [16], [], [7], [505€],
+      [_Nicola Simionato_], [], [2], [], [], [5], [8], [235€],
+      [_Amerigo Vegliante_], [], [], [], [14], [], [], [350€],
+      [_Laura Venturini_], [2], [], [], [8], [5], [], [335€],
     ) ]] <tab:PrevisioneSprint13>
 
-#underline[Spese della settimana]: 1.410€ \ #underline[Spesa totale]: *12.845€*
+#underline[Spese della settimana]: 2.465€ \ #underline[Spesa totale]: *8.710€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Attività Svolte_],
+  [
+
+  ],
+
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+
+  [_Mitigazione_],
+  [
+    1.
+  ]
+)
+#pagebreak()
+
+=== Sprint 14
+==== Preventivo a finire
+#tabella-viola(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], [16 marzo 2026 - 22 marzo 2026],
+
+  [_Giorni di sprint_], [7],
+
+  [_Attività previste_],
+  [
+    - Conclusione attività di sviluppo e validazione Frontend e Backend.
+    - Conclusione stesura documentazione adeguata alla consegna del progetto.
+    - Validazione dei risultati prodotti durante gli Sprint.
+    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+    - *Consegna del progetto previsto in data 15 marzo 2026*.
+  ],
+  [_Milestones attive_], [PB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 14],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [], [], [14], [5], [285€],
+      [_Angela Canazza_], [2], [], [], [10], [], [3], [355€],
+      [_Riccardo Baldin_], [], [], [], [], [15], [5], [300€],
+      [_Alberto Reginato_], [], [2], [], [10], [7], [], [395€],
+      [_Nicola Simionato_], [], [], [], [9], [], [13], [420€],
+      [_Amerigo Vegliante_], [], [], [], [], [15], [], [225€],
+      [_Laura Venturini_], [], [], [], [7], [], [4], [235€],
+    ) ]] <tab:PrevisioneSprint14>
+
+#underline[Spese della settimana]: 2.215€ \ #underline[Spesa totale]: *10.925€*
+
+==== Trascorso
+#table(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Attività Svolte_],
+  [
+
+  ],
+
+  [_Rischi incontrati_],
+  [
+    1.
+  ],
+
+  [_Mitigazione_],
+  [
+    1.
+  ]
+)
+
+#pagebreak()
+
+=== Sprint 15
+==== Preventivo a finire
+#tabella-viola(
+  columns: (auto, auto),
+  align: horizon,
+  stroke: 0.7pt,
+  [_Intervallo temporale_], [23 marzo 2026 - 30 marzo 2026],
+
+  [_Giorni di sprint_], [7],
+
+  [_Attività previste_],
+  [
+    Ultimo sprint previsto.
+    - Conclusione attività di sviluppo e validazione Frontend e Backend.
+    - Conclusione stesura documentazione adeguata alla consegna del progetto.
+    - Validazione dei risultati prodotti durante gli Sprint.
+    - Revisione finale del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
+    - *Consegna del progetto previsto in data 30 marzo 2026*.
+  ],
+  [_Milestones attive_], [PB]
+)
+#figure(
+  caption: [Stima delle ore individuali per ruolo allo Sprint 15],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [4], [], [], [], [5], [5], [270€],
+      [_Angela Canazza_], [], [], [], [5], [15], [3], [395€],
+      [_Riccardo Baldin_], [], [], [], [], [5], [5], [150€],
+      [_Alberto Reginato_], [], [4], [], [], [7], [], [185€],
+      [_Nicola Simionato_], [], [], [], [5], [10], [], [275€],
+      [_Amerigo Vegliante_], [], [], [], [], [12], [7], [285€],
+      [_Laura Venturini_], [], [], [], [], [15], [9], [360€],
+    ) ]] <tab:PrevisioneSprint15>
+
+#underline[Spese della settimana]: 1.920€ \ #underline[Spesa totale]: *12.845€*
 
 ==== Trascorso
 #table(
