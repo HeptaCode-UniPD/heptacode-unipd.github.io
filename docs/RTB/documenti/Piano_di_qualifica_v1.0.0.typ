@@ -41,7 +41,7 @@ Il capitolato per il progetto CodeGuardian ha come oggetto lo sviluppo di una pi
 Nello specifico, è richiesto l'utilizzo di LLM#super[G] (Large Language Models) per analizzare tre componenti fondamentali: la documentazione, il codice sorgente (tramite analisi statica e dinamica) e la conformità agli standard di sicurezza OWASP#super[G].
 == Riferimenti
 === Riferimenti normativi
-- #underline[#link("norme_di_progetto.pdf","Norme di progetto")]
+- #underline[#link("../documenti/Norme_di_progetto_v1.0.0.pdf","Norme di progetto")]
 - Capitolato d'appalto: #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf","CodeGuardian")] 
 === Riferimenti informativi
 - #underline[#link("https://cdn.standards.iteh.ai/samples/35867/36860aa4caba4c84b26051db576456d3/ISO-IEC-90003-2004.pdf","Standard ISO/IEC 90003:2004")]
@@ -67,7 +67,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPC06",
@@ -104,7 +104,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPC11",
@@ -113,8 +113,8 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     "≥90%",
     "MPC12",
     "Test Success Rate",
-    "100%",
-    "100%",
+    "≥85%",
+    "≥100%",
     "MPC13",
     "Statement Coverage",
     "≥90%",
@@ -135,7 +135,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPC15",
@@ -154,7 +154,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPC01",
@@ -167,7 +167,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     "≥0€",
     "MPC03",
     "Budget Variance",
-    "-10%≥BV≤10%",
+    "-10%≤BV≤10%",
     "0%",
     "MPC04",
     "Requirements Stability Index",
@@ -200,7 +200,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPD01", 
@@ -227,7 +227,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPD04", 
@@ -236,7 +236,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     "≤5 secondi",
     "MPD05", 
     "Tempo medio di risposta (Sistema)",
-    "≤15 secondi",
+    "≤5 secondi",
     "≤2 secondi",
     "MPD06", 
     "Tempo medio di risposta (Elaborazione AI)",
@@ -254,12 +254,12 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPD07", 
     "Complessità Ciclomatica",
-    "≤5 ",
+    "≤15 ",
     "≤10",
     "MPD08", 
     "Parametri per metodo ",
@@ -275,8 +275,8 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     "≤80",
     "MPD11", 
     "Densità dei commenti",
-    "≤15%",
-    "≤5%",
+    "≥10%",
+    "≥15%",
     "MPD12",
     "Coefficient of Coupling",
     "≤0.4",
@@ -293,7 +293,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPD13", 
@@ -303,7 +303,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     "MPD14", 
     "Indice di Gulpease",
     "≥50",
-    "≥80"
+    "≥70"
   ),
   caption: [Metriche usabilità del prodotto],
   kind: table
@@ -316,20 +316,20 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     inset: 9pt,
     align: horizon,
     table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*Valore preferibile*]
+      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
     "MPD15", 
-    "Error Rate",
-    "30%",
-    "15%"
+    "Test Failure Rate",
+    "≤15%",
+    "≤0%"
   ),
   caption: [Metriche affidabilità del prodotto],
   kind: table
 )
 
 = Metodi di testing
-Nel documento riguardante le #underline[#link("../documenti_esterni/norme_di_progetto.pdf","Norme di Progetto")], i test utilizzati per la verifica del codice saranno:
+Nel documento riguardante le #underline[#link("../documenti/Norme_di_progetto_v1.0.0.pdf","Norme di Progetto")], i test utilizzati per la verifica del codice saranno:
 
 - *Test di Unità*: Viene verificato che le singole attività atomiche e indipendenti, che compongono il sistema, funzionino correttamente;
 
@@ -685,7 +685,7 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
     })
   )
 ]
-Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha spesso lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli ultimi cinque sprint nei quali si prevede di lavorare in maniera più efficiente. 
+Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha spesso lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli ultimi quattro sprint nei quali si prevede di lavorare in maniera più efficiente. 
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -760,6 +760,20 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
             style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
             line: "spline",
           )
+
+          plot.add(
+            ((0, 0.1), (listaPv-Ac.at(-1).at(0), 0.1)),
+            label: [valore accettabile (+10%)],
+            style: (stroke: (paint: yellow, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          plot.add(
+            ((0, -0.1), (listaPv-Ac.at(-1).at(0), -0.1)),
+            label: [valore accettabile (-10%)],
+            style: (stroke: (paint: blue, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )                    
 
           plot.add(
             listaPv-Ac.map(it => {
@@ -943,9 +957,9 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
 
 
 
-== MPC08 e MPC09 - Actual Cost ed Estimate to Complete
+== MPC08 e MPC010 - Actual Cost ed Estimate to Complete
 #let listaACETC = range(lista_Ac.len()).map(i => {
-  (i, lista_Ac.at(i), 12845 -lista_Pv.at(i))
+  (i, lista_Ac.at(i), 12845 -lista_Ev.at(i))
 })
 
 #figure(
@@ -1011,7 +1025,7 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
     })
   )
 ]
-La spesa è cresciuta in maniera abbastanza lineare in questi sprint, rimanendo in linea con quanto programmato poiché le spese maggiori erano state previste per gli sprint successivi alla sessione di esami universitari. L'andamento della linea dell'ETC indica budget sufficiente a intensificare le attività produttive negli ultimi sprint, in quanto si dispone ancora di più metà del budget.
+La spesa è cresciuta in maniera abbastanza lineare in questi sprint, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste per gli sprint successivi alla sessione di esami universitari. L'andamento della linea dell'ETC indica budget sufficiente a intensificare le attività produttive negli ultimi sprint, in quanto si dispone ancora di più metà del budget.
 
 == MPC10 - Estimate at Completion
 #let listaEv-Ac-EAC = range(lista_Ev.len()).map(i => {
@@ -1114,7 +1128,7 @@ La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quar
         x-label: [Numero Sprint],
         {
           plot.add(
-            ((0, 0), (listaEv-Ac-EAC.at(-1).at(0), 0)),
+            ((0, 0), (lista_Ac.len(), 0)),
             label: [Target (0)],
             style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
             line: "spline",
@@ -1135,6 +1149,75 @@ La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quar
 
 Grazie all'implementazione di uno spellchecker prima della pianificazione degli sprint, il numero di errori ortografici all'interno dei documenti ufficiali è sempre stato 0.
 
+== MPD14 - Indice di Gulpease
+
+#import "../../../scripts/lista_gulpease.typ" : listaGulpease
+
+#figure(
+  caption: [Tabella indice di Gulpease dei documenti],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Documento*], [*Indice*]),
+      ..listaGulpease.map(riga => {
+        let (documento, indice) = riga
+        (documento, indice)
+      }).flatten()
+    )
+  )
+]
+
+#let dati = listaGulpease.enumerate().map(it => (it.at(0), float(it.at(1).at(1))))
+
+#let etichette = (
+  (0, "AdR"),
+  (1, "NdP"),
+  (2, "PdP"),
+  (3, "PdQ"),
+)
+
+#figure(
+  caption: [Indice di Gulpease dei documenti],
+  cetz.canvas({
+    import cetz-plot: *
+    plot.plot(
+      legend: "inner-north-west",
+      size: (12, 6),
+      x-label: [Documenti],
+      y-label: [Indice],
+      x-tick-step: none,
+      x-ticks: etichette,
+      y-ticks: (0, 20, 40, 60, 80, 100),
+      x-min: -0.5,
+      x-max: 3.5,
+      y-min: 0,
+      y-max: 100,
+      {
+        plot.add-bar(
+          dati,
+          bar-width: 0.5,
+        )
+        plot.add(
+          ((-0.5, 50), (3.5, 50)),
+          label: [Valore accettabile (50)],
+          style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+        )
+
+        plot.add(
+          ((-0.5, 70), (3.5, 70)),
+          label: [valore ottimale (70)],
+          style: (stroke: (paint: red, dash: "dashed", thickness: 1.5pt)),
+        )
+      }
+    )
+  })
+)
+
+Ogni documento presenza un indice di leggibilità superiore al limite inferiore di 50.
 
 = Iniziative di miglioramento
 La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durante lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.

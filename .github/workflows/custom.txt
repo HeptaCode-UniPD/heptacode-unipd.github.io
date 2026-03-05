@@ -84,6 +84,7 @@ kpi
 ndp
 ro
 adr
+nell'adr
 dockerfile
 mros
 mco
@@ -221,7 +222,15 @@ poc
 lts
 macos
 nestjs
-
+agg
+ceil
+listaacetc
+listaev
+listapv
+listaspese
+maxlistaspese
+listagulpease
+str
 'analisi
 'processi
 'risorse
@@ -238,3 +247,6 @@ maxlistaspese
 listaev
 listapv
 str
+oretotindividualirtb
+tortartb
+oretotindividualipb
