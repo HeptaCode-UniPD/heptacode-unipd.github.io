@@ -791,19 +791,8 @@ $ "BV" = ("PV" - "AC")/"PV" dot 100 $
 - *Valore ottimale*: $0%$
 - *Descrizione*: L'indice misura lo scostamento percentuale tra il costo pianificato (PV) e il costo effettivo sostenuto (AC) alla data corrente.
 
-==== MPC04 - Requirements Stability Index (RSI)
-- *Formula*:
-$ "RSI" = ((1- ("NRC"+"NRD"+"NRA")/"TNIR") dot 100) $
-- *Valore accettabile*: $>=70%$
-- *Valore ottimale*: $100%$
-- *Descrizione*:L'indice Requirements Stability Index rappresenta le variazioni che i requisiti hanno subito durante lo svolgimento del progetto.
-- *Legenda*:
-  - *NRC*: Number of Requirements Changed
-  - *NRD*: Number of Requirements Deleted
-  - *NRA*: Number of Requirements Added
-  - *TNIR*: Total Number of Initial Requirements
 
-==== MPC05 - Cost Performance Index (CPI)
+==== MPC04 - Cost Performance Index (CPI)
 - *Formula*:
 $ "CPI" = "EV" / "AC" $
 - *Valore accettabile*: $>=90%$
@@ -812,7 +801,7 @@ $ "CPI" = "EV" / "AC" $
 
 === Fornitura
 
-==== MPC06 - Planned Value (PV)
+==== MPC05 - Planned Value (PV)
 - *Formula* 
 $ "PV" = "BAC" dot ("PH") / ("THP") $
 - *Valore accettabile*: $>=0€$
@@ -824,7 +813,7 @@ $ "PV" = "BAC" dot ("PH") / ("THP") $
  - *PH*: Planned Hours;
  - *THP*: Total Hours Planned.
 
-====  MPC07 - Earned Value (EV)
+====  MPC06 - Earned Value (EV)
 - *Formula*:
 $ "EV" = "BAC" dot ("AH") / ("THP") $
 - *Valore accettabile*: $>=0€$
@@ -836,7 +825,7 @@ $ "EV" = "BAC" dot ("AH") / ("THP") $
  - *AH*: Actual Hours;
  - *THP*: Total Hours Planned.
 
-==== MPC08 - Actual Cost (AC)
+==== MPC07 - Actual Cost (AC)
 - *Formula*:
 $ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
 - *Valore accettabile*: $>=0€$
@@ -846,7 +835,7 @@ $ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
   - *AHR*: Actual Hours by Role;
   - *HCR*: Hourly Cost per Role.
 
-==== MPC09 - Estimate at Completion (EAC):
+==== MPC08 - Estimate at Completion (EAC):
 - *Formula*:
 $ "EAC" = "BAC"/"CPI" $
 - *Valore accettabile*: $>="BAC"-5%$
@@ -856,7 +845,7 @@ $ "EAC" = "BAC"/"CPI" $
  - *BAC*: Budget at Completion (Budget totale preventivato);
  - *CPI*: Cost Performance Index.
 
-==== MPC10 - Estimate to Complete (ETC)
+==== MPC09 - Estimate to Complete (ETC)
 - *Formula*:
 $ "ETC" = "BAC" - "EV" $
 - *Valore accettabile*: $>=0€$
@@ -868,28 +857,28 @@ $ "ETC" = "BAC" - "EV" $
 
 === Verifica e validazione
 
-==== MPC11 - Code Coverage (CC)
+==== MPC10 - Code Coverage (CC)
 - *Formula*:
 $ "CC" = "Codice testato" / "Codice totale" * 100 $
 - *Valore accettabile*: $>=80%$
 - *Valore ottimale*: $>=90%$
 - *Descrizione*: L'indice di Code Coverage misura la percentuale di codice sorgente che viene eseguita durante l'esecuzione dei test automatici. Indica quanto il codice è stato verificato dal processo di testing.
 
-==== MPC12 - Test Success Rate (TSR)
+==== MPC11 - Test Success Rate (TSR)
 - *Formula*:
 $ "TSR" = "Test passati"/ "Test totali" * 100 $
 - *Valore accettabile*: $85%$
 - *Valore ottimale*:  $100%$
 - *Descrizione*: L'indice Test Success Rate misura la percentuale dei test superati rispetto a quelli totali. 
 
-==== MPC13 - Statement Coverage (SC)
+==== MPC12 - Statement Coverage (SC)
 - *Formula*:
 $ "SC" = ("Linee eseguite") / "Linee totali" * 100 $
 - *Valore accettabile*: $>=90%$
 - *Valore ottimale*: $100%$
 - *Descrizione*: L'indice Statement Coverage misura la percentuale di istruzioni elementari eseguire dai test.
 
-==== MPC14 - Branch Coverage (BC)
+==== MPC13 - Branch Coverage (BC)
 - *Formula*:
 $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 - *Valore accettabile*: $>=70%$
@@ -899,7 +888,7 @@ $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 
 === Documentazione
 
-==== MPC15 - Correttezza ortografica
+==== MPC14 - Correttezza ortografica
 - *Formula*:
 $ "Correttezza ortografica" = "numero di errori ortografici" $
 - *Valore accettabile*: $0$
