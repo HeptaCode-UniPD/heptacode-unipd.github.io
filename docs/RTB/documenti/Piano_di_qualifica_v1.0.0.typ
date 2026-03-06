@@ -70,23 +70,23 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPC06",
+    "MPC05",
     "Planned Value",
     "≥0€",
     "≤BAC",
-    "MPC07",
+    "MPC06",
     "Earned Value",
     "≥0€",
     "≤EAC",
-    "MPC08",
+    "MPC07",
     "Actual Cost",
     "≥0€",
     "≤EAC",
-    "MPC09",
+    "MPC08",
     "Estimate at Completion",
     "≥BAC -5%",
     "≤BAC +5%",
-    "MPC10",
+    "MPC09",
     "Estimate to Complete",
     "≥0€",
     "≤EAC"
@@ -107,19 +107,19 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPC11",
+    "MPC10",
     "Code Coverage",
     "≥80%",
     "≥90%",
-    "MPC12",
+    "MPC11",
     "Test Success Rate",
     "≥85%",
     "≥100%",
-    "MPC13",
+    "MPC12",
     "Statement Coverage",
     "≥90%",
     "100%",
-    "MPC14",
+    "MPC13",
     "Branch Coverage",
     "≥70%",
     "≥80%"
@@ -138,7 +138,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPC15",
+    "MPC14",
     "Correttezza Ortografica",
     "0",
     "0"
@@ -170,10 +170,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     "-10%≤BV≤10%",
     "0%",
     "MPC04",
-    "Requirements Stability Index",
-    "≥70%",
-    "100%",
-    "MPC05",
+
     "Cost Performance Index",
     "≥90%",
     "100%"
@@ -796,7 +793,7 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
-== MPC05 - CPI
+== MPC04 - CPI
 #let listaEv-Ac-CPI = range(lista_Ev.len()).map(i => {
   (i, lista_Ev.at(i), lista_Ac.at(i))
 })
@@ -883,7 +880,7 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
 
 
 
-== MPC06 e MPC07 - Planned Value ed Earned Value
+== MPC05 e MPC06 - Planned Value ed Earned Value
 #let listaSpese = range(lista_Ev.len()).map(i => {
   (i, lista_Pv.at(i), lista_Ev.at(i))
 })
@@ -957,7 +954,7 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
 
 
 
-== MPC08 e MPC010 - Actual Cost ed Estimate to Complete
+== MPC07 e MPC09 - Actual Cost ed Estimate to Complete
 #let listaACETC = range(lista_Ac.len()).map(i => {
   (i, lista_Ac.at(i), 12845 -lista_Ev.at(i))
 })
@@ -1027,7 +1024,7 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
 ]
 La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare, in quanto allo sprint 9 non è ancora stata usata più di metà di budget.
 
-== MPC09 - Estimate at Completion
+== MPC08 - Estimate at Completion
 #let listaEv-Ac-EAC = range(lista_Ev.len()).map(i => {
   (i, lista_Ev.at(i), lista_Ac.at(i))
 })
@@ -1104,7 +1101,7 @@ La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando 
 L'attuale scostamento tra EAC e BAC rappresenta lo scenario in cui l'utilizzo dei ruoli rimanesse invariato. Tuttavia, poiché il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, questa stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
 Con il passaggio alla fase successiva (Sprint 10-13), che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un diminuzione progressiva del valore dell'EAC. La curva dell'EAC dovrebbe quindi convergere verso il BAC entro la fine del progetto.
 
-== MPC15 - Correttezza ortografica
+== MPC14 - Correttezza ortografica
 
 #figure(
   caption: [Grafico per periodo di Correttezza ortografica],
