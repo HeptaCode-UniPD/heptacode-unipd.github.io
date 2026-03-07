@@ -4,7 +4,9 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("1.0.0", "2026/02/16", "Angela Canazza", "Angela Favaro",  "aggiunto capitolo 6.2 e conclusioni"),
+  ("1.0.0", "2026/03/05", "Laura Venturini", "Riccardo Baldin",  "Fix stesura grafici"),
+
+  ("0.6.0", "2026/02/16", "Angela Canazza", "Angela Favaro",  "aggiunto capitolo 6.2 e conclusioni"),
 
   ("0.5.0", "2026/02/14", "Laura Venturini",  "Angela Canazza", "Stesura del capitolo 5"),
 
