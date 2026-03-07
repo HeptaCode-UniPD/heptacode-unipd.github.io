@@ -1,0 +1,58 @@
+header h1{
+    font-size: 8em;
+}
+
+#github a{
+    font-size: 1.1em;
+}
+
+summary{
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 0.9em;
+}
+
+details section{
+    font-size: 0.9em;
+    line-height: 1.8em;
+}
+
+details section{
+    column-count: 1;
+}
+
+footer{
+    font-size: 0.8em;
+    line-height: 0.9em;
+}
+
+#collab{
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1em;
+}
+
+.cards { 
+    margin: 0 -10px; 
+    padding: 0; 
+    list-style: none; 
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+
+.cards li { 
+    flex: 1 1 calc(50% - 17em);
+    font-size: 0.9em;
+    border:none;
+}
+
+
+.pic{
+    height: 5em;
+    width: 5em;
+}
+
+#collab{
+    font-size: 1.3em;
+}

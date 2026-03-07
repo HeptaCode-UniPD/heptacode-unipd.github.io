@@ -1,0 +1,266 @@
+/*  
+===============================
+GLOBALI    
+===============================
+*/
+
+*{
+    padding:0em;
+    margin:0em
+}
+
+:root{
+    --bgcolor:#f5f5f7;
+    --titlecolor:#400093;
+    --txtcolor:#481f7e;
+    --colorlink:#fff;
+    --hoverlink:#9856D8;
+    --visitedlink:#fff;
+    --linkbgcolor:#7c06ee;
+    --bglogo: #fff;
+    --bordercolor:#400093;
+    --articlecolor:#7c51b3;
+    --bgarticle:#ede9f0;
+    --bgsection:#e4dde8;
+
+}
+
+/*  
+===============================
+BODY    
+===============================
+*/
+
+html,body{ 
+    font-size:100%;
+    font-family: "Lexend", Roboto, sans-serif;
+    line-height: 1.4em;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--bgcolor);
+    color: var(--txtcolor);
+    max-width: 1200px;
+    margin: auto;
+}
+
+body h2{
+    font-size:1.7em;
+    color: var(--txtitle);
+    text-align: center;
+    line-height: 1.2em;
+}
+
+#descrizione{
+    margin: 1.2em 2.5em;
+}
+
+
+/*  
+===============================
+HEADER    
+===============================
+*/
+
+header h1{
+    background-image: url("img/logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999em;
+    font-size: 10em;
+    line-height: 1.5em;
+    margin: 0.2em;
+}
+
+header{
+    background-color: var(--bglogo);
+    border-radius: 2em;
+}
+
+
+/*  
+===============================
+LINK    
+===============================
+*/
+
+#github{
+    margin:2.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#github a{
+    text-decoration: none;
+    background-color: var(--linkbgcolor);
+    transition-duration: 0.4s;
+}
+
+#github a:link{
+    color:var(--colorlink);
+    text-decoration: none;
+    background-color: var(--linkbgcolor);
+    border-radius: 2em;
+    padding: 1em 2.2em;
+}
+
+#github a:visited{
+    color:var(--visitedlink);
+}
+
+#github a:hover{
+    background-color:var(--hoverlink);
+}
+
+li a{
+    color:var(--titlecolor);
+}
+
+details li a:visited{
+    color:var(--hoverlink);
+}
+
+
+/*  
+===============================
+MAIN    
+===============================
+*/
+
+summary {
+    cursor: pointer;
+    color: var(--articlecolor);
+    font-size: 1.5em;
+    margin: 0em 1.5em;
+    margin-bottom: 0.8em;
+    padding: 0.4em 0em;
+    border-bottom: solid var(--bordercolor) 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+summary::before{
+    content: "▶";
+    font-size: 12px;
+    color: #5a2d90;
+    transition-duration: 0.4s;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+    max-height: 400px;
+}
+
+details{
+    background-color: var(--bgsection);
+    border-radius: 2em;
+    padding: 0.5em;
+    margin-bottom: 0.8em;
+}
+
+details section{
+    column-count: 2;
+}
+
+#lettera{
+    background-color: var(--bgsection);
+    border-radius: 2em;
+    padding: 0.5em;
+}
+
+details article:first-of-type{
+    margin-top: 0;
+}
+
+details article{
+    background-color: var(--bgarticle);
+    border-radius: 1.5em;
+    margin: 1em;
+    padding: 0.5em;
+    break-inside: avoid;
+}
+
+article ul{
+    margin:0.5em 3em;
+}
+
+article label{
+    margin:0em 1.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--articlecolor);
+}
+
+
+/*  
+===============================
+GRIGLIA    
+===============================
+*/
+
+#collab{
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1em;
+}
+
+.cards { 
+    margin: 0 -10px; 
+    padding: 0; 
+    list-style: none; 
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+
+.cards li { 
+    border: 2px solid var(--bordercolor); 
+    margin: 0 10px 20px 10px; 
+    padding: 10px; 
+    border-radius: 5px; 
+    flex: 1 1 100px; 
+    align-items: center;
+    text-align: center;
+    font-size: 0.9em;
+    transition-duration: 0.6s;
+    cursor: pointer;
+}
+
+.cards li a{
+    text-decoration: none;
+}
+
+.cards li:hover{
+    background-color: var(--bgsection);
+}
+
+.pic{
+    height: 6em;
+    width: 6em;
+    border-radius: 50%;
+}
+
+
+
+
+/*  
+===============================
+FOOTER    
+===============================
+*/
+
+footer{
+    text-align: center;
+    padding: 0.5em;
+}
+
+footer p {
+    margin-bottom: 1em;
+}
+
+footer a:link{
+    color:var(--linkbgcolor);
+}
