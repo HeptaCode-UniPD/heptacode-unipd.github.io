@@ -30,7 +30,7 @@
   "2.1.0",
   "2026/03/07",
   "Angela Favaro",
-  "",
+  "Riccardo Baldin",
   "Aggiunta terminologie per Specifica Tecnica",
 
   "2.0.0",
