@@ -20,6 +20,7 @@
 
 = Introduzione
 == Scopo del documento
+
 == Glossario
 == Riferimenti
 === Riferimenti normativi
@@ -27,7 +28,7 @@
 
 = Tecnologie 
 == Linguaggi di programmazione
-== Framework per la codifica
+== Framework 
 == Librerie
 == Tecnologie per ..
 
