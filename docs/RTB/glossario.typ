@@ -27,7 +27,7 @@
 }
 
 #let storia_modifiche = (
-  "2.0.0",
+  "2.1.0",
   "2026/03/07",
   "Angela Favaro",
   "",
@@ -99,7 +99,7 @@
         fill: white,
         stroke: none,
       )],
-      [Glossario v2.0.0],
+      [Glossario v2.1.0],
     )
     #line(length: 100%, stroke: black)
   ],
