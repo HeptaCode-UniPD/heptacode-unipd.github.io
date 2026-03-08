@@ -4,6 +4,7 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
+  ("0.2.0", "2026/03/08", "Angela Favaro", "",  "Aggiunto capitolo 1")
   ("0.1.0", "2026/03/07", "Angela Favaro", "",  "Creazione documento, impostazione macro-aree")
 )
 
@@ -38,8 +39,19 @@ Si faccia pertanto riferimento al #link("https://heptacode-unipd.github.io/docs/
 L'uso del glossario è raccomandato per garantire la piena coerenza semantica durante tutte le fasi del ciclo di vita del progetto.
 
 == Riferimenti
-=== Riferimenti normativi
-=== Riferimenti informativi
+Questa sezione elenca i documenti utilizzati come base per la stesura della presente analisi.
+
+=== Riferimenti Normativi
+- _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2p.pdf")[Capitolato])
+- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/PB/documenti/Norme_di_progetto_v2.0.0.pdf")[Norme di progetto v2.0.0]).
+
+=== Riferimenti Informativi
+- Regolamento del progetto didattico: #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento di progetto]
+- Lezioni su progettazioni e pattern architetturali:
+  - #link("https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf")[Progettazione e programmazione: Diagrammi delle classi (UML)]
+  - Da aggiungere nel caso usiamo altre lezioni
+- Documento interno: #link("https://heptacode-unipd.github.io/docs/PB/glossario.pdf")[Glossario v2.0.0]
+Questa introduzione delinea il contesto e gli scopi del progetto.
 
 = Tecnologie 
 == Linguaggi di programmazione
