@@ -4,7 +4,7 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("0.2.0", "2026/03/08", "Angela Favaro", "",  "Aggiunto capitolo 1")
+  ("0.2.0", "2026/03/08", "Angela Favaro", "",  "Aggiunto capitolo 1"),
   ("0.1.0", "2026/03/07", "Angela Favaro", "",  "Creazione documento, impostazione macro-aree")
 )
 
