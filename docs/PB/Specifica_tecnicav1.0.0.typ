@@ -20,8 +20,23 @@
 
 = Introduzione
 == Scopo del documento
+Il documento di Specifica Tecnica descrive in modo preciso e dettagliato come il sistema software deve essere progettato e realizzato per soddisfare i requisiti all'interno del documento di #link("https://heptacode-unipd.github.io/docs/PB/Analisi_requisitiv3.0.0.pdf")[_Analisi dei Requisiti v3.0.0_]. \
+Le funzioni del seguente documento sono:
+- Guida durante l'implementazione, riducendo ambiguità e decisioni improvvisate.
+- Allineamento del team su scelte architetturali e tecnologiche.
+- Supporto alla manutenzione futura.
+- Agevolazione dell'attività di testing, definendo comportamenti attesi e criteri di accettazione.
 
 == Glossario
+La stesura del presente documento fa uso di una terminologia specifica, legata sia al dominio applicativo del progetto "_Code Guardian_" che agli standard dell'Ingegneria del Software. Per facilitare la lettura e assicurare che ogni concetto sia compreso in modo uniforme da tutti i destinatari (team di sviluppo, committente e proponente), è stato redatto un documento di supporto dedicato.
+
+Si faccia pertanto riferimento al #link("https://heptacode-unipd.github.io/docs/PB/glossario.pdf")[_Glossario v3.0.0_] per l'esplicitazione di:
+- *Acronimi e sigle* utilizzati per brevità nel testo;
+- *Termini tecnici* che potrebbero prestarsi a molteplici interpretazioni;
+- *Definizioni di dominio* specifiche per il contesto di audit e qualità del software.
+
+L'uso del glossario è raccomandato per garantire la piena coerenza semantica durante tutte le fasi del ciclo di vita del progetto.
+
 == Riferimenti
 === Riferimenti normativi
 === Riferimenti informativi
