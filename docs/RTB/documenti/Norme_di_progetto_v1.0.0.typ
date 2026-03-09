@@ -1,125 +1,26 @@
-#show link: set text(fill: color.linear-rgb(121, 1, 238))
-#show link: underline
-
-#v(1fr)
-#align(center, [
-  #set text(lang: "it")
-  #image("../../asset/logo.svg")
-
-  #v(1.5cm)
-
-  #text(size: 25pt, weight: "bold")[Norme di Progetto]
-
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Versione 1.0.0])
-
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
-
-  #align(center,
-  [#text(12pt)[Norme e linee guida operative del team _HeptaCode_ nello sviluppo del progetto _Code Guardian_.]]
-  )
-])
-#v(1fr)
-
-#counter(page).update(1)
-
-#pagebreak()
-
-#let tabella-viola(..args) = {
-  show table.cell.where(y: 0): set text(white, weight: "bold")
-  table(
-    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
-    ..args
-  )
-}
+#import "../../templates/template-documenti.typ": template_documenti, tabella-viola
+#import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  "1.0.0",
-  "2026/02/10",
-  "Riccardo Baldin",
-  "Angela Favaro",
-  "Completamento capitoli vuoti",
-
-  "0.5.0",
-  "2026/01/06",
-  "Angela Canazza",
-  "Nicola Simionato",
-  "Stesura Metriche per la Qualità",
-
-  "0.4.1",
-  "2026/01/04",
-  "Laura Venturini",
-  "Nicola Simionato",
-  "Stesura paragrafo Progettazione",
-
-  "0.4.0",
-  "2026/01/04",
-  "Angela Favaro",
-  "Nicola Simionato",
-  "Stesura Standard per la Qualità",
-
-  "0.3.0",
-  "2026/01/03",
-  "Angela Favaro",
-  "Nicola Simionato",
-  "Stesura Processi di Supporto",
-
-  "0.2.0",
-  "2025/12/28",
-  "Riccardo Baldin",
-  "Angela Favaro",
-  "Stesura Processi Primari e Processi di Supporto",
-
-  "0.1.0",
-  "2025/12/10",
-  "Amerigo Vegliante",
-  "Riccardo Baldin",
-  "Impostazione struttura del Documento"
+  ("1.0.0", "2026/02/10", "Riccardo Baldin", "Angela Favaro", "Completamento capitoli vuoti"),
+  ("0.5.0", "2026/01/06", "Angela Canazza", "Nicola Simionato", "Stesura Metriche per la Qualità"),
+  ("0.4.1", "2026/01/04", "Laura Venturini", "Nicola Simionato", "Stesura paragrafo Progettazione"),
+  ("0.4.0", "2026/01/04", "Angela Favaro", "Nicola Simionato", "Stesura Standard per la Qualità"),
+  ("0.3.0", "2026/01/03", "Angela Favaro", "Nicola Simionato", "Stesura Processi di Supporto"),
+  ("0.2.0", "2025/12/28", "Riccardo Baldin", "Angela Favaro", "Stesura Processi Primari e Processi di Supporto"),
+  ("0.1.0", "2025/12/10", "Amerigo Vegliante", "Riccardo Baldin", "Impostazione struttura del Documento")
 )
 
-#text(size: 17pt, weight: "bold")[Registro delle modifiche]
-
-#tabella-viola(
-  columns: (auto, auto, auto, auto, 1fr),
-  inset: 10pt,
-  align: (center, center, center, center, left),
-  
-  table.header(
-  [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*],
-  ),
-
-  ..storia_modifiche.flatten()
+#show: doc => template_documenti(
+  titolo: "Norme di progetto",
+  descrizione: "Norme e linee guida operative del team _HeptaCode_ nello sviluppo del progetto _Code Guardian_.",
+  modifiche: storia_modifiche,
+  lista_tabelle: false,
+  lista_figure: false,
+  doc
 )
 
-
-
-#pagebreak()
-
-#outline(title: "Indice dei contenuti")
-
-#pagebreak()
-#counter(page).update(1)
-#set heading(numbering: "1.")
-#set page(numbering: "1",
-  header: [
-    #set table(
-      stroke: none,
-    )
-    #table(
-      columns: 3,
-      [Hepta Code],
-      [#rect(
-        width: 100%,
-        height: 1pt,
-        fill: white,
-        stroke: none,
-      )],
-      [Norme di Progetto v1.0.0],
-    )
-    #line(length: 100%, stroke: black)
-  ],
-)
+#show: applica-glossario
 
 = Introduzione
 
@@ -161,7 +62,7 @@ Termini tecnici e ambiguità sono chiariti nel documento _glossario.pdf_, ogni t
 <processi-primari>
 
 == Processo di Fornitura
-Secondo lo standard ISO/IEC 12207:1995, comprende le attività e le risorse necessarie al fornitore (_HeptaCode_)per realizzare il progetto. \
+Secondo lo standard ISO/IEC 12207:1995, comprende le attività e le risorse necessarie al fornitore (_HeptaCode_) per realizzare il progetto. \
 Questo processo inizia dopo lo Studio di Fattibilità, quando le esigenze del committente sono chiare. \
 Il fornitore stipula un contratto che definisce i requisiti e la data di consegna. Solo dopo l'accordo si passa alla fase esecutiva con la redazione del _Piano di Progetto_. \
 
@@ -175,7 +76,7 @@ Il processo si articola nelle seguenti attività:
    
 4. _Esecuzione_: sviluppo del software e monitoraggio costante tramite milestone, test, verifiche e documentazione.
 
-5. _Controllo_: valutazione del lavoro svolto per garantire la conformità alle regole del gruppo e ai requisiti contrattuali tramite esecuzione dei test di accettazione e revisione del codice scritto.
+5. _Controllo_: valutazione del lavoro svolto per garantire la conformità alle regole del gruppo a i requisiti contrattuali tramite esecuzione dei test di accettazione e revisione del codice scritto.
 
 6. _Consegna_: trasferimento del prodotto finale al cliente.
    
@@ -195,11 +96,11 @@ Durante gli incontri tra il team e l'azienda vengono redatti dei verbali nei qua
 ==== Documentazione Fornitura
 La documentazione prodotta funge da prova tangibile dell'esecuzione dei processi:
 
-- *Analisi dei requisiti:* documento redatto da chi copre il ruolo di Analista e ha come scopo definire le funzionalità necessarie del prodotto in relazione alle richieste della azienda proponente.
+- *Analisi dei requisiti:* documento redatto da chi copre il ruolo di Analista con lo scopo di definire le funzionalità necessarie del prodotto in relazione alle richieste della azienda proponente.
 
-- *Piano di Progetto:* documento _redatto da chi copre il ruolo di Responsabile_ e ha come scopo definire una linea guida da seguire durante tutto lo svolgimento del progetto in maniera tale da avere sotto controllo i costi, i tempi e l'andamento generale dell'avanzamento.
+- *Piano di Progetto:* documento redatto da chi copre il ruolo di Responsabile con lo scopo di definire una linea guida da seguire durante tutto lo svolgimento del progetto in maniera tale da avere sotto controllo i costi, i tempi e l'andamento generale dell'avanzamento.
   
-- *Piano di Qualifica:* documento _redatto da chi copre il ruolo di Amministratore_ e ha come scopo definire in dettaglio le strategie di verifica e validazione per garantire la qualità del prodotto finale e dei processi realizzativi.
+- *Piano di Qualifica:* documento redatto da chi copre il ruolo di Amministratore con lo scopo di definire in dettaglio le strategie di verifica e validazione per garantire la qualità del prodotto finale e dei processi realizzativi.
 
 - *Lettera di Presentazione:* documento formale tramite il quale il gruppo si è proposto al professor Vardanega come candidato per l'assegnazione del capitolato proposto da _Vargroup S.p.A._.
 
@@ -297,7 +198,7 @@ Per garantire che l'architettura sia manutenibile e modulare, il team monitora l
 
 - Coesione: misura quanto le responsabilità di un singolo modulo siano correlate tra loro. Si persegue un'alta coesione (un modulo fa una sola cosa bene).
 
-- Complessità Ciclomatica: utilizzata per valutare la complessità dei flussi logici progettati, con l'obiettivo di mantenere i componenti testabili.
+- Complessità Ciclomatica: utilizzata per valutare la complessità dei flussi logici progettati, con l'obiettivo di mantenere i componenti testabili (valore accettabile $<=15$, valore ottimale $<= 10$).
 
 *Diagrammi UML*
 Il team utilizza il linguaggio UML (Unified Modeling Language) per visualizzare e documentare l'architettura. I diagrammi richiesti per ogni componente sono:
@@ -355,7 +256,7 @@ Al fine di garantire la manutenibilità del codice gli Sviluppatori dovranno att
 *Metriche*
 
 Per rendere oggettiva la qualità del software prodotto, il codice verrà monitorato tramite le seguenti metriche:
-- *Complessità Ciclomatica (MPD07):* Monitorata per garantire che ogni funzione rimanga testabile e atomica (limite accettabile $<= 15$).
+- *Complessità Ciclomatica (MPD07):* Monitorata per garantire che ogni funzione rimanga testabile e atomica (valore accettabile $<=15$, valore ottimale $<= 10$).
 - *Campi delle Classi:* Si limita il numero di attributi per classe per favorire la coesione e rispettare il principio di singola responsabilità.
 
 = Processi di Supporto
@@ -369,7 +270,7 @@ Tramite la documentazione infatti vengono monitorate le attività svolte e quell
 
 === Obiettivi
 
-Ciò che ci si aspetta dalla documentazione è che rispetti delle regole al momento della redazione per risultare coerente e uniforme in tutti i documenti. 
+Ciò che si pretende dalla documentazione è che essa rispetti delle regole al momento della redazione per risultare coerente e uniforme in tutti i documenti. 
 
 === Descrizione
 ==== Ciclo di Vita dei Documenti
@@ -399,13 +300,13 @@ Il gruppo produce sia documenti "interni", quindi destinati a rimanere in mano a
 
 ==== Struttura dei Documenti
 
-Il template della documentazione garantisce che ogni documento pubblicato presenti la seguente struttura prima del corpo del documento:
+Il template della documentazione garantisce che ogni documento pubblicato presenti la seguente struttura prima del corpo del documento, si noti che questa formattazione non è da applicare ai verbali, il quale template è descritto sotto:
 
 - *Prima Pagina*:
   - Logo del gruppo;
   - Nome del documento;
   - Versione del documento;
-  - Redattori e Verificatori del documento;
+  - Contenuto del documento;
   - Indirizzo Email e link al sito web del gruppo.
 
 - *Registro delle Modifiche*:
@@ -421,7 +322,7 @@ Il template della documentazione garantisce che ogni documento pubblicato presen
 
 ==== Struttura dei Verbali
 
-I template dei Verbali differiscono da quello della documentazione e seguono il seguente standard:
+I template dei Verbali differiscono da quelli della documentazione e seguono il seguente standard:
 
 - *Prima Pagina*:
   - Logo del gruppo;
@@ -434,7 +335,7 @@ I template dei Verbali differiscono da quello della documentazione e seguono il 
 - *Ubicazione e Partecipanti*:
   Viene dichiarato il luogo e l'orario dell'incontro e la partecipazione dei membri del gruppo e, nel caso di riunioni con terzi, di questi ultimi.
 
-- *Indici*:
+- *Indice dei Contenuti*:
   In seguito al Registro dei Cambiamenti ogni documento presenta esclusivamente l'Indice dei Contenuti, non essendo i verbali esageratamente corposi, sono facilmente navigabili anche senza l'ausilio degli altri due.
 
 ==== Convenzioni Stilistiche
@@ -452,7 +353,7 @@ Per condividere i documenti tra i membri essi vengono caricati nella repository 
 ==== Metriche
 
 - *Indice di Gulpease (MPD14):* Utilizzato per misurare la leggibilità dei documenti in lingua italiana. Il team mira a un valore $\ge 50$ per garantire che la documentazione sia accessibile.
-- *Densità di Errori Ortografici (MPC15):* Conteggio degli errori rilevati tramite tool di linting o revisione umana. Il valore accettabile è rigorosamente 0.
+- *Correttezza ortografica:* Conteggio degli errori rilevati tramite tool di linting o revisione umana. Il valore accettabile è rigorosamente 0.
 
 ==  Processo di Verifica
 
@@ -871,10 +772,10 @@ L'approccio adottato segue il ciclo di PDCA (Plan-Do-Check-Act): le misurazioni 
 
 ==== MPC01 - Schedule Variance (SV)
 - *Formula*:
-$ "SV" = ("EV" - "PV")/"PV" dot 100 $
-- *Valore accettabile*: $>=-10%$
-- *Valore ottimale*: $>=0%$
-- *Descrizione*: L'indicatore Schedule Variance rappresenta il rispetto della schedulazione delle attività di progetto pianificate nella baseline. Se il valore è superiore allo 0, vuol dire che la velocità di avanzamento del lavoro è superiore a quanto pianificato, viceversa se negativo.
+$ "SV" = ("EV" - "PV") $
+- *Valore accettabile*: $>= -10% "del" "PV"$
+- *Valore ottimale*: $0$
+- *Descrizione*: L'indicatore Schedule Variance rappresenta il divario, espresso in termini monetari, tra il valore del lavoro effettivamente realizzato (Earned Value) e quello del lavoro che era stato pianificato (Planned Value) alla data corrente. Se il valore è superiore a zero, significa che il team sta procedendo più velocemente rispetto alla pianificazione iniziale. Un valore negativo indica invece un ritardo, quantificando economicamente il lavoro ancora da recuperare per rientrare nella tabella di marcia.
 
 ====  MPC02 - Cost Variance (CV)
 - *Formula*:
@@ -886,32 +787,21 @@ $ "CV" = "EV" - "AC" $
 ====  MPC03 - Budget Variance (BV)
 - *Formula*:
 $ "BV" = ("PV" - "AC")/"PV" dot 100 $
-- *Valore accettabile*: $-10%>="BV"<=10%$
+- *Valore accettabile*: $-10%<="BV"<=10%$
 - *Valore ottimale*: $0%$
-- *Descrizione*: L'indice Budget Variance rappresenta il costo totale raggiunto alla data corrente rispetto a quello pianificato. Se il valore è minore di 0, allora il budget si sta consumando più rapidamente di quanto pianificato, viceversa se positivo.
+- *Descrizione*: L'indice misura lo scostamento percentuale tra il costo pianificato (PV) e il costo effettivo sostenuto (AC) alla data corrente.
 
-==== MPC04 - Requirements Stability Index (RSI)
-- *Formula*:
-$ "RSI" = (1- ("NRC"+"NRD"+"NRA")/"TNIR" dot 100) $
-- *Valore accettabile*: $>=70%$
-- *Valore ottimale*: $100%$
-- *Descrizione*:L'indice Requirements Stability Index rappresenta le variazioni che i requisiti hanno subito durante lo svolgimento del progetto.
-- *Legenda*:
-  - *NRC*: Number of Requirements Changed
-  - *NRD*: Number of Requirements Deleted
-  - *NRA*: Number of Requirements Added
-  - *TNIR*: Total Number of Initial Requirements
 
-==== MPC05 - Cost Performance Index (CPI)
+==== MPC04 - Cost Performance Index (CPI)
 - *Formula*:
 $ "CPI" = "EV" / "AC" $
-- *Valore accettabile*: $>=95%$
+- *Valore accettabile*: $>=90%$
 - *Valore ottimale*: $100%$
 - *Descrizione*:L'indice di Cost Performance misura la resa del budget attraverso il rapporto tra: il valore del lavoro completato e il costo realmente sostenuto.
 
 === Fornitura
 
-==== MPC06 - Planned Value (PV)
+==== MPC05 - Planned Value (PV)
 - *Formula* 
 $ "PV" = "BAC" dot ("PH") / ("THP") $
 - *Valore accettabile*: $>=0€$
@@ -923,7 +813,7 @@ $ "PV" = "BAC" dot ("PH") / ("THP") $
  - *PH*: Planned Hours;
  - *THP*: Total Hours Planned.
 
-====  MPC07 - Earned Value (EV)
+====  MPC06 - Earned Value (EV)
 - *Formula*:
 $ "EV" = "BAC" dot ("AH") / ("THP") $
 - *Valore accettabile*: $>=0€$
@@ -935,17 +825,17 @@ $ "EV" = "BAC" dot ("AH") / ("THP") $
  - *AH*: Actual Hours;
  - *THP*: Total Hours Planned.
 
-==== MPC08 - Actual Cost (AC)
+==== MPC07 - Actual Cost (AC)
 - *Formula*:
 $ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
 - *Valore accettabile*: $>=0€$
-- *Valore ottimale*: $<="AEC"$
+- *Valore ottimale*: $<="EAC"$
 - *Descrizione*: L'indice Actual Cost rappresenta il costo effettivamente sostenuto alla data corrente.
 - *Legenda*:
   - *AHR*: Actual Hours by Role;
   - *HCR*: Hourly Cost per Role.
 
-==== MPC09 - Estimate at Completion (EAC):
+==== MPC08 - Estimate at Completion (EAC):
 - *Formula*:
 $ "EAC" = "BAC"/"CPI" $
 - *Valore accettabile*: $>="BAC"-5%$
@@ -955,7 +845,7 @@ $ "EAC" = "BAC"/"CPI" $
  - *BAC*: Budget at Completion (Budget totale preventivato);
  - *CPI*: Cost Performance Index.
 
-==== MPC10 - Estimate to Complete (ETC)
+==== MPC09 - Estimate to Complete (ETC)
 - *Formula*:
 $ "ETC" = "BAC" - "EV" $
 - *Valore accettabile*: $>=0€$
@@ -967,28 +857,28 @@ $ "ETC" = "BAC" - "EV" $
 
 === Verifica e validazione
 
-==== MPC11 - Code Coverage (CC)
+==== MPC10 - Code Coverage (CC)
 - *Formula*:
 $ "CC" = "Codice testato" / "Codice totale" * 100 $
 - *Valore accettabile*: $>=80%$
 - *Valore ottimale*: $>=90%$
 - *Descrizione*: L'indice di Code Coverage misura la percentuale di codice sorgente che viene eseguita durante l'esecuzione dei test automatici. Indica quanto il codice è stato verificato dal processo di testing.
 
-==== MPC12 - Test Success Rate (TSR)
+==== MPC11 - Test Success Rate (TSR)
 - *Formula*:
 $ "TSR" = "Test passati"/ "Test totali" * 100 $
-- *Valore accettabile*: $100%$
+- *Valore accettabile*: $85%$
 - *Valore ottimale*:  $100%$
 - *Descrizione*: L'indice Test Success Rate misura la percentuale dei test superati rispetto a quelli totali. 
 
-==== MPC13 - Statement Coverage (SC)
+==== MPC12 - Statement Coverage (SC)
 - *Formula*:
 $ "SC" = ("Linee eseguite") / "Linee totali" * 100 $
 - *Valore accettabile*: $>=90%$
 - *Valore ottimale*: $100%$
 - *Descrizione*: L'indice Statement Coverage misura la percentuale di istruzioni elementari eseguire dai test.
 
-==== MPC14 - Branch Coverage (BC)
+==== MPC13 - Branch Coverage (BC)
 - *Formula*:
 $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 - *Valore accettabile*: $>=70%$
@@ -998,7 +888,7 @@ $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 
 === Documentazione
 
-==== MPC15 - Correttezza ortografica
+==== MPC14 - Correttezza ortografica
 - *Formula*:
 $ "Correttezza ortografica" = "numero di errori ortografici" $
 - *Valore accettabile*: $0$
@@ -1129,5 +1019,5 @@ $ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
 - *Formula*:
 $ "TFR" = "Test falliti"/"Test eseguiti" dot 100 $ 
 - *Valore accettabile*: $<= 15%$
-- *Valore ottimale*: $ <=5%$
+- *Valore ottimale*: $ <=0%$
 - *Descrizione*: L'indice di Error Rate indica la percentuale di errori durante l'esecuzione. Gli eventuali errori verranno riportati dai programmatori al fine di calcolare il valore della metrica.
