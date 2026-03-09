@@ -1623,7 +1623,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:* \
   + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sui test.
   + Al Developer vengono proposte remediation riguardante l'area di test, per ogni documento riportato. 
-  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
   + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sui test.
 
 - *Scenari alternativi:* \ 
@@ -1651,7 +1650,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:* \
   + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sull'analisi OWASP.
   + AL Developer vengono proposte delle remediation riguardante l'analisi OWASP, per ogni documento riportato. 
-  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
   + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sull'analisi OWASP.
 
 - *Scenari alternativi:* \
@@ -1677,7 +1675,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:* \
   + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sulla documentazione.
   + Al Developer vengono proposte remediation riguardante l'area di documentazione, per ogni documento riportato. 
-  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
   + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sulla documentazione.
 
 - *Scenari alternativi:*\
@@ -2989,7 +2986,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Project Manager visualizza una barra per la ricerca di un developer (#link(<UCPM1.4.2>)[[UCPM1.4.2]]). 
   + Il Project Manager visualizza una lista di developer tra cui cercare.(*<\<include>>* #link(<UCPM1.6>)[[UCPM1.6]]). 
   + Il Project Manager seleziona i developer che desidera.
-  + Il Project Manager seleziona il ruolo del developer all'interno del progetto (tra i ruoli disponibili nel profilo del developer).
   + Il Project Manager conferma l'inserimento dei developer.
   + Il Project Manager visualizza, nel progetto, i developer che ha inserito.
 
@@ -3145,7 +3141,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + Il Project Manager visualizza il nome che il developer ha su _Code Guardian_.
   + Il Project Manager visualizza l'immagine profilo del Developer.
-  + Il Project Manager visualizza i ruoli associati al Developer.
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento dei dati del Developer.
@@ -3372,6 +3367,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + Il Project Manager visualizza, per ogni membro del team, delle icone grafiche che indicano le tecnologie di competenza. (*<\<include>>* #link(<UCPM3.2>)[[UCPM3.2]]).
   + Il Project Manager visualizza la lista dei developer associati al progetto, su cui può per approfondirne il profilo (#link(<UCPM3.1>)[[UCPM3.1]]).
+  + Il Project Manager visualizza un pulsante per tornare alla pagina precedente.
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -3557,6 +3553,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Project Manager visualizza l'elenco di framework e librerie usate. (*<\<include>>* #link(<UCPM4.1>)[[UCPM4.1]]).
   + Il Project Manager visualizza la possibile segnalazione di dipendenze deprecate o a rischio sicurezza (*<\<include>>* #link(<UCPM4.2>)[[UCPM4.2]]).
   + Il Project Manager visualizza i suggerimenti generati dall’IA (*<\<include>>* #link(<UCPM4.3>)[[UCPM4.3]]).
+  + Il Project Manager visualizza un pulsante per tornare alla pagina precedente.
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -3636,7 +3633,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + Il Project Manager consulta le proposte di ottimizzazione, riguardanti nuovi framework e nuove librerie, fornite dall'intelligenza artificiale.
-  + Il Project Manager analizza le motivazioni tecniche a supporto di ogni suggerimento..
+  + Il Project Manager analizza le motivazioni tecniche a supporto di ogni suggerimento.
   + Il Project Manager valuta il potenziale impatto dei suggerimenti sulle tempistiche e sulle risorse del team.
 
 - *Scenari alternativi:*
