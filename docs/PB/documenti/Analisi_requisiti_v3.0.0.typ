@@ -36,6 +36,7 @@
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("2.2.0","2026-03-02","Angela Favaro","Angela Favaro","Rimodellazione requisiti"),
   ("2.1.0","2026-03-02","Angela Canazza","Angela Favaro","Correzioni UML, secondo quanto segnalato"),
   ("2.0.0","2026-02-27","Angela Favaro","Nicola Simionato","Mini fix casi d'uso per versione 2.0.0"),
   ("1.5.0","2026-02-25","Nicola Simionato","Angela Favaro","Sistemazione diagrammi UML dei Casi d'Uso"),
