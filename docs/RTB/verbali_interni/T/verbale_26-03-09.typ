@@ -49,12 +49,14 @@ Gli argomenti discussi nell'incontro sono stati:
 = Svolgimento
 == Sprint retrospective e Sprint planning
 Abbiamo discusso delle attività svolte durante lo sprint appena concluso e di quelle pianificate per lo sprint successivo. 
-Gli obiettici previsti per lo sprint appena concluso sono stati rispettati.
+Gli obiettivi previsti per lo sprint appena concluso sono stati rispettati.
 == Suddivisione in due team per lo sviluppo di backend e frontend
-Abbiamo deciso quali membri si occuperanno dello sviluppo del backend e quali allo sviluppo del frontend. Questa decisione è stata presa in base alle preferenze espresse dai membri del team.
+Abbiamo deciso quali membri si occuperanno dello sviluppo del backend e quali allo sviluppo del frontend. Questa decisione è stata presa in base alle preferenze espresse dai membri del team. La suddivisione è la seguente:
+- Team di sviluppo del frontend: Laura Venturini, Angela Canazza e Amerigo Vegliante
+- Team di sviluppo del backend: Nicola Simionato, Angela Favaro, Alberto Reginato e Riccardo Baldin
 == Suddivisione dei ruoli per lo sviluppo di backend
 Il team si sviluppo del backend si è suddiviso ii compiti come segue:
-- Nicola Simoniato si occuperà della parte relativa al database e alla gestione dei dati.
+- Nicola Simionato si occuperà della parte relativa al database e alla gestione dei dati.
 - Angela Favaro si occuperà della parte relativa agli agenti.
 - Alberto Reginato e Riccardo Baldin si occuperanno della parte relativa all'architettura logica.
 == Comunicazioni con l'azienda proponente
@@ -63,8 +65,7 @@ Abbiamo ritenuto che una comunicazione più diretta con l'azienda proponente fos
 - approvazione del mockup
 - approvazione dell'AdR
 - domande riguardanti lo sviluppo del progetto
-Di conseguenza, abbiamo deciso di richiedere un colloquio online con l'azienda tramite un messagio su Slack, in modo da poter discutere direttamente con loro.
-
+Di conseguenza, abbiamo deciso di richiedere un colloquio online con l'azienda tramite un messaggio su Slack, in modo da poter discutere direttamente con loro.
 
 = Conclusione
 Il gruppo ha stabilito che nel corso delle settimana avrebbe: 

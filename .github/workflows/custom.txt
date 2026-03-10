@@ -240,3 +240,5 @@ strumenti'
 oretotindividualirtb
 tortartb
 oretotindividualipb
+dell'adr
+mockup
