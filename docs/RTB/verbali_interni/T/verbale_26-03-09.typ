@@ -8,14 +8,6 @@
 #let odg = "Suddivisione compiti per lo sviluppo di backend e frontend e discussione su come procedere"
 
 
-// versione , giorno, autore, verificatore, descrizione 
-// ("     " , "    ", "    ", "          ", "          ")
-// esempio 
-  //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
-  //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
-#let modifiche = (
-  ("1.0.0", "2026-03-05", "Laura Venturini", "Nicola Simionato", "Stesura verbale")
-)
 
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
 #let distanza = true
