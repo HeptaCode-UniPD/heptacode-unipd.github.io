@@ -49,7 +49,7 @@ Il team ha aggiornato l'azienda _VarGroup_ riguardo i progressi fatti fino a que
 Il team ha presentato le proprie idee riguardo la struttura architetturale per il progetto, proponendo una struttura monolitica modulare; l'azienda ha dichiarato di essere aperta a qualsiasi scelta architetturale proposta del team, precisando però che, a differenza di quanto detto dal team durante la motivazione della scelta, il monolite modulare non rende scalabile il progetto.
 
 == Risposta alle domande dell'azienda
-L'azienda ha posto alcune domande al team. In partocolare è stato chiesto:
+L'azienda ha posto alcune domande al team. In particolare è stato chiesto:
 - Se il team avesse già pensato all'infrastruttura da utilizzare su AWS e in locale
 - Se per gli agenti si pensasse ancora di usare LangChain come framework o se si fosse pensato a qualche alternativa
 - Che file venissero passati a Bedrock per fare il report della documentazione nel PoC

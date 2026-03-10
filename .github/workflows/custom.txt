@@ -240,3 +240,5 @@ strumenti'
 oretotindividualirtb
 tortartb
 oretotindividualipb
+remediation
+langchain

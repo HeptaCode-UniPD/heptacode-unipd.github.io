@@ -47,12 +47,12 @@ Gli argomenti discussi nell'incontro sono stati:
 ==  Modelli da usare nella progettazione
 Dopo una breve discussione riguardante quale struttura architetturale adottare per il progetto, il gruppo ha ipotizzato che una struttura monolitica modulare potesse essere adatta alle esigenze del progetto e alle tempistiche a disposizione. È stato deciso di chiedere un parere all'azienda proponente riguardo questa scelta.
 == Preparazione delle domande per l'azienda.
-Il gruppo ha discusso assieme i quesiti da porre all'azienda. Le domande preparete e gli argomenti di cui discutere sono stati segnati nella chat di gruppo su Telegram e riguardano soprattutto la progettazione.
+Il gruppo ha discusso assieme i quesiti da porre all'azienda. Le domande preparate e gli argomenti di cui discutere sono stati segnati nella chat di gruppo su Telegram e riguardano soprattutto la progettazione.
 == Discussione su una suddivisione più dettagliata dei compiti
 Sono state decise le priorità dei moduli da sviluppare della struttura monolitica:
 - Per prima cosa si devono sviluppare Agent Module e User Module
 - In contemporanea allo sviluppo di Agent Module e User Module, si deve iniziare ad allenare l'agente
-- Remedation Module e Analysis Module verranno sviluppati in un secondo momento
+- Remediation Module e Analysis Module verranno sviluppati in un secondo momento
 
 = Conclusione
 Il gruppo ha deciso di utilizzare la struttura monolitica modulare per il progetto e si è preparato per il colloquio con l'azienda, previsto per le 14:30 dello stesso giorno.
