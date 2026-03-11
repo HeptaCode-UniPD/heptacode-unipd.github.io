@@ -5,7 +5,7 @@
 #let next-meeting = "2026-08-03"
 
 // ordine del giorno
-#let odg = "cico cicococococ"
+#let odg = "ciao"
 
 // switchare in 'false' SE E SOLO SE l'incontro NON si è tenuto su Discord
 #let distanza = true
@@ -43,6 +43,6 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 ]
 
 #let decisione-azione = ((
-  "Ciao","benone",
-  "come stai","noh"
+  "Ciao","bene",
+  "come stai","bene"
 ))
