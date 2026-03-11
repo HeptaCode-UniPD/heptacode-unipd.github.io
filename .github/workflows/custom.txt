@@ -240,3 +240,12 @@ strumenti'
 oretotindividualirtb
 tortartb
 oretotindividualipb
+datapb
+decisionipb
+finepb
+giornopb
+iniziopb
+linepb
+luogopb
+presenzapb
+testopb
