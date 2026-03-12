@@ -240,5 +240,13 @@ strumenti'
 oretotindividualirtb
 tortartb
 oretotindividualipb
-dell'adr
-mockup
+datapb
+decisionipb
+esternipb
+finepb
+giornopb
+iniziopb
+linepb
+luogopb
+presenzapb
+testopb
