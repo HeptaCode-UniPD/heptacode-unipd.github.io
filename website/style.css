@@ -74,6 +74,11 @@ header h1{
     margin: 0.2em;
 }
 
+header h2 {
+    font-size: 6em;
+    margin: 0.2em;
+}
+
 header{
     background-color: var(--bglogo);
     border-radius: 2em;

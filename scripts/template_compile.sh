@@ -23,7 +23,6 @@ generate_typ_content() {
 #show: doc => template(doc,
     data: dati.giorno,
     ordine_del_giorno: dati.odg,
-    lista_versioni: dati.modifiche,
     on-line: dati.distanza,
     new-luogo: dati.luogo, 
     ora_inizio: dati.inizio,

@@ -6,9 +6,8 @@
   ora_inizio: "00:00",
   ora_fine: "00:00",
   ruoli-presenza: (),
-  partecipanti-esterni: (("Stefano Dindo", "Rappresentante VarGroup")),
-  testo: "",
   partecipanti_esterni: (("","")),
+  testo: "",
   lista_decisioni: (("",""))
 ) = {
   v(1fr)
