@@ -240,3 +240,4 @@ strumenti'
 oretotindividualirtb
 tortartb
 oretotindividualipb
+langchain
