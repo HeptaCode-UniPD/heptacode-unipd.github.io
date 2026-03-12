@@ -56,9 +56,9 @@ Abbiamo deciso quali membri si occuperanno dello sviluppo del backend e quali al
 - Team di sviluppo del backend: Nicola Simionato, Angela Favaro, Alberto Reginato e Riccardo Baldin
 == Suddivisione dei ruoli per lo sviluppo di backend
 Il team si sviluppo del backend si è suddiviso ii compiti come segue:
-- Nicola Simionato si occuperà della parte relativa al database e alla gestione dei dati.
-- Angela Favaro si occuperà della parte relativa agli agenti.
-- Alberto Reginato e Riccardo Baldin si occuperanno della parte relativa all'architettura logica.
+- Parte relativa al database e alla gestione dei dati.
+- Parte relativa agli agenti.
+- Parte relativa all'architettura logica.
 == Comunicazioni con l'azienda proponente
 Abbiamo ritenuto che una comunicazione più diretta con l'azienda proponente fosse più adeguata per gli argomenti su cui dobbiamo confrontarci, che sono:
 - progettazione
@@ -80,7 +80,7 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 #let decisione-azione = ((
   "Necessità di confronto con l'azienda proponente","Invio messaggio di richiesta di colloquio online all'azienda",
-  "Suddivisione dei compiti", "Laura Venturini e Angela Canazza si occuperanno dello sviluppo del frontend, Nicola Simionato, Angela Favaro, Alberto Reginato e Riccardo Baldin si occuperanno del backend",
-  "Suddivisione dei compiti per lo sviluppo del backend", "Nicola Simoniato si occuperà del database, Angela Favaro degli agenti, Alberto Reginato e Riccardo Baldin si occuperanno dell'architettura logica"
+  "Suddivisione dei compiti", "Fare riferimento alla Project Board di gruppo su GitHub",
+  "Suddivisione dei compiti per lo sviluppo del backend", "Fare riferimento alla Project Board di gruppo su GitHUb"
 )
 )
