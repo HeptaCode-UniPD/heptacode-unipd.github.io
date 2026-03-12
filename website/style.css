@@ -201,6 +201,8 @@ article label{
 
 section {
     background-color: var(--bgsection);
+    border-radius: 2em 2em 0em 0em;
+    padding: 0.5em;
 }
 
 
