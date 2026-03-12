@@ -41,12 +41,6 @@ jobs:
           chmod +x ./scripts/template_compile.sh
           ./scripts/template_compile.sh
       
-      - name: Upload PDFs as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: pdf-compilati
-          path: ./docs/**/*.pdf
-      
       - name: Copy docs to WebSite for Jekyll processing
         run: |
           # Copy the entire docs folder into WebSite so Jekyll can include it

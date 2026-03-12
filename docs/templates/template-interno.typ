@@ -1,7 +1,6 @@
 #let template(doc,
   data: "0000-00-00",
   ordine_del_giorno: "!!!! INSERIRE ORDINE DEL GIORNO !!!!",
-  lista_versioni: (("0.0","0000/00/00","Mario","Luigi","Combattimento con Bowser")),
   on-line: false,
   new-luogo: "la _Quiet Room_ del complesso Paolotti",
   ora_inizio: "00:00",
@@ -26,18 +25,6 @@
   
   v(1fr)
   counter(page).update(0)
-
-  pagebreak()
-  text(size: 17pt, weight: "bold")[Registro delle modifiche:]
-  table(
-    columns: (auto,auto,auto,auto,auto),
-    inset: 9pt,
-    align: horizon,
-    table.header(
-      [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
-    ),
-    ..lista_versioni,
-  )
 
   pagebreak()
   set page(

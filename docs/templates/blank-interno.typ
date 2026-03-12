@@ -43,6 +43,7 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 ]
 
 #let decisione-azione = ((
+  // mettere un riferimento concreto (issue) nella casella azione
   "","",
   "",""
 ))
