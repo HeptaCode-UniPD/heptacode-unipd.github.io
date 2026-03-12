@@ -22,9 +22,9 @@ generate_typ_content() {
     new-luogo: dati.luogo, 
     ora_inizio: dati.inizio,
     ora_fine: dati.fine,
-    ruoli-presenza: dati.at("lista-ruoli"),
+    ruoli-presenza: dati.lista-ruoli,
     testo: applica-glossario(dati.corpo),
-    lista_decisioni: dati.at("decisione-azione")
+    lista_decisioni: dati.decisione-azione
 )
 EOF
 }
