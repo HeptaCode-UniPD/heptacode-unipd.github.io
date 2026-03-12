@@ -13,7 +13,6 @@ generate_typ_content() {
     cat << EOF
 #import "../../../templates/$template_name": template
 #import "$data_path" as dati 
-
 #import "../../../templates/glossario_termini.typ": applica-glossario
 
 #show: doc => template(doc,
