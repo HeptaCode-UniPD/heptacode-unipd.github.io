@@ -2,7 +2,7 @@
 #let giorno = "2026-03-02"
 
 // data del prossimo incontro nello stesso formato
-#let next-meeting = "2 marzo 2026"
+#let next-meeting = "4 marzo 2026"
 
 // ordine del giorno ?
 #let odg = "Organizzazione Presentazione Milestone RTB"
@@ -71,8 +71,7 @@ L'incontro si è concluso con la definizione della strategia comunicativa per la
 ]
 
 #let decisione-azione = (
-  ("Presentazione candidatura RTB", "Invio del modulo di candidatura e notifica ai proponenti.",
-  "Suddivisione parti presentazione", "Creazione di un documento condiviso per la stesura dei contenuti specifici.",
-  "Revisione documenti pre-presentazione", "Controllo incrociato tra PdP e PdQ per garantire coerenza terminologica e metrica."
-  )
+  ("Presentazione candidatura RTB", "Invio del modulo di candidatura e notifica ai proponenti."),
+  ("Suddivisione parti presentazione", "Creazione di un documento condiviso per la stesura dei contenuti specifici."),
+  ("Revisione documenti pre-presentazione", "Controllo incrociato tra PdP e PdQ per garantire coerenza terminologica e metrica.")
 )
