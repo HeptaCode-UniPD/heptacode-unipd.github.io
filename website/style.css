@@ -199,6 +199,10 @@ article label{
     color: var(--articlecolor);
 }
 
+section {
+    background-color: var(--bgsection);
+}
+
 
 /*  
 ===============================

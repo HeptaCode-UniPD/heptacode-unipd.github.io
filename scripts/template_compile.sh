@@ -10,14 +10,15 @@ generate_typ_content() {
     local template_name=$1
     local data_path=$2
     
-    # I percorsi sono relativi al file temporaneo ($TEMP_FILE),
-    # che verrà creato all'interno della cartella /T.
-    
+    # Rileviamo se è un verbale esterno per aggiungere i partecipanti esterni
+    local extra_params=""
+    if [[ "$template_name" == *"esterno"* ]]; then
+        extra_params="partecipanti_esterni: dati.partecipanti-esterni,"
+    fi
+
     cat << EOF
 #import "../../../templates/$template_name": template
-// Importa i dati (percorso relativo al file temporaneo)
 #import "$data_path" as dati 
-
 #import "../../../templates/glossario_termini.typ": applica-glossario
 
 #show: doc => template(doc,
@@ -28,8 +29,10 @@ generate_typ_content() {
     ora_inizio: dati.inizio,
     ora_fine: dati.fine,
     ruoli-presenza: dati.lista-ruoli,
+    $extra_params
     testo: applica-glossario(dati.corpo),
     lista_decisioni: dati.decisione-azione
+    next-meeting: dati.prossimo-incontro
 )
 EOF
 }
