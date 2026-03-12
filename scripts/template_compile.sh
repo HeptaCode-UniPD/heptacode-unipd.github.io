@@ -80,10 +80,10 @@ process_directory() {
 echo "Inizio Compilazione dei Verbali Temaplatizzati..."
 
 # 1. Processa RTB Esterni
-process_directory "$DOCS_ROOT/RTB/verbali_esterni" "template-esterno.typ"
+process_directory "$DOCS_ROOT/PB/verbali_esterni" "template-esterno.typ"
 
 # 2. Processa RTB Interni
-process_directory "$DOCS_ROOT/RTB/verbali_interni" "template-interno.typ"
+process_directory "$DOCS_ROOT/PB/verbali_interni" "template-interno.typ"
 
 
 echo "---------------- Compilazione completata ----------------"
