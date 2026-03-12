@@ -8,7 +8,6 @@
 #let odg = "Suddivisione compiti per lo sviluppo di backend e frontend e discussione su come procedere"
 
 
-
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
 #let distanza = true
 
@@ -38,7 +37,8 @@
 
 
 
-#let corpo = [= Argomenti trattati
+#let corpo = [
+= Argomenti trattati
 Gli argomenti discussi nell'incontro sono stati:
 - Sprint retrospective e sprint planning
 - Suddivisione in due team per lo sviluppo di backend e frontend.
