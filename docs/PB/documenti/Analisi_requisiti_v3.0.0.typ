@@ -631,7 +631,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + L'utente visualizza l'opzione di reindirizzamento al proprio profilo Github.
 
-- *Postcondizioni:* L'utente ha visualizzato l'opzione di renidirizzamento al proprio profilo GitHub.
+- *Postcondizioni:* L'utente ha visualizzato l'opzione di reindirizzamento al proprio profilo GitHub.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -657,7 +657,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
       - L'Utente Registrato visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
       - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* L'utente è stato renidirizzato al proprio profilo GitHub.
+- *Postcondizioni:* L'utente è stato reindirizzato al proprio profilo GitHub.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
