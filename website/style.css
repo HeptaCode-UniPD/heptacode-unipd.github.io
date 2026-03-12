@@ -74,6 +74,11 @@ header h1{
     margin: 0.2em;
 }
 
+header h2 {
+    font-size: 6em;
+    margin: 0.2em;
+}
+
 header{
     background-color: var(--bglogo);
     border-radius: 2em;
@@ -156,7 +161,7 @@ details[open] summary::before {
 
 details{
     background-color: var(--bgsection);
-    border-radius: 2em;
+    border-radius: 0 0 2em 2em;
     padding: 0.5em;
     margin-bottom: 0.8em;
 }
@@ -167,7 +172,7 @@ details section{
 
 #lettera{
     background-color: var(--bgsection);
-    border-radius: 2em;
+    border-radius: 2em 2em 0em 0em;
     padding: 0.5em;
 }
 
@@ -175,10 +180,10 @@ details article:first-of-type{
     margin-top: 0;
 }
 
-details article{
+article{
     background-color: var(--bgarticle);
     border-radius: 1.5em;
-    margin: 1em;
+    margin: 0.5em;
     padding: 0.5em;
     break-inside: avoid;
 }
@@ -192,6 +197,12 @@ article label{
     font-size: 1.2em;
     font-weight: bold;
     color: var(--articlecolor);
+}
+
+section {
+    background-color: var(--bgsection);
+    border-radius: 2em 2em 0em 0em;
+    padding: 0.5em;
 }
 
 

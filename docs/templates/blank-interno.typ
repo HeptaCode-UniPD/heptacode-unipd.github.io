@@ -1,49 +1,49 @@
-// giorno in formato AAAA-MM-GG
+// giorno in formato AAAA-MM-GG (es. "2026-03-12")
 #let giorno = ""
 
-// data del prossimo incontro nello stesso formato
+// data del prossimo incontro (es. "19 marzo 2026")
 #let next-meeting = ""
 
-// ordine del giorno
+// ordine del giorno 
 #let odg = ""
 
-// switchare in 'false' SE E SOLO SE l'incontro NON si è tenuto su Discord
-#let distanza = true
+// switchare in 'true' SE l'incontro si è tenuto su Discord
+#let distanza = false
 
-// modificare SE E SOLO SE non si è fatto in modalità telematica
+// modificare SE non si è fatto in Quiet Room (scrivere il luogo con l'articolo)
 #let luogo = "la _Quiet Room_ del complesso Paolotti"
 
-// ruolo e presenza
+// ruolo e presenza (es: "Responsabile", "Presente")
 #let lista-ruoli = (
-    "",   "", //Angela Favaro
-    "",   "", //Angela Canazza
-    "",   "", //Riccardo Baldin
-    "",   "", //Alberto Reginato
-    "",   "", //Amerigo Vegliante
-    "",   "", //Nicola Simionato
-    "",   "" //Laura Venturini
+    "", "", // Angela Favaro
+    "", "", // Angela Canazza
+    "", "", // Riccardo Baldin
+    "", "", // Alberto Reginato
+    "", "", // Amerigo Vegliante
+    "", "", // Nicola Simionato
+    "", ""  // Laura Venturini
 )
 
-// ora di inizio dell'incontro
+// ora di inizio e fine (es. "14:30")
 #let inizio = ""
-
-// ora di fine dell'incontro
 #let fine = ""
 
 #let corpo = [
 = Argomenti trattati
 Gli argomenti discussi nell'incontro sono stati:
+- 
 
 = Svolgimento
 
-= Conclusione
-Il gruppo ha stabilito che nel corso della settimana avrebbe:
-Il prossimo incontro è fissato per il giorno #next-meeting
 
+= Conclusione
+Il gruppo ha stabilito che nel corso delle settimana avrebbe: 
+- 
+
+Il prossimo incontro è fissato per il giorno #next-meeting
 ]
 
-#let decisione-azione = ((
-  // mettere un riferimento concreto (issue) nella casella azione
-  "","",
-  "",""
-))
+// Inserire le coppie (Decisione, Azione)
+#let decisione-azione = (
+  ("", ""),
+)

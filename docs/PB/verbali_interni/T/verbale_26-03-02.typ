@@ -2,20 +2,10 @@
 #let giorno = "2026-03-02"
 
 // data del prossimo incontro nello stesso formato
-#let next-meeting = "2 marzo 2026"
+#let next-meeting = "4 marzo 2026"
 
 // ordine del giorno ?
 #let odg = "Organizzazione Presentazione Milestone RTB"
-
-
-// versione , giorno, autore, verificatore, descrizione 
-// ("     " , "    ", "    ", "          ", "          ")
-// esempio 
-  //   ("1.0.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
-  //    "1.0.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
-#let modifiche = (
-  ("1.0.0", "2026-03-02", "Amerigo Vegliante", "Angela Favaro", "Stesura relazione dell'incontro")
-)
 
 // switchare in 'true' SSE l'incontro non si è tenuto su Discord
 #let distanza = true
