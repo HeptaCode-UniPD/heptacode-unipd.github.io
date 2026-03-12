@@ -63,7 +63,7 @@ Il team si sviluppo del backend si è suddiviso ii compiti come segue:
 Abbiamo ritenuto che una comunicazione più diretta con l'azienda proponente fosse più adeguata per gli argomenti su cui dobbiamo confrontarci, che sono:
 - progettazione
 - approvazione del mockup
-- approvazione dell'AdR
+- approvazione dell’AdR
 - domande riguardanti lo sviluppo del progetto
 Di conseguenza, abbiamo deciso di richiedere un colloquio online con l'azienda tramite un messaggio su Slack, in modo da poter discutere direttamente con loro.
 
