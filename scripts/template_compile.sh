@@ -10,12 +10,6 @@ generate_typ_content() {
     local template_name=$1
     local data_path=$2
     
-    # Rileviamo se è un verbale esterno per aggiungere i partecipanti esterni
-    local extra_params=""
-    if [[ "$template_name" == *"esterno"* ]]; then
-        extra_params="partecipanti_esterni: dati.partecipanti-esterni,"
-    fi
-
     cat << EOF
 #import "../../../templates/$template_name": template
 #import "$data_path" as dati 
@@ -29,48 +23,31 @@ generate_typ_content() {
     ora_inizio: dati.inizio,
     ora_fine: dati.fine,
     ruoli-presenza: dati.lista-ruoli,
-    $extra_params
     testo: applica-glossario(dati.corpo),
     lista_decisioni: dati.decisione-azione
-    next-meeting: dati.prossimo-incontro
 )
 EOF
 }
-
-
-
-# funzione per compilare le cartelle che gli si dice
 
 process_directory() {
     local target_dir=$1
     local template_name=$2
     
+    if [ ! -d "$target_dir/T" ]; then
+        echo "Warning: Directory $target_dir/T not found. Skipping."
+        return
+    fi
+
     find "$target_dir/T" -maxdepth 1 -name "*.typ" -not -name "$TEMP_FILE" | while read DATA_FILE; do
         if [ -f "$DATA_FILE" ]; then
-            
-            # Estrai il percorso relativo del file di dati (solo il nome)
             FILENAME_WITH_EXT=$(basename "$DATA_FILE")
             FILENAME=$(basename "$DATA_FILE" .typ)
-
             OUTPUT_FILE="$target_dir/$FILENAME.pdf"
-            
-            # Il percorso dei dati è relativo al file temporaneo.
-            DATA_RELATIVE_PATH="$FILENAME_WITH_EXT" # Usiamo il nome del file con estensione
+            DATA_RELATIVE_PATH="$FILENAME_WITH_EXT"
             
             echo "Processing: $DATA_FILE (Template: $template_name)"
-            
-            # 1. Genera il file Typst temporaneo
-            # Nota: Devi assicurarti che il file DATA_FILE esista prima di generare tmp.typ
-            
-            # *DEVI* usare un nome univoco per il file temporaneo PER OGNI compilazione 
-            # in modo che il loop 'find' precedente non lo veda, ma per ora lo lasciamo così e risolviamo con il 'find -not -name'.
-            
             generate_typ_content "$template_name" "$DATA_RELATIVE_PATH" > "$target_dir/T/$TEMP_FILE"
-
-            # 2. Compila il file temporaneo. Uso --root docs.
             typst compile --root docs "$target_dir/T/$TEMP_FILE" "$OUTPUT_FILE"
-            
-            # 3. Pulisci
             rm "$target_dir/T/$TEMP_FILE"
             
             echo "Compiled to: $OUTPUT_FILE"
@@ -78,14 +55,12 @@ process_directory() {
     done
 }
 
-## --- Esecuzione ---
-echo "Inizio Compilazione dei Verbali Temaplatizzati..."
+echo "Inizio Compilazione dei Verbali Temaplatizzati (Cartella PB)..."
 
-# 1. Processa RTB Esterni
+# 1. Processa PB Esterni
 process_directory "$DOCS_ROOT/PB/verbali_esterni" "template-esterno.typ"
 
-# 2. Processa RTB Interni
+# 2. Processa PB Interni
 process_directory "$DOCS_ROOT/PB/verbali_interni" "template-interno.typ"
-
 
 echo "---------------- Compilazione completata ----------------"

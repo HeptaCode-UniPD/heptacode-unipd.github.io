@@ -61,6 +61,5 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 #let decisione-azione = ((
   "Esposizione della presentazione completa e nei tempi.","Studio individuale delle rispettive parti e ultimazione slide di presentazione.",
-  "Divisione dei lavori sul MVP in sottogruppi Frontend e Backend.", "Assegnazione compiti in sottogruppi e creazione canali di comunicazione se, fare riferimento alla board di GitHub"
-)
+  "Divisione dei lavori sul MVP in sottogruppi Frontend e Backend.", "Assegnazione compiti in sottogruppi e creazione canali di comunicazione se, fare riferimento alla board di GitHub")
 )
