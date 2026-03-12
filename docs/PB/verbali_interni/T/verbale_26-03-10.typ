@@ -63,7 +63,7 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 
 #let decisione-azione = ((
-  "Utilizzo di una struttura monolitica modulare", "individuazione dei moduli da sviluppare e della loro priorità", "",
+  "Utilizzo di una struttura monolitica modulare", "individuazione dei moduli da sviluppare e della loro priorità", "#134",
   "Colloquio con l'azienda", "Preparazione scaletta domande da porre", ""
 )
 )
