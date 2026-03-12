@@ -240,3 +240,6 @@ strumenti'
 oretotindividualirtb
 tortartb
 oretotindividualipb
+testopbremediation
+langchain
+mockup
