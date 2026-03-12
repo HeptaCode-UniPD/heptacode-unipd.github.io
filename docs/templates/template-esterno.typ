@@ -1,7 +1,6 @@
 #let template(doc,
   data: "0000-00-00",
   ordine_del_giorno: "!!!! INSERIRE ORDINE DEL GIORNO !!!!",
-  lista_versioni: (("0.0","0000/00/00","Mario","Luigi","Combattimento con Bowser")),
   on-line: false,
   new-luogo: "la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD",
   ora_inizio: "00:00",
@@ -9,6 +8,7 @@
   ruoli-presenza: (),
   partecipanti-esterni: (("Stefano Dindo", "Rappresentante VarGroup")),
   testo: "",
+  partecipanti_esterni: (("","")),
   lista_decisioni: (("",""))
 ) = {
   v(1fr)
@@ -27,18 +27,6 @@
   
   v(1fr)
   counter(page).update(0)
-
-  pagebreak()
-  text(size: 17pt, weight: "bold")[Registro delle modifiche:]
-  table(
-    columns: (auto,auto,auto,auto,auto),
-    inset: 9pt,
-    align: horizon,
-    table.header(
-      [*Versione*], [*Data*], [*Autore*], [*Verificatore*],[*Descrizione*]
-    ),
-    ..lista_versioni,
-  )
 
   pagebreak()
   set page(
@@ -132,8 +120,7 @@
     table.header(
       [*Nome*], [*Ruolo*]
     ),
-    "Federico Pivetta", "Referente Vargroup",
-    "Francesco Battistella", "Referente VarGroup",
+    ..partecipanti_esterni,
   )
  
   pagebreak()
