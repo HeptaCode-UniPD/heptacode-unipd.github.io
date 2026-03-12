@@ -27,6 +27,12 @@
 }
 
 #let storia_modifiche = (
+  "2.2.0",
+  "2026/03/12",
+  "Angela Favaro",
+  "Laura Venturini",
+  "Aggiunta terminologie per Specifica Tecnica",
+
   "2.1.0",
   "2026/03/07",
   "Angela Favaro",
@@ -279,6 +285,9 @@ Messaggio digitale che viene inviato e ricevuto tramite internet. Strumento di c
 
 #heading(level: 2, outlined: false)[Milestone]
 Punto di controllo significativo che segna il completamento di una fase importante o il raggiungimento di un obiettivo chiave all'interno di un progetto. Rappresenta un traguardo raggiunto.
+
+#heading(level: 2, outlined: false)[Mockup]
+Rappresentazione statica e ad alta fedeltà dell'interfaccia di un'applicazione o sito web. Mostra come apparirà visivamente il prodotto finale — colori, typography, layout, icone, spaziature — ma senza funzionalità interattive.
 
 #heading(level: 2, outlined: false)[MongoDB]
 Sistema di gestione di basi dati, basato su un modello a documenti, anziché sulle classiche tabelle a righe e colonne. È progettato per essere estremamente flessibile, scalabile e capace di gestire grandi quantità di dati non strutturati (come post sui social, cataloghi prodotti complessi o dati provenienti da sensori).
