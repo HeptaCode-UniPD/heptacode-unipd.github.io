@@ -77,7 +77,7 @@
   [#testo]
 
   table(
-    columns: (auto, auto),
+    columns: (auto, auto, auto),
     inset: 9pt,
     align: horizon,
     table.header([*Decisione*], [*Azione*], [*Issue ID*]),
