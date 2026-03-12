@@ -80,7 +80,7 @@
     columns: (auto, auto),
     inset: 9pt,
     align: horizon,
-    table.header([*Decisione*], [*Azione*]),
+    table.header([*Decisione*], [*Azione*], [*Issue ID*]),
     ..lista_decisioni,
   )
 }

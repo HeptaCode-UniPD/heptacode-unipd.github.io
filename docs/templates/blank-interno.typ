@@ -45,5 +45,5 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 // Inserire le coppie (Decisione, Azione)
 #let decisione-azione = (
-  ("", ""),
+  ("", "", "",)
 )

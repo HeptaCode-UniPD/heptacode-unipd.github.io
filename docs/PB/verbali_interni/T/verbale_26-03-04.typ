@@ -74,7 +74,7 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 
 #let decisione-azione = ((
-  "Inizio attività di progettazione","Studio individuale e ricerca di contatto con l'azienda proponente",
-  "Colloquio per conclusione RTB", "Invio mail di richiesta colloquio al prof. Vardanega",
-  "Maggiore controllo sullo stato di avanzamento del progetto", "Aumento degli sprint previsti all'interno del Piano di progetto")
+  "Inizio attività di progettazione","Studio individuale e ricerca di contatto con l'azienda proponente", "",
+  "Colloquio per conclusione RTB", "Invio mail di richiesta colloquio al prof. Vardanega", "",
+  "Maggiore controllo sullo stato di avanzamento del progetto", "Aumento degli sprint previsti all'interno del Piano di progetto", "")
 )
