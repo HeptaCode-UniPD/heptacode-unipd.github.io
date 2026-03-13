@@ -43,7 +43,7 @@ Gli argomenti discussi nell'incontro sono stati:
 - Preparazione delle domande per il colloquio con il professore Vardanega
 = Svolgimento
 == Discussione sulle modifiche da apportare alla struttura architetturale del progetto
-È stata proposta una modifica alla macro-struttura del progetto, che è stata accettata unanimamente da tutto il gruppo. La struttura in questione è la seguente:
+È stata proposta una modifica alla macro-struttura del progetto, che è stata accettata da tutto il gruppo. \ La struttura in questione è la seguente:
 #align(center,image("../../../asset/macrostruttura.jpg"))
 - È stato scelto di aggiungere una parte dedicata ad AWS Lambda, che gestisce lo scaling automatico all'architettura 
 - È stato deciso di dare ad ogni modulo interno una struttura interna di tipo layered.
