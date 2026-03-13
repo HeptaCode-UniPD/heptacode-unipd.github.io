@@ -240,14 +240,7 @@ strumenti'
 oretotindividualirtb
 tortartb
 oretotindividualipb
-datapb
-decisionipb
-esternipb
-finepb
-giornopb
-iniziopb
-linepb
-luogopb
-presenzapb
-testopb
+testopbremediation
+langchain
 mockup
+l'analysis

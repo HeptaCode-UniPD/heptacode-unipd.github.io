@@ -172,7 +172,7 @@ details section{
 
 #lettera{
     background-color: var(--bgsection);
-    border-radius: 2em 2em 0em 0em;
+    border-radius: 2em 2em 2em 2em;
     padding: 0.5em;
 }
 
@@ -201,7 +201,7 @@ article label{
 
 section {
     background-color: var(--bgsection);
-    border-radius: 0em 0em 2em 2em;
+    border-radius: 0.5em;
     padding: 1em;
 }
 

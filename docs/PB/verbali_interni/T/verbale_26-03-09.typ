@@ -79,8 +79,8 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 
 #let decisione-azione = ((
-  "Necessità di confronto con l'azienda proponente","Invio messaggio di richiesta di colloquio online all'azienda",
-  "Suddivisione dei compiti", "Fare riferimento alla Project Board di gruppo su GitHub",
-  "Suddivisione dei compiti per lo sviluppo del backend", "Fare riferimento alla Project Board di gruppo su GitHUb"
+  "Necessità di confronto con l'azienda proponente","Invio messaggio di richiesta di colloquio online all'azienda", "",
+  "Suddivisione dei compiti", "Fare riferimento alla Project Board di gruppo su GitHub", "",
+  "Suddivisione dei compiti per lo sviluppo del backend", "Fare riferimento alla Project Board di gruppo su GitHUb", ""
 )
 )

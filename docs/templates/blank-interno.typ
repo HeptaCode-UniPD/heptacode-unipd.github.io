@@ -37,7 +37,7 @@ Gli argomenti discussi nell'incontro sono stati:
 
 
 = Conclusione
-Il gruppo ha stabilito che nel corso delle settimana avrebbe: 
+Il gruppo ha stabilito che nel corso della settimana avrebbe: 
 - 
 
 Il prossimo incontro è fissato per il giorno #next-meeting
@@ -45,5 +45,5 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 // Inserire le coppie (Decisione, Azione)
 #let decisione-azione = (
-  ("", ""),
+  ("", "", "",)
 )
