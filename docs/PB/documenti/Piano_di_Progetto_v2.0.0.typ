@@ -1762,8 +1762,9 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 - Retrospettiva rispetto alla pianificazione nel breve e lungo termine con conseguenti misure correttive attuate per la gestione dei rischi e delle problematiche incontrate.
 
 #pagebreak()
-=== Sprint 12
-==== Preventivo a finire
+=== Trascorso PB
+==== Sprint 12
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -1812,7 +1813,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 
 #underline[Spese della settimana]: 320€ \ #underline[Spesa totale]: *6.245€*
 
-==== Trascorso
+===== Trascorso dello sprint
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -1836,8 +1837,8 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 )
 #pagebreak()
 
-=== Sprint 13
-==== Preventivo a finire
+==== Sprint 13
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -1887,7 +1888,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 
 #underline[Spese della settimana]: 2.465€ \ #underline[Spesa totale]: *8.710€*
 
-==== Trascorso
+===== Trascorso dello sprint
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -1911,8 +1912,8 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 )
 #pagebreak()
 
-=== Sprint 14
-==== Preventivo a finire
+==== Sprint 14
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -1964,7 +1965,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 
 #underline[Spese della settimana]: 2.215€ \ #underline[Spesa totale]: *10.925€*
 
-==== Trascorso
+===== Trascorso dello sprint
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -1989,8 +1990,8 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 
 #pagebreak()
 
-=== Sprint 15
-==== Preventivo a finire
+==== Sprint 15
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -2041,7 +2042,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 
 #underline[Spese della settimana]: 1.920€ \ #underline[Spesa totale]: *12.845€*
 
-==== Trascorso
+===== Trascorso dello sprint
 #table(
   columns: (auto, auto),
   align: horizon,
