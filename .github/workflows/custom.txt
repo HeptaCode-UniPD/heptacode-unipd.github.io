@@ -239,3 +239,7 @@ strumenti'
 oretotindividualirtb
 tortartb
 oretotindividualipb
+pianificazionepb
+pianificazionertb
+trascorsopb
+trascorsortb
