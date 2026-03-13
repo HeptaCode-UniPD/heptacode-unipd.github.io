@@ -1,8 +1,44 @@
-#import "../../templates/template-documenti.typ": template_documenti, tabella-viola
-#import "../../templates/glossario_termini.typ": applica-glossario
+#show link: set text(fill: color.linear-rgb(121, 1, 238))
+#show link: underline
+
+#show table.cell: block.with(breakable: true)
+
+#let tabella-viola(..args) = {
+  show table.cell.where(y: 0): set text(white, weight: "bold")
+  table(
+    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
+    ..args
+  )
+}
+
+#v(1fr)
+#align(center, [
+  #image("../../asset/logo.svg")
+  #set text(lang: "it")
+
+  #v(1.5cm)
+
+  #text(size: 25pt, weight: "bold")[Analisi dei Requisiti]
+
+  #v(2.0cm)
+  #align(center, text(size: 15pt, weight: "bold")[Versione 2.0.0])
+
+  #v(2.0cm)
+  #align(center, text(size: 15pt, weight: "bold")[Contenuto del Documento])
+
+  #align(center,
+  [#text(12pt)[Il presente documento contiene l'_analisi dei Requisiti_ redatta dal gruppo _Hepta Code_ per il capitolato C2 proposto da _Var Group_.]]
+  )
+])
+#v(1fr)
+#counter(page).update(1)
+
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("2.3.0","2026-03-12","Angela Canazza","Angela Favaro","Aggiunta use case a seguito di progettazione frontend"),
+  ("2.2.0","2026-03-02","Angela Canazza","Angela Favaro","Rimodellazione requisiti"),
+  ("2.1.0","2026-03-02","Angela Canazza","Angela Favaro","Correzioni UML, secondo quanto segnalato"),
   ("2.0.0","2026-02-27","Angela Favaro","Nicola Simionato","Mini fix casi d'uso per versione 2.0.0"),
   ("1.5.0","2026-02-25","Nicola Simionato","Angela Favaro","Sistemazione diagrammi UML dei Casi d'Uso"),
   ("1.4.0","2026-02-25","Laura Venturini","Angela Favaro","Sistemazione requisiti secondo quanto segnalato"),
@@ -35,16 +71,60 @@
   ("0.1.0", "2025-12-15", "Alberto Reginato", "Angela Canazza", "Creazione struttura del documento e prima bozza"),
 )
 
-#show: doc => template_documenti(
-  titolo: "Analisi dei Requisiti",
-  descrizione: "Il presente documento contiene l'_analisi dei Requisiti_ redatta dal gruppo _Hepta Code_ per il capitolato C2 proposto da _Var Group_.",
-  modifiche: storia_modifiche,
-  lista_tabelle: true,
-  lista_figure: true,
-  doc
+#pagebreak()
+
+#text(size: 17pt, weight: "bold")[Registro delle modifiche]
+
+#tabella-viola(
+  columns: (auto, auto, auto, auto, 1fr),
+  inset: 10pt,
+  align: (center, center, center, center, left),
+  
+  table.header(
+  [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*],
+  ),
+
+  ..storia_modifiche.flatten()
 )
 
-#show: applica-glossario
+#pagebreak()
+#outline(title: "Indice dei contenuti")
+
+#pagebreak()
+#outline(
+  title: "Indice delle tabelle",
+  target: figure.where(kind: table),
+)
+
+#pagebreak()
+
+#outline(
+  title: "Indice delle figure",
+  target: figure.where(kind : image),
+)
+
+#pagebreak()
+#set page(numbering: "1",
+  header: [
+    #set table(
+      stroke: none,
+    )
+    #table(
+      columns: 3,
+      [Hepta Code],
+      [#rect(
+        width: 100%,
+        height: 1pt,
+        fill: white,
+        stroke: none,
+      )],
+      [Analisi dei Requisiti v2.0.0],
+    )
+    #line(length: 100%, stroke: black)
+  ],
+)
+#counter(page).update(1)  
+#set heading(numbering: "1.")
 
 = Introduzione
 == Scopo del Documento
@@ -81,7 +161,7 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
 
 === Riferimenti Normativi
 - _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2p.pdf")[Capitolato])
-- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/RTB/documenti/Norme_di_progetto_v1.0.0.pdf")[Norme di progetto v1.0.0]).
+- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/RTB/documenti/norme_di_progetto.pdf")[Norme di progetto v1.0.0]).
 
 === Riferimenti Informativi
 - Verbale Interno: 
@@ -444,7 +524,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 == Specifica dei casi d'uso - Utente Registrato
 
 === UC2 - Visualizzazione area personale
-#figure( [#image("../../asset/UC/user/UC2.png", height: 7cm)] , caption: [UC2 - Visualizzazione area personale])
+#figure( [#image("../../asset/UC/user/UC2.png", height: 11cm)] , caption: [UC2 - Visualizzazione area personale])
 <UC2>
 - *Attore principale:* Utente Registrato.
 
@@ -456,7 +536,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + L'utente visualizza il pannello a comparsa del menù utente.
-  + L'utente visualizza il riepilogo delle proprie informazioni (nome, email, ruolo attuale). (*<\<include>>* #link(<UC2.1>)[[UC2.1]], *<\<include>>* #link(<UC2.2>)[[UC2.2]], *<\<include>>* #link(<UC2.3>)[[UC2.3]])
+  + L'utente visualizza il riepilogo delle proprie informazioni (nome, email, ruolo attuale). (*<\<include>>* #link(<UC2.1>)[[UC2.1]], *<\<include>>* #link(<UC2.2>)[[UC2.2]], *<\<include>>* #link(<UC2.3>)[[UC2.3]], *<\<include>>* #link(<UC2.4>)[[UC2.4]], *<\<include>>* #link(<UC2.5>)[[UC2.5]], *<\<include>>* #link(<UC2.6>)[[UC2.6]]).
   + L'utente visualizza il pulsante per il logout.
 
 - *Postcondizioni:* Il menù utente è attivo, l'utente visualizza le sue informazioni personali e le opzioni sono selezionabili.
@@ -465,6 +545,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   - #link(<UC2.1>)[[UC2.1]]
   - #link(<UC2.2>)[[UC2.2]]
   - #link(<UC2.3>)[[UC2.3]]
+  - #link(<UC2.4>)[[UC2.4]]
+  - #link(<UC2.5>)[[UC2.5]]
+  - #link(<UC2.6>)[[UC2.6]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -517,6 +600,83 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Postcondizioni:* L'utente è a conoscenza del proprio ruolo all'interno dell'applicativo Code Guardian.
 
 #line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC2.4 - Visualizzazione foto profilo
+<UC2.4>
+- *Attore principale:* Utente Registrato.
+
+- *Descrizione:* L'utente vuole visualizzare la propria foto profilo.
+
+- *Precondizioni:* Il menù utente è attivo.
+
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale e pone l'attenzione sulle informazioni personali.
+
+- *Scenario principale:*
+  + L'utente visualizza la propria foto profilo tra le informazioni personali.
+
+- *Postcondizioni:* L'utente ha visualizzato la propria foto profilo all'interno dell'applicativo Code Guardian.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD2.5 - Visualizzazione opzione reindirizzamento Github
+<UC2.5>
+- *Attore principale:* Utente Registrato.
+
+- *Descrizione:* L'utente desidera visualizzare l'opzione di reindirizzamento al proprio profilo Github.
+
+- *Precondizioni:* Il menù utente è attivo.
+
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale e pone l'attenzione sulle informazioni personali.
+
+- *Scenario principale:*
+  + L'utente visualizza l'opzione di reindirizzamento al proprio profilo Github.
+
+- *Postcondizioni:* L'utente ha visualizzato l'opzione di reindirizzamento al proprio profilo GitHub.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC2.5.1 - Link al profilo GitHub
+#figure( [#image("../../asset/UC/user/UC2.5.1.png", height: 6cm)] , caption: [UC2 - Visualizzazione area personale])
+<UC2.5.1>
+- *Attore principale:* Utente Registrato.
+
+- *Attore secondario:* Github.
+
+- *Descrizione:* L'utente desidera visitare il proprio profilo Github.
+
+- *Precondizioni:* L'utente è registrato e sta visualizzando i dettagli del proprio profilo.
+
+- *Trigger:* L'utente seleziona l'icona di reindirizzamento al profilo Github collegato alla piattaforma.
+
+- *Scenario principale:*
+  + L'utente seleziona l'opzione di reindirizzamento proprio profilo Github.
+  + L'utente viene reindirizzato al proprio profilo Github.
+
+- *Scenari alternativi:* \
+  Si verifica un errore durante il reindirizzamento.
+      - L'Utente Registrato visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+      - Il caso d'uso termina senza successo.
+
+- *Postcondizioni:* L'utente è stato reindirizzato al proprio profilo GitHub.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC2.6 - Visualizzazione competenze personali
+<UC2.6>
+- *Attore principale:* Utente Registrato.
+
+- *Descrizione:* L'utente desidera visualizzare i di propria competenza registrati nell'applicativo.
+
+- *Precondizioni:* Il menù utente è attivo.
+
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale e pone l'attenzione sulle informazioni personali.
+
+- *Scenario principale:*
+  + L'utente visualizza le icone con i nomi dei linguaggi di cui l'utente ha competenza.
+
+- *Postcondizioni:* L'utente ha visualizzato i linguaggi di propria competenza registrati nell'applicativo.
+
+#line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
@@ -543,7 +703,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + L’utente annulla l’operazione di logout. Il sistema interrompe l’operazione (*<<\extends>>* #link(<UC3.1>)[[UC3.1]]).
   Al passo 2:
   + Si verifica un errore durante la terminazione della sessione.
-    - Il Project Manager visualizza un messaggio di errore.
+    - Il l'Utente visualizza un messaggio di errore (*<<\extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* La sessione dell’utente è terminata e l’utente si trova in uno stato non autenticato.
@@ -612,7 +772,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + L'Utente Registrato visualizza la percentuale delle statistiche correttezza OWASP (*<\<include>>* #link(<UC5.4>)[[UC5.4]]).
   + L'Utente Registrato visualizza un pulsante per l'eliminazione del repository (#link(<UC11>)[[UC11]]). 
   + L'Utente Registrato visualizza un pulsante per tornare alla pagina precedente. 
-- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
+- *Scenari alternativi:* \ Si verifica un errore durante il caricamento della pagina.
     - L'Utente Registrato visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
@@ -1545,7 +1705,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:* \
   + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sui test.
   + Al Developer vengono proposte remediation riguardante l'area di test, per ogni documento riportato. 
-  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
   + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sui test.
 
 - *Scenari alternativi:* \ 
@@ -1573,7 +1732,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:* \
   + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sull'analisi OWASP.
   + AL Developer vengono proposte delle remediation riguardante l'analisi OWASP, per ogni documento riportato. 
-  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
   + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sull'analisi OWASP.
 
 - *Scenari alternativi:* \
@@ -1599,7 +1757,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:* \
   + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sulla documentazione.
   + Al Developer vengono proposte remediation riguardante l'area di documentazione, per ogni documento riportato. 
-  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
   + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sulla documentazione.
 
 - *Scenari alternativi:*\
@@ -2911,7 +3068,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Project Manager visualizza una barra per la ricerca di un developer (#link(<UCPM1.4.2>)[[UCPM1.4.2]]). 
   + Il Project Manager visualizza una lista di developer tra cui cercare.(*<\<include>>* #link(<UCPM1.6>)[[UCPM1.6]]). 
   + Il Project Manager seleziona i developer che desidera.
-  + Il Project Manager seleziona il ruolo del developer all'interno del progetto (tra i ruoli disponibili nel profilo del developer).
   + Il Project Manager conferma l'inserimento dei developer.
   + Il Project Manager visualizza, nel progetto, i developer che ha inserito.
 
@@ -3067,7 +3223,6 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + Il Project Manager visualizza il nome che il developer ha su _Code Guardian_.
   + Il Project Manager visualizza l'immagine profilo del Developer.
-  + Il Project Manager visualizza i ruoli associati al Developer.
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento dei dati del Developer.
@@ -3294,6 +3449,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Scenario principale:*
   + Il Project Manager visualizza, per ogni membro del team, delle icone grafiche che indicano le tecnologie di competenza. (*<\<include>>* #link(<UCPM3.2>)[[UCPM3.2]]).
   + Il Project Manager visualizza la lista dei developer associati al progetto, su cui può per approfondirne il profilo (#link(<UCPM3.1>)[[UCPM3.1]]).
+  + Il Project Manager visualizza un pulsante per tornare alla pagina precedente.
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -3479,6 +3635,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + Il Project Manager visualizza l'elenco di framework e librerie usate. (*<\<include>>* #link(<UCPM4.1>)[[UCPM4.1]]).
   + Il Project Manager visualizza la possibile segnalazione di dipendenze deprecate o a rischio sicurezza (*<\<include>>* #link(<UCPM4.2>)[[UCPM4.2]]).
   + Il Project Manager visualizza i suggerimenti generati dall’IA (*<\<include>>* #link(<UCPM4.3>)[[UCPM4.3]]).
+  + Il Project Manager visualizza un pulsante per tornare alla pagina precedente.
 
 - *Scenari alternativi:*
   - Si verifica un errore durante il caricamento della pagina.
@@ -3558,7 +3715,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + Il Project Manager consulta le proposte di ottimizzazione, riguardanti nuovi framework e nuove librerie, fornite dall'intelligenza artificiale.
-  + Il Project Manager analizza le motivazioni tecniche a supporto di ogni suggerimento..
+  + Il Project Manager analizza le motivazioni tecniche a supporto di ogni suggerimento.
   + Il Project Manager valuta il potenziale impatto dei suggerimenti sulle tempistiche e sulle risorse del team.
 
 - *Scenari alternativi:*
@@ -4340,48 +4497,52 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
 
   // UTENTE SCONOSCIUTO
-  [R-1-F-O],[L'Utente Sconosciuto deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
-  [R-2-F-O],[L'Utente Sconosciuto deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
-  [R-3-F-O],[L'Utente Sconosciuto deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
-  [R-4-F-O],[L'Utente Sconosciuto deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
-  [R-5-F-O],[L'Utente Sconosciuto deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
+  [R-1-F-D],[L'Utente Sconosciuto deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
+  [R-2-F-D],[L'Utente Sconosciuto deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
+  [R-3-F-D],[L'Utente Sconosciuto deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
+  [R-4-F-D],[L'Utente Sconosciuto deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
+  [R-5-F-D],[L'Utente Sconosciuto deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
 
   // UTENTE REGISTRATO
   [R-16-F-O],[L'Utente Registrato deve poter inserire un repository pubblico al sistema],[#link(<UC8>)[UC8]],
   [R-17-F-D],[L'Utente Registrato deve poter inserire un repository privato al sistema],[#link(<UC8.0.1>)[UC8.0.1]],
   [R-18-F-D],[L'Utente Registrato deve poter inserire il Personal Access Token collegato al proprio account],[#link(<UC8.0.1>)[UC8.0.1]],
   [R-19-F-D],[L'Utente Registrato deve ricevere un messaggio di errore in caso di token inserito non valido],[#link(<UC8.0.2>)[UC8.0.2]],
-  [R-20-F-O],[L'Utente Registrato deve poter annullare l'inserimento di un repository],[#link(<UC8.1>)[UC8.1]],
+  [R-20-F-D],[L'Utente Registrato deve poter annullare l'inserimento di un repository],[#link(<UC8.1>)[UC8.1]],
   [R-21-F-O],[L'Utente Registrato deve poter inserire l'URL del repository],[#link(<UC8.2>)[UC8.2]],
   [R-22-F-O],[L'Utente Registrato deve ricevere un messaggio di errore nel caso di URL non valido],[#link(<UC8.3>)[UC8.3]],
   [R-23-F-O],[L'Utente Registrato deve poter visualizzare la lista dei propri repository personali],[#link(<UC6>)[UC6]],
   [R-24-F-O],[L'Utente Registrato deve poter selezionare una preferenza sulla tipologia di repository che desidera visualizzare],[#link(<UC6.1>)[UC6.1]],
   [R-25-F-O],[L'Utente Registrato deve poter visualizzare il nome di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.5>)[UC5.5]],
   [R-26-F-D],[L'Utente Registrato deve poter visualizzare il nome del progetto associato al repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.6>)[UC5.6]],
-  [R-27-F-O],[L'Utente Registrato deve poter visualizzare l’indicatore  di visibilità di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.7>)[UC5.7]],
-  [R-28-F-O],[L'Utente Registrato deve poter visualizzare la lista dei progetti ai quali contribuisce],[#link(<UC9>)[UC9]],
-  [R-29-F-O],[L'Utente Registrato deve poter visualizzare il nome di un progetto],[#link(<UC10.1>)[UC10.1]],
-  [R-30-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sulla documentazione di un progetto],[#link(<UC10>)[UC10], #link(<UC10.2>)[UC10.2]],
-  [R-31-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sui test di un progetto],[#link(<UC10>)[UC10], #link(<UC10.3>)[UC10.3]],
-  [R-32-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi OWASP di un progetto],[#link(<UC10>)[UC10], #link(<UC10.4>)[UC10.4]],
+  [R-27-F-D],[L'Utente Registrato deve poter visualizzare l’indicatore  di visibilità di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.7>)[UC5.7]],
+  [R-28-F-D],[L'Utente Registrato deve poter visualizzare la lista dei progetti ai quali contribuisce],[#link(<UC9>)[UC9]],
+  [R-29-F-D],[L'Utente Registrato deve poter visualizzare il nome di un progetto],[#link(<UC10.1>)[UC10.1]],
+  [R-30-F-D],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sulla documentazione di un progetto],[#link(<UC10>)[UC10], #link(<UC10.2>)[UC10.2]],
+  [R-31-F-D],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sui test di un progetto],[#link(<UC10>)[UC10], #link(<UC10.3>)[UC10.3]],
+  [R-32-F-D],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi OWASP di un progetto],[#link(<UC10>)[UC10], #link(<UC10.4>)[UC10.4]],
   [R-33-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sulla documentazione di un repository],[ #link(<UC5.1>)[UC5.1]],
   [R-34-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sui test di un repository],[#link(<UC5.2>)[UC5.2]],
   [R-35-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi OWASP di un repository],[#link(<UC5.4>)[UC5.4]],
   [R-36-F-O],[L'Utente Registrato deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un'analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
 
   [R-9-F-O],[L'Utente Registrato deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
-  [R-10-F-O],[L'Utente Registrato deve poter visualizzare il proprio nome Utente Registrato],[#link(<UC2.1>)[UC2.1]],
-  [R-11-F-O],[L'Utente Registrato deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
-  [R-12-F-O],[L'Utente Registrato deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
-  [R-13-F-O],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
-  [R-14-F-O],[L'Utente Registrato deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
+  [R-10-F-D],[L'Utente Registrato deve poter visualizzare il proprio nome Utente Registrato],[#link(<UC2.1>)[UC2.1]],
+  [R-11-F-D],[L'Utente Registrato deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
+  [R-12-F-D],[L'Utente Registrato deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
+  [R-139-F-D],[L'Utente Registrato deve poter visualizzare la propria immagine del profilo],[#link(<UC2.4>)[UC2.4]],
+  [R-140-F-D],[L'Utente Registrato deve poter visualizzare l'opzione di reindirizzamento al proprio profilo Github],[#link(<UC2.5>)[UC2.5]],
+  [R-141-F-D],[L'Utente Registrato deve poter visualizzare le proprie competenze registrate nella piattaforma],[#link(<UC2.6>)[UC2.6]],
+  [R-141-F-D],[L'Utente Registrato deve poter essere reindirizzato nel proprio profilo Github],[#link(<UC2.5.1>)[UC2.5.1]],
+  [R-13-F-D],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
+  [R-14-F-D],[L'Utente Registrato deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
   [R-15-F-D],[L'Utente Registrato deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
 
   [R-92-F-P],[L'Utente Registrato deve poter cercare un repository in una barra di ricerca],[#link(<UC7>)[UC7]],
   [R-85-F-P],[L'Utente Registrato deve poter visualizzare un repository sulla piattaforma esterna GitHub],[#link(<UC5.10>)[UC5.10]],
 
   // DEV
-  [R-78-Q-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
+  [R-78-Q-D],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
   [R-6-F-D],[Il Developer può sincronizzare il proprio account GitHub],[#link(<UCD2>)[UCD2]],
   [R-7-F-D],[Il Developer può annullare l'autenticazione con il provider esterno GitHub],[#link(<UCD2.2>)[UCD2.2]],
   [R-8-F-D],[Il Developer deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UCD2.1>)[UCD2.1]],
@@ -4399,8 +4560,8 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-46-F-D],[Il Developer deve poter annullare l'accettazione di una proposta di remediation],[#link(<UCD6.3>)[UCD6.3]],
   [R-47-F-D],[Il Developer deve ricevere un messaggio di errore nel caso di fallimento dell'accettazione della remediation],[#link(<UCD6.4>)[UCD6.4]],
   [R-48-F-D],[Il Developer deve essere informato se la remediation proposta non è più coerente con lo stato del sistema, e quindi non può essere effettuata],[#link(<UCD6.5>)[UCD6.5], #link(<UCD6.6>)[UCD6.6]],
-  [R-49-F-O],[Il Developer deve poter eliminare un repository dal sistema],[#link(<UC11>)[UC11]],
-  [R-50-F-O],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[#link(<UC11.1>)[UC11.1]],
+  [R-49-F-D],[Il Developer deve poter eliminare un repository dal sistema],[#link(<UC11>)[UC11]],
+  [R-50-F-D],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[#link(<UC11.1>)[UC11.1]],
   [R-51-F-D],[Il Developer deve poter visualizzare la lista dei procedimenti in corso all'interno del sistema],[#link(<UCD8>)[UCD8], #link(<UCD8.1>)[UCD8.1]],
   [R-52-F-D],[Il Developer deve visualizzare il nome del repository sul quale sta avvenendo il procedimento],[#link(<UCD8.1>)[UCD8.1], #link(<UC5.5>)[UC5.5]],
   [R-53-F-D],[Il Developer deve visualizzare la data di avvio di ogni elemento dalla lista dei procedimenti in corso in corso.],[#link(<UCD8.1>)[UCD8.1], #link(<UCD8.4>)[UCD8.4]],
@@ -4418,7 +4579,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-65-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi OWASP],[#link(<UCD12.3>)[UCD12.3]],
   [R-66-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare le proposte di remediation elaborate in seguito all'analisi],[#link(<UCD12.4>)[UCD12.4]],
   [R-67-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare la proposta di remediation specifica inerente ad un singolo file],[#link(<UCD12.4.1>)[UCD12.4.1]],
-  [R-69-F-O],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository],[#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1], #link(<UCD13.2>)[UCD13.2], #link(<UCD13.3>)[UCD13.3]],
+  [R-69-F-D],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository],[#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1], #link(<UCD13.2>)[UCD13.2], #link(<UCD13.3>)[UCD13.3]],
   [R-70-F-D],[Il Developer deve poter visualizzare la data di fine di un'analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD11.1.1>)[UCD11.1.1]],
   [R-71-F-D],[Il Developer deve poter visualizzare la lo stato di un'analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD14.1>)[UCD14.1]],
   [R-72-F-O],[Il Developer deve poter avviare un'analisi generale all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.2>)[UCD15.2]],
@@ -4426,26 +4587,26 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-74-F-O],[Il Developer deve poter avviare un'analisi sulla documentazione all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.4>)[UCD15.4]],
   [R-75-F-O],[Il Developer deve poter avviare un'analisi OWASP all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.5>)[UCD15.5]],
   [R-76-F-O],[Il Developer deve ricevere un messaggio di errore nel caso si verificasse un conflitto con un'altra analisi all'avvio di un'analisi],[#link(<UCD15.6>)[UCD15.6]],
-  [R-77-F-O],[Il Developer deve poter annullare l'avvio di un'analisi],[#link(<UCD15.7>)[UCD15.7]],
+  [R-77-F-D],[Il Developer deve poter annullare l'avvio di un'analisi],[#link(<UCD15.7>)[UCD15.7]],
 
   // PM 
-  [R-79-Q-O],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[#link(<UCPM1>)[UCPM1]],
-  [R-80-F-O],[Il Project Manager deve poter visualizzare la lista dei propri progetti],[#link(<UCPM2>)[UCPM2]],
+  [R-79-Q-D],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[#link(<UCPM1>)[UCPM1]],
+  [R-80-F-D],[Il Project Manager deve poter visualizzare la lista dei propri progetti],[#link(<UCPM2>)[UCPM2]],
   [R-81-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il grafico percentuale sull'analisi della documentazione],([#link(<UCPM2>)[UCPM2], #link(<UC10.2>)[UC10.2]]),
   [R-82-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il grafico percentuale sull'analisi dei test],([#link(<UCPM2>)[UCPM2], #link(<UC10.3>)[UC10.3]]),
   [R-83-F-D],[Nella lista dei progetti, il Project Manager deve poter visualizzare il grafico percentuale sull'analisi della correttezza OWASP],([#link(<UCPM2>)[UCPM2], #link(<UC10.4>)[UC10.4]]),
-  [R-84-F-O],[Il Project Manager deve poter visualizzare i dettagli di un progetto],[#link(<UCPM2.1>)[UCPM2.1]],
-  [R-87-F-O],[Il Project Manager deve poter creare un nuovo progetto],[#link(<UCPM1.2>)[UCPM1.2]],
-  [R-88-F-O],[Il Project Manager deve poter inserire il nome del progetto],[#link(<UCPM1.2.1>)[UCPM1.2.1]],
+  [R-84-F-D],[Il Project Manager deve poter visualizzare i dettagli di un progetto],[#link(<UCPM2.1>)[UCPM2.1]],
+  [R-87-F-D],[Il Project Manager deve poter creare un nuovo progetto],[#link(<UCPM1.2>)[UCPM1.2]],
+  [R-88-F-D],[Il Project Manager deve poter inserire il nome del progetto],[#link(<UCPM1.2.1>)[UCPM1.2.1]],
   [R-89-F-D],[Il Project Manager deve poter modificare il nome di un progetto],[#link(<UCPM1.2.2>)[UCPM1.2.2]],
   [R-90-F-D],[Il Project Manager deve ricevere un errore se il nuovo nome del progetto che si sta inserendo è già presente per quell'utente],[#link(<UCPM1.2.3>)[UCPM1.2.3]],
-  [R-91-F-O],[Il Project Manager deve poter aggiungere un repository al progetto],[#link(<UCPM1.3>)[UCPM1.3]],
-  [R-93-F-O],[Il Project Manager deve poter visualizzare una lista di repository da poter aggiungere al progetto],[#link(<UCPM1.5>)[UCPM1.5]],
-  [R-94-F-O],[Il Project Manager deve poter annullare l'operazione di aggiunta repository al progetto],[#link(<UCPM1.3.1>)[UCPM1.3.1]],
-  [R-95-F-O],[Il Project Manager deve poter aggiungere dei developer al progetto],[#link(<UCPM1.4>)[UCPM1.4]],
+  [R-91-F-D],[Il Project Manager deve poter aggiungere un repository al progetto],[#link(<UCPM1.3>)[UCPM1.3]],
+  [R-93-F-D],[Il Project Manager deve poter visualizzare una lista di repository da poter aggiungere al progetto],[#link(<UCPM1.5>)[UCPM1.5]],
+  [R-94-F-D],[Il Project Manager deve poter annullare l'operazione di aggiunta repository al progetto],[#link(<UCPM1.3.1>)[UCPM1.3.1]],
+  [R-95-F-D],[Il Project Manager deve poter aggiungere dei developer al progetto],[#link(<UCPM1.4>)[UCPM1.4]],
   [R-96-F-P],[Il Project Manager deve poter cercare il nome di un developer su una barra di ricerca ],[#link(<UCPM1.4.2>)[UCPM1.4.2]],
-  [R-97-F-O],[Il Project Manager deve poter visualizzare una lista di developer da poter aggiungere al progetto],[#link(<UCPM1.6>)[UCPM1.6]],
-  [R-98-F-O],[Il Project Manager deve poter annullare l'aggiunta dei developer al progetto],[#link(<UCPM1.4.1>)[UCPM1.4.1]],
+  [R-97-F-D],[Il Project Manager deve poter visualizzare una lista di developer da poter aggiungere al progetto],[#link(<UCPM1.6>)[UCPM1.6]],
+  [R-98-F-D],[Il Project Manager deve poter annullare l'aggiunta dei developer al progetto],[#link(<UCPM1.4.1>)[UCPM1.4.1]],
   [R-99-F-D],[Il Project Manager deve poter visualizzare il nome e la foto profilo di un developer],[#link(<UCPM1.6.1>)[UCPM1.6.1]],
   [R-100-F-D],[Il Project Manager deve poter visualizzare e gestire gli attuali membri del team],[#link(<UCPM1.7>)[UCPM1.7]],
   [R-101-F-D],[Il Project Manager deve poter rimuovere un developer dal progetto],[#link(<UCPM1.8>)[UCPM1.8]],
@@ -4463,8 +4624,8 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-113-F-D],[Il Project Manager deve poter visualizzare l'elenco di framework e librerie,  utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.1>)[UCPM4.1]],
   [R-114-F-D],[Il Project Manager deve poter visualizzare l'elenco di segnalazioni a: framework e librerie con rischi di sicurezza o deprecate, utilizzare nello stack tecnologico di un progetto],[#link(<UCPM4.2>)[UCPM4.2]],
   [R-115-F-D],[Il Project Manager deve poter visualizzare suggerimenti generati dall'IA per la sostituzione di framework e librerie, utilizzate nello stack tecnologico di un progetto],[#link(<UCPM4.3>)[UCPM4.3]],
-  [R-139-F-O],[Il Project Manager deve poter eliminare un progetto di sua proprietà],[#link(<UCPM1.9>)[UCPM1.9]],
-  [R-140-F-O],[Il Project Manager deve poter annullare l'eliminazione di un progetto di sua proprietà],[#link(<UCPM1.9.1>)[UCPM1.9.1]],
+  [R-139-F-D],[Il Project Manager deve poter eliminare un progetto di sua proprietà],[#link(<UCPM1.9>)[UCPM1.9]],
+  [R-140-F-D],[Il Project Manager deve poter annullare l'eliminazione di un progetto di sua proprietà],[#link(<UCPM1.9.1>)[UCPM1.9.1]],
   // BO
   [R-116-Q-P],[Il Business Owner deve poter visualizzare la lista dei propri progetti],[#link(<UCBO1>)[UCBO1], #link(<UC9>)[UC9]],
   [R-117-F-P],[Il Business Owner deve poter visualizzare il budget complessivo per il proprio progetto],[#link(<UCBO1>)[UCBO1], #link(<UCBO1.1>)[UCBO1.1], #link(<UCBO1.1.1>)[UCBO1.1.1]],

@@ -229,6 +229,7 @@ listaev
 listapv
 listaspese
 maxlistaspese
+listagulpease
 str
 'analisi
 'processi
@@ -239,6 +240,9 @@ strumenti'
 oretotindividualirtb
 tortartb
 oretotindividualipb
+testopbremediation
+langchain
+mockup
 pianificazionepb
 pianificazionertb
 trascorsopb

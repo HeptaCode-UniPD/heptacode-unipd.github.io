@@ -27,6 +27,18 @@
 }
 
 #let storia_modifiche = (
+  "2.2.0",
+  "2026/03/12",
+  "Angela Favaro",
+  "Laura Venturini",
+  "Aggiunta terminologie per Specifica Tecnica",
+
+  "2.1.0",
+  "2026/03/07",
+  "Angela Favaro",
+  "Riccardo Baldin",
+  "Aggiunta terminologie per Specifica Tecnica",
+
   "2.0.0",
   "2026/02/16",
   "Angela Canazza",
@@ -93,7 +105,7 @@
         fill: white,
         stroke: none,
       )],
-      [Glossario v2.0.0],
+      [Glossario v2.1.0],
     )
     #line(length: 100%, stroke: black)
   ],
@@ -182,6 +194,14 @@ Pratica che consiste nell'unire frequentemente le copie di lavoro di tutti gli s
 #heading(level: 2, outlined: false)[Dashboard]
 Interfaccia grafica che fornisce una vista d'insieme dei dati e di altre metriche di sistema, permettendo un monitoraggio rapido e intuitivo.
 
+#heading(level: 2, outlined: false)[Deployment] 
+Processo attraverso cui un'applicazione software viene resa operativa e disponibile per l'utilizzo nel suo ambiente di destinazione — che sia un server, un cloud, un dispositivo mobile o un browser.
+Tutto ciò che accade dal momento in cui il codice è pronto a quando l'utente può effettivamente usarlo.
+
+#heading(level: 2, outlined: false)[Design Pattern] 
+Soluzione generale, riutilizzabile e collaudata a un problema ricorrente che si incontra nella progettazione del software.
+Non è codice pronto all'uso, ma un modello concettuale — una descrizione di come strutturare classi, oggetti e le loro interazioni per risolvere un determinato tipo di problema in un determinato contesto.
+
 #heading(level: 2, outlined: false)[Design Thinking] Metodologia orientata alla risoluzione di problemi complessi, che parte dalla raccolta di idee generali e continua con l'affinamento delle stesse in un progetto più strutturato.
 
 #heading(level: 2, outlined: false)[Developer] <Developer>
@@ -206,7 +226,8 @@ Abbreviazione per "documentazione". Indica l'insieme dei documenti relativi al p
 Metodologia che mira ad identificare rapidamente un malfunzionamento all'interno di un progetto, in modo da poterlo correggere prima che questo porti a un accumulo di problemi di difficile gestione.
 
 #heading(level: 2, outlined: false)[Framework]
-Struttura logica di supporto su cui uno Sviluppatore può poggiare la costruzione di un software.
+Struttura software preconfezionata che fornisce un'architettura di base, un insieme di strumenti e convenzioni su cui costruire un'applicazione, definendo lo scheletro entro cui lo sviluppatore inserisce il proprio codice.
+Ambiente strutturato che impone un modo preciso di organizzare e sviluppare il software
 
 #heading(level: 2, outlined: false)[Frontend]
 Tutto ciò che un utente vede e con cui interagisce direttamente quando utilizza un sito web o un'applicazione. È la parte "visibile" del software, quella che trasforma il codice in una UI comprensibile.
@@ -246,6 +267,12 @@ Elemento atto a: pianificare, discutere e tracciare lavoro, bug, idee o nuove fu
 #heading(level: 2, outlined: false)[Large Language Model (LLM)]
 Tipo di AI addestrato su enormi quantità di dati testuali per comprendere, generare e elaborare il linguaggio umano in modo simile a un essere umano, Esso è capace di compiti come la scrittura, la traduzione, il riassunto di testi e la conversazione, basandosi su architetture di deep learning, i quali gli permettono di cogliere contesti complessi. 
 
+#heading(level: 2, outlined: false)[Libreria]
+Raccolta di codice precompilato e riutilizzabile — funzioni, classi, costanti, routine — che un programma può importare e invocare per svolgere compiti comuni senza doverli implementare da zero.
+- Non detta la struttura del programma. Il codice della libreria viene invocato dallo sviluppatore.
+- È riutilizzabile, per essere condivisa tra progetti diversi.
+- Può essere statica (incorporata direttamente nell'eseguibile a compile-time) o dinamica (caricata a runtime e può essere condivisa tra più programmi).
+
 #pagebreak()
 
 = M
@@ -258,6 +285,9 @@ Messaggio digitale che viene inviato e ricevuto tramite internet. Strumento di c
 
 #heading(level: 2, outlined: false)[Milestone]
 Punto di controllo significativo che segna il completamento di una fase importante o il raggiungimento di un obiettivo chiave all'interno di un progetto. Rappresenta un traguardo raggiunto.
+
+#heading(level: 2, outlined: false)[Mockup]
+Rappresentazione statica e ad alta fedeltà dell'interfaccia di un'applicazione o sito web. Mostra come apparirà visivamente il prodotto finale — colori, typography, layout, icone, spaziature — ma senza funzionalità interattive.
 
 #heading(level: 2, outlined: false)[MongoDB]
 Sistema di gestione di basi dati, basato su un modello a documenti, anziché sulle classiche tabelle a righe e colonne. È progettato per essere estremamente flessibile, scalabile e capace di gestire grandi quantità di dati non strutturati (come post sui social, cataloghi prodotti complessi o dati provenienti da sensori).
@@ -360,6 +390,10 @@ Piattaforma di comunicazione asincrona collaborativa basata sulla messaggistica 
 
 #heading(level: 2, outlined: false)[Server]
 Computer o un software che fornisce dati, servizi o risorse ad altri computer, chiamati client, attraverso una rete (locale o internet).
+
+#heading(level: 2, outlined: false)[Specifica Tecnica (ST)]
+Documento formale che descrive in modo preciso e dettagliato come un sistema software deve essere progettato e realizzato per soddisfare i requisiti stabiliti.
+Ponte tra la fase di analisi e la fase di sviluppo, fornendo a tutto il team tecnico una riferimento univoco e condiviso.
 
 #heading(level: 2, outlined: false)[Sprint]
 Intervallo di tempo predefinito e limitato (solitamente tra 1 e 4 settimane) durante il quale un team di lavoro deve completare una quantità specifica di lavoro.

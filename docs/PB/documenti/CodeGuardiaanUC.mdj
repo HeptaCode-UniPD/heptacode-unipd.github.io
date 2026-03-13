@@ -2306,7 +2306,7 @@
 											"top": 4543,
 											"width": 623,
 											"height": 13,
-											"text": "Visualizzazione stato analisi storica CodeGuardian"
+											"text": "Avvio analisi CodeGuardian"
 										},
 										{
 											"_type": "LabelView",
@@ -2422,7 +2422,7 @@
 											"top": 4527,
 											"width": 575,
 											"height": 13,
-											"text": "Visualizzazione stato analisi storica CodeGuardian"
+											"text": "Avvio analisi CodeGuardian"
 										},
 										{
 											"_type": "LabelView",
@@ -2546,7 +2546,7 @@
 											"top": 4519,
 											"width": 527,
 											"height": 13,
-											"text": "Visualizzazione stato analisi storica CodeGuardian"
+											"text": "Avvio analisi CodeGuardian"
 										},
 										{
 											"_type": "LabelView",
@@ -29924,9 +29924,9 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -30406,9 +30406,9 @@
 											"parentStyle": true,
 											"left": 344,
 											"top": -768,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -30621,9 +30621,9 @@
 											"parentStyle": true,
 											"left": 896,
 											"top": -672,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -31379,9 +31379,9 @@
 											"parentStyle": true,
 											"left": 1332,
 											"top": -164,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -31594,9 +31594,9 @@
 											"parentStyle": true,
 											"left": 2064,
 											"top": -816,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -31809,9 +31809,9 @@
 											"parentStyle": true,
 											"left": 1328,
 											"top": -168,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -32024,9 +32024,9 @@
 											"parentStyle": true,
 											"left": 1136,
 											"top": -232,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -32239,9 +32239,9 @@
 											"parentStyle": true,
 											"left": 1024,
 											"top": -352,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -33510,9 +33510,9 @@
 											"parentStyle": true,
 											"left": 3440,
 											"top": -724,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -33725,9 +33725,9 @@
 											"parentStyle": true,
 											"left": 2692,
 											"top": -256,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -33940,9 +33940,9 @@
 											"parentStyle": true,
 											"left": 2772,
 											"top": -352,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -34155,9 +34155,9 @@
 											"parentStyle": true,
 											"left": 2724,
 											"top": -440,
-											"width": 329.97021484375,
+											"width": 337.2001953125,
 											"height": 13,
-											"text": "(from Visualizzazione stato analisi storica CodeGuardian)"
+											"text": "(from Avvio analisi CodeGuardian)"
 										},
 										{
 											"_type": "LabelView",
@@ -43608,7 +43608,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGbwitkgHitwwc="
 					},
-					"name": "Visualizzazione stato analisi storica CodeGuardian",
+					"name": "Avvio analisi CodeGuardian",
 					"ownedElements": [
 						{
 							"_type": "UMLUseCase",
@@ -45786,9 +45786,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 219.5,
-											"top": 515.5,
+											"top": 522,
 											"width": 125,
-											"height": 39,
+											"height": 26,
 											"text": "UC2 Visualizzazione area personale",
 											"wordWrap": true
 										},
@@ -45825,9 +45825,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 214.5,
-									"top": 508.5,
+									"top": 515,
 									"width": 135,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGbw/Dgog9WAKs="
 									},
@@ -47178,9 +47178,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 496.5,
-											"top": 497.5,
+											"top": 504,
 											"width": 131,
-											"height": 39,
+											"height": 26,
 											"text": "UC2.1 Visualizzazione Nome Utente",
 											"wordWrap": true
 										},
@@ -47217,9 +47217,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 491.5,
-									"top": 490.5,
+									"top": 497,
 									"width": 141,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcKXs0tZGAQnA="
 									},
@@ -47393,9 +47393,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 433.5,
-											"top": 705.5,
+											"top": 712,
 											"width": 127,
-											"height": 39,
+											"height": 26,
 											"text": "UC2.3 Visualizzazione Roulo",
 											"wordWrap": true
 										},
@@ -47432,9 +47432,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 428.5,
-									"top": 698.5,
+									"top": 705,
 									"width": 137,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcKX0B4KGUhKY="
 									},
@@ -48380,9 +48380,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 420.5,
-											"top": 305.5,
+											"top": 312,
 											"width": 103,
-											"height": 39,
+											"height": 26,
 											"text": "UC1.2 Credenziali errate",
 											"wordWrap": true
 										},
@@ -48419,9 +48419,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 415.5,
-									"top": 298.5,
+									"top": 305,
 									"width": 113,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcOMV9oHOnnI8="
 									},
@@ -48595,9 +48595,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 224,
-											"top": 284,
+											"top": 290.5,
 											"width": 120,
-											"height": 52,
+											"height": 39,
 											"text": "UC1.1 Annullamento accesso alla piattaforma",
 											"wordWrap": true
 										},
@@ -48634,9 +48634,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 219,
-									"top": 277,
+									"top": 283.5,
 									"width": 130,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcOMUvz26IXh8="
 									},
@@ -50024,9 +50024,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 301.5,
-											"top": 1233.5,
+											"top": 1240,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -50063,9 +50063,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 296.5,
-									"top": 1226.5,
+									"top": 1233,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUfcpWWER8rg="
 									},
@@ -50279,7 +50279,7 @@
 									"parentStyle": true,
 									"left": 374,
 									"top": 1487.5,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 77,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUfj2bm2yY6w="
@@ -50451,9 +50451,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 316.5,
-											"top": 1690.5,
+											"top": 1697,
 											"width": 103,
-											"height": 39,
+											"height": 26,
 											"text": "UC5 Visualizza dettagli repository",
 											"wordWrap": true
 										},
@@ -50490,9 +50490,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 311.5,
-									"top": 1683.5,
+									"top": 1690,
 									"width": 113,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUc88nDy9RhM="
 									},
@@ -50706,7 +50706,7 @@
 									"parentStyle": true,
 									"left": 207.5,
 									"top": 1490.5,
-									"width": 112.5654296875,
+									"width": 112,
 									"height": 90,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUfe/o2c26nc="
@@ -50921,7 +50921,7 @@
 									"parentStyle": true,
 									"left": 542,
 									"top": 1487.5,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 77,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUf1GBIr1UvM="
@@ -51096,9 +51096,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 651,
-											"top": 1596,
+											"top": 1602.5,
 											"width": 94,
-											"height": 52,
+											"height": 39,
 											"text": "UC5.5 Visualizzazione nome repository",
 											"wordWrap": true
 										},
@@ -51135,9 +51135,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 646,
-									"top": 1589,
-									"width": 105.1259765625,
-									"height": 64,
+									"top": 1595.5,
+									"width": 104,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUfoBlXETNzI="
 									},
@@ -51351,7 +51351,7 @@
 									"parentStyle": true,
 									"left": 598,
 									"top": 1687.5,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 77,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUfpDQ3L1vKY="
@@ -51566,7 +51566,7 @@
 									"parentStyle": true,
 									"left": 598,
 									"top": 1807.5,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 77,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUfonA3Ibnuc="
@@ -53145,7 +53145,7 @@
 									"parentStyle": true,
 									"left": 1230,
 									"top": 1735.5,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 77,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUgb5QxEPwc0="
@@ -53360,7 +53360,7 @@
 									"parentStyle": true,
 									"left": 1254,
 									"top": 1599.5,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 77,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUgby+RBlHKo="
@@ -53535,9 +53535,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1227,
-											"top": 1500,
+											"top": 1506.5,
 											"width": 94,
-											"height": 52,
+											"height": 39,
 											"text": "UC5.5 Visualizzazione nome repository",
 											"wordWrap": true
 										},
@@ -53574,9 +53574,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1222,
-									"top": 1493,
-									"width": 105.1259765625,
-									"height": 64,
+									"top": 1499.5,
+									"width": 104,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUgbskw+7Yp4="
 									},
@@ -53790,7 +53790,7 @@
 									"parentStyle": true,
 									"left": 1022,
 									"top": 1599.5,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 77,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUgZjXQV9cK4="
@@ -54544,9 +54544,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 229.5,
-											"top": 1833.5,
+											"top": 1840,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -54583,9 +54583,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 224.5,
-									"top": 1826.5,
+									"top": 1833,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUgrQvV2A1eY="
 									},
@@ -54875,9 +54875,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 429.5,
-											"top": 2281.5,
+											"top": 2288,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -54914,9 +54914,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 424.5,
-									"top": 2274.5,
+									"top": 2281,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUhTXNqLMYvI="
 									},
@@ -55141,7 +55141,7 @@
 									"parentStyle": true,
 									"left": 262,
 									"top": 2133,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 64,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUg0Tt3aDFOA="
@@ -57891,9 +57891,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 340.5,
-											"top": 2913.5,
+											"top": 2920,
 											"width": 103,
-											"height": 39,
+											"height": 26,
 											"text": "UC8 Aggiungi singolo repository",
 											"wordWrap": true
 										},
@@ -57930,9 +57930,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 335.5,
-									"top": 2906.5,
+									"top": 2913,
 									"width": 113,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUhi3IgasyOU="
 									},
@@ -58106,9 +58106,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 405.5,
-											"top": 3089.5,
+											"top": 3096,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -58145,9 +58145,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 400.5,
-									"top": 3082.5,
+									"top": 3089,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUh0QPxxeymE="
 									},
@@ -59570,9 +59570,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 533.5,
-											"top": 3353.5,
+											"top": 3360,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -59609,9 +59609,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 528.5,
-									"top": 3346.5,
+									"top": 3353,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUieulcfmcO4="
 									},
@@ -59825,7 +59825,7 @@
 									"parentStyle": true,
 									"left": 238,
 									"top": 3282.5,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUifFh8uSrQQ="
@@ -61103,9 +61103,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 244.5,
-											"top": 3756,
+											"top": 3762.5,
 											"width": 103,
-											"height": 52,
+											"height": 39,
 											"text": "UC10 Visualizzazione dettagli progetto",
 											"wordWrap": true
 										},
@@ -61142,9 +61142,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 239.5,
-									"top": 3749,
+									"top": 3755.5,
 									"width": 113,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUjVwrHkh1GI="
 									},
@@ -61573,7 +61573,7 @@
 									"parentStyle": true,
 									"left": 470,
 									"top": 3871.5,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 77,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUjhZ67vEsqc="
@@ -62851,9 +62851,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 463,
-											"top": 3596,
+											"top": 3602.5,
 											"width": 154,
-											"height": 52,
+											"height": 39,
 											"text": "UC10.2 Visualizzazione percentuale analisi documentazione progetto",
 											"wordWrap": true
 										},
@@ -62890,9 +62890,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 458,
-									"top": 3589,
+									"top": 3595.5,
 									"width": 164,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUj4j6UthYfQ="
 									},
@@ -63162,9 +63162,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 325.5,
-											"top": 3905.5,
+											"top": 3912,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -63201,9 +63201,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 320.5,
-									"top": 3898.5,
+									"top": 3905,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUkBv/J2l5bI="
 									},
@@ -63903,9 +63903,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 525.5,
-											"top": 4065.5,
+											"top": 4072,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -63942,9 +63942,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 520.5,
-									"top": 4058.5,
+									"top": 4065,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUkTQOPn1nBQ="
 									},
@@ -64884,7 +64884,7 @@
 									"parentStyle": true,
 									"left": 516,
 									"top": 906.5,
-									"width": 96.66455078125,
+									"width": 96,
 									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcVtb5dd5xAPE="
@@ -69099,9 +69099,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1162.5,
-											"top": 3484,
+											"top": 3490.5,
 											"width": 131,
-											"height": 52,
+											"height": 39,
 											"text": "UC9.1 Visualizzazione singolo elemento da lista progetti",
 											"wordWrap": true
 										},
@@ -69138,9 +69138,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1157.5,
-									"top": 3477,
+									"top": 3483.5,
 									"width": 141,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGclUAWSOeDFzM="
 									},
@@ -72567,9 +72567,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 241.5,
-											"top": 145.5,
+											"top": 152,
 											"width": 125,
-											"height": 39,
+											"height": 26,
 											"text": "UCPM1 Accesso alla dashboard generale",
 											"wordWrap": true
 										},
@@ -72606,9 +72606,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 236.5,
-									"top": 138.5,
+									"top": 145,
 									"width": 135,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGbxCMwV58l1dc="
 									},
@@ -74133,9 +74133,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 527,
-											"top": 1342.5,
+											"top": 1349,
 											"width": 114,
-											"height": 65,
+											"height": 52,
 											"text": "UCPM3.2 Associazione icone tecnologiche al profilo",
 											"wordWrap": true
 										},
@@ -74172,9 +74172,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 522,
-									"top": 1335.5,
+									"top": 1342,
 									"width": 124,
-									"height": 77,
+									"height": 64,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGbxEMdIgKn6Tg="
 									},
@@ -75110,9 +75110,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 919,
-											"top": 185.5,
+											"top": 192,
 											"width": 114,
-											"height": 39,
+											"height": 26,
 											"text": "UCPM1.2 Creazione Progetto",
 											"wordWrap": true
 										},
@@ -75149,9 +75149,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 914,
-									"top": 178.5,
+									"top": 185,
 									"width": 124,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcQwV36P5nQdc="
 									},
@@ -77027,9 +77027,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 501.5,
-											"top": 257.5,
+											"top": 264,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -77066,9 +77066,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 496.5,
-									"top": 250.5,
+									"top": 257,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUtIFiRNHWBs="
 									},
@@ -77901,9 +77901,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1618.5,
-											"top": 252,
+											"top": 258.5,
 											"width": 91,
-											"height": 52,
+											"height": 39,
 											"text": "UCPM1.2.2 Modifica nome progetto",
 											"wordWrap": true
 										},
@@ -77940,9 +77940,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1613.5,
-									"top": 245,
+									"top": 251.5,
 									"width": 101,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUtfvEVQYbIo="
 									},
@@ -79082,9 +79082,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 274.5,
-											"top": 484.5,
+											"top": 491,
 											"width": 131,
-											"height": 39,
+											"height": 26,
 											"text": "UCPM1.3 Aggiunta repository a progetto",
 											"wordWrap": true
 										},
@@ -79121,9 +79121,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 269.5,
-									"top": 477.5,
+									"top": 484,
 									"width": 141,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUtugn6SlTfA="
 									},
@@ -79578,9 +79578,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 421.5,
-											"top": 617.5,
+											"top": 624,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -79617,9 +79617,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 416.5,
-									"top": 610.5,
+									"top": 617,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUtyDb6xuzFM="
 									},
@@ -80738,9 +80738,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 943,
-											"top": 476,
+											"top": 482.5,
 											"width": 114,
-											"height": 52,
+											"height": 39,
 											"text": "UCPM1.4 Aggiunta developer a progetto",
 											"wordWrap": true
 										},
@@ -80777,9 +80777,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 938,
-									"top": 469,
+									"top": 475.5,
 									"width": 124,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUuDgxmeSfuc="
 									},
@@ -81550,9 +81550,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1061.5,
-											"top": 617.5,
+											"top": 624,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -81589,9 +81589,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1056.5,
-									"top": 610.5,
+									"top": 617,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUuPGvLKp4aY="
 									},
@@ -83677,9 +83677,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 2525.5,
-											"top": 609.5,
+											"top": 616,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -83716,9 +83716,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 2520.5,
-									"top": 602.5,
+									"top": 609,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUupqiKFEmFc="
 									},
@@ -85019,9 +85019,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 2557.5,
-											"top": 273.5,
+											"top": 280,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -85058,9 +85058,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 2552.5,
-									"top": 266.5,
+									"top": 273,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUu1N1ATnER4="
 									},
@@ -85364,9 +85364,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 479,
-											"top": 956,
+											"top": 962.5,
 											"width": 154,
-											"height": 52,
+											"height": 39,
 											"text": "UC10.2 Visualizzazione percentuale analisi documentazione progetto",
 											"wordWrap": true
 										},
@@ -85403,9 +85403,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 474,
-									"top": 949,
+									"top": 955.5,
 									"width": 164,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUu6vp0vljB4="
 									},
@@ -87205,9 +87205,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1277.5,
-											"top": 1073.5,
+											"top": 1080,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -87244,9 +87244,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1272.5,
-									"top": 1066.5,
+									"top": 1073,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUvG0HNr6wPM="
 									},
@@ -87763,9 +87763,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 918,
-											"top": 1393.5,
+											"top": 1400,
 											"width": 148,
-											"height": 39,
+											"height": 26,
 											"text": "UCPM3.1 Visualizzazione dettagli membro del team",
 											"wordWrap": true
 										},
@@ -87798,9 +87798,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 913,
-									"top": 1386.5,
+									"top": 1393,
 									"width": 158,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUvVIeTUAQqA="
 									},
@@ -88970,9 +88970,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1013.5,
-											"top": 1521.5,
+											"top": 1528,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -89009,9 +89009,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1008.5,
-									"top": 1514.5,
+									"top": 1521,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUvbTEIo8xI0="
 									},
@@ -91156,9 +91156,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 373.5,
-											"top": 1945.5,
+											"top": 1952,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -91195,9 +91195,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 368.5,
-									"top": 1938.5,
+									"top": 1945,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUv+6fSiTHBU="
 									},
@@ -91914,9 +91914,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1829.5,
-											"top": 649.5,
+											"top": 656,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -91953,9 +91953,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1824.5,
-									"top": 642.5,
+									"top": 649,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcloN7skIo2ls="
 									},
@@ -92562,9 +92562,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1244.5,
-											"top": 956,
+											"top": 962.5,
 											"width": 103,
-											"height": 52,
+											"height": 39,
 											"text": "UC10 Visualizzazione dettagli progetto",
 											"wordWrap": true
 										},
@@ -92601,9 +92601,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1239.5,
-									"top": 949,
+									"top": 955.5,
 									"width": 113,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcloaQqUQ+0J4="
 									},
@@ -92876,9 +92876,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 477.5,
-											"top": 1457.5,
+											"top": 1464,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -92915,9 +92915,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 472.5,
-									"top": 1450.5,
+									"top": 1457,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcloc/vXWbwfc="
 									},
@@ -97027,9 +97027,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 533.5,
-											"top": 393.5,
+											"top": 400,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -97066,9 +97066,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 528.5,
-									"top": 386.5,
+									"top": 393,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUwZmwlxFXJs="
 									},
@@ -97613,7 +97613,7 @@
 									"parentStyle": true,
 									"left": 550,
 									"top": 178.5,
-									"width": 105.1259765625,
+									"width": 104,
 									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcUweaRHJfcfg="
@@ -101735,9 +101735,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 283.5,
-											"top": 830.5,
+											"top": 837,
 											"width": 213,
-											"height": 26,
+											"height": 13,
 											"text": "UCBO2 Accedere progetto singolo",
 											"wordWrap": true
 										},
@@ -101774,9 +101774,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 278.5,
-									"top": 823.5,
+									"top": 830,
 									"width": 223,
-									"height": 38,
+									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcU85tDyxBbaI="
 									},
@@ -102165,9 +102165,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 547.5,
-											"top": 964,
+											"top": 970.5,
 											"width": 137,
-											"height": 52,
+											"height": 39,
 											"text": "UCBO2.4 Visualizzare lista stack tecnologico usato nel progetto",
 											"wordWrap": true
 										},
@@ -102204,9 +102204,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 542.5,
-									"top": 957,
+									"top": 963.5,
 									"width": 147,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcU9Eae1XfFcc="
 									},
@@ -102760,9 +102760,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1160,
-											"top": 681.5,
+											"top": 688,
 											"width": 120,
-											"height": 39,
+											"height": 26,
 											"text": "UCBO2.1 Aggiunta budget complessivo",
 											"wordWrap": true
 										},
@@ -102799,9 +102799,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1155,
-									"top": 674.5,
+									"top": 681,
 									"width": 130,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcU9R/UZIsAP8="
 									},
@@ -104995,9 +104995,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1293.5,
-											"top": 809.5,
+											"top": 816,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -105034,9 +105034,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1288.5,
-									"top": 802.5,
+									"top": 809,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcU9f+n+Sd0lQ="
 									},
@@ -105210,9 +105210,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1293.5,
-											"top": 1121.5,
+											"top": 1128,
 											"width": 69,
-											"height": 39,
+											"height": 26,
 											"text": "UC4 Errore generico",
 											"wordWrap": true
 										},
@@ -105249,9 +105249,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1288.5,
-									"top": 1114.5,
+									"top": 1121,
 									"width": 79,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcU9ghiesxMIs="
 									},
@@ -106090,9 +106090,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 2152.5,
-											"top": 644,
+											"top": 650.5,
 											"width": 159,
-											"height": 52,
+											"height": 39,
 											"text": "UCBO2.3.1 Visualizzazione nome Project Manager di progetto",
 											"wordWrap": true
 										},
@@ -106129,9 +106129,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 2147.5,
-									"top": 637,
+									"top": 643.5,
 									"width": 169,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcU9tJ/BZ87XY="
 									},
@@ -107495,9 +107495,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1867.5,
-											"top": 1044,
+											"top": 1050.5,
 											"width": 137,
-											"height": 52,
+											"height": 39,
 											"text": "UCBO2.4 Visualizzare lista stack tecnologico usato nel progetto",
 											"wordWrap": true
 										},
@@ -107534,9 +107534,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1862.5,
-									"top": 1037,
+									"top": 1043.5,
 									"width": 147,
-									"height": 64,
+									"height": 51,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcU93jQllZvDg="
 									},
@@ -113084,9 +113084,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 462,
-											"top": 1505.5,
+											"top": 1512,
 											"width": 148,
-											"height": 39,
+											"height": 26,
 											"text": "UCBO3.3 Consultazione ruoli developer",
 											"wordWrap": true
 										},
@@ -113123,9 +113123,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 457,
-									"top": 1498.5,
+									"top": 1505,
 									"width": 158,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcU+k92wqCZnE="
 									},
@@ -113299,9 +113299,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 576.5,
-											"top": 1433.5,
+											"top": 1440,
 											"width": 159,
-											"height": 39,
+											"height": 26,
 											"text": "UCBO3.2 Visualizzazione linguaggi e tecnologie affini",
 											"wordWrap": true
 										},
@@ -113338,9 +113338,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 571.5,
-									"top": 1426.5,
+									"top": 1433,
 									"width": 169,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcU+iPTfM1JG8="
 									},
@@ -114100,9 +114100,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 1064.5,
-											"top": 1346.5,
+											"top": 1353,
 											"width": 159,
-											"height": 39,
+											"height": 26,
 											"text": "UCBO3.2 Visualizzazione linguaggi e tecnologie affini",
 											"wordWrap": true
 										},
@@ -114139,9 +114139,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 1059.5,
-									"top": 1339.5,
+									"top": 1346,
 									"width": 169,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGcU+qqwk7B0t8="
 									},
@@ -118357,6 +118357,5 @@
 				}
 			]
 		}
-	],
-	"documentVersion": 1
+	]
 }

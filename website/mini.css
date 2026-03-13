@@ -2,6 +2,10 @@ header h1{
     font-size: 8em;
 }
 
+header h2 {
+    font-size: 6em
+}
+
 #github a{
     font-size: 1.1em;
 }
