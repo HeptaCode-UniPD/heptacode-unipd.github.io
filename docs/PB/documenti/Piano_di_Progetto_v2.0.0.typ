@@ -4,6 +4,7 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
+  ("1.2.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione RTB"),
   ("1.1.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione PB"),
   ("1.0.0", "2026/03/05", "Amerigo Vegliante", "Angela Favaro", "Aggiunti preventivi per Sprint da 12 a 15"),
   ("0.20.0", "2026/03/03", "Amerigo Vegliante", "Angela Favaro", "Aggiunta del resoconto trascorso RTB"),
@@ -297,7 +298,71 @@ Sono stati calcolati un totale di _*tredici*_ sprint. \ La pianificazione degli 
 
 #pagebreak()
 == Sprint RTB
+Gli sprint della _Requirements and Technology Baseline_ sono preventivati in numero di dieci. \ Sono previsti della durata di :
+- sette giorni dal 24 novembre 2025 all’11 gennario 2026;
+- quattordici giorni dal 12 gennaio al 22 febbraio 2026.
+Successivamente torneranno a cadenza settimanale. 
+
 === Pianificazione RTB <PianificazioneRTB>
+Attività pianificate per gli sprint della milestone _Product Baseline_: \ 
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 1* #block(inset: (left: 0.5cm))[ 
+  _Dal 2 marzo all’8 marzo 2026_
+
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 2* #block(inset: (left: 0.5cm))[ 
+  _Dal 9 marzo al 15 marzo 2026_
+  
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 3:* #block(inset: (left: 0.5cm))[ 
+  _Dal 16 marzo al 22 marzo 2026_
+
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 4:* #block(inset: (left: 0.5cm))[
+  _Dal 23 marzo al 30 marzo 2026_
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 5:* #block(inset: (left: 0.5cm))[]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 6:* #block(inset: (left: 0.5cm))[]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 7:* #block(inset: (left: 0.5cm))[]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 8:* #block(inset: (left: 0.5cm))[]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 9:* #block(inset: (left: 0.5cm))[]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 10:* #block(inset: (left: 0.5cm))[]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+#line(length: 100%, stroke: 0.5pt + gray)
+
+Successivamente a questo paragrafo di pianificazione saranno presenti, per ognuno degli sprint PB, il _Preventivo a finire_ ed il _Trascorso_ che riporteranno rispettivamente:
+- Pianificazione nel breve termine degli sprint a finire.
+- Retrospettiva rispetto alla pianificazione nel breve e lungo termine con conseguenti misure correttive attuate per la gestione dei rischi e delle problematiche incontrate.
 
 === Trascorso RTB <TrascorsoRTB>
 ==== Sprint 1
@@ -1588,7 +1653,7 @@ Sono stati calcolati un totale di _*tredici*_ sprint. \ La pianificazione degli 
 
 #pagebreak()
 
-== Resoconto RTB
+=== Resoconto RTB
 Rispetto a quanto originariamente pianificato, la conclusione della milestone RTB (e anche della milestone interna UCB) *ha subito un ritardo di circa 3 sprint* (corrispondenti ad un periodo di giorni ventuno); di conseguenza la data di consegna del progetto è stata spostata dal *16 marzo 2026* al *30 marzo 2026*. \ \
 Il ritardo è stato accumulato durante la sessione d’esami invernale. Le cause principali sono:
 - Carico di lavoro elevato durante la sessione d’esami.
