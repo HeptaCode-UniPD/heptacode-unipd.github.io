@@ -240,5 +240,7 @@ strumenti'
 oretotindividualirtb
 tortartb
 oretotindividualipb
+testopbremediation
 langchain
-unanimamente
+mockup
+l'analysis

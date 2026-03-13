@@ -36,7 +36,8 @@
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
-  ("2.2.0","2026-03-02","Angela Favaro","Angela Favaro","Rimodellazione requisiti"),
+  ("2.3.0","2026-03-12","Angela Canazza","Angela Favaro","Aggiunta use case a seguito di progettazione frontend"),
+  ("2.2.0","2026-03-02","Angela Canazza","Angela Favaro","Rimodellazione requisiti"),
   ("2.1.0","2026-03-02","Angela Canazza","Angela Favaro","Correzioni UML, secondo quanto segnalato"),
   ("2.0.0","2026-02-27","Angela Favaro","Nicola Simionato","Mini fix casi d'uso per versione 2.0.0"),
   ("1.5.0","2026-02-25","Nicola Simionato","Angela Favaro","Sistemazione diagrammi UML dei Casi d'Uso"),
@@ -523,7 +524,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 == Specifica dei casi d'uso - Utente Registrato
 
 === UC2 - Visualizzazione area personale
-#figure( [#image("../../asset/UC/user/UC2.png", height: 7cm)] , caption: [UC2 - Visualizzazione area personale])
+#figure( [#image("../../asset/UC/user/UC2.png", height: 11cm)] , caption: [UC2 - Visualizzazione area personale])
 <UC2>
 - *Attore principale:* Utente Registrato.
 
@@ -535,7 +536,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Scenario principale:*
   + L'utente visualizza il pannello a comparsa del menù utente.
-  + L'utente visualizza il riepilogo delle proprie informazioni (nome, email, ruolo attuale). (*<\<include>>* #link(<UC2.1>)[[UC2.1]], *<\<include>>* #link(<UC2.2>)[[UC2.2]], *<\<include>>* #link(<UC2.3>)[[UC2.3]])
+  + L'utente visualizza il riepilogo delle proprie informazioni (nome, email, ruolo attuale). (*<\<include>>* #link(<UC2.1>)[[UC2.1]], *<\<include>>* #link(<UC2.2>)[[UC2.2]], *<\<include>>* #link(<UC2.3>)[[UC2.3]], *<\<include>>* #link(<UC2.4>)[[UC2.4]], *<\<include>>* #link(<UC2.5>)[[UC2.5]], *<\<include>>* #link(<UC2.6>)[[UC2.6]]).
   + L'utente visualizza il pulsante per il logout.
 
 - *Postcondizioni:* Il menù utente è attivo, l'utente visualizza le sue informazioni personali e le opzioni sono selezionabili.
@@ -544,6 +545,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   - #link(<UC2.1>)[[UC2.1]]
   - #link(<UC2.2>)[[UC2.2]]
   - #link(<UC2.3>)[[UC2.3]]
+  - #link(<UC2.4>)[[UC2.4]]
+  - #link(<UC2.5>)[[UC2.5]]
+  - #link(<UC2.6>)[[UC2.6]]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -596,6 +600,83 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Postcondizioni:* L'utente è a conoscenza del proprio ruolo all'interno dell'applicativo Code Guardian.
 
 #line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC2.4 - Visualizzazione foto profilo
+<UC2.4>
+- *Attore principale:* Utente Registrato.
+
+- *Descrizione:* L'utente vuole visualizzare la propria foto profilo.
+
+- *Precondizioni:* Il menù utente è attivo.
+
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale e pone l'attenzione sulle informazioni personali.
+
+- *Scenario principale:*
+  + L'utente visualizza la propria foto profilo tra le informazioni personali.
+
+- *Postcondizioni:* L'utente ha visualizzato la propria foto profilo all'interno dell'applicativo Code Guardian.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UCD2.5 - Visualizzazione opzione reindirizzamento Github
+<UC2.5>
+- *Attore principale:* Utente Registrato.
+
+- *Descrizione:* L'utente desidera visualizzare l'opzione di reindirizzamento al proprio profilo Github.
+
+- *Precondizioni:* Il menù utente è attivo.
+
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale e pone l'attenzione sulle informazioni personali.
+
+- *Scenario principale:*
+  + L'utente visualizza l'opzione di reindirizzamento al proprio profilo Github.
+
+- *Postcondizioni:* L'utente ha visualizzato l'opzione di reindirizzamento al proprio profilo GitHub.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC2.5.1 - Link al profilo GitHub
+#figure( [#image("../../asset/UC/user/UC2.5.1.png", height: 6cm)] , caption: [UC2 - Visualizzazione area personale])
+<UC2.5.1>
+- *Attore principale:* Utente Registrato.
+
+- *Attore secondario:* Github.
+
+- *Descrizione:* L'utente desidera visitare il proprio profilo Github.
+
+- *Precondizioni:* L'utente è registrato e sta visualizzando i dettagli del proprio profilo.
+
+- *Trigger:* L'utente seleziona l'icona di reindirizzamento al profilo Github collegato alla piattaforma.
+
+- *Scenario principale:*
+  + L'utente seleziona l'opzione di reindirizzamento proprio profilo Github.
+  + L'utente viene reindirizzato al proprio profilo Github.
+
+- *Scenari alternativi:* \
+  Si verifica un errore durante il reindirizzamento.
+      - L'Utente Registrato visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
+      - Il caso d'uso termina senza successo.
+
+- *Postcondizioni:* L'utente è stato reindirizzato al proprio profilo GitHub.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+=== UC2.6 - Visualizzazione competenze personali
+<UC2.6>
+- *Attore principale:* Utente Registrato.
+
+- *Descrizione:* L'utente desidera visualizzare i di propria competenza registrati nell'applicativo.
+
+- *Precondizioni:* Il menù utente è attivo.
+
+- *Trigger:* L'utente seleziona l'icona del proprio profilo presente nella barra di navigazione globale e pone l'attenzione sulle informazioni personali.
+
+- *Scenario principale:*
+  + L'utente visualizza le icone con i nomi dei linguaggi di cui l'utente ha competenza.
+
+- *Postcondizioni:* L'utente ha visualizzato i linguaggi di propria competenza registrati nell'applicativo.
+
+#line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
 #pagebreak()
@@ -622,7 +703,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + L’utente annulla l’operazione di logout. Il sistema interrompe l’operazione (*<<\extends>>* #link(<UC3.1>)[[UC3.1]]).
   Al passo 2:
   + Si verifica un errore durante la terminazione della sessione.
-    - Il Project Manager visualizza un messaggio di errore.
+    - Il l'Utente visualizza un messaggio di errore (*<<\extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
 - *Postcondizioni:* La sessione dell’utente è terminata e l’utente si trova in uno stato non autenticato.
@@ -691,7 +772,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
   + L'Utente Registrato visualizza la percentuale delle statistiche correttezza OWASP (*<\<include>>* #link(<UC5.4>)[[UC5.4]]).
   + L'Utente Registrato visualizza un pulsante per l'eliminazione del repository (#link(<UC11>)[[UC11]]). 
   + L'Utente Registrato visualizza un pulsante per tornare alla pagina precedente. 
-- *Scenari alternativi:* Si verifica un errore durante il caricamento della pagina.
+- *Scenari alternativi:* \ Si verifica un errore durante il caricamento della pagina.
     - L'Utente Registrato visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
@@ -4449,6 +4530,10 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-10-F-D],[L'Utente Registrato deve poter visualizzare il proprio nome Utente Registrato],[#link(<UC2.1>)[UC2.1]],
   [R-11-F-D],[L'Utente Registrato deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
   [R-12-F-D],[L'Utente Registrato deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
+  [R-139-F-D],[L'Utente Registrato deve poter visualizzare la propria immagine del profilo],[#link(<UC2.4>)[UC2.4]],
+  [R-140-F-D],[L'Utente Registrato deve poter visualizzare l'opzione di reindirizzamento al proprio profilo Github],[#link(<UC2.5>)[UC2.5]],
+  [R-141-F-D],[L'Utente Registrato deve poter visualizzare le proprie competenze registrate nella piattaforma],[#link(<UC2.6>)[UC2.6]],
+  [R-141-F-D],[L'Utente Registrato deve poter essere reindirizzato nel proprio profilo Github],[#link(<UC2.5.1>)[UC2.5.1]],
   [R-13-F-D],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
   [R-14-F-D],[L'Utente Registrato deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
   [R-15-F-D],[L'Utente Registrato deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
