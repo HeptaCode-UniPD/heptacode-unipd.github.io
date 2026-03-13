@@ -91,7 +91,7 @@
     columns: (auto, auto, auto),
     inset: 9pt,
     align: horizon,
-    table.header([*Decisione*], [*Azione*], [*Issue ID*]),
+    table.header([*Decisione*], [*Azione*], [ #link("https://github.com/orgs/HeptaCode-UniPD/projects/1")[*Project Board Issue ID*]]),
     ..lista_decisioni,
   )
 
