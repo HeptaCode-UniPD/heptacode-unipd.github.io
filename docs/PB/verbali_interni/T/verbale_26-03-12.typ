@@ -41,8 +41,7 @@ Il gruppo ha approvato alcuni cambiamenti alla macrostruttura del progetto, che 
 #align(center,image("../../../asset/macrostruttura2.jpg"))
 Si può notare che:
 - sono stati aggiunti i moduli frontend
-- è stato aggiunto il presentation module, che presenta i dati al frontend
-- è stato rimosso l'analysis module e le sue funzionalità sono state distribuite fra altri moduli (presentation module e database module)
+- l'Analysis Module è stato ri-nominato come Presentation Module in quanto gestisce tutta la logica di presentazione al frontend.
 == Cambiamenti da effettuare alla luce del colloquio con il professore Vardanega
 Il gruppo ha deciso di effettuare alcuni cambiamenti alla documentazione a seguito del colloquio con il professore Vardanega.
 È stato deciso di:
