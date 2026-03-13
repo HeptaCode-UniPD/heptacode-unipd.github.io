@@ -1699,7 +1699,7 @@ Attività pianificate per gli sprint della milestone _Product Baseline_: \
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 12* #block(inset: (left: 0.5cm))[ 
-  _Dal 2 marzo all'8 marzo 2026_
+  _Dal 2 marzo all’8 marzo 2026_
 
   In questo periodo sarà concentrata l'attività di studio e approfondimento delle tecnologie adottate dal gruppo. \ Inoltre verrà approfondito lo studio in vista della progettazione. \ Per punti, le attività previste per lo sprint sono:
   - Aggiornamento della documentazione prodotta.
@@ -1737,7 +1737,7 @@ Attività pianificate per gli sprint della milestone _Product Baseline_: \
 *Sprint 15:* #block(inset: (left: 0.5cm))[
   _Dal 23 marzo al 30 marzo 2026_
   
-  Ultimo sprint previsto per la produzione del _Mininimal Viable Product (MVP)_. \ Prevista la continuazione delle attività dello sprint precedente e conclusione della fase di test del prodotto. \  Per punti, le attività previste per lo sprint sono:
+  Ultimo sprint previsto per la produzione del _Minimum Viable Product (MVP)_. \ Prevista la continuazione delle attività dello sprint precedente e conclusione della fase di test del prodotto. \  Per punti, le attività previste per lo sprint sono:
   - Conclusione e revisione documentazione prodotta dal gruppo fino a quel momento; individuabile nei documenti esterni di:
     - _Analisi dei requisiti_;
     - _Piano di Progetto_ (con aggiornamento dell'ultimo sprint trascorso);
