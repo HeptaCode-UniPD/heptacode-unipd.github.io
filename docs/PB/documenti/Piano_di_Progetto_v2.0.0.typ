@@ -127,7 +127,7 @@ Gli strumenti per la comunicazione sono invece:
 #label("Organizzazione")
 Ad ogni suddivisione di periodo (_Sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 gennaio 2026_ al _21 febbraio 2026_. 
 #pagebreak()
-== Prima stima del monte ore totale per ruolo 
+== Prima stima, a priori, del monte ore totale per ruolo 
 Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ L’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive, calcolate a priori rispetto allo svolgimento del progetto, vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali. \ \
 
 #figure(
@@ -197,8 +197,8 @@ Nel grafico in figura @fig:torta vengono analizzate le percentuali della riparti
 Durante lo svolgimento del progetto verranno segnalate le ore effettive svolte da ogni singolo componente per ogni singolo ruolo. \ Alla conclusione delle milestone RTB e PB verranno segnalate le ore totali effettivamente svolte.
 
 #pagebreak()
-== Seconda stima del monte ore totale per ruolo
-A seguito del conseguimento della milestone RTB e tenuto conto delle ore effettivamente svolte durante il periodo di RTB, verrà proposta una seconda stima (presente in @tab:OreTotIndividuali2) delle ore di lavoro di ogni membro per ruolo. Questa stima viene comparata con la stima in @tab:OreTotIndividuali, che era stata effettuata all'inizio della milestone RTB. 
+== Seconda stima, a seguito della milestone RTB, del monte ore totale per ruolo
+A seguito del conseguimento della milestone RTB (descritta nella @milestone) e tenuto conto delle ore effettivamente svolte durante il periodo di RTB, verrà proposta una seconda stima (presente in @tab:OreTotIndividuali2) delle ore di lavoro di ogni membro per ruolo. Questa stima viene comparata con la stima in @tab:OreTotIndividuali, che era stata effettuata all'inizio della milestone RTB. 
 
 #figure(
   caption: [Seconda stima delle ore individuali per ruolo in totale rispetto alla @tab:OreTotIndividuali.],
@@ -265,24 +265,9 @@ In @fig:torta2 è possibile visionare la percentuale di ore dedicate a ciascun r
 #pagebreak()
 
 = Pianificazione e resoconto temporale
-Verrà qui riportata la pianificazione ritenuta più consona per il gruppo nel corso del tempo.\ 
-== Suddivisione e organizzazione degli sprint 
-Sono stati calcolati un totale di _*tredici*_ sprint. \ La divisione del paragrafo in due sotto-paragrafi riporta:
-+ *Preventivo a finire:* \
-  rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team (nel breve periodo). Il preventivo verrà aggiornato ad ogni sprint per i due sprint successivi. \ Verranno esplicitati:
-  - Le attività che si dovranno svolgere ad ogni sprint.
-  - I ruoli che ogni membro dovrà rappresentare.
-  - Il costo pianificato per lo sprint.
-+ *Trascorso:* \ rappresenta ciò che realmente è accaduto durante gli sprint.
-  Per ogni percorso verrà effettuato:
-  - Analisi dei rischi incontrati e delle attività svolte.
-  - Come e se è stata effettuata mitigazione dei rischi riscontrati.
-  - Ore effettivamente svolte, rispetto a quelle previste.
-  - Diagramma di GANTT per mostrare l'avanzamento del progetto.
-  - Il costo effettivamente sostenuto dal team rispetto a quello pianificato.
-
-
-== Milestones programmate
+Verrà qui riportata la pianificazione ritenuta più consona per il gruppo, a priori e nel corso del tempo.\ 
+== Milestone programmate
+<milestone>
 Di seguito elencate le milestone con i punti da considerare per poterle ritenere concluse.
 1. _UCB (Use Case Baseline)_:
   - Conclusione della prima stesura degli Use Case.
@@ -293,11 +278,30 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
   - Conclusione attività di progettazione e analisi.
 4. _PB (Product Baseline)_:
   - Consegna del progetto.
+== Suddivisione e organizzazione del paragrafo
+Sono stati calcolati un totale di _*tredici*_ sprint. \ La pianificazione degli sprint viene divisa tra le *_due_* milestone obbligatorie del progetto: RTB e PB. 
+- Per ogni milestone è prevista un organizzazione del lavoro _a priori_, chiamata *"Pianificazione"* [@PianificazioneRTB e @PianificazionePB], che riporta il piano delle attività di progetto nel lungo termine (fino alla produzione den Minimum Viable Product). 
+- A seguito della pianificazione è presente il *"Trascorso"* [@TrascorsoRTB e @TrascorsoPB]; qui verranno rendicontate le ore previste per ogni sprint, nel breve periodo, e quelle effettivamente svolte a seguito dello sprint. Il paragrafo viene di fatto diviso in due sotto-paragrafi riporta:
+  + *Preventivo a finire:* \
+    rappresenta la pianificazione ideale dei tempi e dei ruoli all’interno del team (nel breve periodo). Il preventivo verrà aggiornato ad ogni sprint per i due sprint successivi. \ Verranno esplicitati:
+    - Le attività che si dovranno svolgere ad ogni sprint.
+    - I ruoli che ogni membro dovrà rappresentare.
+    - Il costo pianificato per lo sprint.
+  + *Trascorso dello sprint:* \ rappresenta ciò che realmente è accaduto durante gli sprint.
+    Per ogni percorso verrà effettuato:
+    - Analisi dei rischi incontrati e delle attività svolte.
+    - Come e se è stata effettuata mitigazione dei rischi riscontrati.
+    - Ore effettivamente svolte, rispetto a quelle previste.
+    - Diagramma di GANTT per mostrare l'avanzamento del progetto.
+    - Il costo effettivamente sostenuto dal team rispetto a quello pianificato.
 
 #pagebreak()
 == Sprint RTB
-=== Sprint 1
-==== Preventivo a finire
+=== Pianificazione RTB <PianificazioneRTB>
+
+=== Trascorso RTB <TrascorsoRTB>
+==== Sprint 1
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -346,7 +350,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 
 #underline[Spese della settimana]: 252,5€ \ #underline[Spesa totale]: *252,5€*
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -410,8 +414,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 #underline[Spese della settimana]: 252,5€ / 252,5€ \ #underline[Spesa totale]: *252,5€ / 252,5€*
 #pagebreak()
 
-=== Sprint 2
-==== Preventivo a finire
+==== Sprint 2
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -464,7 +468,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 #underline[Spese della settimana]: 435€ \ #underline[Spesa totale]: *687,5€*
 
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -528,8 +532,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 #underline[Spese della settimana]: 435€ / 435€ \ #underline[Spesa totale]: *687,5€ / 687,5€*
 #pagebreak()
 
-=== Sprint 3
-==== Preventivo a finire
+==== Sprint 3
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -578,7 +582,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 #underline[Spese della settimana]: 672,5€ \ #underline[Spesa totale]: *1.360€*
 
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -645,8 +649,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 #underline[Spese della settimana]: 672,5€ / 672,5€ \ #underline[Spesa totale]: *1.360€ / 1.360€*
 #pagebreak()
 
-=== Sprint 4
-==== Preventivo a finire
+==== Sprint 4
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -697,7 +701,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     ) ]] <tab:PrevisioneSprint4>
 
 #underline[Spese della settimana]: 740€ \ #underline[Spesa totale]: *2100€*
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -763,8 +767,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 #underline[Spese della settimana]: 740€ / 740€ \ #underline[Spesa totale]: *2100€ / 2100€*
 #pagebreak()
 
-=== Sprint 5
-==== Preventivo a finire
+==== Sprint 5
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -813,7 +817,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     ) ]] <tab:PrevisioneSprint5>
 
 #underline[Spese della settimana]: 680€ \ #underline[Spesa totale]: *2.780€*
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -878,8 +882,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 #underline[Spese della settimana]: 460€ / 680€ \ #underline[Spesa totale]: *2.560€ / 2.780€*
 #pagebreak()
 
-=== Sprint 6
-==== Preventivo a finire
+==== Sprint 6
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -928,7 +932,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 #underline[Spese della settimana]: 485€ \ #underline[Spesa totale]: *3.045€*
 
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -993,8 +997,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 #underline[Spese della settimana]: 345€ / 485€ \ #underline[Spesa totale]: *2.905€ / 3.045€*
 #pagebreak()
 
-=== Sprint 7
-==== Preventivo a finire
+==== Sprint 7
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -1042,7 +1046,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
     ) ]] <tab:PrevisioneSprint7>
 
 #underline[Spese della settimana]: 465€ \ #underline[Spesa totale]: *3.370€*
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -1109,8 +1113,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 #underline[Spese della settimana]: 360€ / 465€ \ #underline[Spesa totale]: *3.265€ / 3.370€*
 #pagebreak()
 
-=== Sprint 8
-==== Preventivo a finire
+==== Sprint 8
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -1160,7 +1164,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 #underline[Spese della settimana]: 585€ \ #underline[Spesa totale]: *3.850€*
 
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -1225,8 +1229,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 #underline[Spese della settimana]: 585€ / 585€ \ #underline[Spesa totale]: * 3.850€ / 3.850€*
 #pagebreak()
 
-=== Sprint 9
-==== Preventivo a finire
+==== Sprint 9
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -1277,7 +1281,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 #underline[Spese della settimana]: 690€ \ #underline[Spesa totale]: *4.540€*
 
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -1345,8 +1349,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 #underline[Spese della settimana]: 560€ / 690€ \ #underline[Spesa totale]: * 4.410€ / 4.540€*
 #pagebreak()
 
-=== Sprint 10
-==== Preventivo a finire
+==== Sprint 10
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -1397,7 +1401,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 #underline[Spese della settimana]: 1.000€ \ #underline[Spesa totale]: *5.410€*
 
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -1463,8 +1467,8 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 #underline[Spese della settimana]: 970€ / 1.000€ \ #underline[Spesa totale]: *5.380€ / 5.410€*
 
 #pagebreak()
-=== Sprint 11
-==== Preventivo a finire
+==== Sprint 11
+===== Preventivo a finire
 #tabella-viola(
   columns: (auto, auto),
   align: horizon,
@@ -1513,7 +1517,7 @@ Di seguito elencate le milestone con i punti da considerare per poterle ritenere
 
 #underline[Spese della settimana]: 545€ \ #underline[Spesa totale]: *5.925€*
 
-==== Trascorso
+===== Trascorso
 #table(
   columns: (auto, auto),
   align: horizon,
@@ -1694,7 +1698,7 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
 #pagebreak()
 == Sprint PB
 Gli sprint della _Product Baseline_ sono preventivati in numero di quattro. \ Sono previsti della durata di sette giorni.
-=== Pianificazione PB
+=== Pianificazione PB <PianificazionePB>
 Attività pianificate per gli sprint della milestone _Product Baseline_: \ 
 
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -1762,7 +1766,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 - Retrospettiva rispetto alla pianificazione nel breve e lungo termine con conseguenti misure correttive attuate per la gestione dei rischi e delle problematiche incontrate.
 
 #pagebreak()
-=== Trascorso PB
+=== Trascorso PB <TrascorsoPB>
 ==== Sprint 12
 ===== Preventivo a finire
 #tabella-viola(
