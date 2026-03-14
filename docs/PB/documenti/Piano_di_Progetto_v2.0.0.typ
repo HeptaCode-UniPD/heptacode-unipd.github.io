@@ -303,38 +303,59 @@ Gli sprint della _Requirements and Technology Baseline_ sono preventivati in num
 - quattordici giorni dal 12 gennaio al 22 febbraio 2026.
 Successivamente torneranno a cadenza settimanale. 
 
+<<<<<<< HEAD
 === Pianificazione RTB <PianificazioneRTB>
+=======
+=== Pianificazione dall’RTB <PianificazioneRTB>
+>>>>>>> main
 Attività pianificate per gli sprint della milestone _Product Baseline_: \ 
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 1* #block(inset: (left: 0.5cm))[ 
+<<<<<<< HEAD
   _Dal 2 marzo all’8 marzo 2026_
+=======
+  _Dal 24 novembre al 30 novembre 2025_
+>>>>>>> main
 
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 2* #block(inset: (left: 0.5cm))[ 
+<<<<<<< HEAD
   _Dal 9 marzo al 15 marzo 2026_
+=======
+  _Dall’ 1 dicembre al 7 dicembre 2025_
+>>>>>>> main
   
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 3:* #block(inset: (left: 0.5cm))[ 
+<<<<<<< HEAD
   _Dal 16 marzo al 22 marzo 2026_
+=======
+  _Dall’8 dicembre al 14 dicembre 2025_
+>>>>>>> main
 
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 4:* #block(inset: (left: 0.5cm))[
+<<<<<<< HEAD
   _Dal 23 marzo al 30 marzo 2026_
+=======
+  _Dal 15 dicembre al 21 dicembre 2025_
+>>>>>>> main
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
+<<<<<<< HEAD
 *Sprint 5:* #block(inset: (left: 0.5cm))[]
 
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -357,6 +378,69 @@ Attività pianificate per gli sprint della milestone _Product Baseline_: \
 
 *Sprint 10:* #block(inset: (left: 0.5cm))[]
 
+=======
+*Sprint 5:* #block(inset: (left: 0.5cm))[
+  _Dal 22 dicembre al 28 dicembre 2025_
+
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 6:* #block(inset: (left: 0.5cm))[
+  _Dal 29 dicembre 2025 al 4 gennaio 2026_
+
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 7:* #block(inset: (left: 0.5cm))[
+  _Dal 5 gennaio all’11 gennaio 2026_
+
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 8:* #block(inset: (left: 0.5cm))[
+  _Dal 12 gennaio al 25 gennaio 2026_
+  
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 9:* #block(inset: (left: 0.5cm))[
+  _Dal 26 gennaio all’8 febbraio 2026_
+
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 10:* #block(inset: (left: 0.5cm))[
+  _Dal 9 febbraio al 22 febbraio 2026_
+
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+
+*Sprint 11:* #block(inset: (left: 0.5cm))[
+  _Dal 23 febbraio all’1 marzo 2026_
+
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 12:* #block(inset: (left: 0.5cm))[
+  _Dal 2 marzo all’8 marzo 2026_
+
+]
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
+*Sprint 13:* #block(inset: (left: 0.5cm))[
+  _Dal 9 marzo al 15 marzo 2026_
+
+]
+>>>>>>> main
 #line(length: 100%, stroke: 0.5pt + gray)
 #line(length: 100%, stroke: 0.5pt + gray)
 
@@ -1763,7 +1847,11 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
 #pagebreak()
 == Sprint PB
 Gli sprint della _Product Baseline_ sono preventivati in numero di quattro. \ Sono previsti della durata di sette giorni.
+<<<<<<< HEAD
 === Pianificazione PB <PianificazionePB>
+=======
+=== Pianificazione dal PB <PianificazionePB>
+>>>>>>> main
 Attività pianificate per gli sprint della milestone _Product Baseline_: \ 
 
 #line(length: 100%, stroke: 0.5pt + gray)

@@ -243,7 +243,11 @@ oretotindividualipb
 testopbremediation
 langchain
 mockup
+<<<<<<< HEAD
 pianificazionepb
 pianificazionertb
 trascorsopb
 trascorsortb
+=======
+l'analysis
+>>>>>>> main
