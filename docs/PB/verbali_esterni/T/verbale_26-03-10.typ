@@ -13,7 +13,7 @@
 
 // modificare SE E SOLO SE non si è fatto in modalità telematica
 //NB: se non è nella loro sede capolinea tram scrivere il nuovo luogo comprendendo l'articolo
-#let luogo = "la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD"
+#let luogo = "Microsoft Teams"
 
 
 // ruolo e presenza abbastanza intuitivo

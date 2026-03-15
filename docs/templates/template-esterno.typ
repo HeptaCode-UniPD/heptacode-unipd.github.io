@@ -49,7 +49,7 @@
     [La riunione si è tenuta in modalità telematica tramite la piattaforma *#new-luogo* dalle *#ora_inizio* alle *#ora_fine*]
   } else {
     [La riunione si è tenuta in presenza presso ] 
-    if new-luogo != "la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD " { [#new-luogo ] } else { [la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD ] } 
+    if new-luogo != "Microsoft Teams " { [#new-luogo ] } else { [Microsoft Teams ] } 
     [ dalle *#ora_inizio* alle *#ora_fine*]
   }
   [.]
