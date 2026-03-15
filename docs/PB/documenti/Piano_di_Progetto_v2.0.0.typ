@@ -299,7 +299,7 @@ Sono stati calcolati un totale di _*tredici*_ sprint. \ La pianificazione degli 
 #pagebreak()
 == Sprint RTB
 Gli sprint della _Requirements and Technology Baseline_ sono preventivati in numero di dieci. \ Sono previsti della durata di :
-- sette giorni dal 24 novembre 2025 all’11 gennario 2026;
+- sette giorni dal 24 novembre 2025 all’11 gennaio 2026;
 - quattordici giorni dal 12 gennaio al 22 febbraio 2026.
 Successivamente torneranno a cadenza settimanale. 
 
