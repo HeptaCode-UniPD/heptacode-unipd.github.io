@@ -2,7 +2,7 @@
 #let giorno = "2026-03-10"
 
 // data del prossimo incontro nello stesso formato
-#let next-meeting = "2026-03-11"
+#let next-meeting = "non concordato"
 
 // ordine del giorno 
 #let odg = "Delucidazione sulla progettazione e aggiornamento sui progressi"
@@ -28,6 +28,10 @@
     "Responsabile",   "Presente" //Laura Venturini
 )
 
+#let partecipanti-esterni = (
+  ("Francesco Battistella", "Referente Var Group",
+  "Federico Pivetta", "Referente Var Group"),
+)
 
 // ora di inzio dell'incontro
 #let inizio = "14:30"
@@ -36,7 +40,8 @@
 #let fine = "15:00"
 
 
-#let corpo = [= Argomenti trattati
+#let corpo = [
+= Argomenti trattati
 Gli argomenti discussi nell'incontro sono stati:
 - Aggiornamento sui progressi del progetto
 - Esposizione delle idee del team riguardo la progettazione
@@ -56,13 +61,11 @@ L'azienda ha posto alcune domande al team. In particolare è stato chiesto:
 
 = Conclusione
 Il gruppo ha aggiornato l'azienda proponente sui progressi e ha ottenuto consigli validi per il proseguimento e il via libera per la progettazione.
-
-Il prossimo incontro è fissato per il giorno #next-meeting
 ]
 
 
 #let decisione-azione = ((
   "Accogliere il suggerimento dell'azienda sul mockup","Rendere la pagina di gestione del team e la pagina di visualizzazione del team un'unica pagina",
-  "Valutazioni generali dell'azienda sulle tecnologie usate","Valutare Amazon Simple Storage Service (S3) per l'archiviazione Cloud"
+  "Valutazioni generali dell'azienda sulle tecnologie usate","Valutare Amazon Simple Storage Service (S3) per l'archiviazione Cloud", "No ID"
 )
 )

@@ -24,6 +24,10 @@
     "", ""  // Laura Venturini
 )
 
+#let partecipanti-esterni = (
+  ("", "Referente Var Group"),
+)
+
 // ora di inizio e fine
 #let inizio = ""
 #let fine = ""
