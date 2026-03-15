@@ -6,6 +6,7 @@
   ora_inizio: "00:00",
   ora_fine: "00:00",
   ruoli-presenza: (),
+  partecipanti-esterni: (),
   testo: "",
   lista_decisioni: (("",""))
 ) = {
