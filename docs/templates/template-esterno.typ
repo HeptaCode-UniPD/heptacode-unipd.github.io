@@ -2,7 +2,7 @@
   data: "0000-00-00",
   ordine_del_giorno: "!!!! INSERIRE ORDINE DEL GIORNO !!!!",
   on-line: false,
-  new-luogo: "la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD",
+  new-luogo: "Microsoft Teams",
   ora_inizio: "00:00",
   ora_fine: "00:00",
   ruoli-presenza: (),
