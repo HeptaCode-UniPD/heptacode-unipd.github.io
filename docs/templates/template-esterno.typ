@@ -6,7 +6,7 @@
   ora_inizio: "00:00",
   ora_fine: "00:00",
   ruoli-presenza: (),
-  partecipanti-esterni: (("Federico Pivetta", "Referente Vargroup"), ("Francesco Battistella", "Referente VarGroup")),
+  partecipanti-esterni: (("", "")),
   testo: "",
   lista_decisioni: (("",""))
 ) = {

@@ -65,7 +65,7 @@ Il gruppo ha aggiornato l'azienda proponente sui progressi e ha ottenuto consigl
 
 
 #let decisione-azione = ((
-  "Accogliere il suggerimento dell'azienda sul mockup","Rendere la pagina di gestione del team e la pagina di visualizzazione del team un'unica pagina",
+  "Accogliere il suggerimento dell'azienda sul mockup","Rendere la pagina di gestione del team e la pagina di visualizzazione del team un'unica pagina", "No ID",
   "Valutazioni generali dell'azienda sulle tecnologie usate","Valutare Amazon Simple Storage Service (S3) per l'archiviazione Cloud", "No ID"
 )
 )
