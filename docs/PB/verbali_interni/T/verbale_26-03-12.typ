@@ -24,6 +24,9 @@
     "Responsabile",   "Presente" //Laura Venturini
 )
 
+// IGNORARE QUESTA VARIABILE
+#let partecipanti-esterni = ()
+
 // ora di inizio e fine (es. "14:30")
 #let inizio = "11:00"
 #let fine = "11:50"
