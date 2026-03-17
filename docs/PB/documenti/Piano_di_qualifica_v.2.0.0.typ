@@ -70,26 +70,27 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPC06",
+    "MPC09",
     "Planned Value",
     "≥0€",
     "≤BAC",
-    "MPC07",
+    "MPC10",
     "Earned Value",
     "≥0€",
     "≤EAC",
-    "MPC08",
+    "MPC11",
     "Actual Cost",
     "≥0€",
     "≤EAC",
-    "MPC09",
+    "MPC12",
     "Estimate at Completion",
     "≥BAC -5%",
     "≤BAC +5%",
-    "MPC10",
+    "MPC13",
     "Estimate to Complete",
     "≥0€",
-    "≤EAC"
+    "≤EAC",
+    
     
   ),
   caption: [Metriche processi di fornitura],
@@ -538,6 +539,8 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
 )
 
 == MPC01 e MPC02 - Schedule Variance e Cost Variance
+*Schedule Variance*: indicatore che rappresenta il divario, espresso in termini monetari, tra il valore del lavoro effettivamente realizzato (Earned Value) e quello del lavoro che era stato pianificato (Planned Value) alla data corrente. \
+ *Cost Variance*: indicatore che rappresenta la differenza tra il costo realmente raggiunto dal progetto e quello del lavoro effettivamente svolto.
 // schedule variance EV - PV
 #let listaEv-Pv = range(lista_Ev.len()).map(i => {
   (i, lista_Ev.at(i), lista_Pv.at(i))
@@ -685,11 +688,14 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
     })
   )
 ]
-Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha spesso lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli ultimi quattro sprint nei quali si prevede di lavorare in maniera più efficiente. 
+*Andamento RTB* \
+Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha spesso lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli ultimi quattro sprint nei quali si prevede di lavorare in maniera più efficiente. \
+\ *Andamento PB* \
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
  == MPC03 - Budget Variance 
+*Budget Variance*: indice che misura lo scostamento percentuale tra il costo pianificato (PV) e il costo effettivo sostenuto (AC) alla data corrente.
 #let listaPv-Ac = range(lista_Pv.len()).map(i => {
   (i, lista_Pv.at(i), lista_Ac.at(i))
 })
@@ -791,12 +797,15 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
     })
   )
 ]
-
+*Andamento RTB* \
  La Budget Variance ha un valore negativo durante la fase RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase. Il miglioramento a partire dallo sprint 5 è dovuto alla riduzione del volume orario lavorato rispetto alla pianificazione originaria. Dovrebbe arrivare a 0 quando si recupereranno le ore e si inizieranno a utilizzare di più ruoli meno costosi.
+ \
+\ *Andamento PB* \
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
-== MPC05 - CPI
+== MPC04 - CPI (Cost Performance Index)
+*Cost Performance Index*: indice che misura l'efficienza economica di un progetto, si ottiene calcolando il rapporto tra il valore del lavoro effettivamente realizzato (EV) e i costi sostenuti per realizzarlo (AC).
 #let listaEv-Ac-CPI = range(lista_Ev.len()).map(i => {
   (i, lista_Ev.at(i), lista_Ac.at(i))
 })
@@ -869,21 +878,47 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
     })
   )
 ]
-Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto all'utilizzo dei ruoli più costosi durante la fase di RTB. Siccome dopo questa fase lavoreranno di più figure meno costose come programmatore e verificatore, il CPI dovrebbe arrivare a raggiungere il valore ottimale.
+*Andamento RTB* \
+Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto all'utilizzo dei ruoli più costosi durante la fase di RTB. Siccome dopo questa fase lavoreranno di più figure meno costose come programmatore e verificatore, il CPI dovrebbe arrivare a raggiungere il valore ottimale. \
+\ *Andamento PB* \
+
+
+
+== MPC05 - Task Completition Rate (TCR)
+*Task Completion Rate*: indice che rappresenta la percentuale di attività completate rispetto al totale delle attività pianificate in un progetto.
+//tabella
+//grafico
+*Andamento PB* \
+// descrizione andamento
+
+== MPC06 - Time Efficiency
+*Time Efficiency*: indice che rappresenta l'efficienza temporale di un progetto, si ottiene calcolando il rapporto tra le ore dedicate ad attività produttive e le ore totali necessarie per concludere il progetto.
+//tabella
+// grafico
+*Andamento PB* \
+// descrizione andamento
+
+== MPC07 - Percentuale di metriche soddisfatte
+*Descrizione*: // inserire la descrizione che verrà messa nel NdP
+//tabella
+//grafico
+*Andamento PB* \
+// descrizione andamento
+
+== MPC08 - Numero Rischi Non Previsti
+*Descrizione*: il numero di rischi non previsti che si verificano durante uno sprint.
+//tabella
+//grafico
+*Andamento PB* \
+// descrizione andamento
 
 
 
 
+== MPC09 e MPC10 - Planned Value ed Earned Value
+*Planned Value*: indicatore che rappresenta il valore del lavoro pianificato rispetto al budget totale previsto.\
+*Earned Value*: indicatore che rappresenta il valore del lavoro completato rispetto al budget totale previsto.
 
-
-
-
-
-
-
-
-
-== MPC06 e MPC07 - Planned Value ed Earned Value
 #let listaSpese = range(lista_Ev.len()).map(i => {
   (i, lista_Pv.at(i), lista_Ev.at(i))
 })
@@ -951,13 +986,17 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
     })
   )
 ]
-Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è più in linea con la pianificazione iniziale a partire dal quinto sprint. In particolare, negli sprint attorno all'ottavo il valore prodotto è diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo il recupero di questo ritardo negli ultimi sprint, nei quali si prevede di lavorare per un maggior numero di ore.
+*Andamento RTB* \
+Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è più in linea con la pianificazione iniziale a partire dal quinto sprint. In particolare, negli sprint attorno all'ottavo il valore prodotto è diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo il recupero di questo ritardo negli ultimi sprint, nei quali si prevede di lavorare per un maggior numero di ore.\
+\ *Andamento PB* \
 
 
 
 
 
-== MPC08 e MPC010 - Actual Cost ed Estimate to Complete
+== MPC11 e MPC013 - Actual Cost ed Estimate to Complete
+*Actual Cost*: indice che rappresenta il costo effettivamente sostenuto alla data corrente.\ 
+*Estimate to Complete*: indice che rappresenta la stima dei costi necessari per completare tutte le attività previste rimanenti.
 #let listaACETC = range(lista_Ac.len()).map(i => {
   (i, lista_Ac.at(i), 12845 -lista_Ev.at(i))
 })
@@ -1025,9 +1064,14 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
     })
   )
 ]
+*Andamento RTB* \
 La spesa è cresciuta in maniera abbastanza lineare in questi sprint, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste per gli sprint successivi alla sessione di esami universitari. L'andamento della linea dell'ETC indica budget sufficiente a intensificare le attività produttive negli ultimi sprint, in quanto si dispone ancora di più metà del budget.
+\
+\ *Andamento PB* \
 
-== MPC10 - Estimate at Completion
+
+== MPC11 - Estimate at Completion
+*Estimate at Completion*: indice che  rappresenta la stima del costo totale del progetto al momento del suo completamento.
 #let listaEv-Ac-EAC = range(lista_Ev.len()).map(i => {
   (i, lista_Ev.at(i), lista_Ac.at(i))
 })
@@ -1101,10 +1145,12 @@ La spesa è cresciuta in maniera abbastanza lineare in questi sprint, rimanendo 
     })
   )
 ]
+*Andamento RTB* \
 L'attuale scostamento tra EAC e BAC è dovuto al fatto che il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, quindi la stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
-La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quarto sprint. Con il passaggio alla fase successiva, che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un'ulteriore diminuzione progressiva del valore dell'EAC in maniera che esso coincida con il BAC al termine del progetto.
+La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quarto sprint. Con il passaggio alla fase successiva, che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un'ulteriore diminuzione progressiva del valore dell'EAC in maniera che esso coincida con il BAC al termine del progetto.\
+\ *Andamento PB* \
 
-== MPC15 - Correttezza ortografica
+== MPC18 - Correttezza ortografica
 
 #figure(
   caption: [Grafico per periodo di Correttezza ortografica],
@@ -1146,7 +1192,7 @@ La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quar
     })
   )
 ]
-
+*Andamento RTB e PB* \
 Grazie all'implementazione di uno spellchecker prima della pianificazione degli sprint, il numero di errori ortografici all'interno dei documenti ufficiali è sempre stato 0.
 
 == MPD14 - Indice di Gulpease
@@ -1216,8 +1262,34 @@ Grazie all'implementazione di uno spellchecker prima della pianificazione degli 
     )
   })
 )
-
+*Andamento RTB* \
 Ogni documento presenza un indice di leggibilità superiore al limite inferiore di 50.
+\
+\ *Andamento PB* \
+
+== MPC13 - Code Coverage (CC)
+*Code Coverage*: indice che rappresenta quanto il codice è stato verificato dal processo di testing.
+//tabella
+//grafico
+\ *Andamento PB* \
+
+== MPC14 - Test Success Rate (TSR)
+*Test Success Rate*: indice che misura la percentuale dei test superati rispetto a quelli totali. 
+//tabella
+//grafico
+\ *Andamento PB* \
+
+== MPD01 - Requisiti obbligatori soddisfatti (RS)
+//tabella
+//grafico
+\ *Andamento PB* \
+
+ /*==  MPD02 - Requisiti desiderabili soddisfatti (RDS)
+ //tabella
+  //grafico
+\ *Andamento PB* \
+ */
+
 
 = Iniziative di miglioramento
 La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durante lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
