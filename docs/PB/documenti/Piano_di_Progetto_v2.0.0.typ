@@ -1781,8 +1781,7 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
 #pagebreak()
 == Sprint PB
 Gli sprint della _Product Baseline_ sono preventivati in numero di quattro. \ Sono previsti della durata di sette giorni.
-<<<<<<< HEAD
-=== Pianificazione PB <PianificazionePB>
+<<<<<<< HEADPianificazionePB>
 =======
 === Pianificazione dal PB <PianificazionePB>
 >>>>>>> main
