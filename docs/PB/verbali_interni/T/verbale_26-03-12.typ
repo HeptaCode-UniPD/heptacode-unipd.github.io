@@ -66,5 +66,5 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 #let decisione-azione = (
   ("Apportare le modifiche suggerite dal professore Vardanega ai verbali", "Aggiungere le issue legate alle azioni nei template dei verbali", "#145",
   "Apportare le modifiche suggerite dal professore Vardanega al Piano di Progetto", "Modificare il Piano di Progetto", "#146",
-  "Aggiungere delle metriche al progetto come suggerito dal professore Vardanega", "Aggiungere nuove metriche al Piano di Qualifica e alle Norme di Progetto", "#147",)
+  "Aggiungere delle metriche al progetto come suggerito dal professore Vardanega", "Cercare le metriche più adeguate di cui tener conto ", "#150",)
 )
