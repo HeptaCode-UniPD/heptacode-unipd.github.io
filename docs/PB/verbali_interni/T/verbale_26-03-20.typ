@@ -38,7 +38,7 @@ Gli argomenti discussi nell'incontro sono stati:
 
 = Svolgimento
 == Cambiamenti da effettuare alla progettazione in seguito al colloquio col professor Cardin
-Il gruppo ha discusso del feedback fornito dal professor Cardin e su come modificare la progettazione per sistemare i problemi da lui indicati. Dopo aver valutato velocemente le alternative, si è deciso che metà team avrebbe approfondito le modifiche da fare per rendere l'architettura a microservizi, mentre l'altra metà avrebbe fatto ricerca su come mantenere l'architettura a monolite ma risolvendo i problemi indicati dal professor Cardin. Il gruppo si è dato appuntamento per il giorno seguente per confrontarsi su quello che aveva scoperto e decidere quale strada intraprendere. 
+Il gruppo ha discusso sul feedback fornito dal professor Cardin e su come modificare la progettazione per sistemare i problemi da lui indicati. Dopo aver valutato velocemente le alternative, si è deciso che metà team avrebbe approfondito le modifiche da fare per rendere l'architettura a microservizi, mentre l'altra metà avrebbe fatto ricerca su come mantenere l'architettura un monolite ma risolvendo i problemi indicati dal professor Cardin. Il gruppo si è dato appuntamento per il giorno successivo per confrontarsi su quello che aveva scoperto e decidere quale strada intraprendere. 
 
 = Conclusione
 Il gruppo ha stabilito che nel corso della giornata avrebbe: 
