@@ -42,15 +42,15 @@ Gli argomenti discussi nell'incontro sono stati:
 = Svolgimento
 == Proposte per la progettazione
 - È stata approvata la proposta di utilizzare AWS Step Functions per il workflow.
-- È stato dibattuto se mantenere l'orchestratore oppure utilizzare solo un aggregatore, ma alla fine si è deciso di mantenere l'orchestratore. Si è deciso comunque di mantenere l'aggrefatore come tool dell'orchestratore.
+- È stato dibattuto se mantenere l'orchestratore oppure utilizzare solo un aggregatore, ma alla fine si è deciso di mantenere l'orchestratore, mantenendo comunque l'aggregatore come tool dell'orchestratore.
 - Il diagramma di sequenza è stato modificato.
 
 == Cambiamento delle modalità di analisi
-È stato deciso che all'avvio di un'analisi:
-- l'analisi del codice venga avviata ogni qual volta parta un'analisi (a meno che non sia già stata effettuata un'analisi su quel commit).
-- l'analisi della documentazione avvenga quando viene avviata un analisi cliccando il pulsante "Inizia analisi" nella pagina della repository, ma solo in presenza di un tag release.
-- l'analisi OWASP avvenga cliccando un apposito pulsante "Analisi OWASP" nella pagina della repository. \  
-Bisogna quindi implementare alcune modifiche al frontend.
+È stato deciso che:
+- l'analisi del codice viene avviata ogni qual volta parta un'analisi (a meno che non sia già stata effettuata un'analisi su quel commit).
+- l'analisi della documentazione avviene quando viene avviata un'analisi cliccando il pulsante "Inizia analisi" nella pagina della repository, ma solo in presenza di un tag release.
+- l'analisi OWASP parte cliccando un apposito pulsante "Analisi OWASP" nella pagina della repository. \  
+Bisogna quindi modificare il frontend in modo che sia adatto a queste modalità.
 
 == Preparazione al ricevimento con il professor Cardin
 Il gruppo ha preparato le domande riguardo la progettazione da porre al professor Cardin durante il ricevimento e ha deciso chi si sarebbe occupato di porle.
