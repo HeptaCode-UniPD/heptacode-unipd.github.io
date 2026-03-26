@@ -15980,7 +15980,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGc+1YkR22EKck="
 					},
-					"name": "ClassDiagram1",
+					"name": "UserServiceMacro",
 					"ownedViews": [
 						{
 							"_type": "RoundRectView",
@@ -16071,7 +16071,7 @@
 							"top": 192,
 							"width": 208,
 							"height": 40,
-							"text": "PRESENTATION MODULE",
+							"text": "FRONTEND",
 							"horzAlign": 2,
 							"vertAlign": 5
 						},
@@ -16115,35 +16115,6 @@
 							"tailEndStyle": 1
 						},
 						{
-							"_type": "UMLTextBoxView",
-							"_id": "AAAAAAGc+3unMdz3yhI=",
-							"_parent": {
-								"$ref": "AAAAAAGc+1YkR22FSgg="
-							},
-							"font": "Arial;13;0",
-							"parentStyle": false,
-							"left": 984,
-							"top": 736,
-							"width": 152,
-							"height": 40,
-							"text": "DATABASE MODULE",
-							"horzAlign": 2,
-							"vertAlign": 5
-						},
-						{
-							"_type": "FreelineEdgeView",
-							"_id": "AAAAAAGc+3vjh9z+oI8=",
-							"_parent": {
-								"$ref": "AAAAAAGc+1YkR22FSgg="
-							},
-							"font": "Arial;13;0",
-							"parentStyle": false,
-							"lineStyle": 1,
-							"points": "768:752;984:752",
-							"headEndStyle": 1,
-							"tailEndStyle": 1
-						},
-						{
 							"_type": "UMLTextView",
 							"_id": "AAAAAAGc+9k4/wc/TWk=",
 							"_parent": {
@@ -16179,11 +16150,68 @@
 							},
 							"font": "Arial;13;0",
 							"parentStyle": false,
-							"left": 312,
+							"left": 360,
 							"top": 608,
 							"width": 160.033203125,
 							"height": 25,
-							"text": "PersistenceUserDataDTO"
+							"text": "UserEntity"
+						},
+						{
+							"_type": "UMLTextBoxView",
+							"_id": "AAAAAAGdI/4KBq2Hccw=",
+							"_parent": {
+								"$ref": "AAAAAAGc+1YkR22FSgg="
+							},
+							"font": "Arial;13;0",
+							"parentStyle": false,
+							"left": 1072,
+							"top": 728,
+							"width": 208,
+							"height": 40,
+							"text": "ANALYSIS MODULE",
+							"horzAlign": 2,
+							"vertAlign": 5
+						},
+						{
+							"_type": "FreelineEdgeView",
+							"_id": "AAAAAAGdI/74Ra2PVfo=",
+							"_parent": {
+								"$ref": "AAAAAAGc+1YkR22FSgg="
+							},
+							"font": "Arial;13;0",
+							"parentStyle": false,
+							"lineStyle": 1,
+							"points": "768:752;1072:752",
+							"headEndStyle": 1,
+							"tailEndStyle": 1
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAGdJAHrL+VVDH8=",
+							"_parent": {
+								"$ref": "AAAAAAGc+1YkR22FSgg="
+							},
+							"font": "Arial;13;0",
+							"parentStyle": false,
+							"left": 848,
+							"top": 728,
+							"width": 69.9599609375,
+							"height": 25,
+							"text": "UserEntity"
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAGdJAKwIAUs7m0=",
+							"_parent": {
+								"$ref": "AAAAAAGc+1YkR22FSgg="
+							},
+							"font": "Arial;13;0",
+							"parentStyle": false,
+							"left": 472,
+							"top": 784,
+							"width": 105.3671875,
+							"height": 25,
+							"text": "UserPersistance"
 						}
 					]
 				}
@@ -16203,7 +16231,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGc+4gwKd0G9M8="
 					},
-					"name": "ClassDiagram1",
+					"name": "UserService",
 					"ownedViews": [
 						{
 							"_type": "UMLInterfaceView",
