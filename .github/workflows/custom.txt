@@ -248,3 +248,5 @@ pianificazionepb
 pianificazionertb
 trascorsopb
 trascorsortb
+aggregatore
+l'aggregatore
