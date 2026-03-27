@@ -41,7 +41,7 @@ Gli argomenti discussi nell'incontro sono stati:
 == Tecnologie e architetture trovate durante la ricerca
 È stato discusso se cambiare l'architettura di deployment in microservizi mantenendo l'utilizzo di AWS EC2, se renderla a microservizi e utilizzare MongoDB Atlas, se renderlo un Serverless Lambda Monolith o se usare un'architettura ibrida (cioè di mantenere per il backend un monolite modulare con AWS Lambda). Si è optato per l'ultima soluzione. 
 Inoltre, si è deciso di sostiture il servizio AWS EC2 con AWS Fargate. \
-In caso questa soluzione non sia ritenuta corretta dal professor Cardin, l'intenzione è quella di tenere l'architettura monolitica modulare ma di usare esclusivamente AWS EC2 e di non usare AWS Lambda.
+In caso questa soluzione non sia ritenuta corretta dal professor Cardin, l'intenzione è quella di cambiare l'architettura di deployment e renderla a microservizi, adattando la progettazione di conseguenza.
 = Conclusione
 Il gruppo ha stabilito che il lunedì seguente avrebbe: 
 - mandato al professor Cardin un'email per chiedere la sua approvazione riguardo le nuove idee
