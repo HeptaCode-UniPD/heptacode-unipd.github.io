@@ -42,7 +42,7 @@ Gli argomenti discussi nell'incontro sono stati:
 = Svolgimento
 == Nuove metriche da aggiungere al Piano di Qualifica e alle Norme di Progetto
 Sono state approvate le seguenti metriche fra quelle proposte dal team:
-- Task Completition Rate: indice che rappresenta la percentuale di task completati rispetto a quelli totali.
+- Task Completion Rate: indice che rappresenta la percentuale di task completati rispetto a quelli totali.
 - Time Efficiency: indice che rappresenta il rapporto fra le ore dedicate ad attività produttive e le ore totali, dedicate anche alle attività di "palestra".
 - Percentuale di metriche soddisfatte
 - Numero rischi non previsti
@@ -50,7 +50,7 @@ Sono state approvate le seguenti metriche fra quelle proposte dal team:
 I membri del gruppo hanno analizzato assieme i diagrammi delle classi dei moduli per valutarne correttezza e adeguatezza. In particolare, sono stati discussi GitHub module, Presentation Module e User Module. Al team sono sembrati corretti, ma si è deciso di creare un diagramma di sequenza per schiarirsi le idee e di confrontarsi con il professor Cardin per chiedere il suo parere.
 
 == Altri cambiamenti da effettuare
-È stato concordato che il frontend deve venire cambiato perché la pagina di dettagli-repository deve comprendere anche una sezione che spiega in generale la motivazione dietro ai cambiamenti suggeriti dalla remedation.
+È stato concordato che il frontend deve venire cambiato perché la pagina di dettagli-repository deve comprendere anche una sezione che spiega in generale la motivazione dietro ai cambiamenti suggeriti dalla remediation.
 Inoltre, è stato deciso che l'ultimo commit prima di un'analisi va salvato su MongoDB, in modo da non effettuare l'analisi su un commit in cui è già stata effettuata.
 
 = Conclusione
