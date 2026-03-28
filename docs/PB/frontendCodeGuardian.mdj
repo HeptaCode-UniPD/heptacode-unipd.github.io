@@ -17129,7 +17129,7 @@
 											"top": 1693,
 											"width": 231.826171875,
 											"height": 13,
-											"text": "+isLogged(): void",
+											"text": "+useIsLogged(): void",
 											"horizontalAlignment": 0
 										}
 									],
@@ -17487,7 +17487,7 @@
 											"top": 765,
 											"width": 231.826171875,
 											"height": 13,
-											"text": "+isLogged(): void",
+											"text": "+useIsLogged(): void",
 											"horizontalAlignment": 0
 										}
 									],
@@ -17845,7 +17845,7 @@
 											"top": 397,
 											"width": 231.826171875,
 											"height": 13,
-											"text": "+isLogged(): void",
+											"text": "+useIsLogged(): void",
 											"horizontalAlignment": 0
 										}
 									],
@@ -18203,7 +18203,7 @@
 											"top": 1253,
 											"width": 231.826171875,
 											"height": 13,
-											"text": "+isLogged(): void",
+											"text": "+useIsLogged(): void",
 											"horizontalAlignment": 0
 										}
 									],
