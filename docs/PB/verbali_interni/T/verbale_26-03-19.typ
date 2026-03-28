@@ -36,7 +36,7 @@
 Gli argomenti discussi nell'incontro sono stati:
 - Proposte per la progettazione
 - Cambiamento delle modalità di analisi
-- Preparazione al ricevimento con il professor Cardin
+- Preparazione al ricevimento con il Professor Cardin
 
 
 = Svolgimento
@@ -47,18 +47,19 @@ Gli argomenti discussi nell'incontro sono stati:
 
 == Cambiamento delle modalità di analisi
 È stato deciso che:
-- l'analisi del codice viene avviata ogni qual volta parta un'analisi (a meno che non sia già stata effettuata un'analisi su quel commit).
-- l'analisi della documentazione avviene quando viene avviata un'analisi cliccando il pulsante "Inizia analisi" nella pagina della repository, ma solo in presenza di un tag release.
-- l'analisi OWASP parte cliccando un apposito pulsante "Analisi OWASP" nella pagina della repository. \  
+- L'analisi test viene avviata ogni qual volta viene avviaata un'analisi cliccando il pulsante "Avvia analisi test".
+- L'analisi della documentazione avviene quando viene avviata un'analisi cliccando il pulsante "Avvia analisi documentazione" nella pagina del repository, ma solo in presenza di un tag release.
+- L'analisi OWASP parte cliccando un apposito pulsante "Analisi OWASP" nella pagina della repository.
+- Un analisi non viene avviata nel caso in cui sia già stata fatta, questo controllo avviene confrontando l'ultimo commit in memoria con l'ultimo commit su GitHub. \  
 Bisogna quindi modificare il frontend in modo che sia adatto a queste modalità.
 
 == Preparazione al ricevimento con il professor Cardin
-Il gruppo ha preparato le domande riguardo la progettazione da porre al professor Cardin durante il ricevimento e ha deciso chi si sarebbe occupato di porle.
+Il gruppo ha preparato le domande riguardo la progettazione da porre al Professor Cardin durante il ricevimento e ha deciso chi si sarebbe occupato di porle.
 
 = Conclusione
 Il gruppo ha stabilito che nel corso della settimana avrebbe: 
-- effettuato le modifiche al frontend menzionate sopra
-- valutato il da farsi in seguito al colloquio col professore Cardin.
+- Effettuato le modifiche al frontend menzionate sopra,
+- Valutato il da farsi in seguito al colloquio col professore Cardin.
 
 Il prossimo incontro è fissato per il giorno #next-meeting
 ]
