@@ -1782,10 +1782,8 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
 #pagebreak()
 == Sprint PB
 Gli sprint della _Product Baseline_ sono preventivati in numero di quattro. \ Sono previsti della durata di sette giorni.
-<<<<<<< HEADPianificazionePB>
-=======
+
 === Pianificazione dal PB <PianificazionePB>
->>>>>>> main
 Attività pianificate per gli sprint della milestone _Product Baseline_: \ 
 
 #line(length: 100%, stroke: 0.5pt + gray)
@@ -1916,7 +1914,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
     - Stesura v3.0.0 del documento AdR (con correzioni del prof. Cardin).
     - Attività di studio delle tecnologie necessarie allo sviluppo.
     - Revisione PdQ, NdP, Glossario e PdP. 
-    - Cocounicazione con azienda per richiesta consigli su progettazione.
+    - Comunicazione con azienda per richiesta consigli su progettazione.
     - Richiesta di colloqui all'azienda.
   ],
 
@@ -1995,7 +1993,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   [_Attività Svolte_],
   [
     - Riunione con prof. Vardanega per colloqui RTB e per chiarimenti a seguito del colloquio.
-    - Riunione con azieda proponente.
+    - Riunione con azienda proponente.
     - Inizio attività progettazione di architettura monolitica modulare, nello specifico, progettazione per moduli. 
     - Revisione del _Glossario_ ed eventuale aggiornamento.
     - Inizio sviluppo documentazione per milestone PB:
@@ -2014,7 +2012,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   ],
   [_Cambiamenti da attuare nel breve termine_],
   [
-    - Spostamento attività di programmazione backend, perchè la progettazione richiede un tempo maggiore di quanto preventivato.
+    - Spostamento attività di programmazione backend, perché la progettazione richiede un tempo maggiore di quanto preventivato.
     - Aggiornamento del PdQ (nuove metriche).
   ]
 )
