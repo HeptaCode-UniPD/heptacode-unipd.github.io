@@ -2084,10 +2084,10 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
     - RT1 - (@tab:RT1). A causa della poca conoscenza con le tecnologie in uso, la progettazione ha richiesto più tempo del previsto e l'attività di sviluppo non è iniziata.
     - Sistemazione dei documenti PdP, PdQ e NdP a seguito del colloquio con il prof. Vardanega, ha portato ad un leggero rallentamento dell'attività di progettazione. 
   ],
-
   [_Mitigazione_],
   [
-    1.
+    - Scelta di aumentare il numero di meeting del gruppo a cadenza giornaliera.
+    - Suddivisione aree di studio per poi discuterne assieme duarante le riunioni.
   ],
   [_Cambiamenti da attuare nel breve termine_],
   [
@@ -2205,7 +2205,9 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   ],
   [_Mitigazione_],
   [
-    1.
+    - Effettuare uno studio più approfondito sulle tecnologie AWS e i pattern architetturali connessi. 
+    - Concentrare l'intero gruppo su attività di progettazione.
+    - Comunicazione quotidiana interna al gruppo per mitigare eventuali incomprensioni.
   ],
   [_Cambiamenti da attuare nel breve termine_],
   [
@@ -2330,7 +2332,8 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 
   [_Mitigazione_],
   [
-    1.
+    - Lavoro in gruppo per l'integrazione dei vari componenti del progetto. 
+    - Implementazione di strumenti alternativi a SonarQube per la configurazione degli strumenti di monitoraggio dei test. 
   ]
 )
 
