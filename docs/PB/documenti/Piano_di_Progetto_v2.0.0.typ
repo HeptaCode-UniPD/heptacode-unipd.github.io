@@ -2237,15 +2237,15 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [#text[#strong[*Costo*]]],
 
       [_Angela Favaro_], [], [], [], [4], [], [5], [175€],
-      [_Angela Canazza_], [2], [], [], [10], [], [], [310€],
+      [_Angela Canazza_], [2], [], [], [10], [2], [], [340€],
       [_Riccardo Baldin_], [], [], [], [4], [], [5], [175€],
       [_Alberto Reginato_], [], [2], [], [10], [], [], [290€],
-      [_Nicola Simionato_], [], [], [], [4], [], [5], [175€],
-      [_Amerigo Vegliante_], [], [], [], [4], [], [], [100€],
+      [_Nicola Simionato_], [], [], [], [4], [2], [5], [205€],
+      [_Amerigo Vegliante_], [], [], [], [4], [7], [], [205€],
       [_Laura Venturini_], [], [], [], [7], [], [5], [250€],
     ) ]] <tab:TrascorsoSprint14>
 
-#underline[Spese della settimana]: 1.475€ / 1.875€ \ #underline[Spesa totale]: *9.890€ / 10.290€*
+#underline[Spese della settimana]: 1.640€ / 1.875€ \ #underline[Spesa totale]: *10.055€ / 10.290€*
 
 #pagebreak()
 
@@ -2302,7 +2302,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [_Laura Venturini_], [], [], [], [2], [10], [8], [320€],
     ) ]] <tab:PrevisioneSprint15>
 
-#underline[Spese della settimana]: 2.375€ \ #underline[Spesa totale]: *12.265€*
+#underline[Spese della settimana]: 2.375€ \ #underline[Spesa totale]: *12.430€*
 
 ===== Trascorso dello sprint
 #table(
@@ -2354,16 +2354,166 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [3], [], [], [], [10], [10], [390€],
+      [_Angela Favaro_], [3], [], [], [], [10], [14], [450€],
       [_Angela Canazza_], [], [], [], [2], [12], [7], [335€],
-      [_Riccardo Baldin_], [], [], [2], [2], [10], [7], [355€],
-      [_Alberto Reginato_], [], [3], [], [2], [10], [6], [350€],
-      [_Nicola Simionato_], [], [], [], [2], [12], [6], [320€],
-      [_Amerigo Vegliante_], [], [], [2], [2], [10], [7], [355€],
-      [_Laura Venturini_], [], [], [], [2], [10], [8], [320€],
+      [_Riccardo Baldin_], [], [], [2], [], [10], [9], [335€],
+      [_Alberto Reginato_], [], [3], [], [], [10], [6], [300€],
+      [_Nicola Simionato_], [], [], [], [8], [12], [6], [470€],
+      [_Amerigo Vegliante_], [], [], [2], [], [10], [7], [305€],
+      [_Laura Venturini_], [], [], [], [2], [10], [12], [380€],
     ) ]] <tab:TrascorsoSprint15>
 
-#underline[Spese della settimana]: 2.425€ / 2.375€ \ #underline[Spesa totale]: *12.315 / 12.265€*
+#underline[Spese della settimana]: 2.575€ / 2.375€ \ #underline[Spesa totale]: *12.630 / 12.430€*
+#pagebreak()
+
+=== Resoconto PB
+Rispetto a quanto originariamente pianificato, la conclusione della milestone PB *ha subito un ritardo di circa due giorni*; di conseguenza la data di consegna del progetto è stata spostata dal *30 marzo 2026* al *1 aprile 2026*. \ 
+Anche rispetto alla milestone interna si sono verificati ritadi corrisponenti ad uno sprint. Questo a causa della scarsa comprensione dell'architettura di deploy da adottare. \ \
+Il ritardo è stato accumulato durante la fase di progettazione. Le cause principali sono:
+- Scarsa comprensione di tecnologie serverless (AWS).
+- Scarsa comprensione delle architetture di deploy adottabili alle nostre tecnologie serverless (Lambda Function).
+- Sottovalutato il tempo da dedichare allo studio.
+Il gruppo ha scelto di svolgere ricevimenti con i prof. Cardin e Vardanega per avere pareri riguardo al lavoro in fase di svolgimento. Che sono serviti ad aggiustare errori ed incomprensioni su documentazione e teoria progettuale / architetturale.
+
+Inizialmente sono state sopravvalutate le ore utili alla programmazione e questo ha portato ad un calcolo preventivo erroneo del budget di progetto.
+
+In @tab:OreTotIndividualiPBResoconto vengono riportate le ore effettivamente svolte per ogni ruolo durante il periodo di PB. Ed in @fig:tortaPB è possibile visionare la percentuale di ore dedicate a ciascun ruolo durante la milestone RTB.
+
+#figure(
+  caption: [Ore individuali effettive per ruolo durante la milestone PB.],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+      
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Totale*]]],
+
+      [_Angela Favaro_], [3], [2], [2], [17], [10], [21], [*55 /53*],
+      [_Angela Canazza_], [2], [], [2], [12], [14], [19], [*49 /51*],
+      [_Riccardo Baldin_], [], [], [2], [17], [10], [21], [*50 /55*],
+      [_Alberto Reginato_], [], [5], [], [23], [10], [13], [*51 /54*],
+      [_Nicola Simionato_], [], [2], [], [12], [14], [21], [*49 /54*],
+      [_Amerigo Vegliante_], [2], [], [2], [17], [17], [12], [*50 /51*],
+      [_Laura Venturini_], [2], [], [], [17], [10], [27], [*56 /52*],
+      [*Ore totali*], [*9 /10*], [*9 /10*], [*8 /0*], [*115 /117*], [*85 /135*], [*134 /98*],
+    ) ]] <tab:OreTotIndividualiPBResoconto>
+
+#figure(
+  caption: [Percentuale ripartizione dei ruoli durante la milestone PB.],
+)[
+  #let data = (
+    ([*Resp.*], 9),
+    ([*Amm.*], 9),
+    ([*Analista*], 8),
+    ([*Progett.*], 115),
+    ([*Programm.*], 85),
+    ([*Verif.*], 134),
+  )
+
+  #align(left)[#cetz.canvas({
+    let darkness = rgb("#9b66ff")
+    let dark = rgb("#a814e1")
+    let medium = rgb("#f365b0")
+    let light = rgb("#fba8b7")
+    let colortext = rgb("#1e0046")
+    let colors = gradient.linear(darkness, dark, medium, light)
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (content: (value, label) => [#text(colortext, label)], radius: 100%),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]] <fig:tortaPB>
+
+\ \ 
+Il costo totale sostenuto durante la milestone PB è di *6.705€*.
+
+#pagebreak()
+== Consuntivo finale di progetto
+
+Il costo finale sostenuto è di *12.630€* su un tetto massimo preventivato di *12.845€*.
+
+A seguito si riportano le ore totale svolte da ogni componente del gruppo nei diversi ruoli (@tab:OreTotIndividualiFinali).
+
+#figure(
+  caption: [Ore individuali svolte per ruolo.],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+      
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Totale*]]],
+
+      [_Angela Favaro_], [9], [3], [21], [17], [10], [36], [*96*],
+      [_Angela Canazza_], [3], [2], [25], [12], [16], [30], [*88*],
+      [_Riccardo Baldin_], [2], [7], [25], [17], [12], [27], [*90*],
+      [_Alberto Reginato_], [7], [7], [18], [23], [12], [24,5], [*91,5*],
+      [_Nicola Simionato_], [5], [8], [14], [12], [14], [32,5], [*85,5*],
+      [_Amerigo Vegliante_], [3], [8], [16], [17], [19], [24], [*87*],
+      [_Laura Venturini_], [6], [6], [17], [17], [10], [41], [*97*],
+      [*Ore totali*], [*35*], [*41*], [*136*], [*115*], [*93*], [*215*],
+    ) ]] <tab:OreTotIndividualiFinali>
+
+
+La ripartizione dei ruoli finale è sotto rappresentata in @fig:tortaFinale.
+#figure(
+  caption: [Percentuale ripartizione dei ruoli durante la milestone PB.],
+)[
+  #let data = (
+    ([*Resp.*], 35),
+    ([*Amm.*], 41),
+    ([*Analista*], 136),
+    ([*Progett.*], 115),
+    ([*Programm.*], 93),
+    ([*Verif.*], 215),
+  )
+
+  #align(left)[#cetz.canvas({
+    let darkness = rgb("#9b66ff")
+    let dark = rgb("#a814e1")
+    let medium = rgb("#f365b0")
+    let light = rgb("#fba8b7")
+    let colortext = rgb("#1e0046")
+    let colors = gradient.linear(darkness, dark, medium, light)
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (content: (value, label) => [#text(colortext, label)], radius: 100%),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]] <fig:tortaFinale>
 
 #pagebreak()
 
