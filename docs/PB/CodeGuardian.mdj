@@ -8197,24 +8197,6 @@
 										},
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGc5HNTUFYwPq0=",
-											"_parent": {
-												"$ref": "AAAAAAGc5HJaFFOdxYw="
-											},
-											"model": {
-												"$ref": "AAAAAAGc5HNTQlYn5lQ="
-											},
-											"font": "Arial;13;0",
-											"parentStyle": true,
-											"left": 293,
-											"top": 1883,
-											"width": 155.9970703125,
-											"height": 13,
-											"text": "+token: String",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAGc5HSruFaUD6Q=",
 											"_parent": {
 												"$ref": "AAAAAAGc5HJaFFOdxYw="
@@ -8225,7 +8207,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 293,
-											"top": 1898,
+											"top": 1883,
 											"width": 155.9970703125,
 											"height": 13,
 											"text": "+pathStorage: String",
@@ -8243,7 +8225,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 293,
-											"top": 1913,
+											"top": 1898,
 											"width": 155.9970703125,
 											"height": 13,
 											"text": "+lastCommit: Date",
@@ -8255,7 +8237,7 @@
 									"left": 288,
 									"top": 1833,
 									"width": 165.9970703125,
-									"height": 98
+									"height": 83
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -8279,7 +8261,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 293,
-											"top": 1936,
+											"top": 1921,
 											"width": 155.9970703125,
 											"height": 13,
 											"text": "-RepositoryEntity()",
@@ -8297,7 +8279,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 293,
-											"top": 1951,
+											"top": 1936,
 											"width": 155.9970703125,
 											"height": 13,
 											"text": "+create(): RepositoryEntity",
@@ -8315,7 +8297,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 293,
-											"top": 1966,
+											"top": 1951,
 											"width": 155.9970703125,
 											"height": 13,
 											"text": "+get3SFolderPath(): String",
@@ -8325,7 +8307,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 288,
-									"top": 1931,
+									"top": 1916,
 									"width": 165.9970703125,
 									"height": 53
 								},
@@ -13157,15 +13139,6 @@
 								"$ref": "AAAAAAGc5HJaElOV9oo="
 							},
 							"name": "url",
-							"type": "String"
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGc5HNTQlYn5lQ=",
-							"_parent": {
-								"$ref": "AAAAAAGc5HJaElOV9oo="
-							},
-							"name": "token",
 							"type": "String"
 						},
 						{
