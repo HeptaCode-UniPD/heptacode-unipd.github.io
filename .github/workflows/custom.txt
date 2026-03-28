@@ -248,5 +248,9 @@ pianificazionepb
 pianificazionertb
 trascorsopb
 trascorsortb
+<<<<<<< HEAD
 aggregatore
 l'aggregatore
+=======
+microservizi
+>>>>>>> verbale_26-03-20
