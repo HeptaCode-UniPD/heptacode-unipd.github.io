@@ -47,7 +47,7 @@ Gli argomenti discussi nell'incontro sono stati:
 
 == Cambiamento delle modalità di analisi
 È stato deciso che:
-- L'analisi test viene avviata ogni qual volta viene avviaata un'analisi cliccando il pulsante "Avvia analisi test".
+- L'analisi test viene avviata ogni qual volta viene avviata un'analisi cliccando il pulsante "Avvia analisi test".
 - L'analisi della documentazione avviene quando viene avviata un'analisi cliccando il pulsante "Avvia analisi documentazione" nella pagina del repository, ma solo in presenza di un tag release.
 - L'analisi OWASP parte cliccando un apposito pulsante "Analisi OWASP" nella pagina della repository.
 - Un analisi non viene avviata nel caso in cui sia già stata fatta, questo controllo avviene confrontando l'ultimo commit in memoria con l'ultimo commit su GitHub. \  
