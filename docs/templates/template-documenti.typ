@@ -19,8 +19,9 @@
   show table.cell: block.with(breakable: true)
   show link: set text(fill: color.linear-rgb(121, 1, 238))
   show link: underline
-  let versione = modifiche.at(0).at(0)
-  
+let versione = if modifiche != () {
+    modifiche.at(0).at(0) }
+
   // FRONTESPIZIO
   v(1fr)
   align(center, [
@@ -44,6 +45,7 @@
   pagebreak()
 
   // REGISTRO MODIFICHE
+  if modifiche != () {
   heading(level: 1, numbering: none, outlined: false)[Registro delle modifiche]
   v(0.5cm)
   tabella-viola(
@@ -54,7 +56,7 @@
     ..modifiche.flatten()
   )
   pagebreak()
-
+  }
   // INDICE DEI CONTENUTI E SE PRESENTI INDICE TABELLE E INDICE FIGURE
   outline(title: "Indice dei contenuti")
   
