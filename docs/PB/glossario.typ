@@ -2,6 +2,12 @@
 
 #let storia_modifiche = (
   "2.3.0",
+  "2026/03/28",
+  "Angela Favaro",
+  "Laura Venturini",
+  "Aggiunta terminologie per Piano di Progetto",
+
+  "2.3.0",
   "2026/03/12",
   "Angela Favaro",
   "Laura Venturini",
@@ -103,6 +109,9 @@ Si tratta di ambienti di sviluppo diversi gli uni dagli altri, tra i quali si pu
 
 #heading(level: 2, outlined: false)[Browser]
 Software applicativo progettato per consentire agli utenti di accedere, recuperare e visualizzare i contenuti presenti sul World Wide Web (Internet).
+
+#heading(level: 2, outlined: false)[Bug]
+Errore, difetto o  guasto nel codice di un software che causa un comportamento imprevisto, errato o indesiderato.
 
 #heading(level: 2, outlined: false)[Business Owner]
 Nel contesto aziendale e dello sviluppo prodotto (specialmente in ambiti Agile e Scrum), è una figura strategica che detiene la responsabilità ultima del valore di business generato da un progetto o da un prodotto.
@@ -337,14 +346,18 @@ Framework Agile più utilizzato al mondo per la gestione dello sviluppo di prodo
 #heading(level: 2, outlined: false)[Secret Scanning]
 Processo automatizzato che analizza il codice sorgente, i log e altri file alla ricerca di credenziali esposte accidentalmente, come password, chiavi API o token privati, per prevenire accessi non autorizzati.
 
+#heading(level: 2, outlined: false)[Server]
+Computer o un software che fornisce dati, servizi o risorse ad altri computer, chiamati client, attraverso una rete (locale o internet).
+
 #heading(level: 2, outlined: false)[Single Page Application (SPA)]
 Applicazione web o sito che interagisce con l'utente riscrivendo dinamicamente la pagina corrente con nuovi dati dal server, anziché caricare intere nuove pagine. Questo rende l'esperienza utente più fluida e simile a un'applicazione desktop.
 
 #heading(level: 2, outlined: false)[Slack]
 Piattaforma di comunicazione asincrona collaborativa basata sulla messaggistica istantanea, progettata specificamente per i team di lavoro e le aziende.
 
-#heading(level: 2, outlined: false)[Server]
-Computer o un software che fornisce dati, servizi o risorse ad altri computer, chiamati client, attraverso una rete (locale o internet).
+#heading(level: 2, outlined: false)[SonarQube]
+Piattaforma open source (con versioni commerciali) dedicata all'ispezione contunua del codice sorgente. Un "revisore automatico" che scansiona il software per individuare bug, vulnerabilità di sicurezza e problemi di manutenibilità.
+
 
 #heading(level: 2, outlined: false)[Specifica Tecnica (ST)]
 Documento formale che descrive in modo preciso e dettagliato come un sistema software deve essere progettato e realizzato per soddisfare i requisiti stabiliti.
