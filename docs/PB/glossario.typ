@@ -356,7 +356,7 @@ Applicazione web o sito che interagisce con l'utente riscrivendo dinamicamente l
 Piattaforma di comunicazione asincrona collaborativa basata sulla messaggistica istantanea, progettata specificamente per i team di lavoro e le aziende.
 
 #heading(level: 2, outlined: false)[SonarQube]
-Piattaforma open source (con versioni commerciali) dedicata all'ispezione contunua del codice sorgente. Un "revisore automatico" che scansiona il software per individuare bug, vulnerabilità di sicurezza e problemi di manutenibilità.
+Piattaforma open source (con versioni commerciali) dedicata all'ispezione continua del codice sorgente. Un "revisore automatico" che scansiona il software per individuare bug, vulnerabilità di sicurezza e problemi di manutenibilità.
 
 
 #heading(level: 2, outlined: false)[Specifica Tecnica (ST)]

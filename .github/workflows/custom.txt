@@ -244,3 +244,4 @@ testopbremediation
 langchain
 mockup
 l'analysis
+sonarqube
