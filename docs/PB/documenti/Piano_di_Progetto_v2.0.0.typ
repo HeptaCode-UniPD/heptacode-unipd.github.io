@@ -2077,7 +2077,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
     - Inizio sviluppo documentazione per milestone PB:
       - Specifica Tecnica.
     - Cambiamento documentazione di verbali, PdQ, NdP e PdP a seguito del colloquio con il prof. Vardanega.
-    - Cambiamento AdR secondo quanto specificato dal prof. Cardin a seguito dell'RTB.
+    - Cambiamento AdR secondo quanto specificato dal prof. Cardin a seguito dell’RTB.
   ],
   [_Rischi incontrati_],
   [
@@ -2368,11 +2368,11 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 
 === Resoconto PB
 Rispetto a quanto originariamente pianificato, la conclusione della milestone PB *ha subito un ritardo di circa due giorni*; di conseguenza la data di consegna del progetto è stata spostata dal *30 marzo 2026* al *1 aprile 2026*. \ 
-Anche rispetto alla milestone interna si sono verificati ritadi corrisponenti ad uno sprint. Questo a causa della scarsa comprensione dell'architettura di deploy da adottare. \ \
+Anche rispetto alla milestone interna si sono verificati ritardi corrispondenti ad uno sprint. Questo a causa della scarsa comprensione dell'architettura di deploy da adottare. \ \
 Il ritardo è stato accumulato durante la fase di progettazione. Le cause principali sono:
 - Scarsa comprensione di tecnologie serverless (AWS).
 - Scarsa comprensione delle architetture di deploy adottabili alle nostre tecnologie serverless (Lambda Function).
-- Sottovalutato il tempo da dedichare allo studio.
+- Sottovalutato il tempo da dedicare allo studio.
 Il gruppo ha scelto di svolgere ricevimenti con i prof. Cardin e Vardanega per avere pareri riguardo al lavoro in fase di svolgimento. Che sono serviti ad aggiustare errori ed incomprensioni su documentazione e teoria progettuale / architetturale.
 
 Inizialmente sono state sopravvalutate le ore utili alla programmazione e questo ha portato ad un calcolo preventivo erroneo del budget di progetto.

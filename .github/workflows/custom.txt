@@ -250,3 +250,9 @@ trascorsortb
 analysis
 microservizi
 sonarqube
+oretotindividualifinali
+oretotindividualipbresoconto
+serverless
+tortafinale
+tortapb
+trascorsosprint
