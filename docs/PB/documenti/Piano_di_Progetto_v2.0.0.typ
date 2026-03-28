@@ -4,6 +4,7 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
+
   ("1.2.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione RTB"),
   ("1.1.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione PB"),
   ("1.0.0", "2026/03/05", "Amerigo Vegliante", "Angela Favaro", "Aggiunti preventivi per Sprint da 12 a 15"),
@@ -1866,9 +1867,10 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   [_Attività pianificate_],
   [
     - Previsto colloquio con il prof. Vardanega.
-    - Attività di studio progettazione PAB.
+    - Attività di studio progettazione.
     - Stesura v3.0.0 del documento AdR (con correzioni del prof. Cardin).
     - Attività di studio delle tecnologie necessarie allo sviluppo.
+    - Revisione PdQ, NdP, Glossario e PdP.
   ],
   [_Milestones attive_], [PAB, PB]
 )
@@ -1910,20 +1912,26 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-
+    - Attività di studio progettazione.
+    - Stesura v3.0.0 del documento AdR (con correzioni del prof. Cardin).
+    - Attività di studio delle tecnologie necessarie allo sviluppo.
+    - Revisione PdQ, NdP, Glossario e PdP. 
+    - Cocounicazione con azienda per richiesta consigli su progettazione.
+    - Richiesta di colloqui all'azienda.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. Rallentamenti a causa di impegni personali (non abbiamo svolto il colloquio con il professore a causa di un impegno lavorativo di un membro del gruppo). RO2 - @tab:RO2.
   ],
 
   [_Mitigazione_],
   [
-    1.
   ],
   [_Cambiamenti da attuare nel breve termine_],
-  []
+  [
+    Posticipato colloquio con prof. Vardanega a lunedì 9 marzo. 
+  ]
 )
 #pagebreak()
 
@@ -1944,6 +1952,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
     - Revisione del _Glossario_ ed eventuale aggiornamento.
     - Inizio sviluppo documentazione per milestone PB:
       - Specifica Tecnica.
+    - Riunione con prof. Vardanega.
   ],
   [_Milestones attive_], [PAB, PB]
 )
@@ -1985,12 +1994,18 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-
+    - Riunione con prof. Vardanega per colloqui RTB e per chiarimenti a seguito del colloquio.
+    - Riunione con azieda proponente.
+    - Inizio attività progettazione di architettura monolitica modulare, nello specifico, progettazione per moduli. 
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
+    - Inizio sviluppo documentazione per milestone PB:
+      - Specifica Tecnica.
+    - Cambiamento documentazione di verbali, PdQ, NdP e PdP a seguito del colloquio con il prof. Vardanega.
   ],
-
   [_Rischi incontrati_],
   [
-    1.
+    - RT1 - (@tab:RT1). A causa della poca conoscenza con le tecnologie in uso, la progettazione ha richiesto più tempo del previsto e l'attività di sviluppo non è iniziata.
+    - Sistemazione dei documenti PdP, PdQ e NdP a seguito del colloquio con il prof. Vardanega, ha portato ad un leggero rallentamento dell'attività di progettazione. 
   ],
 
   [_Mitigazione_],
@@ -1998,7 +2013,10 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
     1.
   ],
   [_Cambiamenti da attuare nel breve termine_],
-  []
+  [
+    - Spostamento attività di programmazione backend, perchè la progettazione richiede un tempo maggiore di quanto preventivato.
+    - Aggiornamento del PdQ (nuove metriche).
+  ]
 )
 #pagebreak()
 
@@ -2014,12 +2032,13 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 
   [_Attività previste_],
   [
-    - Attività di sviluppo e validazione Frontend e Backend.
-    - Attività di progettazione.
+    - Sviluppo e verifica codice Frontend.
+    - Attività di progettazione .
     - Revisione del _Glossario_ ed eventuale aggiornamento.
     - Sviluppo documentazione per milestone PB:
       - Specifica Tecnica (rilascio v1)
       - Manuale utente
+    - Aggiornamento PdQ con nuove metriche.
     - Conclusione milestone PAB.
   ],
   [_Milestones attive_], [PB, PAB]
@@ -2062,20 +2081,31 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-
+    - Sviluppo e verifica codice Frontend.
+    - Attività di progettazione dei moduli.
+    - Aggiornamento PdQ con nuove metriche.
+    - Riunione con prof. Cardin su adeguatezza della progettazione.
+    - Attività di studio su architetture di deploy.
+    - Riformulazione architettura di deploy.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    - A seguito del colloquio con il prof. Cardin abbiamo compreso di non aver concepito l'architettura di deploy in modo corretto. In particolare con l'integrazione di AWS Lambda. RT1 - (@tab:RT1).
+    - L'attività di studio personale ha prodotto dei risultati architetturali diversi tra i diversi componenti del gruppo. RO7 - (@tab:RO7).
+    - La riformulazione architetturale ha portato ad un rallentamento sull'inizio dell'attività di sviluppo backend. RO1 - (@tab:RO1).
   ],
-
   [_Mitigazione_],
   [
     1.
   ],
   [_Cambiamenti da attuare nel breve termine_],
-  []
+  [
+    - Spostamento conclusione attività di progettazione
+    - Inizio di redazione dei documenti mancanti (Specifica Tecnica e Manuale Utente).
+    - Richiesta colloquio con il prof. Cardin.
+    - Allungamento dell'ultimo sprint (di qualche giorno) per poter consegnare nel breve termine.
+  ]
 )
 
 #pagebreak()
@@ -2086,20 +2116,23 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [23 marzo 2026 - 30 marzo 2026],
+  [_Intervallo temporale_], [23 marzo 2026 - 1 marzo 2026],
 
-  [_Giorni di sprint_], [7],
+  [_Giorni di sprint_], [9],
 
   [_Attività previste_],
   [
     Ultimo sprint previsto.
-    - Conclusione attività di sviluppo e validazione Frontend e Backend.
-    - Conclusione stesura documentazione adeguata alla consegna del progetto.
-    - Validazione dei risultati prodotti durante gli Sprint.
+    - Colloquio con il prof. Cardin.
+    - Decisione definitiva su architettura di deploy.
+    - Conclusione attività di progettazione.
+    - Conclusione attività di sviluppo e validazione frontend e backend.
+    - Conclusione di tutta la documentazione adeguata alla consegna del progetto.
+    - Validazione con l'azienda dei risultati prodotti durante gli Sprint.
     - Revisione finale del _Glossario_  ed eventuale aggiornamento.
-    - *Consegna del progetto previsto in data 30 marzo 2026*.
+    - *Consegna del progetto previsto in data 1 aprile 2026*.
   ],
-  [_Milestones attive_], [PB]
+  [_Milestones attive_], [PB, PAB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 15],
@@ -2139,20 +2172,27 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-
+    - Colloquio con il prof. Cardin.
+    - Decisione definitiva su architettura di deploy.
+    - Conclusione attività di progettazione.
+    - Conclusione attività di sviluppo e validazione frontend e backend.
+    - Conclusione di tutta la documentazione adeguata alla consegna del progetto.
+    - Validazione con l'azienda dei risultati prodotti durante gli Sprint.
+    - Revisione finale del _Glossario_  ed eventuale aggiornamento.
+    - *Consegna del progetto previsto in data 1 aprile 2026*.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    - Sono stati riscontrati iniziali problemi nell'integrazione tra i microservizi, in particolare nell'utilizzo di chiamate API-REST. RT2 - (@tab:RT2).
+    - La documentazione è da aggiornare, è stata trascurata a seguito dei rallentamenti dovuti a problemi architetturali. RO6 - (@tab:RO6).
+    - Ci sono stati iniziali rallentamenti nell'utilizzo degli strumenti di monitoraggio dei test (SonarQube). RT1 - (@tab:RT1).
   ],
 
   [_Mitigazione_],
   [
     1.
-  ],
-  [_Cambiamenti da attuare nel breve termine_],
-  []
+  ]
 )
 #pagebreak()
 
