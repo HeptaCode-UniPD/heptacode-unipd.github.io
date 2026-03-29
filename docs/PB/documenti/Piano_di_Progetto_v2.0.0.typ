@@ -2519,7 +2519,7 @@ Il gruppo ha sempre lavorato in modo collaborativo, con un confronto continuo su
 
 La ripartizione dei ruoli finale è sotto rappresentata in @fig:tortaFinale.
 #figure(
-  caption: [Percentuale ripartizione dei ruoli durante la milestone PB.],
+  caption: [Percentuale ripartizione dei ruoli.],
 )[
   #let data = (
     ([*Resp.*], 35),
