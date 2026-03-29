@@ -2094,7 +2094,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   [_Mitigazione_],
   [
     - Scelta di aumentare il numero di meeting del gruppo a cadenza giornaliera.
-    - Suddivisione aree di studio per poi discuterne assieme duarante le riunioni.
+    - Suddivisione aree di studio per poi discuterne assieme durante le riunioni.
   ],
   [_Cambiamenti da attuare nel breve termine_],
   [
@@ -2513,7 +2513,7 @@ A seguito si riportano le ore totale svolte da ogni componente del gruppo nei di
       [*Ore totali*], [*35*], [*41*], [*136*], [*115*], [*93*], [*215*],
     ) ]] <tab:OreTotIndividualiFinali>
 
-Sebbene le ore personali differiscano tra i componenti nel conteggio finale, ogni membro del gruppo ha svolto un lavoro equamente distribuito. \ La differenza si può individuare nella diversa quantità di studio effettuato dai diversi componenti (più o meno competenti inizalmente in determinati ambiti); inoltre tutti i componenti si sono impegnati a spiegare agli altri le proprie conoscenze, così da ottimizzare le tempistiche di studio individuale. \
+Sebbene le ore personali differiscano tra i componenti nel conteggio finale, ogni membro del gruppo ha svolto un lavoro equamente distribuito. \ La differenza si può individuare nella diversa quantità di studio effettuato dai diversi componenti (più o meno competenti inizialmente in determinati ambiti); inoltre tutti i componenti si sono impegnati a spiegare agli altri le proprie conoscenze, così da ottimizzare le tempistiche di studio individuale. \
 Il gruppo ha sempre lavorato in modo collaborativo, con un confronto continuo su ogni aspetto del progetto.
 
 
