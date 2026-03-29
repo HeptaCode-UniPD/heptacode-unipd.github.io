@@ -1,7 +1,13 @@
 #import "../templates/template-documenti.typ": template_documenti, tabella-viola
 
 #let storia_modifiche = (
-  "2.3.0",
+  "2.5.0",
+  "2026/03/29",
+  "Angela Favaro",
+  "Laura Venturini",
+  "Aggiunta terminologie per Specifica Tecnica",
+
+  "2.4.0",
   "2026/03/28",
   "Angela Favaro",
   "Laura Venturini",
@@ -81,6 +87,12 @@ Approccio filosofico e culturale alla gestione dei progetti. Si basa sullo svilu
 #heading(level: 2, outlined: false)[Amazon Web Services (AWS)]
 Piattaforma di Cloud Computing più completa e utilizzata al mondo, offerta da Amazon. Invece di acquistare, possedere e gestire server fisici e centri dati (Data Center) di proprietà, un'azienda può noleggiare potenza di calcolo, spazio di archiviazione, database e altre tecnologie direttamente dai server di Amazon, pagando solo per ciò che consuma.
 
+#heading(level: 2, outlined: false)[Anthropic]
+Nome di una delle più importanti aziende di ricerca e sicurezza nell'intelligenza artificiale (AI) al mondo.
+
+#heading(level: 2, outlined: false)[API]
+Application Programming Interface. \
+Insieme di definizioni e protocolli che permette a due applicazioni software di comunicare tra loro. In pratica, l'API agisce come un "messaggero" che prende la tua richiesta, la porta al sistema che deve elaborarla e ti riporta la risposta.
 
 #heading(level: 2, outlined: false)[Artificial Intelligence (AI)]
 Branca dell'informatica che si occupa di creare sistemi hardware e software capaci di simulare processi cognitivi umani. In termini semplici, è la capacità di una macchina di mostrare abilità umane come il ragionamento, l'apprendimento, la pianificazione e la creatività.
@@ -176,6 +188,15 @@ Applicazione di messaggistica istantanea, VoIP e di distribuzione digitale. Gli 
 #heading(level: 2, outlined: false)[Docs]
 Abbreviazione per "documentazione". Indica l'insieme dei documenti relativi al progetto, solitamente raccolti e gestiti in una cartella denominata "docs" all'interno della repository.
 
+#heading(level: 2, outlined: false)[DOM]
+Document Object Model. \
+Interfaccia di programmazione (API) che rappresenta un documento HTML o XML come una struttura ad albero. Grazie al DOM, i linguaggi di programmazione possono accedere, modificare, aggiungere o eliminare il contenuto, la struttura e lo stile di una pagina web in modo dinamico.
+
+#heading(level: 2, outlined: false)[DTO]
+Data Transfer Object. \
+Pattern architetturale utilizzato per raggruppare e trasportare dati tra i vari sottosistemi di un'applicazione (ad esempio, tra un database e un'interfaccia utente) in modo efficiente.
+
+
 #pagebreak()
 
 = F
@@ -221,6 +242,12 @@ Elemento atto a: pianificare, discutere e tracciare lavoro, bug, idee o nuove fu
 #pagebreak()
 
 = L
+
+#heading(level: 2, outlined: false)[Lambda Function]
+- In ambito infrastrutturale (AWS Lambda): una Lambda function è un'unità di calcolo Serverless.
+  Definizione: È un frammento di codice che viene eseguito in risposta a un evento (come il caricamento di un file, una richiesta HTTP o una modifica nel database). \
+- In Programmazione (Funzioni Anonime): in informatica, una Lambda function è una funzione anonima, ovvero una funzione che non è associata a un identificativo (un nome). Viene definita "al volo" direttamente dove serve.
+
 #heading(level: 2, outlined: false)[Large Language Model (LLM)]
 Tipo di AI addestrato su enormi quantità di dati testuali per comprendere, generare e elaborare il linguaggio umano in modo simile a un essere umano, Esso è capace di compiti come la scrittura, la traduzione, il riassunto di testi e la conversazione, basandosi su architetture di deep learning, i quali gli permettono di cogliere contesti complessi. 
 
@@ -246,6 +273,9 @@ Punto di controllo significativo che segna il completamento di una fase importan
 #heading(level: 2, outlined: false)[Minimum Viable Product]
 Anche chiamato *MVP*. \ Versione del prodotto software che possiede appena le caratteristiche sufficienti per essere pubblicato e testato da utenti reali, con il minimo sforzo di sviluppo possibile.
 
+#heading(level: 2, outlined: false)[Mock]
+Letteralmente "simulacro" o "imitazione"; è un oggetto simulato che riproduce il comportamento di un componente reale in un ambiente controllato, tipicamente durante i test unitari (unit testing).
+
 #heading(level: 2, outlined: false)[Mockup]
 Rappresentazione statica e ad alta fedeltà dell'interfaccia di un'applicazione o sito web. Mostra come apparirà visivamente il prodotto finale — colori, typography, layout, icone, spaziature — ma senza funzionalità interattive.
 
@@ -256,6 +286,10 @@ Sistema di gestione di basi dati, basato su un modello a documenti, anziché sul
 
 = N
 
+#heading(level: 2, outlined: false)[NestJS]
+Framework open source per la creazione di applicazioni server-side (backend) efficienti, affidabili e scalabili, basate su Node.js.
+È scritto interamente in TypeScript e combina elementi di programmazione orientata agli oggetti (OOP), programmazione funzionale (FP) e programmazione reattiva funzionale (FRP).
+
 #heading(level: 2, outlined: false)[Node.js]
 Ambiente di runtime JavaScript open-source e multipiattaforma che permette di eseguire codice JavaScript al di fuori di un browser web, tipicamente utilizzato per lo sviluppo lato server (Backend).
 
@@ -265,21 +299,27 @@ Standard tecnico volontario internazionale sviluppato dall'International Organiz
 #pagebreak()
 
 = O
+#heading(level: 2, outlined: false)[ODM]
+Object Document Mapper. \ Pattern architetturale e tecnica di programmazione che permette di convertire dati tra sistemi incompatibili: nello specifico, tra gli oggetti di un linguaggio di programmazione orientato agli oggetti e i documenti memorizzati in un database NoSQL. 
+
 #heading(level: 2, outlined: false)[OWASP]
 Acronimo per Open Worldwide Application Security Project, una fondazione no-profit e una comunità globale aperta che si dedica a migliorare la sicurezza delle applicazioni software rendendo disponibili gratuitamente strumenti, documentazione e best practice per sviluppatori e organizzazioni, al fine di educare e guidare nella creazione di software più sicuri. 
 
 #pagebreak()
 = P
 
-#heading(level: 2, outlined: false)[Progettazione & Analisi Baseline (PAB)]
-Milestone interna al gruppo che richiede la conclusione dell'attività di Analisi e di Progettazione per essere completata.
-
 #heading(level: 2, outlined: false)[Personas utente (Personas)]
 Rappresentazioni fittizie ma realistiche dei gruppi di utenti target, basate su dati e ricerche. Aiutano il team di sviluppo a comprendere i bisogni, le esperienze, i comportamenti e gli obiettivi degli utenti reali per cui stanno progettando il prodotto.
+
+#heading(level: 2, outlined: false)[Plugin]
+In ambito software. Componente software ausiliario che si "aggancia" a un'applicazione principale per estenderne le funzionalità o aggiungerne di nuove, senza dover modificare il codice sorgente del programma originale. L'applicazione principale (chiamata host) fornisce un'interfaccia standard (spesso chiamata API o hooks) alla quale il plugin si connette, proprio come una spina si inserisce in una presa elettrica.
 
 #heading(level: 2, outlined: false)[Product Baseline]
 Anche chiamata *PB*. \
 Milestone che richiede la consegna del prodotto e l'accettazione da parte dei professori per essere superata.
+
+#heading(level: 2, outlined: false)[Progettazione & Analisi Baseline (PAB)]
+Milestone interna al gruppo che richiede la conclusione dell'attività di Analisi e di Progettazione per essere completata.
 
 #heading(level: 2, outlined: false)[Project Board]
 Strumento di visualizzazione dei compiti (task o issue) che permette di monitorare lo stato di avanzamento di un progetto in tempo reale.
@@ -310,6 +350,11 @@ Comando di Git usato per inviare i commit locali ad un repository remoto, condiv
 
 #heading(level: 2, outlined: false)[Python]
 Linguaggio di programmazione ad alto livello, interpretato e versatile. È ampiamente utilizzato nel campo dell'Intelligenza Artificiale, del Machine Learning e dell'analisi dati grazie alla sua sintassi semplice ed alle svariate librerie disponibili.
+
+#pagebreak()
+= Q
+#heading(level: 2, outlined: false)[Query]
+Istruzione o richiesta formale inviata a un database o a un sistema informativo per estrarre, manipolare o gestire dati.
 
 #pagebreak()
 
@@ -416,6 +461,9 @@ Milestone interna al gruppo che richiede la conclusione della stesura di tutti g
 
 #heading(level: 2, outlined: false)[User Interface (UI)]
 Insieme di tutti gli elementi visivi e interattivi attraverso i quali un essere umano comunica con un software, un'applicazione o un dispositivo Hardware.
+
+#heading(level: 2, outlined: false)[Utility]
+In ambito software è un tipo di software di sistema progettato per aiutare ad analizzare, configurare, ottimizzare o mantenere un computer o un'infrastruttura. Le utility servono a far sì che il sistema funzioni correttamente e in modo efficiente.
 
 #pagebreak()
 
