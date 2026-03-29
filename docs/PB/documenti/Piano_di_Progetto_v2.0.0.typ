@@ -1915,7 +1915,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
     - Attività di studio delle tecnologie necessarie allo sviluppo.
     - Revisione PdQ, NdP, Glossario e PdP.
   ],
-  [_Milestones attive_], [PAB, PB]
+  [_Milestones attive_], [PB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 12],
@@ -2008,6 +2008,13 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [_Laura Venturini_], [], [], [], [], [], [2], [30€],
     ) ]] <tab:TrascorsoSprint12>
 
+*GANTT Diagram*
+#figure(
+  caption: [Diagramma di GANTT dello Sprint 12],
+)[
+  #image("../../asset/GANTT/sprint12-gantt.png")
+]<GANTT-Sprint12>
+
 #underline[Spese della settimana]: 320€ / 320€ \ #underline[Spesa totale]: *6.245€ / 6.245€*
 #pagebreak()
 
@@ -2070,7 +2077,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-    - Riunione con prof. Vardanega per colloqui RTB e per chiarimenti a seguito del colloquio.
+    - Riunione con prof. Vardanega per colloquio RTB e per chiarimenti a seguito del colloquio.
     - Riunione con azienda proponente.
     - Inizio attività progettazione di architettura monolitica modulare, nello specifico, progettazione per moduli. 
     - Revisione del _Glossario_ ed eventuale aggiornamento.
@@ -2124,6 +2131,13 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [_Amerigo Vegliante_], [], [], [], [12], [], [3], [345€],
       [_Laura Venturini_], [2], [], [], [8], [], [3], [305€],
     ) ]] <tab:TrascorsoSprint13>
+
+*GANTT Diagram*
+#figure(
+  caption: [Diagramma di GANTT dello Sprint 13],
+)[
+  #image("../../asset/GANTT/sprint13-gantt.png")
+]<GANTT-Sprint13>
 
 #underline[Spese della settimana]: 2.170€ / 2.465€ \ #underline[Spesa totale]: *8.415 / 8.710€*
 #pagebreak()
@@ -2247,6 +2261,13 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [_Laura Venturini_], [], [], [], [7], [], [5], [250€],
     ) ]] <tab:TrascorsoSprint14>
 
+*GANTT Diagram*
+#figure(
+  caption: [Diagramma di GANTT dello Sprint 14],
+)[
+  #image("../../asset/GANTT/sprint14-gantt.png")
+]<GANTT-Sprint14>
+
 #underline[Spese della settimana]: 1.640€ / 1.875€ \ #underline[Spesa totale]: *10.055€ / 10.290€*
 
 #pagebreak()
@@ -2366,6 +2387,14 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [_Laura Venturini_], [], [], [], [2], [10], [12], [380€],
     ) ]] <tab:TrascorsoSprint15>
 
+*GANTT Diagram*
+
+#figure(
+  caption: [Diagramma di GANTT dello Sprint 15],
+)[
+  #image("../../asset/GANTT/sprint15-gantt.png")
+]<GANTT-Sprint15>
+
 #underline[Spese della settimana]: 2.575€ / 2.375€ \ #underline[Spesa totale]: *12.630 / 12.430€*
 #pagebreak()
 
@@ -2483,6 +2512,9 @@ A seguito si riportano le ore totale svolte da ogni componente del gruppo nei di
       [_Laura Venturini_], [6], [6], [17], [17], [10], [41], [*97*],
       [*Ore totali*], [*35*], [*41*], [*136*], [*115*], [*93*], [*215*],
     ) ]] <tab:OreTotIndividualiFinali>
+
+Sebbene le ore personali differiscano tra i componenti nel conteggio finale, ogni membro del gruppo ha svolto un lavoro equamente distribuito. \ La differenza si può individuare nella diversa quantità di studio effettuato dai diversi componenti (più o meno competenti inizalmente in determinati ambiti); inoltre tutti i componenti si sono impegnati a spiegare agli altri le proprie conoscenze, così da ottimizzare le tempistiche di studio individuale. \
+Il gruppo ha sempre lavorato in modo collaborativo, con un confronto continuo su ogni aspetto del progetto.
 
 
 La ripartizione dei ruoli finale è sotto rappresentata in @fig:tortaFinale.
