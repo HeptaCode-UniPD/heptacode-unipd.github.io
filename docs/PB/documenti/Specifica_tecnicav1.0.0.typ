@@ -203,7 +203,7 @@ Step Functions è il componente che rende possibile l'orchestrazione dell'intera
 ==== AWS S3
 S3 è il servizio di storage ad oggetti di AWS, scelto per la persistenza di file e dati non strutturati all'interno della piattaforma. \ In un contesto ad agenti, S3 svolge un ruolo trasversale: può fungere da repository per i documenti su cui gli agenti operano (input/output di elaborazioni), da archivio per i log e gli artefatti prodotti dai flussi Step Functions, e da layer di scambio dati tra Lambda Functions che non comunicano direttamente. La sua integrazione nativa con tutti gli altri servizi AWS, la durabilità garantita e il modello di costo pay-per-use lo rendono la scelta naturale per qualsiasi esigenza di storage nell'ecosistema AWS.
 === AWS ECS
-ECS è il servizio AWS per l'esecuzione e l'orchestrazione di container Docker. In una piattaforma ad agenti, dove componenti come il backend NestJS girano in modo continuativo e devono essere sempre disponibili, ECS rappresenta la soluzione naturale per deployare e gestire i container applicativi senza dover gestire l'infrastruttura dei server sottostanti.
+ECS è il servizio AWS per l'esecuzione e l'orchestrazione di container Docker. In una piattaforma ad agenti, dove componenti come il backend NestJS girano in modo continuativo e devono essere sempre disponibili, ECS rappresenta la soluzione naturale per il deploy e per gestire i container applicativi senza dover gestire l'infrastruttura dei server sottostanti.
 \ ECS supporta auto-scaling dei container in base al carico, garantendo che il sistema risponda adeguatamente a picchi di utilizzo senza intervento manuale.
 
 == Tecnologie per Continuous Integration
