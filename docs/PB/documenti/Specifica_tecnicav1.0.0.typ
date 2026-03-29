@@ -55,9 +55,160 @@ Questa introduzione delinea il contesto e gli scopi del progetto.
 
 = Tecnologie 
 == Linguaggi di programmazione
+=== Typescript
+Il progetto è sviluppato in Typescript, un superset di JavaScript che introduce tipizzazione statica opzionale. \  La *tipizzazione statica e riduzione degli errori a runtime* TypeScript introduce un sistema di tipi statici sopra JavaScript, consentendo di intercettare intere categorie di errori già in fase di compilazione, prima che il codice raggiunga l'ambiente di esecuzione. \ 
+In un'applicazione full-stack dove frontend e backend si scambiano dati via API, la definizione di interfacce e tipi condivisi elimina ambiguità sui contratti di dato, riducendo drasticamente i bug dovuti a proprietà mancanti, tipi inattesi o refactoring parziali. \ 
+Il supporto al completamento automatico, alla navigazione del codice e al refactoring assistito offerto dagli IDE come VS Code è notevolmente potenziato dalla presenza dei tipi. Questo si traduce in *cicli di sviluppo più rapidi e in un onboarding più agevole per nuovi membri del team*. \ 
+Su tutti gli strati applicativi *è possibile condividere modelli di dominio, DTO (Data Transfer Object) e interfacce in un unico package condiviso*, garantendo coerenza tra le strutture dati prodotte dal backend e quelle consumate dal frontend, senza duplicazione del codice. 
+Le principali librerie utilizzate nel progetto (React, NestJS) — offrono definizioni di tipo native o tramite _\@types_, garantendo una *copertura tipizzata completa senza configurazioni aggiuntive*. \ 
+Un codebase tipizzato è intrinsecamente più leggibile e autodocumentante. Le firme delle funzioni, le strutture dei dati e le interfacce dei moduli comunicano l'intento del codice in modo esplicito, riducendo la dipendenza da documentazione esterna e *facilitando le operazioni di manutenzione* ordinaria e straordinaria.
 == Framework 
-== Librerie
-== Tecnologie per ..
+=== NestJS
+NestJS è il framework applicativo scelto per strutturare il layer server.
+
+- _Architettura modulare e scalabile_: organizza il codice in moduli, controller e service, imponendo una struttura chiara che facilita la separazione delle responsabilità e la crescita ordinata del progetto nel tempo.
+- _Dependency Injection nativa_: Il sistema di DI integrato rende i componenti disaccoppiati, testabili in isolamento e facilmente sostituibili, migliorando la qualità architetturale complessiva.
+- _NestJS è scritto nativamente in TypeScript_: ne sfrutta appieno i decoratori e il sistema di tipi, rendendolo la scelta più coerente con il resto della stack.
+- _Supporto integrato per pattern enterprise_: NestJS offre supporto per pipe di validazione, middleware e gestione centralizzata degli errori, riducendo la necessità di soluzioni custom per funzionalità trasversali.
+== Librerie e dipendenze
+=== React
+React è stato scelto come libreria UI, le motivazioni principali sono state:
+
+- _Modello a componenti_ — L'architettura basata su componenti riutilizzabili favorisce la separazione delle responsabilità, facilita i test unitari e permette di costruire interfacce complesse in modo incrementale e controllato.
+- _Ecosistema maturo_ — React dispone di un ecosistema vastissimo che spesso non richiede soluzioni custom.
+- _Virtual DOM e performance_ — Il meccanismo di riconciliazione del Virtual DOM garantisce aggiornamenti efficienti dell'interfaccia, limitando le operazioni sul DOM reale ai soli nodi effettivamente modificati.
+- _Integrazione nativa con TypeScript_ — React supporta pienamente TypeScript, con tipizzazione completa di props, state, hook e context, rendendo il codice frontend robusto e verificabile staticamente.
+=== Dipendenze frontend (React)
+
+=== Dipendenze backend (Node.js / NestJS)
+#figure(
+  caption: [Dipendenze backend, framework e core],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-backend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [\@nestjs/common, \ \@nestjs/core],[v11.0.1],[Gestisce il sistema di Dependency Injection, i moduli, i controller e i decorator. Scelto per la sua architettura modulare ispirata ad Angular, ideale per microservizi strutturati.],
+  [\@nestjs/platform-express],[v11.0.1],[Adattatore HTTP per NestJS basato su Express. Gestisce il server HTTP sottostante.]
+)
+#figure(
+  caption: [Dipendenze backend, persistenza],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-backend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [\@nestjs/mongoose],[v11.0.4],[ Integrazione ufficiale NestJS con Mongoose. Fornisce i decorator \@Schema, \@Prop, \@InjectModel per collegare il layer di persistenza al framework.],
+  [mongoose],[v9.3.2],[ODM per MongoDB. Gestisce la definizione degli schemi, le query e la connessione al database. Scelto per la sua maturità e integrazione nativa con NestJS.],
+  [mongodb],[v7.1.1],[Driver nativo MongoDB, dipendenza di Mongoose.],
+)
+#figure(
+  caption: [Dipendenze backend, sicurezza],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-backend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [bcrypt ],[v6.0.0],[Hashing delle password con salt. Usato nel layer applicativo per non salvare mai password in chiaro nel database.],
+)
+#figure(
+  caption: [Dipendenze backend, validazione],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-backend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [class-validator],[v0.15.1],[Validazione dei DTO tramite decorator (\@IsEmail, \@IsUrl, \@MinLength). Integrato con NestJS tramite ValidationPipe],
+  [class-transformer],[v0.5.1],[Trasformazione degli oggetti plain in istanze di classe. Necessario per far funzionare class-validator con NestJS.],
+)
+#figure(
+  caption: [Dipendenze backend, validazione],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-backend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [jest],[v30.x],[Framework di test principale],
+  [ts-jest],[v29.x],[Permette di eseguire test scritti in TypeScript direttamente senza compilazione separata.],
+  [\@nestjs/testing],[v11.0.1],[Utility per creare moduli NestJS isolati nei test. Mock delle dipendenze negli unit test.],
+  [supertest],[v7.0.0],[Libreria per testare endpoint HTTP e integrazione.],
+)
+#figure(
+  caption: [Dipendenze backend, qualità del codice],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-backend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [eslint],[v9.x],[Analisi statica del codice. Configurato con regole custom per complessità ciclomatica, lunghezza dei metodi e numero di parametri.],
+  [typescript-eslint],[v8.x],[Plugin ESLint per TypeScript.],
+  [prettier],[v3.x],[Formattazione automatica del codice.],
+)
+
+== Tecnologie per runtime enviroment
+=== NodeJS
+Node.js è l'ambiente di runtime scelto per eseguire il codice server-side. Node.js è il runtime che consente l'esecuzione di TypeScript lato server, al di fuori del browser. Le motivazioni che hanno portato il gruppo a questa scelta progettuale sono state:
+
+- _Uniformità del linguaggio_ — L'utilizzo dello stesso linguaggio su frontend e backend elimina il context-switch cognitivo, consente la condivisione di logica e tipi comuni, e semplifica la gestione delle dipendenze.
+- _Architettura non bloccante e I/O asincrono_ — Il modello event-driven di Node.js lo rende particolarmente adatto ad applicazioni con elevata concorrenza di richieste I/O, come chiamate a database e API esterne, tipico scenario nelle applicazioni web moderne.
+- _Ecosistema npm_ — npm mette a disposizione il più grande repository di librerie open source esistente, coprendo in modo maturo le esigenze di autenticazione, ORM, validazione, logging ecc.
+
+== Tecnologie per infrastruttura cloud
+=== AWS
+AWS è il provider cloud che ci è stato fornito dall'azienda proponente per la gestione dell'infrastruttura, in particolare per la gestione dei servizi agentici. \ Considerando anche altre opzioni è stata ritenuta la scelta più consona sia dal punto di vista progettuale che didattico. \
+La scelta di AWS come provider cloud è motivata dalla sua maturità, dall'ampiezza del catalogo di servizi e dalla profonda integrazione nativa tra essi e dal vastissimo uso attuale a livello enterprise. In un'architettura ad agenti dove diversi servizi devono comunicare in modo affidabile, sicuro e scalabile, avere tutto sullo stesso ecosistema riduce la complessità operativa e la latenza inter-servizio.
+==== AWS Bedrock
+Bedrock consente di accedere a modelli fondazionali di diversi provider (Anthropic Claude, Meta Llama, Amazon Titan, ecc.) tramite un'unica API gestita, senza dover gestire l'infrastruttura di inferenza. In un contesto di piattaforma ad agenti questo è fondamentale: permette di scegliere e cambiare il modello sottostante senza modificare l'architettura applicativa, e garantisce compliance, sicurezza e controllo dei costi già integrati a livello di piattaforma.
+==== AWS Lambda
+Lambda permette di eseguire la logica dei singoli agenti in modo serverless: ogni funzione è isolata, scala automaticamente in base al carico e viene fatturata solo per il tempo di esecuzione effettivo. In un'architettura ad agenti dove i task sono spesso asincroni, paralleli e di durata variabile, questo modello è più efficiente e conveniente rispetto a server sempre attivi.
+==== AWS Step Functions
+Step Functions è il componente che rende possibile l'orchestrazione dell'intera piattaforma ad agenti. Permette di definire flussi di lavoro complessi come macchine a stati visive, gestendo in modo nativo la sequenza, il parallelismo, la gestione degli errori, i retry e i timeout tra i vari agenti e Lambda. Questo evita di dover implementare manualmente la logica di coordinamento tra le richieste di analisi e le analisi stesse, rendendo i flussi agentici più robusti, osservabili e manutenibili.
+==== AWS S3
+S3 è il servizio di storage ad oggetti di AWS, scelto per la persistenza di file e dati non strutturati all'interno della piattaforma. \ In un contesto ad agenti, S3 svolge un ruolo trasversale: può fungere da repository per i documenti su cui gli agenti operano (input/output di elaborazioni), da archivio per i log e gli artefatti prodotti dai flussi Step Functions, e da layer di scambio dati tra Lambda Functions che non comunicano direttamente. La sua integrazione nativa con tutti gli altri servizi AWS, la durabilità garantita e il modello di costo pay-per-use lo rendono la scelta naturale per qualsiasi esigenza di storage nell'ecosistema AWS.
+
+== Tecnologie per la persistenza dei dati
+=== MongoDB
+La scelta di MongoDB come database principale è strettamente legata alla natura della piattaforma ad agenti basata su analisi di repository. In un sistema dove i dati prodotti e consumati dagli agenti hanno strutture eterogenee, variabili nel tempo e difficilmente riducibili a uno schema relazionale fisso (come nel caso di un repository documentale piuttosto che di sviluppo ecc.), un database orientato ai documenti è la soluzione più adatta.
+Nello specifico:
+- _Schema flessibile_: non richiede uno schema rigido predefinito. Questo è particolarmente vantaggioso in Code Guardian dove ogni agente può produrre output con strutture diverse, e dove il modello dati pu; cambiare facilmente.
+_Dati gerarchici e annidati_: — I documenti JSON di MongoDB si prestano naturalmente a rappresentare strutture dati complesse e annidate (contesti agentici) senza dover ricorrere a join tra tabelle come in un database relazionale.
+- _Scalabilità orizzontale_ — MongoDB è progettato per scalare orizzontalmente tramite sharding nativo, caratteristica importante in una piattaforma che può dover gestire volumi crescenti di sessioni agentiche in parallelo.
+- _Integrazione con l'ecosistema TypeScript_ — Tramite Mongoose o il driver nativo MongoDB, la definizione di schemi e modelli tipizzati in TypeScript è diretta e ben supportata, mantenendo la coerenza con il resto della stack.
+
+== Tecnologie per Cointinuous Integration
+=== GitHub Actions
+Il progetto adotta GitHub Actions come sistema di Continuous Integration (CI). Il workflow è definito nel file con estension ".yml" e viene eseguito automaticamente ad ogni push request sul branch main.
+Il pipeline è strutturato in un job che esegue:
++ analisi statica tramite ESLint e Prettier per verificare la conformità del codice agli standard definiti, incluse metriche di qualità come complessità ciclomatica, lunghezza dei metodi e numero di parametri;
++ esecuzione degli unit test con generazione del report di coverage; esecuzione dei test di integrazione (_e2e_) con un'istanza MongoDB dedicata; verifica dell'integrità della build tramite compilazione TypeScript. Al termine del job, il report di coverage viene salvato come artifact di GitHub Actions.
+
+== Infrastruttura di deployment
+=== Docker
+I microservizi utilizzano Docker come tecnologia di containerizzazione. Il "Dockerfile" definisce l'immagine di produzione.
 
 = Architettura
 == Architettura logica
