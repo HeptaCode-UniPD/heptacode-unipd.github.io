@@ -129,7 +129,7 @@ Gli strumenti per la comunicazione sono invece:
 #label("Organizzazione")
 Ad ogni suddivisione di periodo (_Sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 gennaio 2026_ al _21 febbraio 2026_. 
 #pagebreak()
-== Prima stima, a priori, del monte ore totale per ruolo 
+== Stima a priori del monte ore totale per ruolo 
 Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ L’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive, calcolate a priori rispetto allo svolgimento del progetto, vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali. \ \
 
 #figure(
@@ -165,7 +165,7 @@ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Ques
 Nel grafico in figura @fig:torta vengono analizzate le percentuali della ripartizione generale dei ruoli.
 
 #figure(
-  caption: [Percentuale ripartizione dei ruoli in totale],
+  caption: [Stima percentuale della ripartizione dei ruoli.],
 )[
   #let data = (
     ([*Resp.*], 49),
@@ -199,7 +199,7 @@ Nel grafico in figura @fig:torta vengono analizzate le percentuali della riparti
 Durante lo svolgimento del progetto verranno segnalate le ore effettive svolte da ogni singolo componente per ogni singolo ruolo. \ Alla conclusione delle milestone RTB e PB verranno segnalate le ore totali effettivamente svolte.
 
 #pagebreak()
-== Seconda stima, a seguito della milestone RTB, del monte ore totale per ruolo
+== Stima a seguito della milestone RTB del monte ore totale per ruolo
 A seguito del conseguimento della milestone RTB (descritta nella @milestone) e tenuto conto delle ore effettivamente svolte durante il periodo di RTB, verrà proposta una seconda stima (presente in @tab:OreTotIndividuali2) delle ore di lavoro di ogni membro per ruolo. Questa stima viene comparata con la stima in @tab:OreTotIndividuali, che era stata effettuata all'inizio della milestone RTB. 
 
 #figure(
@@ -233,7 +233,7 @@ A seguito del conseguimento della milestone RTB (descritta nella @milestone) e t
     ) ]] <tab:OreTotIndividuali2>
 In @fig:torta2 è possibile visionare la percentuale di ore dedicate a ciascun ruolo secondo la nuova stima.
 #figure(
-  caption: [Percentuale ripartizione dei ruoli seconda stima.],
+  caption: [Stima post RTB percentuale ripartizione dei ruoli.],
 )[
   #let data = (
     ([*Resp.*], 36),
