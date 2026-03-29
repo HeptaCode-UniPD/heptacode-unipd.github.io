@@ -55,7 +55,7 @@ Questa introduzione delinea il contesto e gli scopi del progetto.
 
 = Tecnologie 
 == Linguaggi di programmazione
-=== Typescript
+=== Typescript v5.7.x
 Il progetto è sviluppato in Typescript, un superset di JavaScript che introduce tipizzazione statica opzionale. \  La *tipizzazione statica e riduzione degli errori a runtime* TypeScript introduce un sistema di tipi statici sopra JavaScript, consentendo di intercettare intere categorie di errori già in fase di compilazione, prima che il codice raggiunga l'ambiente di esecuzione. \ 
 In un'applicazione full-stack dove frontend e backend si scambiano dati via API, la definizione di interfacce e tipi condivisi elimina ambiguità sui contratti di dato, riducendo drasticamente i bug dovuti a proprietà mancanti, tipi inattesi o refactoring parziali. \ 
 Il supporto al completamento automatico, alla navigazione del codice e al refactoring assistito offerto dagli IDE come VS Code è notevolmente potenziato dalla presenza dei tipi. Questo si traduce in *cicli di sviluppo più rapidi e in un onboarding più agevole per nuovi membri del team*. \ 
@@ -63,7 +63,7 @@ Su tutti gli strati applicativi *è possibile condividere modelli di dominio, DT
 Le principali librerie utilizzate nel progetto (React, NestJS) — offrono definizioni di tipo native o tramite _\@types_, garantendo una *copertura tipizzata completa senza configurazioni aggiuntive*. \ 
 Un codebase tipizzato è intrinsecamente più leggibile e autodocumentante. Le firme delle funzioni, le strutture dei dati e le interfacce dei moduli comunicano l'intento del codice in modo esplicito, riducendo la dipendenza da documentazione esterna e *facilitando le operazioni di manutenzione* ordinaria e straordinaria.
 == Framework 
-=== NestJS
+=== NestJS v11.0.x
 NestJS è il framework applicativo scelto per strutturare il layer server.
 
 - _Architettura modulare e scalabile_: organizza il codice in moduli, controller e service, imponendo una struttura chiara che facilita la separazione delle responsabilità e la crescita ordinata del progetto nel tempo.
@@ -71,7 +71,7 @@ NestJS è il framework applicativo scelto per strutturare il layer server.
 - _NestJS è scritto nativamente in TypeScript_: ne sfrutta appieno i decoratori e il sistema di tipi, rendendolo la scelta più coerente con il resto della stack.
 - _Supporto integrato per pattern enterprise_: NestJS offre supporto per pipe di validazione, middleware e gestione centralizzata degli errori, riducendo la necessità di soluzioni custom per funzionalità trasversali.
 == Librerie e dipendenze
-=== React
+=== React v19.2.4 
 React è stato scelto come libreria UI, le motivazioni principali sono state:
 
 - _Modello a componenti_ — L'architettura basata su componenti riutilizzabili favorisce la separazione delle responsabilità, facilita i test unitari e permette di costruire interfacce complesse in modo incrementale e controllato.
@@ -169,13 +169,26 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   [prettier],[v3.x],[Formattazione automatica del codice.],
 )
 
-== Tecnologie per runtime enviroment
-=== NodeJS
+== Runtime enviroment
+=== NodeJS v24
 Node.js è l'ambiente di runtime scelto per eseguire il codice server-side. Node.js è il runtime che consente l'esecuzione di TypeScript lato server, al di fuori del browser. Le motivazioni che hanno portato il gruppo a questa scelta progettuale sono state:
 
 - _Uniformità del linguaggio_ — L'utilizzo dello stesso linguaggio su frontend e backend elimina il context-switch cognitivo, consente la condivisione di logica e tipi comuni, e semplifica la gestione delle dipendenze.
 - _Architettura non bloccante e I/O asincrono_ — Il modello event-driven di Node.js lo rende particolarmente adatto ad applicazioni con elevata concorrenza di richieste I/O, come chiamate a database e API esterne, tipico scenario nelle applicazioni web moderne.
 - _Ecosistema npm_ — npm mette a disposizione il più grande repository di librerie open source esistente, coprendo in modo maturo le esigenze di autenticazione, ORM, validazione, logging ecc.
+
+== Infrastruttura di deployment
+=== Docker Engine v29.3.0
+I microservizi utilizzano Docker come tecnologia di containerizzazione. Il "Dockerfile" definisce l'immagine di produzione.
+
+== Tecnologie per la persistenza dei dati
+=== MongoDB v8.0.x
+La scelta di MongoDB come database principale è strettamente legata alla natura della piattaforma ad agenti basata su analisi di repository. In un sistema dove i dati prodotti e consumati dagli agenti hanno strutture eterogenee, variabili nel tempo e difficilmente riducibili a uno schema relazionale fisso (come nel caso di un repository documentale piuttosto che di sviluppo ecc.), un database orientato ai documenti è la soluzione più adatta.
+Nello specifico:
+- _Schema flessibile_: non richiede uno schema rigido predefinito. Questo è particolarmente vantaggioso in Code Guardian dove ogni agente può produrre output con strutture diverse, e dove il modello dati pu; cambiare facilmente.
+_Dati gerarchici e annidati_: — I documenti JSON di MongoDB si prestano naturalmente a rappresentare strutture dati complesse e annidate (contesti agentici) senza dover ricorrere a join tra tabelle come in un database relazionale.
+- _Scalabilità orizzontale_ — MongoDB è progettato per scalare orizzontalmente tramite sharding nativo, caratteristica importante in una piattaforma che può dover gestire volumi crescenti di sessioni agentiche in parallelo.
+- _Integrazione con l'ecosistema TypeScript_ — Tramite Mongoose o il driver nativo MongoDB, la definizione di schemi e modelli tipizzati in TypeScript è diretta e ben supportata, mantenendo la coerenza con il resto della stack.
 
 == Tecnologie per infrastruttura cloud
 === AWS
@@ -189,26 +202,16 @@ Lambda permette di eseguire la logica dei singoli agenti in modo serverless: ogn
 Step Functions è il componente che rende possibile l'orchestrazione dell'intera piattaforma ad agenti. Permette di definire flussi di lavoro complessi come macchine a stati visive, gestendo in modo nativo la sequenza, il parallelismo, la gestione degli errori, i retry e i timeout tra i vari agenti e Lambda. Questo evita di dover implementare manualmente la logica di coordinamento tra le richieste di analisi e le analisi stesse, rendendo i flussi agentici più robusti, osservabili e manutenibili.
 ==== AWS S3
 S3 è il servizio di storage ad oggetti di AWS, scelto per la persistenza di file e dati non strutturati all'interno della piattaforma. \ In un contesto ad agenti, S3 svolge un ruolo trasversale: può fungere da repository per i documenti su cui gli agenti operano (input/output di elaborazioni), da archivio per i log e gli artefatti prodotti dai flussi Step Functions, e da layer di scambio dati tra Lambda Functions che non comunicano direttamente. La sua integrazione nativa con tutti gli altri servizi AWS, la durabilità garantita e il modello di costo pay-per-use lo rendono la scelta naturale per qualsiasi esigenza di storage nell'ecosistema AWS.
+=== AWS ECS
+ECS è il servizio AWS per l'esecuzione e l'orchestrazione di container Docker. In una piattaforma ad agenti, dove componenti come il backend NestJS girano in modo continuativo e devono essere sempre disponibili, ECS rappresenta la soluzione naturale per deployare e gestire i container applicativi senza dover gestire l'infrastruttura dei server sottostanti.
+\ ECS supporta auto-scaling dei container in base al carico, garantendo che il sistema risponda adeguatamente a picchi di utilizzo senza intervento manuale.
 
-== Tecnologie per la persistenza dei dati
-=== MongoDB
-La scelta di MongoDB come database principale è strettamente legata alla natura della piattaforma ad agenti basata su analisi di repository. In un sistema dove i dati prodotti e consumati dagli agenti hanno strutture eterogenee, variabili nel tempo e difficilmente riducibili a uno schema relazionale fisso (come nel caso di un repository documentale piuttosto che di sviluppo ecc.), un database orientato ai documenti è la soluzione più adatta.
-Nello specifico:
-- _Schema flessibile_: non richiede uno schema rigido predefinito. Questo è particolarmente vantaggioso in Code Guardian dove ogni agente può produrre output con strutture diverse, e dove il modello dati pu; cambiare facilmente.
-_Dati gerarchici e annidati_: — I documenti JSON di MongoDB si prestano naturalmente a rappresentare strutture dati complesse e annidate (contesti agentici) senza dover ricorrere a join tra tabelle come in un database relazionale.
-- _Scalabilità orizzontale_ — MongoDB è progettato per scalare orizzontalmente tramite sharding nativo, caratteristica importante in una piattaforma che può dover gestire volumi crescenti di sessioni agentiche in parallelo.
-- _Integrazione con l'ecosistema TypeScript_ — Tramite Mongoose o il driver nativo MongoDB, la definizione di schemi e modelli tipizzati in TypeScript è diretta e ben supportata, mantenendo la coerenza con il resto della stack.
-
-== Tecnologie per Cointinuous Integration
+== Tecnologie per Continuous Integration
 === GitHub Actions
-Il progetto adotta GitHub Actions come sistema di Continuous Integration (CI). Il workflow è definito nel file con estension ".yml" e viene eseguito automaticamente ad ogni push request sul branch main.
+Il progetto adotta GitHub Actions come sistema di Continuous Integration (CI). Il workflow è definito nel file con estensione ".yml" e viene eseguito automaticamente ad ogni push request sul branch main.
 Il pipeline è strutturato in un job che esegue:
 + analisi statica tramite ESLint e Prettier per verificare la conformità del codice agli standard definiti, incluse metriche di qualità come complessità ciclomatica, lunghezza dei metodi e numero di parametri;
 + esecuzione degli unit test con generazione del report di coverage; esecuzione dei test di integrazione (_e2e_) con un'istanza MongoDB dedicata; verifica dell'integrità della build tramite compilazione TypeScript. Al termine del job, il report di coverage viene salvato come artifact di GitHub Actions.
-
-== Infrastruttura di deployment
-=== Docker
-I microservizi utilizzano Docker come tecnologia di containerizzazione. Il "Dockerfile" definisce l'immagine di produzione.
 
 = Architettura
 == Architettura logica
