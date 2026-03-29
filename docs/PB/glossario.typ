@@ -92,7 +92,7 @@ Nome di una delle più importanti aziende di ricerca e sicurezza nell'intelligen
 
 #heading(level: 2, outlined: false)[API]
 Application Programming Interface. \
-Insieme di definizioni e protocolli che permette a due applicazioni software di comunicare tra loro. In pratica, l'API agisce come un "messaggero" che prende la tua richiesta, la porta al sistema che deve elaborarla e ti riporta la risposta.
+Insieme di definizioni e protocolli che permette a due applicazioni software di comunicare tra loro. In pratica, l’API agisce come un "messaggero" che prende la tua richiesta, la porta al sistema che deve elaborarla e ti riporta la risposta.
 
 #heading(level: 2, outlined: false)[Artificial Intelligence (AI)]
 Branca dell'informatica che si occupa di creare sistemi hardware e software capaci di simulare processi cognitivi umani. In termini semplici, è la capacità di una macchina di mostrare abilità umane come il ragionamento, l'apprendimento, la pianificazione e la creatività.

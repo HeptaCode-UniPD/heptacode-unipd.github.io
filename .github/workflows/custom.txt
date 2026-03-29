@@ -245,3 +245,11 @@ langchain
 mockup
 l'analysis
 sonarqube
+dom
+dto
+fp
+frp
+api
+odm
+oop
+serverless
