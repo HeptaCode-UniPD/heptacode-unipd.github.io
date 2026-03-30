@@ -216,8 +216,9 @@ Il pipeline è strutturato in un job che esegue:
 = Architettura
 == Architettura logica
 === Layered Architecture
-
+Il sistema è progettato seguendo un architettura a strati. 
 == Architettura di deployment
+L'architettura di deployment è basata su microservizi, con componenti distrbuiti che comunicano tra loro tramite API REST e messaggistica asincrona. \
 === Microservizi
 == Design pattern
 
