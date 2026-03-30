@@ -20,7 +20,7 @@
   show link: set text(fill: color.linear-rgb(121, 1, 238))
   show link: underline
 let versione = if modifiche != () {
-    modifiche.at(0).at(0) }
+    modifiche.at(0).at(0) } else {"1.0.0"}
 
   // FRONTESPIZIO
   v(1fr)
