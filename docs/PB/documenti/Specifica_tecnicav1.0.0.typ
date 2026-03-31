@@ -222,6 +222,9 @@ Ogni microservizio è organizzato nei seguenti layer:
 _Ingestion Layer_ #pad(left: 0.5cm)[ Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste provenienti dal Frontend o da altri microservizi, della validazione dei dati in ingresso e della loro trasformazione in strutture tipizzate (DTO) prima che vengano propagate agli strati sottostanti.]
 _Service Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con i componenti di persistenza e con i servizi esterni. Questo layer è esposto esclusivamente tramite interfacce, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta.]
 _Persistence Layer_ #pad(left: 0.5cm)[Gestisce l'accesso al layer di persistenza dei dati attraverso il pattern Repository, garantendo che il dominio applicativo rimanga indipendente dalla tecnologia di storage sottostante. La traduzione tra entità di dominio e modelli di persistenza è delegata a componenti Mapper dedicati.]
+
+=== Component Based Architecture
+
 == Architettura di deployment
 L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale garantisce elevata scalabilità, resilienza e una totale indipendenza nello sviluppo e nel rilascio dei singoli componenti software. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
 
@@ -232,11 +235,13 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 
 === Microservizi
 
+*Microservizio Frontend - MS0*
+
 *Microservizio di Analysis Management - MS1*  #pad(left: 0.5cm)[Ha il compito di verificare se, per un dato repository, sia già presente in memoria un'analisi relativa all'ultimo commit disponibile. Qualora l'analisi risulti assente o non aggiornata, il microservizio provvede ad inoltrare la richiesta di analisi al microservizio competente, evitando elaborazioni ridondanti e ottimizzando l'utilizzo delle risorse computazionali.]
 
 *Microservizio di Analisi dei Repository - MS2* #pad(left: 0.5cm)[Si occupa dell'analisi del codice sorgente delle repository mediante l'impiego di agenti software. Ricevuta una richiesta, il microservizio avvia il processo di analisi, delegando l'esecuzione a uno o più agenti specializzati e restituendo i risultati al chiamante.]
 
-*Microservizio di User e Repository Management - MS3*: #pad(left: 0.5cm)[Responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di registrazione e autenticazione degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell'API esterna.]
+*Microservizio di Autenticazione e Repository Management - MS3*: #pad(left: 0.5cm)[Responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di registrazione e autenticazione degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell'API esterna.]
 == Design pattern
 
 // USATI IN MS1
@@ -248,9 +253,9 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 
 == Progettazione
 === Progettazione backend
-==== Cache e Coordinamento delle Analisi - MS1
+==== Analysis Management - MS1
 ==== Analisi dei Repository - MS2
-==== Microservizio di Autenticazione e Repository Management - MS3
+==== Autenticazione e Repository Management - MS3
 
 === Progettazione frontend
 
