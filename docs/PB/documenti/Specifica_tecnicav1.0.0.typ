@@ -78,7 +78,88 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
 - _Ecosistema maturo_ — React dispone di un ecosistema vastissimo che spesso non richiede soluzioni custom.
 - _Virtual DOM e performance_ — Il meccanismo di riconciliazione del Virtual DOM garantisce aggiornamenti efficienti dell'interfaccia, limitando le operazioni sul DOM reale ai soli nodi effettivamente modificati.
 - _Integrazione nativa con TypeScript_ — React supporta pienamente TypeScript, con tipizzazione completa di props, state, hook e context, rendendo il codice frontend robusto e verificabile staticamente.
+
 === Dipendenze frontend (React)
+#figure(
+  caption: [Dipendenze frontend, core],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none)
+) <dipendenze-frontend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [react, \ react-dom],[v19.2.0],[Libreria principale per la costruzione dell'interfaccia utente e il rendering nel DOM. Scelto per la sua architettura a componenti e il vasto ecosistema.],
+)
+#figure(
+  caption: [Dipendenze frontend, routing e utility],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none)
+) <dipendenze-frontend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [react-router-dom],[v7.13.1],[Gestione del routing client-side. Fornisce i componenti \<Route\>, \<Link\> e gli hook useNavigate e useParams per la navigazione tra le pagine.],
+  [react-icons],[v5.6.0],[Libreria di icone SVG. Aggrega i principali icon set in un unico pacchetto importabile come componenti React.],
+  [diff],[v8.0.3],[Algoritmo di differenza testuale (diff). Usato per confrontare e visualizzare le modifiche tra due versioni di testo.],
+)
+#figure(
+  caption: [Dipendenze frontend, build e compilazione],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none)
+) <dipendenze-frontend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [vite],[v7.2.4],[Bundler e dev server. Scelto per la velocità di avvio grazie all'uso nativo dei moduli ES e all'HMR istantaneo.],
+  [\@vitejs/plugin-react],[v5.1.1],[Plugin Vite che abilita il supporto a JSX e al Fast Refresh di React durante lo sviluppo.],
+  [typescript],[v5.9.3],[Superset tipizzato di JavaScript. Usato per garantire la correttezza dei tipi a compile time.],
+  [\@types/react, \ \@types/react-dom, \ \@types/node, \ \@types/diff],[varie],[Definizioni dei tipi TypeScript per le rispettive librerie.],
+)
+#figure(
+  caption: [Dipendenze frontend, testing],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none)
+) <dipendenze-frontend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [vitest],[v4.1.1],[Framework di test nativo per Vite. Compatibile con l'API di Jest, condivide la configurazione di Vite evitando setup duplicati.],
+  [\@vitest/coverage-v8],[v4.1.1],[Provider di code coverage basato su V8. Attivato tramite il comando test:cov, non richiede import espliciti nel codice.],
+  [\@vitest/ui],[v4.1.1],[Interfaccia grafica per visualizzare i risultati dei test nel browser.],
+  [\@testing-library/react, \ \@testing-library/dom],[v16.3.2 / v10.4.1],[Utility per testare componenti React simulando l'interazione reale con il DOM, senza dipendere dall'implementazione interna.],
+  [\@testing-library/jest-dom],[v6.9.1],[Estende i matcher di Vitest con asserzioni specifiche per il DOM (toBeInTheDocument, toHaveClass, ecc.).],
+  [\@testing-library/user-event],[v14.6.1],[Simula eventi utente realistici (click, digitazione, tab) nei test, più fedele al comportamento del browser rispetto a fireEvent.],
+  [jsdom],[v29.0.1],[Implementazione del DOM in ambiente Node.js. Usato da Vitest come ambiente di test per simulare il browser.],
+)
+#figure(
+  caption: [Dipendenze frontend, qualità del codice],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none)
+) <dipendenze-frontend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [eslint, \ \@eslint/js],[v9.39.1],[Analisi statica del codice JavaScript e TypeScript.],
+  [typescript-eslint],[v8.46.4],[Plugin ESLint per TypeScript. Abilita regole type-aware che richiedono le informazioni del compilatore.],
+  [eslint-plugin-react-hooks],[v7.0.1],[Controlla il corretto utilizzo degli hook React (Rules of Hooks).],
+  [eslint-plugin-react-refresh],[v0.4.24],[Avverte se un componente non è compatibile con il Fast Refresh di Vite.],
+  [globals],[v16.5.0],[Fornisce le liste di variabili globali per i vari ambienti (browser, node) usate nella configurazione ESLint.],
+)
 
 === Dipendenze backend (Node.js / NestJS)
 #figure(
@@ -235,7 +316,7 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 
 === Microservizi
 
-*Microservizio Frontend - MS0*
+*Microservizio Frontend - MS0* #pad(left: 0.5cm)[Costituisce il punto di accesso dell'utente al sistema. Espone le seguenti funzionalità: autenticazione e visualizzazione del profilo utente, inserimento dell'URL di un repository GitHub da analizzare, e consultazione dei risultati dell'analisi. Quest'ultima comprende tre aree distinte: copertura dei test, qualità della documentazione e vulnerabilità di sicurezza secondo le linee guida OWASP. Per ciascuna area vengono presentati i file con suggerimenti di modifica sotto forma di diff, le motivazioni dietro le modifiche proposte e le criticità rilevate.]
 
 *Microservizio di Analysis Management - MS1*  #pad(left: 0.5cm)[Ha il compito di verificare se, per un dato repository, sia già presente in memoria un'analisi relativa all'ultimo commit disponibile. Qualora l'analisi risulti assente o non aggiornata, il microservizio provvede ad inoltrare la richiesta di analisi al microservizio competente, evitando elaborazioni ridondanti e ottimizzando l'utilizzo delle risorse computazionali.]
 
