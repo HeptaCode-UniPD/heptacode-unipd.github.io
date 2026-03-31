@@ -49,10 +49,10 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
 - Regolamento del progetto didattico: #link("https://www.math.unipd.it/~tullio/IS-1/2025/Dispense/PD1.pdf")[Regolamento di progetto]
 - Lezioni su progettazioni e pattern architetturali:
   - #link("https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf")[Progettazione e programmazione: Diagrammi delle classi (UML)]
-  - Da aggiungere nel caso usiamo altre lezioni
+ - #link("https://www.math.unipd.it/~rcardin/swea/2022/Software%20Architecture%20Patterns.pdf")[Progettazione: I pattern architetturali]
+ - #link("https://www.math.unipd.it/~rcardin/swea/2022/Design%20Pattern%20Strutturali.pdf")[Progettazione: I pattern strutturali]
 - Documento interno: #link("https://heptacode-unipd.github.io/docs/PB/glossario.pdf")[Glossario v2.0.0]
 Questa introduzione delinea il contesto e gli scopi del progetto.
-
 = Tecnologie 
 == Linguaggi di programmazione
 === Typescript v5.7.x
@@ -214,20 +214,46 @@ Il pipeline è strutturato in un job che esegue:
 + esecuzione degli unit test con generazione del report di coverage; esecuzione dei test di integrazione (_e2e_) con un'istanza MongoDB dedicata; verifica dell'integrità della build tramite compilazione TypeScript. Al termine del job, il report di coverage viene salvato come artifact di GitHub Actions.
 
 = Architettura
+Il sistema è strutturato secondo un'architettura a microservizi, composta da tre componenti indipendenti che collaborano per fornire le funzionalità applicative. Ciascun microservizio adotta internamente una Layered Architecture, suddividendo le responsabilità in strati distinti e garantendo separazione delle competenze (separation of concerns).
 == Architettura logica
 === Layered Architecture
-Il sistema è progettato seguendo un architettura a strati. 
+Ogni microservizio è organizzato nei seguenti layer:
+
+_Presentation / Ingestion Layer_ #pad(left: 0.5cm)[ Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste provenienti dal Frontend o da altri microservizi, della validazione dei dati in ingresso e della loro trasformazione in strutture tipizzate (DTO) prima che vengano propagate agli strati sottostanti.]
+_Service / Application Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con i componenti di persistenza e con i servizi esterni. Questo layer è esposto esclusivamente tramite interfacce, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta.]
+_Persistence Layer_ #pad(left: 0.5cm)[Gestisce l'accesso al layer di persistenza dei dati attraverso il pattern Repository, garantendo che il dominio applicativo rimanga indipendente dalla tecnologia di storage sottostante. La traduzione tra entità di dominio e modelli di persistenza è delegata a componenti Mapper dedicati.]
 == Architettura di deployment
-L'architettura di deployment è basata su microservizi, con componenti distribuiti che comunicano tra loro tramite API REST e messaggistica asincrona. \
+L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale garantisce elevata scalabilità, resilienza e una totale indipendenza nello sviluppo e nel rilascio dei singoli componenti software. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
+
+*Comunicazione tra i Servizi*
+#pad(left: 0.5cm)[A differenza dei sistemi basati su messaggistica asincrona, i microservizi comunicano tra loro tramite interfacce API REST (Representational State Transfer). L'adozione di questo protocollo garantisce una comunicazione chiara e ben definita tra i componenti, facilitando l'integrazione e le attività di debugging. Il modello sincrono consente inoltre un flusso di dati immediato, risultando particolarmente adatto alle operazioni agentiche che richiedono una risposta in tempo reale. Ogni microservizio espone un insieme di endpoint specifici, rendendo la struttura del sistema facilmente documentabile e manutenibile]
+*Containerizzazione e Deployment*
+#pad(left: 0.5cm)[Il deployment dei microservizi avviene in ambienti virtualizzati tramite Docker. Ogni microservizio è incapsulato in un container indipendente, operante in un ambiente isolato che previene conflitti di dipendenze e interferenze tra i servizi. Questa soluzione semplifica le fasi di test, rilascio e aggiornamento, assicurando che il software si comporti in modo identico in qualsiasi ambiente di esecuzione. La natura dei container permette infine di replicare i singoli servizi in modo rapido ed efficiente, consentendo al sistema di adattarsi dinamicamente a carichi di lavoro variabili.]
+
 === Microservizi
+
+*Microservizio di Cache e Coordinamento delle Analisi - MS1*: \ ha il compito di verificare se, per un dato repository, sia già presente in memoria un'analisi relativa all'ultimo commit disponibile. Qualora l'analisi risulti assente o non aggiornata, il microservizio provvede ad inoltrare la richiesta di analisi al microservizio competente, evitando elaborazioni ridondanti e ottimizzando l'utilizzo delle risorse computazionali.
+
+*Microservizio di Analisi dei Repository - MS2*: \ si occupa dell'analisi del codice sorgente delle repository mediante l'impiego di agenti software. Ricevuta una richiesta, il microservizio avvia il processo di analisi, delegando l'esecuzione a uno o più agenti specializzati e restituendo i risultati al chiamante.
+
+*Microservizio di User e Repository Management - MS3*: \ responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di registrazione e autenticazione degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell'API esterna.
 == Design pattern
 
+// USATI IN MS1
+
+// USATI IN MS2
+
+// USATI IN MS3
+- *Adapter*
+
 == Progettazione
-=== Progettazione frontend
 === Progettazione backend
-==== Servizio di autenticazione e salvataggio dati
-==== Servizio di analisi statica
-==== Servizio di analisi attiva
+==== Cache e Coordinamento delle Analisi - MS1
+==== Analisi dei Repository - MS2
+==== Microservizio di Autenticazione e Repository Management - MS3
+
+=== Progettazione frontend
+
 
 = Stato dei requisiti funzionali
 == Stato per requisito
@@ -278,7 +304,7 @@ L'architettura di deployment è basata su microservizi, con componenti distribui
   [R-10-F-O],[L'Utente Registrato deve poter visualizzare il proprio nome Utente Registrato],[Soddisfatto],
   [R-11-F-O],[L'Utente Registrato deve poter visualizzare la propria mail],[],
   [R-12-F-D],[L'Utente Registrato deve poter visualizzare il proprio ruolo],[Non soddisfatto],
-  [R-13-F-O],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[],
+  [R-13-F-O],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[Soddisfatto],
   [R-14-F-O],[L'Utente Registrato deve poter annullare la procedura di logout dalla piattaforma],[],
   [R-15-F-D],[L'Utente Registrato deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[Soddisfatto],
   [R-92-F-P],[L'Utente Registrato deve poter cercare un repository in una barra di ricerca],[],
