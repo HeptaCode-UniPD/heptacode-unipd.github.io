@@ -322,21 +322,29 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 
 *Microservizio di Analisi dei Repository - MS2* #pad(left: 0.5cm)[Si occupa dell'analisi del codice sorgente delle repository mediante l'impiego di agenti software. Ricevuta una richiesta, il microservizio avvia il processo di analisi, delegando l'esecuzione a uno o più agenti specializzati e restituendo i risultati al chiamante.]
 
-*Microservizio di Autenticazione e Repository Management - MS3*: #pad(left: 0.5cm)[Responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di registrazione e autenticazione degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell'API esterna.]
+*Microservizio di Autenticazione e Repository Management - MS3*:
+#figure( [#image("../../asset/Diagr-architett/architett_authrepo.png")] , caption: [Layered architecutre - MS3])
+#pad(left: 0.5cm)[Responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di registrazione e autenticazione degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell'API esterna.]
 == Design pattern
 
 // USATI IN MS1
 
 // USATI IN MS2
+- *Dependency Injection*
+Il sistema adotta il pattern Dependency Injection tramite il container IoC di NestJS. Le dipendenze tra i layer sono mediate da interfacce, garantendo disaccoppiamento e sostituibilità delle implementazioni concrete.
 
-// USATI IN MS3
 - *Adapter*
 
 == Progettazione
 === Progettazione backend
 ==== Analysis Management - MS1
+//#figure( [#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")] , caption: [Diagramma delle classi - MS1])
+
 ==== Analisi dei Repository - MS2
+// #figure( [#image("../../asset/diagr-architett/UML/ActiveAnalysisService")] , caption: [Diagramma struttura AWS - MS2])
+
 ==== Autenticazione e Repository Management - MS3
+#figure( [#image("../../asset/diagr-architett/UML/Auth&RepoService.png")] , caption: [Diagramma delle classi - MS3])
 
 === Progettazione frontend
 
