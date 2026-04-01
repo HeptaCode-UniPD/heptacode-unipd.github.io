@@ -23,9 +23,9 @@
 
 = Introduzione
 == Code Guardian
-_Code Guardian_ è una piattaforma web che permette di richiedere a degli agenti di analizzare repository GitHub e ottenere report automatici su documentazione, test e sicurezza. \ I developer, dopo aver effettuato l'accesso, possono quindi richiedere un'analisi del repository selezionato //....
+_Code Guardian_ è una piattaforma web che permette di richiedere a degli agenti di analizzare repository GitHub e ottenere report automatici su documentazione, test e sicurezza. \ I developer, dopo aver effettuato l'accesso, possono quindi richiedere un'analisi del repository selezionato e il sistema ad agenti fornirà un report con indicazioni su come correggere o migliorare la documentazione, i test e la sicurezza di tale repo.//....
 == Scopo del documento
-Lo scopo del documento Manuale Utente è introdurre gli utenti a _Code Guardian_ e assisterli nel suo utilizzo. Questo documento funge quindi da guida al funzionamento del software e permette agli utenti di sfruttare al massimo le sue funzionalità. \
+Lo scopo del documento Manuale Utente è introdurre gli utenti a _Code Guardian_ e assisterli nel suo utilizzo, fungendo da guida al funzionamento del software e permettendo agli utenti di sfruttare al massimo le sue funzionalità. \
 Questo manuale indica al developer i requisiti di sistema per poi spiegargli come interfacciarsi con l'applicativo web. //...
 
 == Glossario
@@ -37,7 +37,7 @@ Questo manuale indica al developer i requisiti di sistema per poi spiegargli com
 - GitHub Docs "About repositories" \ https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories
 //....
 #[
-#show regex("\bRepository\b|\brepository\b|\bGitHub\b|\bOWASP\b|\bDocumentazione\b|\bdocumnetazione\b|\bagenti\b|\banalisi\b|\bAnalisi\b|\bsessione attiva\b"): it => [#it#sub[G]]
+#show regex("\bRepository\b|\brepository\b|\bGitHub\b|\bOWASP\b|\bDocumentazione\b|\bdocumnetazione\b|\bagenti\b|\banalisi\b|\bAnalisi\b|\bsessione attiva\b|\breport automatico\b|\bReport automatico\b"): it => [#it#sub[G]]
 
 = Requisiti di sistema
 La funzionalità corretta dell'applicativo web è garantita nei sistemi desktop equipaggiati con sistemi operativi che supportono i seguenti browser:
@@ -92,10 +92,13 @@ Cliccando su /*nome pulsante, link a <AggiungiRepo>*/ potrà aggiungere i reposi
 Cliccando su un repository, l'utente raggiungerà la pagina di visualizzazione dettagli di tale repo, da dove sarà possibile effettuare l'analisi. \
 Cliccando sull'icona del profilo,/*inserire posizione profilo*/, l'utente potrà visualizzare le informazioni riguardo il proprio profilo utente.
 // inserire immagine icona
-
+Si può eliminare una repository cliccando sull'icona del cestino in sua corrispondenza. L'azione non è reversibile, tuttavia se si desidera re-inserire la repo nel sistema si può aggiungere nuovamente dalla pagina "Aggiungi Repository".
+//immagine cestino ?
 === Pagina Aggiungi Repository<AggiungiRepo>
 // screen della pagina
-Questa è la pagina che permette di inserire nuovi repository per poi poterli analizzare.
+Questa è la pagina che permette di inserire nuovi repository per poi poterli analizzare. Per farlo, basta immettere il link nella barra visualizzata nella schermata. \ Attenzione: se si inserisce il link a una repository privata o un link non valido, appariranno i corrispondenti messaggi d'errore.
+// screen errore repo priv
+// screen errore link non val
 
 // Una volta inserito rimango nella pagina o mi reinderizza a DettagliRepo? 
 === Pagina Dettagli Repository
@@ -103,8 +106,9 @@ Questa è la pagina che permette di inserire nuovi repository per poi poterli an
 
 === Pagina Profilo Utente
 // screen della pagina
-In questa pagina è possibile visualizzare nome, cognome ed email. Non è possibile modificarli.
-
+In questa pagina è possibile visualizzare nome, cognome ed email, che non sono modificabili. È possibile eseguire il logout dalla piattaforma, cliccando sulla segunte icona: 
+//icona logout
+Una volta cliccata, apparirà il pop-up di conferma logout. 
 
 ]
 
