@@ -4426,18 +4426,18 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
 
   // UTENTE SCONOSCIUTO
-  [R-1-F-D],[L'Utente Sconosciuto deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
-  [R-2-F-D],[L'Utente Sconosciuto deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
-  [R-3-F-D],[L'Utente Sconosciuto deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
-  [R-4-F-D],[L'Utente Sconosciuto deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
-  [R-5-F-D],[L'Utente Sconosciuto deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
+  [R-1-F-O],[L'Utente Sconosciuto deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
+  [R-2-F-O],[L'Utente Sconosciuto deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
+  [R-3-F-O],[L'Utente Sconosciuto deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
+  [R-4-F-O],[L'Utente Sconosciuto deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
+  [R-5-F-O],[L'Utente Sconosciuto deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
 
   // UTENTE REGISTRATO
   [R-16-F-O],[L'Utente Registrato deve poter inserire un repository pubblico al sistema],[#link(<UC8>)[UC8]],
   [R-17-F-D],[L'Utente Registrato deve poter inserire un repository privato al sistema],[#link(<UC8.0.1>)[UC8.0.1]],
   [R-18-F-D],[L'Utente Registrato deve poter inserire il Personal Access Token collegato al proprio account],[#link(<UC8.0.1>)[UC8.0.1]],
   [R-19-F-D],[L'Utente Registrato deve ricevere un messaggio di errore in caso di token inserito non valido],[#link(<UC8.0.2>)[UC8.0.2]],
-  [R-20-F-D],[L'Utente Registrato deve poter annullare l'inserimento di un repository],[#link(<UC8.1>)[UC8.1]],
+  [R-20-F-O],[L'Utente Registrato deve poter annullare l'inserimento di un repository],[#link(<UC8.1>)[UC8.1]],
   [R-21-F-O],[L'Utente Registrato deve poter inserire l'URL del repository],[#link(<UC8.2>)[UC8.2]],
   [R-22-F-O],[L'Utente Registrato deve ricevere un messaggio di errore nel caso di URL non valido],[#link(<UC8.3>)[UC8.3]],
   [R-23-F-O],[L'Utente Registrato deve poter visualizzare la lista dei propri repository personali],[#link(<UC6>)[UC6]],
@@ -4456,14 +4456,14 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-36-F-O],[L'Utente Registrato deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un'analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
 
   [R-9-F-O],[L'Utente Registrato deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
-  [R-10-F-D],[L'Utente Registrato deve poter visualizzare il proprio nome Utente Registrato],[#link(<UC2.1>)[UC2.1]],
-  [R-11-F-D],[L'Utente Registrato deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
+  [R-10-F-O],[L'Utente Registrato deve poter visualizzare il proprio nome Utente Registrato],[#link(<UC2.1>)[UC2.1]],
+  [R-11-F-O],[L'Utente Registrato deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
   [R-12-F-D],[L'Utente Registrato deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
   [R-139-F-D],[L'Utente Registrato deve poter visualizzare la propria immagine del profilo],[#link(<UC2.4>)[UC2.4]],
   [R-140-F-D],[L'Utente Registrato deve poter visualizzare l'opzione di reindirizzamento al proprio profilo Github],[#link(<UC2.5>)[UC2.5]],
   [R-141-F-D],[L'Utente Registrato deve poter visualizzare le proprie competenze registrate nella piattaforma],[#link(<UC2.6>)[UC2.6]],
-  [R-141-F-D],[L'Utente Registrato deve poter essere reindirizzato nel proprio profilo Github],[#link(<UC2.5.1>)[UC2.5.1]],
-  [R-13-F-D],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
+  [R-142-F-D],[L'Utente Registrato deve poter essere reindirizzato nel proprio profilo Github],[#link(<UC2.5.1>)[UC2.5.1]],
+  [R-13-F-O],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
   [R-14-F-D],[L'Utente Registrato deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
   [R-15-F-D],[L'Utente Registrato deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
 
@@ -4471,7 +4471,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-85-F-P],[L'Utente Registrato deve poter visualizzare un repository sulla piattaforma esterna GitHub],[#link(<UC5.10>)[UC5.10]],
 
   // DEV
-  [R-78-Q-D],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
+  [R-78-Q-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
   [R-6-F-D],[Il Developer può sincronizzare il proprio account GitHub],[#link(<UCD2>)[UCD2]],
   [R-7-F-D],[Il Developer può annullare l'autenticazione con il provider esterno GitHub],[#link(<UCD2.2>)[UCD2.2]],
   [R-8-F-D],[Il Developer deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UCD2.1>)[UCD2.1]],
@@ -4489,7 +4489,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-46-F-D],[Il Developer deve poter annullare l'accettazione di una proposta di remediation],[#link(<UCD6.3>)[UCD6.3]],
   [R-47-F-D],[Il Developer deve ricevere un messaggio di errore nel caso di fallimento dell'accettazione della remediation],[#link(<UCD6.4>)[UCD6.4]],
   [R-48-F-D],[Il Developer deve essere informato se la remediation proposta non è più coerente con lo stato del sistema, e quindi non può essere effettuata],[#link(<UCD6.5>)[UCD6.5], #link(<UCD6.6>)[UCD6.6]],
-  [R-49-F-D],[Il Developer deve poter eliminare un repository dal sistema],[#link(<UC11>)[UC11]],
+  [R-49-F-O],[Il Developer deve poter eliminare un repository dal sistema],[#link(<UC11>)[UC11]],
   [R-50-F-D],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[#link(<UC11.1>)[UC11.1]],
   [R-51-F-D],[Il Developer deve poter visualizzare la lista dei procedimenti in corso all'interno del sistema],[#link(<UCD8>)[UCD8], #link(<UCD8.1>)[UCD8.1]],
   [R-52-F-D],[Il Developer deve visualizzare il nome del repository sul quale sta avvenendo il procedimento],[#link(<UCD8.1>)[UCD8.1], #link(<UC5.5>)[UC5.5]],
@@ -4512,10 +4512,10 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-70-F-D],[Il Developer deve poter visualizzare la data di fine di un'analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD11.1.1>)[UCD11.1.1]],
   [R-71-F-D],[Il Developer deve poter visualizzare la lo stato di un'analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD14.1>)[UCD14.1]],
   [R-72-F-O],[Il Developer deve poter avviare un'analisi generale all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.2>)[UCD15.2]],
-  [R-73-F-O],[Il Developer deve poter avviare un'analisi sui test all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.3>)[UCD15.3]],
-  [R-74-F-O],[Il Developer deve poter avviare un'analisi sulla documentazione all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.4>)[UCD15.4]],
-  [R-75-F-O],[Il Developer deve poter avviare un'analisi OWASP all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.5>)[UCD15.5]],
-  [R-76-F-O],[Il Developer deve ricevere un messaggio di errore nel caso si verificasse un conflitto con un'altra analisi all'avvio di un'analisi],[#link(<UCD15.6>)[UCD15.6]],
+  [R-73-F-D],[Il Developer deve poter avviare un'analisi sui test all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.3>)[UCD15.3]],
+  [R-74-F-D],[Il Developer deve poter avviare un'analisi sulla documentazione all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.4>)[UCD15.4]],
+  [R-75-F-D],[Il Developer deve poter avviare un'analisi OWASP all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.5>)[UCD15.5]],
+  [R-76-F-D],[Il Developer deve ricevere un messaggio di errore nel caso si verificasse un conflitto con un'altra analisi all'avvio di un'analisi],[#link(<UCD15.6>)[UCD15.6]],
   [R-77-F-D],[Il Developer deve poter annullare l'avvio di un'analisi],[#link(<UCD15.7>)[UCD15.7]],
 
   // PM 

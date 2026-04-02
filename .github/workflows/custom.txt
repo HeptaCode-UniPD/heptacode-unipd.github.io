@@ -244,3 +244,5 @@ testopbremediation
 langchain
 mockup
 l'analysis
+fargate
+serverless
