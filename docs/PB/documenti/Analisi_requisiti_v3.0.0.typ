@@ -4,6 +4,7 @@
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("2.4.0","2026-04-02","Angela Favaro","Angela Canazza","Revisione AdR per uscite v.3.0.0"),
   ("2.3.0","2026-03-12","Angela Canazza","Angela Favaro","Aggiunta use case a seguito di progettazione frontend"),
   ("2.2.0","2026-03-02","Angela Canazza","Angela Favaro","Rimodellazione requisiti"),
   ("2.1.0","2026-03-02","Angela Canazza","Angela Favaro","Correzioni UML, secondo quanto segnalato"),
@@ -73,7 +74,7 @@ _Code Guardian_ mira quindi ad automatizzare e ottimizzare i processi di audit e
 
 La stesura del presente documento fa uso di una terminologia specifica, legata sia al dominio applicativo del progetto "_Code Guardian_" che agli standard dell'Ingegneria del Software. Per facilitare la lettura e assicurare che ogni concetto sia compreso in modo uniforme da tutti i destinatari (team di sviluppo, committente e proponente), è stato redatto un documento di supporto dedicato.
 
-Si faccia pertanto riferimento al #link("https://heptacode-unipd.github.io/docs/RTB/glossario.pdf")[_Glossario v2.0.0_] per l'esplicitazione di:
+Si faccia pertanto riferimento al #link("https://heptacode-unipd.github.io/docs/PB/glossario.pdf")[_Glossario v3.0.0_] per l'esplicitazione di:
 - *Acronimi e sigle* utilizzati per brevità nel testo;
 - *Termini tecnici* che potrebbero prestarsi a molteplici interpretazioni;
 - *Definizioni di dominio* specifiche per il contesto di audit e qualità del software.
@@ -85,7 +86,7 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
 
 === Riferimenti Normativi
 - _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2p.pdf")[Capitolato])
-- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/RTB/documenti/norme_di_progetto.pdf")[Norme di progetto v1.0.0]).
+- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/PB/documenti/Norme_di_progetto_v2.0.0.pdf")[Norme di progetto v2.0.0]).
 
 === Riferimenti Informativi
 - Verbale Interno: 
@@ -105,13 +106,13 @@ Il sistema _Code Guardian_ è concepito per automatizzare il controllo di qualit
 
 === Audit Automatico del Codice
 Il sistema esegue un'analisi approfondita del codice sorgente ogni volta che viene rilevata una modifica nel _repository_ (evento di `PUSH`).
-- *analisi Statica*: Rilevamento automatico di _code smell_, bug potenziali e violazioni delle convenzioni di stile.
+- *Analisi Statica*: Rilevamento automatico di _code smell_, bug potenziali e violazioni delle convenzioni di stile.
 - *Verifica dei test*: Controllo della copertura dei test (_code coverage_) per garantire che le nuove funzionalità siano adeguatamente verificate.
 
 === Scansione di Sicurezza e Vulnerabilità
 Per garantire la robustezza del software, il sistema integra strumenti di controllo specifici per la _security_:
 - *Rilevamento Credenziali*: Identificazione di chiavi API, password o token involontariamente committati nel codice (_secret scanning_).
-- *analisi delle Dipendenze*: Verifica delle librerie di terze parti per individuare versioni obsolete o affette da vulnerabilità note.
+- *Analisi delle Dipendenze*: Verifica delle librerie di terze parti per individuare versioni obsolete o affette da vulnerabilità note.
 - *Compliance OWASP*: Controllo della conformità agli standard di sicurezza web (es. _OWASP Top 10_).
 
 === Validazione della documentazione
@@ -192,7 +193,7 @@ L’interfaccia utente, punto di accesso principale per _Developer_ e _Project M
 
 Per quanto riguarda la persistenza dei dati, la scelta è ricaduta su *MongoDB*. La natura _schema-less_ di questo database documentale garantisce la flessibilità necessaria per memorizzare report di analisi dalla struttura eterogenea.
 
-Infine l’infrastruttura operativa si avvarrà di *Docker* per la containerizzazione di tutti i servizi (Frontend, Backend, Database), garantendo ambienti di sviluppo e produzione identici e facilmente riproducibili, e sarà fortemente integrata con l'ecosistema *GitHub*: le *GitHub Actions* gestiranno i flussi di _CI/CD_ e l'innesco degli agenti. L'architettura _cloud_ sottostante sarà ospitata sui servizi *AWS* (_Amazon Web Services_), garantendo la disponibilità e le risorse computazionali necessarie per l'esecuzione parallela degli agenti.
+Infine l’infrastruttura operativa si avvarrà di *Docker* per la containerizzazione di tutti i servizi (Frontend, Backend, Database), garantendo ambienti di sviluppo e produzione identici e facilmente riproducibili, e sarà fortemente integrata con l'ecosistema *GitHub*: le *GitHub Actions* gestiranno i flussi di _CI/CD_. L'architettura _cloud_ sottostante sarà ospitata sui servizi *AWS* (_Amazon Web Services_), garantendo la disponibilità e le risorse computazionali necessarie per l'esecuzione parallela degli agenti.
 
 #figure(
   caption: [Descrizione delle tecnologie e relative versioni in uso.],
@@ -209,13 +210,17 @@ Infine l’infrastruttura operativa si avvarrà di *Docker* per la containerizza
       [*Tecnologia*], [*Versione Scelta*], [*Destinazione d'Uso*]
     ),
 
-    [*Node.js*],[v24.x (LTS)],[Ambiente di runtime di base per l'esecuzione del backend.],
+    [*Node.js*],[v22.x (LTS)],[Ambiente di runtime di base per l'esecuzione del backend.],
     [*NestJS*],[v11.x],[Framework per lo sviluppo dell'architettura e delle API backend.],
     [*TypeScript*],[v5.x],[Linguaggio di programmazione tipizzato usato per Backend e Frontend.],
     [*React*],[v19.x],[Libreria per lo sviluppo della UI del frontend.],
-    [*MongoDB*],[v8.x],[Database NoSQL documentale per la persistenza dello storico analisi.],
-    [*Docker Engine*],[v29.x],[Strumento di containerizzazione dell'applicativo.],
-    [*AWS Bedrock*],[-],[Servizio Cloud per l'invocazione dei modelli AI.],
+    [*MongoDB*],[v8.x],[Database NoSQL documentale per la persistenza dei dati.],
+    [*Docker Engine*],[v27.x],[Strumento di containerizzazione dell'applicativo.],
+    [*AWS Fargate*],[-],[Servizio serverless per l'esecuzione di container senza gestione di server, usato per orchestrare i task di elaborazione.],
+    [*AWS S3*],[-],[Servizio di object storage per la persistenza di file e artefatti (es. repository clonati).],
+    [*AWS Lambda*],[-],[Servizio serverless per l'esecuzione di funzioni event-driven, usato come collante tra i servizi AWS.],
+    [*AWS Step Functions*],[-],[Servizio di orchestrazione visuale di workflow, usato per coordinare i passi del processo di analisi AI.],
+    [*AWS Bedrock*],[-],[Servizio Cloud per l'invocazione dei modelli AI generativa.],
   )
 
 === Ambiente di Esecuzione e Browser Supportati
