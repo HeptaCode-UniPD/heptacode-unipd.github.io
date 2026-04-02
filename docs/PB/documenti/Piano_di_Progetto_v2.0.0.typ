@@ -418,6 +418,10 @@ Attività pianificate per gli sprint della milestone _Requirements and Technolog
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
+Successivamente sono previsti altri *tre sprint*, a cadenza settimanale, per poter completare la milestone PB e consegnare il progetto entro il 15 marzo 2026.
+
+#line(length: 100%, stroke: 0.5pt + gray)
+
 Successivamente a questo paragrafo di pianificazione saranno presenti, per ognuno degli sprint RTB, il _Preventivo a finire_ ed il _Trascorso_ che riporteranno rispettivamente:
 - Pianificazione nel breve termine degli sprint a finire.
 - Retrospettiva rispetto alla pianificazione nel breve e lungo termine con conseguenti misure correttive attuate per la gestione dei rischi e delle problematiche incontrate.
@@ -2258,7 +2262,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [_Alberto Reginato_], [], [2], [], [10], [], [], [290€],
       [_Nicola Simionato_], [], [], [], [4], [2], [5], [205€],
       [_Amerigo Vegliante_], [], [], [], [4], [7], [], [205€],
-      [_Laura Venturini_], [], [], [], [7], [], [5], [250€],
+      [_Laura Venturini_], [], [], [], [7], [], [3], [250€],
     ) ]] <tab:TrascorsoSprint14>
 
 *GANTT Diagram*
@@ -2268,7 +2272,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   #image("../../asset/GANTT/sprint14-gantt.png")
 ]<GANTT-Sprint14>
 
-#underline[Spese della settimana]: 1.640€ / 1.875€ \ #underline[Spesa totale]: *10.055€ / 10.290€*
+#underline[Spese della settimana]: 1.610€ / 1.875€ \ #underline[Spesa totale]: *10.025€ / 10.290€*
 
 #pagebreak()
 
@@ -2278,20 +2282,20 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [23 marzo 2026 - 1 marzo 2026],
+  [_Intervallo temporale_], [23 marzo 2026 - 3 marzo 2026],
 
-  [_Giorni di sprint_], [9],
+  [_Giorni di sprint_], [12],
 
   [_Attività previste_],
   [
     Ultimo sprint previsto.
-    - Colloquio con il prof. Cardin.
     - Decisione definitiva su architettura di deploy.
     - Conclusione attività di progettazione.
     - Conclusione attività di sviluppo e validazione frontend e backend.
     - Conclusione di tutta la documentazione adeguata alla consegna del progetto.
     - Validazione con l'azienda dei risultati prodotti durante gli Sprint.
     - Revisione finale del _Glossario_  ed eventuale aggiornamento.
+    - Rilascio del prodotto e relativa documentazione
     - *Consegna del progetto previsto in data 1 aprile 2026*.
   ],
   [_Milestones attive_], [PB, PAB]
@@ -2316,16 +2320,16 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [4], [], [], [], [10], [10], [420€],
-      [_Angela Canazza_], [], [], [], [2], [12], [7], [335€],
-      [_Riccardo Baldin_], [], [], [], [2], [10], [7], [305€],
-      [_Alberto Reginato_], [], [4], [], [2], [10], [6], [370€],
-      [_Nicola Simionato_], [], [], [], [2], [12], [6], [320€],
-      [_Amerigo Vegliante_], [], [], [], [2], [10], [7], [305€],
-      [_Laura Venturini_], [], [], [], [2], [10], [8], [320€],
+      [_Angela Favaro_], [2], [], [], [], [10], [12], [390€],
+      [_Angela Canazza_], [], [], [], [4], [14], [7], [415€],
+      [_Riccardo Baldin_], [], [], [], [2], [14], [9], [395€],
+      [_Alberto Reginato_], [], [3], [], [], [10], [6], [300€],
+      [_Nicola Simionato_], [], [], [], [4], [15], [8], [445€],
+      [_Amerigo Vegliante_], [], [], [1], [2], [18], [11], [510€],
+      [_Laura Venturini_], [], [], [], [2], [10], [11], [365€],
     ) ]] <tab:PrevisioneSprint15>
 
-#underline[Spese della settimana]: 2.375€ \ #underline[Spesa totale]: *12.430€*
+#underline[Spese della settimana]: 2.820€ \ #underline[Spesa totale]: *12.845€*
 
 ===== Trascorso dello sprint
 #table(
@@ -2341,7 +2345,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
     - Conclusione di tutta la documentazione adeguata alla consegna del progetto.
     - Validazione con l'azienda dei risultati prodotti durante gli Sprint.
     - Revisione finale del _Glossario_  ed eventuale aggiornamento.
-    - *Consegna del progetto previsto in data 1 aprile 2026*.
+    - *Consegna del progetto in data 3 aprile 2026*.
   ],
 
   [_Rischi incontrati_],
@@ -2378,12 +2382,12 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [3], [], [], [], [10], [14], [450€],
-      [_Angela Canazza_], [], [], [], [2], [12], [7], [335€],
-      [_Riccardo Baldin_], [], [], [2], [], [10], [9], [335€],
+      [_Angela Favaro_], [3], [], [], [], [10], [12], [420€],
+      [_Angela Canazza_], [], [], [], [2], [16], [7], [395€],
+      [_Riccardo Baldin_], [], [], [2], [], [14], [9], [395€],
       [_Alberto Reginato_], [], [3], [], [], [10], [6], [300€],
-      [_Nicola Simionato_], [], [], [], [8], [12], [6], [470€],
-      [_Amerigo Vegliante_], [], [], [2], [], [10], [7], [305€],
+      [_Nicola Simionato_], [], [], [], [8], [14], [8], [545€],
+      [_Amerigo Vegliante_], [], [], [1], [], [14], [9], [385€],
       [_Laura Venturini_], [], [], [], [2], [10], [12], [380€],
     ) ]] <tab:TrascorsoSprint15>
 
@@ -2395,7 +2399,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   #image("../../asset/GANTT/sprint15-gantt.png")
 ]<GANTT-Sprint15>
 
-#underline[Spese della settimana]: 2.575€ / 2.375€ \ #underline[Spesa totale]: *12.630 / 12.430€*
+#underline[Spese della settimana]: 2.820€ / 2.820€ \ #underline[Spesa totale]: *12.845 / 12.845*
 #pagebreak()
 
 === Resoconto PB
@@ -2431,14 +2435,14 @@ In @tab:OreTotIndividualiPBResoconto vengono riportate le ore effettivamente svo
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Totale*]]],
 
-      [_Angela Favaro_], [3], [2], [2], [17], [10], [21], [*55 /53*],
-      [_Angela Canazza_], [2], [], [2], [12], [14], [19], [*49 /51*],
-      [_Riccardo Baldin_], [], [], [2], [17], [10], [21], [*50 /55*],
+      [_Angela Favaro_], [3], [2], [2], [17], [10], [19], [*53 /53*],
+      [_Angela Canazza_], [2], [], [2], [12], [18], [19], [*53 /51*],
+      [_Riccardo Baldin_], [], [], [2], [17], [14], [21], [*54 /55*],
       [_Alberto Reginato_], [], [5], [], [23], [10], [13], [*51 /54*],
-      [_Nicola Simionato_], [], [2], [], [12], [14], [21], [*49 /54*],
-      [_Amerigo Vegliante_], [2], [], [2], [17], [17], [12], [*50 /51*],
-      [_Laura Venturini_], [2], [], [], [17], [10], [27], [*56 /52*],
-      [*Ore totali*], [*9 /10*], [*9 /10*], [*8 /0*], [*115 /117*], [*85 /135*], [*134 /98*],
+      [_Nicola Simionato_], [], [2], [], [12], [16], [23], [*53 /54*],
+      [_Amerigo Vegliante_], [2], [], [1], [17], [21], [14], [*55 /51*],
+      [_Laura Venturini_], [2], [], [], [17], [10], [25], [*54 /52*],
+      [*Ore totali*], [*9 /10*], [*9 /10*], [*7 /0*], [*115 /117*], [*99 /135*], [*134 /98*],
     ) ]] <tab:OreTotIndividualiPBResoconto>
 
 #figure(
@@ -2447,9 +2451,9 @@ In @tab:OreTotIndividualiPBResoconto vengono riportate le ore effettivamente svo
   #let data = (
     ([*Resp.*], 9),
     ([*Amm.*], 9),
-    ([*Analista*], 8),
+    ([*Analista*], 7),
     ([*Progett.*], 115),
-    ([*Programm.*], 85),
+    ([*Programm.*], 99),
     ([*Verif.*], 134),
   )
 
@@ -2479,7 +2483,7 @@ Il costo totale sostenuto durante la milestone PB è di *6.705€*.
 #pagebreak()
 == Consuntivo finale di progetto
 
-Il costo finale sostenuto è di *12.630€* su un tetto massimo preventivato di *12.845€*.
+Il costo finale sostenuto è di *12.845€* su un tetto massimo preventivato di *12.845€*.
 
 A seguito si riportano le ore totale svolte da ogni componente del gruppo nei diversi ruoli (@tab:OreTotIndividualiFinali).
 
@@ -2503,18 +2507,18 @@ A seguito si riportano le ore totale svolte da ogni componente del gruppo nei di
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Totale*]]],
 
-      [_Angela Favaro_], [9], [3], [21], [17], [10], [36], [*96*],
-      [_Angela Canazza_], [3], [2], [25], [12], [16], [30], [*88*],
-      [_Riccardo Baldin_], [2], [7], [25], [17], [12], [27], [*90*],
+      [_Angela Favaro_], [9], [3], [21], [17], [10], [34], [*94*],
+      [_Angela Canazza_], [3], [2], [25], [12], [20], [30], [*92*],
+      [_Riccardo Baldin_], [2], [7], [25], [17], [16], [27], [*90*],
       [_Alberto Reginato_], [7], [7], [18], [23], [12], [24,5], [*91,5*],
-      [_Nicola Simionato_], [5], [8], [14], [12], [14], [32,5], [*85,5*],
-      [_Amerigo Vegliante_], [3], [8], [16], [17], [19], [24], [*87*],
-      [_Laura Venturini_], [6], [6], [17], [17], [10], [41], [*97*],
-      [*Ore totali*], [*35*], [*41*], [*136*], [*115*], [*93*], [*215*],
+      [_Nicola Simionato_], [5], [8], [14], [12], [16], [34,5], [*89,5*],
+      [_Amerigo Vegliante_], [3], [8], [15], [17], [23], [26], [*92*],
+      [_Laura Venturini_], [6], [6], [17], [17], [10], [39], [*95*],
+      [*Ore totali*], [*35*], [*41*], [*135*], [*115*], [*107*], [*215*],
     ) ]] <tab:OreTotIndividualiFinali>
 
 Sebbene le ore personali differiscano tra i componenti nel conteggio finale, ogni membro del gruppo ha svolto un lavoro equamente distribuito. \ La differenza si può individuare nella diversa quantità di studio effettuato dai diversi componenti (più o meno competenti inizialmente in determinati ambiti); inoltre tutti i componenti si sono impegnati a spiegare agli altri le proprie conoscenze, così da ottimizzare le tempistiche di studio individuale. \
-Il gruppo ha sempre lavorato in modo collaborativo, con un confronto continuo su ogni aspetto del progetto.
+Il gruppo ha sempre lavorato in modo collaborativo, con confronto continuo su ogni aspetto del progetto.
 
 
 La ripartizione dei ruoli finale è sotto rappresentata in @fig:tortaFinale.
@@ -2524,9 +2528,9 @@ La ripartizione dei ruoli finale è sotto rappresentata in @fig:tortaFinale.
   #let data = (
     ([*Resp.*], 35),
     ([*Amm.*], 41),
-    ([*Analista*], 136),
+    ([*Analista*], 135),
     ([*Progett.*], 115),
-    ([*Programm.*], 93),
+    ([*Programm.*], 107),
     ([*Verif.*], 215),
   )
 
