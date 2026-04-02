@@ -283,9 +283,8 @@ Lambda permette di eseguire la logica dei singoli agenti in modo serverless: ogn
 Step Functions è il componente che rende possibile l'orchestrazione dell'intera piattaforma ad agenti. Permette di definire flussi di lavoro complessi come macchine a stati visive, gestendo in modo nativo la sequenza, il parallelismo, la gestione degli errori, i retry e i timeout tra i vari agenti e Lambda. Questo evita di dover implementare manualmente la logica di coordinamento tra le richieste di analisi e le analisi stesse, rendendo i flussi agentici più robusti, osservabili e manutenibili.
 ==== AWS S3
 S3 è il servizio di storage ad oggetti di AWS, scelto per la persistenza di file e dati non strutturati all'interno della piattaforma. \ In un contesto ad agenti, S3 svolge un ruolo trasversale: può fungere da repository per i documenti su cui gli agenti operano (input/output di elaborazioni), da archivio per i log e gli artefatti prodotti dai flussi Step Functions, e da layer di scambio dati tra Lambda Functions che non comunicano direttamente. La sua integrazione nativa con tutti gli altri servizi AWS, la durabilità garantita e il modello di costo pay-per-use lo rendono la scelta naturale per qualsiasi esigenza di storage nell'ecosistema AWS.
-==== AWS ECS
-ECS è il servizio AWS per l'esecuzione e l'orchestrazione di container Docker. In una piattaforma ad agenti, dove componenti come il backend NestJS girano in modo continuativo e devono essere sempre disponibili, ECS rappresenta la soluzione naturale per il deploy e per gestire i container applicativi senza dover gestire l'infrastruttura dei server sottostanti.
-\ ECS supporta auto-scaling dei container in base al carico, garantendo che il sistema risponda adeguatamente a picchi di utilizzo senza intervento manuale.
+==== AWS Fargate
+// Manca da fare
 
 == Tecnologie per Continuous Integration
 === GitHub Actions
@@ -300,9 +299,9 @@ Il sistema è strutturato secondo un'architettura a microservizi, composta da tr
 === Layered Architecture
 Ogni microservizio è organizzato nei seguenti layer:
 
-_Ingestion Layer_ #pad(left: 0.5cm)[ Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste provenienti dal Frontend o da altri microservizi, della validazione dei dati in ingresso e della loro trasformazione in strutture tipizzate (DTO) prima che vengano propagate agli strati sottostanti.]
-_Service Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con i componenti di persistenza e con i servizi esterni. Questo layer è esposto esclusivamente tramite interfacce, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta.]
-_Persistence Layer_ #pad(left: 0.5cm)[Gestisce l'accesso al layer di persistenza dei dati attraverso il pattern Repository, garantendo che il dominio applicativo rimanga indipendente dalla tecnologia di storage sottostante. La traduzione tra entità di dominio e modelli di persistenza è delegata a componenti Mapper dedicati.]
+_Presentation Layer_ #pad(left: 0.5cm)[ Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste provenienti dal Frontend o da altri microservizi, della validazione dei dati in ingresso e della loro trasformazione in strutture tipizzate (DTO) prima che vengano propagate agli strati sottostanti.]
+_Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con i componenti di persistenza e con i servizi esterni. Questo layer è esposto esclusivamente tramite interfacce, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta.]
+_Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso al layer di persistenza dei dati attraverso il pattern Repository, garantendo che il dominio applicativo rimanga indipendente dalla tecnologia di storage sottostante. La traduzione tra entità di dominio e modelli di persistenza è delegata a componenti Mapper dedicati.]
 
 === Component Based Architecture
 
@@ -330,6 +329,8 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 // USATI IN MS1
 
 // USATI IN MS2
+
+// USATI IN MS3
 - *Dependency Injection*
 Il sistema adotta il pattern Dependency Injection tramite il container IoC di NestJS. Le dipendenze tra i layer sono mediate da interfacce, garantendo disaccoppiamento e sostituibilità delle implementazioni concrete.
 
@@ -339,12 +340,179 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 === Progettazione backend
 ==== Analysis Management - MS1
 //#figure( [#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")] , caption: [Diagramma delle classi - MS1])
+===== Classi MS1 - Presentation Layer
+===== Classi MS1 - Business Layer
+===== Classi MS1 - Data Layer
 
 ==== Analisi dei Repository - MS2
 // #figure( [#image("../../asset/diagr-architett/UML/ActiveAnalysisService")] , caption: [Diagramma struttura AWS - MS2])
 
 ==== Autenticazione e Repository Management - MS3
-#figure( [#image("../../asset/diagr-architett/UML/Auth&RepoService.png")] , caption: [Diagramma delle classi - MS3])
+#figure( [#image("../../asset/diagr-architett/UML/Auth_Diagram.png")] , caption: [Diagramma delle classi; Autenticazione - MS3])
+// Forse in questo secondo devi cambiare alcune dipendnze controlla meglio!!
+#figure( [#image("../../asset/diagr-architett/UML/Repo_Diagram.png")] , caption: [Diagramma delle classi; Repository Management - MS3])
+===== Classi MS3 - Presentation Layer
+
+*IngestionController* \
+Punto di ingresso HTTP dell'applicazione. Riceve le richieste, le valida tramite i metodi privati e le delega ai service appropriati.
+
+_Attributi privati_:
+  - #text(font: "Courier New")[userService: UserService] — istanza iniettata del service utente
+  - #text(font: "Courier New")[repoService: RepoService] — istanza iniettata del service repository
+
+_Metodi pubblici_:
+  - #text(font: "Courier New")[login(body: UserDataDTO)] — riceve le credenziali dell'utente, le valida tramite validateUser() e invoca userService.login(). Restituisce un AuthResponseDto contenente l'id e l'email dell'utente autenticato.
+  - #text(font: "Courier New")[profile(userId: string)] — riceve l'id utente come query parameter, invoca userService.getUser() e restituisce un UserResponseDTO con i dati del profilo.
+  - #text(font: "Courier New")[addRepo(body: SaveRepoDto)] — riceve i dati del repository, li valida tramite validateSaveRepo() e invoca repoService.addRepo(). Restituisce l'id del repository creato.
+  - #text(font: "Courier New")[deleteRepo(body: DeleteRepoDto)] — riceve i dati per l'eliminazione, li valida tramite validateDeleteRepo() e invoca repoService.deleteRepo().
+  - #text(font: "Courier New")[list(userId: string)] — riceve l'id utente come query parameter, invoca repoService.listForUser() e restituisce la lista dei repository associati all'utente come array di RepoResponseDto.
+  - #text(font: "Courier New")[getById(id: string)] — riceve l'id del repository come query parameter, invoca repoService.getRepoById() e restituisce il repository corrispondente come RepoResponseDto.
+
+_Metodi privati:_
+  - #text(font: "Courier New")[validateUser(data: UserDataDTO)] — mappa un UserDataDTO in un ValidatedUserDataDTO, separando il contratto HTTP dal contratto interno dell'applicazione.
+  - #text(font: "Courier New")[validateSaveRepo(data: SaveRepoDto)] — mappa un SaveRepoDto in un ValidatedSaveRepoDTO.
+  - #text(font: "Courier New")[validateDeleteRepo(data: DeleteRepoDto)] — mappa un DeleteRepoDto in un ValidatedDeleteRepoDTO.
+
+===== Classi MS3 - Business Layer
+====== Interfacce
+*IngestionInterface* \
+Definisce il contratto di validazione del controller di ingestion.
+
+- #text(font: "Courier New")[validateUser(data: UserDataDTO)] — contratto per la trasformazione di UserDataDTO in ValidatedUserDataDTO.
+- #text(font: "Courier New")[validateSaveRepo(data: SaveRepoDto)] — contratto per la trasformazione di SaveRepoDto in ValidatedSaveRepoDTO.
+- #text(font: "Courier New")[validateDeleteRepo(data: DeleteRepoDto)] — contratto per la trasformazione di DeleteRepoDto in ValidatedDeleteRepoDTO.
+
+*UserServiceLayerInterface* \
+Definisce il contratto del service utente esposto verso il layer di presentazione.
+
+- #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] — contratto per l'autenticazione di un utente a partire da credenziali validate.
+- #text(font: "Courier New")[getUser(userId: string)] — contratto per il recupero di un utente tramite il suo id.
+
+*RepoServiceLayerInterface* \
+Definisce il contratto del service repository esposto verso il layer di presentazione.
+
+- #text(font: "Courier New")[addRepo(data: ValidatedSaveRepoDTO)] — contratto per l'aggiunta di un repository.
+- #text(font: "Courier New")[deleteRepo(data: ValidatedDeleteRepoDTO)] — contratto per l'eliminazione o la rimozione di un utente da un repository.
+- #text(font: "Courier New")[listForUser(userId: string)] — contratto per il recupero di tutti i repository associati a un utente.
+- #text(font: "Courier New")[getRepoById(idRepo: string)] — contratto per il recupero di un singolo repository tramite id.
+
+*IUserRepository* \
+Definisce il contratto di persistenza per l'entità utente, implementato a livello infrastrutturale.
+
+- #text(font: "Courier New")[findById(id: string)] — recupera un utente tramite il suo id. Restituisce null se non trovato.
+- #text(font: "Courier New")[findByEmail(email: string)] — recupera un utente tramite email. Restituisce null se non trovato.
+- #text(font: "Courier New")[save(user: UserEntity)] — persiste un nuovo utente e restituisce l'entità salvata.
+- #text(font: "Courier New")[existsByEmail(email: string)] — verifica se esiste già un utente con la email fornita. Restituisce un booleano.
+
+*IRepoRepository* \
+Definisce il contratto di persistenza per l'entità repository, implementato a livello infrastrutturale.
+
+- #text(font: "Courier New")[findById(id: string)] — recupera un repository tramite il suo id. Restituisce null se non trovato.
+- #text(font: "Courier New")[findByUserId(userId: string)] — recupera tutti i repository associati a un determinato utente.
+- #text(font: "Courier New")[findByUrl(repoUrl: string)] — recupera un repository tramite URL. Restituisce null se non trovato. Utile per verificare se un repository è già presente nel sistema prima di salvarlo.
+- #text(font: "Courier New")[findByUrlAndUser(userId, repoUrl)] — recupera un repository tramite URL filtrandolo per utente specifico. Restituisce null se non trovato.
+- #text(font: "Courier New")[save(repo: RepoEntity)] — persiste un nuovo repository e restituisce l'entità salvata.
+- #text(font: "Courier New")[delete(id: string)] — elimina definitivamente un repository dal sistema. Restituisce true se l'operazione è andata a buon fine.
+- #text(font: "Courier New")[addUser(repoId, idUtente)] — aggiunge un utente all'array idUtente del repository specificato. Usato quando un repository esiste già e un nuovo utente vuole aggiungerlo. Restituisce il repository aggiornato.
+- #text(font: "Courier New")[removeUser(repoId, idUtente)] — rimuove un utente dall'array idUtente del repository specificato. Usato quando un utente elimina un repository che è condiviso con altri. Restituisce il repository aggiornato.
+
+*GitHubServiceInterface* \
+Definisce il contratto per la validazione di un repository GitHub tramite API esterna.
+
+- #text(font: "Courier New")[validate(url: string)] — verifica che l'URL fornito corrisponda a un repository GitHub pubblico e accessibile. Restituisce un oggetto GitHubRepoData con i metadati del repository, oppure null se il repository non esiste o non è accessibile.
+
+====== Servizi
+*UserService* \
+Implementa UserServiceLayerInterface. Contiene la logica applicativa relativa agli utenti. \
+_Attributi privati:_
+- #text(font: "Courier New")[userRepository: IUserRepository] — istanza iniettata del repository utente.
+
+_Metodi pubblici:_
+- #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] — recupera l'utente tramite email. Se non trovato lancia UnauthorizedException. Verifica la correttezza della password tramite bcrypt.compare(). Se la verifica fallisce lancia UnauthorizedException. Restituisce la UserEntity dell'utente autenticato.
+- #text(font: "Courier New")[getUser(userId: string)] — recupera l'utente tramite id. Se non trovato lancia NotFoundException. Restituisce la UserEntity.
+
+*RepoService*
+Implementa RepoServiceLayerInterface. Contiene la logica applicativa relativa ai repository.\
+_Attributi privati:_
+- #text(font: "Courier New")[repoRepository: IRepoRepository] — istanza iniettata del repository.
+- #text(font: "Courier New")[githubService: GitHubServiceInterface] — istanza iniettata dell'adapter GitHub.
+
+_Metodi pubblici:_
+- #text(font: "Courier New")[addRepo(data: ValidatedSaveRepoDTO)] — valida il repository tramite githubService.validate(). Se non valido lancia BadRequestException. Verifica se il repository esiste già tramite findByUrl(). Se esiste e l'utente è già associato lancia ConflictException. Se esiste ma l'utente non è associato, aggiunge l'utente tramite addUser(). Se non esiste, crea una nuova RepoEntity con un UUID generato e la persiste tramite save(). Restituisce la RepoEntity.
+- #text(font: "Courier New")[deleteRepo(data: ValidatedDeleteRepoDTO)] — recupera il repository tramite id. Se non trovato lancia NotFoundException. Se l'utente non è tra quelli associati lancia NotFoundException. Se il repository ha più utenti associati, rimuove solo l'utente corrente tramite removeUser(). Se l'utente è l'unico, elimina definitivamente il repository tramite delete(). Restituisce un booleano.
+- #text(font: "Courier New")[listForUser(userId: string)] — recupera tutti i repository associati all'utente tramite findByUserId(). Restituisce un array di RepoEntity.
+- #text(font: "Courier New")[getRepoById(idRepo: string)] — recupera il repository tramite id. Se non trovato lancia NotFoundException. Restituisce la RepoEntity.
+
+====== Entità di dominio
+*UserEntity* \
+Rappresenta l'entità di dominio dell'utente. Tutti gli attributi sono readonly e accessibili solo tramite getter, garantendo l'immutabilità. \
+_Attributi privati:_
+- #text(font: "Courier New")[id: string, nome: string, cognome: string, email: string, passwordHash: string]
+
+_Getter pubblici:_ 
+- id, nome, cognome, email, passwordHash
+
+*RepoEntity* \
+Rappresenta l'entità di dominio del repository. Tutti gli attributi sono readonly e accessibili solo tramite getter. L'attributo idUtente è un array per supportare la condivisione di un repository tra più utenti. \
+_Attributi privati:_
+- #text(font: "Courier New")[id: string, idUtente: string\*, url: string, name: string, pathStorage: string]
+
+_Getter pubblici:_ \ 
+- id, idUtente, url, name, pathStorage
+
+===== Classi MS3 - Data Layer
+*UserPersistence* \ 
+Schema Mongoose per la collezione users. Mappa la struttura di UserEntity al documento MongoDB. \ 
+_Attributi pubblici:_ 
+- #text(font: "Courier New")[nome, cognome, email, passwordHash] — quest'ultimo con select: false per escluderlo di default dalle query e includerlo solo quando esplicitamente necessario.
+
+*RepoPersistence* \
+Schema Mongoose per la collezione repos. Mappa la struttura di RepoEntity al documento MongoDB. \
+_Attributi pubblici:_ 
+- #text(font: "Courier New")[\_id, idUtente (array), url, name, pathStorage]
+
+*UserMapper* \
+Classe di conversione tra UserEntity e UserPersistence. Tutti i metodi sono statici.
+
+- #text(font: "Courier New")[toDomain(p: UserPersistence)] — converte un documento Mongoose in una UserEntity istanziando la classe con i campi corrispondenti.
+- #text(font: "Courier New")[toPersistence(e: UserEntity)] — converte una UserEntity in un oggetto parziale Partial\<UserPersistence> con i campi necessari alla persistenza. Non include l'id in quanto gestito da MongoDB.
+
+*RepoMapper* \
+Classe di conversione tra RepoEntity e RepoPersistence. Tutti i metodi sono statici.
+
+- #text(font: "Courier New")[toDomain(p: RepoPersistence)] — converte un documento Mongoose in una RepoEntity istanziando la classe con i campi corrispondenti.
+- #text(font: "Courier New")[toPersistence(e: RepoEntity)] — converte una RepoEntity in un oggetto RepoPersistence con tutti i campi necessari alla persistenza, incluso \_id.
+
+*UserMongoRepository* \
+Implementa IUserRepository. Gestisce le operazioni di persistenza degli utenti su MongoDB tramite Mongoose. \
+_Attributi privati:_
+- #text(font: "Courier New")[model: Model\<UserDocument>] — modello Mongoose iniettato tramite \@InjectModel.
+
+_Metodi pubblici:_
+- #text(font: "Courier New")[findById(id: string)] — esegue una query findById aggiungendo .select('+passwordHash') per includere il campo normalmente escluso. Converte il documento tramite UserMapper.toDomain(). Restituisce null se non trovato.
+- #text(font: "Courier New")[findByEmail(email: string)] — esegue una query findOne per email aggiungendo .select('+passwordHash'). Converte il documento tramite UserMapper.toDomain(). Restituisce null se non trovato.
+- #text(font: "Courier New")[save(user: UserEntity)] — converte l'entità tramite UserMapper.toPersistence() e la persiste tramite model.create(). Restituisce l'entità convertita tramite UserMapper.toDomain().
+- #text(font: "Courier New")[existsByEmail(email: string)] — esegue una countDocuments per email e restituisce true se il conteggio è maggiore di zero.
+
+*RepoMongoRepository* \
+Implementa IRepoRepository. Gestisce le operazioni di persistenza dei repository su MongoDB tramite Mongoose. \
+_Attributi privati:_
+- #text(font: "Courier New")[model: Model\<RepoDocument>] — modello Mongoose iniettato tramite \@InjectModel.
+
+_Metodi pubblici:_
+- #text(font: "Courier New")[findById(id: string)] — esegue findById e converte il documento tramite RepoMapper.toDomain(). Restituisce null se non trovato.
+- #text(font: "Courier New")[findByUserId(userId: string)] — esegue find filtrando per idUtente, ordinando per data di creazione decrescente con limite di 100 risultati. Converte ogni documento tramite RepoMapper.toDomain().
+- #text(font: "Courier New")[findByUrl(repoUrl: string)] — esegue findOne filtrando per url. Restituisce null se non trovato.
+- #text(font: "Courier New")[findByUrlAndUser(userId, repoUrl)] — esegue findOne filtrando per url e idUtente contemporaneamente. Restituisce null se non trovato.
+- #text(font: "Courier New")[save(repo: RepoEntity)] — converte l'entità tramite RepoMapper.toPersistence() e la persiste tramite model.create(). Restituisce l'entità convertita.
+- #text(font: "Courier New")[delete(id: string)] — esegue findByIdAndDelete. Restituisce true se il documento è stato trovato ed eliminato, false altrimenti.
+- #text(font: "Courier New")[addUser(repoId, idUtente)] — esegue findByIdAndUpdate con operatore \$push per aggiungere l'utente all'array. Se il documento non esiste lancia NotFoundException. Restituisce il repository aggiornato convertito tramite RepoMapper.toDomain().
+- #text(font: "Courier New")[removeUser(repoId, idUtente)] — esegue findByIdAndUpdate con operatore \$pull per rimuovere l'utente dall'array. Se il documento non esiste lancia NotFoundException. Restituisce il repository aggiornato convertito tramite RepoMapper.toDomain().
+
+*GitHubAdapter* \
+Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubbliche di GitHub.
+
+- #text(font: "Courier New")[validate(url: string)] — interpreta l'URL GitHub fornito, estrae owner e nome del repository ed esegue una chiamata alle API di GitHub per verificarne l'esistenza e l'accessibilità pubblica. Restituisce un oggetto GitHubRepoData con i metadati del repository se la chiamata ha successo, null altrimenti.
 
 === Progettazione frontend
 
