@@ -74,20 +74,25 @@ _Code Guardian_ è un applicativo web intuitivo e semplice da usare. Di seguito 
 == Panoramica generale
 Qualora l'utente non sia autenticato, l'avvio della piattaforma lo reindirizza automaticamente alla pagina di login. Una volta effettuato l'accesso (o in caso ci sia già una sessione attiva) l'utente visualizzerà la dashboard principale, dove è presente l'elenco dei repository inseriti su Code Guardian. Da questa schermata è possibile raggiungere le pagine in cui sono visualizzati i dettagli del singolo repository e da cui si possono far partire le analisi, quella per aggiungere un nuovo repository e la pagina del proprio profilo utente.  
 
-== Avvio dell'applicativo
-// da vedere
-// funzione docker compose che avvia i docker, altro comando
-// step functions da terminale 
+//== Avvio dell'applicativo
+
 == Interfaccia utente
 In questa sezione sono spiegate l'interfaccia e le funzionalità di ogni singola pagina.
 === Pagina di accesso
 // screen della pagina
-Se l'utente non si è autenticato in precedenza, /*da capire se salviamo nei cookie*/ dopo aver avviato l'applicativo sarà reinderizzato alla pagina di accesso, dove dovrà inserire il nome utente e la password forniti dall'azienda per effettuare il login e poter usufruire dei servizi di Code Guardian.
+Se l'utente non si è autenticato in precedenza, dopo aver avviato l'applicativo sarà reinderizzato alla pagina di accesso, dove dovrà inserire il nome utente e la password forniti dall'azienda per effettuare il login e poter usufruire dei servizi di Code Guardian. \ Il seguente messaggio di errore apparirà in caso le credenziali immesses non siano più valide o incorrette: 
+#figure(
+  image("../../asset/errorecredenziali.png"),
+  caption: [Messaggio di errore in caso di credenziali incorrette], 
+) <err-credenziali>
 
+
+
+  
 === Pagina Lista Repository
-Dopo l'accesso /*da capire se salviamo nei cookie*/ l'utente visualizzerà la pagina principale, che inizialmente sarà questa: \
+Dopo l'accesso l'utente visualizzerà la pagina principale, che inizialmente sarà questa: \
 // screen della pagina senza repo
-Cliccando su /*nome pulsante, link a <AggiungiRepo>*/ potrà aggiungere i repository GitHub pubblici che desidera analizzare. Dopo il loro inserimento nella piattaforma Code Guardian, questi repository saranno visualizzati in una lista. \
+Cliccando su "#link(<AggiungiRepo>)[Aggiungi repository]" potrà aggiungere i repository GitHub pubblici che desidera analizzare. Dopo il loro inserimento nella piattaforma Code Guardian, questi repository saranno visualizzati in una lista nella pagina principale. \
 // screen della lista
 Cliccando su un repository, l'utente raggiungerà la pagina di visualizzazione dettagli di tale repo, da dove sarà possibile effettuare l'analisi. \
 Cliccando sull'icona del profilo,/*inserire posizione profilo*/, l'utente potrà visualizzare le informazioni riguardo il proprio profilo utente.
@@ -96,7 +101,7 @@ Si può eliminare una repository cliccando sull'icona del cestino in sua corrisp
 //immagine cestino ?
 === Pagina Aggiungi Repository<AggiungiRepo>
 // screen della pagina
-Questa è la pagina che permette di inserire nuovi repository per poi poterli analizzare. Per farlo, basta immettere il link nella barra visualizzata nella schermata. \ Attenzione: se si inserisce il link a una repository privata o un link non valido, appariranno i corrispondenti messaggi d'errore.
+Questa è la pagina che permette di inserire nuovi repository per poi poterli analizzare. Per farlo, basta immettere il link nella barra visualizzata nella schermata. \ Attenzione: se si inserisce il link a una repository privata o un link non valido apparirà il seguente messaggio d'errore.
 // screen errore repo priv
 // screen errore link non val
 
