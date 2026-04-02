@@ -352,6 +352,12 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 // Forse in questo secondo devi cambiare alcune dipendnze controlla meglio!!
 #figure( [#image("../../asset/diagr-architett/UML/Repo_Diagram.png")] , caption: [Diagramma delle classi; Repository Management - MS3])
 ===== Classi MS3 - Presentation Layer
+*IngestionInterface* \
+Definisce il contratto di validazione del controller di ingestion.
+
+- #text(font: "Courier New")[validateUser(data: UserDataDTO)] — contratto per la trasformazione di UserDataDTO in ValidatedUserDataDTO.
+- #text(font: "Courier New")[validateSaveRepo(data: SaveRepoDto)] — contratto per la trasformazione di SaveRepoDto in ValidatedSaveRepoDTO.
+- #text(font: "Courier New")[validateDeleteRepo(data: DeleteRepoDto)] — contratto per la trasformazione di DeleteRepoDto in ValidatedDeleteRepoDTO.
 
 *IngestionController* \
 Punto di ingresso HTTP dell'applicazione. Riceve le richieste, le valida tramite i metodi privati e le delega ai service appropriati.
@@ -375,13 +381,6 @@ _Metodi privati:_
 
 ===== Classi MS3 - Business Layer
 ====== Interfacce
-*IngestionInterface* \
-Definisce il contratto di validazione del controller di ingestion.
-
-- #text(font: "Courier New")[validateUser(data: UserDataDTO)] — contratto per la trasformazione di UserDataDTO in ValidatedUserDataDTO.
-- #text(font: "Courier New")[validateSaveRepo(data: SaveRepoDto)] — contratto per la trasformazione di SaveRepoDto in ValidatedSaveRepoDTO.
-- #text(font: "Courier New")[validateDeleteRepo(data: DeleteRepoDto)] — contratto per la trasformazione di DeleteRepoDto in ValidatedDeleteRepoDTO.
-
 *UserServiceLayerInterface* \
 Definisce il contratto del service utente esposto verso il layer di presentazione.
 
@@ -413,8 +412,8 @@ Definisce il contratto di persistenza per l'entità repository, implementato a l
 - #text(font: "Courier New")[findByUrlAndUser(userId, repoUrl)] — recupera un repository tramite URL filtrandolo per utente specifico. Restituisce null se non trovato.
 - #text(font: "Courier New")[save(repo: RepoEntity)] — persiste un nuovo repository e restituisce l'entità salvata.
 - #text(font: "Courier New")[delete(id: string)] — elimina definitivamente un repository dal sistema. Restituisce true se l'operazione è andata a buon fine.
-- #text(font: "Courier New")[addUser(repoId, idUtente)] — aggiunge un utente all'array idUtente del repository specificato. Usato quando un repository esiste già e un nuovo utente vuole aggiungerlo. Restituisce il repository aggiornato.
-- #text(font: "Courier New")[removeUser(repoId, idUtente)] — rimuove un utente dall'array idUtente del repository specificato. Usato quando un utente elimina un repository che è condiviso con altri. Restituisce il repository aggiornato.
+- #text(font: "Courier New")[addUser(repoId, idUtente)] — aggiunge un utente all’array idUtente del repository specificato. Usato quando un repository esiste già e un nuovo utente vuole aggiungerlo. Restituisce il repository aggiornato.
+- #text(font: "Courier New")[removeUser(repoId, idUtente)] — rimuove un utente dall’array idUtente del repository specificato. Usato quando un utente elimina un repository che è condiviso con altri. Restituisce il repository aggiornato.
 
 *GitHubServiceInterface* \
 Definisce il contratto per la validazione di un repository GitHub tramite API esterna.
@@ -431,11 +430,11 @@ _Metodi pubblici:_
 - #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] — recupera l'utente tramite email. Se non trovato lancia UnauthorizedException. Verifica la correttezza della password tramite bcrypt.compare(). Se la verifica fallisce lancia UnauthorizedException. Restituisce la UserEntity dell'utente autenticato.
 - #text(font: "Courier New")[getUser(userId: string)] — recupera l'utente tramite id. Se non trovato lancia NotFoundException. Restituisce la UserEntity.
 
-*RepoService*
+*RepoService* \
 Implementa RepoServiceLayerInterface. Contiene la logica applicativa relativa ai repository.\
 _Attributi privati:_
 - #text(font: "Courier New")[repoRepository: IRepoRepository] — istanza iniettata del repository.
-- #text(font: "Courier New")[githubService: GitHubServiceInterface] — istanza iniettata dell'adapter GitHub.
+- #text(font: "Courier New")[githubService: GitHubServiceInterface] — istanza iniettata dell’adapter GitHub.
 
 _Metodi pubblici:_
 - #text(font: "Courier New")[addRepo(data: ValidatedSaveRepoDTO)] — valida il repository tramite githubService.validate(). Se non valido lancia BadRequestException. Verifica se il repository esiste già tramite findByUrl(). Se esiste e l'utente è già associato lancia ConflictException. Se esiste ma l'utente non è associato, aggiunge l'utente tramite addUser(). Se non esiste, crea una nuova RepoEntity con un UUID generato e la persiste tramite save(). Restituisce la RepoEntity.
@@ -489,8 +488,8 @@ _Attributi privati:_
 - #text(font: "Courier New")[model: Model\<UserDocument>] — modello Mongoose iniettato tramite \@InjectModel.
 
 _Metodi pubblici:_
-- #text(font: "Courier New")[findById(id: string)] — esegue una query findById aggiungendo .select('+passwordHash') per includere il campo normalmente escluso. Converte il documento tramite UserMapper.toDomain(). Restituisce null se non trovato.
-- #text(font: "Courier New")[findByEmail(email: string)] — esegue una query findOne per email aggiungendo .select('+passwordHash'). Converte il documento tramite UserMapper.toDomain(). Restituisce null se non trovato.
+- #text(font: "Courier New")[findById(id: string)] — esegue una query findById aggiungendo .select("+passwordHash") per includere il campo normalmente escluso. Converte il documento tramite UserMapper.toDomain(). Restituisce null se non trovato.
+- #text(font: "Courier New")[findByEmail(email: string)] — esegue una query findOne per email aggiungendo .select("+passwordHash"). Converte il documento tramite UserMapper.toDomain(). Restituisce null se non trovato.
 - #text(font: "Courier New")[save(user: UserEntity)] — converte l'entità tramite UserMapper.toPersistence() e la persiste tramite model.create(). Restituisce l'entità convertita tramite UserMapper.toDomain().
 - #text(font: "Courier New")[existsByEmail(email: string)] — esegue una countDocuments per email e restituisce true se il conteggio è maggiore di zero.
 
@@ -506,8 +505,8 @@ _Metodi pubblici:_
 - #text(font: "Courier New")[findByUrlAndUser(userId, repoUrl)] — esegue findOne filtrando per url e idUtente contemporaneamente. Restituisce null se non trovato.
 - #text(font: "Courier New")[save(repo: RepoEntity)] — converte l'entità tramite RepoMapper.toPersistence() e la persiste tramite model.create(). Restituisce l'entità convertita.
 - #text(font: "Courier New")[delete(id: string)] — esegue findByIdAndDelete. Restituisce true se il documento è stato trovato ed eliminato, false altrimenti.
-- #text(font: "Courier New")[addUser(repoId, idUtente)] — esegue findByIdAndUpdate con operatore \$push per aggiungere l'utente all'array. Se il documento non esiste lancia NotFoundException. Restituisce il repository aggiornato convertito tramite RepoMapper.toDomain().
-- #text(font: "Courier New")[removeUser(repoId, idUtente)] — esegue findByIdAndUpdate con operatore \$pull per rimuovere l'utente dall'array. Se il documento non esiste lancia NotFoundException. Restituisce il repository aggiornato convertito tramite RepoMapper.toDomain().
+- #text(font: "Courier New")[addUser(repoId, idUtente)] — esegue findByIdAndUpdate con operatore \$push per aggiungere l'utente all’array. Se il documento non esiste lancia NotFoundException. Restituisce il repository aggiornato convertito tramite RepoMapper.toDomain().
+- #text(font: "Courier New")[removeUser(repoId, idUtente)] — esegue findByIdAndUpdate con operatore \$pull per rimuovere l'utente dall’array. Se il documento non esiste lancia NotFoundException. Restituisce il repository aggiornato convertito tramite RepoMapper.toDomain().
 
 *GitHubAdapter* \
 Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubbliche di GitHub.
