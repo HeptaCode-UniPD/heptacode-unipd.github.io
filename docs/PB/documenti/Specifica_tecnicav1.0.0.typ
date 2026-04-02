@@ -340,22 +340,22 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 
 - *Adapter*
 
-== Progettazione
-=== Progettazione backend
-==== Analysis Management - MS1
+= Progettazione
+== Progettazione backend
+=== Analysis Management - MS1
 //#figure( [#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")] , caption: [Diagramma delle classi - MS1])
-===== Classi MS1 - Presentation Layer
-===== Classi MS1 - Business Layer
-===== Classi MS1 - Data Layer
+==== Classi MS1 - Presentation Layer
+==== Classi MS1 - Business Layer
+==== Classi MS1 - Data Layer
 
-==== Analisi dei Repository - MS2
+=== Analisi dei Repository - MS2
 // #figure( [#image("../../asset/diagr-architett/UML/ActiveAnalysisService")] , caption: [Diagramma struttura AWS - MS2])
 
-==== Autenticazione e Repository Management - MS3
+=== Autenticazione e Repository Management - MS3
 #figure( [#image("../../asset/diagr-architett/UML/Auth_Diagram.png")] , caption: [Diagramma delle classi; Autenticazione - MS3])
 // Forse in questo secondo devi cambiare alcune dipendnze controlla meglio!!
 #figure( [#image("../../asset/diagr-architett/UML/Repo_Diagram.png")] , caption: [Diagramma delle classi; Repository Management - MS3])
-===== Classi MS3 - Presentation Layer
+==== Classi MS3 - Presentation Layer
 *IngestionInterface* \
 Definisce il contratto di validazione del controller di ingestion.
 
@@ -383,8 +383,8 @@ _Metodi privati:_
   - #text(font: "Courier New")[validateSaveRepo(data: SaveRepoDto)] — mappa un SaveRepoDto in un ValidatedSaveRepoDTO.
   - #text(font: "Courier New")[validateDeleteRepo(data: DeleteRepoDto)] — mappa un DeleteRepoDto in un ValidatedDeleteRepoDTO.
 
-===== Classi MS3 - Business Layer
-====== Interfacce
+==== Classi MS3 - Business Layer
+===== Interfacce
 *UserServiceLayerInterface* \
 Definisce il contratto del service utente esposto verso il layer di presentazione.
 
@@ -424,7 +424,7 @@ Definisce il contratto per la validazione di un repository GitHub tramite API es
 
 - #text(font: "Courier New")[validate(url: string)] — verifica che l'URL fornito corrisponda a un repository GitHub pubblico e accessibile. Restituisce un oggetto GitHubRepoData con i metadati del repository, oppure null se il repository non esiste o non è accessibile.
 
-====== Servizi
+===== Servizi
 *UserService* \
 Implementa UserServiceLayerInterface. Contiene la logica applicativa relativa agli utenti. \
 _Attributi privati:_
@@ -446,7 +446,7 @@ _Metodi pubblici:_
 - #text(font: "Courier New")[listForUser(userId: string)] — recupera tutti i repository associati all'utente tramite findByUserId(). Restituisce un array di RepoEntity.
 - #text(font: "Courier New")[getRepoById(idRepo: string)] — recupera il repository tramite id. Se non trovato lancia NotFoundException. Restituisce la RepoEntity.
 
-====== Entità di dominio
+===== Entità di dominio
 *UserEntity* \
 Rappresenta l'entità di dominio dell'utente. Tutti gli attributi sono readonly e accessibili solo tramite getter, garantendo l'immutabilità. \
 _Attributi privati:_
@@ -463,7 +463,7 @@ _Attributi privati:_
 _Getter pubblici:_ \ 
 - id, idUtente, url, name, pathStorage
 
-===== Classi MS3 - Data Layer
+==== Classi MS3 - Data Layer
 *UserPersistence* \ 
 Schema Mongoose per la collezione users. Mappa la struttura di UserEntity al documento MongoDB. \ 
 _Attributi pubblici:_ 
@@ -517,7 +517,7 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
 
 - #text(font: "Courier New")[validate(url: string)] — interpreta l'URL GitHub fornito, estrae owner e nome del repository ed esegue una chiamata alle API di GitHub per verificarne l'esistenza e l'accessibilità pubblica. Restituisce un oggetto GitHubRepoData con i metadati del repository se la chiamata ha successo, null altrimenti.
 
-=== Progettazione frontend
+== Progettazione frontend
 
 
 = Stato dei requisiti funzionali
