@@ -799,9 +799,24 @@ $ "CPI" = "EV" / "AC" $
 - *Valore ottimale*: $100%$
 - *Descrizione*:L'indice di Cost Performance misura la resa del budget attraverso il rapporto tra: il valore del lavoro completato e il costo realmente sostenuto.
 
+==== MPC05 - Task Completion Rate (TCR)
+
+==== MPC06 - Time Efficency
+- *Formula* 
+$ "Time Efficiency" = "Ore dedicate ad attività produttive" / ("Ore totali dedicate al progetto") $
+- *Valore accettabile*:// $>=0€$
+- *Valore ottimale*: // $<="BAC"$
+- *Descrizione*: L'indicatore Time Efficiency rappresenta la percentuale di tempo utilizzato per svolgere attività produttive, e quindi in cui è stato prodotto valore, rispetto alle ore totali dedicate al progetto. Tale valore è utile per capire il grado di ottimizzazione del lavoro svolto.
+==== MPC07 - Percentuale di metriche soddisfatte
+- *Formula*:
+$ "Correttezza ortografica" = "numero di errori ortografici" $
+- *Valore accettabile*: $0$
+- *Valore ottimale*: $0$
+- *Descrizione*:  La correttezza ortografica è un indicatore della qualità della documentazione. Tutti i documenti ufficiali devono essere privi di errori ortografici.
+==== MPC08 - Numero rischi non previsti
 === Fornitura
 
-==== MPC05 - Planned Value (PV)
+==== MPC09 - Planned Value (PV)
 - *Formula* 
 $ "PV" = "BAC" dot ("PH") / ("THP") $
 - *Valore accettabile*: $>=0€$
@@ -813,7 +828,7 @@ $ "PV" = "BAC" dot ("PH") / ("THP") $
  - *PH*: Planned Hours;
  - *THP*: Total Hours Planned.
 
-====  MPC06 - Earned Value (EV)
+====  MPC10 - Earned Value (EV)
 - *Formula*:
 $ "EV" = "BAC" dot ("AH") / ("THP") $
 - *Valore accettabile*: $>=0€$
@@ -825,7 +840,7 @@ $ "EV" = "BAC" dot ("AH") / ("THP") $
  - *AH*: Actual Hours;
  - *THP*: Total Hours Planned.
 
-==== MPC07 - Actual Cost (AC)
+==== MPC11 - Actual Cost (AC)
 - *Formula*:
 $ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
 - *Valore accettabile*: $>=0€$
@@ -835,7 +850,7 @@ $ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
   - *AHR*: Actual Hours by Role;
   - *HCR*: Hourly Cost per Role.
 
-==== MPC08 - Estimate at Completion (EAC):
+==== MPC12 - Estimate at Completion (EAC):
 - *Formula*:
 $ "EAC" = "BAC"/"CPI" $
 - *Valore accettabile*: $>="BAC"-5%$
@@ -845,7 +860,7 @@ $ "EAC" = "BAC"/"CPI" $
  - *BAC*: Budget at Completion (Budget totale preventivato);
  - *CPI*: Cost Performance Index.
 
-==== MPC09 - Estimate to Complete (ETC)
+==== MPC13 - Estimate to Complete (ETC)
 - *Formula*:
 $ "ETC" = "BAC" - "EV" $
 - *Valore accettabile*: $>=0€$
@@ -857,28 +872,28 @@ $ "ETC" = "BAC" - "EV" $
 
 === Verifica e validazione
 
-==== MPC10 - Code Coverage (CC)
+==== MPC14 - Code Coverage (CC)
 - *Formula*:
 $ "CC" = "Codice testato" / "Codice totale" * 100 $
 - *Valore accettabile*: $>=80%$
 - *Valore ottimale*: $>=90%$
 - *Descrizione*: L'indice di Code Coverage misura la percentuale di codice sorgente che viene eseguita durante l'esecuzione dei test automatici. Indica quanto il codice è stato verificato dal processo di testing.
 
-==== MPC11 - Test Success Rate (TSR)
+==== MPC15 - Test Success Rate (TSR)
 - *Formula*:
 $ "TSR" = "Test passati"/ "Test totali" * 100 $
 - *Valore accettabile*: $85%$
 - *Valore ottimale*:  $100%$
 - *Descrizione*: L'indice Test Success Rate misura la percentuale dei test superati rispetto a quelli totali. 
 
-==== MPC12 - Statement Coverage (SC)
+==== MPC16 - Statement Coverage (SC)
 - *Formula*:
 $ "SC" = ("Linee eseguite") / "Linee totali" * 100 $
 - *Valore accettabile*: $>=90%$
 - *Valore ottimale*: $100%$
 - *Descrizione*: L'indice Statement Coverage misura la percentuale di istruzioni elementari eseguite dai test.
 
-==== MPC13 - Branch Coverage (BC)
+==== MPC17 - Branch Coverage (BC)
 - *Formula*:
 $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 - *Valore accettabile*: $>=70%$
@@ -888,7 +903,7 @@ $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 
 === Documentazione
 
-==== MPC14 - Correttezza ortografica
+==== MPC18 - Correttezza ortografica
 - *Formula*:
 $ "Correttezza ortografica" = "numero di errori ortografici" $
 - *Valore accettabile*: $0$
