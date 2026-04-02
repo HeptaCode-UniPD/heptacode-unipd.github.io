@@ -119,7 +119,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   inset: 10pt,
   align: (left, left, left),
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
-  [vite],[v7.2.4],[Bundler e dev server. Scelto per la velocità di avvio grazie all'uso nativo dei moduli ES e all'HMR istantaneo.],
+  [vite],[v7.2.4],[Bundler e dev server. Scelto per la velocità di avvio grazie all'uso nativo dei moduli ES e all’HMR istantaneo.],
   [\@vitejs/plugin-react],[v5.1.1],[Plugin Vite che abilita il supporto a JSX e al Fast Refresh di React durante lo sviluppo.],
   [typescript],[v5.9.3],[Superset tipizzato di JavaScript. Usato per garantire la correttezza dei tipi a compile time.],
   [\@types/react, \ \@types/react-dom, \ \@types/node, \ \@types/diff],[varie],[Definizioni dei tipi TypeScript per le rispettive librerie.],
@@ -135,7 +135,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   inset: 10pt,
   align: (left, left, left),
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
-  [vitest],[v4.1.1],[Framework di test nativo per Vite. Compatibile con l'API di Jest, condivide la configurazione di Vite evitando setup duplicati.],
+  [vitest],[v4.1.1],[Framework di test nativo per Vite. Compatibile con l’API di Jest, condivide la configurazione di Vite evitando setup duplicati.],
   [\@vitest/coverage-v8],[v4.1.1],[Provider di code coverage basato su V8. Attivato tramite il comando test:cov, non richiede import espliciti nel codice.],
   [\@vitest/ui],[v4.1.1],[Interfaccia grafica per visualizzare i risultati dei test nel browser.],
   [\@testing-library/react, \ \@testing-library/dom],[v16.3.2 / v10.4.1],[Utility per testare componenti React simulando l'interazione reale con il DOM, senza dipendere dall'implementazione interna.],
@@ -323,8 +323,8 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 *Microservizio di Analisi dei Repository - MS2* #pad(left: 0.5cm)[Si occupa dell'analisi del codice sorgente delle repository mediante l'impiego di agenti software. Ricevuta una richiesta, il microservizio avvia il processo di analisi, delegando l'esecuzione a uno o più agenti specializzati e restituendo i risultati al chiamante.]
 
 *Microservizio di Autenticazione e Repository Management - MS3*:
-#figure( [#image("../../asset/Diagr-architett/architett_authrepo.png")] , caption: [Layered architecutre - MS3])
-#pad(left: 0.5cm)[Responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di registrazione e autenticazione degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell'API esterna.]
+#figure( [#image("../../asset/Diagr-architett/architett_authrepo.png")] , caption: [Layered architecture - MS3])
+#pad(left: 0.5cm)[Responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di registrazione e autenticazione degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell’API esterna.]
 == Design pattern
 
 // USATI IN MS1
