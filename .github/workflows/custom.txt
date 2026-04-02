@@ -286,3 +286,4 @@ ioc
 jsdom
 jsx
 bundler
+hmr
