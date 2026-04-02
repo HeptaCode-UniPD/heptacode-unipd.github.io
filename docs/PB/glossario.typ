@@ -1,32 +1,12 @@
-#v(1fr)
-#align(center, [
-  #set text(lang: "it")
-  #image("../asset/logo.svg")
-  
-  #v(1.5cm)
-  
-  #text(size: 25pt, weight: "bold")[Glossario]
-
-  #v(2.0cm)
-  #align(center, text(size: 15pt, weight: "bold")[Contenuto del documento])
-
-  #align(center,
-  [#text(12pt)[ Termini ambigui e le loro definizioni
-  ]])
-])
-#v(1fr)
-
-#pagebreak()
-
-#let tabella-viola(..args) = {
-  show table.cell.where(y: 0): set text(white, weight: "bold")
-  table(
-    fill: (col, row) => if row == 0 { rgb("#a36ee8") } else { none },
-    ..args
-  )
-}
+#import "../templates/template-documenti.typ": template_documenti, tabella-viola
 
 #let storia_modifiche = (
+  "2.3.0",
+  "2026/03/12",
+  "Angela Favaro",
+  "Laura Venturini",
+  "Aggiunta terminologie per Piano di Progetto",
+
   "2.2.0",
   "2026/03/12",
   "Angela Favaro",
@@ -69,47 +49,15 @@
   "Creazione documento e primi termini"
 )
 
-
-#text(size: 17pt, weight: "bold")[Registro delle modifiche]
-
-#tabella-viola(
-  columns: (auto, auto, auto, auto, 1fr),
-  inset: 10pt,
-  align: (center, center, center, center, left),
-  
-  table.header(
-  [*Versione*], [*Data*], [*Autore*], [*Verificatore*], [*Descrizione*],
-  ),
-
-  ..storia_modifiche.flatten()
+#show: doc => template_documenti(
+  titolo: "Glossario",
+  descrizione: "Termini ambigui e le loro definizioni",
+  modifiche: storia_modifiche,
+  lista_tabelle: false,
+  lista_figure: false,
+  doc
 )
 
-#pagebreak()
-
-#outline(title: "Indice")
-
-#pagebreak()
-#counter(page).update(1)
-#set page(
-  numbering: "1",
-  header: [
-    #set table(
-      stroke: none,
-    )
-    #table(
-      columns: 3,
-      [Hepta Code],
-      [#rect(
-        width: 100%,
-        height: 1pt,
-        fill: white,
-        stroke: none,
-      )],
-      [Glossario v2.1.0],
-    )
-    #line(length: 100%, stroke: black)
-  ],
-)
 
 = Scopo del Documento
 Il fine di questo documento è tenere traccia di tutti i termini, ambigui o meno, che possono apparire all'interno della documentazione o nei meeting e darne una definizione quanto più precisa, in modo che le risorse e i discorsi fatti possano essere compresi facilmente.
@@ -286,6 +234,9 @@ Messaggio digitale che viene inviato e ricevuto tramite internet. Strumento di c
 #heading(level: 2, outlined: false)[Milestone]
 Punto di controllo significativo che segna il completamento di una fase importante o il raggiungimento di un obiettivo chiave all'interno di un progetto. Rappresenta un traguardo raggiunto.
 
+#heading(level: 2, outlined: false)[Minimum Viable Product]
+Anche chiamato *MVP*. \ Versione del prodotto software che possiede appena le caratteristiche sufficienti per essere pubblicato e testato da utenti reali, con il minimo sforzo di sviluppo possibile.
+
 #heading(level: 2, outlined: false)[Mockup]
 Rappresentazione statica e ad alta fedeltà dell'interfaccia di un'applicazione o sito web. Mostra come apparirà visivamente il prodotto finale — colori, typography, layout, icone, spaziature — ma senza funzionalità interattive.
 
@@ -317,8 +268,12 @@ Milestone interna al gruppo che richiede la conclusione dell'attività di Analis
 #heading(level: 2, outlined: false)[Personas utente (Personas)]
 Rappresentazioni fittizie ma realistiche dei gruppi di utenti target, basate su dati e ricerche. Aiutano il team di sviluppo a comprendere i bisogni, le esperienze, i comportamenti e gli obiettivi degli utenti reali per cui stanno progettando il prodotto.
 
-#heading(level: 2, outlined: false)[Product Baseline (PB)]
+#heading(level: 2, outlined: false)[Product Baseline]
+Anche chiamata *PB*. \
 Milestone che richiede la consegna del prodotto e l'accettazione da parte dei professori per essere superata.
+
+#heading(level: 2, outlined: false)[Project Board]
+Strumento di visualizzazione dei compiti (task o issue) che permette di monitorare lo stato di avanzamento di un progetto in tempo reale.
 
 #heading(level: 2, outlined: false)[Piano di Contingenza]
 Insieme di procedure da attivare dopo che un rischio si è effettivamente verificato e si è trasformato in un problema reale.

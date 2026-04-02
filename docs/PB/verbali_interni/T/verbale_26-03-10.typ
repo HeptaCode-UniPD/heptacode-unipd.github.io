@@ -2,7 +2,7 @@
 #let giorno = "2026-03-10"
 
 // data del prossimo incontro nello stesso formato
-#let next-meeting = "2026-03-10"
+#let next-meeting = "2026-03-11"
 
 // ordine del giorno 
 #let odg = "Discussione sulla progettazione e preparazione all'incontro con l'azienda proponente"
@@ -28,6 +28,9 @@
     "Amministratore",   "Presente", //Nicola Simionato
     "Responsabile",   "Presente" //Laura Venturini
 )
+
+// IGNORARE QUESTA VARIABILE
+#let partecipanti-esterni = ()
 
 // ora di inzio dell'incontro
 #let inizio = "11:00"

@@ -244,5 +244,12 @@ testopbremediation
 langchain
 mockup
 l'analysis
+pianificazionepb
+pianificazionertb
+trascorsopb
+trascorsortb
+aggregatore
+l'aggregatore
+microservizi
 fargate
 serverless
