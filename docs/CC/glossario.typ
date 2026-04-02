@@ -19,7 +19,6 @@
 #counter(page).update(1)
 
 #pagebreak()
-#text(size: 17pt, weight: "bold")[Registro delle modifiche:]
 #set text(size: 11pt, lang: "it")
 #table(
   columns: (auto, auto, auto, auto, auto),
@@ -87,19 +86,36 @@ Abbreviazione per "documentazione". Indica l'insieme dei documenti relativi al p
 
 #pagebreak()
 
+= F
+#heading(level: 2, outlined: false)[Fail fast]
+Metodologia che mira ad identificare rapidamente un malfunzionamento all'interno di un progetto, in modo da poterlo correggere prima che questo porti a un accumulo di problemi di difficile gestione.
+#pagebreak()
 = G
 
 #heading(level: 2, outlined: false)[Git]
 Software di versionamento distribuito dei file di una cartella, utilizzabile da linea di comando.
 
 #heading(level: 2, outlined: false)[GitHub]
-Servizio web basato su git. Permette il versionamento dei file di un progetto online, aprendo quindi la collaborazione di più persone sui file. Offre inoltre diversi altri servizi come l'Issue Tracking System, la possibilità di gestire organizzazioni oppure hostare siti web.
+Servizio web basato su git. Permette il versionamento dei file di un progetto online, aprendo quindi la collaborazione di più persone sui file. Offre inoltre diversi altri servizi come l'Issue_G Tracking System, la possibilità di gestire organizzazioni oppure hostare siti web.
 
 #heading(level: 2, outlined: false)[GitHub Action (GHA)]
 Sistema di automazione offerto da GitHub e personalizzabile. Permette, al trigger di determinati eventi, di eseguire script ad esempio per la compilazione di file sorgenti oppure testare il software.
 
 #heading(level: 2, outlined: false)[Google Meet]
 Servizio di videoconferenze che permette di organizzare e partecipare a riunioni online tramite video e audio in tempo reale.
+
+#pagebreak()
+
+= I
+
+#heading(level: 2, outlined: false)[Issue]
+Elemento atto a: pianificare, discutere e tracciare lavoro, bug, idee o nuove funzionalità all'interno di un repository di codice nella piattaforma di Github. Ad essa è possibile assegnare: un progetto, una Milestone, dei responsabili e delle etichette per rappresentarla all'interno di determinate categorie e facilitarne l'utilizzo e la ricerca.
+
+#pagebreak()
+
+= L
+#heading(level: 2, outlined: false)[LLM]
+L'acronimo sta per Large Language Model, un tipo di intelligenza artificiale addestrato su enormi quantità di dati testuali per comprendere, generare e elaborare il linguaggio umano in modo simile a un essere umano, Esso è capace di compiti come la scrittura, la traduzione, il riassunto di testi e la conversazione, basandosi su architetture di deep learning, i quali gli permettono di cogliere contesti complessi. 
 
 #pagebreak()
 
@@ -110,6 +126,17 @@ Messaggio digitale che viene inviato e ricevuto tramite internet. Strumento di c
 
 #pagebreak()
 
+= N
+#heading(level: 2, outlined: false)[Normativa ISO]
+Standard tecnico volontario internazionale sviluppato dall'International Organization for Standardization (ISO) per definire requisiti, linee guida o specifiche che assicurano qualità, sicurezza, efficienza e interoperabilità di prodotti, processi e servizi, creando un linguaggio e un framework comuni riconosciuti a livello globale, che le organizzazioni possono adottare e certificare.
+
+#pagebreak()
+
+= O
+#heading(level: 2, outlined: false)[OWASP]
+Acronimo per Open Worldwide Application Security Project, una fondazione no-profit e una comunità globale aperta che si dedica a migliorare la sicurezza delle applicazioni software rendendo disponibili gratuitamente strumenti, documentazione e best practice per sviluppatori e organizzazioni, al fine di educare e guidare nella creazione di software più sicuri. 
+
+#pagebreak()
 = P
 
 #heading(level: 2, outlined: false)[Pull]
@@ -126,11 +153,22 @@ Comando di Git usato per inviare i commit locali ad un repository remoto, condiv
 Ambiente digitale dove vengono salvati tutti i file riguardanti i progetti. Può esisterne più di una in base alla suddivisione degli argomenti per cui vengono create.
 
 #pagebreak()
+= S
 
+#heading(level: 2, outlined: false)[Single Responsibility]
+Il principio di singola responsabilità, noto anche come coesione, afferma che una classe dovrebbe avere una e una sola ragione per cambiare. Ciò significa che dovrebbe essere responsabile per un solo specifico lavoro o pezzo di funzionalità, rendendo il codice semplice da mantenere, testare e capire.
+
+#heading(level: 2, outlined: false)[Stakeholder]
+Qualsiasi individuo, gruppo o organizzazione che possa essere direttamente o indirettamente coinvolto dalle attività, dalle decisioni o dai risultati di un'azienda.
+
+#pagebreak()
 = T
 
 #heading(level: 2, outlined: false)[Telegram]
 Applicazione di messaggistica istantanea tra utenti e/o gruppi. Permette in particolar modo di creare sottocategorie all'interno di un gruppo, per isolare differenti tematiche in compartimenti separati. Consente inoltre l'invio di file di tipo testuale, visivo e audio.
+
+#heading(level: 2, outlined: false)[Typst]
+Sistema di preparazione documenti basato su un linguaggio di markup leggero, progettato per essere un'alternativa moderna e più semplice a LaTeX, ma più potente di Word o Google Docs.
 
 #pagebreak()
 
