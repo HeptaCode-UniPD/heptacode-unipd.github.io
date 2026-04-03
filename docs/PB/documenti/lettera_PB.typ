@@ -33,7 +33,8 @@ Negli ultimi mesi, il team ha redatto e reso disponibili le versioni ufficiali d
   - Specifica Tecnica v1.0.0,
   - Manuale Utente
   
-  
+- *Minimum Viable Product (MVP)* \ come dimostrazione funzionale del progetto.  
+
 - *Documenti interni*
   - Norme di Progetto v2.0.0",
   - Glossario v3.0.0,
@@ -41,8 +42,6 @@ Negli ultimi mesi, il team ha redatto e reso disponibili le versioni ufficiali d
 - *Verbali esterni*
 
 - *Verbali interni*
-
-- *Minimum Viable Product (MVP)* \ come dimostrazione funzionale del progetto.  
 \
 \
 \
