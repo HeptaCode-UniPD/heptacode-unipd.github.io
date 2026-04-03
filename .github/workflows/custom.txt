@@ -256,3 +256,12 @@ serverless
 tortafinale
 tortapb
 trascorsosprint
+pianificazionepb
+pianificazionertb
+trascorsopb
+trascorsortb
+aggregatore
+l'aggregatore
+microservizi
+fargate
+serverless

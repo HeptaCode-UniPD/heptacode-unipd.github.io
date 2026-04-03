@@ -29,6 +29,9 @@
     "Responsabile",   "Presente" //Laura Venturini
 )
 
+// IGNORARE QUESTA VARIABILE
+#let partecipanti-esterni = ()
+
 // ora di inzio dell'incontro
 #let inizio = "10:00"
 
@@ -55,7 +58,7 @@ Abbiamo deciso quali membri si occuperanno dello sviluppo del backend e quali al
 - Team di sviluppo del frontend: Laura Venturini, Angela Canazza e Amerigo Vegliante
 - Team di sviluppo del backend: Nicola Simionato, Angela Favaro, Alberto Reginato e Riccardo Baldin
 == Suddivisione dei ruoli per lo sviluppo di backend
-Il team si sviluppo del backend si è suddiviso ii compiti come segue:
+Il team si sviluppo del backend si è suddiviso i compiti come segue:
 - Parte relativa al database e alla gestione dei dati.
 - Parte relativa agli agenti.
 - Parte relativa all'architettura logica.

@@ -11,7 +11,7 @@
 #let distanza = false
 
 // modificare SE non si è fatto presso VarGroup
-#let luogo = "la sede di VarGroup in Via Salboro, 22B, 35124 Padova PD"
+#let luogo = "Microsoft Teams"
 
 // ruolo e presenza (es: "Analista", "Presente")
 #let lista-ruoli = (
@@ -22,6 +22,10 @@
     "", "", // Amerigo Vegliante
     "", "", // Nicola Simionato
     "", ""  // Laura Venturini
+)
+
+#let partecipanti-esterni = (
+  ("", "Referente Var Group"),
 )
 
 // ora di inizio e fine
