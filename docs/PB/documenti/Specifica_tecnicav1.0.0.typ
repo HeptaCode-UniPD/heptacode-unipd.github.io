@@ -402,7 +402,61 @@ Adapter Il pattern Adapter è utilizzato per isolare i microservizi dalle specif
 ==== Classi MS1 - Data Layer
 
 === Analisi dei Repository - MS2
-// #figure( [#image("../../asset/diagr-architett/UML/ActiveAnalysisService")] , caption: [Diagramma struttura AWS - MS2])
+
+//#figure( [#image("../../asset/diagr-architett/UML/ActiveAnalysisService")] , caption: [Diagramma struttura AWS - MS2])
+
+L'architettura del microservizio di analisi (MS2) è progettata per gestire processi a lunga esecuzione in modo asincrono, separando la ricezione della richiesta dal workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura serverless su AWS, utilizzando Step Functions per il controllo del workflow e S3 per la persistenza dei dati e dei report intermedi.
+
+==== Classi MS2 - Presentation Layer
+
+*AppController*\
+Punto di ingresso HTTP (NestJS) per l'avvio delle analisi. Riceve le richieste dal frontend o da MS1.
+
+#text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] — Riceve l'URL del repository, valida il DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente un jobId e l'ARN di esecuzione.\
+
+*AppService*\
+Service di backend che funge da bridge tra l'interfaccia HTTP e l'infrastruttura AWS.
+
+#text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] — Coordina l'avvio della pipeline invocando l'Adapter di AWS Step Functions per far partire l'esecuzione della State Machine.
+
+*Handler (Lambda Adapter)*\
+Classe di bootstrap che permette a NestJS di operare in ambiente AWS Lambda, traducendo gli eventi di API Gateway nel formato di routing interno.
+
+==== Classi MS2 - Business Layer
+
+===== Orchestrazione e Workflow OrchestratorLambda
+Componente centrale del Business Layer che gestisce il ciclo di vita dell'analisi attraverso due fasi logiche distinte.
+
+#text(font: "Courier New")[orchestratorHandler(event)] — Punto di ingresso per AWS Step Functions. Gestisce le azioni:
+- #text(font: "Courier New")[PLAN]: Analizza i metadati del repository e produce il runPlan per attivare gli agenti necessari.
+- #text(font: "Courier New")[AGGREGATE]: Recupera i report da S3, esegue il cleanup degli oggetti temporanei e invoca il Master Lead Agent per il polishing finale.
+===== Agenti di Analisi: OwaspAgent, DocsAgent, TestAgent
+Classi specializzate nell'esecuzione di analisi tematiche (Sicurezza, Documentazione, Qualità).
+
+#text(font: "Courier New")[handler(event)] — Scarica il sorgente da S3, invoca SmartBundler per la creazione dei chunk e coordina i sub-agenti Bedrock salvando il report parziale su S3.
+===== Strumenti e Utility AgentInvoker
+Modulo responsabile della comunicazione resiliente con AWS Bedrock Agents.
+
+#text(font: "Courier New")[invokeSubAgent(agentId, prompt, isLead)] — Gestisce l'invocazione dell'AI e implementa il Tool-use denial, intercettando tentativi di chiamata a tool esterni e forzando l'output testuale.\
+#text(font: "Courier New")[extractFirstMeaningfulLine(report)] — Estrae la sintesi dinamica dal report Markdown per il riepilogo globale.
+
+*SmartBundler*\
+Wrapper per l'impacchettamento del codice ottimizzato per LLM.
+
+#text(font: "Courier New")[createSourceChunks(path)] — Suddivide il sorgente in porzioni sequenziali da 150.000 caratteri rispettando i confini dei file.\
+#text(font: "Courier New")[extractImportedLibraries(content)] — Esegue l'analisi statica per identificare le dipendenze dichiarate senza l'uso di modelli linguistici.
+
+*PullRepoLambda*\
+Gestisce la fase di acquisizione iniziale del codice sorgente.
+
+#text(font: "Courier New")[handler(event)] — Clona il repository Git, estrae i metadati (tag, branch) e carica l'archivio ZIP su S3 per le fasi successive.
+==== Classi MS2 - Data Layer
+
+*S3Adapter*\
+Implementa l'isolamento dalle API di AWS S3 e Step Functions.
+
+#text(font: "Courier New")[startStepFunctionExecution(payload)] — Converte i dati applicativi nel formato SDK richiesto per avviare il workflow AWS.\
+#text(font: "Courier New")[PutObjectCommand / GetObjectCommand] — Gestiscono il trasferimento dei bundle e il recupero dei report intermedi dal bucket S3.
 
 === Autenticazione e Repository Management - MS3
 Il diagramma è stato suddiviso in due figure per una questione di visibilità documentale. Il primo diagramma mostra le classi relative all'autenticazione, mentre il secondo mostra le classi relative alla gestione delle repository. 
