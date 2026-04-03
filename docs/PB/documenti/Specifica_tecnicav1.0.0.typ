@@ -1,15 +1,17 @@
 #import "@preview/cetz:0.4.2"
-#import "@preview/cetz-plot:0.1.3"
+#import "@preview/cetz-plot:0.1.3": chart
 #import "../../templates/template-documenti.typ": template_documenti, tabella-viola
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("0.6.0", "2026/04/03", "Alberto Reginato", "Angela Favaro",  "Aggiunte specifiche MS2"),
+  ("1.0.0", "2026/04/03", "Angela Favaro", "Laura Venturini",  "Approvazione finale, rilascio ufficiale v1.0.0"),
+
+  ("0.6.0", "2026/04/03", "Alberto Reginato", "Riccardo Baldin",  "Aggiunte specifiche MS2"),
   ("0.5.0", "2026/03/02", "Amerigo Vegliante", "",  "Aggiunte specifiche MS1"),
   ("0.4.0", "2026/04/01", "Angela Favaro", "",  "Aggiunte specifiche MS3"),
   ("0.3.0", "2026/04/01", "Angela Canazza", "",  "Aggiunte specifiche frontend"),
-  ("0.2.0", "2026/03/08", "Angela Favaro", "",  "Aggiunto capitolo 1"),
-  ("0.1.0", "2026/03/07", "Angela Favaro", "",  "Creazione documento, impostazione macro-aree")
+  ("0.2.0", "2026/03/08", "Angela Favaro", "Angela Canazza",  "Aggiunto capitolo 1"),
+  ("0.1.0", "2026/03/07", "Angela Favaro", "Laura Ventrini",  "Creazione documento, impostazione macro-aree")
 )
 
 #show: doc => template_documenti(
@@ -221,18 +223,6 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
   [class-validator],[v0.15.1],[Validazione dei DTO tramite decorator (\@IsEmail, \@IsUrl, \@MinLength). Integrato con NestJS tramite ValidationPipe],
   [class-transformer],[v0.5.1],[Trasformazione degli oggetti plain in istanze di classe. Necessario per far funzionare class-validator con NestJS.],
-)
-#figure(
-  caption: [Dipendenze backend, validazione],
-  kind: table,
-  supplement: [Tabella],
-  rect(width: 0pt, height: 0pt, stroke: none) 
-) <dipendenze-backend>
-#tabella-viola(
-  columns: (auto, auto, auto),
-  inset: 10pt,
-  align: (left, left, left),
-  table.header([*Nome*], [*Versione*], [*Descrizione*]),
   [jest],[v30.x],[Framework di test principale],
   [ts-jest],[v29.x],[Permette di eseguire test scritti in TypeScript direttamente senza compilazione separata.],
   [\@nestjs/testing],[v11.0.1],[Utility per creare moduli NestJS isolati nei test. Mock delle dipendenze negli unit test.],
@@ -357,8 +347,6 @@ _Presentation Layer_ #pad(left: 0.5cm)[ Costituisce il punto di ingresso del mic
 _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con i componenti di persistenza e con i servizi esterni. Questo layer è esposto esclusivamente tramite interfacce, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta.]
 _Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso al layer di persistenza dei dati attraverso il pattern Repository, garantendo che il dominio applicativo rimanga indipendente dalla tecnologia di storage sottostante. La traduzione tra entità di dominio e modelli di persistenza è delegata a componenti Mapper dedicati.]
 
-=== Component Based Architecture
-
 == Architettura di deployment
 L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale garantisce elevata scalabilità, resilienza e una totale indipendenza nello sviluppo e nel rilascio dei singoli componenti software. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
 
@@ -388,11 +376,10 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 - *Dependency Injection*
 Il sistema adotta il pattern Dependency Injection tramite il container IoC di NestJS. Le dipendenze tra i layer sono mediate da interfacce, garantendo disaccoppiamento e sostituibilità delle implementazioni concrete.
 
-- *Adapter*
-Adapter Il pattern Adapter è utilizzato per isolare i microservizi dalle specificità delle librerie esterne e dei servizi cloud.
+- *Adapter* \ Adapter Il pattern Adapter è utilizzato per isolare i microservizi dalle specificità delle librerie esterne e dei servizi cloud.
 
-- In MS3 (Authenticatione & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
-- In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
+  - In MS3 (Authenticatione & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
+  - In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
 = Progettazione
 == Progettazione backend
 === Analysis Management - MS1
@@ -619,14 +606,18 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
   [R-34-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi sui test di un repository],[Soddisfatto],
   [R-35-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi OWASP di un repository],[Soddisfatto],
   [R-36-F-O],[L'Utente Registrato deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un'analisi sui test per un repository],[Soddisfatto],
-  [R-9-F-O],[L'Utente Registrato deve visualizzare la propria area personale],[Soddisfatto],
+  [R-9-F-D],[L'Utente Registrato deve visualizzare la propria area personale],[Soddisfatto],
   [R-10-F-O],[L'Utente Registrato deve poter visualizzare il proprio nome Utente Registrato],[Soddisfatto],
   [R-11-F-O],[L'Utente Registrato deve poter visualizzare la propria mail],[Soddisfatto],
   [R-12-F-D],[L'Utente Registrato deve poter visualizzare il proprio ruolo],[Non soddisfatto],
+  [R-139-F-D],[L'Utente Registrato deve poter visualizzare la propria immagine del profilo],[Soddisfatto],
+  [R-140-F-D],[L'Utente Registrato deve poter visualizzare l'opzione di reindirizzamento al proprio profilo Github],[Soddisfatto],
+  [R-141-F-D],[L'Utente Registrato deve poter visualizzare le proprie competenze registrate nella piattaforma],[Non soddisfatto],
+  [R-142-F-D],[L'Utente Registrato deve poter essere reindirizzato nel proprio profilo Github],[Non soddisfatto],
   [R-13-F-O],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[Soddisfatto],
-  [R-14-F-D],[L'Utente Registrato deve poter annullare la procedura di logout dalla piattaforma],[Non soddisfatto],
-  [R-15-F-D],[L'Utente Registrato deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[Soddisfatto],
-  [R-92-F-P],[L'Utente Registrato deve poter cercare un repository in una barra di ricerca],[Non soddisfatto],
+  [R-14-F-O],[L'Utente Registrato deve poter annullare la procedura di logout dalla piattaforma],[Soddisfatto],
+  [R-15-F-O],[L'Utente Registrato deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[Soddisfatto],
+  [R-92-F-P],[L'Utente Registrato deve poter cercare un repository in una barra di ricerca],[Soddisfatto],
   [R-85-F-P],[L'Utente Registrato deve poter visualizzare un repository sulla piattaforma esterna GitHub],[Soddisfatto],
 
   // DEV
@@ -646,8 +637,8 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
   [R-46-F-D],[Il Developer deve poter annullare l'accettazione di una proposta di remediation],[Non soddisfatto],
   [R-47-F-D],[Il Developer deve ricevere un messaggio di errore nel caso di fallimento dell'accettazione della remediation],[Non soddisfatto],
   [R-48-F-D],[Il Developer deve essere informato se la remediation proposta non è più coerente con lo stato del sistema, e quindi non può essere effettuata],[Non soddisfatto],
-  [R-49-F-P],[Il Developer deve poter eliminare un repository dal sistema],[Non soddisfatto],
-  [R-50-F-P],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[Non soddisfatto],
+  [R-49-F-O],[Il Developer deve poter eliminare un repository dal sistema],[Soddisfatto],
+  [R-50-F-O],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[Soddisfatto],
   [R-51-F-D],[Il Developer deve poter visualizzare la lista dei procedimenti in corso all'interno del sistema],[Non soddisfatto],
   [R-52-F-D],[Il Developer deve visualizzare il nome del repository sul quale sta avvenendo il procedimento],[Non soddisfatto],
   [R-53-F-D],[Il Developer deve visualizzare la data di avvio di ogni elemento dalla lista dei procedimenti in corso in corso.],[Non soddisfatto],
@@ -665,7 +656,7 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
   [R-65-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare il grafico dell'analisi OWASP],[Non soddisfatto],
   [R-66-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare le proposte di remediation elaborate in seguito all'analisi],[Non soddisfatto],
   [R-67-F-D],[Il Developer, nel contesto della visualizzazione di un'analisi passata, deve poter visualizzare la proposta di remediation specifica inerente ad un singolo file],[Non soddisfatto],
-  [R-69-F-O],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository],[Soddisfatto],
+  [R-69-F-D],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository],[Soddisfatto],
   [R-70-F-D],[Il Developer deve poter visualizzare la data di fine di un'analisi nella lista delle analisi passate relative ad un repository],[Non soddisfatto],
   [R-71-F-D],[Il Developer deve poter visualizzare la lo stato di un'analisi nella lista delle analisi passate relative ad un repository],[Non soddisfatto],
   [R-72-F-O],[Il Developer deve poter avviare un'analisi generale all'interno del repository],[Soddisfatto],
@@ -673,7 +664,7 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
   [R-74-F-D],[Il Developer deve poter avviare un'analisi sulla documentazione all'interno del repository],[Non soddisfatto],
   [R-75-F-D],[Il Developer deve poter avviare un'analisi OWASP all'interno del repository],[Non soddisfatto],
   [R-76-F-D],[Il Developer deve ricevere un messaggio di errore nel caso si verificasse un conflitto con un'altra analisi all'avvio di un'analisi],[Non soddisfatto],
-  [R-77-F-D],[Il Developer deve poter annullare l'avvio di un'analisi],[Non soddisfatto],
+  [R-77-F-O],[Il Developer deve poter annullare l'avvio di un'analisi],[Soddisfatto],
 
   // PM 
   [R-79-Q-D],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[Non soddisfatto],
@@ -738,8 +729,218 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
   [R-137-F-P],[Il Business Owner deve poter visualizzare le tecnologie che uno sviluppatore può utilizzare],[Non soddisfatto],
   [R-138-F-P],[Il Business Owner deve poter visualizzare i ruoli che uno sviluppatore può assumere],[Non soddisfatto],
 )
+#pagebreak()
 == Grafici di stato dei requisiti
 === Requisiti funzionali
+Sono stati individuati 142 requisiti funzionali. Di questi sono stati soddisfatti 35.
+
+#figure(
+  caption: [Requisiti funzionali soddisfatti],
+)[
+  #let data = (
+    ([*Non soddisfatti*], 107),
+    ([*Soddisfatti*], 35)
+  )
+  #let colors = (rgb("#a814e1"), rgb("#9b66ff"))
+  #align(center)[#cetz.canvas({
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (
+        content: (value, label) => [#text(fill: white, label)],
+        radius: 110%
+      ),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]
+] <fig:tortaReq>
+
+#figure(
+  caption: [Requisiti funzionali soddisfatti \ Utente generico],
+)[
+  #let data = (
+    ([*Non soddisfatti*], 13),
+    ([*Soddisfatti*], 26)
+  )
+  #let colors = (rgb("#a814e1"), rgb("#9b66ff"))
+  #align(center)[#cetz.canvas({
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (
+        content: (value, label) => [#text(fill: white, label)],
+        radius: 110%
+      ),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]
+] <fig:tortaUtente>
+
+#figure(
+  caption: [Requisiti funzionali soddisfatti \ Developer],
+)[
+  #let data = (
+    ([*Non soddisfatti*], 35),
+    ([*Soddisfatti*], 9)
+  )
+  #let colors = (rgb("#a814e1"), rgb("#9b66ff"))
+  #align(center)[#cetz.canvas({
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (
+        content: (value, label) => [#text(fill: white, label)],
+        radius: 110%
+      ),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]
+] <fig:tortaDev>
+
+#figure(
+  caption: [Requisiti funzionali soddisfatti \ Project Manager],
+)[
+  #let data = (
+    ([*Non soddisfatti*], 35),
+    ([*Soddisfatti*], 0)
+  )
+  #let colors = (rgb("#a814e1"), rgb("#9b66ff"))
+  #align(center)[#cetz.canvas({
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (
+        content: (value, label) => [#text(fill: white, label)],
+        radius: 110%
+      ),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]
+] <fig:tortaPM>
+
+#figure(
+  caption: [Requisiti funzionali soddisfatti \ Business Owner],
+)[
+  #let data = (
+    ([*Non soddisfatti*], 24),
+    ([*Soddisfatti*], 0)
+  )
+  #let colors = (rgb("#a814e1"), rgb("#9b66ff"))
+  #align(center)[#cetz.canvas({
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (
+        content: (value, label) => [#text(fill: white, label)],
+        radius: 110%
+      ),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]
+] <fig:tortaBO>
+#pagebreak()
 === Requisiti funzionali obbligatori
+Tutti i requisiti obbligatori sono stati soddisfatti.
+#figure(
+  caption: [Requisiti funzionali obbligatori soddisfatti],
+)[
+  #let data = (
+    ([*Non soddisfatti*], 0),
+    ([*Soddisfatti*], 29)
+  )
+  #let colors = (rgb("#a814e1"), rgb("#9b66ff"))
+  #align(center)[#cetz.canvas({
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (
+        content: (value, label) => [#text(fill: white, label)],
+        radius: 110%
+      ),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]
+] <fig:tortaReqObbl>
 === Requisiti funzionali desiderabili
+Sono stati soddisfatti quattro requisiti desiderabili su novanta.
+#figure(
+  caption: [Requisiti funzionali desiderabili soddisfatti],
+)[
+  #let data = (
+    ([*Non soddisfatti*], 86),
+    ([*Soddisfatti*], 4)
+  )
+  #let colors = (rgb("#a814e1"), rgb("#9b66ff"))
+  #align(center)[#cetz.canvas({
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (
+        content: (value, label) => [#text(fill: white, label)],
+        radius: 110%
+      ),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]
+] <fig:tortaReqDes>
 === Requisiti funzionali opzionali
+Sono stati soddifatti due requisiti opzionali su ventisette.
+#figure(
+  caption: [Requisiti funzionali opzionali soddisfatti],
+)[
+#let data = (
+    ([*Non soddisfatti*], 25),
+    ([*Soddisfatti*], 2)
+  )
+  #let colors = (rgb("#a814e1"), rgb("#9b66ff"))
+  #align(center)[#cetz.canvas({
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (
+        content: (value, label) => [#text(fill: white, label)],
+        radius: 110%
+      ),
+      outer-label: (content: "%", radius: 120%),
+    )
+})]] <fig:tortaReqOpz>
