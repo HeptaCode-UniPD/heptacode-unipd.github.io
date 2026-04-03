@@ -388,6 +388,7 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 ==== Classi MS1 - Business Layer
 ==== Classi MS1 - Data Layer
 
+#pagebreak()
 === Analisi dei Repository - MS2
 
 //#figure( [#image("../../asset/diagr-architett/UML/ActiveAnalysisService")] , caption: [Diagramma struttura AWS - MS2])
