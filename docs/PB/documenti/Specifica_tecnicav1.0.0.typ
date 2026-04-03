@@ -390,8 +390,10 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 Il sistema adotta il pattern Dependency Injection tramite il container IoC di NestJS. Le dipendenze tra i layer sono mediate da interfacce, garantendo disaccoppiamento e sostituibilità delle implementazioni concrete.
 
 - *Adapter*
-Il pattern Adapter è utilizzato per isolare il microservizio di Autenticazione e Repository Management (MS3) e Analysis Management (MS1) dalle specificità dell'API di GitHub. Un componente Adapter si occupa di tradurre le richieste interne del sistema in chiamate API conformi a GitHub, e viceversa, permettendo al resto dell'applicazione di interagire con GitHub senza dipendere direttamente dalla sua implementazione.
+Adapter Il pattern Adapter è utilizzato per isolare i microservizi dalle specificità delle librerie esterne e dei servizi cloud.
 
+- In MS3 (Authenticatione & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
+- In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
 = Progettazione
 == Progettazione backend
 === Analysis Management - MS1
