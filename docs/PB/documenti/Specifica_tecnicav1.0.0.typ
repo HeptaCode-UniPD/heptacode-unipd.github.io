@@ -384,14 +384,13 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 // USATI IN MS1
 
 // USATI IN MS2
-- *Facade*
-L'Analysis Service agisce come una 'facciata' per il Management Service. Nasconde la complessità della comunicazione con i modelli di AI di Amazon Bedrock e la gestione dello stato delle Step Functions, esponendo un'interfaccia semplificata per richiedere report di analisi e riceverne il risultato finale.
 
 // USATI IN MS3
 - *Dependency Injection*
 Il sistema adotta il pattern Dependency Injection tramite il container IoC di NestJS. Le dipendenze tra i layer sono mediate da interfacce, garantendo disaccoppiamento e sostituibilità delle implementazioni concrete.
 
 - *Adapter*
+Il pattern Adapter è utilizzato per isolare il microservizio di Autenticazione e Repository Management (MS3) e Analysis Management (MS1) dalle specificità dell'API di GitHub. Un componente Adapter si occupa di tradurre le richieste interne del sistema in chiamate API conformi a GitHub, e viceversa, permettendo al resto dell'applicazione di interagire con GitHub senza dipendere direttamente dalla sua implementazione.
 
 = Progettazione
 == Progettazione backend
