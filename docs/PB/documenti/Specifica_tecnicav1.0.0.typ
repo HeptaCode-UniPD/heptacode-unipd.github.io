@@ -320,7 +320,7 @@ _Dati gerarchici e annidati_: — I documenti JSON di MongoDB si prestano natura
 === AWS
 AWS è il provider cloud adottato per l'intera infrastruttura della piattaforma. La scelta è motivata dalla maturità del catalogo di servizi, dall'integrazione nativa tra essi e dalla diffusione enterprise che ne garantisce un ecosistema di riferimento consolidato. In un'architettura ad agenti dove runtime serverless, orchestratori a stati, modelli LLM e storage devono comunicare in modo affidabile, operare in un unico ecosistema riduce la complessità operativa: autenticazione IAM, rete VPC e osservabilità CloudWatch sono trasversali a tutti i servizi senza integrazioni esterne.
 ==== AWS Bedrock
-Bedrock fornisce accesso a modelli fondazionali — tra cui Amazon Nova Pro, utilizzato in questa piattaforma — tramite un'unica API gestita, senza infrastruttura di inferenza da amministrare. Ogni agente è configurato come Bedrock Agent con un proprio system prompt e invocato dalle Lambda tramite l'SDK BedrockAgentRuntimeClient. Il modello LLM sottostante è disaccoppiato dal codice: aggiornare versione o provider richiede solo una modifica all'alias Bedrock, senza toccare le Lambda.
+Bedrock fornisce accesso a modelli fondazionali — tra cui Anthropic Claude, utilizzato in questa piattaforma — tramite un'unica API gestita, senza infrastruttura di inferenza da amministrare. Ogni agente è configurato come Bedrock Agent con un proprio system prompt e invocato dalle Lambda tramite l'SDK BedrockAgentRuntimeClient. Il modello LLM sottostante è disaccoppiato dal codice: aggiornare versione o provider richiede solo una modifica all'alias Bedrock, senza toccare le Lambda.
 ==== AWS Lambda
 Lambda è il runtime di tutta la logica agentica: pull del repository, planning, esecuzione degli agenti (OWASP, Test, Docs), aggregazione, polishing e notifica webhook sono ciascuno una funzione Lambda distinta. Il modello serverless è adatto a questo workload perché i task sono asincroni, di durata variabile e attivati su eventi: non esiste un server idle da mantenere e il costo è strettamente proporzionale all'elaborazione effettiva.
 ==== AWS Step Functions
@@ -378,8 +378,8 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 
 - *Adapter* \ Adapter Il pattern Adapter è utilizzato per isolare i microservizi dalle specificità delle librerie esterne e dei servizi cloud.
 
-  - In MS3 (Authenticatione & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
-  - In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
+- In MS3 (Authentication & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
+- In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
 = Progettazione
 == Progettazione backend
 === Analysis Management - MS1
@@ -389,8 +389,97 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 ==== Classi MS1 - Data Layer
 
 === Analisi dei Repository - MS2
-// #figure( [#image("../../asset/diagr-architett/UML/ActiveAnalysisService")] , caption: [Diagramma struttura AWS - MS2])
 
+//#figure( [#image("../../asset/diagr-architett/UML/ActiveAnalysisService")] , caption: [Diagramma struttura AWS - MS2])
+
+L'architettura del microservizio di analisi (MS2) è progettata per gestire processi a lunga esecuzione in modo asincrono, separando la ricezione della richiesta dal workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura serverless su AWS, utilizzando Step Functions per il controllo del workflow, AWS Bedrock per l'analisi tramite LLM e S3 per la persistenza dei dati e dei report intermedi.
+
+==== Classi MS2 - Presentation Layer
+
+*AppController* \
+Punto di ingresso HTTP (NestJS) per l'avvio delle pipeline di analisi. Riceve le richieste dal frontend o da MS1. \
+_Attributi privati:_
+  - #text(font: "Courier New")[appService: AppService] — istanza iniettata del service per l'analisi.
+
+_Metodi pubblici:_
+  - #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] — riceve l'URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente il messaggio di successo, un jobId e l'executionArn per il tracciamento.
+
+*AppService* \
+Service di backend che coordina l'innesco dell'infrastruttura asincrona AWS. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] — coordina l'avvio della pipeline inoltrando il payload all'adapter Step Functions tramite startStepFunctionExecution().
+
+*LambdaHandler* \
+Modulo di avvio Serverless (Lambda Adapter) che traduce gli eventi di API Gateway nel formato di routing interno. \
+_Attributi privati:_
+  - #text(font: "Courier New")[cachedServer: any] — variabile globale per il riutilizzo dell'istanza Express tra le invocazioni (Warm Start).
+
+_Metodi pubblici:_
+  - #text(font: "Courier New")[startAnalysis(event: any, context: any, callback: any)] — inizializza l'applicazione NestJS utilizzando \@vendia/serverless-express, applica la validazione globale (ValidationPipe) e inoltra l'evento di AWS Lambda all'istanza Express configurata per l'elaborazione.
+
+==== Classi MS2 - Business Layer
+
+===== Orchestrazione e Workflow
+
+*OrchestratorLambda* \
+Componente centrale che gestisce il ciclo di vita dell'analisi in Step Functions, suddividendo il processo in fasi decisionali e di consolidamento. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[orchestratorHandler(event: any)] — punto di ingresso Lambda che esegue le azioni principali in base al parametro action. Se action è PLAN valuta i metadati per generare il piano di esecuzione; se è AGGREGATE preleva i report da S3, aggrega i risultati per area e invoca il Master Lead Agent per il polishing finale.
+
+===== Agenti di Analisi Tematica
+
+*OwaspAgentLambda* \
+Funzione Lambda specializzata nell'esecuzione dell'analisi di sicurezza (OWASP) del codice sorgente. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[owaspAgentHandler(event: unknown)] — scarica il file ZIP da S3 tramite unzipRepoToTemp(), utilizza SmartBundler per creare i bundle, coordina i sotto-agenti Bedrock (Dependency, Credentials, Core) e salva il report JSON finale sul bucket S3.
+
+*TestAgentLambda* \
+Funzione Lambda specializzata nell'esecuzione dell'analisi di qualità e testing del codice sorgente. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[testAgentHandler(event: unknown)] — estrae e impacchetta il codice sorgente, invoca in parallelo i sub-agenti Bedrock (QA, Boilerplate, Code Quality), consolida la sintesi e salva il report JSON su S3.
+
+*DocsAgentLambda* \
+Funzione Lambda specializzata nell'analisi della documentazione tecnica e degli standard legali/normativi del repository. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[docAgentHandler(event: unknown)] — estrae i sorgenti, delega a sub-agenti (Tech Reviewer, Compliance Officer) la revisione documentale e salva il report aggregato su S3.
+
+===== Strumenti e Utility
+
+*AgentInvoker* \
+Modulo responsabile della comunicazione resiliente con l'infrastruttura AWS Bedrock Agents. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] — gestisce l'invocazione dell'AI. Implementa il Tool-use denial per forzare l'output testuale e include logiche di retry esponenziale per gestire il throttling.
+  - #text(font: "Courier New")[extractFirstMeaningfulLine(report: string, emojiPattern: RegExp)] — estrae la sintesi dinamica dal report Markdown per il riepilogo globale.
+
+*SmartBundler* \
+Wrapper per l'impacchettamento del codice sorgente, ottimizzato per rientrare nei limiti di contesto dei LLM tramite la libreria repomix. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[createSourceChunks(extractPath: string)] — suddivide il sorgente in porzioni sequenziali (chunk) da 150.000 caratteri rispettando i confini dei file.
+  - #text(font: "Courier New")[createFullChunks(extractPath: string)] — suddivide l'intero contenuto del repository in chunk per analisi complete (es. scansione credenziali).
+  - #text(font: "Courier New")[extractImportedLibraries(sourceChunks: string | string[])] — esegue l'analisi statica tramite espressioni regolari per identificare le dipendenze dichiarate senza l'uso di modelli AI.
+
+*PullRepoLambda* \
+Gestisce la fase di acquisizione iniziale del codice sorgente dal provider esterno. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[handler(event: any)] — clona il repository Git in una cartella temporanea, esegue il checkout sul commit specificato, estrae i metadati (tag, branch, changelog), comprime l'archivio in un file ZIP e lo carica su S3 per le fasi successive.
+
+*WebhookSenderLambda* \
+Gestisce la notifica di completamento della pipeline. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[handler(event: any)] — invia all'URL di destinazione configurato il report Markdown consolidato con una richiesta HTTP POST protetta da API Key.
+
+*FailureHandlerLambda* \
+Gestisce le notifiche in caso di fallimento della pipeline asincrona. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[handler(event: any)] — intercetta errori o crash non gestiti da AWS Step Functions e trasmette la tipologia dell'errore (errorType, cause) al sistema chiamante.
+
+==== Classi MS2 - Data Layer
+
+*DecompressioneZipTool* \
+Modulo di utilità per l'interazione con AWS S3 in fase di lettura. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo.
+#pagebreak()
 === Autenticazione e Repository Management - MS3
 Il diagramma è stato suddiviso in due figure per una questione di visibilità documentale. Il primo diagramma mostra le classi relative all'autenticazione, mentre il secondo mostra le classi relative alla gestione delle repository. 
 L'interfaccia _IngestionInterface_ e la classe _IngestionController_ sono presenti in entrambi i diagrammi perché espongono funzionalità sia per l'autenticazione che per la gestione delle repository, fungendo da punto di ingresso unificato per le richieste HTTP relative a entrambe le aree funzionali.
