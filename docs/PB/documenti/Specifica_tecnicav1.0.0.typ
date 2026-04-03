@@ -254,6 +254,57 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   [prettier],[v3.x],[Formattazione automatica del codice.],
 )
 
+#figure(
+  caption: [Dipendenze backend, integrazione cloud AWS],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-aws>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [\@aws-sdk/client-s3],[v3.1017.0],[Client per l'interazione con AWS S3. Utilizzato per il salvataggio dei repository scaricati e dei report generati.],
+  [\@aws-sdk/client-bedrock-agent-runtime],[v3.1019.0],[Integrazione con Amazon Bedrock per l'esecuzione di analisi tramite Large Language Models (LLM).],
+  [\@aws-sdk/client-sfn],[v3.1017.0],[Gestione delle AWS Step Functions per il coordinamento dei workflow di analisi asincroni.]
+)
+#figure(
+  caption: [Dipendenze backend, documentazione],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-docs>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [\@nestjs/swagger],[v11.2.6],[Modulo per la generazione automatica della documentazione OpenAPI tramite decorator.],
+  [swagger-ui-express],[v5.0.1],[Fornisce l'interfaccia grafica interattiva per esplorare e testare gli endpoint della specifica OpenAPI.]
+)
+#figure(
+  caption: [Dipendenze backend, utility di analisi],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-analysis>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [repomix],[v1.13.1],[Strumento utilizzato per impacchettare l'intero repository in un formato ottimizzato per il contesto degli LLM.],
+  [adm-zip],[v0.5.16],[Libreria per la manipolazione di file ZIP (estrazione dei repository scaricati da sorgenti esterne).],
+  [rxjs],[v7.8.1],[Libreria per la programmazione reattiva tramite Observables, cuore pulsante della gestione degli eventi in NestJS.]
+)
+#figure(
+  caption: [Dipendenze backend, infrastruttura serverless],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-serverless>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [\@vendia/serverless-express],[v4.12.6],[Adattatore per far girare l'applicazione NestJS/Express all'interno di funzioni AWS Lambda.],
+  [serverless],[v4.33.0],[Framework per il deployment e la gestione dell'infrastruttura Cloud come codice (IaC).]
+)
+
 == Runtime enviroment
 === NodeJS v24
 Node.js è l'ambiente di runtime scelto per eseguire il codice server-side. Node.js è il runtime che consente l'esecuzione di TypeScript lato server, al di fuori del browser. Le motivazioni che hanno portato il gruppo a questa scelta progettuale sono state:
