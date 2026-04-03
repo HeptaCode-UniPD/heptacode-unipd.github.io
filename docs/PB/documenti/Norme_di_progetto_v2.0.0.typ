@@ -810,13 +810,13 @@ $ "TCR" = "Numero task programmati completati" / ("Numero totale di task program
 $ "Time Efficiency" = "Ore dedicate ad attività produttive" / ("Ore totali dedicate al progetto") $
 - *Valore accettabile*: $>=30%$
 - *Valore ottimale*: $>=80%$
-- *Descrizione*: L'indicatore Time Efficiency rappresenta la percentuale di tempo utilizzato per svolgere attività produttive, e quindi in cui è stato prodotto valore, rispetto alle ore totali dedicate al progetto. Tale valore è utile per capire il grado di ottimizzazione del lavoro svolto.
+- *Descrizione*: L'indicatore Time Efficiency rappresenta la percentuale di tempo utilizzato per svolgere attività produttive, quindi in cui è stato prodotto valore, rispetto alle ore totali dedicate al progetto. Tale valore è utile per capire il grado di ottimizzazione del lavoro svolto.
 ==== MPC07 - Percentuale di metriche soddisfatte
 - *Formula*:
 $ "Percentuale di metriche soddisfatte" = ("Numero metriche soddisfatte") / ("Numero metriche totali")  $
 - *Valore accettabile*: $>=60%$
 - *Valore ottimale*: $100%$
-- *Descrizione*:  La percentuale di metriche soddisfatte indica il numero di metriche il cui valore è nel range accettabile rispetto al numero di metriche totali
+- *Descrizione*:  La percentuale di metriche soddisfatte indica il numero di metriche il cui valore è nel range accettabile rispetto al numero di metriche totali, utile per valutare quanto il team stia perseguendo la qualità del progetto.
 
 ==== MPC08 - Rischi non previsti
 - *Formula*:
