@@ -4,9 +4,14 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-
-  ("1.2.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione RTB"),
-  ("1.1.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione PB"),
+  ("2.0.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Approvazione finale, rilascio ufficiale v2.0.0"),
+  ("1.7.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Aggiunti resocnonto PB e Consuntivo finale"),
+  ("1.6.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Aggiunto trascorso Sprint 15"),
+  ("1.5.0", "2026/03/24", "Angela Canazza", "Riccardo Baldin", "Trascorso Sprint 14"),
+  ("1.4.0", "2026/03/17", "Laura Venturini", "Angela Canazza", "Trascorso Sprint 13"),
+  ("1.3.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione RTB"),
+  ("1.2.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione PB"),
+  ("1.1.0", "2026/03/12", "Amerigo Vegliante", "Angela Favaro", "Trascorso Sprint 12"),
   ("1.0.0", "2026/03/05", "Amerigo Vegliante", "Angela Favaro", "Aggiunti preventivi per Sprint da 12 a 15"),
   ("0.20.0", "2026/03/03", "Amerigo Vegliante", "Angela Favaro", "Aggiunta del resoconto trascorso RTB"),
   ("0.19.0", "2026/03/02", "Angela Favaro", "Alberto Reginato", "Modifica del documento su organizzazione Sprint"),
