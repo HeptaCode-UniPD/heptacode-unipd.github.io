@@ -4,7 +4,7 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("0.6.0", "2026/04/02", "Alberto Reginato", "",  "Aggiunte specifiche MS2"),
+  ("0.6.0", "2026/04/03", "Alberto Reginato", "Angela Favaro",  "Aggiunte specifiche MS2"),
   ("0.5.0", "2026/03/02", "Amerigo Vegliante", "",  "Aggiunte specifiche MS1"),
   ("0.4.0", "2026/04/01", "Angela Favaro", "",  "Aggiunte specifiche MS3"),
   ("0.3.0", "2026/04/01", "Angela Canazza", "",  "Aggiunte specifiche frontend"),
