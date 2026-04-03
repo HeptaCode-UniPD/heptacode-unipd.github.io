@@ -8,8 +8,8 @@
 
   ("0.6.0", "2026/04/03", "Alberto Reginato", "Riccardo Baldin",  "Aggiunte specifiche MS2"),
   ("0.5.0", "2026/03/02", "Amerigo Vegliante", "",  "Aggiunte specifiche MS1"),
-  ("0.4.0", "2026/04/01", "Angela Favaro", "",  "Aggiunte specifiche MS3"),
-  ("0.3.0", "2026/04/01", "Angela Canazza", "",  "Aggiunte specifiche frontend"),
+  ("0.4.0", "2026/04/01", "Angela Favaro", "Nicola Simionato",  "Aggiunte specifiche MS3"),
+  ("0.3.0", "2026/04/01", "Angela Canazza", "",  "Aggiunte specifiche MS0"),
   ("0.2.0", "2026/03/08", "Angela Favaro", "Angela Canazza",  "Aggiunto capitolo 1"),
   ("0.1.0", "2026/03/07", "Angela Favaro", "Laura Ventrini",  "Creazione documento, impostazione macro-aree")
 )
