@@ -402,12 +402,12 @@ _Attributi privati:_
   - #text(font: "Courier New")[appService: AppService] — istanza iniettata del service per l'analisi.
 
 _Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] — riceve l'URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente il messaggio di successo, un jobId e l'executionArn per il tracciamento.
+  - #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] — riceve l'URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente il messaggio di successo, un jobId e l’executionArn per il tracciamento.
 
 *AppService* \
 Service di backend che coordina l'innesco dell'infrastruttura asincrona AWS. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] — coordina l'avvio della pipeline inoltrando il payload all'adapter Step Functions tramite startStepFunctionExecution().
+  - #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] — coordina l'avvio della pipeline inoltrando il payload all’adapter Step Functions tramite startStepFunctionExecution().
 
 *LambdaHandler* \
 Modulo di avvio Serverless (Lambda Adapter) che traduce gli eventi di API Gateway nel formato di routing interno. \
