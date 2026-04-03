@@ -800,20 +800,31 @@ $ "CPI" = "EV" / "AC" $
 - *Descrizione*:L'indice di Cost Performance misura la resa del budget attraverso il rapporto tra: il valore del lavoro completato e il costo realmente sostenuto.
 
 ==== MPC05 - Task Completion Rate (TCR)
-
+- *Formula*:
+$ "TCR" = "Numero task programmati completati" / ("Numero totale di task programmati") $
+- *Valore accettabile*: $>=75%$
+- *Valore ottimale*: $100%$
+- *Descrizione*: L'indicatore Task Completion Rate mostra la percentuale di task completati entro la fine di uno sprint rispetto a quelli che si era previsto di completare durante lo sprint planning, in modo da capire la precisione delle previsioni e da poterle raffinare negli sprint successivi.
 ==== MPC06 - Time Efficency
-- *Formula* 
+- *Formula*:
 $ "Time Efficiency" = "Ore dedicate ad attività produttive" / ("Ore totali dedicate al progetto") $
-- *Valore accettabile*:// $>=0€$
-- *Valore ottimale*: // $<="BAC"$
+- *Valore accettabile*: $>=30%$
+- *Valore ottimale*: $>=80%$
 - *Descrizione*: L'indicatore Time Efficiency rappresenta la percentuale di tempo utilizzato per svolgere attività produttive, e quindi in cui è stato prodotto valore, rispetto alle ore totali dedicate al progetto. Tale valore è utile per capire il grado di ottimizzazione del lavoro svolto.
 ==== MPC07 - Percentuale di metriche soddisfatte
 - *Formula*:
-$ "Correttezza ortografica" = "numero di errori ortografici" $
-- *Valore accettabile*: $0$
+$ "Percentuale di metriche soddisfatte" = ("Numero metriche soddisfatte") / ("Numero metriche totali")  $
+- *Valore accettabile*: $>=60%$
+- *Valore ottimale*: $100%$
+- *Descrizione*:  La percentuale di metriche soddisfatte indica il numero di metriche il cui valore è nel range accettabile rispetto al numero di metriche totali
+
+==== MPC08 - Rischi non previsti
+- *Formula*:
+$ " Rischi non previsti" = "Numero di rischi non previsti che si sono verificati durante lo sprint " $
+- *Valore accettabile*: $<=2$
 - *Valore ottimale*: $0$
-- *Descrizione*:  La correttezza ortografica è un indicatore della qualità della documentazione. Tutti i documenti ufficiali devono essere privi di errori ortografici.
-==== MPC08 - Numero rischi non previsti
+- *Descrizione*: Indicatore che misura il numero di rischi non previsti che si sono verificati durante lo sprint, è utile per misurare il grado di incertezza e la stabilità dell'ambiente di progetto.
+
 === Fornitura
 
 ==== MPC09 - Planned Value (PV)
