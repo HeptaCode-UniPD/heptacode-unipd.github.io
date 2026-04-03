@@ -374,7 +374,7 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 
 *Microservizio di Analysis Management - MS1*  #pad(left: 0.5cm)[Ha il compito di verificare se, per un dato repository, sia già presente in memoria un'analisi relativa all'ultimo commit disponibile. Qualora l'analisi risulti assente o non aggiornata, il microservizio provvede ad inoltrare la richiesta di analisi al microservizio competente, evitando elaborazioni ridondanti e ottimizzando l'utilizzo delle risorse computazionali.]
 
-*Microservizio di Analisi dei Repository - MS2* #pad(left: 0.5cm)[Si occupa dell'analisi del codice sorgente delle repository mediante l'impiego di agenti software. Ricevuta una richiesta, il microservizio avvia il processo di analisi, delegando l'esecuzione a uno o più agenti specializzati e restituendo i risultati al chiamante.]
+*Microservizio di Analisi dei Repository - MS2* #pad(left: 0.5cm)[Si occupa dell'analisi del codice sorgente delle repository mediante l'impiego di agenti software. Ricevuta una richiesta, il microservizio avvia il processo di analisi, delegando l'esecuzione a due o tre agenti specializzati e restituendo i risultati al chiamante.]
 
 *Microservizio di Autenticazione e Repository Management - MS3*:
 #figure( [#image("../../asset/Diagr-architett/architett_authrepo.png")] , caption: [Layered architecture - MS3])
@@ -384,6 +384,8 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 // USATI IN MS1
 
 // USATI IN MS2
+- *Facade*
+L'Analysis Service agisce come una 'facciata' per il Management Service. Nasconde la complessità della comunicazione con i modelli di AI di Amazon Bedrock e la gestione dello stato delle Step Functions, esponendo un'interfaccia semplificata per richiedere report di analisi e riceverne il risultato finale.
 
 // USATI IN MS3
 - *Dependency Injection*
