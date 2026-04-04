@@ -170,10 +170,11 @@ details section{
     column-count: 2;
 }
 
-#lettera{
+.sezione{
     background-color: var(--bgsection);
     border-radius: 2em 2em 2em 2em;
     padding: 0.5em;
+    margin-bottom: 1em;
 }
 
 details article:first-of-type{
@@ -192,7 +193,7 @@ article ul{
     margin:0.5em 3em;
 }
 
-article label{
+article h3{
     margin:0em 1.5em;
     font-size: 1.2em;
     font-weight: bold;

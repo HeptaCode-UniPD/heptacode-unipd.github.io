@@ -4,6 +4,7 @@
 
 #let storia_modifiche = (
   // AGGIUNGI QUI SOPRA LA NUOVA RIGA QUANDO SERVE, LA VERSIIONE DEL DOC VIENE AGGIORNATA AUTOMATICAMENTE
+  ("3.0.0","2026-04-02","Angela Favaro","Laura Venturini","Approvazione finale, rilascio ufficiale v.3.0.0"),
   ("2.3.0","2026-03-12","Angela Canazza","Angela Favaro","Aggiunta use case a seguito di progettazione frontend"),
   ("2.2.0","2026-03-02","Angela Canazza","Angela Favaro","Rimodellazione requisiti"),
   ("2.1.0","2026-03-02","Angela Canazza","Angela Favaro","Correzioni UML, secondo quanto segnalato"),
@@ -73,7 +74,7 @@ _Code Guardian_ mira quindi ad automatizzare e ottimizzare i processi di audit e
 
 La stesura del presente documento fa uso di una terminologia specifica, legata sia al dominio applicativo del progetto "_Code Guardian_" che agli standard dell'Ingegneria del Software. Per facilitare la lettura e assicurare che ogni concetto sia compreso in modo uniforme da tutti i destinatari (team di sviluppo, committente e proponente), è stato redatto un documento di supporto dedicato.
 
-Si faccia pertanto riferimento al #link("https://heptacode-unipd.github.io/docs/RTB/glossario.pdf")[_Glossario v2.0.0_] per l'esplicitazione di:
+Si faccia pertanto riferimento al #link("https://heptacode-unipd.github.io/docs/PB/glossario.pdf")[_Glossario v3.0.0_] per l'esplicitazione di:
 - *Acronimi e sigle* utilizzati per brevità nel testo;
 - *Termini tecnici* che potrebbero prestarsi a molteplici interpretazioni;
 - *Definizioni di dominio* specifiche per il contesto di audit e qualità del software.
@@ -85,7 +86,7 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
 
 === Riferimenti Normativi
 - _Code Guardian_: Piattaforma ad agenti per l’audit e la remediation dei repository software (#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2p.pdf")[Capitolato])
-- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/RTB/documenti/norme_di_progetto.pdf")[Norme di progetto v1.0.0]).
+- _Norme di progetto_: Regole, standard e procedure del gruppo _Hepta Code_ (#link("https://heptacode-unipd.github.io/docs/PB/documenti/Norme_di_progetto_v2.0.0.pdf")[Norme di progetto v2.0.0]).
 
 === Riferimenti Informativi
 - Verbale Interno: 
@@ -105,13 +106,13 @@ Il sistema _Code Guardian_ è concepito per automatizzare il controllo di qualit
 
 === Audit Automatico del Codice
 Il sistema esegue un'analisi approfondita del codice sorgente ogni volta che viene rilevata una modifica nel _repository_ (evento di `PUSH`).
-- *analisi Statica*: Rilevamento automatico di _code smell_, bug potenziali e violazioni delle convenzioni di stile.
+- *Analisi Statica*: Rilevamento automatico di _code smell_, bug potenziali e violazioni delle convenzioni di stile.
 - *Verifica dei test*: Controllo della copertura dei test (_code coverage_) per garantire che le nuove funzionalità siano adeguatamente verificate.
 
 === Scansione di Sicurezza e Vulnerabilità
 Per garantire la robustezza del software, il sistema integra strumenti di controllo specifici per la _security_:
 - *Rilevamento Credenziali*: Identificazione di chiavi API, password o token involontariamente committati nel codice (_secret scanning_).
-- *analisi delle Dipendenze*: Verifica delle librerie di terze parti per individuare versioni obsolete o affette da vulnerabilità note.
+- *Analisi delle Dipendenze*: Verifica delle librerie di terze parti per individuare versioni obsolete o affette da vulnerabilità note.
 - *Compliance OWASP*: Controllo della conformità agli standard di sicurezza web (es. _OWASP Top 10_).
 
 === Validazione della documentazione
@@ -192,7 +193,7 @@ L’interfaccia utente, punto di accesso principale per _Developer_ e _Project M
 
 Per quanto riguarda la persistenza dei dati, la scelta è ricaduta su *MongoDB*. La natura _schema-less_ di questo database documentale garantisce la flessibilità necessaria per memorizzare report di analisi dalla struttura eterogenea.
 
-Infine l’infrastruttura operativa si avvarrà di *Docker* per la containerizzazione di tutti i servizi (Frontend, Backend, Database), garantendo ambienti di sviluppo e produzione identici e facilmente riproducibili, e sarà fortemente integrata con l'ecosistema *GitHub*: le *GitHub Actions* gestiranno i flussi di _CI/CD_ e l'innesco degli agenti. L'architettura _cloud_ sottostante sarà ospitata sui servizi *AWS* (_Amazon Web Services_), garantendo la disponibilità e le risorse computazionali necessarie per l'esecuzione parallela degli agenti.
+Infine l’infrastruttura operativa si avvarrà di *Docker* per la containerizzazione di tutti i servizi (Frontend, Backend, Database), garantendo ambienti di sviluppo e produzione identici e facilmente riproducibili, e sarà fortemente integrata con l'ecosistema *GitHub*: le *GitHub Actions* gestiranno i flussi di _CI/CD_. L'architettura _cloud_ sottostante sarà ospitata sui servizi *AWS* (_Amazon Web Services_), garantendo la disponibilità e le risorse computazionali necessarie per l'esecuzione parallela degli agenti.
 
 #figure(
   caption: [Descrizione delle tecnologie e relative versioni in uso.],
@@ -209,13 +210,17 @@ Infine l’infrastruttura operativa si avvarrà di *Docker* per la containerizza
       [*Tecnologia*], [*Versione Scelta*], [*Destinazione d'Uso*]
     ),
 
-    [*Node.js*],[v24.x (LTS)],[Ambiente di runtime di base per l'esecuzione del backend.],
+    [*Node.js*],[v22.x (LTS)],[Ambiente di runtime di base per l'esecuzione del backend.],
     [*NestJS*],[v11.x],[Framework per lo sviluppo dell'architettura e delle API backend.],
     [*TypeScript*],[v5.x],[Linguaggio di programmazione tipizzato usato per Backend e Frontend.],
     [*React*],[v19.x],[Libreria per lo sviluppo della UI del frontend.],
-    [*MongoDB*],[v8.x],[Database NoSQL documentale per la persistenza dello storico analisi.],
-    [*Docker Engine*],[v29.x],[Strumento di containerizzazione dell'applicativo.],
-    [*AWS Bedrock*],[-],[Servizio Cloud per l'invocazione dei modelli AI.],
+    [*MongoDB*],[v8.x],[Database NoSQL documentale per la persistenza dei dati.],
+    [*Docker Engine*],[v27.x],[Strumento di containerizzazione dell'applicativo.],
+    [*AWS Fargate*],[-],[Servizio serverless per l'esecuzione di container senza gestione di server, usato per orchestrare i task di elaborazione.],
+    [*AWS S3*],[-],[Servizio di object storage per la persistenza di file e artefatti (es. repository clonati).],
+    [*AWS Lambda*],[-],[Servizio serverless per l'esecuzione di funzioni event-driven, usato come collante tra i servizi AWS.],
+    [*AWS Step Functions*],[-],[Servizio di orchestrazione visuale di workflow, usato per coordinare i passi del processo di analisi AI.],
+    [*AWS Bedrock*],[-],[Servizio Cloud per l'invocazione dei modelli AI generativa.],
   )
 
 === Ambiente di Esecuzione e Browser Supportati
@@ -1593,18 +1598,16 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione proposta remediation per il repository.
 
 - *Scenario principale:* \
-  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area test (*<\<include>>* #link(<UCD6.0.1>)[[UCD6.0.1]]).
-  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area OWASP. (*<\<include>>* #link(<UCD6.0.2>)[[UCD6.0.2]]).
-  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area documentazione (*<\<include>>* #link(<UCD6.0.3>)[[UCD6.0.3]]).
-  + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation (#link(<UCD6.2>)[[UCD6.2]])
-  + Il Developer visualizza un pulsante per tornare alla pagina precedente.
+  + Il Developer visualizza en elenco di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area test (*<\<include>>* #link(<UCD6.0.1>)[[UCD6.0.1]]).
+  + Il Developer visualizza un elenco di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area OWASP. (*<\<include>>* #link(<UCD6.0.2>)[[UCD6.0.2]]).
+  + Il Developer visualizza un elenco di zero o più documenti dove ha riscontrato criticità e propone remediation per l'area documentazione (*<\<include>>* #link(<UCD6.0.3>)[[UCD6.0.3]]).
 
 - *Scenari alternativi:* \
   Si verifica un errore durante il caricamento della pagina.
     - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* Il developer sta visualizzando una lista di documenti sui quali gli agenti, di ogni categoria, hanno riscontrato criticità e hanno elaborato una soluzione.
+- *Postcondizioni:* Il developer sta visualizzando un elenco dei documenti sui quali gli agenti hanno riscontrato criticità e hanno elaborato una soluzione.
 
 - *Inclusioni:*
   - #link(<UCD6.0.1>)[[UCD6.0.1]]
@@ -1622,21 +1625,20 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation relative ai test sul repository. 
 
-- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area test sulla dashboard di dettaglio del repository #link(<UCD13.1>)[[UCD13.1]]. Deve essere stata eseguita almeno un'analisi relativa ai test.
+- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'analisi sul repository. Deve essere stata eseguita almeno un'analisi relativa ai test.
 
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
 - *Scenario principale:* \
-  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sui test.
-  + Al Developer vengono proposte remediation riguardante l'area di test, per ogni documento riportato. 
-  + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sui test.
+  + Il Developer visualizza un elenco di zero o più documenti dove ha riscontrato criticità sui test.
+  + Al Developer vengono proposte remediation riguardante l'area di test, per i documenti riportati. 
 
 - *Scenari alternativi:* \ 
   Si verifica un errore durante il caricamento della pagina.
     - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* Il developer sta visualizzando una lista di documenti sui quali l'agente incaricato all'analisi dei test, ha riscontrato criticità e ha elaborato una soluzione.
+- *Postcondizioni:* Il developer sta visualizzando un elenco di documenti sui quali l'agente incaricato all'analisi dei test, ha riscontrato criticità e ha elaborato una soluzione.
 
 - *Estensioni:* 
   - #link(<UC4>)[[UC4]]
@@ -1649,21 +1651,20 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation delle OWASP sul repository. 
 
-- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area OWASP sulla dashboard di dettaglio del repository #link(<UCD13.2>)[[UCD13.2]]. Deve essere stata eseguita almeno un'analisi OWASP.
+- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'analisi sul repository. Deve essere stata eseguita almeno un'analisi OWASP.
 
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
 - *Scenario principale:* \
-  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sull'analisi OWASP.
-  + AL Developer vengono proposte delle remediation riguardante l'analisi OWASP, per ogni documento riportato. 
-  + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sull'analisi OWASP.
+  + Il Developer visualizza un elenco di zero o più documenti dove ha riscontrato criticità sull'analisi OWASP.
+  + AL Developer vengono proposte delle remediation riguardante l'analisi OWASP, per ogni documento elencato. 
 
 - *Scenari alternativi:* \
   Si verifica un errore durante il caricamento della pagina.
     - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* Il developer sta visualizzando una lista di documenti sui quali l'agente incaricato all'analisi OWASP, ha riscontrato criticità e ha elaborato una soluzione.
+- *Postcondizioni:* Il developer sta visualizzando un elenco di documenti sui quali l'agente incaricato all'analisi OWASP, ha riscontrato criticità e ha elaborato una soluzione.
 
 - *Estensioni:* 
   - #link(<UC4>)[[UC4]]
@@ -1674,21 +1675,20 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer vuole visualizzare la o le proposte di remediation relative alla documentazione sul repository. 
 
-- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'area documentazione sulla dashboard di dettaglio del repository #link(<UCD13.3>)[[UCD13.3]]. Deve essere stata eseguita almeno un'analisi sulla documentazione.
+- *Precondizioni:* Il Developer sta visualizzando la sezione relativa all'analisi sul repository. Deve essere stata eseguita almeno un'analisi sulla documentazione.
 
 - *Trigger:* Il Developer seleziona il pulsante di visualizzazione di proposta remediation.
 
 - *Scenario principale:* \
-  + Il Developer visualizza una lista di zero o più documenti dove ha riscontrato criticità sulla documentazione.
+  + Il Developer visualizza un elenco di zero o più documenti dove ha riscontrato criticità sulla documentazione.
   + Al Developer vengono proposte remediation riguardante l'area di documentazione, per ogni documento riportato. 
-  + Il Developer visualizza un pulsante per accettare tutte le proposte di remediation sulla documentazione.
 
 - *Scenari alternativi:*\
   Si verifica un errore durante il caricamento della pagina.
     - Il Developer visualizza un messaggio di errore (*<\<extend>>* #link(<UC4>)[[UC4]]).
     - Il caso d'uso termina senza successo.
 
-- *Postcondizioni:* Il developer sta visualizzando una lista di documenti sui quali l'agente incaricato all'analisi della documentazione, ha riscontrato criticità e ha elaborato una soluzione.
+- *Postcondizioni:* Il developer sta visualizzando un elenco di documenti sui quali l'agente incaricato all'analisi della documentazione, ha riscontrato criticità e ha elaborato una soluzione.
 
 - *Estensioni:* 
   - #link(<UC4>)[[UC4]]
@@ -2639,7 +2639,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer avvia un'analisi all'interno di un repository.
 
-- *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare.
+- *Precondizioni:* L'utente si trova nell'area di selezione di avvio analisi.
 
 - *Scenario principale*:
   + Il Developer visualizza la richiesta si conferma per l'avvio dell'analisi.
@@ -2668,13 +2668,13 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 #line(length: 100%, stroke: 0.5pt + gray)
 
 === UCD15.2 - Avvio analisi generale
-#figure([#image("../../asset/UC/developer/ucd15-2.png", height: 7cm)], caption: [UCD15.2 - Avvio analisi generale])
+// #figure([#image("../../asset/UC/developer/ucd15-2.png", height: 7cm)], caption: [UCD15.2 - Avvio analisi generale])
 <UCD15.2>
 - *Attore principale:* Developer.
 
 - *Descrizione:* Il Developer vuole avviare un'analisi generale del repository.
 
-- *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare ed ha eseguito la selezione.
+- *Precondizioni:* L'utente si trova nell'area di selezione di avvio analisi ed ha eseguito la selezione.
 
 - *Trigger:* Il Developer preme sul tasto di conferma per l'avvio analisi generale.
 
@@ -2698,7 +2698,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer vuole avviare un'analisi test del repository.
 
-- *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare ed ha eseguito la selezione.
+- *Precondizioni:* L'utente si trova nell'area di avvio analisi.
 
 - *Trigger:* Il Developer preme sul tasto di conferma per l'avvio analisi test.
 
@@ -2715,9 +2715,9 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer vuole avviare un'analisi documentazione del repository.
 
-- *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare ed ha eseguito la selezione.
+- *Precondizioni:* L'utente si trova nell'area di selezione di avvio analisi.
 
-- *Trigger:* Il Developer preme sul tasto di conferma per l'avvio analisi test.
+- *Trigger:* Il Developer preme sul tasto di conferma per l'avvio analisi documentazione.
 
 - *Scenario principale:*
   + Il Developer visualizza l'avvio dell'analisi sull'area documentazione.
@@ -2732,7 +2732,7 @@ La sezione espone i casi d'uso specifici, descrivendo le interazioni tra gli att
 
 - *Descrizione:* Il Developer vuole avviare un'analisi OWASP del repository.
 
-- *Precondizioni:* L'utente si trova nell'area di selezione della tipologia di analisi da avviare ed ha eseguito la selezione.
+- *Precondizioni:* L'utente si trova nell'area di selezione avvio analisi.
 
 - *Trigger:* Il Developer preme sul tasto di conferma di avvio analisi OWASP.
 
@@ -4421,23 +4421,23 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   table.header([*Codice*], [*Descrizione*], [*Fonti*]),
 
   // UTENTE SCONOSCIUTO
-  [R-1-F-D],[L'Utente Sconosciuto deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
-  [R-2-F-D],[L'Utente Sconosciuto deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
-  [R-3-F-D],[L'Utente Sconosciuto deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
-  [R-4-F-D],[L'Utente Sconosciuto deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
-  [R-5-F-D],[L'Utente Sconosciuto deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
+  [R-1-F-O],[L'Utente Sconosciuto deve poter accedere alla piattaforma],[#link(<UC1>)[UC1]],
+  [R-2-F-O],[L'Utente Sconosciuto deve poter inserire il proprio username],[#link(<UC1.0.1>)[UC1.0.1]],
+  [R-3-F-O],[L'Utente Sconosciuto deve poter inserire la propria password],[#link(<UC1.0.2>)[UC1.0.2]],
+  [R-4-F-O],[L'Utente Sconosciuto deve poter annullare l'accesso alla piattaforma],[#link(<UC1.1>)[UC1.1]],
+  [R-5-F-O],[L'Utente Sconosciuto deve visualizzare un messaggio di errore nel caso di credenziali errate],[#link(<UC1.2>)[UC1.2]],
 
   // UTENTE REGISTRATO
   [R-16-F-O],[L'Utente Registrato deve poter inserire un repository pubblico al sistema],[#link(<UC8>)[UC8]],
   [R-17-F-D],[L'Utente Registrato deve poter inserire un repository privato al sistema],[#link(<UC8.0.1>)[UC8.0.1]],
   [R-18-F-D],[L'Utente Registrato deve poter inserire il Personal Access Token collegato al proprio account],[#link(<UC8.0.1>)[UC8.0.1]],
   [R-19-F-D],[L'Utente Registrato deve ricevere un messaggio di errore in caso di token inserito non valido],[#link(<UC8.0.2>)[UC8.0.2]],
-  [R-20-F-D],[L'Utente Registrato deve poter annullare l'inserimento di un repository],[#link(<UC8.1>)[UC8.1]],
+  [R-20-F-O],[L'Utente Registrato deve poter annullare l'inserimento di un repository],[#link(<UC8.1>)[UC8.1]],
   [R-21-F-O],[L'Utente Registrato deve poter inserire l'URL del repository],[#link(<UC8.2>)[UC8.2]],
   [R-22-F-O],[L'Utente Registrato deve ricevere un messaggio di errore nel caso di URL non valido],[#link(<UC8.3>)[UC8.3]],
   [R-23-F-O],[L'Utente Registrato deve poter visualizzare la lista dei propri repository personali],[#link(<UC6>)[UC6]],
   [R-24-F-O],[L'Utente Registrato deve poter selezionare una preferenza sulla tipologia di repository che desidera visualizzare],[#link(<UC6.1>)[UC6.1]],
-  [R-25-F-O],[L'Utente Registrato deve poter visualizzare il nome di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.5>)[UC5.5]],
+  [R-25-F-O],[L'Utente Registrato deve poter visualizzare il nome di un repository],[#link(<UC5.5>)[UC5.5]],
   [R-26-F-D],[L'Utente Registrato deve poter visualizzare il nome del progetto associato al repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.6>)[UC5.6]],
   [R-27-F-D],[L'Utente Registrato deve poter visualizzare l’indicatore  di visibilità di un repository],[#link(<UC5.8>)[UC5.8], #link(<UC5.7>)[UC5.7]],
   [R-28-F-D],[L'Utente Registrato deve poter visualizzare la lista dei progetti ai quali contribuisce],[#link(<UC9>)[UC9]],
@@ -4450,23 +4450,23 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-35-F-O],[L'Utente Registrato deve poter visualizzare le statistiche dell'analisi OWASP di un repository],[#link(<UC5.4>)[UC5.4]],
   [R-36-F-O],[L'Utente Registrato deve visualizzare la lista dei file sui quali è stata proposta remediation a seguito di un'analisi sui test per un repository],[#link(<UCD6>)[UCD6], #link(<UCD6.0.1>)[UCD6.0.1]],
 
-  [R-9-F-O],[L'Utente Registrato deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
-  [R-10-F-D],[L'Utente Registrato deve poter visualizzare il proprio nome Utente Registrato],[#link(<UC2.1>)[UC2.1]],
-  [R-11-F-D],[L'Utente Registrato deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
+  [R-9-F-D],[L'Utente Registrato deve visualizzare la propria area personale],[#link(<UC2>)[UC2]],
+  [R-10-F-O],[L'Utente Registrato deve poter visualizzare il proprio nome Utente Registrato],[#link(<UC2.1>)[UC2.1]],
+  [R-11-F-O],[L'Utente Registrato deve poter visualizzare la propria mail],[#link(<UC2.2>)[UC2.2]],
   [R-12-F-D],[L'Utente Registrato deve poter visualizzare il proprio ruolo],[#link(<UC2.3>)[UC2.3]],
   [R-139-F-D],[L'Utente Registrato deve poter visualizzare la propria immagine del profilo],[#link(<UC2.4>)[UC2.4]],
   [R-140-F-D],[L'Utente Registrato deve poter visualizzare l'opzione di reindirizzamento al proprio profilo Github],[#link(<UC2.5>)[UC2.5]],
   [R-141-F-D],[L'Utente Registrato deve poter visualizzare le proprie competenze registrate nella piattaforma],[#link(<UC2.6>)[UC2.6]],
-  [R-141-F-D],[L'Utente Registrato deve poter essere reindirizzato nel proprio profilo Github],[#link(<UC2.5.1>)[UC2.5.1]],
-  [R-13-F-D],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
-  [R-14-F-D],[L'Utente Registrato deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
-  [R-15-F-D],[L'Utente Registrato deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
+  [R-142-F-D],[L'Utente Registrato deve poter essere reindirizzato nel proprio profilo Github],[#link(<UC2.5.1>)[UC2.5.1]],
+  [R-13-F-O],[L'Utente Registrato deve poter effettuare il logout dalla piattaforma],[#link(<UC3>)[UC3]],
+  [R-14-F-O],[L'Utente Registrato deve poter annullare la procedura di logout dalla piattaforma],[#link(<UC3.1>)[UC3.1]],
+  [R-15-F-O],[L'Utente Registrato deve visualizzare un messaggio di errore nel caso di errore durante l'esecuzione di un operazione],[#link(<UC4>)[UC4]],
 
   [R-92-F-P],[L'Utente Registrato deve poter cercare un repository in una barra di ricerca],[#link(<UC7>)[UC7]],
   [R-85-F-P],[L'Utente Registrato deve poter visualizzare un repository sulla piattaforma esterna GitHub],[#link(<UC5.10>)[UC5.10]],
 
   // DEV
-  [R-78-Q-D],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
+  [R-78-Q-O],[Il Developer deve potersi autenticare e ricevere il ruolo di "Developer"],[#link(<UCD1>)[UCD1]],
   [R-6-F-D],[Il Developer può sincronizzare il proprio account GitHub],[#link(<UCD2>)[UCD2]],
   [R-7-F-D],[Il Developer può annullare l'autenticazione con il provider esterno GitHub],[#link(<UCD2.2>)[UCD2.2]],
   [R-8-F-D],[Il Developer deve poter annullare la sincronizzazione del proprio account GitHub],[#link(<UCD2.1>)[UCD2.1]],
@@ -4484,8 +4484,8 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-46-F-D],[Il Developer deve poter annullare l'accettazione di una proposta di remediation],[#link(<UCD6.3>)[UCD6.3]],
   [R-47-F-D],[Il Developer deve ricevere un messaggio di errore nel caso di fallimento dell'accettazione della remediation],[#link(<UCD6.4>)[UCD6.4]],
   [R-48-F-D],[Il Developer deve essere informato se la remediation proposta non è più coerente con lo stato del sistema, e quindi non può essere effettuata],[#link(<UCD6.5>)[UCD6.5], #link(<UCD6.6>)[UCD6.6]],
-  [R-49-F-D],[Il Developer deve poter eliminare un repository dal sistema],[#link(<UC11>)[UC11]],
-  [R-50-F-D],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[#link(<UC11.1>)[UC11.1]],
+  [R-49-F-O],[Il Developer deve poter eliminare un repository dal sistema],[#link(<UC11>)[UC11]],
+  [R-50-F-O],[Il Developer deve poter annullare l'operazione di eliminazione di un repository dal sistema],[#link(<UC11.1>)[UC11.1]],
   [R-51-F-D],[Il Developer deve poter visualizzare la lista dei procedimenti in corso all'interno del sistema],[#link(<UCD8>)[UCD8], #link(<UCD8.1>)[UCD8.1]],
   [R-52-F-D],[Il Developer deve visualizzare il nome del repository sul quale sta avvenendo il procedimento],[#link(<UCD8.1>)[UCD8.1], #link(<UC5.5>)[UC5.5]],
   [R-53-F-D],[Il Developer deve visualizzare la data di avvio di ogni elemento dalla lista dei procedimenti in corso in corso.],[#link(<UCD8.1>)[UCD8.1], #link(<UCD8.4>)[UCD8.4]],
@@ -4506,12 +4506,12 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-69-F-D],[Il Developer deve poter consultare l'ultima analisi effettuata all'interno di un repository],[#link(<UCD13>)[UCD13], #link(<UCD13.1>)[UCD13.1], #link(<UCD13.2>)[UCD13.2], #link(<UCD13.3>)[UCD13.3]],
   [R-70-F-D],[Il Developer deve poter visualizzare la data di fine di un'analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD11.1.1>)[UCD11.1.1]],
   [R-71-F-D],[Il Developer deve poter visualizzare la lo stato di un'analisi nella lista delle analisi passate relative ad un repository],[#link(<UCD14>)[UCD14], #link(<UCD14.1>)[UCD14.1]],
-  [R-72-F-O],[Il Developer deve poter avviare un'analisi generale all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.2>)[UCD15.2]],
-  [R-73-F-O],[Il Developer deve poter avviare un'analisi sui test all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.3>)[UCD15.3]],
-  [R-74-F-O],[Il Developer deve poter avviare un'analisi sulla documentazione all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.4>)[UCD15.4]],
-  [R-75-F-O],[Il Developer deve poter avviare un'analisi OWASP all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.5>)[UCD15.5]],
-  [R-76-F-O],[Il Developer deve ricevere un messaggio di errore nel caso si verificasse un conflitto con un'altra analisi all'avvio di un'analisi],[#link(<UCD15.6>)[UCD15.6]],
-  [R-77-F-D],[Il Developer deve poter annullare l'avvio di un'analisi],[#link(<UCD15.7>)[UCD15.7]],
+  [R-72-F-O],[Il Developer deve poter avviare un'analisi generale all'interno del repository],[#link(<UCD15.2>)[UCD15.2], #link(<UCD15.1>)[UCD15.1]],
+  [R-73-F-D],[Il Developer deve poter avviare un'analisi sui test all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.3>)[UCD15.3], #link(<UCD15.1>)[UCD15.1]],
+  [R-74-F-D],[Il Developer deve poter avviare un'analisi sulla documentazione all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.4>)[UCD15.4], #link(<UCD15.1>)[UCD15.1]],
+  [R-75-F-D],[Il Developer deve poter avviare un'analisi OWASP all'interno del repository],[#link(<UCD15>)[UCD15], #link(<UCD15.5>)[UCD15.5], #link(<UCD15.1>)[UCD15.1]],
+  [R-76-F-D],[Il Developer deve ricevere un messaggio di errore nel caso si verificasse un conflitto con un'altra analisi all'avvio di un'analisi],[#link(<UCD15.6>)[UCD15.6]],
+  [R-77-F-O],[Il Developer deve poter annullare l'avvio di un'analisi],[#link(<UCD15.7>)[UCD15.7]],
 
   // PM 
   [R-79-Q-D],[Il Project Manager deve potersi autenticare e ricevere il ruolo di "Project Manager"],[#link(<UCPM1>)[UCPM1]],
@@ -4595,28 +4595,28 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
     [*Codice*], [*Descrizione*], [*Fonti*]
   ),
 
-  [R-1-V-O], [È necessario l'utilizzo di Node.js (v. 24.x LTS) e TypeScript (v. 5.x) per lo sviluppo del backend.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  [R-1-V-O], [È necessario l'utilizzo di Node.js (v22.x LTS) e TypeScript (v. 5.x) per lo sviluppo del backend.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
   
-  [R-2-V-O], [L'architettura backend e le API devono essere sviluppate utilizzando il framework NestJS (v. 11.x).], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  [R-2-V-O], [L'architettura backend e le API devono essere sviluppate utilizzando il framework NestJS (v11.x).], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
   
-  [R-3-V-O], [È necessario l'utilizzo della libreria React.js (v. 19.x) per lo sviluppo del frontend.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  [R-3-V-O], [È necessario l'utilizzo della libreria React.js (v19.x) per lo sviluppo del frontend.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
   
-  [R-4-V-O], [È necessario l'utilizzo di MongoDB (v. 6.x) per la gestione della persistenza dei dati.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  [R-4-V-O], [È necessario l'utilizzo di MongoDB (v8.x) per la gestione della persistenza dei dati.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
   
   [R-5-V-O], [È necessario l'utilizzo di GitHub Actions per l'integrazione continua (CI/CD) dell'applicativo.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
   
-  [R-6-V-O], [È necessario l'utilizzo dell'architettura cloud AWS (incluso AWS Bedrock) per la gestione degli agenti AI.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
+  [R-6-V-O], [È necessario l'utilizzo dell'architettura cloud AWS per la gestione degli agenti AI.], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Tecnologie"],
   
-  [R-7-V-O], [Il sistema deve essere containerizzato utilizzando Docker Engine (v. 24.x o compatibile).], [Decisione Interna],
+  [R-7-V-O], [Il sistema deve essere containerizzato utilizzando Docker Engine (v27.x o compatibile).], [Decisione Interna],
   
-  [R-8-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Google Chrome (v. 120 o superiore).], [Decisione Interna],
+  [R-8-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Google Chrome (v120 o superiore).], [Decisione Interna],
   
-  [R-9-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Mozilla Firefox (v. 121 o superiore).], [Decisione Interna],
+  [R-9-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Mozilla Firefox (v121 o superiore).], [Decisione Interna],
   
-  [R-10-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Microsoft Edge (v. 120 o superiore).], [Decisione Interna],
+  [R-10-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Microsoft Edge (v120 o superiore).], [Decisione Interna],
   
-  [R-11-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Apple Safari (v. 17 o superiore).], [Decisione Interna],
-  [R-12-V-O],[Il sistema deve interrompere automaticamente l’elaborazione se il tempo di risposta di un agente supera 15 minuti consecutivi],[Decisione interna]
+  [R-11-V-O], [Il prodotto deve garantire la corretta visualizzazione e funzionalità sul browser Apple Safari (v17 o superiore).], [Decisione Interna],
+  [R-12-V-O],[Il sistema deve interrompere automaticamente l’elaborazione se il tempo di risposta di un agente supera 15 minuti consecutivi],[Metrica imposta da AWS Bedrock per la gestione dei timeout degli agenti AI]
 )
 #pagebreak()
 
@@ -4643,7 +4643,7 @@ Di seguito sono esposti i requisiti individuati dal team CodeGuardian. La nomenc
   [R-6-Q-O],[È necessario redigere la documentazione tecnica di Swagger API], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
   [R-7-Q-O],[È necessario redigere la documentazione descrittiva del progetto], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
   [R-8-Q-O],[È necessario redigere una documentazione sul Bug reporting], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
-  [R-9-Q-O],[È necessario fornire il codice  prodotto in formato sorgente utilizzando sistemi di versionamento del codice come Git o repository online ( github, bitbucket ...)], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
+  [R-9-Q-O],[È necessario fornire il codice  prodotto in formato sorgente utilizzando sistemi di versionamento del codice come Git o repository online (github)], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
   [R-10-Q-O],[È necessario redigere la documentazione tecnica formata da: "R-6-Q-O", "R-7-Q-O", "R-8-Q-O" e "R-9-Q-O"], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],
   [R-11-Q-O],[È necessario soddisfare tutte le metriche presenti nel documento "Norme di Progetto"],[Analisi interna],
   [R-12-Q-O],[È necessario usare Git come software di versionamento], [#link("https://www.math.unipd.it/~tullio/IS-1/2025/Progetto/C2.pdf")[Capitolato di progetto] Sezione "Vincoli generali"],

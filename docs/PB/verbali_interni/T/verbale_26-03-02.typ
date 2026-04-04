@@ -29,6 +29,9 @@
     "Verificatore",   "Presente"  //Laura Venturini
 )
 
+// IGNORARE QUESTA VARIABILE
+#let partecipanti-esterni = ()
+
 // ora di inzio dell'incontro
 #let inizio = "17:00"
 
