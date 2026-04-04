@@ -5,7 +5,6 @@
 
 #let storia_modifiche = (
   ("1.0.0", "2026/04/03", "Angela Favaro", "Laura Venturini",  "Approvazione finale, rilascio ufficiale v1.0.0"),
-
   ("0.6.0", "2026/04/03", "Alberto Reginato", "Riccardo Baldin",  "Aggiunte specifiche MS2"),
   ("0.5.0", "2026/03/02", "Amerigo Vegliante", "",  "Aggiunte specifiche MS1"),
   ("0.4.0", "2026/04/01", "Angela Favaro", "Nicola Simionato",  "Aggiunte specifiche MS3"),
@@ -647,6 +646,9 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
 - #text(font: "Courier New")[validate(url: string)] — interpreta l'URL GitHub fornito, estrae owner e nome del repository ed esegue una chiamata alle API di GitHub per verificarne l'esistenza e l'accessibilità pubblica. Restituisce un oggetto GitHubRepoData con i metadati del repository se la chiamata ha successo, null altrimenti.
 
 == Progettazione frontend
+=== Moduli MS0 - Presentation Layer
+=== Moduli MS0 - Business Layer
+=== Moduli MS0 - DataLayer
 
 
 = Stato dei requisiti funzionali
