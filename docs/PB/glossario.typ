@@ -1,6 +1,18 @@
 #import "../templates/template-documenti.typ": template_documenti, tabella-viola
 
 #let storia_modifiche = (
+  "3.0.0",
+  "2026/03/29",
+  "Angela Favaro",
+  "Angela Canazza",
+  "Approvazione finale, rilascio ufficiale v3.0.0 ",
+
+  "2.6.0",
+  "2026/03/29",
+  "Angela Favaro",
+  "Angela Canazza",
+  "Aggiunta terminologie per Specifica Tecnica",
+
   "2.5.0",
   "2026/03/29",
   "Angela Favaro",
@@ -119,11 +131,17 @@ Insieme di metodi, tecniche o procedure che si sono dimostrati, attraverso l'esp
 #heading(level: 2, outlined: false)[Branch]
 Si tratta di ambienti di sviluppo diversi gli uni dagli altri, tra i quali si può lavorare in modo parallelo e separando logicamente il lavoro.
 
+#heading(level: 2, outlined: false)[Branching]
+Creazione di una linea di sviluppo separata che "si dirama" dal percorso principale.
+
 #heading(level: 2, outlined: false)[Browser]
 Software applicativo progettato per consentire agli utenti di accedere, recuperare e visualizzare i contenuti presenti sul World Wide Web (Internet).
 
 #heading(level: 2, outlined: false)[Bug]
 Errore, difetto o  guasto nel codice di un software che causa un comportamento imprevisto, errato o indesiderato.
+
+#heading(level: 2, outlined: false)[Bundler]
+Strumento che analizza l'intera struttura dei file del tuo progetto e "impacchetta" centinaia di file separati in pochi file ottimizzati, pronti per essere eseguiti dal browser.
 
 #heading(level: 2, outlined: false)[Business Owner]
 Nel contesto aziendale e dello sviluppo prodotto (specialmente in ambiti Agile e Scrum), è una figura strategica che detiene la responsabilità ultima del valore di business generato da un progetto o da un prodotto.
@@ -149,6 +167,9 @@ Caratteristica del codice sorgente che, pur non essendo tecnicamente un errore (
 
 #heading(level: 2, outlined: false)[Commit]
 Operazione che registra in modo permanente le modifiche apportate a uno o più file all'interno di un VCS. Ogni commit, solitamente accompagnato da una descrizione, crea un nuovo punto nella cronologia del progetto, permettendo di ripristinare una versione precedente.
+
+#heading(level: 2, outlined: false)[Componenti]
+Unità modulari, autonome e sostituibili di un sistema, che incapsula un insieme di funzioni correlate.
 
 #heading(level: 2, outlined: false)[Continuous Delivery (CD)]
 Pratica di sviluppo software in cui le modifiche al codice vengono preparate automaticamente per il rilascio in produzione. È l'estensione della Continuous Integration e garantisce che il software sia sempre in uno stato rilasciabile.
@@ -192,10 +213,12 @@ Abbreviazione per "documentazione". Indica l'insieme dei documenti relativi al p
 Document Object Model. \
 Interfaccia di programmazione (API) che rappresenta un documento HTML o XML come una struttura ad albero. Grazie al DOM, i linguaggi di programmazione possono accedere, modificare, aggiungere o eliminare il contenuto, la struttura e lo stile di una pagina web in modo dinamico.
 
+#heading(level: 2, outlined: false)[Driver]
+Componente software specifico che permette al sistema operativo di comunicare con un hardware o con una periferica.
+
 #heading(level: 2, outlined: false)[DTO]
 Data Transfer Object. \
 Pattern architetturale utilizzato per raggruppare e trasportare dati tra i vari sottosistemi di un'applicazione (ad esempio, tra un database e un'interfaccia utente) in modo efficiente.
-
 
 #pagebreak()
 
@@ -232,9 +255,19 @@ Servizio di videoconferenze che permette di organizzare e partecipare a riunioni
 #heading(level: 2, outlined: false)[Hardware]
 Parte fisica, tangibile e "pesante" di un sistema informatico. È l'insieme di tutti i componenti meccanici, elettronici, elettrici e magnetici che puoi toccare con mano.
 
+#heading(level: 2, outlined: false)[Hashing]
+Processo di trasformazione di un insieme di dati di qualsiasi dimensione (un testo, un file, una password) in una stringa di caratteri di lunghezza fissa, che funge da "impronta digitale" di quei dati. \
+Questa stringa risultante è chiamata _hash_. L'algoritmo che compie questa trasformazione è detto _funzione di hash_.
+
+#heading(level: 2, outlined: false)[Hook]
+Meccanismo che permette a un programmatore di "agganciarsi" a un evento, a un processo o a un comportamento esistente per modificarlo o estenderlo, senza dover alterare il codice sorgente originale di quel sistema.
+
 #pagebreak()
 
 = I
+#heading(level: 2, outlined: false)[Interfacce]
+Contratti (o un protocolli) che definiscono cosa un oggetto o un componente può fare, senza specificare come lo faccia. \
+In termini semplici, l'_interfaccia_ (singolare) elenca una serie di metodi (funzioni) che una classe deve obbligatoriamente implementare, ma lascia il corpo di quelle funzioni vuoto.
 
 #heading(level: 2, outlined: false)[Issue]
 Elemento atto a: pianificare, discutere e tracciare lavoro, bug, idee o nuove funzionalità all'interno di un repository di codice nella piattaforma di Github. Ad essa è possibile assegnare: un progetto, una Milestone, dei responsabili e delle etichette per rappresentarla all'interno di determinate categorie e facilitarne l'utilizzo e la ricerca.
@@ -242,13 +275,17 @@ Elemento atto a: pianificare, discutere e tracciare lavoro, bug, idee o nuove fu
 #pagebreak()
 
 = L
+#heading(level: 2, outlined: false)[IDE]
+_Integrated Development Environment o Ambiente di Sviluppo Integrato_
+Software che fornisce ai programmatori tutti gli strumenti necessari per scrivere, testare e sottoporre a debug il codice in un'unica interfaccia.
 
 #heading(level: 2, outlined: false)[Lambda Function]
 - In ambito infrastrutturale (AWS Lambda): una Lambda function è un'unità di calcolo Serverless.
   Definizione: È un frammento di codice che viene eseguito in risposta a un evento (come il caricamento di un file, una richiesta HTTP o una modifica nel database). \
 - In Programmazione (Funzioni Anonime): in informatica, una Lambda function è una funzione anonima, ovvero una funzione che non è associata a un identificativo (un nome). Viene definita "al volo" direttamente dove serve.
 
-#heading(level: 2, outlined: false)[Large Language Model (LLM)]
+#heading(level: 2, outlined: false)[LLM]
+_Large Language Model_
 Tipo di AI addestrato su enormi quantità di dati testuali per comprendere, generare e elaborare il linguaggio umano in modo simile a un essere umano, Esso è capace di compiti come la scrittura, la traduzione, il riassunto di testi e la conversazione, basandosi su architetture di deep learning, i quali gli permettono di cogliere contesti complessi. 
 
 #heading(level: 2, outlined: false)[Libreria]
@@ -266,6 +303,12 @@ Sottoinsieme dell'Intelligenza Artificiale che si concentra sulla creazione di s
 
 #heading(level: 2, outlined: false)[Mail]
 Messaggio digitale che viene inviato e ricevuto tramite internet. Strumento di comunicazione scritto che permette di scambiare informazioni rapidamente tra persone o gruppi.
+
+#heading(level: 2, outlined: false)[Matcher]
+Componente o una funzione il cui scopo è verificare se un determinato input (un dato, una stringa, un oggetto) corrisponde a un insieme di criteri o a uno schema prestabilito.
+
+#heading(level: 2, outlined: false)[Middleware]
+Componente software che agisce come intermediario tra diversi sistemi o applicazioni, facilitando la comunicazione e lo scambio di dati tra di essi.
 
 #heading(level: 2, outlined: false)[Milestone]
 Punto di controllo significativo che segna il completamento di una fase importante o il raggiungimento di un obiettivo chiave all'interno di un progetto. Rappresenta un traguardo raggiunto.
@@ -313,6 +356,9 @@ Rappresentazioni fittizie ma realistiche dei gruppi di utenti target, basate su 
 
 #heading(level: 2, outlined: false)[Plugin]
 In ambito software. Componente software ausiliario che si "aggancia" a un'applicazione principale per estenderne le funzionalità o aggiungerne di nuove, senza dover modificare il codice sorgente del programma originale. L'applicazione principale (chiamata host) fornisce un'interfaccia standard (spesso chiamata API o hooks) alla quale il plugin si connette, proprio come una spina si inserisce in una presa elettrica.
+
+#heading(level: 2, outlined: false)[Polishing]
+Fase finale del ciclo di sviluppo in cui ci si concentra sul perfezionamento dei dettagli, sul miglioramento dell'esperienza utente e sull'eliminazione di piccole imperfezioni che non sono necessariamente "bug critici", ma che rendono il prodotto meno professionale.
 
 #heading(level: 2, outlined: false)[Product Baseline]
 Anche chiamata *PB*. \
@@ -366,6 +412,9 @@ Libreria JavaScript open-source utilizzata per creare interfacce utente (UI). Pe
 #heading(level: 2, outlined: false)[Remediation]
 Processo di correzione delle vulnerabilità, dei difetti o delle non conformità identificate durante un Audit o un test di sicurezza atto a ripristinare la sicurezza e l'integrità del sistema.
 
+#heading(level: 2, outlined: false)[Refactoring]
+Processo di miglioramento della struttura interna del codice senza alterare il comportamento esterno, al fine di rendere il codice più manutenibile, leggibile e performante.
+
 #heading(level: 2, outlined: false)[Repository (Repo)]
 Ambiente digitale dove vengono salvati tutti i file riguardanti i progetti. Può esisterne più di una in base alla suddivisione degli argomenti per cui vengono create.
 
@@ -378,6 +427,9 @@ Evento o una condizione incerta che, se si verifica, ha un effetto (positivo o n
 #heading(level: 2, outlined: false)[Requirements & Technology Baseline (RTB)]
 Milestone che fissa i requisiti da soddisfare, in accordo con il proponente; nel documento Analisi dei Requisiti motiva le tecnologie, i framework, le librerie adottate, e ne
 dimostra adeguatezza e interoperabilità. Tramite Proof of Concept (demo eseguibile) rappresentativa delle richieste del capitolato. Il PoC viene posto in repo accessibile a committente e proponente.
+
+#heading(level: 2, outlined: false)[Routing]
+Processo di determinazione del percorso che un pacchetto di dati deve seguire per raggiungere la sua destinazione in una rete.
 
 #pagebreak()
 = S
@@ -432,6 +484,12 @@ Qualsiasi individuo, gruppo o organizzazione che possa essere direttamente o ind
 #heading(level: 2, outlined: false)[Software]
 Insieme delle componenti immateriali (programmi, dati e istruzioni) che dicono a un computer o a un dispositivo elettronico cosa fare.
 
+#heading(level: 2, outlined: false)[Superset]
+Relazione tra due linguaggi, librerie o specifiche in cui uno contiene l'altro e vi aggiunge nuove funzionalità.
+
+#heading(level: 2, outlined: false)[SVG] 
+Formato di immagine vettoriale basato su XML, utilizzato per creare grafiche scalabili e adatte all'uso su web.
+
 #heading(level: 2, outlined: false)[Sviluppatore] 
 Vedi definizione di #link(<Developer>, ['Developer']).
 
@@ -440,6 +498,10 @@ Vedi definizione di #link(<Developer>, ['Developer']).
 
 #heading(level: 2, outlined: false)[Telegram]
 Applicazione di messaggistica istantanea tra utenti e/o gruppi. Permette in particolar modo di creare sottocategorie all'interno di un gruppo, per isolare differenti tematiche in compartimenti separati. Consente inoltre l'invio di file di tipo testuale, visivo e audio.
+
+#heading(level: 2, outlined: false)[Tipizzazione]
+Processo attraverso il quale il linguaggio di programmazione assegna un "tipo" a un dato (come numeri, stringhe di testo o oggetti complessi).
+Il _tipo_ definisce quali valori una variabile può contenere e quali operazioni possono essere eseguite su di essa.
 
 #heading(level: 2, outlined: false)[Token]
 Oggetto digitale (spesso una stringa crittografata) che rappresenta il diritto di eseguire un'operazione. Nell'autenticazione, viene usato per provare l'identità di un utente o di un servizio senza dover reinserire le credenziali ad ogni richiesta.
@@ -475,6 +537,9 @@ Figura professionale responsabile di esaminare un prodotto software per identifi
 #heading(level: 2, outlined: false)[Version Control System (VCS)]
 Un sistema di controllo di versione che permette di tenere traccia nel tempo di tutte le modifiche riguardanti un file, compresa la sua creazione ed eliminazione. Permette di registrare la cronologia delle revisioni, ripristinare versioni precedenti e facilitare la collaborazione simultanea di più persone.
 
+#heading(level: 2, outlined: false)[Virtual DOM]
+Rappresentazione in memoria di un documento HTML, utilizzata per migliorare le performance del rendering delle pagine web.
+
 #heading(level: 2, outlined: false)[Visual Studio Code (VScode)]
 Editor di testo e in particolare di codice sorgente. Offre una gamma di strumenti per facilitare lo sviluppo del codice attraverso funzionalità integrate, come strumenti di debugging, controllo versione e un vasto ecosistema di estensioni.
 
@@ -487,6 +552,9 @@ Insieme di regole, metodologie, strumentazione e processi atti ad un avanzamento
 
 #heading(level: 2, outlined: false)[Web App]
 Software applicativo che non risiede sul disco rigido del tuo dispositivo (PC, smartphone o tablet), ma viene eseguito su un server remoto e reso accessibile tramite un comune browser web (come Chrome, Safari o Firefox).
+
+#heading(level: 2, outlined: false)[Workload]
+Definisce la quantità e il tipo di risorse arbitrarie che un computer, un server o un'intera infrastruttura cloud consumano per eseguire un determinato compito in un dato momento.
 
 #pagebreak()
 
