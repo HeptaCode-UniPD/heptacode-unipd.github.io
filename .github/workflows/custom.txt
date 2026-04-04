@@ -280,3 +280,5 @@ l'aggregatore
 microservizi
 fargate
 serverless
+visualstudiocode
+wayofworking
