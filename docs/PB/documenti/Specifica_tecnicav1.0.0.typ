@@ -57,17 +57,15 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
   - #link("https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf")[Progettazione e programmazione: Diagrammi delle classi (UML)]
  - #link("https://www.math.unipd.it/~rcardin/swea/2022/Software%20Architecture%20Patterns.pdf")[Progettazione: I pattern architetturali]
  - #link("https://www.math.unipd.it/~rcardin/swea/2022/Design%20Pattern%20Strutturali.pdf")[Progettazione: I pattern strutturali]
-- Documento interno: #link("https://heptacode-unipd.github.io/docs/PB/glossario.pdf")[Glossario v2.0.0]
+- Documento interno: #link("https://heptacode-unipd.github.io/docs/PB/glossario.pdf")[Glossario v3.0.0]
 Questa introduzione delinea il contesto e gli scopi del progetto.
 = Tecnologie 
 == Linguaggi di programmazione
 === Typescript v5.7.x
-Il progetto è sviluppato in Typescript, un superset di JavaScript che introduce tipizzazione statica opzionale. \  La *tipizzazione statica e riduzione degli errori a runtime* TypeScript introduce un sistema di tipi statici sopra JavaScript, consentendo di intercettare intere categorie di errori già in fase di compilazione, prima che il codice raggiunga l'ambiente di esecuzione. \ 
+Il progetto è sviluppato in Typescript, un superset di JavaScript che introduce tipizzazione statica opzionale. \  La *tipizzazione statica e riduzione degli errori a runtime* TypeScript consente di intercettare intere categorie di errori già in fase di compilazione, prima che il codice raggiunga l'ambiente di esecuzione. \ 
 In un'applicazione full-stack dove frontend e backend si scambiano dati via API, la definizione di interfacce e tipi condivisi elimina ambiguità sui contratti di dato, riducendo drasticamente i bug dovuti a proprietà mancanti, tipi inattesi o refactoring parziali. \ 
 Il supporto al completamento automatico, alla navigazione del codice e al refactoring assistito offerto dagli IDE come VS Code è notevolmente potenziato dalla presenza dei tipi. Questo si traduce in *cicli di sviluppo più rapidi e in un onboarding più agevole per nuovi membri del team*. \ 
-Su tutti gli strati applicativi *è possibile condividere modelli di dominio, DTO (Data Transfer Object) e interfacce in un unico package condiviso*, garantendo coerenza tra le strutture dati prodotte dal backend e quelle consumate dal frontend, senza duplicazione del codice. 
-Le principali librerie utilizzate nel progetto (React, NestJS) — offrono definizioni di tipo native o tramite _\@types_, garantendo una *copertura tipizzata completa senza configurazioni aggiuntive*. \ 
-Un codebase tipizzato è intrinsecamente più leggibile e autodocumentante. Le firme delle funzioni, le strutture dei dati e le interfacce dei moduli comunicano l'intento del codice in modo esplicito, riducendo la dipendenza da documentazione esterna e *facilitando le operazioni di manutenzione* ordinaria e straordinaria.
+Su tutti gli strati applicativi *è possibile condividere modelli di dominio, DTO (Data Transfer Object) e interfacce in un unico package condiviso*, garantendo coerenza tra le strutture dati prodotte dal backend e quelle consumate dal frontend, senza duplicazione del codice.
 == Framework 
 === NestJS v11.0.x
 NestJS è il framework applicativo scelto per strutturare il layer server.
@@ -75,13 +73,13 @@ NestJS è il framework applicativo scelto per strutturare il layer server.
 - _Architettura modulare e scalabile_: organizza il codice in moduli, controller e service, imponendo una struttura chiara che facilita la separazione delle responsabilità e la crescita ordinata del progetto nel tempo.
 - _Dependency Injection nativa_: Il sistema di DI integrato rende i componenti disaccoppiati, testabili in isolamento e facilmente sostituibili, migliorando la qualità architetturale complessiva.
 - _NestJS è scritto nativamente in TypeScript_: ne sfrutta appieno i decoratori e il sistema di tipi, rendendolo la scelta più coerente con il resto della stack.
-- _Supporto integrato per pattern enterprise_: NestJS offre supporto per pipe di validazione, middleware e gestione centralizzata degli errori, riducendo la necessità di soluzioni custom per funzionalità trasversali.
+- _Supporto integrato per pattern enterprise_: NestJS offre supporto per pipe di validazione, middleware e gestione centralizzata degli errori, riducendo la necessità di soluzioni "su misura" per funzionalità trasversali.
 == Librerie e dipendenze
 === React v19.2.4 
 React è stato scelto come libreria UI, le motivazioni principali sono state:
 
 - _Modello a componenti_ — L'architettura basata su componenti riutilizzabili favorisce la separazione delle responsabilità, facilita i test unitari e permette di costruire interfacce complesse in modo incrementale e controllato.
-- _Ecosistema maturo_ — React dispone di un ecosistema vastissimo che spesso non richiede soluzioni custom.
+- _Ecosistema maturo_ — React dispone di un ecosistema vastissimo che spesso non richiede soluzioni "su misura".
 - _Virtual DOM e performance_ — Il meccanismo di riconciliazione del Virtual DOM garantisce aggiornamenti efficienti dell'interfaccia, limitando le operazioni sul DOM reale ai soli nodi effettivamente modificati.
 - _Integrazione nativa con TypeScript_ — React supporta pienamente TypeScript, con tipizzazione completa di props, state, hook e context, rendendo il codice frontend robusto e verificabile staticamente.
 
@@ -110,9 +108,8 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   inset: 10pt,
   align: (left, left, left),
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
-  [react-router-dom],[v7.13.1],[Gestione del routing client-side. Fornisce i componenti \<Route\>, \<Link\> e gli hook useNavigate e useParams per la navigazione tra le pagine.],
+  [react-router-dom],[v7.13.1],[Gestione del routing lato client. Fornisce i componenti \<Route\>, \<Link\> e gli hook useNavigate e useParams per la navigazione tra le pagine.],
   [react-icons],[v5.6.0],[Libreria di icone SVG. Aggrega i principali icon set in un unico pacchetto importabile come componenti React.],
-  [diff],[v8.0.3],[Algoritmo di differenza testuale (diff). Usato per confrontare e visualizzare le modifiche tra due versioni di testo.],
 )
 #figure(
   caption: [Dipendenze frontend, build e compilazione],
@@ -127,7 +124,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
   [vite],[v7.2.4],[Bundler e dev server. Scelto per la velocità di avvio grazie all'uso nativo dei moduli ES e all’HMR istantaneo.],
   [\@vitejs/plugin-react],[v5.1.1],[Plugin Vite che abilita il supporto a JSX e al Fast Refresh di React durante lo sviluppo.],
-  [typescript],[v5.9.3],[Superset tipizzato di JavaScript. Usato per garantire la correttezza dei tipi a compile time.],
+  [typescript],[v5.9.3],[Superset tipizzato di JavaScript. Usato per garantire la correttezza dei tipi a tempo di compilazione.],
   [\@types/react, \ \@types/react-dom, \ \@types/node, \ \@types/diff],[varie],[Definizioni dei tipi TypeScript per le rispettive librerie.],
 )
 #figure(
@@ -160,7 +157,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   inset: 10pt,
   align: (left, left, left),
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
-  [eslint, \ \@eslint/js],[v9.39.1],[Analisi statica del codice JavaScript e TypeScript.],
+  [eslint, \ \@eslint/js],[v9.39.1],[Analisi statica del codice TypeScript.],
   [typescript-eslint],[v8.46.4],[Plugin ESLint per TypeScript. Abilita regole type-aware che richiedono le informazioni del compilatore.],
   [eslint-plugin-react-hooks],[v7.0.1],[Controlla il corretto utilizzo degli hook React (Rules of Hooks).],
   [eslint-plugin-react-refresh],[v0.4.24],[Avverte se un componente non è compatibile con il Fast Refresh di Vite.],
@@ -179,7 +176,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   inset: 10pt,
   align: (left, left, left),
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
-  [\@nestjs/common, \ \@nestjs/core],[v11.0.1],[Gestisce il sistema di Dependency Injection, i moduli, i controller e i decorator. Scelto per la sua architettura modulare ispirata ad Angular, ideale per microservizi strutturati.],
+  [\@nestjs/common, \ \@nestjs/core],[v11.0.1],[Gestisce il sistema di Dependency Injection, i moduli, i controller e i decorator. Ideale per microservizi strutturati.],
   [\@nestjs/platform-express],[v11.0.1],[Adattatore HTTP per NestJS basato su Express. Gestisce il server HTTP sottostante.]
 )
 #figure(
@@ -208,7 +205,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   inset: 10pt,
   align: (left, left, left),
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
-  [bcrypt ],[v6.0.0],[Hashing delle password con salt. Usato nel layer applicativo per non salvare mai password in chiaro nel database.],
+  [bcrypt ],[v6.0.0],[Hashing delle password. Usato nel layer applicativo per non salvare mai password in chiaro nel database.],
 )
 #figure(
   caption: [Dipendenze backend, validazione],
@@ -299,9 +296,9 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
 === NodeJS v24
 Node.js è l'ambiente di runtime scelto per eseguire il codice server-side. Node.js è il runtime che consente l'esecuzione di TypeScript lato server, al di fuori del browser. Le motivazioni che hanno portato il gruppo a questa scelta progettuale sono state:
 
-- _Uniformità del linguaggio_ — L'utilizzo dello stesso linguaggio su frontend e backend elimina il context-switch cognitivo, consente la condivisione di logica e tipi comuni, e semplifica la gestione delle dipendenze.
-- _Architettura non bloccante e I/O asincrono_ — Il modello event-driven di Node.js lo rende particolarmente adatto ad applicazioni con elevata concorrenza di richieste I/O, come chiamate a database e API esterne, tipico scenario nelle applicazioni web moderne.
-- _Ecosistema npm_ — npm mette a disposizione il più grande repository di librerie open source esistente, coprendo in modo maturo le esigenze di autenticazione, ORM, validazione, logging ecc.
+- _Uniformità del linguaggio_ — L'utilizzo dello stesso linguaggio su frontend e backend elimina il context-switch, consente la condivisione di logica e tipi comuni, e semplifica la gestione delle dipendenze.
+- _Architettura non bloccante e I/O asincrono_ — Il modello event-driven di Node.js lo rende particolarmente adatto ad applicazioni con elevata concorrenza di richieste I/O, come chiamate a database e API esterne.
+- _Ecosistema npm_ — npm mette a disposizione il più grande repository di librerie open source esistente.
 
 == Infrastruttura di deployment
 === Docker Engine v29.3.0
@@ -312,17 +309,17 @@ I microservizi utilizzano Docker come tecnologia di containerizzazione. Il "Dock
 La scelta di MongoDB come database principale è strettamente legata alla natura della piattaforma ad agenti basata su analisi di repository. In un sistema dove i dati prodotti e consumati dagli agenti hanno strutture eterogenee, variabili nel tempo e difficilmente riducibili a uno schema relazionale fisso (come nel caso di un repository documentale piuttosto che di sviluppo ecc.), un database orientato ai documenti è la soluzione più adatta.
 Nello specifico:
 - _Schema flessibile_: non richiede uno schema rigido predefinito. Questo è particolarmente vantaggioso in Code Guardian dove ogni agente può produrre output con strutture diverse, e dove il modello dati pu; cambiare facilmente.
-_Dati gerarchici e annidati_: — I documenti JSON di MongoDB si prestano naturalmente a rappresentare strutture dati complesse e annidate (contesti agentici) senza dover ricorrere a join tra tabelle come in un database relazionale.
+- _Dati gerarchici e annidati_: — I documenti JSON di MongoDB si prestano naturalmente a rappresentare strutture dati complesse e annidate (contesti agentici) senza dover ricorrere a join tra tabelle come in un database relazionale.
 - _Scalabilità orizzontale_ — MongoDB è progettato per scalare orizzontalmente tramite sharding nativo, caratteristica importante in una piattaforma che può dover gestire volumi crescenti di sessioni agentiche in parallelo.
 - _Integrazione con l'ecosistema TypeScript_ — Tramite Mongoose o il driver nativo MongoDB, la definizione di schemi e modelli tipizzati in TypeScript è diretta e ben supportata, mantenendo la coerenza con il resto della stack.
 
 == Tecnologie per infrastruttura cloud
 === AWS
-AWS è il provider cloud adottato per l'intera infrastruttura della piattaforma. La scelta è motivata dalla maturità del catalogo di servizi, dall'integrazione nativa tra essi e dalla diffusione enterprise che ne garantisce un ecosistema di riferimento consolidato. In un'architettura ad agenti dove runtime serverless, orchestratori a stati, modelli LLM e storage devono comunicare in modo affidabile, operare in un unico ecosistema riduce la complessità operativa: autenticazione IAM, rete VPC e osservabilità CloudWatch sono trasversali a tutti i servizi senza integrazioni esterne.
+AWS è il provider cloud adottato per l'intera infrastruttura della piattaforma. La scelta è motivata dalla maturità del catalogo di servizi, dall'integrazione nativa tra essi e dalla diffusione enterprise che ne garantisce un ecosistema di riferimento consolidato. In un'architettura ad agenti dove runtime serverless, orchestratori a stati, modelli LLM e storage devono comunicare in modo affidabile, operare in un unico ecosistema riduce la complessità operativa.
 ==== AWS Bedrock
-Bedrock fornisce accesso a modelli fondazionali — tra cui Anthropic Claude, utilizzato in questa piattaforma — tramite un'unica API gestita, senza infrastruttura di inferenza da amministrare. Ogni agente è configurato come Bedrock Agent con un proprio system prompt e invocato dalle Lambda tramite l'SDK BedrockAgentRuntimeClient. Il modello LLM sottostante è disaccoppiato dal codice: aggiornare versione o provider richiede solo una modifica all'alias Bedrock, senza toccare le Lambda.
+Bedrock fornisce accesso a modelli fondazionali LLM tramite un'unica API gestita. Ogni agente è configurato come Bedrock Agent con un proprio system prompt e invocato dalle Lambda tramite l'SDK BedrockAgentRuntimeClient. \ Il modello LLM sottostante è disaccoppiato dal codice: aggiornare versione o provider richiede solo una modifica all'alias Bedrock, senza toccare le Lambda.
 ==== AWS Lambda
-Lambda è il runtime di tutta la logica agentica: pull del repository, planning, esecuzione degli agenti (OWASP, Test, Docs), aggregazione, polishing e notifica webhook sono ciascuno una funzione Lambda distinta. Il modello serverless è adatto a questo workload perché i task sono asincroni, di durata variabile e attivati su eventi: non esiste un server idle da mantenere e il costo è strettamente proporzionale all'elaborazione effettiva.
+Lambda è il runtime di tutta la logica agentica: pull del repository, planning, esecuzione degli agenti (OWASP, Test, Docs), aggregazione, polishing e notifica webhook sono ciascuno una funzione Lambda distinta. Il modello serverless è adatto a questo workload perché i task sono asincroni, di durata variabile e attivati su eventi; inoltre il costo è strettamente proporzionale all'elaborazione effettiva.
 ==== AWS Step Functions
 Step Functions orchestra l'intero flusso agentico come macchina a stati: gestisce sequenza, parallelismo nativo (OWASP e Test Agent in contemporanea), branching condizionale sul flag runDocs, retry, timeout e propagazione degli errori verso il failure handler. Evita di dover implementare manualmente la logica di coordinamento tra Lambda e rende il flusso ispezionabile visivamente dalla console AWS.
 ==== AWS S3
@@ -336,28 +333,30 @@ Il progetto adotta GitHub Actions come sistema di Continuous Integration (CI). I
 Il pipeline è strutturato in un job che esegue:
 + analisi statica tramite ESLint e Prettier per verificare la conformità del codice agli standard definiti, incluse metriche di qualità come complessità ciclomatica, lunghezza dei metodi e numero di parametri;
 + esecuzione degli unit test con generazione del report di coverage; esecuzione dei test di integrazione (_e2e_) con un'istanza MongoDB dedicata; verifica dell'integrità della build tramite compilazione TypeScript. Al termine del job, il report di coverage viene salvato come artifact di GitHub Actions.
++ verifica delle metriche di qualità del codice, disponibili nel documento di #link("https://heptacode-unipd.github.io/docs/PB/Piano_di_Qualificav2.0.0.pdf")[Piano di Qualifica v2.0.0].
 
 = Architettura
-Il sistema è strutturato secondo un'architettura a microservizi, composta da tre componenti indipendenti che collaborano per fornire le funzionalità applicative. Ciascun microservizio adotta internamente una Layered Architecture, suddividendo le responsabilità in strati distinti e garantendo separazione delle competenze (separation of concerns).
+Il sistema è strutturato secondo un'architettura a microservizi, composta da tre componenti indipendenti che collaborano per fornire le funzionalità applicative ed una componente di frontend. \ Ciascun microservizio adotta internamente una Layered Architecture, suddividendo le responsabilità in strati distinti e garantendo separazione delle competenze (separation of concerns).
 == Architettura logica
 === Layered Architecture
 Ogni microservizio è organizzato nei seguenti layer:
 
-_Presentation Layer_ #pad(left: 0.5cm)[ Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste provenienti dal Frontend o da altri microservizi, della validazione dei dati in ingresso e della loro trasformazione in strutture tipizzate (DTO) prima che vengano propagate agli strati sottostanti.]
+_Presentation Layer_ #pad(left: 0.5cm)[ Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste, della validazione dei dati in ingresso e della loro trasformazione in strutture tipizzate (DTO) prima che vengano propagate agli strati sottostanti.]
 _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con i componenti di persistenza e con i servizi esterni. Questo layer è esposto esclusivamente tramite interfacce, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta.]
 _Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso al layer di persistenza dei dati attraverso il pattern Repository, garantendo che il dominio applicativo rimanga indipendente dalla tecnologia di storage sottostante. La traduzione tra entità di dominio e modelli di persistenza è delegata a componenti Mapper dedicati.]
+// da rifare
 
 == Architettura di deployment
 L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale garantisce elevata scalabilità, resilienza e una totale indipendenza nello sviluppo e nel rilascio dei singoli componenti software. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
 
-*Comunicazione tra i Servizi*
-#pad(left: 0.5cm)[A differenza dei sistemi basati su messaggistica asincrona, i microservizi comunicano tra loro tramite interfacce API REST (Representational State Transfer). L'adozione di questo protocollo garantisce una comunicazione chiara e ben definita tra i componenti, facilitando l'integrazione e le attività di debugging. Il modello sincrono consente inoltre un flusso di dati immediato, risultando particolarmente adatto alle operazioni agentiche che richiedono una risposta in tempo reale. Ogni microservizio espone un insieme di endpoint specifici, rendendo la struttura del sistema facilmente documentabile e manutenibile]
+*Comunicazione tra i servizi*
+#pad(left: 0.5cm)[A differenza dei sistemi basati su messaggistica asincrona, i microservizi comunicano tra loro tramite interfacce API REST (Representational State Transfer). L'adozione di questo protocollo garantisce una comunicazione chiara e ben definita tra i componenti, facilitando l'integrazione e le attività di debugging. Il modello sincrono consente inoltre un flusso di dati immediato, risultando particolarmente adatto alle operazioni agentiche che richiedono una risposta in tempo reale.]
 *Containerizzazione e Deployment*
 #pad(left: 0.5cm)[Il deployment dei microservizi avviene in ambienti virtualizzati tramite Docker. Ogni microservizio è incapsulato in un container indipendente, operante in un ambiente isolato che previene conflitti di dipendenze e interferenze tra i servizi. Questa soluzione semplifica le fasi di test, rilascio e aggiornamento, assicurando che il software si comporti in modo identico in qualsiasi ambiente di esecuzione. La natura dei container permette infine di replicare i singoli servizi in modo rapido ed efficiente, consentendo al sistema di adattarsi dinamicamente a carichi di lavoro variabili.]
 
 === Microservizi
 
-*Microservizio Frontend - MS0* #pad(left: 0.5cm)[Costituisce il punto di accesso dell'utente al sistema. Espone le seguenti funzionalità: autenticazione e visualizzazione del profilo utente, inserimento dell'URL di un repository GitHub da analizzare, e consultazione dei risultati dell'analisi. Quest'ultima comprende tre aree distinte: copertura dei test, qualità della documentazione e vulnerabilità di sicurezza secondo le linee guida OWASP. Per ciascuna area vengono presentati i file con suggerimenti di modifica sotto forma di diff, le motivazioni dietro le modifiche proposte e le criticità rilevate.]
+*Microservizio Frontend - MS0* #pad(left: 0.5cm)[Costituisce il punto di accesso dell'utente al sistema. Espone le seguenti funzionalità: autenticazione e visualizzazione del profilo utente, inserimento dell'URL di un repository GitHub da analizzare, e consultazione dei risultati dell'analisi. Quest'ultima comprende tre aree distinte: copertura dei test, qualità della documentazione e vulnerabilità di sicurezza secondo le linee guida OWASP. Per ciascuna area vengono presentati i suggerimenti di modifica, le motivazioni dietro le modifiche proposte e le criticità rilevate.]
 
 *Microservizio di Analysis Management - MS1*  #pad(left: 0.5cm)[Ha il compito di verificare se, per un dato repository, sia già presente in memoria un'analisi relativa all'ultimo commit disponibile. Qualora l'analisi risulti assente o non aggiornata, il microservizio provvede ad inoltrare la richiesta di analisi al microservizio competente, evitando elaborazioni ridondanti e ottimizzando l'utilizzo delle risorse computazionali.]
 
