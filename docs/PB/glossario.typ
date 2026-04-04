@@ -2,13 +2,13 @@
 
 #let storia_modifiche = (
   "3.0.0",
-  "2026/03/29",
+  "2026/04/03",
   "Angela Favaro",
   "Angela Canazza",
   "Approvazione finale, rilascio ufficiale v3.0.0 ",
 
   "2.6.0",
-  "2026/03/29",
+  "2026/04/03",
   "Angela Favaro",
   "Angela Canazza",
   "Aggiunta terminologie per Specifica Tecnica",
