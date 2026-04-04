@@ -648,7 +648,7 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
 == Progettazione frontend
 === Moduli MS0 - Presentation Layer
 === Moduli MS0 - Business Layer
-=== Moduli MS0 - DataLayer
+=== Moduli MS0 - Data Layer
 
 
 = Stato dei requisiti funzionali
