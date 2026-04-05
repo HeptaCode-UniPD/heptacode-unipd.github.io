@@ -506,6 +506,10 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
   4410,  //SPRINT 9
   5380,  //SPRINT 10
   5925,  //SPRINT 11
+  6245, //SPRINT 12
+  8415, //13
+  10055, //14
+  12845 //15
 )
 
 #let lista_Pv = (
@@ -521,6 +525,10 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
   4159.15,  //SPRINT 9
   5165.08,  //SPRINT 10
   5687.39,  //SPRINT 11 
+  6091.86, //SPRINT 12
+  7895.37, //SPRINT 13
+  9458.41, //SPRINT 14
+  12845.00 //SPRINT 15 
 )
 
 #let lista_Ev = (
@@ -535,12 +543,17 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
   3230.59,  //SPRINT 8
   3694.87,  //SPRINT 9
   4662.12,  //SPRINT 10
-  5281.15,  //SPRINT 11 
+  5281.15,  //SPRINT 11
+  5791.27, //SPRINT 12
+  7835.25, //SPRINT 13
+  9398.29, //SPRINT 14
+  12845.00, //SPRINT 15
+
 )
 
-== MPC01 e MPC02 - Schedule Variance e Cost Variance
+== MPC01 e MPC02 - Schedule Variance
 *Schedule Variance*: indicatore che rappresenta il divario, espresso in termini monetari, tra il valore del lavoro effettivamente realizzato (Earned Value) e quello del lavoro che era stato pianificato (Planned Value) alla data corrente. \
- *Cost Variance*: indicatore che rappresenta la differenza tra il costo realmente raggiunto dal progetto e quello del lavoro effettivamente svolto.
+ 
 // schedule variance EV - PV
 #let listaEv-Pv = range(lista_Ev.len()).map(i => {
   (i, lista_Ev.at(i), lista_Pv.at(i))
@@ -578,7 +591,7 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
       import cetz-plot: *
 
       plot.plot(
-        size: (9, 9),
+        size: (16, 9),
         legend: "inner-north-east",
         x-tick-step: 1,
         y-tick-step: 250, 
@@ -605,7 +618,7 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
             }),
             label: [Schedule Variance (SV)],
             style: (stroke: red),
-            line: "spline",
+            line: "linear",
             mark: "o",
           )
         }
@@ -613,85 +626,11 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
     })
   )
 ]
-//--------------------------------------------------------------------------------------------------------
-// cost variance EV - AC
-#let listaEv-Ac = range(lista_Ev.len()).map(i => {
-  (i, lista_Ev.at(i), lista_Ac.at(i))
-})
 
-#figure(
-  caption: [Tabella per periodo di Cost Variance],
-  kind: table,
-)[
-  #align(center,
-    tabella-viola(
-      columns: (auto, auto, auto, auto),
-      inset: 10pt,
-      align: center + horizon,
-      table.header([*Periodo*], [*Earned Value*], [*Actual Cost*], [*Cost Variance*]),
-      ..listaEv-Ac.map(riga => {
-        let (p, ev, ac) = riga
-        let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
-
-        let cv = if p == 0 { 0.0 } else { ev - ac }
-        let cv-testo = calc.round(cv, digits: 2)
-
-        (periodo-testo, [€#ev], [€#ac], [€#cv-testo])
-      }).flatten()
-    )
-  )
-]
-
-#figure(
-  caption: [Grafico per periodo di Cost Variance],
-  kind: image,
-)[
-  #align(center,
-    cetz.canvas({
-      import cetz-plot: *
-
-      let min_AC = calc.min(..listaEv-Ac.map(it => ( it.at(1) - it.at(2))))
-
-      plot.plot(
-        size: (9, 9),
-        legend: "inner-north-east",
-        x-tick-step: 1,
-        y-tick-step: 250, 
-        y-min: calc.floor(min_AC / 250) * 250,
-        y-max: 250,
-        x-max: listaEv-Ac.at(-1).at(0) + 0.25,
-        x-format: v => if v == 0 [Agg.] else [S. #v],
-        y-grid: true,
-        y-label: [CV],
-        x-label: [Numero Sprint],
-        {
-          plot.add(
-            ((0, 0.0), (listaEv-Ac.at(-1).at(0), 0)),
-            label: [Target (0)],
-            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
-            line: "spline",
-          )
-
-          plot.add(
-            listaEv-Ac.map(it => {
-              let (p, ev, ac) = it
-              let cv = if p == 0 { 0.0 } else { ev - ac }
-              (p,cv)
-            }),
-            label: [Cost Variance (CV)],
-            style: (stroke: red),
-            mark: "o",
-            line: "spline",
-          )
-        }
-      )
-    })
-  )
-]
 *Andamento RTB* \
-Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha spesso lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli ultimi quattro sprint nei quali si prevede di lavorare in maniera più efficiente. \
+Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha spesso lavorato per meno ore rispetto a quelle programmate a causa del tempo necessario per altre attività universitarie. \
 \ *Andamento PB* \
-
+Durante il PB il team ha avuto più tempo a disposizione da dedicare al progetto a causa dell'assenza di impegni universitari e quindi è riuscito gradualmente a recuperare le ore "di debito", cioè quelle pianificate per la fase di RTB che non erano state svolte in tempo. In particolare, la maggior parte delle ore è stata recuperata durante il dodicesimo sprint
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
  == MPC03 - Budget Variance 
@@ -747,7 +686,7 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
       }))
 
       plot.plot(
-        size: (9, 9),
+        size: (16,9),
         legend: "inner-north-west",
         x-tick-step: 1,
         y-tick-step: 0.1, 
@@ -798,10 +737,10 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
   )
 ]
 *Andamento RTB* \
- La Budget Variance ha un valore negativo durante la fase RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase. Il miglioramento a partire dallo sprint 5 è dovuto alla riduzione del volume orario lavorato rispetto alla pianificazione originaria. Dovrebbe arrivare a 0 quando si recupereranno le ore e si inizieranno a utilizzare di più ruoli meno costosi.
+ La Budget Variance ha un valore negativo durante la fase RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase. Il miglioramento a partire dallo sprint 5 è dovuto alla riduzione del volume orario lavorato rispetto alla pianificazione originaria. //Dovrebbe arrivare a 0 quando si recupereranno le ore e si inizieranno a utilizzare di più ruoli meno costosi.
  \
 \ *Andamento PB* \
-
+Durante la fase di PB il volume di ore produttive svolte settimanalmente è aumentato rispetto alla fase precedente e sono state svolte più ore rispetto alle previsioni originali per recuperare le ore previste ma non svolte nella prima fase. Così facendo c'è stato un utilizzo maggiore di budget negli sprint in cui si sono recuperate più ore, che si riflette nel grafico con un calo nell'andamento nello sprint 13 e 14. Inoltre, sono stati utilizzati ruoli meno costosi come programmatori e verificatori e si è concluso stando perfettamente entro il budget, motivo per cui il Budget Variance finale vale 0%.
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
 == MPC04 - CPI (Cost Performance Index)
@@ -843,7 +782,7 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
       import cetz-plot: *
 
       plot.plot(
-        size: (9, 9),
+        size: (16,9),
         legend: "inner-north-west",
         x-tick-step: 1,
         y-tick-step: 0.1, 
@@ -881,37 +820,211 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
 *Andamento RTB* \
 Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto all'utilizzo dei ruoli più costosi durante la fase di RTB. Siccome dopo questa fase lavoreranno di più figure meno costose come programmatore e verificatore, il CPI dovrebbe arrivare a raggiungere il valore ottimale. \
 \ *Andamento PB* \
-
+Come previsto, l'utilizzo maggiore di ruoli meno costosi quali programmatore e verificatore durante l'ultima fase del progetto ha portato ad un graduale aumento del CPI. Questo inoltre dimostra come il gruppo sia riuscito a gestire meglio il budget, guadagnando più valore di quello speso, fino a raggiungere il valore ottimale di CPI durante l'ultimo sprint. 
 
 
 == MPC05 - Task Completition Rate (TCR)
 *Task Completion Rate*: indice che rappresenta la percentuale di attività completate rispetto al totale delle attività pianificate in un progetto.
-//tabella
-//grafico
+
+#let lista-TCR = (
+  (12, 5, 5, 100.00),
+  (13, 11, 12, 91.67),
+  (14, 14, 14, 100.00),
+  (15, 18, 18, 100.00)
+)
+
+// --- TABELLA TCR ---
+#figure(
+  caption: [Tabella per periodo di Task Completion Rate (TCR)],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Task Completate*], [*Task Totali*], [*TCR (%)*]),
+      ..lista-TCR.map(riga => {
+        let (p, compl, tot, tcr) = riga
+        ([Sprint #p], str(compl), str(tot), [#tcr%])
+      }).flatten()
+    )
+  )
+]
+
+// --- GRAFICO TCR ---
+#figure(
+  caption: [Grafico per periodo di Task Completion Rate],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (10, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 5, 
+        y-min: 65,  
+        y-max: 110, 
+        x-min: 12, 
+        x-max: 15.1,
+        x-format: v => [S. #calc.round(v)],
+        y-grid: true,
+        y-label: [TCR (%)],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((11.5, 100.0), (15.5, 100.0)),
+            label: [Target (100%)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          // Linea dell'andamento reale (TCR)
+          plot.add(
+            lista-TCR.map(it => {
+              let (p, compl, tot, tcr) = it
+              (p, tcr)
+            }),
+            label: [TCR],
+            style: (stroke: red),
+            mark: "o",
+            line: "linear",
+          )
+        }
+      )
+    })
+  )
+]
+*Andamento RTB* \
+Non disponibile perché la metrica TCR è stata misurata solamente durante il PB.
+
 *Andamento PB* \
-// descrizione andamento
+Grazie all'assenza di impegni universitari diversi dal progetto, il team è riuscito quasi sempre a svolgere tutti i task previsti, talvolta aggiungendone ulteriori rispetto a quelli pianificati nello sprint planning, 
+ Questo è frutto e dimostrazione di una migliore organizzazione rispetto a quella effettuata durante il periodo di RTB, nel quale invece spesso non si è riuscito a completare tutti i task previsti durante il loro sprint.
 
 == MPC06 - Time Efficiency
 *Time Efficiency*: indice che rappresenta l'efficienza temporale di un progetto, si ottiene calcolando il rapporto tra le ore dedicate ad attività produttive e le ore totali necessarie per concludere il progetto.
-//tabella
-// grafico
-*Andamento PB* \
-// descrizione andamento
 
-== MPC07 - Percentuale di metriche soddisfatte
-*Descrizione*: // inserire la descrizione che verrà messa nel NdP
+#let lista-TE = (
+  (12, 16, 57, 28.07),
+  (13, 102, 157, 69.39),
+  (14, 78, 104, 75.00),
+  (15, 172, 186, 92.47)
+)
+
+// --- TABELLA TE ---
+#figure(
+  caption: [Tabella per periodo di Time Efficiency],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Ore produttive*], [*Ore Totali*], [*Time Efficiency (%)*]),
+      ..lista-TE.map(riga => {
+        let (p, compl, tot, tcr) = riga
+        ([Sprint #p], str(compl), str(tot), [#tcr%])
+      }).flatten()
+    )
+  )
+]
+
+// --- GRAFICO TE ---
+#figure(
+  caption: [Grafico per periodo di Time Efficiency],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (10, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 10, 
+        y-min: 0,  
+        y-max: 110, 
+        x-min: 12, 
+        x-max: 15.1,
+        x-format: v => [S. #calc.round(v)],
+        y-grid: true,
+        y-label: [Time Efficiency (%)],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((11.5, 100.0), (15.5, 100.0)),
+            label: [Target (100%)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          // Linea dell'andamento reale (TCR)
+          plot.add(
+            lista-TE.map(it => {
+              let (p, compl, tot, tcr) = it
+              (p, tcr)
+            }),
+            label: [TCR],
+            style: (stroke: red),
+            mark: "o",
+            line: "linear",
+          )
+        }
+      )
+    })
+  )
+]
+*Andamento RTB* \
+Non disponibile perché la metrica Time Efficiency è stata misurata solamente durante il PB.
+*Andamento PB* \
+Nel dodicesimo e tredicesimo sprint sono state dedicate molte ore allo studio della progettazione, causando così un basso livello di Time Efficiency, che però ha permesso di dedicare la maggior parte delle ore dei due sprint finali ad attività produttive.
+
+== MPC07 - Percentuale di metriche soddisfatte //per ultima
+*Descrizione*: \ // inserire la descrizione che verrà messa nel NdP
 //tabella
-//grafico
+//grafico 
+
 *Andamento PB* \
 // descrizione andamento
 
 == MPC08 - Numero Rischi Non Previsti
 *Descrizione*: il numero di rischi non previsti che si verificano durante uno sprint.
-//tabella
-//grafico
-*Andamento PB* \
-// descrizione andamento
+#let lista-rischi = (
+  (12, 0),
+  (13, 1),
+  (14, 2),
+  (15, 0)
+)
 
+// --- TABELLA rischi ---
+#figure(
+  caption: [Tabella per il numero di rischi non previsti],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Rischi non previsti*]),
+      ..lista-rischi.map(riga => {
+        let (p, compl) = riga
+        ([Sprint #p], str(compl))
+      }).flatten()
+    )
+  )
+]
+*Andamento RTB* \
+Non disponibile perché la metrica Rischi Non Previsti è stata misurata solamente durante il PB.
+
+*Andamento PB* \
+La maggior parte dei rischi che si sono presentati durante la fase di PB è stata velocemente mitigata grazie al piano di mitigazione per rischi simili. Nella tabella sono stati inseriti i rischi incontrati che non sono stati facilmente e velocemente risolvibili, come la necessità di modificare sostanzialmente l'architettura dopo l'incontro con il professor Cardin.
 
 
 
@@ -954,7 +1067,7 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
       let maxListaSpese = calc.max(..listaSpese.map(it => calc.max(it.at(1), it.at(2))))
 
       plot.plot(
-        size: (9, 9),
+        size: (16,9),
         legend: "inner-north-west",
         x-tick-step: 1,
         y-tick-step: 1000, 
@@ -987,9 +1100,9 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
   )
 ]
 *Andamento RTB* \
-Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è più in linea con la pianificazione iniziale a partire dal quinto sprint. In particolare, negli sprint attorno all'ottavo il valore prodotto è diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo il recupero di questo ritardo negli ultimi sprint, nei quali si prevede di lavorare per un maggior numero di ore.\
+Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è più in linea con la pianificazione iniziale a partire dal quinto sprint. In particolare, negli sprint attorno all'ottavo il valore prodotto è diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari. \ //, ma prevediamo il recupero di questo ritardo negli ultimi sprint, nei quali si prevede di lavorare per un maggior numero di ore.\
 \ *Andamento PB* \
-
+Il disallineamento tra valore pianificato e guadagnato è stato gradualmente risolto grazie ad un maggior apporto di ore dedicate al progetto, risultato possibile grazie al termine della sessione universitaria di esami. In particolare, intorno al tredicesimo sprint il lavoro svolto è tornato ad essere quasi in linea con quello pianificato e nello sprint finale PV e EV risultano entrambi valere 12845, che è il valore originariamente pianificato per il budget.
 
 
 
@@ -1016,9 +1129,7 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
           let ac = riga.at(1)
           let etc= riga.at(2)
           let periodo-testo = if p == 0 [Aggiudicazione] else [Sprint #p]
-          
-          (periodo-testo, [€ #ac], [€ #etc])
-        }).flatten()
+          (periodo-testo, [€ #calc.round(ac, digits: 2)], [€ #calc.round(etc, digits: 2)])        }).flatten()
     )
   )
 ]
@@ -1032,7 +1143,7 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
       import cetz-plot: * // [cite: 17]
 
       plot.plot(
-        size: (9, 9), // [cite: 128, 176]
+        size: (16,9), // [cite: 128, 176]
         legend: "inner-north-east",
         x-tick-step: 1, // [cite: 61, 63]
         y-tick-step: 1000, 
@@ -1065,12 +1176,13 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
   )
 ]
 *Andamento RTB* \
-La spesa è cresciuta in maniera abbastanza lineare in questi sprint, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste per gli sprint successivi alla sessione di esami universitari. L'andamento della linea dell'ETC indica budget sufficiente a intensificare le attività produttive negli ultimi sprint, in quanto si dispone ancora di più metà del budget.
+La spesa è cresciuta in maniera abbastanza lineare negli sprint del RTB, rimanendo in linea con quanto programmato poiché le spese maggiori erano previste per gli sprint successivi alla sessione di esami universitari. L'andamento della linea dell'ETC indica budget sufficiente a intensificare le attività produttive negli ultimi sprint, in quanto si dispone ancora di più metà del budget.
 \
 \ *Andamento PB* \
+La rapida crescita dell'AC risulta essere direttamente proporzionale alla rapida decrescita dell'ETC: questo rispecchia il veloce utilizzo della metà di budget rimanente. L'intensificazione delle attività produttive negli ultimi sprint ha portato ad un rapido consumo del budget rimanente, ma è stato possibile concludere il progetto entro il budget previsto, come dimostrato dal fatto che l'AC finale coincide con il BAC di 12845 euro e che l'ETC finale vale 0 euro.
 
 
-== MPC11 - Estimate at Completion
+== MPC12 - Estimate at Completion
 *Estimate at Completion*: indice che  rappresenta la stima del costo totale del progetto al momento del suo completamento.
 #let listaEv-Ac-EAC = range(lista_Ev.len()).map(i => {
   (i, lista_Ev.at(i), lista_Ac.at(i))
@@ -1110,7 +1222,7 @@ La spesa è cresciuta in maniera abbastanza lineare in questi sprint, rimanendo 
       import cetz-plot: *
 
       plot.plot(
-        size: (9, 9),
+        size: (16,9),
         legend: "inner-north-west",
         x-tick-step: 1,
         y-tick-step: 1000, 
@@ -1146,10 +1258,10 @@ La spesa è cresciuta in maniera abbastanza lineare in questi sprint, rimanendo 
   )
 ]
 *Andamento RTB* \
-L'attuale scostamento tra EAC e BAC è dovuto al fatto che il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, quindi la stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
-La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quarto sprint. Con il passaggio alla fase successiva, che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un'ulteriore diminuzione progressiva del valore dell'EAC in maniera che esso coincida con il BAC al termine del progetto.\
+Lo scostamento tra EAC e BAC è dovuto al fatto che il CPI è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, quindi la stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
+La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quarto sprint. Con il passaggio alla fase successiva e l'impiego di risorse con tariffe orarie inferiori, si era previsto un miglioramento del CPI e quindi un'ulteriore diminuzione progressiva del valore dell'EAC.\
 \ *Andamento PB* \
-
+Come previsto durante la fase precedente, l'utilizzo di risorse meno costose ha portato ad un miglioramento del CPI, che si è tradotto in una diminuzione progressiva dell'EAC. Questo è dovuto alla maggiore densità di ore dei ruoli di programmatore e verificatore, che hanno tariffe orarie più basse rispetto a quelle dei ruoli più costosi utilizzati durante la fase di RTB. L'EAC finale coincide con il BAC, dimostrando così che il progetto è stato completato entro il budget previsto.
 == MPC18 - Correttezza ortografica
 
 #figure(
@@ -1161,7 +1273,7 @@ La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quar
       import cetz-plot: *
 
       plot.plot(
-        size: (9, 9),
+        size: (16,9),
         legend: "inner-north-west",
         x-tick-step: 1,
         y-tick-step: 1, 
@@ -1267,13 +1379,13 @@ Ogni documento presenza un indice di leggibilità superiore al limite inferiore 
 \
 \ *Andamento PB* \
 
-== MPC13 - Code Coverage (CC)
+== MPC14 - Code Coverage (CC)
 *Code Coverage*: indice che rappresenta quanto il codice è stato verificato dal processo di testing.
 //tabella
 //grafico
 \ *Andamento PB* \
 
-== MPC14 - Test Success Rate (TSR)
+== MPC15 - Test Success Rate (TSR)
 *Test Success Rate*: indice che misura la percentuale dei test superati rispetto a quelli totali. 
 //tabella
 //grafico
@@ -1284,11 +1396,10 @@ Ogni documento presenza un indice di leggibilità superiore al limite inferiore 
 //grafico
 \ *Andamento PB* \
 
- /*==  MPD02 - Requisiti desiderabili soddisfatti (RDS)
+== MPD02 - Requisiti desiderabili soddisfatti (RDS)
  //tabella
   //grafico
 \ *Andamento PB* \
- */
 
 
 = Iniziative di miglioramento
