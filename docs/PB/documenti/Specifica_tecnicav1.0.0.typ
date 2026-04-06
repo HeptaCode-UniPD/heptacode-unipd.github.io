@@ -392,8 +392,6 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 #pagebreak()
 === Analisi dei Repository - MS2
 
-//#figure( [#image("../../asset/diagr-architett/UML/ActiveAnalysisService")] , caption: [Diagramma struttura AWS - MS2])
-
 L'architettura del microservizio di analisi (MS2) è progettata per gestire processi a lunga esecuzione in modo asincrono, separando la ricezione della richiesta dal workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura serverless su AWS, utilizzando Step Functions per il controllo del workflow, AWS Bedrock per l'analisi tramite LLM e S3 per la persistenza dei dati e dei report intermedi.
 
 ==== Classi MS2 - Presentation Layer
@@ -411,13 +409,15 @@ Service di backend che coordina l'innesco dell'infrastruttura asincrona AWS. \
 _Metodi pubblici:_
   - #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] - coordina l'avvio della pipeline inoltrando il payload all’adapter Step Functions tramite startStepFunctionExecution().
 
-*LambdaHandler* \
-Modulo di avvio Serverless (Lambda Adapter) che traduce gli eventi di API Gateway nel formato di routing interno. \
+*AwsStepFunctionsAdapter* \
+Componente di adattamento per l'integrazione con AWS Step Functions. Isola il framework NestJS dall'utilizzo diretto dell'SDK AWS. \
 _Attributi privati:_
-  - #text(font: "Courier New")[cachedServer: any] - variabile globale per il riutilizzo dell'istanza Express tra le invocazioni (Warm Start).
+  - #text(font: "Courier New")[sfnClient: SFNClient] — istanza del client AWS per l'invocazione dei servizi di orchestrazione.
 
 _Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(event: any, context: any, callback: any)] - inizializza l'applicazione NestJS utilizzando \@vendia/serverless-express, applica la validazione globale (ValidationPipe) e inoltra l'evento di AWS Lambda all'istanza Express configurata per l'elaborazione.
+  - #text(font: "Courier New")[startStepFunctionExecution(payload: any)] — riceve il payload di analisi, inizializza un `StartExecutionCommand` e invoca la State Machine configurata tramite l'ARN presente nelle variabili d'ambiente. Restituisce l'ARN dell'esecuzione avviata.
+
+#figure( [#image("../../asset/diagr-architett/UML/AnalysisService.png")] , caption: [Presentation Layer MS2])
 
 ==== Classi MS2 - Business Layer
 
@@ -445,6 +445,18 @@ Funzione Lambda specializzata nell'analisi della documentazione tecnica e degli 
 _Metodi pubblici:_
   - #text(font: "Courier New")[docAgentHandler(event: unknown)] - estrae i sorgenti, delega a sub-agenti (Tech Reviewer, Compliance Officer) la revisione documentale e salva il report aggregato su S3.
 
+==== Classi MS2 - Data Layer
+
+*DecompressioneZipTool* \
+Modulo di utilità per l'interazione con AWS S3 in fase di lettura. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo.
+
+==== MS2 - Workflow di Orchestrazione
+Poiché le componenti del Business Layer sono implementate come funzioni Lambda serverless, prive di stato persistente e non istanziabili come oggetti, la loro struttura non si presta a una rappresentazione tramite Class Diagram UML. Il workflow di orchestrazione e le dipendenze tra queste componenti sono pertanto illustrati mediante il grafico di esecuzione della AWS Step Functions State Machine riportato di seguito.
+
+  #figure( [#image("../../asset/diagr-architett/UML/stepfunctions_graph.png", width: 40%)] , caption: [Workflow di orchestrazione degli agenti tramite AWS Step Functions])
+
 ===== Strumenti e Utility
 
 *AgentInvoker* \
@@ -456,9 +468,9 @@ _Metodi pubblici:_
 *SmartBundler* \
 Wrapper per l'impacchettamento del codice sorgente, ottimizzato per rientrare nei limiti di contesto dei LLM tramite la libreria repomix. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[createSourceChunks(extractPath: string)] - suddivide il sorgente in porzioni sequenziali (chunk) da 150.000 caratteri rispettando i confini dei file.
-  - #text(font: "Courier New")[createFullChunks(extractPath: string)] - suddivide l'intero contenuto del repository in chunk per analisi complete (es. scansione credenziali).
-  - #text(font: "Courier New")[extractImportedLibraries(sourceChunks: string | string[])] - esegue l'analisi statica tramite espressioni regolari per identificare le dipendenze dichiarate senza l'uso di modelli AI.
+  - #text(font: "Courier New")[createSourceChunks(extractPath: string)] — suddivide il sorgente in porzioni sequenziali (chunk) basate sulla costante `MAX_BUNDLE_CHARS` (150.000 caratteri) rispettando i confini dei file tramite analisi dei delimitatori repomix.
+  - #text(font: "Courier New")[createFullChunks(extractPath: string)] — suddivide l'intero contenuto del repository in chunk per analisi complete (es. scansione credenziali).
+  - #text(font: "Courier New")[extractImportedLibraries(sourceChunks: string | string[])] — esegue l'analisi statica tramite espressioni regolari per identificare le dipendenze dichiarate senza l'uso di modelli AI.
 
 *PullRepoLambda* \
 Gestisce la fase di acquisizione iniziale del codice sorgente dal provider esterno. \
@@ -468,20 +480,17 @@ _Metodi pubblici:_
 *WebhookSenderLambda* \
 Gestisce la notifica di completamento della pipeline. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] - invia all'URL di destinazione configurato il report Markdown consolidato con una richiesta HTTP POST protetta da API Key.
+  - #text(font: "Courier New")[handler(event: any)] — invia all'URL configurato un payload JSON contenente il report Markdown, `repoUrl`, `jobId`, `commitId` e lo stato `done`. La richiesta è protetta da API Key.
 
 *FailureHandlerLambda* \
 Gestisce le notifiche in caso di fallimento della pipeline asincrona. \
 _Metodi pubblici:_
   - #text(font: "Courier New")[handler(event: any)] - intercetta errori o crash non gestiti da AWS Step Functions e trasmette la tipologia dell'errore (errorType, cause) al sistema chiamante.
 
-==== Classi MS2 - Data Layer
-
-*DecompressioneZipTool* \
-Modulo di utilità per l'interazione con AWS S3 in fase di lettura. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] - recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo.
 #pagebreak()
+
+
+
 === Autenticazione e Repository Management - MS3
 Il diagramma è stato suddiviso in due figure per una questione di visibilità documentale. Il primo diagramma mostra le classi relative all'autenticazione, mentre il secondo mostra le classi relative alla gestione delle repository. 
 L'interfaccia _IngestionInterface_ e la classe _IngestionController_ sono presenti in entrambi i diagrammi perché espongono funzionalità sia per l'autenticazione che per la gestione delle repository, fungendo da punto di ingresso unificato per le richieste HTTP relative a entrambe le aree funzionali.
@@ -653,7 +662,7 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
 Il frontend è sviluppato in React con TypeScript e Vite. L'architettura è organizzata in tre layer: Presentation, Business e Data. Il layer di presentazione comprende il sistema di routing, le pagine e i componenti riutilizzabili. Il layer di business raccoglie i service che incapsulano la logica applicativa e le chiamate HTTP. Il layer data contiene la configurazione degli endpoint e le interfacce TypeScript che definiscono il contratto con il backend.
 #figure( [#image("../../asset/diagr-architett/frontend/frontend-layered.png")] , caption: [Layered Architecture - frontend])
 
-=== Classi Frontend - Presentation Layer
+=== Moduli MS0 - Presentation Layer
 ==== Routing
 #figure( [#image("../../asset/diagr-architett/frontend/app.png")] , caption: [Diagramma componenti, App - frontend])
 *App* \
@@ -710,7 +719,7 @@ _Sottocomponente interno:_
 *UserPage * \
 Pagina del profilo utente. Invoca _useIsLogged()_ e recupera lo userId dalla sessione. All'inizio invoca _getInfoUserByID()_ del _UserService_. Gestisce il caso in cui l'utente sia presente in localStorage ma non nel database: in tal caso mostra solo il pulsante di logout, senza un <dialog> di conferma, il quale è invece presente nel normale logout. Alla conferma del logout da <dialog>, viene invocato _logout()_ da _SessionService_ e naviga a /login.
 
-=== Classi Frontend - Business Layer
+=== Moduli MS0 - Business Layer
 #figure( [#image("../../asset/diagr-architett/frontend/sessionService.png")] , caption: [Diagramma componenti, SessionService - frontend])
 *SessionService* \ 
 Gestisce la sessione utente tramite localStorage e la guardia di navigazione. Esporta le seguenti funzioni:
@@ -744,7 +753,7 @@ Gestisce l'integrazione con il managementService del backend, esponendo al layer
 - #text(font: "Courier New")[startNewAnalysis(repoUrl: string)] - contratto per l'avvio di una nuova analisi. Invoca _post\<StartAnalysisResponse\>()_ sull'endpoint /analysis/request con body { repoUrl }. Restituisce uno StartAnalysisResponse con status: 'done' se l'analisi è già disponibile, oppure status: 'processing' con un jobId da usare per il polling.
 - #text(font: "Courier New")[pollAnalysisStatus(jobId: string)] - contratto per il controllo dello stato di un'analisi in corso. Invoca _get\<{ status: AnalysisStatus }\>()_ sull'endpoint /analysis/status/{jobId} e restituisce il solo campo status.
 
-=== Classi Frontend - Data Layer
+=== Moduli MS0 - Data Layer
 ==== HTTP Client
 *httpClient* \
 - #text(font: "Courier New")[HttpOptions] - Interfaccia di configurazione per le richieste HTTP.
