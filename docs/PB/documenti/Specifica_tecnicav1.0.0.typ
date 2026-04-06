@@ -6,10 +6,11 @@
 #let storia_modifiche = (
   ("1.0.0", "2026/04/03", "Angela Favaro", "Laura Venturini",  "Approvazione finale, rilascio ufficiale v1.0.0"),
 
+  ("0.7.0", "2026/04/07", "Angela Canazza", "Angela Favaro",  "Concluso specifiche MS0"),
   ("0.6.0", "2026/04/03", "Alberto Reginato", "Riccardo Baldin",  "Aggiunte specifiche MS2"),
-  ("0.5.0", "2026/03/02", "Amerigo Vegliante", "",  "Aggiunte specifiche MS1"),
+  ("0.5.0", "2026/03/02", "Amerigo Vegliante", "Laura Venturini",  "Aggiunte specifiche MS1"),
   ("0.4.0", "2026/04/01", "Angela Favaro", "Nicola Simionato",  "Aggiunte specifiche MS3"),
-  ("0.3.0", "2026/04/01", "Angela Canazza", "",  "Aggiunte specifiche MS0"),
+  ("0.3.0", "2026/04/01", "Angela Canazza", "Angela Favaro",  "Aggiunte specifiche MS0"),
   ("0.2.0", "2026/03/08", "Angela Favaro", "Angela Canazza",  "Aggiunto capitolo 1"),
   ("0.1.0", "2026/03/07", "Angela Favaro", "Laura Ventrini",  "Creazione documento, impostazione macro-aree")
 )
@@ -78,10 +79,10 @@ NestJS è il framework applicativo scelto per strutturare il layer server.
 === React v19.2.4 
 React è stato scelto come libreria UI, le motivazioni principali sono state:
 
-- _Modello a componenti_ — L'architettura basata su componenti riutilizzabili favorisce la separazione delle responsabilità, facilita i test unitari e permette di costruire interfacce complesse in modo incrementale e controllato.
-- _Ecosistema maturo_ — React dispone di un ecosistema vastissimo che spesso non richiede soluzioni "su misura".
-- _Virtual DOM e performance_ — Il meccanismo di riconciliazione del Virtual DOM garantisce aggiornamenti efficienti dell'interfaccia, limitando le operazioni sul DOM reale ai soli nodi effettivamente modificati.
-- _Integrazione nativa con TypeScript_ — React supporta pienamente TypeScript, con tipizzazione completa di props, state, hook e context, rendendo il codice frontend robusto e verificabile staticamente.
+- _Modello a componenti_ - L'architettura basata su componenti riutilizzabili favorisce la separazione delle responsabilità, facilita i test unitari e permette di costruire interfacce complesse in modo incrementale e controllato.
+- _Ecosistema maturo_ - React dispone di un ecosistema vastissimo che spesso non richiede soluzioni "su misura".
+- _Virtual DOM e performance_ - Il meccanismo di riconciliazione del Virtual DOM garantisce aggiornamenti efficienti dell'interfaccia, limitando le operazioni sul DOM reale ai soli nodi effettivamente modificati.
+- _Integrazione nativa con TypeScript_ - React supporta pienamente TypeScript, con tipizzazione completa di props, state, hook e context, rendendo il codice frontend robusto e verificabile staticamente.
 
 === Dipendenze frontend (React)
 #figure(
@@ -110,6 +111,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
   [react-router-dom],[v7.13.1],[Gestione del routing lato client. Fornisce i componenti \<Route\>, \<Link\> e gli hook useNavigate e useParams per la navigazione tra le pagine.],
   [react-icons],[v5.6.0],[Libreria di icone SVG. Aggrega i principali icon set in un unico pacchetto importabile come componenti React.],
+  [react-markdown],[v9.1.0],[Renderizza contenuto Markdown come componenti React. Utilizzata per visualizzare i report delle analisi restituiti dal backend in formato Markdown.],
 )
 #figure(
   caption: [Dipendenze frontend, build e compilazione],
@@ -125,7 +127,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   [vite],[v7.2.4],[Bundler e dev server. Scelto per la velocità di avvio grazie all'uso nativo dei moduli ES e all’HMR istantaneo.],
   [\@vitejs/plugin-react],[v5.1.1],[Plugin Vite che abilita il supporto a JSX e al Fast Refresh di React durante lo sviluppo.],
   [typescript],[v5.9.3],[Superset tipizzato di JavaScript. Usato per garantire la correttezza dei tipi a tempo di compilazione.],
-  [\@types/react, \ \@types/react-dom, \ \@types/node, \ \@types/diff],[varie],[Definizioni dei tipi TypeScript per le rispettive librerie.],
+  [\@types/react, \ \@types/react-dom, \ \@types/node],[varie],[Definizioni dei tipi TypeScript per le rispettive librerie.],
 )
 #figure(
   caption: [Dipendenze frontend, testing],
@@ -145,6 +147,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   [\@testing-library/jest-dom],[v6.9.1],[Estende i matcher di Vitest con asserzioni specifiche per il DOM (toBeInTheDocument, toHaveClass, ecc.).],
   [\@testing-library/user-event],[v14.6.1],[Simula eventi utente realistici (click, digitazione, tab) nei test, più fedele al comportamento del browser rispetto a fireEvent.],
   [jsdom],[v29.0.1],[Implementazione del DOM in ambiente Node.js. Usato da Vitest come ambiente di test per simulare il browser.],
+  [msw],[v2.12.14],[Mock Service Worker. Intercetta le richieste HTTP a livello di rete per simulare le API nei test di integrazione.],
 )
 #figure(
   caption: [Dipendenze frontend, qualità del codice],
@@ -296,9 +299,9 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
 === NodeJS v24
 Node.js è l'ambiente di runtime scelto per eseguire il codice server-side. Node.js è il runtime che consente l'esecuzione di TypeScript lato server, al di fuori del browser. Le motivazioni che hanno portato il gruppo a questa scelta progettuale sono state:
 
-- _Uniformità del linguaggio_ — L'utilizzo dello stesso linguaggio su frontend e backend elimina il context-switch, consente la condivisione di logica e tipi comuni, e semplifica la gestione delle dipendenze.
-- _Architettura non bloccante e I/O asincrono_ — Il modello event-driven di Node.js lo rende particolarmente adatto ad applicazioni con elevata concorrenza di richieste I/O, come chiamate a database e API esterne.
-- _Ecosistema npm_ — npm mette a disposizione il più grande repository di librerie open source esistente.
+- _Uniformità del linguaggio_ - L'utilizzo dello stesso linguaggio su frontend e backend elimina il context-switch, consente la condivisione di logica e tipi comuni, e semplifica la gestione delle dipendenze.
+- _Architettura non bloccante e I/O asincrono_ - Il modello event-driven di Node.js lo rende particolarmente adatto ad applicazioni con elevata concorrenza di richieste I/O, come chiamate a database e API esterne.
+- _Ecosistema npm_ - npm mette a disposizione il più grande repository di librerie open source esistente.
 
 == Infrastruttura di deployment
 === Docker Engine v29.3.0
@@ -309,9 +312,9 @@ I microservizi utilizzano Docker come tecnologia di containerizzazione. Il "Dock
 La scelta di MongoDB come database principale è strettamente legata alla natura della piattaforma ad agenti basata su analisi di repository. In un sistema dove i dati prodotti e consumati dagli agenti hanno strutture eterogenee, variabili nel tempo e difficilmente riducibili a uno schema relazionale fisso (come nel caso di un repository documentale piuttosto che di sviluppo ecc.), un database orientato ai documenti è la soluzione più adatta.
 Nello specifico:
 - _Schema flessibile_: non richiede uno schema rigido predefinito. Questo è particolarmente vantaggioso in Code Guardian dove ogni agente può produrre output con strutture diverse, e dove il modello dati pu; cambiare facilmente.
-- _Dati gerarchici e annidati_: — I documenti JSON di MongoDB si prestano naturalmente a rappresentare strutture dati complesse e annidate (contesti agentici) senza dover ricorrere a join tra tabelle come in un database relazionale.
-- _Scalabilità orizzontale_ — MongoDB è progettato per scalare orizzontalmente tramite sharding nativo, caratteristica importante in una piattaforma che può dover gestire volumi crescenti di sessioni agentiche in parallelo.
-- _Integrazione con l'ecosistema TypeScript_ — Tramite Mongoose o il driver nativo MongoDB, la definizione di schemi e modelli tipizzati in TypeScript è diretta e ben supportata, mantenendo la coerenza con il resto della stack.
+- _Dati gerarchici e annidati_: - I documenti JSON di MongoDB si prestano naturalmente a rappresentare strutture dati complesse e annidate (contesti agentici) senza dover ricorrere a join tra tabelle come in un database relazionale.
+- _Scalabilità orizzontale_ - MongoDB è progettato per scalare orizzontalmente tramite sharding nativo, caratteristica importante in una piattaforma che può dover gestire volumi crescenti di sessioni agentiche in parallelo.
+- _Integrazione con l'ecosistema TypeScript_ - Tramite Mongoose o il driver nativo MongoDB, la definizione di schemi e modelli tipizzati in TypeScript è diretta e ben supportata, mantenendo la coerenza con il resto della stack.
 
 == Tecnologie per infrastruttura cloud
 === AWS
@@ -323,7 +326,7 @@ Lambda è il runtime di tutta la logica agentica: pull del repository, planning,
 ==== AWS Step Functions
 Step Functions orchestra l'intero flusso agentico come macchina a stati: gestisce sequenza, parallelismo nativo (OWASP e Test Agent in contemporanea), branching condizionale sul flag runDocs, retry, timeout e propagazione degli errori verso il failure handler. Evita di dover implementare manualmente la logica di coordinamento tra Lambda e rende il flusso ispezionabile visivamente dalla console AWS.
 ==== AWS S3
-S3 svolge due ruoli distinti nella piattaforma: archivia il repository clonato come ZIP che gli agenti recuperano autonomamente per l'analisi, e funge da bus di stato asincrono tra gli agenti paralleli — ogni domain agent scrive il proprio report parziale su S3 al termine dell'elaborazione, e l'orchestratore aggregatore li recupera e cancella nella fase successiva. Questo disaccoppia i componenti paralleli senza richiedere comunicazione diretta tra Lambda.
+S3 svolge due ruoli distinti nella piattaforma: archivia il repository clonato come ZIP che gli agenti recuperano autonomamente per l'analisi, e funge da bus di stato asincrono tra gli agenti paralleli - ogni domain agent scrive il proprio report parziale su S3 al termine dell'elaborazione, e l'orchestratore aggregatore li recupera e cancella nella fase successiva. Questo disaccoppia i componenti paralleli senza richiedere comunicazione diretta tra Lambda.
 ==== AWS Fargate
 Fargate è il runtime serverless per container, utilizzato per hostare il frontend e il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalano automaticamente e il traffico è instradato tramite Application Load Balancer. È la scelta naturale per i componenti con ciclo di vita HTTP continuo, a differenza della logica agentica che per sua natura è event-driven e gestita da Lambda.
 
@@ -355,7 +358,7 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 
 === Microservizi
 
-*Microservizio Frontend - MS0* #pad(left: 0.5cm)[Costituisce il punto di accesso dell'utente al sistema. Espone le seguenti funzionalità: autenticazione e visualizzazione del profilo utente, inserimento dell'URL di un repository GitHub da analizzare, e consultazione dei risultati dell'analisi. Quest'ultima comprende tre aree distinte: copertura dei test, qualità della documentazione e vulnerabilità di sicurezza secondo le linee guida OWASP. Per ciascuna area vengono presentati i suggerimenti di modifica, le motivazioni dietro le modifiche proposte e le criticità rilevate.]
+*Microservizio Frontend - MS0* #pad(left: 0.5cm)[Costituisce il punto di accesso dell'utente al sistema. Espone le seguenti funzionalità: autenticazione e visualizzazione del profilo utente, inserimento dell'URL di un repository GitHub da analizzare, e consultazione dei risultati dell'analisi. Quest'ultima comprende tre aree distinte: copertura dei test, qualità della documentazione e vulnerabilità di sicurezza secondo le linee guida OWASP. Per ciascuna area vengono presentati i suggerimenti di modifica e le motivazioni per criticità rilevate.]
 
 *Microservizio di Analysis Management - MS1*  #pad(left: 0.5cm)[Ha il compito di verificare se, per un dato repository, sia già presente in memoria un'analisi relativa all'ultimo commit disponibile. Qualora l'analisi risulti assente o non aggiornata, il microservizio provvede ad inoltrare la richiesta di analisi al microservizio competente, evitando elaborazioni ridondanti e ottimizzando l'utilizzo delle risorse computazionali.]
 
@@ -398,23 +401,23 @@ L'architettura del microservizio di analisi (MS2) è progettata per gestire proc
 *AppController* \
 Punto di ingresso HTTP (NestJS) per l'avvio delle pipeline di analisi. Riceve le richieste dal frontend o da MS1. \
 _Attributi privati:_
-  - #text(font: "Courier New")[appService: AppService] — istanza iniettata del service per l'analisi.
+  - #text(font: "Courier New")[appService: AppService] - istanza iniettata del service per l'analisi.
 
 _Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] — riceve l'URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente il messaggio di successo, un jobId e l’executionArn per il tracciamento.
+  - #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] - riceve l'URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente il messaggio di successo, un jobId e l’executionArn per il tracciamento.
 
 *AppService* \
 Service di backend che coordina l'innesco dell'infrastruttura asincrona AWS. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] — coordina l'avvio della pipeline inoltrando il payload all’adapter Step Functions tramite startStepFunctionExecution().
+  - #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] - coordina l'avvio della pipeline inoltrando il payload all’adapter Step Functions tramite startStepFunctionExecution().
 
 *LambdaHandler* \
 Modulo di avvio Serverless (Lambda Adapter) che traduce gli eventi di API Gateway nel formato di routing interno. \
 _Attributi privati:_
-  - #text(font: "Courier New")[cachedServer: any] — variabile globale per il riutilizzo dell'istanza Express tra le invocazioni (Warm Start).
+  - #text(font: "Courier New")[cachedServer: any] - variabile globale per il riutilizzo dell'istanza Express tra le invocazioni (Warm Start).
 
 _Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(event: any, context: any, callback: any)] — inizializza l'applicazione NestJS utilizzando \@vendia/serverless-express, applica la validazione globale (ValidationPipe) e inoltra l'evento di AWS Lambda all'istanza Express configurata per l'elaborazione.
+  - #text(font: "Courier New")[startAnalysis(event: any, context: any, callback: any)] - inizializza l'applicazione NestJS utilizzando \@vendia/serverless-express, applica la validazione globale (ValidationPipe) e inoltra l'evento di AWS Lambda all'istanza Express configurata per l'elaborazione.
 
 ==== Classi MS2 - Business Layer
 
@@ -423,61 +426,61 @@ _Metodi pubblici:_
 *OrchestratorLambda* \
 Componente centrale che gestisce il ciclo di vita dell'analisi in Step Functions, suddividendo il processo in fasi decisionali e di consolidamento. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[orchestratorHandler(event: any)] — punto di ingresso Lambda che esegue le azioni principali in base al parametro action. Se action è PLAN valuta i metadati per generare il piano di esecuzione; se è AGGREGATE preleva i report da S3, aggrega i risultati per area e invoca il Master Lead Agent per il polishing finale.
+  - #text(font: "Courier New")[orchestratorHandler(event: any)] - punto di ingresso Lambda che esegue le azioni principali in base al parametro action. Se action è PLAN valuta i metadati per generare il piano di esecuzione; se è AGGREGATE preleva i report da S3, aggrega i risultati per area e invoca il Master Lead Agent per il polishing finale.
 
 ===== Agenti di Analisi Tematica
 
 *OwaspAgentLambda* \
 Funzione Lambda specializzata nell'esecuzione dell'analisi di sicurezza (OWASP) del codice sorgente. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[owaspAgentHandler(event: unknown)] — scarica il file ZIP da S3 tramite unzipRepoToTemp(), utilizza SmartBundler per creare i bundle, coordina i sotto-agenti Bedrock (Dependency, Credentials, Core) e salva il report JSON finale sul bucket S3.
+  - #text(font: "Courier New")[owaspAgentHandler(event: unknown)] - scarica il file ZIP da S3 tramite unzipRepoToTemp(), utilizza SmartBundler per creare i bundle, coordina i sotto-agenti Bedrock (Dependency, Credentials, Core) e salva il report JSON finale sul bucket S3.
 
 *TestAgentLambda* \
 Funzione Lambda specializzata nell'esecuzione dell'analisi di qualità e testing del codice sorgente. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[testAgentHandler(event: unknown)] — estrae e impacchetta il codice sorgente, invoca in parallelo i sub-agenti Bedrock (QA, Boilerplate, Code Quality), consolida la sintesi e salva il report JSON su S3.
+  - #text(font: "Courier New")[testAgentHandler(event: unknown)] - estrae e impacchetta il codice sorgente, invoca in parallelo i sub-agenti Bedrock (QA, Boilerplate, Code Quality), consolida la sintesi e salva il report JSON su S3.
 
 *DocsAgentLambda* \
 Funzione Lambda specializzata nell'analisi della documentazione tecnica e degli standard legali/normativi del repository. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[docAgentHandler(event: unknown)] — estrae i sorgenti, delega a sub-agenti (Tech Reviewer, Compliance Officer) la revisione documentale e salva il report aggregato su S3.
+  - #text(font: "Courier New")[docAgentHandler(event: unknown)] - estrae i sorgenti, delega a sub-agenti (Tech Reviewer, Compliance Officer) la revisione documentale e salva il report aggregato su S3.
 
 ===== Strumenti e Utility
 
 *AgentInvoker* \
 Modulo responsabile della comunicazione resiliente con l'infrastruttura AWS Bedrock Agents. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] — gestisce l'invocazione dell'AI. Implementa il Tool-use denial per forzare l'output testuale e include logiche di retry esponenziale per gestire il throttling.
-  - #text(font: "Courier New")[extractFirstMeaningfulLine(report: string, emojiPattern: RegExp)] — estrae la sintesi dinamica dal report Markdown per il riepilogo globale.
+  - #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] - gestisce l'invocazione dell'AI. Implementa il Tool-use denial per forzare l'output testuale e include logiche di retry esponenziale per gestire il throttling.
+  - #text(font: "Courier New")[extractFirstMeaningfulLine(report: string, emojiPattern: RegExp)] - estrae la sintesi dinamica dal report Markdown per il riepilogo globale.
 
 *SmartBundler* \
 Wrapper per l'impacchettamento del codice sorgente, ottimizzato per rientrare nei limiti di contesto dei LLM tramite la libreria repomix. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[createSourceChunks(extractPath: string)] — suddivide il sorgente in porzioni sequenziali (chunk) da 150.000 caratteri rispettando i confini dei file.
-  - #text(font: "Courier New")[createFullChunks(extractPath: string)] — suddivide l'intero contenuto del repository in chunk per analisi complete (es. scansione credenziali).
-  - #text(font: "Courier New")[extractImportedLibraries(sourceChunks: string | string[])] — esegue l'analisi statica tramite espressioni regolari per identificare le dipendenze dichiarate senza l'uso di modelli AI.
+  - #text(font: "Courier New")[createSourceChunks(extractPath: string)] - suddivide il sorgente in porzioni sequenziali (chunk) da 150.000 caratteri rispettando i confini dei file.
+  - #text(font: "Courier New")[createFullChunks(extractPath: string)] - suddivide l'intero contenuto del repository in chunk per analisi complete (es. scansione credenziali).
+  - #text(font: "Courier New")[extractImportedLibraries(sourceChunks: string | string[])] - esegue l'analisi statica tramite espressioni regolari per identificare le dipendenze dichiarate senza l'uso di modelli AI.
 
 *PullRepoLambda* \
 Gestisce la fase di acquisizione iniziale del codice sorgente dal provider esterno. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] — clona il repository Git in una cartella temporanea, esegue il checkout sul commit specificato, estrae i metadati (tag, branch, changelog), comprime l'archivio in un file ZIP e lo carica su S3 per le fasi successive.
+  - #text(font: "Courier New")[handler(event: any)] - clona il repository Git in una cartella temporanea, esegue il checkout sul commit specificato, estrae i metadati (tag, branch, changelog), comprime l'archivio in un file ZIP e lo carica su S3 per le fasi successive.
 
 *WebhookSenderLambda* \
 Gestisce la notifica di completamento della pipeline. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] — invia all'URL di destinazione configurato il report Markdown consolidato con una richiesta HTTP POST protetta da API Key.
+  - #text(font: "Courier New")[handler(event: any)] - invia all'URL di destinazione configurato il report Markdown consolidato con una richiesta HTTP POST protetta da API Key.
 
 *FailureHandlerLambda* \
 Gestisce le notifiche in caso di fallimento della pipeline asincrona. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] — intercetta errori o crash non gestiti da AWS Step Functions e trasmette la tipologia dell'errore (errorType, cause) al sistema chiamante.
+  - #text(font: "Courier New")[handler(event: any)] - intercetta errori o crash non gestiti da AWS Step Functions e trasmette la tipologia dell'errore (errorType, cause) al sistema chiamante.
 
 ==== Classi MS2 - Data Layer
 
 *DecompressioneZipTool* \
 Modulo di utilità per l'interazione con AWS S3 in fase di lettura. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo.
+  - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] - recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo.
 #pagebreak()
 === Autenticazione e Repository Management - MS3
 Il diagramma è stato suddiviso in due figure per una questione di visibilità documentale. Il primo diagramma mostra le classi relative all'autenticazione, mentre il secondo mostra le classi relative alla gestione delle repository. 
@@ -488,92 +491,92 @@ L'interfaccia _IngestionInterface_ e la classe _IngestionController_ sono presen
 *IngestionInterface* \
 Definisce il contratto di validazione del controller di ingestion.
 
-- #text(font: "Courier New")[validateUser(data: UserDataDTO)] — contratto per la trasformazione di UserDataDTO in ValidatedUserDataDTO.
-- #text(font: "Courier New")[validateSaveRepo(data: SaveRepoDto)] — contratto per la trasformazione di SaveRepoDto in ValidatedSaveRepoDTO.
-- #text(font: "Courier New")[validateDeleteRepo(data: DeleteRepoDto)] — contratto per la trasformazione di DeleteRepoDto in ValidatedDeleteRepoDTO.
+- #text(font: "Courier New")[validateUser(data: UserDataDTO)] - contratto per la trasformazione di UserDataDTO in ValidatedUserDataDTO.
+- #text(font: "Courier New")[validateSaveRepo(data: SaveRepoDto)] - contratto per la trasformazione di SaveRepoDto in ValidatedSaveRepoDTO.
+- #text(font: "Courier New")[validateDeleteRepo(data: DeleteRepoDto)] - contratto per la trasformazione di DeleteRepoDto in ValidatedDeleteRepoDTO.
 
 *IngestionController* \
 Punto di ingresso HTTP dell'applicazione. Riceve le richieste, le valida tramite i metodi privati e le delega ai service appropriati.
 
 _Attributi privati_:
-  - #text(font: "Courier New")[userService: UserService] — istanza iniettata del service utente
-  - #text(font: "Courier New")[repoService: RepoService] — istanza iniettata del service repository
+  - #text(font: "Courier New")[userService: UserService] - istanza iniettata del service utente
+  - #text(font: "Courier New")[repoService: RepoService] - istanza iniettata del service repository
 
 _Metodi pubblici_:
-  - #text(font: "Courier New")[login(body: UserDataDTO)] — riceve le credenziali dell'utente, le valida tramite validateUser() e invoca userService.login(). Restituisce un AuthResponseDto contenente l'id e l'email dell'utente autenticato.
-  - #text(font: "Courier New")[profile(userId: string)] — riceve l'id utente come query parameter, invoca userService.getUser() e restituisce un UserResponseDTO con i dati del profilo.
-  - #text(font: "Courier New")[addRepo(body: SaveRepoDto)] — riceve i dati del repository, li valida tramite validateSaveRepo() e invoca repoService.addRepo(). Restituisce l'id del repository creato.
-  - #text(font: "Courier New")[deleteRepo(body: DeleteRepoDto)] — riceve i dati per l'eliminazione, li valida tramite validateDeleteRepo() e invoca repoService.deleteRepo().
-  - #text(font: "Courier New")[list(userId: string)] — riceve l'id utente come query parameter, invoca repoService.listForUser() e restituisce la lista dei repository associati all'utente come array di RepoResponseDto.
-  - #text(font: "Courier New")[getById(id: string)] — riceve l'id del repository come query parameter, invoca repoService.getRepoById() e restituisce il repository corrispondente come RepoResponseDto.
+  - #text(font: "Courier New")[login(body: UserDataDTO)] - riceve le credenziali dell'utente, le valida tramite validateUser() e invoca userService.login(). Restituisce un AuthResponseDto contenente l'id e l'email dell'utente autenticato.
+  - #text(font: "Courier New")[profile(userId: string)] - riceve l'id utente come query parameter, invoca userService.getUser() e restituisce un UserResponseDTO con i dati del profilo.
+  - #text(font: "Courier New")[addRepo(body: SaveRepoDto)] - riceve i dati del repository, li valida tramite validateSaveRepo() e invoca repoService.addRepo(). Restituisce l'id del repository creato.
+  - #text(font: "Courier New")[deleteRepo(body: DeleteRepoDto)] - riceve i dati per l'eliminazione, li valida tramite validateDeleteRepo() e invoca repoService.deleteRepo().
+  - #text(font: "Courier New")[list(userId: string)] - riceve l'id utente come query parameter, invoca repoService.listForUser() e restituisce la lista dei repository associati all'utente come array di RepoResponseDto.
+  - #text(font: "Courier New")[getById(id: string)] - riceve l'id del repository come query parameter, invoca repoService.getRepoById() e restituisce il repository corrispondente come RepoResponseDto.
 
 _Metodi privati:_
-  - #text(font: "Courier New")[validateUser(data: UserDataDTO)] — mappa un UserDataDTO in un ValidatedUserDataDTO, separando il contratto HTTP dal contratto interno dell'applicazione.
-  - #text(font: "Courier New")[validateSaveRepo(data: SaveRepoDto)] — mappa un SaveRepoDto in un ValidatedSaveRepoDTO.
-  - #text(font: "Courier New")[validateDeleteRepo(data: DeleteRepoDto)] — mappa un DeleteRepoDto in un ValidatedDeleteRepoDTO.
+  - #text(font: "Courier New")[validateUser(data: UserDataDTO)] - mappa un UserDataDTO in un ValidatedUserDataDTO, separando il contratto HTTP dal contratto interno dell'applicazione.
+  - #text(font: "Courier New")[validateSaveRepo(data: SaveRepoDto)] - mappa un SaveRepoDto in un ValidatedSaveRepoDTO.
+  - #text(font: "Courier New")[validateDeleteRepo(data: DeleteRepoDto)] - mappa un DeleteRepoDto in un ValidatedDeleteRepoDTO.
 
 ==== Classi MS3 - Business Layer
 ===== Interfacce
 *UserServiceLayerInterface* \
 Definisce il contratto del service utente esposto verso il layer di presentazione.
 
-- #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] — contratto per l'autenticazione di un utente a partire da credenziali validate.
-- #text(font: "Courier New")[getUser(userId: string)] — contratto per il recupero di un utente tramite il suo id.
+- #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] - contratto per l'autenticazione di un utente a partire da credenziali validate.
+- #text(font: "Courier New")[getUser(userId: string)] - contratto per il recupero di un utente tramite il suo id.
 
 *RepoServiceLayerInterface* \
 Definisce il contratto del service repository esposto verso il layer di presentazione.
 
-- #text(font: "Courier New")[addRepo(data: ValidatedSaveRepoDTO)] — contratto per l'aggiunta di un repository.
-- #text(font: "Courier New")[deleteRepo(data: ValidatedDeleteRepoDTO)] — contratto per l'eliminazione o la rimozione di un utente da un repository.
-- #text(font: "Courier New")[listForUser(userId: string)] — contratto per il recupero di tutti i repository associati a un utente.
-- #text(font: "Courier New")[getRepoById(idRepo: string)] — contratto per il recupero di un singolo repository tramite id.
+- #text(font: "Courier New")[addRepo(data: ValidatedSaveRepoDTO)] - contratto per l'aggiunta di un repository.
+- #text(font: "Courier New")[deleteRepo(data: ValidatedDeleteRepoDTO)] - contratto per l'eliminazione o la rimozione di un utente da un repository.
+- #text(font: "Courier New")[listForUser(userId: string)] - contratto per il recupero di tutti i repository associati a un utente.
+- #text(font: "Courier New")[getRepoById(idRepo: string)] - contratto per il recupero di un singolo repository tramite id.
 
-*IUserRepository* \
+*UserRepository* \
 Definisce il contratto di persistenza per l'entità utente, implementato a livello infrastrutturale.
 
-- #text(font: "Courier New")[findById(id: string)] — recupera un utente tramite il suo id. Restituisce null se non trovato.
-- #text(font: "Courier New")[findByEmail(email: string)] — recupera un utente tramite email. Restituisce null se non trovato.
-- #text(font: "Courier New")[save(user: UserEntity)] — persiste un nuovo utente e restituisce l'entità salvata.
-- #text(font: "Courier New")[existsByEmail(email: string)] — verifica se esiste già un utente con la email fornita. Restituisce un booleano.
+- #text(font: "Courier New")[findById(id: string)] - recupera un utente tramite il suo id. Restituisce null se non trovato.
+- #text(font: "Courier New")[findByEmail(email: string)] - recupera un utente tramite email. Restituisce null se non trovato.
+- #text(font: "Courier New")[save(user: UserEntity)] - persiste un nuovo utente e restituisce l'entità salvata.
+- #text(font: "Courier New")[existsByEmail(email: string)] - verifica se esiste già un utente con la email fornita. Restituisce un booleano.
 
-*IRepoRepository* \
+*RepoRepository* \
 Definisce il contratto di persistenza per l'entità repository, implementato a livello infrastrutturale.
 
-- #text(font: "Courier New")[findById(id: string)] — recupera un repository tramite il suo id. Restituisce null se non trovato.
-- #text(font: "Courier New")[findByUserId(userId: string)] — recupera tutti i repository associati a un determinato utente.
-- #text(font: "Courier New")[findByUrl(repoUrl: string)] — recupera un repository tramite URL. Restituisce null se non trovato. Utile per verificare se un repository è già presente nel sistema prima di salvarlo.
-- #text(font: "Courier New")[findByUrlAndUser(userId, repoUrl)] — recupera un repository tramite URL filtrandolo per utente specifico. Restituisce null se non trovato.
-- #text(font: "Courier New")[save(repo: RepoEntity)] — persiste un nuovo repository e restituisce l'entità salvata.
-- #text(font: "Courier New")[delete(id: string)] — elimina definitivamente un repository dal sistema. Restituisce true se l'operazione è andata a buon fine.
-- #text(font: "Courier New")[addUser(repoId, idUtente)] — aggiunge un utente all’array idUtente del repository specificato. Usato quando un repository esiste già e un nuovo utente vuole aggiungerlo. Restituisce il repository aggiornato.
-- #text(font: "Courier New")[removeUser(repoId, idUtente)] — rimuove un utente dall’array idUtente del repository specificato. Usato quando un utente elimina un repository che è condiviso con altri. Restituisce il repository aggiornato.
+- #text(font: "Courier New")[findById(id: string)] - recupera un repository tramite il suo id. Restituisce null se non trovato.
+- #text(font: "Courier New")[findByUserId(userId: string)] - recupera tutti i repository associati a un determinato utente.
+- #text(font: "Courier New")[findByUrl(repoUrl: string)] - recupera un repository tramite URL. Restituisce null se non trovato. Utile per verificare se un repository è già presente nel sistema prima di salvarlo.
+- #text(font: "Courier New")[findByUrlAndUser(userId, repoUrl)] - recupera un repository tramite URL filtrandolo per utente specifico. Restituisce null se non trovato.
+- #text(font: "Courier New")[save(repo: RepoEntity)] - persiste un nuovo repository e restituisce l'entità salvata.
+- #text(font: "Courier New")[delete(id: string)] - elimina definitivamente un repository dal sistema. Restituisce true se l'operazione è andata a buon fine.
+- #text(font: "Courier New")[addUser(repoId, idUtente)] - aggiunge un utente all’array idUtente del repository specificato. Usato quando un repository esiste già e un nuovo utente vuole aggiungerlo. Restituisce il repository aggiornato.
+- #text(font: "Courier New")[removeUser(repoId, idUtente)] - rimuove un utente dall’array idUtente del repository specificato. Usato quando un utente elimina un repository che è condiviso con altri. Restituisce il repository aggiornato.
 
 *GitHubServiceInterface* \
 Definisce il contratto per la validazione di un repository GitHub tramite API esterna.
 
-- #text(font: "Courier New")[validate(url: string)] — verifica che l'URL fornito corrisponda a un repository GitHub pubblico e accessibile. Restituisce un oggetto GitHubRepoData con i metadati del repository, oppure null se il repository non esiste o non è accessibile.
+- #text(font: "Courier New")[validate(url: string)] - verifica che l'URL fornito corrisponda a un repository GitHub pubblico e accessibile. Restituisce un oggetto GitHubRepoData con i metadati del repository, oppure null se il repository non esiste o non è accessibile.
 
 ===== Servizi
 *UserService* \
 Implementa UserServiceLayerInterface. Contiene la logica applicativa relativa agli utenti. \
 _Attributi privati:_
-- #text(font: "Courier New")[userRepository: IUserRepository] — istanza iniettata del repository utente.
+- #text(font: "Courier New")[userRepository: IUserRepository] - istanza iniettata del repository utente.
 
 _Metodi pubblici:_
-- #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] — recupera l'utente tramite email. Se non trovato lancia UnauthorizedException. Verifica la correttezza della password tramite bcrypt.compare(). Se la verifica fallisce lancia UnauthorizedException. Restituisce la UserEntity dell'utente autenticato.
-- #text(font: "Courier New")[getUser(userId: string)] — recupera l'utente tramite id. Se non trovato lancia NotFoundException. Restituisce la UserEntity.
+- #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] - recupera l'utente tramite email. Se non trovato lancia UnauthorizedException. Verifica la correttezza della password tramite bcrypt.compare(). Se la verifica fallisce lancia UnauthorizedException. Restituisce la UserEntity dell'utente autenticato.
+- #text(font: "Courier New")[getUser(userId: string)] - recupera l'utente tramite id. Se non trovato lancia NotFoundException. Restituisce la UserEntity.
 
 *RepoService* \
 Implementa RepoServiceLayerInterface. Contiene la logica applicativa relativa ai repository.\
 _Attributi privati:_
-- #text(font: "Courier New")[repoRepository: IRepoRepository] — istanza iniettata del repository.
-- #text(font: "Courier New")[githubService: GitHubServiceInterface] — istanza iniettata dell’adapter GitHub.
+- #text(font: "Courier New")[repoRepository: IRepoRepository] - istanza iniettata del repository.
+- #text(font: "Courier New")[githubService: GitHubServiceInterface] - istanza iniettata dell’adapter GitHub.
 
 _Metodi pubblici:_
-- #text(font: "Courier New")[addRepo(data: ValidatedSaveRepoDTO)] — valida il repository tramite githubService.validate(). Se non valido lancia BadRequestException. Verifica se il repository esiste già tramite findByUrl(). Se esiste e l'utente è già associato lancia ConflictException. Se esiste ma l'utente non è associato, aggiunge l'utente tramite addUser(). Se non esiste, crea una nuova RepoEntity con un UUID generato e la persiste tramite save(). Restituisce la RepoEntity.
-- #text(font: "Courier New")[deleteRepo(data: ValidatedDeleteRepoDTO)] — recupera il repository tramite id. Se non trovato lancia NotFoundException. Se l'utente non è tra quelli associati lancia NotFoundException. Se il repository ha più utenti associati, rimuove solo l'utente corrente tramite removeUser(). Se l'utente è l'unico, elimina definitivamente il repository tramite delete(). Restituisce un booleano.
-- #text(font: "Courier New")[listForUser(userId: string)] — recupera tutti i repository associati all'utente tramite findByUserId(). Restituisce un array di RepoEntity.
-- #text(font: "Courier New")[getRepoById(idRepo: string)] — recupera il repository tramite id. Se non trovato lancia NotFoundException. Restituisce la RepoEntity.
+- #text(font: "Courier New")[addRepo(data: ValidatedSaveRepoDTO)] - valida il repository tramite githubService.validate(). Se non valido lancia BadRequestException. Verifica se il repository esiste già tramite findByUrl(). Se esiste e l'utente è già associato lancia ConflictException. Se esiste ma l'utente non è associato, aggiunge l'utente tramite addUser(). Se non esiste, crea una nuova RepoEntity con un UUID generato e la persiste tramite save(). Restituisce la RepoEntity.
+- #text(font: "Courier New")[deleteRepo(data: ValidatedDeleteRepoDTO)] - recupera il repository tramite id. Se non trovato lancia NotFoundException. Se l'utente non è tra quelli associati lancia NotFoundException. Se il repository ha più utenti associati, rimuove solo l'utente corrente tramite removeUser(). Se l'utente è l'unico, elimina definitivamente il repository tramite delete(). Restituisce un booleano.
+- #text(font: "Courier New")[listForUser(userId: string)] - recupera tutti i repository associati all'utente tramite findByUserId(). Restituisce un array di RepoEntity.
+- #text(font: "Courier New")[getRepoById(idRepo: string)] - recupera il repository tramite id. Se non trovato lancia NotFoundException. Restituisce la RepoEntity.
 
 ===== Entità di dominio
 *UserEntity* \
@@ -596,7 +599,7 @@ _Getter pubblici:_ \
 *UserPersistence* \ 
 Schema Mongoose per la collezione users. Mappa la struttura di UserEntity al documento MongoDB. \ 
 _Attributi pubblici:_ 
-- #text(font: "Courier New")[nome, cognome, email, passwordHash] — quest'ultimo con select: false per escluderlo di default dalle query e includerlo solo quando esplicitamente necessario.
+- #text(font: "Courier New")[nome, cognome, email, passwordHash] - quest'ultimo con select: false per escluderlo di default dalle query e includerlo solo quando esplicitamente necessario.
 
 *RepoPersistence* \
 Schema Mongoose per la collezione repos. Mappa la struttura di RepoEntity al documento MongoDB. \
@@ -606,48 +609,190 @@ _Attributi pubblici:_
 *UserMapper* \
 Classe di conversione tra UserEntity e UserPersistence. Tutti i metodi sono statici.
 
-- #text(font: "Courier New")[toDomain(p: UserPersistence)] — converte un documento Mongoose in una UserEntity istanziando la classe con i campi corrispondenti.
-- #text(font: "Courier New")[toPersistence(e: UserEntity)] — converte una UserEntity in un oggetto parziale Partial\<UserPersistence> con i campi necessari alla persistenza. Non include l'id in quanto gestito da MongoDB.
+- #text(font: "Courier New")[toDomain(p: UserPersistence)] - converte un documento Mongoose in una UserEntity istanziando la classe con i campi corrispondenti.
+- #text(font: "Courier New")[toPersistence(e: UserEntity)] - converte una UserEntity in un oggetto parziale Partial\<UserPersistence> con i campi necessari alla persistenza. Non include l'id in quanto gestito da MongoDB.
 
 *RepoMapper* \
 Classe di conversione tra RepoEntity e RepoPersistence. Tutti i metodi sono statici.
 
-- #text(font: "Courier New")[toDomain(p: RepoPersistence)] — converte un documento Mongoose in una RepoEntity istanziando la classe con i campi corrispondenti.
-- #text(font: "Courier New")[toPersistence(e: RepoEntity)] — converte una RepoEntity in un oggetto RepoPersistence con tutti i campi necessari alla persistenza, incluso \_id.
+- #text(font: "Courier New")[toDomain(p: RepoPersistence)] - converte un documento Mongoose in una RepoEntity istanziando la classe con i campi corrispondenti.
+- #text(font: "Courier New")[toPersistence(e: RepoEntity)] - converte una RepoEntity in un oggetto RepoPersistence con tutti i campi necessari alla persistenza, incluso \_id.
 
 *UserMongoRepository* \
 Implementa IUserRepository. Gestisce le operazioni di persistenza degli utenti su MongoDB tramite Mongoose. \
 _Attributi privati:_
-- #text(font: "Courier New")[model: Model\<UserDocument>] — modello Mongoose iniettato tramite \@InjectModel.
+- #text(font: "Courier New")[model: Model\<UserDocument>] - modello Mongoose iniettato tramite \@InjectModel.
 
 _Metodi pubblici:_
-- #text(font: "Courier New")[findById(id: string)] — esegue una query findById aggiungendo .select("+passwordHash") per includere il campo normalmente escluso. Converte il documento tramite UserMapper.toDomain(). Restituisce null se non trovato.
-- #text(font: "Courier New")[findByEmail(email: string)] — esegue una query findOne per email aggiungendo .select("+passwordHash"). Converte il documento tramite UserMapper.toDomain(). Restituisce null se non trovato.
-- #text(font: "Courier New")[save(user: UserEntity)] — converte l'entità tramite UserMapper.toPersistence() e la persiste tramite model.create(). Restituisce l'entità convertita tramite UserMapper.toDomain().
-- #text(font: "Courier New")[existsByEmail(email: string)] — esegue una countDocuments per email e restituisce true se il conteggio è maggiore di zero.
+- #text(font: "Courier New")[findById(id: string)] - esegue una query findById aggiungendo .select("+passwordHash") per includere il campo normalmente escluso. Converte il documento tramite UserMapper.toDomain(). Restituisce null se non trovato.
+- #text(font: "Courier New")[findByEmail(email: string)] - esegue una query findOne per email aggiungendo .select("+passwordHash"). Converte il documento tramite UserMapper.toDomain(). Restituisce null se non trovato.
+- #text(font: "Courier New")[save(user: UserEntity)] - converte l'entità tramite UserMapper.toPersistence() e la persiste tramite model.create(). Restituisce l'entità convertita tramite UserMapper.toDomain().
+- #text(font: "Courier New")[existsByEmail(email: string)] - esegue una countDocuments per email e restituisce true se il conteggio è maggiore di zero.
 
 *RepoMongoRepository* \
 Implementa IRepoRepository. Gestisce le operazioni di persistenza dei repository su MongoDB tramite Mongoose. \
 _Attributi privati:_
-- #text(font: "Courier New")[model: Model\<RepoDocument>] — modello Mongoose iniettato tramite \@InjectModel.
+- #text(font: "Courier New")[model: Model\<RepoDocument>] - modello Mongoose iniettato tramite \@InjectModel.
 
 _Metodi pubblici:_
-- #text(font: "Courier New")[findById(id: string)] — esegue findById e converte il documento tramite RepoMapper.toDomain(). Restituisce null se non trovato.
-- #text(font: "Courier New")[findByUserId(userId: string)] — esegue find filtrando per idUtente, ordinando per data di creazione decrescente con limite di 100 risultati. Converte ogni documento tramite RepoMapper.toDomain().
-- #text(font: "Courier New")[findByUrl(repoUrl: string)] — esegue findOne filtrando per url. Restituisce null se non trovato.
-- #text(font: "Courier New")[findByUrlAndUser(userId, repoUrl)] — esegue findOne filtrando per url e idUtente contemporaneamente. Restituisce null se non trovato.
-- #text(font: "Courier New")[save(repo: RepoEntity)] — converte l'entità tramite RepoMapper.toPersistence() e la persiste tramite model.create(). Restituisce l'entità convertita.
-- #text(font: "Courier New")[delete(id: string)] — esegue findByIdAndDelete. Restituisce true se il documento è stato trovato ed eliminato, false altrimenti.
-- #text(font: "Courier New")[addUser(repoId, idUtente)] — esegue findByIdAndUpdate con operatore \$push per aggiungere l'utente all’array. Se il documento non esiste lancia NotFoundException. Restituisce il repository aggiornato convertito tramite RepoMapper.toDomain().
-- #text(font: "Courier New")[removeUser(repoId, idUtente)] — esegue findByIdAndUpdate con operatore \$pull per rimuovere l'utente dall’array. Se il documento non esiste lancia NotFoundException. Restituisce il repository aggiornato convertito tramite RepoMapper.toDomain().
+- #text(font: "Courier New")[findById(id: string)] - esegue findById e converte il documento tramite RepoMapper.toDomain(). Restituisce null se non trovato.
+- #text(font: "Courier New")[findByUserId(userId: string)] - esegue find filtrando per idUtente, ordinando per data di creazione decrescente con limite di 100 risultati. Converte ogni documento tramite RepoMapper.toDomain().
+- #text(font: "Courier New")[findByUrl(repoUrl: string)] - esegue findOne filtrando per url. Restituisce null se non trovato.
+- #text(font: "Courier New")[findByUrlAndUser(userId, repoUrl)] - esegue findOne filtrando per url e idUtente contemporaneamente. Restituisce null se non trovato.
+- #text(font: "Courier New")[save(repo: RepoEntity)] - converte l'entità tramite RepoMapper.toPersistence() e la persiste tramite model.create(). Restituisce l'entità convertita.
+- #text(font: "Courier New")[delete(id: string)] - esegue findByIdAndDelete. Restituisce true se il documento è stato trovato ed eliminato, false altrimenti.
+- #text(font: "Courier New")[addUser(repoId, idUtente)] - esegue findByIdAndUpdate con operatore \$push per aggiungere l'utente all’array. Se il documento non esiste lancia NotFoundException. Restituisce il repository aggiornato convertito tramite RepoMapper.toDomain().
+- #text(font: "Courier New")[removeUser(repoId, idUtente)] - esegue findByIdAndUpdate con operatore \$pull per rimuovere l'utente dall’array. Se il documento non esiste lancia NotFoundException. Restituisce il repository aggiornato convertito tramite RepoMapper.toDomain().
 
 *GitHubAdapter* \
 Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubbliche di GitHub.
 
-- #text(font: "Courier New")[validate(url: string)] — interpreta l'URL GitHub fornito, estrae owner e nome del repository ed esegue una chiamata alle API di GitHub per verificarne l'esistenza e l'accessibilità pubblica. Restituisce un oggetto GitHubRepoData con i metadati del repository se la chiamata ha successo, null altrimenti.
+- #text(font: "Courier New")[validate(url: string)] - interpreta l'URL GitHub fornito, estrae owner e nome del repository ed esegue una chiamata alle API di GitHub per verificarne l'esistenza e l'accessibilità pubblica. Restituisce un oggetto GitHubRepoData con i metadati del repository se la chiamata ha successo, null altrimenti.
 
 == Progettazione frontend
+Il frontend è sviluppato in React con TypeScript e Vite. L'architettura è organizzata in tre layer: Presentation, Business e Data. Il layer di presentazione comprende il sistema di routing, le pagine e i componenti riutilizzabili. Il layer di business raccoglie i service che incapsulano la logica applicativa e le chiamate HTTP. Il layer data contiene la configurazione degli endpoint e le interfacce TypeScript che definiscono il contratto con il backend.
+#figure( [#image("../../asset/diagr-architett/frontend/frontend-layered.png")] , caption: [Layered Architecture - frontend])
 
+=== Classi Frontend - Presentation Layer
+==== Routing
+#figure( [#image("../../asset/diagr-architett/frontend/app.png")] , caption: [Diagramma componenti, App - frontend])
+*App* \
+Punto di ingresso dell'applicazione. Configura il router tramite #text(font: "Courier New")[createBrowserRouter]  e definisce la struttura delle route. La route radice / utilizza RootLayout come elemento padre e reindirizza automaticamente a /repositories. Le route figlie sono /repositories, /repository/:id, /addRepository e /profile. La route /login è definita separatamente, al di fuori di RootLayout, in quanto non prevede la barra di navigazione.
+
+- #text(font: "Courier New")[RootLayout] - Componente strutturale che avvolge tutte le pagine protette. Renderizza NavBar in cima e Outlet come contenitore per le pagine figlie iniettate dal router. Non contiene logica applicativa.
+
+==== Componenti
+*NavBar* \
+Barra di navigazione persistente presente in tutte le pagine protette. Composta internamente da Breadcrumbs e SmartNavLink.
+- #text(font: "Courier New")[Breadcrumbs] - Sottocomponente interno di NavBar. Legge i match correnti tramite useMatches e costruisce dinamicamente una lista di link basandosi sull'attributo _handle.label_ definito nelle route. L'ultimo elemento della lista è renderizzato come testo non cliccabile.
+
+- #text(font: "Courier New")[SmartNavLink] - Sottocomponente interno di NavBar. Riceve _to_ e _page_ come props. Tramite useLocation confronta il pathname corrente con la destinazione: se coincidono renderizza un paragrafo statico invece di un link, evitando la navigazione ridondante verso la pagina già attiva.
+
+*CircularProgress* \
+Componente di visualizzazione per valori percentuali. Riceve _percentage_, _label_ e _size_ opzionale come props. La classe CSS del cerchio di progresso varia in base alla soglia della percentuale tramite la funzione interna #text(font: "Courier New")[getColorClass] : top-performance per valori ≥ 90, medium-performance per valori ≥ 50, bad-performance altrimenti.
+
+*DeleteRepoButton* \
+Componente per l'eliminazione di un repository. Riceve _repository_, _userID_, _messageButton_ opzionale e _onDeleted_ opzionale come props. Gestisce due <dialog> nativi tramite ref: uno di conferma prima dell'eliminazione e uno di errore in caso di fallimento. Al conferma invoca deleteRepo() del RepositoriesService. Se _onDeleted_ è definito lo richiama per aggiornare lo stato del componente padre; altrimenti naviga a /repositories.
+
+*StartAnalysisButton* \ 
+Componente per l'avvio e il monitoraggio di un'analisi. Riceve _url_, _messageButton_ opzionale, _onSuccess_ opzionale e _initialJobId_ opzionale come props. Se _initialJobId_ è presente, avvia il polling immediatamente tramite useEffect per riprendere un'analisi già in corso. Gestisce due <dialog> nativi: uno di conferma prima dell'avvio e uno di errore. Il pulsante è disabilitato durante il polling con testo 'Analisi in corso...'.
+
+_Metodi privati:_
+
+- #text(font: "Courier New")[startPolling(jobId: string)] - avvia un _setInterval_ con cadenza di 3000ms. Ad ogni tick invoca _pollAnalysisStatus()_. Se lo status è 'done' chiude l'intervallo e richiama onSuccess. Se è 'error' chiude l'intervallo e mostra il dialog di errore. Se supera il timeout di 15 minuti chiude l'intervallo e mostra il messaggio di timeout.
+- #text(font: "Courier New")[handleConfirm()] - chiude il dialog di conferma e invoca _startNewAnalysis()_. Se la risposta ha status 'done' richiama direttamente onSuccess senza polling. Se ha status 'processing' avvia il polling con il jobId ricevuto.
+
+==== Pagine
+#figure( [#image("../../asset/diagr-architett/frontend/login.png")] , caption: [Diagramma componenti, Login - frontend])
+*Login* \ 
+Pagina di autenticazione, esterna al RootLayout. Invoca _useIsLogged()_ per reindirizzare automaticamente l'utente già autenticato. Gestisce lo stato locale per email, password, isPasswordVisible, isCredentialCorrect e loading. Al submit invoca _checkCredentials()_ del _UserService_, salva lo _userId_ tramite _saveUserID()_ del _SessionService_ e naviga a /repositories. In caso di errore imposta _isCredentialCorrect_ a false e mostra il messaggio di errore.
+
+#figure( [#image("../../asset/diagr-architett/frontend/repositories.png")] , caption: [Diagramma componenti, Repositories- frontend])
+*Repositories* \ 
+Pagina principale dell'applicazione. Invoca _useIsLogged()_ e recupera lo _userId_ dalla sessione tramite _getUserID()_. All'inizio invoca _getRepositoriesByUser()_ e popola lo stato repositories. Filtra la lista in tempo reale tramite useMemo in base al valore della search bar. Renderizza ogni repository come elemento di lista con un link a /repository/:id e un _DeleteRepoButton_. Alla cancellazione riuscita, aggiorna lo stato locale rimuovendo l'elemento senza ricaricare la pagina.
+
+#figure( [#image("../../asset/diagr-architett/frontend/dettagliRepo.png")] , caption: [Diagramma componenti, DettagliRepo- frontend])
+*DettagliRepo* \ 
+Pagina di dettaglio di un repository. Legge l'id dai parametri URL tramite useParams. All'inizio invoca in sequenza _getRepositoryById()_ e _getLastAnalysis()_. Espone la funzione fetchData passata come _onSuccess_ a _StartAnalysisButton_, così al termine del polling la pagina si ricarica automaticamente. Se _analysis.status_ è 'processing' passa il _commitId_ come _initialJobId_ a _StartAnalysisButton_ per riprendere il polling. Composta internamente da InfoRepo. \
+
+_Sottocomponente interno:_
+- #text(font: "Courier New")[InfoRepo] - aside che riceve _repository_ e _userID_ come props. Renderizza il nome del repository, un _DeleteRepoButton_ con label 'Elimina repository', un link esterno alla pagina GitHub e un link di navigazione a /repositories.
+
+#figure( [#image("../../asset/diagr-architett/frontend/addRepository.png")] , caption: [Diagramma componenti, AddRepository- frontend])
+*AddRepository* \
+Pagina per l'aggiunta di un nuovo repository. Invoca _useIsLogged()_. Gestisce lo stato locale per url, loading, _hasAccess_ e errorMessage. Al submit invoca _checkRepoAccess()_ del _RepositoriesService_. In caso di successo naviga a /repositories. In caso di errore imposta _hasAccess_ a false e mostra il messaggio di errore proveniente dal backend. Composta internamente da ErrorReport. \ 
+
+_Sottocomponente interno:_
+
+- #text(font: "Courier New")[ErrorReport] - riceve loading, url, _hasAccess_ ed errorMessage come props. Renderizza il messaggio di caricamento se loading è true, il messaggio di errore se _hasAccess_ è false, nulla altrimenti.
+
+#figure( [#image("../../asset/diagr-architett/frontend/userPage.png")] , caption: [Diagramma componenti, UserPage - frontend])
+*UserPage * \
+Pagina del profilo utente. Invoca _useIsLogged()_ e recupera lo userId dalla sessione. All'inizio invoca _getInfoUserByID()_ del _UserService_. Gestisce il caso in cui l'utente sia presente in localStorage ma non nel database: in tal caso mostra solo il pulsante di logout, senza un <dialog> di conferma, il quale è invece presente nel normale logout. Alla conferma del logout da <dialog>, viene invocato _logout()_ da _SessionService_ e naviga a /login.
+
+=== Classi Frontend - Business Layer
+#figure( [#image("../../asset/diagr-architett/frontend/sessionService.png")] , caption: [Diagramma componenti, SessionService - frontend])
+*SessionService* \ 
+Gestisce la sessione utente tramite localStorage e la guardia di navigazione. Esporta le seguenti funzioni:
+
+- #text(font: "Courier New")[saveUserID(key: string, value: string)] -  salvataggio dell'identificativo utente in localStorage.  invoca _localStorage.setItem()_ con la chiave e il valore forniti.
+- #text(font: "Courier New")[getUserID(key: string)] - recupero dell'identificativo utente da localStorage. invoca _localStorage.getItem()_ e restituisce il valore associato alla chiave, oppure null se assente.
+- #text(font: "Courier New")[logout(key: string)] - rimozione dell'identificativo utente da localStorage. invoca _localStorage.removeItem()_ per eliminare la chiave fornita.
+- #text(font: "Courier New")[useIsLogged()] - React hook che tramite useEffect verifica la presenza dello userId in localStorage e il percorso corrente. Se l'utente non è autenticato e non si trova in /login, reindirizza a /login. Se è autenticato e si trova in /login, reindirizza a /repositories. Se è autenticato ma non trovato nel database tramite getInfoUserByID(), reindirizza a /profile salvo che non ci si trovi già lì.
+
+#figure( [#image("../../asset/diagr-architett/frontend/userService.png")] , caption: [Diagramma componenti, UserService - frontend])
+*UserService* \ 
+Gestisce l'integrazione con lo userService del backend, esponendo al layer di presentazione le operazioni necessarie per la gestione dell'utente. Esporta le seguenti funzioni:
+
+- #text(font: "Courier New")[getInfoUserByID(id: string)] - recupero dei dati di un utente tramite id. invoca _get\<User\>()_ sull'endpoint /profile?userId={id}. Restituisce una User oppure lancia errore se non trovato.
+- #text(font: "Courier New")[checkCredentials(email: string, password: string)] - verifica delle credenziali di accesso. Invoca _post\<User\>()_ sull'endpoint /auth/login con body { email, password }. Restituisce la User autenticata oppure lancia errore se le credenziali non sono valide.
+
+#figure( [#image("../../asset/diagr-architett/frontend/repositoriesService.png")] , caption: [Diagramma componenti, RepositoriesService - frontend])
+*RepositoriesService* \ 
+Gestisce l'integrazione con lo userService del backend, esponendo al layer di presentazione le operazioni necessarie per la gestione e la consultazione dei repository. Esporta le seguenti funzioni:
+
+- #text(font: "Courier New")[getRepositoriesByUser(id: string)] - recupero dei repository associati a un utente. Invoca _get\<Repository[]\>()_ sull'endpoint /repos?userId={id}. Restituisce un array di Repository.
+- #text(font: "Courier New")[getRepositoryById(id: string)] - recupero di un singolo repository tramite id. Invoca _get\<Repository\>()_ sull'endpoint /repo?repoId={id}. Restituisce la Repository oppure lancia errore se non trovata.
+- #text(font: "Courier New")[deleteRepo(idRepo: string, idUtente: string)] - eliminazione di un repository. Invoca _del()_ sull'endpoint /repo con body { idUtente, idRepo }. Restituisce true se l'eliminazione va a buon fine.
+- #text(font: "Courier New")[checkRepoAccess(url: string)] - verifica dell'accessibilità di un repository GitHub per la sua aggiunta al sistema. Recupera lo userId tramite _getUserID()_ del _SessionService_ e invoca _post()_ sull'endpoint /repo con body { idUtente, url } e opzione { extractErrorMessage: true }. Restituisce true se il repository è accessibile. In caso di errore propaga il messaggio ricevuto dal backend.
+
+#figure( [#image("../../asset/diagr-architett/frontend/analysisService.png")] , caption: [Diagramma componenti, AnalysisService - frontend])
+*AnalysisService* \ 
+Gestisce l'integrazione con il managementService del backend, esponendo al layer di presentazione le funzionalità necessarie per la gestione e il coordinamento del sistema. Esporta le seguenti funzioni:
+
+- #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - contratto per il recupero dell'ultima analisi disponibile per un repository. Invoca _get\<AnalysisReport\>()_ sull'endpoint /analysis/view?url={repoUrl}. Restituisce un AnalysisReport oppure lancia errore se non trovato.
+- #text(font: "Courier New")[startNewAnalysis(repoUrl: string)] - contratto per l'avvio di una nuova analisi. Invoca _post\<StartAnalysisResponse\>()_ sull'endpoint /analysis/request con body { repoUrl }. Restituisce uno StartAnalysisResponse con status: 'done' se l'analisi è già disponibile, oppure status: 'processing' con un jobId da usare per il polling.
+- #text(font: "Courier New")[pollAnalysisStatus(jobId: string)] - contratto per il controllo dello stato di un'analisi in corso. Invoca _get\<{ status: AnalysisStatus }\>()_ sull'endpoint /analysis/status/{jobId} e restituisce il solo campo status.
+
+=== Classi Frontend - Data Layer
+==== HTTP Client
+*httpClient* \
+- #text(font: "Courier New")[HttpOptions] - Interfaccia di configurazione per le richieste HTTP.
+
+- #text(font: "Courier New")[extractErrorMessage?: boolean] - Se true, il client tenta di estrarre il messaggio di errore dal body JSON della risposta invece di usare statusText. Utilizzato selettivamente per gli endpoint che restituiscono messaggi significativi nel body.
+
+- #text(font: "Courier New")[httpClient] - Modulo che espone le funzioni HTTP di base utilizzate dai service. Tutte le funzioni delegano la gestione degli errori a handleError.
+
+_Funzioni interne:_
+
+- #text(font: "Courier New")[handleError(res: Response, options?: HttpOptions)] - Se _extractErrorMessage_ è attivo, tenta di deserializzare il body JSON tramite _res.json().catch(() => null)_. Se il campo message è un array contenente una stringa con 'url must be', lo rimappa in 'URL non valido.'. Se è un array senza quel pattern, usa il primo elemento. Se è una stringa, la usa direttamente. In tutti i casi di fallback usa res.statusText. Se _extractErrorMessage_ non è attivo, lancia direttamente _new Error(res.statusText)_.
+
+_Funzioni esportate:_
+
+- #text(font: "Courier New")[get\<T\>(url: string, options?: HttpOptions)] - esegue una fetch con metodo GET. Se !res.ok delega a handleError. Altrimenti deserializza e restituisce il tipo T.
+- #text(font: "Courier New")[post\<T\>(url: string, body: unknown, options?: HttpOptions)] - esegue una fetch con metodo POST, header Content-Type: application/json e body serializzato. Se !res.ok delega a handleError. Altrimenti restituisce il tipo T.
+- #text(font: "Courier New")[del\<T\>(url: string, body: unknown, options?: HttpOptions)] - esegue una fetch con metodo DELETE, header Content-Type: application/json e body serializzato. Se !res.ok delega a handleError. Altrimenti restituisce il tipo T.
+
+==== Tipi di dominio
+*User*\ 
+Interfaccia TypeScript che rappresenta l'entità utente ricevuta dal backend.\
+Attributi: userId: string, nome: string, cognome: string, email: string.\
+
+*Repository *\
+Interfaccia TypeScript che rappresenta l'entità repository ricevuta dal backend. \
+Attributi: id: string, userID: string[], url: string, name: string.\
+
+*AnalysisDetails*\
+Interfaccia TypeScript che rappresenta il dettaglio di una singola analisi eseguita da un agente.\
+Attributi: agentName?: string, summary?: string, report?: string.\
+
+*AnalysisReport*\
+Interfaccia TypeScript che rappresenta il report di un'analisi ricevuto dal backend.\
+Attributi: repoUrl?: string, jobId?: string, commitId?: string, status: AnalysisStatus, analysisDetails?: AnalysisDetails[], scores?: number[], date: Date.\
+
+*AnalysisStatus*\
+Tipo unione che rappresenta i possibili stati di un'analisi: 'done' | 'processing' | 'error'.\
+
+*StartAnalysisResponse*\
+Interfaccia TypeScript che rappresenta la risposta all'avvio di una nuova analisi.\
+Attributi: status: AnalysisStatus, jobId?: string, commitId?: string, repoUrl: string.\
+
+==== Configurazione
+*config *\
+Modulo che espone le costanti di configurazione degli URL base delle API, lette dalle variabili d'ambiente Vite al build time.
+
+- #text(font: "Courier New")[API_BASE_URL_USER] — URL base del microservizio utenti, letto da VITE_URL_USER_SERVICE per le verifiche in localhost. Fallback al link del repository su AWS se la variabile non è definita.
+- #text(font: "Courier New")[API_BASE_URL_ANALYSIS] — URL base del microservizio analisi, letto da VITE_URL_ANALYSIS per le verifiche in localhost. Fallback al link del repository su AWS se la variabile non è definita.
 
 = Stato dei requisiti funzionali
 == Stato per requisito
