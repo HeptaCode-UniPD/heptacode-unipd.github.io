@@ -688,8 +688,8 @@ Componente per l'avvio e il monitoraggio di un'analisi. Riceve _url_, _messageBu
 
 _Metodi privati:_
 
-- #text(font: "Courier New")[startPolling(jobId: string)] - avvia un _setInterval_ con cadenza di 3000ms. Ad ogni tick invoca _pollAnalysisStatus()_. Se lo status è 'done' chiude l'intervallo e richiama onSuccess. Se è 'error' chiude l'intervallo e mostra il dialog di errore. Se supera il timeout di 15 minuti chiude l'intervallo e mostra il messaggio di timeout.
-- #text(font: "Courier New")[handleConfirm()] - chiude il dialog di conferma e invoca _startNewAnalysis()_. Se la risposta ha status 'done' richiama direttamente onSuccess senza polling. Se ha status 'processing' avvia il polling con il jobId ricevuto.
+- #text(font: "Courier New")[startPolling(jobId: string)] - avvia un _setInterval_ con cadenza di 3000ms. Ad ogni tick invoca _pollAnalysisStatus()_. Se lo status è "done" chiude l'intervallo e richiama onSuccess. Se è "error" chiude l'intervallo e mostra il dialog di errore. Se supera il timeout di 15 minuti chiude l'intervallo e mostra il messaggio di timeout.
+- #text(font: "Courier New")[handleConfirm()] - chiude il dialog di conferma e invoca _startNewAnalysis()_. Se la risposta ha status "done" richiama direttamente onSuccess senza polling. Se ha status "processing" avvia il polling con il jobId ricevuto.
 
 ==== Pagine
 #figure( [#image("../../asset/diagr-architett/frontend/login.png")] , caption: [Diagramma componenti, Login - frontend])
@@ -702,7 +702,7 @@ Pagina principale dell'applicazione. Invoca _useIsLogged()_ e recupera lo _userI
 
 #figure( [#image("../../asset/diagr-architett/frontend/dettagliRepo.png")] , caption: [Diagramma componenti, DettagliRepo- frontend])
 *DettagliRepo* \ 
-Pagina di dettaglio di un repository. Legge l'id dai parametri URL tramite useParams. All'inizio invoca in sequenza _getRepositoryById()_ e _getLastAnalysis()_. Espone la funzione fetchData passata come _onSuccess_ a _StartAnalysisButton_, così al termine del polling la pagina si ricarica automaticamente. Se _analysis.status_ è 'processing' passa il _commitId_ come _initialJobId_ a _StartAnalysisButton_ per riprendere il polling. Composta internamente da InfoRepo. \
+Pagina di dettaglio di un repository. Legge l'id dai parametri URL tramite useParams. All'inizio invoca in sequenza _getRepositoryById()_ e _getLastAnalysis()_. Espone la funzione fetchData passata come _onSuccess_ a _StartAnalysisButton_, così al termine del polling la pagina si ricarica automaticamente. Se _analysis.status_ è "processing" passa il _commitId_ come _initialJobId_ a _StartAnalysisButton_ per riprendere il polling. Composta internamente da InfoRepo. \
 
 _Sottocomponente interno:_
 - #text(font: "Courier New")[InfoRepo] - aside che riceve _repository_ e _userID_ come props. Renderizza il nome del repository, un _DeleteRepoButton_ con label "Elimina repository", un link esterno alla pagina GitHub e un link di navigazione a /repositories.
@@ -750,7 +750,7 @@ Gestisce l'integrazione con lo userService del backend, esponendo al layer di pr
 Gestisce l'integrazione con il managementService del backend, esponendo al layer di presentazione le funzionalità necessarie per la gestione e il coordinamento del sistema. Esporta le seguenti funzioni:
 
 - #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - contratto per il recupero dell'ultima analisi disponibile per un repository. Invoca _get\<AnalysisReport\>()_ sull'endpoint /analysis/view?url={repoUrl}. Restituisce un AnalysisReport oppure lancia errore se non trovato.
-- #text(font: "Courier New")[startNewAnalysis(repoUrl: string)] - contratto per l'avvio di una nuova analisi. Invoca _post\<StartAnalysisResponse\>()_ sull'endpoint /analysis/request con body { repoUrl }. Restituisce uno StartAnalysisResponse con status: 'done' se l'analisi è già disponibile, oppure status: 'processing' con un jobId da usare per il polling.
+- #text(font: "Courier New")[startNewAnalysis(repoUrl: string)] - contratto per l'avvio di una nuova analisi. Invoca _post\<StartAnalysisResponse\>()_ sull'endpoint /analysis/request con body { repoUrl }. Restituisce uno StartAnalysisResponse con status: "done" se l'analisi è già disponibile, oppure status: "processing" con un jobId da usare per il polling.
 - #text(font: "Courier New")[pollAnalysisStatus(jobId: string)] - contratto per il controllo dello stato di un'analisi in corso. Invoca _get\<{ status: AnalysisStatus }\>()_ sull'endpoint /analysis/status/{jobId} e restituisce il solo campo status.
 
 === Moduli MS0 - Data Layer
@@ -790,7 +790,7 @@ Interfaccia TypeScript che rappresenta il report di un'analisi ricevuto dal back
 Attributi: repoUrl?: string, jobId?: string, commitId?: string, status: AnalysisStatus, analysisDetails?: AnalysisDetails[], scores?: number[], date: Date.\
 
 *AnalysisStatus*\
-Tipo unione che rappresenta i possibili stati di un'analisi: 'done' | 'processing' | 'error'.\
+Tipo unione che rappresenta i possibili stati di un'analisi: "done" | "processing" | "error".\
 
 *StartAnalysisResponse*\
 Interfaccia TypeScript che rappresenta la risposta all'avvio di una nuova analisi.\
