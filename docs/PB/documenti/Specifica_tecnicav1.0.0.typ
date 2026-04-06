@@ -480,7 +480,7 @@ _Metodi pubblici:_
 *WebhookSenderLambda* \
 Gestisce la notifica di completamento della pipeline. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] — invia all'URL configurato un payload JSON contenente il report Markdown, `repoUrl`, `jobId`, `commitId` e lo stato `done`. La richiesta è protetta da API Key.
+  - #text(font: "Courier New")[handler(event: any)] — invia all'URL configurato un payload JSON contenente il report Markdown, "repoUrl", "jobId", "commitId" e lo stato "done". La richiesta è protetta da API Key.
 
 *FailureHandlerLambda* \
 Gestisce le notifiche in caso di fallimento della pipeline asincrona. \
@@ -705,7 +705,7 @@ Pagina principale dell'applicazione. Invoca _useIsLogged()_ e recupera lo _userI
 Pagina di dettaglio di un repository. Legge l'id dai parametri URL tramite useParams. All'inizio invoca in sequenza _getRepositoryById()_ e _getLastAnalysis()_. Espone la funzione fetchData passata come _onSuccess_ a _StartAnalysisButton_, così al termine del polling la pagina si ricarica automaticamente. Se _analysis.status_ è 'processing' passa il _commitId_ come _initialJobId_ a _StartAnalysisButton_ per riprendere il polling. Composta internamente da InfoRepo. \
 
 _Sottocomponente interno:_
-- #text(font: "Courier New")[InfoRepo] - aside che riceve _repository_ e _userID_ come props. Renderizza il nome del repository, un _DeleteRepoButton_ con label 'Elimina repository', un link esterno alla pagina GitHub e un link di navigazione a /repositories.
+- #text(font: "Courier New")[InfoRepo] - aside che riceve _repository_ e _userID_ come props. Renderizza il nome del repository, un _DeleteRepoButton_ con label "Elimina repository", un link esterno alla pagina GitHub e un link di navigazione a /repositories.
 
 #figure( [#image("../../asset/diagr-architett/frontend/addRepository.png")] , caption: [Diagramma componenti, AddRepository- frontend])
 *AddRepository* \
@@ -764,7 +764,7 @@ Gestisce l'integrazione con il managementService del backend, esponendo al layer
 
 _Funzioni interne:_
 
-- #text(font: "Courier New")[handleError(res: Response, options?: HttpOptions)] - Se _extractErrorMessage_ è attivo, tenta di deserializzare il body JSON tramite _res.json().catch(() => null)_. Se il campo message è un array contenente una stringa con 'url must be', lo rimappa in 'URL non valido.'. Se è un array senza quel pattern, usa il primo elemento. Se è una stringa, la usa direttamente. In tutti i casi di fallback usa res.statusText. Se _extractErrorMessage_ non è attivo, lancia direttamente _new Error(res.statusText)_.
+- #text(font: "Courier New")[handleError(res: Response, options?: HttpOptions)] - Se _extractErrorMessage_ è attivo, tenta di deserializzare il body JSON tramite _res.json().catch(() => null)_. Se il campo message è un array contenente una stringa con "url must be", lo rimappa in 'URL non valido.'. Se è un array senza quel pattern, usa il primo elemento. Se è una stringa, la usa direttamente. In tutti i casi di fallback usa res.statusText. Se _extractErrorMessage_ non è attivo, lancia direttamente _new Error(res.statusText)_.
 
 _Funzioni esportate:_
 
