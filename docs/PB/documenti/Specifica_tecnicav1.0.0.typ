@@ -441,6 +441,18 @@ Funzione Lambda specializzata nell'analisi della documentazione tecnica e degli 
 _Metodi pubblici:_
   - #text(font: "Courier New")[docAgentHandler(event: unknown)] — estrae i sorgenti, delega a sub-agenti (Tech Reviewer, Compliance Officer) la revisione documentale e salva il report aggregato su S3.
 
+==== Classi MS2 - Data Layer
+
+*DecompressioneZipTool* \
+Modulo di utilità per l'interazione con AWS S3 in fase di lettura. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo.
+
+==== MS2 - Workflow di Orchestrazione
+Poiché le componenti del Business Layer sono implementate come funzioni Lambda serverless, prive di stato persistente e non istanziabili come oggetti, la loro struttura non si presta a una rappresentazione tramite Class Diagram UML. Il workflow di orchestrazione e le dipendenze tra queste componenti sono pertanto illustrati mediante il grafico di esecuzione della AWS Step Functions State Machine riportato di seguito.
+
+  #figure( [#image("../../asset/diagr-architett/UML/stepfunctions_graph.png", width: 40%)] , caption: [Workflow di orchestrazione degli agenti tramite AWS Step Functions])
+
 ===== Strumenti e Utility
 
 *AgentInvoker* \
@@ -471,19 +483,10 @@ Gestisce le notifiche in caso di fallimento della pipeline asincrona. \
 _Metodi pubblici:_
   - #text(font: "Courier New")[handler(event: any)] — intercetta errori o crash non gestiti da AWS Step Functions e trasmette la tipologia dell'errore (errorType, cause) al sistema chiamante.
 
-==== Classi MS2 - Data Layer
-
-*DecompressioneZipTool* \
-Modulo di utilità per l'interazione con AWS S3 in fase di lettura. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo.
-<<<<<<< Updated upstream
 #pagebreak()
-=======
 
-#figure( [#image("../../asset/diagr-architett/UML/stepfunctions_graph.png", width: 40%)] , caption: [Workflow di orchestrazione degli agenti tramite AWS Step Functions])
 
->>>>>>> Stashed changes
+
 === Autenticazione e Repository Management - MS3
 Il diagramma è stato suddiviso in due figure per una questione di visibilità documentale. Il primo diagramma mostra le classi relative all'autenticazione, mentre il secondo mostra le classi relative alla gestione delle repository. 
 L'interfaccia _IngestionInterface_ e la classe _IngestionController_ sono presenti in entrambi i diagrammi perché espongono funzionalità sia per l'autenticazione che per la gestione delle repository, fungendo da punto di ingresso unificato per le richieste HTTP relative a entrambe le aree funzionali.
