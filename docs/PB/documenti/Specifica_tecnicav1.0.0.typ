@@ -4,11 +4,11 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("1.0.0", "2026/04/03", "Angela Favaro", "Laura Venturini",  "Approvazione finale, rilascio ufficiale v1.0.0"),
+  ("1.0.0", "2026/04/07", "Angela Favaro", "Laura Venturini",  "Approvazione finale, rilascio ufficiale v1.0.0"),
 
   ("0.7.0", "2026/04/07", "Angela Canazza", "Angela Favaro",  "Concluso specifiche MS0"),
-  ("0.6.0", "2026/04/03", "Alberto Reginato", "Riccardo Baldin",  "Aggiunte specifiche MS2"),
-  ("0.5.0", "2026/03/02", "Amerigo Vegliante", "Laura Venturini",  "Aggiunte specifiche MS1"),
+  ("0.6.0", "2026/03/02", "Amerigo Vegliante", "Laura Venturini",  "Aggiunte specifiche MS1"),
+  ("0.5.0", "2026/04/03", "Alberto Reginato", "Riccardo Baldin",  "Aggiunte specifiche MS2"),
   ("0.4.0", "2026/04/01", "Angela Favaro", "Nicola Simionato",  "Aggiunte specifiche MS3"),
   ("0.3.0", "2026/04/01", "Angela Canazza", "Angela Favaro",  "Aggiunte specifiche MS0"),
   ("0.2.0", "2026/03/08", "Angela Favaro", "Angela Canazza",  "Aggiunto capitolo 1"),
@@ -28,15 +28,15 @@
 
 = Introduzione
 == Scopo del documento
-Il documento di Specifica Tecnica descrive in modo preciso e dettagliato come il sistema software deve essere progettato e realizzato per soddisfare i requisiti all'interno del documento di #link("https://heptacode-unipd.github.io/docs/PB/Analisi_requisitiv3.0.0.pdf")[_Analisi dei Requisiti v3.0.0_]. \
+Il documento di Specifica Tecnica descrive come il sistema software deve essere progettato e realizzato per soddisfare i requisiti all'interno del documento di #link("https://heptacode-unipd.github.io/docs/PB/documenti/Analisi_requisiti_v3.0.0.pdf")[_Analisi dei Requisiti v3.0.0_]. \
 Le funzioni del seguente documento sono:
 - Guida durante l'implementazione, riducendo ambiguità e decisioni improvvisate.
 - Allineamento del team su scelte architetturali e tecnologiche.
 - Supporto alla manutenzione futura.
-- Agevolazione dell'attività di testing, definendo comportamenti attesi e criteri di accettazione.
+- Agevolazione dell'attività di testing.
 
 == Glossario
-La stesura del presente documento fa uso di una terminologia specifica, legata sia al dominio applicativo del progetto "_Code Guardian_" che agli standard dell'Ingegneria del Software. Per facilitare la lettura e assicurare che ogni concetto sia compreso in modo uniforme da tutti i destinatari (team di sviluppo, committente e proponente), è stato redatto un documento di supporto dedicato.
+La stesura del presente documento fa uso di una terminologia specifica, legata sia al dominio applicativo del progetto "_Code Guardian_" che agli standard dell'Ingegneria del Software. Per facilitare la lettura e assicurare che ogni concetto sia compreso in modo uniforme da tutti i destinatari, è stato redatto un documento di supporto dedicato.
 
 Si faccia pertanto riferimento al #link("https://heptacode-unipd.github.io/docs/PB/glossario.pdf")[_Glossario v3.0.0_] per l'esplicitazione di:
 - *Acronimi e sigle* utilizzati per brevità nel testo;
@@ -57,6 +57,7 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
 - Lezioni su progettazioni e pattern architetturali:
   - #link("https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf")[Progettazione e programmazione: Diagrammi delle classi (UML)]
  - #link("https://www.math.unipd.it/~rcardin/swea/2022/Software%20Architecture%20Patterns.pdf")[Progettazione: I pattern architetturali]
+ - #link("  https://www.math.unipd.it/~rcardin/swea/2022/Design%20Pattern%20Architetturali%20-%20Dependency%20Injection.pdf")[Progettazione: Il pattern Dependency Injection]
  - #link("https://www.math.unipd.it/~rcardin/swea/2022/Design%20Pattern%20Strutturali.pdf")[Progettazione: I pattern strutturali]
 - Documento interno: #link("https://heptacode-unipd.github.io/docs/PB/glossario.pdf")[Glossario v3.0.0]
 Questa introduzione delinea il contesto e gli scopi del progetto.
@@ -301,7 +302,7 @@ Node.js è l'ambiente di runtime scelto per eseguire il codice server-side. Node
 
 - _Uniformità del linguaggio_ - L'utilizzo dello stesso linguaggio su frontend e backend elimina il context-switch, consente la condivisione di logica e tipi comuni, e semplifica la gestione delle dipendenze.
 - _Architettura non bloccante e I/O asincrono_ - Il modello event-driven di Node.js lo rende particolarmente adatto ad applicazioni con elevata concorrenza di richieste I/O, come chiamate a database e API esterne.
-- _Ecosistema npm_ - npm mette a disposizione il più grande repository di librerie open source esistente.
+- _Ecosistema npm_ - npm mette a disposizione un grande repository di librerie open source esistente.
 
 == Infrastruttura di deployment
 === Docker Engine v29.3.0
