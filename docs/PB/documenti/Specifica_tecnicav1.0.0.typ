@@ -243,7 +243,6 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   [typescript-eslint],[v8.x],[Plugin ESLint per TypeScript.],
   [prettier],[v3.x],[Formattazione automatica del codice.],
 )
-
 #figure(
   caption: [Dipendenze backend, integrazione cloud AWS],
   kind: table,
@@ -293,6 +292,29 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
   [\@vendia/serverless-express],[v4.12.6],[Adattatore per far girare l'applicazione NestJS/Express all'interno di funzioni AWS Lambda.],
   [serverless],[v4.33.0],[Framework per il deployment e la gestione dell'infrastruttura Cloud come codice (IaC).]
+)
+#figure(
+  caption: [Dipendenze backend, integrazione VCS],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-vcs>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [\@octokit/rest],[v22.0.1],[Client ufficiale per le API REST di GitHub. Utilizzato per recuperare l'ultimo commit SHA di un repository, verificando se l'analisi in database è aggiornata rispetto al branch principale.]
+)
+#figure(
+  caption: [Dipendenze backend, comunicazione HTTP],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-http>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
+  [\@nestjs/axios],[v4.0.1],[Modulo NestJS che integra Axios tramite Observables RxJS. Utilizzato per le chiamate HTTP verso il gateway esterno che avvia l'analisi su AWS Lambda.],
+  [axios],[v1.x],[Client HTTP sottostante, dipendenza di \@nestjs/axios.]
 )
 
 == Runtime enviroment
@@ -347,6 +369,8 @@ Ogni microservizio è organizzato nei seguenti layer:\
 _Presentation Layer_ #pad(left: 0.5cm)[Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste o degli eventi in ingresso, della loro validazione e della trasformazione in strutture tipizzate prima che vengano propagate agli strati sottostanti. Nel contesto frontend, questo layer corrisponde ai componenti di interfaccia utente e alla gestione degli input dell'utente.]
 _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con gli altri componenti del sistema. Questo layer è esposto tramite interfacce o contratti ben definiti, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta e dai dettagli tecnologici degli strati adiacenti.]
 _Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
+_Infrastructure Layer (Solo in MS1)_ #pad(left: 0.5cm)[Gestisce l'accesso alle API di servizi esterni (es. Github) o interni (es. Comunicazione fra MS1 e MS2).]
+
 
 == Architettura di deployment
 L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale garantisce elevata scalabilità, resilienza e una totale indipendenza nello sviluppo e nel rilascio dei singoli componenti software. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
@@ -381,13 +405,78 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 
 - In MS3 (Authentication & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
 - In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
+- In MS1, il #text(font: "Courier New")[GithubAdapter] traduce le richieste interne in chiamate conformi all'API di GitHub (tramite Octokit), permettendo al sistema di risolvere i commit senza dipendere direttamente dal formato del provider.
+
+- *Remote Proxy* \
+Il componente #text(font: "Courier New")[AnalysisManagementInfrastructure] implementa il pattern Proxy. Esso fornisce un'interfaccia locale che rappresenta l'esecuzione di un processo remoto nel microservizio di analisi (MS2). Il proxy gestisce internamente la complessità della comunicazione HTTP e l'autenticazione tramite API Key, rendendo l'invocazione della pipeline asincrona trasparente al Service chiamante.
+
+- *Facade* \
+Il layer #text(font: "Courier New")[AnalysisManagementPresentation] agisce come una Facade, fornendo un punto di ingresso semplificato verso l'esterno. Questo componente nasconde la complessità del workflow (che coinvolge GitHub per lo SHA, il DB per la cache e MS2 per l'analisi) dietro singoli endpoint REST, offrendo ai client un'interfaccia di alto livello per la gestione delle analisi.
+
+- *Strategy* \
+Il sistema utilizza il pattern Strategy definendo interfacce per la persistenza e l'infrastruttura. Questo permette al sistema di scambiare a runtime l'implementazione effettiva (ad esempio, passando da una strategia di persistenza reale a una di test/mock) senza che il service debba conoscere i dettagli implementativi del componente iniettato.
+
 = Progettazione
 == Progettazione backend
-=== Analysis Management - MS1
-//#figure( [#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")] , caption: [Diagramma delle classi - MS1])
+
+=== Analysis Management Service - MS1
+
+L'architettura del microservizio di gestione (MS1) è progettata per fungere da gateway e orchestratore principale del sistema. Sviluppato in NestJS, espone le API REST per l'interazione con i client, gestisce la persistenza su MongoDB e coordina le chiamate asincrone verso il microservizio di analisi (MS2).
+
+#figure( [#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")] , caption: [Diagramma delle classi; Analisi Management Service - MS1])
+
 ==== Classi MS1 - Presentation Layer
+
+*AnalysisManagementPresentation* \
+Punto di ingresso HTTP (NestJS). Gestisce il ciclo di vita delle richieste e riceve i feedback dai sistemi esterni. \
+_Attributi privati:_
+  - #text(font: "Courier New")[analysisService: AnalysisManagementServiceInterface] - istanza del service di dominio.
+
+_Metodi pubblici:_
+  - #text(font: "Courier New")[requestAnalysis(payload: RequestDTO)] - Valida l'URL del repository, genera un jobId e avvia il workflow. Restituisce immediatamente un oggetto AnalysisResponseDTO con lo stato 'processing'.
+  - #text(font: "Courier New")[getStatus(jobId: string)] - Restituisce lo stato corrente di un'analisi specifica tramite polling.
+  - #text(font: "Courier New")[viewLastAnalysis(repoUrl: string)] - Recupera i dati dell'ultima analisi completata per un dato repository.
+  - #text(font: "Courier New")[handleWebhook(headers, payload)] - Endpoint critico per la ricezione dei risultati da MS2. Valida la MS1_API_KEY e aggiorna il record nel database.
+
 ==== Classi MS1 - Business Layer
+
+*AnalysisManagementService* \
+Service principale che implementa la logica di business e il coordinamento tra persistenza e infrastruttura. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - Verifica se il commit è già stato analizzato (cache logic). Se nuovo, salva lo stato iniziale nel DB e invoca il trigger su MS2.
+  - #text(font: "Courier New")[getAnalysisStatus(jobId: string)] - Interroga il DB per determinare se l'analisi è conclusa o ancora in corso.
+  - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - Conclude il processo salvando i dettagli dell'analisi (vulnerabilità, qualità, documentazione) ricevuti dal webhook.
+
+==== Classi MS1 - Infrastructure Layer
+
+*AnalysisManagementInfrastructure* \
+Gestisce le comunicazioni esterne verso GitHub e il Gateway di MS2. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[getLatestCommitSha(repoUrl: string)] - Utilizza il GithubAdapter per ottenere l'hash dell'ultimo commit dal branch principale.
+  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - Esegue la chiamata HTTP POST verso l'endpoint AWS configurato (MS2_GATEWAY_URL), passando il payload necessario all'orchestrazione serverless.
+
+*GithubAdapter* \
+Wrapper per le API di GitHub. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[getLatestCommit(repoUrl: string)] - Interroga GitHub tramite Octokit per risolvere l'owner, il nome del repo e l'ultimo SHA del branch di default.
+
 ==== Classi MS1 - Data Layer
+
+*AnalysisManagementPersistence* \
+Modulo di interazione con MongoDB tramite Mongoose. \
+_Metodi pubblici:_
+  - #text(font: "Courier New")[getAnalysisByCommit(commitId: string)] - Cerca analisi pregresse basate sull'ID univoco del commit.
+  - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - Esegue operazioni di upsert (update or insert) per mantenere sincronizzato lo stato dell'analisi nel database.
+  - #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - Recupera l'ultimo documento inserito per un repository, ordinando per data di creazione.
+
+==== MS1 - Workflow di Comunicazione
+Il servizio MS1 opera come un'orchestratore a stato. Di seguito la logica di interazione con MS2:
+
+1. **Inbound**: Ricezione richiesta via REST.
+2. **Pre-processing**: Risoluzione del Commit SHA via GitHub API.
+3. **Persistenza**: Creazione record con stato `processing`.
+4. **Outbound**: Chiamata HTTP asincrona verso AWS Step Functions (MS2).
+5. **Callback**: MS2 invia i risultati all'endpoint `/webhook`, portando lo stato a `done`.
 
 #pagebreak()
 === Analisi dei Repository - MS2
@@ -488,8 +577,6 @@ _Metodi pubblici:_
   - #text(font: "Courier New")[handler(event: any)] - intercetta errori o crash non gestiti da AWS Step Functions e trasmette la tipologia dell'errore (errorType, cause) al sistema chiamante.
 
 #pagebreak()
-
-
 
 === Autenticazione e Repository Management - MS3
 Il diagramma è stato suddiviso in due figure per una questione di visibilità documentale. Il primo diagramma mostra le classi relative all'autenticazione, mentre il secondo mostra le classi relative alla gestione delle repository. 
