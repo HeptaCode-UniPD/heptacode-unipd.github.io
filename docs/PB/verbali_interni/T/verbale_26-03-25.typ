@@ -39,7 +39,7 @@ Gli argomenti discussi nell'incontro sono stati:
 
 = Svolgimento
 == Ultimazione progettazione
-Il team ha concluso assieme la progettazione, revisionando il lavoro svolto dai membi negli ultimi giorni e apportando le correzioni necessarie. È stato quindi dato il via alla fase di implemenntazione e il team si è suddiviso i task relativi alla programmazione e verifica dei microservizi.
+Il team ha concluso assieme la progettazione, revisionando il lavoro svolto dai membri negli ultimi giorni e apportando le correzioni necessarie. È stato quindi dato il via alla fase di implementazione e il team si è suddiviso i task relativi alla programmazione e verifica dei microservizi.
 
 == Altri task da svolgere in questo sprint
 È stato deciso che, oltre alla programmazione e verifica dei microservizi, il team avrebbe dovuto anche iniziare a scrivere la specifica tecnica e a decidere la struttura del manuale utente.
@@ -56,7 +56,7 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 // Inserire le coppie (Decisione, Azione, Issue)
 #let decisione-azione = (
-  (" Iniziare la fase di implementazione", "Implementarei microservizi", "#160, #161, #162",
+  (" Iniziare la fase di implementazione", "Implementare i microservizi", "#160, #161, #162",
   "Lavorare sulla documentazione del PB", "Iniziare la stesura della specifica tecnica", "#163",  
-  "Lavorare sulla documentazione del PB", "Iniziare la stesura delmanuale utente", "#164")
+  "Lavorare sulla documentazione del PB", "Iniziare la stesura del manuale utente", "#164")
 )
