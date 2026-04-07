@@ -42,7 +42,7 @@ Gli argomenti discussi nell'incontro sono stati:
 == Sprint Retrospective
 Il team ha brevemente parlato dei task e delle difficoltà incontrate durante lo sprint appena concluso, con particolare riferimento al colloquio con il professor Cardin e alle soluzioni architetturali trovate dai membri del gruppi a seguito di tale colloquio. \ Tutti i task previsti per lo scorso sprint sono stati completati.
 == Cambiamenti da effettuare all'architettura in seguito al colloquio con il Professor Cardin
-Il team ha discusso su quale delle opzioni architetturali avrebbe dovuto scegliere a seguito della risposta mail del professor Cardin. È stato deciso di optare per un'architettura a microservizi, in quanto sembra la più adatta a soddisfare l'azienda e il professore. Si ritiene che la progettazione attuale sia facilmente adattabile a questa nuova architettura. 
+Il team ha discusso su quale delle opzioni architetturali avrebbe dovuto scegliere a seguito della risposta mail del professor Cardin. È stato deciso di optare per un'architettura a microservizi, in quanto il gruppo ritiene che sia la più adatta. Si ritiene che la progettazione attuale sia facilmente adattabile a questa nuova architettura. 
 
 == Sprint Planning
 Il team ha pianificato e assegnato i task da svolgere durante lo sprint, concentrandosi principalmente sull'adattamento della progettazione della nuova architettura a microservizi. Inoltre, è stato deciso di creare un repository GitHub dedicato per ogni microservizio e dei canali Discord appositi per facilitare il lavoro di gruppo fra i membri del team.
@@ -56,5 +56,5 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 // Inserire le coppie (Decisione, Azione, Issue)
 #let decisione-azione = (
   (" Adattare la progettazione nella maniera che si ritiene più corretta", "Modificare la progettazione per renderla adatta ai microservizi", "#157, #158, #159",
-  "Il tipo di analisi da svolgere è deciso dall'orchestratore", "Nel frontend ci deve essere un unico pulsante per l'avvio dell'analisi", "")
+  "Il tipo di analisi da svolgere è deciso dall'orchestratore", "Nel frontend ci deve essere un unico pulsante per l'avvio dell'analisi", "No id")
 )
