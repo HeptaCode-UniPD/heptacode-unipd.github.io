@@ -40,7 +40,7 @@ Questo manuale indica al developer i requisiti di sistema per poi spiegargli com
 #show regex("\bRepository\b|\brepository\b|\bGitHub\b|\bOWASP\b|\bDocumentazione\b|\bdocumentazione\b|\bagenti\b|\bagente\b|\bAgente\b\banalisi\b|\bAnalisi\b|\bsessione attiva\b|\breport automatico\b|\bReport automatico\b|\bcommit\b|\bCommit\b"): it => [#it#sub[G]]
 
 = Requisiti di sistema
-La funzionalità corretta dell'applicativo web è garantita nei sistemi desktop equipaggiati con sistemi operativi che supportono i seguenti browser:
+La funzionalità corretta dell'applicativo web è garantita nei sistemi desktop equipaggiati con sistemi operativi che supportano i seguenti browser:
 #[
   #show figure.caption: none
   
@@ -83,7 +83,7 @@ In questa sezione sono spiegate l'interfaccia e le funzionalità di ogni singola
   image("../../asset/login.png"),
   caption: [Pagina di accesso], 
 ) <login>
-Se l'utente non si è autenticato in precedenza, dopo aver avviato l'applicativo sarà reinderizzato alla pagina di accesso, dove dovrà inserire il nome utente e la password forniti dall'azienda per effettuare il login e poter usufruire dei servizi di Code Guardian. \ Il seguente messaggio di errore apparirà in caso le credenziali immesse non siano più valide o incorrette: 
+Se l'utente non si è autenticato in precedenza, dopo aver avviato l'applicativo sarà reindirizzato alla pagina di accesso, dove dovrà inserire il nome utente e la password forniti dall'azienda per effettuare il login e poter usufruire dei servizi di Code Guardian. \ Il seguente messaggio di errore apparirà in caso le credenziali immesse non siano più valide o incorrette: 
 #figure(
   image("../../asset/errorecredenziali.png"),
   caption: [Messaggio di errore in caso di credenziali incorrette], 
@@ -105,9 +105,9 @@ Cliccando sull'icona del profilo, situata nell'angolo in alto a destra, l'utente
 Cliccando su "#link(<AggiungiRepo>)[Aggiungi repository]" (il pulsante verde oppure che quello sulla barra di navigazione) il developer potrà aggiungere i repository GitHub pubblici che desidera analizzare. Dopo il loro inserimento nella piattaforma Code Guardian, questi repository saranno visualizzati in una lista nella pagina principale. \
 #figure(
   image("../../asset/lista-repo.png"),
-  caption: [Pagina principale dopo l'inserimenti di alcuni repository], 
+  caption: [Pagina principale dopo l’inserimento di alcuni repository], 
 ) <lista-repo>
-Tramite la barra di ricerca a sinistra è possibile cercare uno specifico repostory inserito digitando il suo nome o parte del suo nome. \
+Tramite la barra di ricerca a sinistra è possibile cercare uno specifico repository inserito digitando il suo nome o parte del suo nome. \
 Cliccando su un repository, l'utente raggiungerà la pagina di visualizzazione dettagli di tale repo, da dove sarà possibile effettuare l'analisi. \
 Si può eliminare una repository cliccando sull'icona del cestino in sua corrispondenza. L'azione non è reversibile, tuttavia se si desidera re-inserire la repo nel sistema si può aggiungere nuovamente dalla pagina "Aggiungi Repository". \
 Per tornare alla pagina principale da qualsiasi altra pagina basta cliccare "Lista Repository" situato in alto a destra, accanto all'icona del profilo. 
@@ -150,7 +150,7 @@ Dopo la corretta conclusione dell'analisi, la pagina dei dettagli del repository
   image("../../asset/report2.png",),
   caption: [Esempio 2 di report], 
 ) <report2>
-È possibile visualizzare il report di ogni sezione aprendo il menù a tendina corripondente.\ Attenzione: *le analisi sulla documentazione saranno eseguite esclusivamente se nel repo è presente un tag release*. \
+È possibile visualizzare il report di ogni sezione aprendo il menù a tendina corrispondente.\ Attenzione: *le analisi sulla documentazione saranno eseguite esclusivamente se nel repo è presente un tag release*. \
 Da questa pagina è inoltre possibile eliminare in maniera non reversibile il repository cliccando su "Elimina repository" e visitare il link ufficiale del repository cliccando "Vedi su GitHub". 
 === Pagina Profilo Utente
 #figure(
