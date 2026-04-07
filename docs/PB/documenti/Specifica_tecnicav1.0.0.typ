@@ -787,7 +787,7 @@ Attributi: agentName?: string, summary?: string, report?: string.\
 
 *AnalysisReport*\
 Interfaccia TypeScript che rappresenta il report di un'analisi ricevuto dal backend.\
-Attributi: repoUrl?: string, jobId?: string, commitId?: string, status: AnalysisStatus, analysisDetails?: AnalysisDetails[], scores?: number[], date: Date.\
+Attributi: repoUrl?: string, jobId?: string, commitId?: string, status: AnalysisStatus, analysisDetails?: AnalysisDetails[], scores?: number[], date: Date, isLatest:boolean.\
 
 *AnalysisStatus*\
 Tipo unione che rappresenta i possibili stati di un'analisi: "done" | "processing" | "error".\
