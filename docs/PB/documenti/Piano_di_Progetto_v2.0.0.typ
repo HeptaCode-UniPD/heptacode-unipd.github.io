@@ -4,7 +4,7 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("2.0.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Approvazione finale, rilascio ufficiale v2.0.0"),
+  ("2.0.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Approvazione finale, rilascio ufficiale v2.0.0"),
   ("1.7.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Aggiunti resoconto PB e Consuntivo finale"),
   ("1.6.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Aggiunto trascorso Sprint 15"),
   ("1.5.0", "2026/03/24", "Angela Canazza", "Riccardo Baldin", "Trascorso Sprint 14"),
@@ -2287,7 +2287,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [23 marzo 2026 - 3 marzo 2026],
+  [_Intervallo temporale_], [23 marzo 2026 - 7 marzo 2026],
 
   [_Giorni di sprint_], [12],
 
@@ -2350,7 +2350,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
     - Conclusione di tutta la documentazione adeguata alla consegna del progetto.
     - Validazione con l'azienda dei risultati prodotti durante gli Sprint.
     - Revisione finale del _Glossario_  ed eventuale aggiornamento.
-    - *Consegna del progetto in data 3 aprile 2026*.
+    - *Consegna del progetto in data 7 aprile 2026*.
   ],
 
   [_Rischi incontrati_],
@@ -2483,7 +2483,7 @@ In @tab:OreTotIndividualiPBResoconto vengono riportate le ore effettivamente svo
   })]] <fig:tortaPB>
 
 \ \ 
-Il costo totale sostenuto durante la milestone PB è di *6.705€*.
+Il costo totale sostenuto durante la milestone PB è di *6.920€*.
 
 #pagebreak()
 == Consuntivo finale di progetto

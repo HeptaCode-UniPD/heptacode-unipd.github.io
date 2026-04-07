@@ -282,3 +282,16 @@ fargate
 serverless
 visualstudiocode
 wayofworking
+aggiungirepo
+autodirette
+bagente
+bagenti
+banalisi
+bcommit
+bdocumentazione
+bgithub
+bowasp
+breport
+brepository
+bsessione
+microservizio
