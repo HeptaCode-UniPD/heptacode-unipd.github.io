@@ -31360,10 +31360,10 @@
 							"font": "Arial;13;0",
 							"parentStyle": false,
 							"left": 640,
-							"top": 568,
+							"top": 560,
 							"width": 128,
-							"height": 25,
-							"text": "USER SERVICE",
+							"height": 38,
+							"text": "AUTH & REPO SERVICE",
 							"horzAlign": 2
 						},
 						{
