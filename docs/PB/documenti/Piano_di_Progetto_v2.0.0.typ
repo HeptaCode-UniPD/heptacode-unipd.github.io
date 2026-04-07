@@ -2287,7 +2287,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [23 marzo 2026 - 3 marzo 2026],
+  [_Intervallo temporale_], [23 marzo 2026 - 7 marzo 2026],
 
   [_Giorni di sprint_], [12],
 
@@ -2350,7 +2350,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
     - Conclusione di tutta la documentazione adeguata alla consegna del progetto.
     - Validazione con l'azienda dei risultati prodotti durante gli Sprint.
     - Revisione finale del _Glossario_  ed eventuale aggiornamento.
-    - *Consegna del progetto in data 3 aprile 2026*.
+    - *Consegna del progetto in data 7 aprile 2026*.
   ],
 
   [_Rischi incontrati_],
@@ -2483,7 +2483,7 @@ In @tab:OreTotIndividualiPBResoconto vengono riportate le ore effettivamente svo
   })]] <fig:tortaPB>
 
 \ \ 
-Il costo totale sostenuto durante la milestone PB è di *6.705€*.
+Il costo totale sostenuto durante la milestone PB è di *6.920€*.
 
 #pagebreak()
 == Consuntivo finale di progetto

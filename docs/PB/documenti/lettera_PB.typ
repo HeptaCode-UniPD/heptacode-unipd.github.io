@@ -3,7 +3,7 @@
 #set text(size: 12pt)
 #set page(numbering: "1")
 #align(top + right, [#image("../../asset/logo.svg", width: 3.5cm)])
-Padova, 3 aprile 2026 \
+Padova, 7 aprile 2026 \
 Alla cortese attenzione dei professori Cardin e Vardanega
 \
 \
