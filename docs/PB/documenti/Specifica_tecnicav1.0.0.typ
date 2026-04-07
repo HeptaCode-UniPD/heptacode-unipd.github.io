@@ -6,6 +6,7 @@
 #let storia_modifiche = (
   ("1.0.0", "2026/04/03", "Angela Favaro", "Laura Venturini",  "Approvazione finale, rilascio ufficiale v1.0.0"),
 
+  ("0.8.0", "2026/04/07", "Amerigo Vegliante", "Angela Favaro",  "Concluso specifiche MS1"),
   ("0.7.0", "2026/04/07", "Angela Canazza", "Angela Favaro",  "Concluso specifiche MS0"),
   ("0.6.0", "2026/04/03", "Alberto Reginato", "Riccardo Baldin",  "Aggiunte specifiche MS2"),
   ("0.5.0", "2026/03/02", "Amerigo Vegliante", "Laura Venturini",  "Aggiunte specifiche MS1"),
