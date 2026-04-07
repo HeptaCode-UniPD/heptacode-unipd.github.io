@@ -4,7 +4,7 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("2.0.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Approvazione finale, rilascio ufficiale v2.0.0"),
+  ("2.0.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Approvazione finale, rilascio ufficiale v2.0.0"),
   ("1.7.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Aggiunti resoconto PB e Consuntivo finale"),
   ("1.6.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Aggiunto trascorso Sprint 15"),
   ("1.5.0", "2026/03/24", "Angela Canazza", "Riccardo Baldin", "Trascorso Sprint 14"),
