@@ -359,7 +359,7 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 
 === Microservizi
 
-*Microservizio Frontend - MS0* #pad(left: 0.5cm)[Costituisce il punto di accesso dell'utente al sistema. Espone le seguenti funzionalità: autenticazione e visualizzazione del profilo utente, inserimento dell'URL di un repository GitHub da analizzare, e consultazione dei risultati dell'analisi. Quest'ultima comprende tre aree distinte: copertura dei test, qualità della documentazione e vulnerabilità di sicurezza secondo le linee guida OWASP. Per ciascuna area vengono presentati i suggerimenti di modifica e le motivazioni per criticità rilevate.]
+*Microservizio Frontend - MS0* #pad(left: 0.5cm)[Costituisce il punto di accesso dell'utente al sistema. Espone le seguenti funzionalità: autenticazione e visualizzazione del profilo utente, inserimento dell’URL di un repository GitHub da analizzare, e consultazione dei risultati dell'analisi. Quest'ultima comprende tre aree distinte: copertura dei test, qualità della documentazione e vulnerabilità di sicurezza secondo le linee guida OWASP. Per ciascuna area vengono presentati i suggerimenti di modifica e le motivazioni per criticità rilevate.]
 
 *Microservizio di Analysis Management - MS1*  #pad(left: 0.5cm)[Ha il compito di verificare se, per un dato repository, sia già presente in memoria un'analisi relativa all'ultimo commit disponibile. Qualora l'analisi risulti assente o non aggiornata, il microservizio provvede ad inoltrare la richiesta di analisi al microservizio competente, evitando elaborazioni ridondanti e ottimizzando l'utilizzo delle risorse computazionali.]
 
@@ -403,7 +403,7 @@ _Attributi privati:_
   - #text(font: "Courier New")[appService: AppService] - istanza iniettata del service per l'analisi.
 
 _Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] - riceve l'URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente il messaggio di successo, un jobId e l’executionArn per il tracciamento.
+  - #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] - riceve l’URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente il messaggio di successo, un jobId e l’executionArn per il tracciamento.
 
 *AppService* \
 Service di backend che coordina l'innesco dell'infrastruttura asincrona AWS. \
@@ -481,7 +481,7 @@ _Metodi pubblici:_
 *WebhookSenderLambda* \
 Gestisce la notifica di completamento della pipeline. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] — invia all'URL configurato un payload JSON contenente il report Markdown, "repoUrl", "jobId", "commitId" e lo stato "done". La richiesta è protetta da API Key.
+  - #text(font: "Courier New")[handler(event: any)] — invia all’URL configurato un payload JSON contenente il report Markdown, "repoUrl", "jobId", "commitId" e lo stato "done". La richiesta è protetta da API Key.
 
 *FailureHandlerLambda* \
 Gestisce le notifiche in caso di fallimento della pipeline asincrona. \
@@ -564,7 +564,7 @@ Definisce il contratto di persistenza per l'entità repository, implementato a l
 *GitHubServiceInterface* \
 Definisce il contratto per la validazione di un repository GitHub tramite API esterna.
 
-- #text(font: "Courier New")[validate(url: string)] - verifica che l'URL fornito corrisponda a un repository GitHub pubblico e accessibile. Restituisce un oggetto GitHubRepoData con i metadati del repository, oppure null se il repository non esiste o non è accessibile.
+- #text(font: "Courier New")[validate(url: string)] - verifica che l’URL fornito corrisponda a un repository GitHub pubblico e accessibile. Restituisce un oggetto GitHubRepoData con i metadati del repository, oppure null se il repository non esiste o non è accessibile.
 
 ===== Servizi
 *UserService* \
@@ -657,7 +657,7 @@ _Metodi pubblici:_
 *GitHubAdapter* \
 Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubbliche di GitHub.
 
-- #text(font: "Courier New")[validate(url: string)] - interpreta l'URL GitHub fornito, estrae owner e nome del repository ed esegue una chiamata alle API di GitHub per verificarne l'esistenza e l'accessibilità pubblica. Restituisce un oggetto GitHubRepoData con i metadati del repository se la chiamata ha successo, null altrimenti.
+- #text(font: "Courier New")[validate(url: string)] - interpreta l’URL GitHub fornito, estrae owner e nome del repository ed esegue una chiamata alle API di GitHub per verificarne l'esistenza e l'accessibilità pubblica. Restituisce un oggetto GitHubRepoData con i metadati del repository se la chiamata ha successo, null altrimenti.
 
 == Progettazione frontend
 Il frontend è sviluppato in React con TypeScript e Vite. L'architettura è organizzata in tre layer: Presentation, Business e Data. Il layer di presentazione comprende il sistema di routing, le pagine e i componenti riutilizzabili. Il layer di business raccoglie i service che incapsulano la logica applicativa e le chiamate HTTP. Il layer data contiene la configurazione degli endpoint e le interfacce TypeScript che definiscono il contratto con il backend.
@@ -765,7 +765,7 @@ Gestisce l'integrazione con il managementService del backend, esponendo al layer
 
 _Funzioni interne:_
 
-- #text(font: "Courier New")[handleError(res: Response, options?: HttpOptions)] - Se _extractErrorMessage_ è attivo, tenta di deserializzare il body JSON tramite _res.json().catch(() => null)_. Se il campo message è un array contenente una stringa con "url must be", lo rimappa in 'URL non valido.'. Se è un array senza quel pattern, usa il primo elemento. Se è una stringa, la usa direttamente. In tutti i casi di fallback usa res.statusText. Se _extractErrorMessage_ non è attivo, lancia direttamente _new Error(res.statusText)_.
+- #text(font: "Courier New")[handleError(res: Response, options?: HttpOptions)] - Se _extractErrorMessage_ è attivo, tenta di deserializzare il body JSON tramite _res.json().catch(() => null)_. Se il campo message è un array contenente una stringa con "url must be", lo rimappa in "URL non valido.". Se è un array senza quel pattern, usa il primo elemento. Se è una stringa, la usa direttamente. In tutti i casi di fallback usa res.statusText. Se _extractErrorMessage_ non è attivo, lancia direttamente _new Error(res.statusText)_.
 
 _Funzioni esportate:_
 
@@ -833,7 +833,7 @@ Modulo che espone le costanti di configurazione degli URL base delle API, lette 
   [R-18-F-D],[L'Utente Registrato deve poter inserire il Personal Access Token collegato al proprio account],[Non soddisfatto],
   [R-19-F-D],[L'Utente Registrato deve ricevere un messaggio di errore in caso di token inserito non valido],[Non soddisfatto],
   [R-20-F-O],[L'Utente Registrato deve poter annullare l'inserimento di un repository],[Soddisfatto],
-  [R-21-F-O],[L'Utente Registrato deve poter inserire l'URL del repository],[Soddisfatto],
+  [R-21-F-O],[L'Utente Registrato deve poter inserire l’URL del repository],[Soddisfatto],
   [R-22-F-O],[L'Utente Registrato deve ricevere un messaggio di errore nel caso di URL non valido],[Soddisfatto],
   [R-23-F-O],[L'Utente Registrato deve poter visualizzare la lista dei propri repository personali],[Soddisfatto],
   [R-24-F-O],[L'Utente Registrato deve poter selezionare una preferenza sulla tipologia di repository che desidera visualizzare],[Soddisfatto],
