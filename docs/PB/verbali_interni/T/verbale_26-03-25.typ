@@ -5,7 +5,7 @@
 #let next-meeting = "2026-03-30"
 
 // ordine del giorno 
-#let odg = "Fine prpettazione e inizio implementazione"
+#let odg = "Fine progettazione e inizio implementazione"
 
 // switchare in 'true' SE l'incontro si è tenuto su Discord
 #let distanza = true
