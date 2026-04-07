@@ -660,7 +660,7 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
 
 == Progettazione frontend
 Il frontend è sviluppato in React con TypeScript e Vite. L'architettura è organizzata in tre layer: Presentation, Business e Data. Il layer di presentazione comprende il sistema di routing, le pagine e i componenti riutilizzabili. Il layer di business raccoglie i service che incapsulano la logica applicativa e le chiamate HTTP. Il layer data contiene la configurazione degli endpoint e le interfacce TypeScript che definiscono il contratto con il backend.
-#figure( [#image("../../asset/diagr-architett/frontend/frontend-layered.png")] , caption: [Layered Architecture - frontend])
+#figure( [#image("../../asset/diagr-architett/frontend/frontend-layered.png")], caption: [Layered Architecture - frontend])
 
 === Moduli MS0 - Presentation Layer
 ==== Routing
