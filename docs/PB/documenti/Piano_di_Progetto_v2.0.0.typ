@@ -2417,8 +2417,6 @@ Il ritardo è stato accumulato durante la fase di progettazione. Le cause princi
 Anche la fase di sviluppo ha subito dei rallentamenti a causa di problemi di integrazione tra i vari componenti del progetto. \
 Il gruppo ha scelto di svolgere ricevimenti con i prof. Cardin e Vardanega per avere pareri riguardo al lavoro in fase di svolgimento. Che sono serviti ad aggiustare errori ed incomprensioni su documentazione e teoria progettuale / architetturale.
 
-Inizialmente sono state sopravvalutate le ore utili alla programmazione e questo ha portato ad un calcolo preventivo erroneo del budget di progetto.
-
 In @tab:OreTotIndividualiPBResoconto vengono riportate le ore effettivamente svolte per ogni ruolo durante il periodo di PB. Ed in @fig:tortaPB è possibile visionare la percentuale di ore dedicate a ciascun ruolo durante la milestone RTB.
 
 #figure(
