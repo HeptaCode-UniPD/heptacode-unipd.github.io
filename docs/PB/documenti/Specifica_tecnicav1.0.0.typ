@@ -6,14 +6,13 @@
 #let storia_modifiche = (
   ("1.0.0", "2026/04/07", "Angela Favaro", "Laura Venturini",  "Approvazione finale, rilascio ufficiale v1.0.0"),
 
-  ("0.8.0", "2026/04/07", "Amerigo Vegliante", "Angela Favaro",  "Concluso specifiche MS1"),
-  ("0.7.0", "2026/04/07", "Angela Canazza", "Angela Favaro",  "Concluso specifiche MS0"),
-  ("0.6.0", "2026/03/02", "Amerigo Vegliante", "Laura Venturini",  "Aggiunte specifiche MS1"),
+  ("0.7.0", "2026/04/07", "Amerigo Vegliante", "Laura Venturini",  "Concluso specifiche MS1"),
+  ("0.6.0", "2026/04/07", "Angela Canazza", "Angela Favaro",  "Concluso specifiche MS0"),
   ("0.5.0", "2026/04/03", "Alberto Reginato", "Riccardo Baldin",  "Aggiunte specifiche MS2"),
   ("0.4.0", "2026/04/01", "Angela Favaro", "Nicola Simionato",  "Aggiunte specifiche MS3"),
   ("0.3.0", "2026/04/01", "Angela Canazza", "Angela Favaro",  "Aggiunte specifiche MS0"),
   ("0.2.0", "2026/03/08", "Angela Favaro", "Angela Canazza",  "Aggiunto capitolo 1"),
-  ("0.1.0", "2026/03/07", "Angela Favaro", "Laura Ventrini",  "Creazione documento, impostazione macro-aree")
+  ("0.1.0", "2026/03/07", "Angela Favaro", "Laura Venturini",  "Creazione documento, impostazione macro-aree")
 )
 
 #show: doc => template_documenti(
@@ -60,6 +59,8 @@ Questa sezione elenca i documenti utilizzati come base per la stesura della pres
  - #link("https://www.math.unipd.it/~rcardin/swea/2022/Software%20Architecture%20Patterns.pdf")[Progettazione: I pattern architetturali]
  - #link("  https://www.math.unipd.it/~rcardin/swea/2022/Design%20Pattern%20Architetturali%20-%20Dependency%20Injection.pdf")[Progettazione: Il pattern Dependency Injection]
  - #link("https://www.math.unipd.it/~rcardin/swea/2022/Design%20Pattern%20Strutturali.pdf")[Progettazione: I pattern strutturali]
+ - #link("https://drive.google.com/file/d/1cpi6rORMxFtC91nI6_sPrG1Xn-28z8eI/view")[Progettazione: I pattern di comportamento]
+
 - Documento interno: #link("https://heptacode-unipd.github.io/docs/PB/glossario.pdf")[Glossario v3.0.0]
 Questa introduzione delinea il contesto e gli scopi del progetto.
 = Tecnologie 
@@ -78,7 +79,7 @@ NestJS è il framework applicativo scelto per strutturare il layer server.
 - _NestJS è scritto nativamente in TypeScript_: ne sfrutta appieno i decoratori e il sistema di tipi, rendendolo la scelta più coerente con il resto della stack.
 - _Supporto integrato per pattern enterprise_: NestJS offre supporto per pipe di validazione, middleware e gestione centralizzata degli errori, riducendo la necessità di soluzioni "su misura" per funzionalità trasversali.
 == Librerie e dipendenze
-=== React v19.2.4 
+=== React v19.2.0 
 React è stato scelto come libreria UI, le motivazioni principali sono state:
 
 - _Modello a componenti_ - L'architettura basata su componenti riutilizzabili favorisce la separazione delle responsabilità, facilita i test unitari e permette di costruire interfacce complesse in modo incrementale e controllato.
@@ -128,7 +129,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
   [vite],[v7.2.4],[Bundler e dev server. Scelto per la velocità di avvio grazie all'uso nativo dei moduli ES e all’HMR istantaneo.],
   [\@vitejs/plugin-react],[v5.1.1],[Plugin Vite che abilita il supporto a JSX e al Fast Refresh di React durante lo sviluppo.],
-  [typescript],[v5.9.3],[Superset tipizzato di JavaScript. Usato per garantire la correttezza dei tipi a tempo di compilazione.],
+  [typescript],[v5.7.x],[Superset tipizzato di JavaScript. Usato per garantire la correttezza dei tipi a tempo di compilazione.],
   [\@types/react, \ \@types/react-dom, \ \@types/node],[varie],[Definizioni dei tipi TypeScript per le rispettive librerie.],
 )
 #figure(
@@ -224,7 +225,19 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   align: (left, left, left),
   table.header([*Nome*], [*Versione*], [*Descrizione*]),
   [class-validator],[v0.15.1],[Validazione dei DTO tramite decorator (\@IsEmail, \@IsUrl, \@MinLength). Integrato con NestJS tramite ValidationPipe],
-  [class-transformer],[v0.5.1],[Trasformazione degli oggetti plain in istanze di classe. Necessario per far funzionare class-validator con NestJS.],
+  [class-transformer],[v0.5.1],[Trasformazione degli oggetti plain in istanze di classe. Necessario per far funzionare class-validator con NestJS.]
+)
+#figure(
+  caption: [Dipendenze backend, testing],
+  kind: table,
+  supplement: [Tabella],
+  rect(width: 0pt, height: 0pt, stroke: none) 
+) <dipendenze-backend>
+#tabella-viola(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: (left, left, left),
+  table.header([*Nome*], [*Versione*], [*Descrizione*]),
   [jest],[v30.x],[Framework di test principale],
   [ts-jest],[v29.x],[Permette di eseguire test scritti in TypeScript direttamente senza compilazione separata.],
   [\@nestjs/testing],[v11.0.1],[Utility per creare moduli NestJS isolati nei test. Mock delle dipendenze negli unit test.],
@@ -319,7 +332,7 @@ React è stato scelto come libreria UI, le motivazioni principali sono state:
   [axios],[v1.x],[Client HTTP sottostante, dipendenza di \@nestjs/axios.]
 )
 
-== Runtime enviroment
+== Runtime environment
 === NodeJS v24
 Node.js è l'ambiente di runtime scelto per eseguire il codice server-side. Node.js è il runtime che consente l'esecuzione di TypeScript lato server, al di fuori del browser. Le motivazioni che hanno portato il gruppo a questa scelta progettuale sono state:
 
@@ -350,13 +363,14 @@ Lambda è il runtime di tutta la logica agentica: pull del repository, planning,
 ==== AWS Step Functions
 Step Functions orchestra l'intero flusso agentico come macchina a stati: gestisce sequenza, parallelismo nativo (OWASP e Test Agent in contemporanea), branching condizionale sul flag runDocs, retry, timeout e propagazione degli errori verso il failure handler. Evita di dover implementare manualmente la logica di coordinamento tra Lambda e rende il flusso ispezionabile visivamente dalla console AWS.
 ==== AWS S3
-S3 svolge due ruoli distinti nella piattaforma: archivia il repository clonato come ZIP che gli agenti recuperano autonomamente per l'analisi, e funge da bus di stato asincrono tra gli agenti paralleli - ogni domain agent scrive il proprio report parziale su S3 al termine dell'elaborazione, e l'orchestratore aggregatore li recupera e cancella nella fase successiva. Questo disaccoppia i componenti paralleli senza richiedere comunicazione diretta tra Lambda.
+S3 svolge due ruoli distinti nella piattaforma: archivia il repository clonato come ZIP che gli agenti recuperano autonomamente per l'analisi, e funge da bus di stato asincrono tra gli agenti paralleli - ogni domain agent scrive il proprio report parziale su S3 al termine dell'elaborazione, e l'orchestratore aggregatore li recupera e cancella nella fase successiva. Questo disaccoppia i componenti paralleli senza richiedere comunicazione diretta tra Lambda. \
+S3 viene inoltre utilizzato per l'hosting degli asset statici del frontend (MS0): il bundle prodotto da Vite in fase di build viene caricato su un bucket S3 configurato per il website hosting statico.
 ==== AWS Fargate
 Fargate è il runtime serverless per container, utilizzato per hostare il frontend e il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalano automaticamente e il traffico è instradato tramite Application Load Balancer. È la scelta naturale per i componenti con ciclo di vita HTTP continuo, a differenza della logica agentica che per sua natura è event-driven e gestita da Lambda.
 
 == Tecnologie per Continuous Integration
 === GitHub Actions
-Il progetto adotta GitHub Actions come sistema di Continuous Integration (CI). Il workflow è definito nel file con estensione ".yml" e viene eseguito automaticamente ad ogni push request sul branch main.
+Il progetto adotta GitHub Actions come sistema di Continuous Integration (CI). Il workflow è definito nel file con estensione ".yml" e viene eseguito automaticamente ad ogni push sul branch main.
 Il pipeline è strutturato in un job che esegue:
 + analisi statica tramite ESLint e Prettier per verificare la conformità del codice agli standard definiti, incluse metriche di qualità come complessità ciclomatica, lunghezza dei metodi e numero di parametri;
 + esecuzione degli unit test con generazione del report di coverage; esecuzione dei test di integrazione (_e2e_) con un'istanza MongoDB dedicata; verifica dell'integrità della build tramite compilazione TypeScript. Al termine del job, il report di coverage viene salvato come artifact di GitHub Actions.
@@ -371,7 +385,7 @@ Ogni microservizio è organizzato nei seguenti layer:\
 _Presentation Layer_ #pad(left: 0.5cm)[Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste o degli eventi in ingresso, della loro validazione e della trasformazione in strutture tipizzate prima che vengano propagate agli strati sottostanti. Nel contesto frontend, questo layer corrisponde ai componenti di interfaccia utente e alla gestione degli input dell'utente.]
 _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con gli altri componenti del sistema. Questo layer è esposto tramite interfacce o contratti ben definiti, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta e dai dettagli tecnologici degli strati adiacenti.]
 _Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
-_Infrastructure Layer (Solo in MS1)_ #pad(left: 0.5cm)[Gestisce l'accesso alle API di servizi esterni (es. Github) o interni (es. Comunicazione fra MS1 e MS2).]
+_Infrastructure Layer (MS1)_ #pad(left: 0.5cm)[Gestisce l'accesso alle API di servizi esterni (es. Github) o interni (es. Comunicazione fra MS1 e MS2).]
 
 
 == Architettura di deployment
@@ -403,11 +417,11 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 - *Dependency Injection*
 Il sistema adotta il pattern Dependency Injection tramite il container IoC di NestJS. Le dipendenze tra i layer sono mediate da interfacce, garantendo disaccoppiamento e sostituibilità delle implementazioni concrete.
 
-- *Adapter* \ Adapter Il pattern Adapter è utilizzato per isolare i microservizi dalle specificità delle librerie esterne e dei servizi cloud.
+- *Adapter* \ Il pattern è utilizzato per isolare i microservizi dalle specificità delle librerie esterne e dei servizi cloud.
 
 - In MS3 (Authentication & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
 - In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
-- In MS1, il #text(font: "Courier New")[GithubAdapter] traduce le richieste interne in chiamate conformi all'API di GitHub (tramite Octokit), permettendo al sistema di risolvere i commit senza dipendere direttamente dal formato del provider.
+- In MS1, traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di risolvere i commit senza dipendere direttamente dal formato del provider.
 
 - *Remote Proxy* \
 Il componente #text(font: "Courier New")[AnalysisManagementInfrastructure] implementa il pattern Proxy. Esso fornisce un'interfaccia locale che rappresenta l'esecuzione di un processo remoto nel microservizio di analisi (MS2). Il proxy gestisce internamente la complessità della comunicazione HTTP e l'autenticazione tramite API Key, rendendo l'invocazione della pipeline asincrona trasparente al Service chiamante.
@@ -783,7 +797,7 @@ _Metodi privati:_
 ==== Pagine
 #figure( [#image("../../asset/diagr-architett/frontend/login.png")] , caption: [Diagramma componenti, Login - frontend])
 *Login* \ 
-Pagina di autenticazione, esterna al RootLayout. Invoca _useIsLogged()_ per reindirizzare automaticamente l'utente già autenticato. Gestisce lo stato locale per email, password, isPasswordVisible, isCredentialCorrect e loading. Al submit invoca _checkCredentials()_ del _UserService_, salva lo _userId_ tramite _saveUserID()_ del _SessionService_ e naviga a /repositories. In caso di errore imposta _isCredentialCorrect_ a false e mostra il messaggio di errore.
+Pagina di autenticazione, esterna al RootLayout. Invoca _useIsLogged()_ per reindirizzare automaticamente l'utente già autenticato. Gestisce lo stato locale per email, password, isPasswordVisible, isCredentialCorrect e loading. Al submit invoca _checkCredentials()_ del _UserService_, salva lo _userId_ tramite _saveUserID()_ del _SessionService_ e naviga a /repositories. In caso di errore imposta _isCredentialCorrect_ a false e mostra il messaggio di errore. 
 
 #figure( [#image("../../asset/diagr-architett/frontend/repositories.png")] , caption: [Diagramma componenti, Repositories- frontend])
 *Repositories* \ 
@@ -817,6 +831,7 @@ Gestisce la sessione utente tramite localStorage e la guardia di navigazione. Es
 - #text(font: "Courier New")[getUserID(key: string)] - recupero dell'identificativo utente da localStorage. invoca _localStorage.getItem()_ e restituisce il valore associato alla chiave, oppure null se assente.
 - #text(font: "Courier New")[logout(key: string)] - rimozione dell'identificativo utente da localStorage. invoca _localStorage.removeItem()_ per eliminare la chiave fornita.
 - #text(font: "Courier New")[useIsLogged()] - React hook che tramite useEffect verifica la presenza dello userId in localStorage e il percorso corrente. Se l'utente non è autenticato e non si trova in /login, reindirizza a /login. Se è autenticato e si trova in /login, reindirizza a /repositories. Se è autenticato ma non trovato nel database tramite getInfoUserByID(), reindirizza a /profile salvo che non ci si trovi già lì.
+_Nota:_ la persistenza dell'identificativo utente tramite localStorage è stata scelta per semplicità implementativa nel contesto del progetto didattico. Si è consapevoli che in un contesto produttivo questa soluzione sarebbe sostituita da soluzioni più sicure. La scelta attuale è considerata accettabile dato il perimetro del progetto.
 
 #figure( [#image("../../asset/diagr-architett/frontend/userService.png")] , caption: [Diagramma componenti, UserService - frontend])
 *UserService* \ 
