@@ -971,64 +971,29 @@ Nel contesto di _CodeGuardian_, l'uso di modelli LLM per l'analisi e il refactor
 
 === Manutenibilità
 
-==== MPD07 - Complessità Ciclomatica
-- *Formula*:
-$ v(G) = E - N + 2P $
-- *Valore accettabile*: $<= 15 $
-- *Valore ottimale*: $<= 10 $
-- *Descrizione*: Misura la complessità logica di un metodo calcolando il numero di cammini linearmente indipendenti attraverso il grafo di controllo del flusso.
-Un valore elevato indica che la funzione ha troppe logiche condizionali (if, loop) ed è quindi difficile da testare e soggetta a errori. Se il valore supera la soglia accettabile, è necessario suddividere il metodo in sotto-funzioni più semplici (Refactoring).
-- *Legenda*:
-  - $v(G)$: Numero ciclomatico del grafo $G$;
-  - $E$: Numero di archi (collegamenti) nel grafo di controllo;
-  - $N$: Numero di nodi (blocchi di istruzioni) nel grafo di controllo;
-  - $P$: Numero di componenti connesse (generalmente $P=1$ calcolando la metrica per singolo metodo).
-
 ==== MPD08 - Parametri per metodo
 
 - *Valore accettabile*: $<= 6 $
 - *Valore ottimale*: $<= 4 $
 - *Descrizione*: L'indice rappresenta il numero massimo di parametri che un metodo può accettare nella sua firma all'interno del codice sorgente. Un numero eccessivo di parametri riduce la leggibilità e aumenta la complessità di test.
 
-==== MPD09 - Linee di codice per metodo
 
-- *Valore accettabile*: $<= 35 $
-- *Valore ottimale*: $<= 20 $
-- *Descrizione*: L'indice rappresenta il numero massimo di righe di codice da cui può essere composto un singolo metodo. Metodi troppo lunghi violano il principio di "Single Responsibility".
-
-==== MPD10 - Linee di codice per file
+==== MPD09 - Linee di codice per file
 
 - *Valore accettabile*: $<= 120 $
 - *Valore ottimale*: $<= 80 $
 - *Descrizione*: L'indice rappresenta il numero massimo di righe di codice da cui può essere composto un singolo file sorgente nel progetto.
 
-==== MPD11 - Densità dei commenti (CD)
-
-- *Formula*:
-$ "CD" = ("CM" / "CL") dot 100 $
-- *Valore accettabile*: $>=10%$
-- *Valore ottimale*: $>=15%$
-- *Descrizione*:L'indice rappresenta il rapporto percentuale tra le righe di commento e il totale delle righe di codice presenti in un modulo. Misura quanto il codice è documentato inline.
-- *Legenda*:
-  - *CM*: Numero di righe di commento (Comment Lines);
-  - *CL*: Numero di righe di codice (Code Lines).
-
-==== MPD12 - Coefficient of Coupling (CoC)
-- *Formula*:
-$ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
-- *Valore accettabile*: $<= 0.4 $
-- *Valore ottimale*: $<= 0.2 $
-- *Descrizione*: L'indice misura il grado di accoppiamento medio tra i moduli del sistema. \ Si calcola dividendo il numero totale di dipendenze (import, chiamate tra classi) per il numero totale di componenti (classi o moduli). \ Un valore basso indica un'architettura modulare e disaccoppiata (migliore manutenibilità), mentre un valore superiore a 0.4 indica un accoppiamento eccessivo che rende difficile modificare una parte del sistema senza impattare le altre.
 
 
 === Usabilità
 
-====  MPD13 - Tempo di apprendimento
+====  MPD10 - Tempo di apprendimento
 - *Valore accettabile*: $<=10 "minuti"$
 - *Valore ottimale*: $<=5 "minuti"$
 - *Descrizione*: L'indice del tempo di apprendimento misura il tempo medio che un utente impiega per imparare l'utilizzo del programma in analisi, nel caso di questo progetto è _CodeGuardian_.
 
-==== MPD14 - Indice di Gulpease
+==== MPD11 - Indice di Gulpease
 - *Formula*:
  $ "Indice Gulpease" = 89 + (300 dot "numero di frasi"- 10 dot "numero delle lettere") / "numero di parole" $
 - *Valore $>=$80*: La complessità del testo è molto semplice e adatta a lettori che hanno completato la scuola primaria.  
@@ -1041,7 +1006,7 @@ $ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
 
 === Affidabilità
 
-==== MPD15 - Test Failure Rate
+==== MPD12 - Test Failure Rate
 - *Formula*:
 $ "TFR" = "Test falliti"/"Test eseguiti" dot 100 $ 
 - *Valore accettabile*: $<= 15%$
