@@ -1409,6 +1409,8 @@ Ogni documento presenza un indice di leggibilità superiore al limite inferiore 
   (1, "NdP"),
   (2, "PdP"),
   (3, "PdQ"),
+  (4, "Manuale"),
+  (5, "ST")
 )
 
 #figure(
@@ -1424,7 +1426,7 @@ Ogni documento presenza un indice di leggibilità superiore al limite inferiore 
       x-ticks: etichette,
       y-ticks: (0, 20, 40, 60, 80, 100),
       x-min: -0.5,
-      x-max: 3.5,
+      x-max: 5.5,
       y-min: 0,
       y-max: 100,
       {
@@ -1433,13 +1435,13 @@ Ogni documento presenza un indice di leggibilità superiore al limite inferiore 
           bar-width: 0.5,
         )
         plot.add(
-          ((-0.5, 50), (3.5, 50)),
+          ((-0.5, 50), (5.5, 50)),
           label: [Valore accettabile (50)],
           style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
         )
 
         plot.add(
-          ((-0.5, 70), (3.5, 70)),
+          ((-0.5, 70), (5.5, 70)),
           label: [valore ottimale (70)],
           style: (stroke: (paint: red, dash: "dashed", thickness: 1.5pt)),
         )
@@ -1448,8 +1450,8 @@ Ogni documento presenza un indice di leggibilità superiore al limite inferiore 
   })
 )
 
-\ *Andamento PB* \
-
+*Andamento PB* \
+Ogni documento ha un indice di leggibilità superiore al limite inferiore di 50 e tutti i documenti a parte le NdP hanno un indice superiore al valore ottimale di 70. GLi indici di Gulpease dei documenti presenti anche nella fase di RTB non hanno subito particolari variazioni, dimostrando un certo livello di stabilità nella qualità dei documenti prodotti durante il progetto. 
 == MPC14 - Code Coverage (CC)
 *Code Coverage*: indice che rappresenta quanto il codice è stato verificato dal processo di testing.
 //tabella
