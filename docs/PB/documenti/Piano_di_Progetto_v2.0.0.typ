@@ -2408,7 +2408,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 #pagebreak()
 
 === Resoconto PB
-Rispetto a quanto originariamente pianificato, la conclusione della milestone PB *ha subito un ritardo di circa due giorni*; di conseguenza la data di consegna del progetto è stata spostata dal *30 marzo 2026* al *1 aprile 2026*. \ 
+Rispetto a quanto originariamente pianificato, la conclusione della milestone PB *ha subito un ritardo di circa due giorni*; di conseguenza la data di consegna del progetto è stata spostata dal *30 marzo 2026* al *7 aprile 2026*. \ 
 Anche rispetto alla milestone interna si sono verificati ritardi corrispondenti ad uno sprint. Questo a causa della scarsa comprensione dell'architettura di deploy da adottare. \ \
 Il ritardo è stato accumulato durante la fase di progettazione. Le cause principali sono:
 - Scarsa comprensione di tecnologie serverless (AWS).
