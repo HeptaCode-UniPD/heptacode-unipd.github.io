@@ -1,4 +1,4 @@
-#let listaGulpease = (
+#let listaGulpease1 = (
   ([Analisi dei Requisiti], "83"),
   ([Norme di Progetto], "65"),
   ([Piano di Progetto], "90"),

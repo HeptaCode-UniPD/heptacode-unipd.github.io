@@ -4,7 +4,9 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("1.0.0", "2026/02/16", "Angela Canazza", "Angela Favaro",  "aggiunto capitolo 6.2 e conclusioni"),
+  ("2.0.0", "2026/04/06", "Laura Venturini", "Angela Favaro", "Aggiornamento del documento con l'andamento finale delle metriche"),
+  ("1.1.0", "2026/03/20","Laura Venturini", "Angela Favaro", "Aggiunta nuove metriche" ),
+  ("1.0.0", "2026/02/16", "Angela Canazza", "Angela Favaro",  "Aggiunto capitolo 6.2 e conclusioni"),
 
   ("0.5.0", "2026/02/14", "Laura Venturini",  "Angela Canazza", "Stesura del capitolo 5"),
 
@@ -108,19 +110,19 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPC11",
+    "MPC14",
     "Code Coverage",
     "≥80%",
     "≥90%",
-    "MPC12",
+    "MPC15",
     "Test Success Rate",
     "≥85%",
     "≥100%",
-    "MPC13",
+    "MPC16",
     "Statement Coverage",
     "≥90%",
     "100%",
-    "MPC14",
+    "MPC17",
     "Branch Coverage",
     "≥70%",
     "≥80%"
@@ -139,7 +141,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPC15",
+    "MPC18",
     "Correttezza Ortografica",
     "0",
     "0"
@@ -171,13 +173,26 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     "-10%≤BV≤10%",
     "0%",
     "MPC04",
-    "Requirements Stability Index",
-    "≥70%",
-    "100%",
-    "MPC05",
     "Cost Performance Index",
     "≥90%",
-    "100%"
+    "100%",
+    "MPC05",
+    "Task Completion Rate",
+    ">=75%",
+    "100%",
+    "MPC06",
+    "Time Efficiency",
+    ">=30%",
+    ">=80%",
+    "MPC07",
+    "Percentuale di metriche soddisfatte",
+    ">=60%",
+    "100%",
+    "MPC08",
+    "Rischi non previsti",
+    "<=2",
+    "0"
+
   ),
   caption: [Metriche processi di miglioramento],
   kind: table
@@ -258,30 +273,14 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPD07", 
-    "Complessità Ciclomatica",
-    "≤10 ",
-    "≤5",
-    "MPD08", 
+      "MPD08", 
     "Parametri per metodo ",
     "≤6",
     "≤4",
     "MPD09", 
-    "Linee di codice per metodo",
-    "≤45",
-    "≤25",
-    "MPD10", 
     "Linee di codice per file",
     "≤120",
     "≤80",
-    "MPD11", 
-    "Densità dei commenti",
-    "≥10%",
-    "≥15%",
-    "MPD12",
-    "Cognitive Complexity",
-    "≤20%",
-    "≤5%"
   ),
   caption: [Metriche di manutenibilità del prodotto],
   kind: table
@@ -1309,7 +1308,9 @@ Grazie all'implementazione di uno spellchecker prima della pianificazione degli 
 
 == MPD14 - Indice di Gulpease
 
-#import "../../../scripts/lista_gulpease.typ" : listaGulpease
+*Indice di Gulpease*: indice che misura la leggibilità di un testo, tarato specificatamente sulla lingua italiana. \ \
+*Indice di Gulpease durante la fase di RTB* \
+#import "../../../scripts/lista_gulpease1.typ" : listaGulpease1
 
 #figure(
   caption: [Tabella indice di Gulpease dei documenti],
@@ -1321,7 +1322,7 @@ Grazie all'implementazione di uno spellchecker prima della pianificazione degli 
       inset: 10pt,
       align: center + horizon,
       table.header([*Documento*], [*Indice*]),
-      ..listaGulpease.map(riga => {
+      ..listaGulpease1.map(riga => {
         let (documento, indice) = riga
         (documento, indice)
       }).flatten()
@@ -1329,7 +1330,79 @@ Grazie all'implementazione di uno spellchecker prima della pianificazione degli 
   )
 ]
 
-#let dati = listaGulpease.enumerate().map(it => (it.at(0), float(it.at(1).at(1))))
+#let dati = listaGulpease1.enumerate().map(it => (it.at(0), float(it.at(1).at(1))))
+
+#let etichette = (
+  (0, "AdR"),
+  (1, "NdP"),
+  (2, "PdP"),
+  (3, "PdQ"),
+)
+
+#figure(
+  caption: [Indice di Gulpease dei documenti durante la fase di RTB],
+  cetz.canvas({
+    import cetz-plot: *
+    plot.plot(
+      legend: "inner-north-west",
+      size: (12, 6),
+      x-label: [Documenti],
+      y-label: [Indice],
+      x-tick-step: none,
+      x-ticks: etichette,
+      y-ticks: (0, 20, 40, 60, 80, 100),
+      x-min: -0.5,
+      x-max: 3.5,
+      y-min: 0,
+      y-max: 100,
+      {
+        plot.add-bar(
+          dati,
+          bar-width: 0.5,
+        )
+        plot.add(
+          ((-0.5, 50), (3.5, 50)),
+          label: [Valore accettabile (50)],
+          style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+        )
+
+        plot.add(
+          ((-0.5, 70), (3.5, 70)),
+          label: [valore ottimale (70)],
+          style: (stroke: (paint: red, dash: "dashed", thickness: 1.5pt)),
+        )
+      }
+    )
+  })
+)
+
+*Andamento RTB* \
+Ogni documento presenza un indice di leggibilità superiore al limite inferiore di 50.
+\ \
+
+*Indice di Gulpease durante la fase di PB* \
+
+#import "../../../scripts/lista_gulpease2.typ" : listaGulpease2
+
+#figure(
+  caption: [Tabella indice di Gulpease dei documenti],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Documento*], [*Indice*]),
+      ..listaGulpease2.map(riga => {
+        let (documento, indice) = riga
+        (documento, indice)
+      }).flatten()
+    )
+  )
+]
+
+#let dati = listaGulpease2.enumerate().map(it => (it.at(0), float(it.at(1).at(1))))
 
 #let etichette = (
   (0, "AdR"),
@@ -1374,9 +1447,7 @@ Grazie all'implementazione di uno spellchecker prima della pianificazione degli 
     )
   })
 )
-*Andamento RTB* \
-Ogni documento presenza un indice di leggibilità superiore al limite inferiore di 50.
-\
+
 \ *Andamento PB* \
 
 == MPC14 - Code Coverage (CC)
