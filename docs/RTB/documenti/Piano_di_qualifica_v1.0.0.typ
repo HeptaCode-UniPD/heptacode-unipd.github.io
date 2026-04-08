@@ -4,9 +4,7 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("1.0.0", "2026/03/05", "Laura Venturini", "Riccardo Baldin",  "Fix stesura grafici"),
-
-  ("0.6.0", "2026/02/16", "Angela Canazza", "Angela Favaro",  "aggiunto capitolo 6.2 e conclusioni"),
+  ("1.0.0", "2026/02/16", "Angela Canazza", "Angela Favaro",  "aggiunto capitolo 6.2 e conclusioni"),
 
   ("0.5.0", "2026/02/14", "Laura Venturini",  "Angela Canazza", "Stesura del capitolo 5"),
 
@@ -72,23 +70,23 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPC05",
+    "MPC06",
     "Planned Value",
     "≥0€",
     "≤BAC",
-    "MPC06",
+    "MPC07",
     "Earned Value",
     "≥0€",
     "≤EAC",
-    "MPC07",
+    "MPC08",
     "Actual Cost",
     "≥0€",
     "≤EAC",
-    "MPC08",
+    "MPC09",
     "Estimate at Completion",
     "≥BAC -5%",
     "≤BAC +5%",
-    "MPC09",
+    "MPC10",
     "Estimate to Complete",
     "≥0€",
     "≤EAC"
@@ -109,19 +107,19 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPC10",
+    "MPC11",
     "Code Coverage",
     "≥80%",
     "≥90%",
-    "MPC11",
+    "MPC12",
     "Test Success Rate",
     "≥85%",
     "≥100%",
-    "MPC12",
+    "MPC13",
     "Statement Coverage",
     "≥90%",
     "100%",
-    "MPC13",
+    "MPC14",
     "Branch Coverage",
     "≥70%",
     "≥80%"
@@ -140,7 +138,7 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPC14",
+    "MPC15",
     "Correttezza Ortografica",
     "0",
     "0"
@@ -172,7 +170,10 @@ A tale scopo, il processo non viene mai lasciato a sé stesso, ma è soggetto a 
     "-10%≤BV≤10%",
     "0%",
     "MPC04",
-
+    "Requirements Stability Index",
+    "≥70%",
+    "100%",
+    "MPC05",
     "Cost Performance Index",
     "≥90%",
     "100%"
@@ -459,30 +460,30 @@ Nel documento riguardante le #underline[#link("../documenti/Norme_di_progetto_v1
   [*T-115-S*], [Verificare che il Project Manager possa visualizzare i suggerimenti generati dall'IA per la sostituzione di framework e librerie utilizzate nello stack tecnologico di un progetto], [R-115-F-D], [NI],
   [*T-139-S*], [Verificare che il Project Manager possa eliminare un suo progetto], [R-139-F-O], [NI],
   [*T-140-S*], [Verificare che il Project Manager possa annullare l'operazione di eliminazione di un suo progetto], [R-140-F-O], [NI],
-  [*T-116-S*], [Verificare che il Business Owner possa visualizzare la lista dei propri progetti], [R-116-Q-O], [NI],
-  [*T-117-S*], [Verificare che il Business Owner possa visualizzare il budget complessivo per il proprio progetto], [R-117-F-O], [NI],
-  [*T-118-S*], [Verificare che il Business Owner possa visualizzare le spese effettuate di un progetto], [R-118-F-O], [NI],
-  [*T-119-S*], [Verificare che il Business Owner possa visualizzare una comparazione fra budget e spese effettuate], [R-119-F-O], [NI],
-  [*T-120-S*], [Verificare che il Business Owner possa visualizzare i dettagli di un suo progetto], [R-117-F-O], [NI],
-  [*T-121-S*], [Verificare che il Business Owner possa visualizzare il nome di un progetto], [R-121-F-O], [NI],
-  [*T-122-S*], [Verificare che il Business Owner possa cambiare il budget complessivo di un suo progetto], [R-121-F-O], [NI],
-  [*T-123-S*], [Verificare che il Business Owner possa annullare l'operazione di cambio del budget di un suo progetto], [R-123-F-O], [NI],
-  [*T-124-S*], [Verificare che il Business Owner possa cambiare la spesa effettuata in un progetto], [R-124-F-O], [NI],
-  [*T-125-S*], [Verificare che il Business Owner possa annullare l'operazione di cambio spesa effettuata in un suo progetto], [R-125-F-O], [NI],
-  [*T-126-S*], [Verificare che il Business Owner possa visualizzare il nome del Project Manager di un progetto], [R-126-F-O], [NI],
-  [*T-127-S*], [Verificare che il Business Owner possa visualizzare la mail del Project Manager di un progetto], [R-127-F-O], [NI],
-  [*T-128-S*], [Verificare che il Business Owner possa visualizzare la data di creazione di un progetto], [R-128-F-O], [NI],
-  [*T-129-S*], [Verificare che il Business Owner possa visualizzare la lista di tecnologie utilizzate in un progetto], [R-129-F-O], [NI],
-  [*T-130-S*], [Verificare che il Business Owner possa visualizzare il logo di ogni tecnologia presente nella lista dello stack tecnologico di un progetto], [R-130-F-O], [NI],
-  [*T-131-S*], [Verificare che il Business Owner possa visualizzare il nome di ogni tecnologia presente nella lista dello stack tecnologico di un progetto], [R-121-F-O], [NI],
-  [*T-109-S*], [Verificare che il Business Owner possa visualizzare l'utilizzo che si fa di ogni tecnologia presente nella lista dello stack tecnologico di un progetto], [R-109-F-O], [NI],
-  [*T-132-S*], [Verificare che il Business Owner possa visualizzare la lista contenente i membri del team di sviluppo di un progetto], [R-132-F-O], [NI],
-  [*T-133-S*], [Verificare che il Business Owner possa visualizzare il nome di ogni sviluppatore contenuto nella lista del team di sviluppo di un progetto], [R-133-F-O], [NI],
-  [*T-134-S*], [Verificare che il Business Owner possa visualizzare il ruolo all'interno del progetto di ogni sviluppatore contenuto nella lista del team di sviluppo], [R-134-F-O], [NI],
-  [*T-135-S*], [Verificare che il Business Owner possa visualizzare i dettagli di ogni sviluppatore contenuto nella lista del team di sviluppo di un progetto], [R-135-F-O], [NI],
-  [*T-136-S*], [Verificare che il Business Owner possa visualizzare il numero di progetti ai quali uno sviluppatore ha preso parte], [R-136-F-O], [NI],
-  [*T-137-S*], [Verificare che il Business Owner possa visualizzare le tecnologie che uno sviluppatore sa utilizzare], [R-137-F-O], [NI],
-  [*T-138-S*], [Verificare che il Business Owner possa visualizzare i ruoli che uno sviluppatore può assumere], [R-138-F-O], [NI],
+  [*T-116-S*], [Verificare che il Business Owner possa visualizzare la lista dei propri progetti], [R-116-Q-P], [NI],
+  [*T-117-S*], [Verificare che il Business Owner possa visualizzare il budget complessivo per il proprio progetto], [R-117-F-P], [NI],
+  [*T-118-S*], [Verificare che il Business Owner possa visualizzare le spese effettuate di un progetto], [R-118-F-P], [NI],
+  [*T-119-S*], [Verificare che il Business Owner possa visualizzare una comparazione fra budget e spese effettuate], [R-119-F-P], [NI],
+  [*T-120-S*], [Verificare che il Business Owner possa visualizzare i dettagli di un suo progetto], [R-117-F-P], [NI],
+  [*T-121-S*], [Verificare che il Business Owner possa visualizzare il nome di un progetto], [R-121-F-P], [NI],
+  [*T-122-S*], [Verificare che il Business Owner possa cambiare il budget complessivo di un suo progetto], [R-121-F-P], [NI],
+  [*T-123-S*], [Verificare che il Business Owner possa annullare l'operazione di cambio del budget di un suo progetto], [R-123-F-P], [NI],
+  [*T-124-S*], [Verificare che il Business Owner possa cambiare la spesa effettuata in un progetto], [R-124-F-P], [NI],
+  [*T-125-S*], [Verificare che il Business Owner possa annullare l'operazione di cambio spesa effettuata in un suo progetto], [R-125-F-P], [NI],
+  [*T-126-S*], [Verificare che il Business Owner possa visualizzare il nome del Project Manager di un progetto], [R-126-F-P], [NI],
+  [*T-127-S*], [Verificare che il Business Owner possa visualizzare la mail del Project Manager di un progetto], [R-127-F-P], [NI],
+  [*T-128-S*], [Verificare che il Business Owner possa visualizzare la data di creazione di un progetto], [R-128-F-P], [NI],
+  [*T-129-S*], [Verificare che il Business Owner possa visualizzare la lista di tecnologie utilizzate in un progetto], [R-129-F-P], [NI],
+  [*T-130-S*], [Verificare che il Business Owner possa visualizzare il logo di ogni tecnologia presente nella lista dello stack tecnologico di un progetto], [R-130-F-P], [NI],
+  [*T-131-S*], [Verificare che il Business Owner possa visualizzare il nome di ogni tecnologia presente nella lista dello stack tecnologico di un progetto], [R-121-F-P], [NI],
+  [*T-109-S*], [Verificare che il Business Owner possa visualizzare l'utilizzo che si fa di ogni tecnologia presente nella lista dello stack tecnologico di un progetto], [R-109-F-P], [NI],
+  [*T-132-S*], [Verificare che il Business Owner possa visualizzare la lista contenente i membri del team di sviluppo di un progetto], [R-132-F-P], [NI],
+  [*T-133-S*], [Verificare che il Business Owner possa visualizzare il nome di ogni sviluppatore contenuto nella lista del team di sviluppo di un progetto], [R-133-F-P], [NI],
+  [*T-134-S*], [Verificare che il Business Owner possa visualizzare il ruolo all'interno del progetto di ogni sviluppatore contenuto nella lista del team di sviluppo], [R-134-F-P], [NI],
+  [*T-135-S*], [Verificare che il Business Owner possa visualizzare i dettagli di ogni sviluppatore contenuto nella lista del team di sviluppo di un progetto], [R-135-F-P], [NI],
+  [*T-136-S*], [Verificare che il Business Owner possa visualizzare il numero di progetti ai quali uno sviluppatore ha preso parte], [R-136-F-P], [NI],
+  [*T-137-S*], [Verificare che il Business Owner possa visualizzare le tecnologie che uno sviluppatore sa utilizzare], [R-137-F-P], [NI],
+  [*T-138-S*], [Verificare che il Business Owner possa visualizzare i ruoli che uno sviluppatore può assumere], [R-138-F-P], [NI],
 )
 
 #pagebreak()
@@ -498,42 +499,42 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
   1360,     //SPRINT 3
   2100,     //SPRINT 4
   2560,     //SPRINT 5
-  3140,     //SPRINT 6
-  4205,     //SPRINT 7
-  5080,     //SPRINT 8
-  6027.50,  //SPRINT 9
-  7150.52,  //SPRINT 10
-  7689.05,  //SPRINT 11
+  2905,     //SPRINT 6
+  3265,     //SPRINT 7
+  3850,     //SPRINT 8
+  4410,  //SPRINT 9
+  5380,  //SPRINT 10
+  5925,  //SPRINT 11
 )
 
 #let lista_Pv = (
   0.00,     //AGGIUDICAZIONE 
-  209.43,   //SPRINT 1
-  568.45,   //SPRINT 2
-  1116.96,  //SPRINT 3
-  1735.27,  //SPRINT 4
-  2313.70,  //SPRINT 5
-  3071.63,  //SPRINT 6
-  3989.13,  //SPRINT 7
-  5026.30,  //SPRINT 8
-  6113.34,  //SPRINT 9
-  7150.52,  //SPRINT 10
-  7689.05,  //SPRINT 11 
+  203.12,   //SPRINT 1
+  551.33,   //SPRINT 2
+  1083.31,  //SPRINT 3
+  1683.00,  //SPRINT 4
+  2244.01,  //SPRINT 5
+  2650.25,  //SPRINT 6
+  3075.84,  //SPRINT 7
+  3598.15,  //SPRINT 8
+  4159.15,  //SPRINT 9
+  5165.08,  //SPRINT 10
+  5687.39,  //SPRINT 11 
 )
 
 #let lista_Ev = (
   0.00,     //AGGIUDICAZIONE 
-  209.43,   //SPRINT 1
-  568.45,   //SPRINT 2
-  1116.96,  //SPRINT 3
-  1735.27,  //SPRINT 4
-  2134.18,  //SPRINT 5
-  2632.83,  //SPRINT 6
-  3610.16,  //SPRINT 7
-  4407.99,  //SPRINT 8
-  5235.73,  //SPRINT 9
-  6233.02,  //SPRINT 10
-  6871.28,  //SPRINT 11 
+  203.12,   //SPRINT 1
+  551.33,   //SPRINT 2
+  1083.31,  //SPRINT 3
+  1683.00,  //SPRINT 4
+  2069.90,  //SPRINT 5
+  2360.08,  //SPRINT 6
+  2708.28,  //SPRINT 7
+  3230.59,  //SPRINT 8
+  3694.87,  //SPRINT 9
+  4662.12,  //SPRINT 10
+  5281.15,  //SPRINT 11 
 )
 
 == MPC01 e MPC02 - Schedule Variance e Cost Variance
@@ -684,7 +685,7 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
     })
   )
 ]
-Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha quasi sempre lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli sprint successivi nei quali si prevede di lavorare in maniera più efficiente. 
+Dai grafici si può capire che le ore effettive e le ore previste corrispondono per i primi 4 sprint in cui SV ha valore 0, invece a partire dal quinto sprint il team ha spesso lavorato per meno ore rispetto a quelle programmate. Di conseguenza anche il costo effettivo è stato minore di quello predetto. Le ore di differenza verranno recuperate negli ultimi quattro sprint nei quali si prevede di lavorare in maniera più efficiente. 
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -791,11 +792,11 @@ Dai grafici si può capire che le ore effettive e le ore previste corrispondono 
   )
 ]
 
- La Budget Variance ha un valore negativo fino allo sprint 8 del RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase. Il miglioramento a partire dallo sprint 5 è dovuto alla riduzione del volume orario lavorato rispetto alla pianificazione originaria. Dovrebbe arrivare a 0 quando si recupereranno le ore e si inizieranno a utilizzare di più ruoli meno costosi.
+ La Budget Variance ha un valore negativo durante la fase RTB a causa dell'utilizzo dei ruoli più costosi durante questa fase. Il miglioramento a partire dallo sprint 5 è dovuto alla riduzione del volume orario lavorato rispetto alla pianificazione originaria. Dovrebbe arrivare a 0 quando si recupereranno le ore e si inizieranno a utilizzare di più ruoli meno costosi.
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 
-== MPC04 - CPI
+== MPC05 - CPI
 #let listaEv-Ac-CPI = range(lista_Ev.len()).map(i => {
   (i, lista_Ev.at(i), lista_Ac.at(i))
 })
@@ -882,7 +883,7 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
 
 
 
-== MPC05 e MPC06 - Planned Value ed Earned Value
+== MPC06 e MPC07 - Planned Value ed Earned Value
 #let listaSpese = range(lista_Ev.len()).map(i => {
   (i, lista_Pv.at(i), lista_Ev.at(i))
 })
@@ -950,13 +951,13 @@ Il CPI è costantemente minore di 1, il valore ottimale, anche questo è dovuto 
     })
   )
 ]
-Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è più in linea con la pianificazione iniziale a partire dal quinto sprint. Nello sprint 7 è stata incrementata la produttività in maniera da recuperare parzialmente il debito accumulato. Nell'ottavo e nono sprint il valore prodotto è nuovamente diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo di recuperare le ore negli sprint successivi alla sessione.
+Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint, mentre il lavoro svolto non è più in linea con la pianificazione iniziale a partire dal quinto sprint. In particolare, negli sprint attorno all'ottavo il valore prodotto è diminuito rispetto a quello pianificato a causa di rallentamenti dovuti alla sessione di esami universitari, ma prevediamo il recupero di questo ritardo negli ultimi sprint, nei quali si prevede di lavorare per un maggior numero di ore.
 
 
 
 
 
-== MPC07 e MPC09 - Actual Cost ed Estimate to Complete
+== MPC08 e MPC010 - Actual Cost ed Estimate to Complete
 #let listaACETC = range(lista_Ac.len()).map(i => {
   (i, lista_Ac.at(i), 12845 -lista_Ev.at(i))
 })
@@ -1024,9 +1025,9 @@ Si osservi che il valore di EV è allineato a quello di PV fino al quarto sprint
     })
   )
 ]
-La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando a incrementare più velocemente a partire dallo sprint 7, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste dallo sprint 7 al 13. L'andamento della linea dell'ETC indica budget sufficiente a concludere le attività prefissate senza sforare, in quanto allo sprint 9 non è ancora stata usata più di metà di budget.
+La spesa è cresciuta in maniera abbastanza lineare in questi sprint, rimanendo in linea con quanto programmato poiché le spese maggiori sono previste per gli sprint successivi alla sessione di esami universitari. L'andamento della linea dell'ETC indica budget sufficiente a intensificare le attività produttive negli ultimi sprint, in quanto si dispone ancora di più metà del budget.
 
-== MPC08 - Estimate at Completion
+== MPC10 - Estimate at Completion
 #let listaEv-Ac-EAC = range(lista_Ev.len()).map(i => {
   (i, lista_Ev.at(i), lista_Ac.at(i))
 })
@@ -1100,10 +1101,10 @@ La spesa è cresciuta in maniera abbastanza lineare in questi sprint, iniziando 
     })
   )
 ]
-L'attuale scostamento tra EAC e BAC rappresenta lo scenario in cui l'utilizzo dei ruoli rimanesse invariato. Tuttavia, poiché il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, questa stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
-Con il passaggio alla fase successiva (Sprint 10-13), che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un diminuzione progressiva del valore dell'EAC. La curva dell'EAC dovrebbe quindi convergere verso il BAC entro la fine del progetto.
+L'attuale scostamento tra EAC e BAC è dovuto al fatto che il CPI attuale è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, quindi la stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
+La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quarto sprint. Con il passaggio alla fase successiva, che prevede l'impiego di risorse con tariffe orarie inferiori, si prevede un miglioramento del CPI e quindi un'ulteriore diminuzione progressiva del valore dell'EAC in maniera che esso coincida con il BAC al termine del progetto.
 
-== MPC14 - Correttezza ortografica
+== MPC15 - Correttezza ortografica
 
 #figure(
   caption: [Grafico per periodo di Correttezza ortografica],

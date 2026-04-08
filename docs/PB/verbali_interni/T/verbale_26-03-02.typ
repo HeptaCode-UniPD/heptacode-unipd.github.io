@@ -2,20 +2,10 @@
 #let giorno = "2026-03-02"
 
 // data del prossimo incontro nello stesso formato
-#let next-meeting = "2 marzo 2026"
+#let next-meeting = "4 marzo 2026"
 
 // ordine del giorno ?
 #let odg = "Organizzazione Presentazione Milestone RTB"
-
-
-// versione , giorno, autore, verificatore, descrizione 
-// ("     " , "    ", "    ", "          ", "          ")
-// esempio 
-  //   ("1.0.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
-  //    "1.0.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
-#let modifiche = (
-  ("1.0.0", "2026-03-02", "Amerigo Vegliante", "Angela Favaro", "Stesura relazione dell'incontro")
-)
 
 // switchare in 'true' SSE l'incontro non si è tenuto su Discord
 #let distanza = true
@@ -38,6 +28,9 @@
     "Verificatore",   "Presente", //Nicola Simionato
     "Verificatore",   "Presente"  //Laura Venturini
 )
+
+// IGNORARE QUESTA VARIABILE
+#let partecipanti-esterni = ()
 
 // ora di inzio dell'incontro
 #let inizio = "17:00"
@@ -81,7 +74,7 @@ L'incontro si è concluso con la definizione della strategia comunicativa per la
 ]
 
 #let decisione-azione = (
-  ("Presentazione candidatura RTB", "Invio del modulo di candidatura e notifica ai proponenti.",
-  "Suddivisione parti presentazione", "Creazione di un documento condiviso per la stesura dei contenuti specifici.",
-  "Revisione documenti pre-presentazione", "Controllo incrociato tra PdP e PdQ per garantire coerenza terminologica e metrica.")
+  ("Presentazione candidatura RTB", "Invio del modulo di candidatura e notifica ai proponenti.", "",
+  "Suddivisione parti presentazione", "Creazione di un documento condiviso per la stesura dei contenuti specifici.", "",
+  "Revisione documenti pre-presentazione", "Controllo incrociato tra PdP e PdQ per garantire coerenza terminologica e metrica.", "")
 )

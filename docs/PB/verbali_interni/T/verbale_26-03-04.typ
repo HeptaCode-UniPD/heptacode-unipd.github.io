@@ -7,16 +7,6 @@
 // ordine del giorno 
 #let odg = "Progettazione e colloquio con il prof. Vardanega"
 
-
-// versione , giorno, autore, verificatore, descrizione 
-// ("     " , "    ", "    ", "          ", "          ")
-// esempio 
-  //   ("1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento",
-  //    "1.0", "2025-11-15", "Mario Rossi", "Giulia Verdi", "Creazione iniziale del documento" )
-#let modifiche = (
-  ("1.0.0", "2026-03-05", "Angela Favaro", "Alberto Reginato", "Stesura verbale")
-)
-
 // switchare in 'true' SE E SOLO SE l'incontro si è tenuto su Discord
 #let distanza = true
 
@@ -38,6 +28,9 @@
     "Verificatore",   "Presente" //Laura Venturini
 )
 
+// IGNORARE QUESTA VARIABILE
+#let partecipanti-esterni = ()
+
 // ora di inzio dell'incontro
 #let inizio = "18:20"
 
@@ -46,7 +39,8 @@
 
 
 
-#let corpo = [= Argomenti trattati
+#let corpo = [
+  = Argomenti trattati
 Gli argomenti discussi nell'incontro sono stati:
 - Suddivisione ruoli per la presentazione al prof. Vardanega.
 - Studio per attività di progettazione.
@@ -83,8 +77,7 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 
 
 #let decisione-azione = ((
-  "Inizio attività di progettazione","Studio individuale e ricerca di contatto con l'azienda proponente",
-  "Colloquio per conclusione RTB", "Invio mail di richiesta colloquio al prof. Vardanega",
-  "Maggiore controllo sullo stato di avanzamento del progetto", "Aumento degli sprint previsti all'interno del Piano di progetto"
-)
+  "Inizio attività di progettazione","Studio individuale e ricerca di contatto con l'azienda proponente", "",
+  "Colloquio per conclusione RTB", "Invio mail di richiesta colloquio al prof. Vardanega", "",
+  "Maggiore controllo sullo stato di avanzamento del progetto", "Aumento degli sprint previsti all'interno del Piano di progetto", "")
 )
