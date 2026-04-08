@@ -2,7 +2,7 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("2.0.0", "2026/03/22", "Laura Venturini", "Angela Favarlùo", "Aggiunta nuove metriche di miglioramento"),
+  ("2.0.0", "2026/03/22", "Laura Venturini", "Angela Favarlo", "Aggiunta nuove metriche di miglioramento"),
   ("1.1.0", "2026/03/21", "Laura Venturini", "Angela Favarlùo", "Rimozione metriche di manuntebilità reputate non rilevanti"),
   ("1.0.0", "2026/02/10", "Riccardo Baldin", "Angela Favaro", "Completamento capitoli vuoti"),
   ("0.5.0", "2026/01/06", "Angela Canazza", "Nicola Simionato", "Stesura Metriche per la Qualità"),
