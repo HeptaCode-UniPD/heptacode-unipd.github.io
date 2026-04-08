@@ -254,3 +254,4 @@ l'aggregatore
 microservizi
 fargate
 serverless
+tcr
