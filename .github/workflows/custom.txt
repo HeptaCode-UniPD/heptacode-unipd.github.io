@@ -590,3 +590,4 @@ sha
 un'orchestratore
 upsert
 viewlastanalysis
+agentiche
