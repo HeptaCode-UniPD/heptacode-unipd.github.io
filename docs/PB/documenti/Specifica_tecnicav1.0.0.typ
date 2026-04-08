@@ -366,7 +366,7 @@ Step Functions orchestra l'intero flusso agentico come macchina a stati: gestisc
 S3 svolge due ruoli distinti nella piattaforma: archivia il repository clonato come ZIP che gli agenti recuperano autonomamente per l'analisi, e funge da bus di stato asincrono tra gli agenti paralleli - ogni domain agent scrive il proprio report parziale su S3 al termine dell'elaborazione, e l'orchestratore aggregatore li recupera e cancella nella fase successiva. Questo disaccoppia i componenti paralleli senza richiedere comunicazione diretta tra Lambda. \
 S3 viene inoltre utilizzato per l'hosting degli asset statici del frontend (MS0): il bundle prodotto da Vite in fase di build viene caricato su un bucket S3 configurato per il website hosting statico.
 ==== AWS Fargate
-Fargate è il runtime serverless per container, utilizzato per hostare il frontend e il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalano automaticamente e il traffico è instradato tramite Application Load Balancer. È la scelta naturale per i componenti con ciclo di vita HTTP continuo, a differenza della logica agentica che per sua natura è event-driven e gestita da Lambda.
+Fargate è il runtime serverless per container, utilizzato per hostare il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalano automaticamente e il traffico è instradato tramite Application Load Balancer. È la scelta naturale per i componenti con ciclo di vita HTTP continuo, a differenza della logica agentica che per sua natura è event-driven e gestita da Lambda.
 
 == Tecnologie per Continuous Integration
 === GitHub Actions
