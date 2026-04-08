@@ -29,16 +29,13 @@ let versione = if modifiche != () {
     #v(1.33cm)
     #text(size: 25pt, weight: "bold")[#titolo]
     #v(1.33cm)
-    #text(size: 15pt, weight: "bold")[Versione #versione]
-    #v(1.33cm)
-    #text(size: 15pt, weight: "bold")[Contenuto del Documento]
     #block(inset: (left: 10%, right: 10%))[
       #text(12pt)[#eval(descrizione, mode: "markup")]
     ]
     #v(1.33cm)
     #text(size: 10pt, weight: "bold")[email: #link("mailto:heptacode7@gmail.com") ]
     
-    #text(size: 10pt, weight: "bold")[sito: #link("https://heptacode-unipd.github.io/")[heptacode-unipd.github.io]]
+    #text(size: 10pt, weight: "bold")[documentazione: #link("https://heptacode-unipd.github.io/")[heptacode-unipd.github.io]]
   ])
   v(1fr)
   counter(page).update(0)

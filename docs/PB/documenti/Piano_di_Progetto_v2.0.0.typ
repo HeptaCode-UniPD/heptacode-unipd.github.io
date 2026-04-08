@@ -4,8 +4,14 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("1.2.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione RTB"),
-  ("1.1.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione PB"),
+  ("2.0.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Approvazione finale, rilascio ufficiale v2.0.0"),
+  ("1.7.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Aggiunti resoconto PB e Consuntivo finale"),
+  ("1.6.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Aggiunto trascorso Sprint 15"),
+  ("1.5.0", "2026/03/24", "Angela Canazza", "Riccardo Baldin", "Trascorso Sprint 14"),
+  ("1.4.0", "2026/03/17", "Laura Venturini", "Angela Canazza", "Trascorso Sprint 13"),
+  ("1.3.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione RTB"),
+  ("1.2.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione PB"),
+  ("1.1.0", "2026/03/12", "Amerigo Vegliante", "Angela Favaro", "Trascorso Sprint 12"),
   ("1.0.0", "2026/03/05", "Amerigo Vegliante", "Angela Favaro", "Aggiunti preventivi per Sprint da 12 a 15"),
   ("0.20.0", "2026/03/03", "Amerigo Vegliante", "Angela Favaro", "Aggiunta del resoconto trascorso RTB"),
   ("0.19.0", "2026/03/02", "Angela Favaro", "Alberto Reginato", "Modifica del documento su organizzazione Sprint"),
@@ -128,7 +134,7 @@ Gli strumenti per la comunicazione sono invece:
 #label("Organizzazione")
 Ad ogni suddivisione di periodo (_Sprint_) i membri turneranno; in questo modo tutti avranno modo di assumere e sperimentare i panni dei ruoli previsti per lo sviluppo di un progetto. \ #underline[Le ore complessive calcolate a persona] sono *novantadue*. \ A queste va escluso il tempo di apprendimento personale; pertanto, sebbene vengano segnate poche ore di lavoro effettivo, tutto il team seguirà dei ritmi di intensità _alta_ (10 - 20 ore settimanali individuali). \ Sono calcolati anche alcuni sprint ad intensità inferiore a causa della sessione d’esami invernale che si svolgerà dal _19 gennaio 2026_ al _21 febbraio 2026_. 
 #pagebreak()
-== Prima stima, a priori, del monte ore totale per ruolo 
+== Stima a priori del monte ore totale per ruolo 
 Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Questo è naturale in quanto per ogni sprint verrà eseguito un carico ed un’intensità di lavoro differenti. Risulta difficile uniformare perfettamente la ripartizione delle ore. \ L’opzione ritenuta più consona è quella di avvicinare tutti i membri ad un’uniformità di ore per ruolo anche se non esattamente coincidenti. \ Le ore complessive, calcolate a priori rispetto allo svolgimento del progetto, vengono ripartite tra i membri del gruppo come segnalato in @tab:OreTotIndividuali. \ \
 
 #figure(
@@ -164,7 +170,7 @@ Non tutti i membri svolgeranno esattamente le stesse ore per ciascun ruolo. Ques
 Nel grafico in figura @fig:torta vengono analizzate le percentuali della ripartizione generale dei ruoli.
 
 #figure(
-  caption: [Percentuale ripartizione dei ruoli in totale],
+  caption: [Stima percentuale della ripartizione dei ruoli.],
 )[
   #let data = (
     ([*Resp.*], 49),
@@ -198,7 +204,7 @@ Nel grafico in figura @fig:torta vengono analizzate le percentuali della riparti
 Durante lo svolgimento del progetto verranno segnalate le ore effettive svolte da ogni singolo componente per ogni singolo ruolo. \ Alla conclusione delle milestone RTB e PB verranno segnalate le ore totali effettivamente svolte.
 
 #pagebreak()
-== Seconda stima, a seguito della milestone RTB, del monte ore totale per ruolo
+== Stima a seguito della milestone RTB del monte ore totale per ruolo
 A seguito del conseguimento della milestone RTB (descritta nella @milestone) e tenuto conto delle ore effettivamente svolte durante il periodo di RTB, verrà proposta una seconda stima (presente in @tab:OreTotIndividuali2) delle ore di lavoro di ogni membro per ruolo. Questa stima viene comparata con la stima in @tab:OreTotIndividuali, che era stata effettuata all'inizio della milestone RTB. 
 
 #figure(
@@ -232,7 +238,7 @@ A seguito del conseguimento della milestone RTB (descritta nella @milestone) e t
     ) ]] <tab:OreTotIndividuali2>
 In @fig:torta2 è possibile visionare la percentuale di ore dedicate a ciascun ruolo secondo la nuova stima.
 #figure(
-  caption: [Percentuale ripartizione dei ruoli seconda stima.],
+  caption: [Stima post RTB percentuale ripartizione dei ruoli.],
 )[
   #let data = (
     ([*Resp.*], 36),
@@ -301,107 +307,133 @@ Sono stati calcolati un totale di _*tredici*_ sprint. \ La pianificazione degli 
 Gli sprint della _Requirements and Technology Baseline_ sono preventivati in numero di dieci. \ Sono previsti della durata di :
 - sette giorni dal 24 novembre 2025 all’11 gennaio 2026;
 - quattordici giorni dal 12 gennaio al 22 febbraio 2026.
-Successivamente torneranno a cadenza settimanale. 
 
 === Pianificazione dall’RTB <PianificazioneRTB>
-Attività pianificate per gli sprint della milestone _Product Baseline_: \ 
+Attività pianificate per gli sprint della milestone _Requirements and Technology Baseline_: \ 
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 1* #block(inset: (left: 0.5cm))[ 
   _Dal 24 novembre al 30 novembre 2025_
-
+  Inizio dell’attività di lavoro seguito del primo incontro con il committente.
+    - Studio in preparazione dell’attività di Analisi dei Requisiti.
+    - Primo approccio di gruppo all’analisi (tramite incontri interni organizzati come brainstorming).
+    - Studio della documentazione adeguata al progetto.
+    - Attività di studio dei Casi d'uso.
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 2* #block(inset: (left: 0.5cm))[ 
   _Dall’ 1 dicembre al 7 dicembre 2025_
-  
+  - Studio individuale della sintassi e l’utilizzo dei Casi d’Uso.
+    - Inizio stesura dei primi Casi d'Uso.
+    - Divisione dei compiti per una prima stesura dei documenti tra:
+      - Piano di Progetto (PdP).
+      - Piano di Qualifica (PdQ).
+      - Norme di Progetto.
+      - Analisi dei Requisiti (AR).
+    - Decisioni provvisorie sulle tecnologie utilizzabili per il progetto.
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 3:* #block(inset: (left: 0.5cm))[ 
   _Dall’8 dicembre al 14 dicembre 2025_
-
+  - Attività di formazione su Backend da parte dell’azienda committente.
+    - Continuazione da parte del team dell’Analisi dei Requisiti.
+    - Avanzamento stesura dei documenti per milestone RTB.
+    - Studio individuale sulle tecnologie discusse dal team.
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 4:* #block(inset: (left: 0.5cm))[
   _Dal 15 dicembre al 21 dicembre 2025_
+  - Attività di formazione su Frontend, AWS ed introduzione alla parte AI da parte dell’azienda committente.
+    - Continuazione di:
+      - Analisi dei Requisiti.
+      - Stesura della documentazione.
+    - Revisione sulle decisioni prese riguardo alle tecnologie adatte al progetto.
+    - Continuazione stesura di Use Case.
+    - Revisione del _Glossario_ e del documento _Way of Working_ ed eventuale aggiornamento.
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 5:* #block(inset: (left: 0.5cm))[
   _Dal 22 dicembre al 28 dicembre 2025_
-
+  - Scelta definitiva delle tecnologie da utilizzare per il progetto.
+    - Inizio studio delle tecnologie scelte.
+    - Continuazione dell’attività di Analisi dei Requisiti.
+    - Continuazione stesura dei documenti.
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 6:* #block(inset: (left: 0.5cm))[
   _Dal 29 dicembre 2025 al 4 gennaio 2026_
-
+  - Inizio attività di produzione del _Proof of Concept (PoC)_.
+    - Continuazione stesura della documentazione.
+    - Continuazione attività di Analisi dei Requisiti.
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 7:* #block(inset: (left: 0.5cm))[
-  _Dal 5 gennaio all’11 gennaio 2026_
-
+  _Dal 5 gennaio all’11 gennaio 2026_ \
+  In questo sprint tutti i ruoli devono essere operativi e il team deve dimostrare la capacità di generare valore per lo sviluppo del progetto.
+    - Continuazione di sviluppo e verifica del PoC.
+    - Continuazione stesura della documentazione (interna ed esterna).
+    - Continuazione attività di Analisi e rilevazione Casi d'Uso.
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 8:* #block(inset: (left: 0.5cm))[
   _Dal 12 gennaio al 25 gennaio 2026_
-  
+  - Conclusione dello sviluppo e della verifica del PoC.
+    - Revisione dei documenti prodotti per la milestone RTB.
+    - Continuazione attività di Analisi e stesura Casi d'Uso.
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
+  - *Conclusione milestone UCB*.
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 9:* #block(inset: (left: 0.5cm))[
   _Dal 26 gennaio all’8 febbraio 2026_
-
+    - Continuazione stesura della documentazione prodotta per la milestone RTB.
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
+    - Allineamento di tutti i componenti del gruppo sulle attività che sono state svolte e che verranno svolte; chi ha maggiore esperienza chiarirà i dubbi a chi ne ha avuta meno nei diversi ambiti (Analisi, Sviluppo e Verifica).
+    - Inizio studio per attività di progettazione
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
 *Sprint 10:* #block(inset: (left: 0.5cm))[
   _Dal 9 febbraio al 22 febbraio 2026_
-
+  - Conclusione attività di Analisi e stesura della stessa.
+  - Studio della documentazione necessaria per la prossima milestone _PB_.
+  - Inizio studio per la Progettazione
+  - Verifica di tutti i documenti prodotti dal gruppo.
+  - *Conclusione milestone RTB*
 ]
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-
-*Sprint 11:* #block(inset: (left: 0.5cm))[
-  _Dal 23 febbraio all’1 marzo 2026_
-
-]
+Successivamente sono previsti altri *tre sprint*, a cadenza settimanale, per poter completare la milestone PB e consegnare il progetto entro il 15 marzo 2026.
 
 #line(length: 100%, stroke: 0.5pt + gray)
 
-*Sprint 12:* #block(inset: (left: 0.5cm))[
-  _Dal 2 marzo all’8 marzo 2026_
-
-]
-
-#line(length: 100%, stroke: 0.5pt + gray)
-
-*Sprint 13:* #block(inset: (left: 0.5cm))[
-  _Dal 9 marzo al 15 marzo 2026_
-
-]
-#line(length: 100%, stroke: 0.5pt + gray)
-#line(length: 100%, stroke: 0.5pt + gray)
-
-Successivamente a questo paragrafo di pianificazione saranno presenti, per ognuno degli sprint PB, il _Preventivo a finire_ ed il _Trascorso_ che riporteranno rispettivamente:
+Successivamente a questo paragrafo di pianificazione saranno presenti, per ognuno degli sprint RTB, il _Preventivo a finire_ ed il _Trascorso_ che riporteranno rispettivamente:
 - Pianificazione nel breve termine degli sprint a finire.
 - Retrospettiva rispetto alla pianificazione nel breve e lungo termine con conseguenti misure correttive attuate per la gestione dei rischi e delle problematiche incontrate.
+
+Per la milestone _PB_ sono poi previsti altri tre sprint che verranno programmati a seguito del conseguimento della milestone RTB.
+
+Il giorno di consegna del progetto, al 24 novembre 2025, è previsto per il 15 marzo 2026.
 
 === Trascorso RTB <TrascorsoRTB>
 ==== Sprint 1
@@ -1801,7 +1833,10 @@ A seguito dei risultati ottenuti durante la milestone RTB sono state ricalcolate
 
 #pagebreak()
 == Sprint PB
-Gli sprint della _Product Baseline_ sono preventivati in numero di quattro. \ Sono previsti della durata di sette giorni.
+Gli sprint della _Product Baseline_ sono preventivati in numero di quattro. Tutti della durata di sette giorni.
+
+Il giorno di consegna del progetto, al 2 marzo 2026, è previsto per il 30 marzo 2026.
+
 === Pianificazione dal PB <PianificazionePB>
 Attività pianificate per gli sprint della milestone _Product Baseline_: \ 
 
@@ -1884,11 +1919,12 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   [_Attività pianificate_],
   [
     - Previsto colloquio con il prof. Vardanega.
-    - Attività di studio progettazione PAB.
+    - Attività di studio progettazione.
     - Stesura v3.0.0 del documento AdR (con correzioni del prof. Cardin).
     - Attività di studio delle tecnologie necessarie allo sviluppo.
+    - Revisione PdQ, NdP, Glossario e PdP.
   ],
-  [_Milestones attive_], [PAB, PB]
+  [_Milestones attive_], [PB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 12],
@@ -1928,21 +1964,67 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-
+    - Attività di studio progettazione.
+    - Stesura v3.0.0 del documento AdR (con correzioni del prof. Cardin).
+    - Attività di studio delle tecnologie necessarie allo sviluppo.
+    - Revisione PdQ, NdP, Glossario e PdP. 
+    - Comunicazione con azienda per richiesta consigli su progettazione.
+    - Richiesta di colloqui all'azienda.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    1. Rallentamenti a causa di impegni personali (non abbiamo svolto il colloquio con il professore a causa di un impegno lavorativo di un membro del gruppo). RO2 - @tab:RO2.
   ],
 
   [_Mitigazione_],
   [
-    1.
+    Non è stato possibile attuare misure di mitigazione in quanto gli impegni personali non è stato possibile posticiparli. \ 
+    Abbiamo impiegato il tempo a disposizione studiando in modo più approfondito la progettazione.
   ],
   [_Cambiamenti da attuare nel breve termine_],
-  []
+  [
+    Posticipato colloquio con prof. Vardanega a lunedì 9 marzo. 
+  ]
 )
+
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 12],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [2], [], [1], [], [2], [95€],
+      [_Angela Canazza_], [], [], [], [], [], [2], [30€],
+      [_Riccardo Baldin_], [], [], [], [1], [], [], [25€],
+      [_Alberto Reginato_], [], [], [], [1], [], [], [25€],
+      [_Nicola Simionato_], [], [], [], [], [], [2], [30€],
+      [_Amerigo Vegliante_], [2], [], [], [1], [], [], [85€],
+      [_Laura Venturini_], [], [], [], [], [], [2], [30€],
+    ) ]] <tab:TrascorsoSprint12>
+
+*GANTT Diagram*
+#figure(
+  caption: [Diagramma di GANTT dello Sprint 12],
+)[
+  #image("../../asset/GANTT/sprint12-gantt.png")
+]<GANTT-Sprint12>
+
+#underline[Spese della settimana]: 320€ / 320€ \ #underline[Spesa totale]: *6.245€ / 6.245€*
 #pagebreak()
 
 ==== Sprint 13
@@ -1962,6 +2044,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
     - Revisione del _Glossario_ ed eventuale aggiornamento.
     - Inizio sviluppo documentazione per milestone PB:
       - Specifica Tecnica.
+    - Riunione con prof. Vardanega.
   ],
   [_Milestones attive_], [PAB, PB]
 )
@@ -2003,21 +2086,69 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-
+    - Riunione con prof. Vardanega per colloquio RTB e per chiarimenti a seguito del colloquio.
+    - Riunione con azienda proponente.
+    - Inizio attività progettazione di architettura monolitica modulare, nello specifico, progettazione per moduli. 
+    - Revisione del _Glossario_ ed eventuale aggiornamento.
+    - Inizio sviluppo documentazione per milestone PB:
+      - Specifica Tecnica.
+    - Cambiamento documentazione di verbali, PdQ, NdP e PdP a seguito del colloquio con il prof. Vardanega.
+    - Cambiamento AdR secondo quanto specificato dal prof. Cardin a seguito dell’RTB.
   ],
-
   [_Rischi incontrati_],
   [
-    1.
+    - RT1 - (@tab:RT1). A causa della poca conoscenza con le tecnologie in uso, la progettazione ha richiesto più tempo del previsto e l'attività di sviluppo non è iniziata.
+    - Sistemazione dei documenti PdP, PdQ e NdP a seguito del colloquio con il prof. Vardanega, ha portato ad un leggero rallentamento dell'attività di progettazione. 
   ],
-
   [_Mitigazione_],
   [
-    1.
+    - Scelta di aumentare il numero di meeting del gruppo a cadenza giornaliera.
+    - Suddivisione aree di studio per poi discuterne assieme durante le riunioni.
   ],
   [_Cambiamenti da attuare nel breve termine_],
-  []
+  [
+    - Spostamento attività di programmazione backend, perché la progettazione richiede un tempo maggiore di quanto preventivato.
+    - Aggiornamento del PdQ (nuove metriche).
+  ]
 )
+
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 13],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [2], [12], [], [], [350€],
+      [_Angela Canazza_], [], [], [2], [], [], [10], [200€],
+      [_Riccardo Baldin_], [], [], [], [12], [], [7], [405€],
+      [_Alberto Reginato_], [], [], [], [12], [], [7], [405€],
+      [_Nicola Simionato_], [], [2], [], [], [], [8], [160€],
+      [_Amerigo Vegliante_], [], [], [], [12], [], [3], [345€],
+      [_Laura Venturini_], [2], [], [], [8], [], [3], [305€],
+    ) ]] <tab:TrascorsoSprint13>
+
+*GANTT Diagram*
+#figure(
+  caption: [Diagramma di GANTT dello Sprint 13],
+)[
+  #image("../../asset/GANTT/sprint13-gantt.png")
+]<GANTT-Sprint13>
+
+#underline[Spese della settimana]: 2.170€ / 2.465€ \ #underline[Spesa totale]: *8.415 / 8.710€*
 #pagebreak()
 
 ==== Sprint 14
@@ -2032,12 +2163,13 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 
   [_Attività previste_],
   [
-    - Attività di sviluppo e validazione Frontend e Backend.
-    - Attività di progettazione.
+    - Sviluppo e verifica codice Frontend.
+    - Attività di progettazione .
     - Revisione del _Glossario_ ed eventuale aggiornamento.
     - Sviluppo documentazione per milestone PB:
       - Specifica Tecnica (rilascio v1)
       - Manuale utente
+    - Aggiornamento PdQ con nuove metriche.
     - Conclusione milestone PAB.
   ],
   [_Milestones attive_], [PB, PAB]
@@ -2062,16 +2194,16 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [], [], [], [], [14], [5], [285€],
+      [_Angela Favaro_], [], [], [], [], [10], [5], [225€],
       [_Angela Canazza_], [2], [], [], [10], [], [3], [355€],
-      [_Riccardo Baldin_], [], [], [], [], [15], [5], [300€],
-      [_Alberto Reginato_], [], [2], [], [10], [7], [], [395€],
-      [_Nicola Simionato_], [], [], [], [9], [], [13], [420€],
-      [_Amerigo Vegliante_], [], [], [], [], [15], [], [225€],
+      [_Riccardo Baldin_], [], [], [], [], [10], [5], [225€],
+      [_Alberto Reginato_], [], [2], [], [10], [], [], [290€],
+      [_Nicola Simionato_], [], [], [], [4], [], [13], [295€],
+      [_Amerigo Vegliante_], [], [], [], [4], [10], [], [250€],
       [_Laura Venturini_], [], [], [], [7], [], [4], [235€],
     ) ]] <tab:PrevisioneSprint14>
 
-#underline[Spese della settimana]: 2.215€ \ #underline[Spesa totale]: *10.925€*
+#underline[Spese della settimana]: 1.875€ \ #underline[Spesa totale]: *10.290€*
 
 ===== Trascorso dello sprint
 #table(
@@ -2080,21 +2212,72 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-
+    - Sviluppo e verifica codice Frontend.
+    - Attività di progettazione dei moduli.
+    - Aggiornamento PdQ con nuove metriche.
+    - Riunione con prof. Cardin su adeguatezza della progettazione.
+    - Attività di studio su architetture di deploy.
+    - Riformulazione architettura di deploy.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    - A seguito del colloquio con il prof. Cardin abbiamo compreso di non aver concepito l'architettura di deploy in modo corretto. In particolare con l'integrazione di AWS Lambda. RT1 - (@tab:RT1).
+    - L'attività di studio personale ha prodotto dei risultati architetturali diversi tra i diversi componenti del gruppo. RO7 - (@tab:RO7).
+    - La riformulazione architetturale ha portato ad un rallentamento sull'inizio dell'attività di sviluppo backend. RO1 - (@tab:RO1).
   ],
-
   [_Mitigazione_],
   [
-    1.
+    - Effettuare uno studio più approfondito sulle tecnologie AWS e i pattern architetturali connessi. 
+    - Concentrare l'intero gruppo su attività di progettazione.
+    - Comunicazione quotidiana interna al gruppo per mitigare eventuali incomprensioni.
   ],
   [_Cambiamenti da attuare nel breve termine_],
-  []
+  [
+    - Spostamento conclusione attività di progettazione
+    - Inizio di redazione dei documenti mancanti (Specifica Tecnica e Manuale Utente).
+    - Richiesta colloquio con il prof. Cardin.
+    - Allungamento dell'ultimo sprint (di qualche giorno) per poter consegnare nel breve termine.
+  ]
 )
+
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 14],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [], [], [], [4], [], [5], [175€],
+      [_Angela Canazza_], [2], [], [], [10], [2], [], [340€],
+      [_Riccardo Baldin_], [], [], [], [4], [], [5], [175€],
+      [_Alberto Reginato_], [], [2], [], [10], [], [], [290€],
+      [_Nicola Simionato_], [], [], [], [4], [2], [5], [205€],
+      [_Amerigo Vegliante_], [], [], [], [4], [7], [], [205€],
+      [_Laura Venturini_], [], [], [], [7], [], [3], [250€],
+    ) ]] <tab:TrascorsoSprint14>
+
+*GANTT Diagram*
+#figure(
+  caption: [Diagramma di GANTT dello Sprint 14],
+)[
+  #image("../../asset/GANTT/sprint14-gantt.png")
+]<GANTT-Sprint14>
+
+#underline[Spese della settimana]: 1.610€ / 1.875€ \ #underline[Spesa totale]: *10.025€ / 10.290€*
 
 #pagebreak()
 
@@ -2104,20 +2287,23 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [23 marzo 2026 - 30 marzo 2026],
+  [_Intervallo temporale_], [23 marzo 2026 - 7 marzo 2026],
 
-  [_Giorni di sprint_], [7],
+  [_Giorni di sprint_], [14],
 
   [_Attività previste_],
   [
     Ultimo sprint previsto.
-    - Conclusione attività di sviluppo e validazione Frontend e Backend.
-    - Conclusione stesura documentazione adeguata alla consegna del progetto.
-    - Validazione dei risultati prodotti durante gli Sprint.
+    - Decisione definitiva su architettura di deploy.
+    - Conclusione attività di progettazione.
+    - Conclusione attività di sviluppo e validazione frontend e backend.
+    - Conclusione di tutta la documentazione adeguata alla consegna del progetto.
+    - Validazione con l'azienda dei risultati prodotti durante gli Sprint.
     - Revisione finale del _Glossario_  ed eventuale aggiornamento.
-    - *Consegna del progetto previsto in data 30 marzo 2026*.
+    - Rilascio del prodotto e relativa documentazione
+    - *Consegna del progetto previsto in data 1 aprile 2026*.
   ],
-  [_Milestones attive_], [PB]
+  [_Milestones attive_], [PB, PAB]
 )
 #figure(
   caption: [Stima delle ore individuali per ruolo allo Sprint 15],
@@ -2139,16 +2325,16 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
       [#text[#strong[*Verif.*]]],
       [#text[#strong[*Costo*]]],
 
-      [_Angela Favaro_], [4], [], [], [], [5], [5], [270€],
-      [_Angela Canazza_], [], [], [], [5], [15], [3], [395€],
-      [_Riccardo Baldin_], [], [], [], [], [5], [5], [150€],
-      [_Alberto Reginato_], [], [4], [], [], [7], [], [185€],
-      [_Nicola Simionato_], [], [], [], [5], [10], [], [275€],
-      [_Amerigo Vegliante_], [], [], [], [], [12], [7], [285€],
-      [_Laura Venturini_], [], [], [], [], [15], [9], [360€],
+      [_Angela Favaro_], [2], [], [], [], [10], [12], [390€],
+      [_Angela Canazza_], [], [], [], [4], [14], [7], [415€],
+      [_Riccardo Baldin_], [], [], [], [2], [14], [9], [395€],
+      [_Alberto Reginato_], [], [3], [], [], [10], [6], [300€],
+      [_Nicola Simionato_], [], [], [], [4], [15], [8], [445€],
+      [_Amerigo Vegliante_], [], [], [1], [2], [18], [11], [510€],
+      [_Laura Venturini_], [], [], [], [2], [10], [11], [365€],
     ) ]] <tab:PrevisioneSprint15>
 
-#underline[Spese della settimana]: 1.920€ \ #underline[Spesa totale]: *12.845€*
+#underline[Spese della settimana]: 2.820€ \ #underline[Spesa totale]: *12.845€*
 
 ===== Trascorso dello sprint
 #table(
@@ -2157,21 +2343,221 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   stroke: 0.7pt,
   [_Attività Svolte_],
   [
-
+    - Colloquio con il prof. Cardin.
+    - Decisione definitiva su architettura di deploy.
+    - Conclusione attività di progettazione.
+    - Conclusione attività di sviluppo e validazione frontend e backend.
+    - Conclusione di tutta la documentazione adeguata alla consegna del progetto.
+    - Validazione con l'azienda dei risultati prodotti durante gli Sprint.
+    - Revisione finale del _Glossario_  ed eventuale aggiornamento.
+    - *Consegna del progetto in data 7 aprile 2026*.
   ],
 
   [_Rischi incontrati_],
   [
-    1.
+    - Sono stati riscontrati iniziali problemi nell'integrazione tra i microservizi, in particolare nell'utilizzo di chiamate API-REST. RT2 - (@tab:RT2).
+    - La documentazione è da aggiornare, è stata trascurata a seguito dei rallentamenti dovuti a problemi architetturali. RO6 - (@tab:RO6).
+    - Ci sono stati iniziali rallentamenti nell'utilizzo degli strumenti di monitoraggio dei test (SonarQube). RT1 - (@tab:RT1).
   ],
 
   [_Mitigazione_],
   [
-    1.
-  ],
-  [_Cambiamenti da attuare nel breve termine_],
-  []
+    - Lavoro in gruppo per l'integrazione dei vari componenti del progetto. 
+    - Implementazione di strumenti alternativi a SonarQube per la configurazione degli strumenti di monitoraggio dei test. 
+  ]
 )
+
+#figure(
+  caption: [Ore individuali effettive per ruolo allo Sprint 15],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Costo*]]],
+
+      [_Angela Favaro_], [3], [], [], [], [10], [12], [420€],
+      [_Angela Canazza_], [], [], [], [2], [16], [7], [395€],
+      [_Riccardo Baldin_], [], [], [2], [], [14], [9], [395€],
+      [_Alberto Reginato_], [], [3], [], [], [10], [6], [300€],
+      [_Nicola Simionato_], [], [], [], [8], [14], [8], [545€],
+      [_Amerigo Vegliante_], [], [], [1], [], [14], [9], [385€],
+      [_Laura Venturini_], [], [], [], [2], [10], [12], [380€],
+    ) ]] <tab:TrascorsoSprint15>
+
+*GANTT Diagram*
+
+#figure(
+  caption: [Diagramma di GANTT dello Sprint 15],
+)[
+  #image("../../asset/GANTT/sprint15-gantt.png")
+]<GANTT-Sprint15>
+
+#underline[Spese della settimana]: 2.820€ / 2.820€ \ #underline[Spesa totale]: *12.845 / 12.845*
+#pagebreak()
+
+=== Resoconto PB
+Rispetto a quanto originariamente pianificato, la conclusione della milestone PB *ha subito un ritardo di circa otto giorni*; di conseguenza la data di consegna del progetto è stata spostata dal *30 marzo 2026* al *7 aprile 2026*. \ 
+Anche rispetto alla milestone interna si sono verificati ritardi corrispondenti ad uno sprint. Questo a causa della scarsa comprensione dell'architettura di deploy da adottare. \ \
+Il ritardo è stato accumulato durante la fase di progettazione. Le cause principali sono:
+- Scarsa comprensione di tecnologie serverless (AWS).
+- Scarsa comprensione delle architetture di deploy adottabili alle nostre tecnologie serverless (Lambda Function).
+- Sottovalutato il tempo da dedicare allo studio.
+Anche la fase di sviluppo ha subito dei rallentamenti a causa di problemi di integrazione tra i vari componenti del progetto. \
+Il gruppo ha scelto di svolgere ricevimenti con i prof. Cardin e Vardanega per avere pareri riguardo al lavoro in fase di svolgimento. Che sono serviti ad aggiustare errori ed incomprensioni su documentazione e teoria progettuale / architetturale.
+
+In @tab:OreTotIndividualiPBResoconto vengono riportate le ore effettivamente svolte per ogni ruolo durante il periodo di PB. Ed in @fig:tortaPB è possibile visionare la percentuale di ore dedicate a ciascun ruolo durante la milestone RTB.
+
+#figure(
+  caption: [Ore individuali effettive per ruolo durante la milestone PB.],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+      
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Totale*]]],
+
+      [_Angela Favaro_], [3], [2], [2], [17], [10], [19], [*53 /53*],
+      [_Angela Canazza_], [2], [], [2], [12], [18], [19], [*53 /51*],
+      [_Riccardo Baldin_], [], [], [2], [17], [14], [21], [*54 /55*],
+      [_Alberto Reginato_], [], [5], [], [23], [10], [13], [*51 /54*],
+      [_Nicola Simionato_], [], [2], [], [12], [16], [23], [*53 /54*],
+      [_Amerigo Vegliante_], [2], [], [1], [17], [21], [14], [*55 /51*],
+      [_Laura Venturini_], [2], [], [], [17], [10], [25], [*54 /52*],
+      [*Ore totali*], [*9 /10*], [*9 /10*], [*7 /0*], [*115 /117*], [*99 /135*], [*134 /98*],
+    ) ]] <tab:OreTotIndividualiPBResoconto>
+
+#figure(
+  caption: [Percentuale ripartizione dei ruoli durante la milestone PB.],
+)[
+  #let data = (
+    ([*Resp.*], 9),
+    ([*Amm.*], 9),
+    ([*Analista*], 7),
+    ([*Progett.*], 115),
+    ([*Programm.*], 99),
+    ([*Verif.*], 134),
+  )
+
+  #align(left)[#cetz.canvas({
+    let darkness = rgb("#9b66ff")
+    let dark = rgb("#a814e1")
+    let medium = rgb("#f365b0")
+    let light = rgb("#fba8b7")
+    let colortext = rgb("#1e0046")
+    let colors = gradient.linear(darkness, dark, medium, light)
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (content: (value, label) => [#text(colortext, label)], radius: 100%),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]] <fig:tortaPB>
+
+\ \ 
+Il costo totale sostenuto durante la milestone PB è di *6.920€*.
+
+#pagebreak()
+== Consuntivo finale di progetto
+
+Il costo finale sostenuto è di *12.845€* su un tetto massimo preventivato di *12.845€*.
+
+A seguito si riportano le ore totale svolte da ogni componente del gruppo nei diversi ruoli (@tab:OreTotIndividualiFinali).
+
+#figure(
+  caption: [Ore individuali svolte per ruolo.],
+  kind: table,
+)[
+  #tabella-viola(stroke: 1pt + rgb("#1e90ff"), align: center)
+  #align(center)[
+    #tabella-viola(
+      columns: 8,
+      
+      stroke: 0.5pt,
+      align: center,
+      [#text[#strong[*Nome, Cognome*]]],
+      [#text[#strong[*Resp.*]]],
+      [#text[#strong[*Ammin.*]]],
+      [#text[#strong[*Analista*]]],
+      [#text[#strong[*Progett.*]]],
+      [#text[#strong[*Programm.*]]],
+      [#text[#strong[*Verif.*]]],
+      [#text[#strong[*Totale*]]],
+
+      [_Angela Favaro_], [9], [3], [21], [17], [10], [34], [*94*],
+      [_Angela Canazza_], [3], [2], [25], [12], [20], [30], [*92*],
+      [_Riccardo Baldin_], [2], [7], [25], [17], [16], [27], [*90*],
+      [_Alberto Reginato_], [7], [7], [18], [23], [12], [24,5], [*91,5*],
+      [_Nicola Simionato_], [5], [8], [14], [12], [16], [34,5], [*89,5*],
+      [_Amerigo Vegliante_], [3], [8], [15], [17], [23], [26], [*92*],
+      [_Laura Venturini_], [6], [6], [17], [17], [10], [39], [*95*],
+      [*Ore totali*], [*35*], [*41*], [*135*], [*115*], [*107*], [*215*],
+    ) ]] <tab:OreTotIndividualiFinali>
+
+Sebbene le ore personali differiscano tra i componenti nel conteggio finale, ogni membro del gruppo ha svolto un lavoro equamente distribuito. \ La differenza si può individuare nella diversa quantità di studio effettuato dai diversi componenti (più o meno competenti inizialmente in determinati ambiti); inoltre tutti i componenti si sono impegnati a spiegare agli altri le proprie conoscenze, così da ottimizzare le tempistiche di studio individuale. \
+Il gruppo ha sempre lavorato in modo collaborativo, con confronto continuo su ogni aspetto del progetto.
+
+
+La ripartizione dei ruoli finale è sotto rappresentata in @fig:tortaFinale.
+#figure(
+  caption: [Percentuale ripartizione dei ruoli.],
+)[
+  #let data = (
+    ([*Resp.*], 35),
+    ([*Amm.*], 41),
+    ([*Analista*], 135),
+    ([*Progett.*], 115),
+    ([*Programm.*], 107),
+    ([*Verif.*], 215),
+  )
+
+  #align(left)[#cetz.canvas({
+    let darkness = rgb("#9b66ff")
+    let dark = rgb("#a814e1")
+    let medium = rgb("#f365b0")
+    let light = rgb("#fba8b7")
+    let colortext = rgb("#1e0046")
+    let colors = gradient.linear(darkness, dark, medium, light)
+    chart.piechart(
+      data,
+      value-key: 1,
+      label-key: 0,
+      radius: 3,
+      stroke: black,
+      slice-style: colors,
+      inner-radius: 1,
+      inner-label: (content: (value, label) => [#text(colortext, label)], radius: 100%),
+      outer-label: (content: "%", radius: 120%),
+    )
+  })]] <fig:tortaFinale>
+
 #pagebreak()
 
 = Analisi e gestione dei rischi
