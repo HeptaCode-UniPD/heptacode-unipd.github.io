@@ -439,7 +439,7 @@ Il sistema utilizza il pattern Strategy definendo interfacce per la persistenza 
 
 L'architettura del microservizio di gestione (MS1) è progettata per fungere da gateway e orchestratore principale del sistema. Sviluppato in NestJS, espone le API REST per l'interazione con i client, gestisce la persistenza su MongoDB e coordina le chiamate asincrone verso il microservizio di analisi (MS2).
 
-#figure( [#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")] , caption: [Diagramma delle classi; Analisi Management Service - MS1])
+#figure([#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")], caption: [Diagramma delle classi; Analisi Management Service - MS1])
 
 ==== Classi MS1 - Presentation Layer
 
