@@ -19,8 +19,9 @@
   show table.cell: block.with(breakable: true)
   show link: set text(fill: color.linear-rgb(121, 1, 238))
   show link: underline
-  let versione = modifiche.at(0).at(0)
-  
+let versione = if modifiche != () {
+    modifiche.at(0).at(0) } else {"1.0.0"}
+
   // FRONTESPIZIO
   v(1fr)
   align(center, [
@@ -28,22 +29,20 @@
     #v(1.33cm)
     #text(size: 25pt, weight: "bold")[#titolo]
     #v(1.33cm)
-    #text(size: 15pt, weight: "bold")[Versione #versione]
-    #v(1.33cm)
-    #text(size: 15pt, weight: "bold")[Contenuto del Documento]
     #block(inset: (left: 10%, right: 10%))[
       #text(12pt)[#eval(descrizione, mode: "markup")]
     ]
     #v(1.33cm)
     #text(size: 10pt, weight: "bold")[email: #link("mailto:heptacode7@gmail.com") ]
     
-    #text(size: 10pt, weight: "bold")[sito: #link("https://heptacode-unipd.github.io/")[heptacode-unipd.github.io]]
+    #text(size: 10pt, weight: "bold")[documentazione: #link("https://heptacode-unipd.github.io/")[heptacode-unipd.github.io]]
   ])
   v(1fr)
   counter(page).update(0)
   pagebreak()
 
   // REGISTRO MODIFICHE
+  if modifiche != () {
   heading(level: 1, numbering: none, outlined: false)[Registro delle modifiche]
   v(0.5cm)
   tabella-viola(
@@ -54,7 +53,7 @@
     ..modifiche.flatten()
   )
   pagebreak()
-
+  }
   // INDICE DEI CONTENUTI E SE PRESENTI INDICE TABELLE E INDICE FIGURE
   outline(title: "Indice dei contenuti")
   
