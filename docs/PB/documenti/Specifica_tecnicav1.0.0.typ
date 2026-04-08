@@ -419,9 +419,9 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 
 - *Adapter* \ Il pattern è utilizzato per isolare i microservizi dalle specificità delle librerie esterne e dei servizi cloud.
 
-- In MS3 (Authentication & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
-- In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
-- In MS1, traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di risolvere i commit senza dipendere direttamente dal formato del provider.
+  - In MS3 (Authentication & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
+  - In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
+  - In MS1, traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di risolvere i commit senza dipendere direttamente dal formato del provider.
 
 - *Remote Proxy* \
 Il componente #text(font: "Courier New")[AnalysisManagementInfrastructure] implementa il pattern Proxy. Esso fornisce un'interfaccia locale che rappresenta l'esecuzione di un processo remoto nel microservizio di analisi (MS2). Il proxy gestisce internamente la complessità della comunicazione HTTP e l'autenticazione tramite API Key, rendendo l'invocazione della pipeline asincrona trasparente al Service chiamante.
