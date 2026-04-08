@@ -2,8 +2,10 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("2.0.0", "2026/03/22", "Laura Venturini", "Angela Favarlo", "Aggiunta nuove metriche di miglioramento"),
-  ("1.1.0", "2026/03/21", "Laura Venturini", "Angela Favarlùo", "Rimozione metriche di manuntebilità reputate non rilevanti"),
+  ("2.0.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Approvazione finale, rilascio ufficiale v2.0.0"),
+  ("1.3.0", "2026/04/06", "Laura Venturini", "Angela Favaro", "Stesura finale"),
+  ("1.2.0", "2026/03/22", "Laura Venturini", "Angela Favaro", "Aggiunta nuove metriche di miglioramento"),
+  ("1.1.0", "2026/03/21", "Laura Venturini", "Angela Favaro", "Rimozione metriche di manuntebilità reputate non rilevanti"),
   ("1.0.0", "2026/02/10", "Riccardo Baldin", "Angela Favaro", "Completamento capitoli vuoti"),
   ("0.5.0", "2026/01/06", "Angela Canazza", "Nicola Simionato", "Stesura Metriche per la Qualità"),
   ("0.4.1", "2026/01/04", "Laura Venturini", "Nicola Simionato", "Stesura paragrafo Progettazione"),
@@ -104,6 +106,8 @@ La documentazione prodotta funge da prova tangibile dell'esecuzione dei processi
   
 - *Piano di Qualifica:* documento redatto da chi copre il ruolo di Amministratore con lo scopo di definire in dettaglio le strategie di verifica e validazione per garantire la qualità del prodotto finale e dei processi realizzativi.
 
+- *Specifica Tecnica:* documento che descrive dettagliatamente le caratteristiche e i requisiti tecnici del prodotto.
+
 - *Lettera di Presentazione:* documento formale tramite il quale il gruppo si è proposto al professor Vardanega come candidato per l'assegnazione del capitolato proposto da _Vargroup S.p.A._.
 
 ==== Strumenti
@@ -194,7 +198,7 @@ L'architettura progettata deve avere le seguenti proprietà:
 *Documentazione* \
 La documentazione relativa alla progettazione verrà redatta dai progettisti. Questi membri del team dovranno assicurarsi di documentare il Proof of Concept, di conseguenza le scelte tecnologiche effettuate, le motivazioni di tali scelte e la definizione delle componenti architetturali del sistema. \ Inoltre, per  la Product Baseline dovranno essere documentati i test eseguiti per validare il Proof of Concept e i risultati ottenuti, i design pattern che si pensano adatti all'implementazione del sistema e la definizione delle classi usate nel Proof of Concept. 
 
-*Metriche*
+*Metriche* \
 Per garantire che l'architettura sia manutenibile e modulare, il team monitora le seguenti metriche di progettazione:
 - Accoppiamento: misura il grado di dipendenza tra i moduli. Si deve tendere a un accoppiamento debole per facilitare la modifica dei componenti senza effetti a catena.
 
@@ -202,7 +206,7 @@ Per garantire che l'architettura sia manutenibile e modulare, il team monitora l
 
 - Complessità Ciclomatica: utilizzata per valutare la complessità dei flussi logici progettati, con l'obiettivo di mantenere i componenti testabili (valore accettabile $<=15$, valore ottimale $<= 10$).
 
-*Diagrammi UML*
+*Diagrammi UML* \
 Il team utilizza il linguaggio UML (Unified Modeling Language) per visualizzare e documentare l'architettura. I diagrammi richiesti per ogni componente sono:
 
 - Diagrammi delle Classi: per descrivere la struttura statica del sistema, le gerarchie di ereditarietà e le relazioni tra oggetti.
@@ -211,7 +215,7 @@ Il team utilizza il linguaggio UML (Unified Modeling Language) per visualizzare 
 
 - Diagrammi dei Componenti: per rappresentare l'organizzazione e le dipendenze tra i moduli software.
 
-*Design Pattern*
+*Design Pattern*\
 Per risolvere problemi di progettazione ricorrenti e garantire la scalabilità di Code Guardian, il team adotta i seguenti pattern:
 
 - *Pattern Creazionali:*
@@ -297,6 +301,7 @@ Il gruppo produce sia documenti "interni", quindi destinati a rimanere in mano a
   - Analisi dei Requisiti
   - Piano di Qualifica
   - Piano di Progetto
+  - Specifica Tecnica
   - Glossario
   - Verbali Esterni
 
