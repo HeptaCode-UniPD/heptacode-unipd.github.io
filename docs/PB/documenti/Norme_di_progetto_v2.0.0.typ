@@ -5,7 +5,7 @@
   ("2.0.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Approvazione finale, rilascio ufficiale v2.0.0"),
   ("1.3.0", "2026/04/06", "Laura Venturini", "Angela Favaro", "Stesura finale"),
   ("1.2.0", "2026/03/22", "Laura Venturini", "Angela Favaro", "Aggiunta nuove metriche di miglioramento"),
-  ("1.1.0", "2026/03/21", "Laura Venturini", "Angela Favaro", "Rimozione metriche di manuntenibilità reputate non rilevanti"),
+  ("1.1.0", "2026/03/21", "Laura Venturini", "Angela Favaro", "Rimozione metriche di manutenibilità reputate non rilevanti"),
   ("1.0.0", "2026/02/10", "Riccardo Baldin", "Angela Favaro", "Completamento capitoli vuoti"),
   ("0.5.0", "2026/01/06", "Angela Canazza", "Nicola Simionato", "Stesura Metriche per la Qualità"),
   ("0.4.1", "2026/01/04", "Laura Venturini", "Nicola Simionato", "Stesura paragrafo Progettazione"),
