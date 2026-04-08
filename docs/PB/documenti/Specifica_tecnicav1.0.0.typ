@@ -488,11 +488,11 @@ _Metodi pubblici:_
 ==== MS1 - Workflow di Comunicazione
 Il servizio MS1 opera come un'orchestratore a stato. Di seguito la logica di interazione con MS2:
 
-1. **Inbound**: Ricezione richiesta via REST.
-2. **Pre-processing**: Risoluzione del Commit SHA via GitHub API.
-3. **Persistenza**: Creazione record con stato `processing`.
-4. **Outbound**: Chiamata HTTP asincrona verso AWS Step Functions (MS2).
-5. **Callback**: MS2 invia i risultati all'endpoint `/webhook`, portando lo stato a `done`.
+1. *Inbound*: Ricezione richiesta via REST.
+2. *Pre-processing*: Risoluzione del Commit SHA via GitHub API.
+3. *Persistenza*: Creazione record con stato `processing`.
+4. *Outbound*: Chiamata HTTP asincrona verso AWS Step Functions (MS2).
+5. *Callback*: MS2 invia i risultati all'endpoint `/webhook`, portando lo stato a `done`.
 
 #pagebreak()
 === Analisi dei Repository - MS2
@@ -803,7 +803,7 @@ Pagina di autenticazione, esterna al RootLayout. Invoca _useIsLogged()_ per rein
 *Repositories* \ 
 Pagina principale dell'applicazione. Invoca _useIsLogged()_ e recupera lo _userId_ dalla sessione tramite _getUserID()_. All'inizio invoca _getRepositoriesByUser()_ e popola lo stato repositories. Filtra la lista in tempo reale tramite useMemo in base al valore della search bar. Renderizza ogni repository come elemento di lista con un link a /repository/:id e un _DeleteRepoButton_. Alla cancellazione riuscita, aggiorna lo stato locale rimuovendo l'elemento senza ricaricare la pagina.
 
-#figure( [#image("../../asset/diagr-architett/frontend/dettagliRepo.png")] , caption: [Diagramma componenti, DettagliRepo- frontend])
+#figure( [#image("../../asset/diagr-architett/frontend/dettaglirepo.png")] , caption: [Diagramma componenti, DettagliRepo- frontend])
 *DettagliRepo* \ 
 Pagina di dettaglio di un repository. Legge l'id dai parametri URL tramite useParams. All'inizio invoca in sequenza _getRepositoryById()_ e _getLastAnalysis()_. Espone la funzione fetchData passata come _onSuccess_ a _StartAnalysisButton_, così al termine del polling la pagina si ricarica automaticamente. Se _analysis.status_ è "processing" passa il _commitId_ come _initialJobId_ a _StartAnalysisButton_ per riprendere il polling. Composta internamente da InfoRepo. \
 
