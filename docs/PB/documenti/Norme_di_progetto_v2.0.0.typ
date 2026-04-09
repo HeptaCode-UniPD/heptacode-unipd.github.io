@@ -2,6 +2,10 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
+  ("2.0.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Approvazione finale, rilascio ufficiale v2.0.0"),
+  ("1.3.0", "2026/04/06", "Laura Venturini", "Angela Favaro", "Stesura finale"),
+  ("1.2.0", "2026/03/22", "Laura Venturini", "Angela Favaro", "Aggiunta nuove metriche di miglioramento"),
+  ("1.1.0", "2026/03/21", "Laura Venturini", "Angela Favaro", "Rimozione metriche di manutenibilità reputate non rilevanti"),
   ("1.0.0", "2026/02/10", "Riccardo Baldin", "Angela Favaro", "Completamento capitoli vuoti"),
   ("0.5.0", "2026/01/06", "Angela Canazza", "Nicola Simionato", "Stesura Metriche per la Qualità"),
   ("0.4.1", "2026/01/04", "Laura Venturini", "Nicola Simionato", "Stesura paragrafo Progettazione"),
@@ -102,6 +106,8 @@ La documentazione prodotta funge da prova tangibile dell'esecuzione dei processi
   
 - *Piano di Qualifica:* documento redatto da chi copre il ruolo di Amministratore con lo scopo di definire in dettaglio le strategie di verifica e validazione per garantire la qualità del prodotto finale e dei processi realizzativi.
 
+- *Specifica Tecnica:* documento che descrive dettagliatamente le caratteristiche e i requisiti tecnici del prodotto.
+
 - *Lettera di Presentazione:* documento formale tramite il quale il gruppo si è proposto al professor Vardanega come candidato per l'assegnazione del capitolato proposto da _Vargroup S.p.A._.
 
 ==== Strumenti
@@ -192,7 +198,7 @@ L'architettura progettata deve avere le seguenti proprietà:
 *Documentazione* \
 La documentazione relativa alla progettazione verrà redatta dai progettisti. Questi membri del team dovranno assicurarsi di documentare il Proof of Concept, di conseguenza le scelte tecnologiche effettuate, le motivazioni di tali scelte e la definizione delle componenti architetturali del sistema. \ Inoltre, per  la Product Baseline dovranno essere documentati i test eseguiti per validare il Proof of Concept e i risultati ottenuti, i design pattern che si pensano adatti all'implementazione del sistema e la definizione delle classi usate nel Proof of Concept. 
 
-*Metriche*
+*Metriche* \
 Per garantire che l'architettura sia manutenibile e modulare, il team monitora le seguenti metriche di progettazione:
 - Accoppiamento: misura il grado di dipendenza tra i moduli. Si deve tendere a un accoppiamento debole per facilitare la modifica dei componenti senza effetti a catena.
 
@@ -200,7 +206,7 @@ Per garantire che l'architettura sia manutenibile e modulare, il team monitora l
 
 - Complessità Ciclomatica: utilizzata per valutare la complessità dei flussi logici progettati, con l'obiettivo di mantenere i componenti testabili (valore accettabile $<=15$, valore ottimale $<= 10$).
 
-*Diagrammi UML*
+*Diagrammi UML* \
 Il team utilizza il linguaggio UML (Unified Modeling Language) per visualizzare e documentare l'architettura. I diagrammi richiesti per ogni componente sono:
 
 - Diagrammi delle Classi: per descrivere la struttura statica del sistema, le gerarchie di ereditarietà e le relazioni tra oggetti.
@@ -209,7 +215,7 @@ Il team utilizza il linguaggio UML (Unified Modeling Language) per visualizzare 
 
 - Diagrammi dei Componenti: per rappresentare l'organizzazione e le dipendenze tra i moduli software.
 
-*Design Pattern*
+*Design Pattern*\
 Per risolvere problemi di progettazione ricorrenti e garantire la scalabilità di Code Guardian, il team adotta i seguenti pattern:
 
 - *Pattern Creazionali:*
@@ -295,6 +301,7 @@ Il gruppo produce sia documenti "interni", quindi destinati a rimanere in mano a
   - Analisi dei Requisiti
   - Piano di Qualifica
   - Piano di Progetto
+  - Specifica Tecnica
   - Glossario
   - Verbali Esterni
 
@@ -799,9 +806,35 @@ $ "CPI" = "EV" / "AC" $
 - *Valore ottimale*: $100%$
 - *Descrizione*:L'indice di Cost Performance misura la resa del budget attraverso il rapporto tra: il valore del lavoro completato e il costo realmente sostenuto.
 
+==== MPC05 - Task Completion Rate (TCR)
+- *Formula*:
+$ "TCR" = "Numero task programmati completati" / ("Numero totale di task programmati") $
+- *Valore accettabile*: $>=75%$
+- *Valore ottimale*: $100%$
+- *Descrizione*: L'indicatore Task Completion Rate mostra la percentuale di task completati entro la fine di uno sprint rispetto a quelli che si era previsto di completare durante lo sprint planning, in modo da capire la precisione delle previsioni e da poterle raffinare negli sprint successivi.
+==== MPC06 - Time Efficiency
+- *Formula*:
+$ "Time Efficiency" = "Ore dedicate ad attività produttive" / ("Ore totali dedicate al progetto") $
+- *Valore accettabile*: $>=30%$
+- *Valore ottimale*: $>=80%$
+- *Descrizione*: L'indicatore Time Efficiency rappresenta la percentuale di tempo utilizzato per svolgere attività produttive, quindi in cui è stato prodotto valore, rispetto alle ore totali dedicate al progetto. Tale valore è utile per capire il grado di ottimizzazione del lavoro svolto.
+==== MPC07 - Percentuale di metriche soddisfatte
+- *Formula*:
+$ "Percentuale di metriche soddisfatte" = ("Numero metriche soddisfatte") / ("Numero metriche totali")  $
+- *Valore accettabile*: $>=60%$
+- *Valore ottimale*: $100%$
+- *Descrizione*:  La percentuale di metriche soddisfatte indica il numero di metriche il cui valore è nel range accettabile rispetto al numero di metriche totali, utile per valutare quanto il team stia perseguendo la qualità del progetto.
+
+==== MPC08 - Rischi non previsti
+- *Formula*:
+$ " Rischi non previsti" = "Numero di rischi non previsti che si sono verificati durante lo sprint " $
+- *Valore accettabile*: $<=2$
+- *Valore ottimale*: $0$
+- *Descrizione*: Indicatore che misura il numero di rischi non previsti che si sono verificati durante lo sprint, è utile per misurare il grado di incertezza e la stabilità dell'ambiente di progetto.
+
 === Fornitura
 
-==== MPC05 - Planned Value (PV)
+==== MPC09 - Planned Value (PV)
 - *Formula* 
 $ "PV" = "BAC" dot ("PH") / ("THP") $
 - *Valore accettabile*: $>=0€$
@@ -813,7 +846,7 @@ $ "PV" = "BAC" dot ("PH") / ("THP") $
  - *PH*: Planned Hours;
  - *THP*: Total Hours Planned.
 
-====  MPC06 - Earned Value (EV)
+====  MPC10 - Earned Value (EV)
 - *Formula*:
 $ "EV" = "BAC" dot ("AH") / ("THP") $
 - *Valore accettabile*: $>=0€$
@@ -825,7 +858,7 @@ $ "EV" = "BAC" dot ("AH") / ("THP") $
  - *AH*: Actual Hours;
  - *THP*: Total Hours Planned.
 
-==== MPC07 - Actual Cost (AC)
+==== MPC11 - Actual Cost (AC)
 - *Formula*:
 $ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
 - *Valore accettabile*: $>=0€$
@@ -835,7 +868,7 @@ $ "AC" = sum_(r)^(R) ("AHR"_r dot "HCR"_r) $
   - *AHR*: Actual Hours by Role;
   - *HCR*: Hourly Cost per Role.
 
-==== MPC08 - Estimate at Completion (EAC):
+==== MPC12 - Estimate at Completion (EAC):
 - *Formula*:
 $ "EAC" = "BAC"/"CPI" $
 - *Valore accettabile*: $>="BAC"-5%$
@@ -845,7 +878,7 @@ $ "EAC" = "BAC"/"CPI" $
  - *BAC*: Budget at Completion (Budget totale preventivato);
  - *CPI*: Cost Performance Index.
 
-==== MPC09 - Estimate to Complete (ETC)
+==== MPC13 - Estimate to Complete (ETC)
 - *Formula*:
 $ "ETC" = "BAC" - "EV" $
 - *Valore accettabile*: $>=0€$
@@ -857,28 +890,28 @@ $ "ETC" = "BAC" - "EV" $
 
 === Verifica e validazione
 
-==== MPC10 - Code Coverage (CC)
+==== MPC14 - Code Coverage (CC)
 - *Formula*:
 $ "CC" = "Codice testato" / "Codice totale" * 100 $
 - *Valore accettabile*: $>=80%$
 - *Valore ottimale*: $>=90%$
 - *Descrizione*: L'indice di Code Coverage misura la percentuale di codice sorgente che viene eseguita durante l'esecuzione dei test automatici. Indica quanto il codice è stato verificato dal processo di testing.
 
-==== MPC11 - Test Success Rate (TSR)
+==== MPC15 - Test Success Rate (TSR)
 - *Formula*:
 $ "TSR" = "Test passati"/ "Test totali" * 100 $
 - *Valore accettabile*: $85%$
 - *Valore ottimale*:  $100%$
 - *Descrizione*: L'indice Test Success Rate misura la percentuale dei test superati rispetto a quelli totali. 
 
-==== MPC12 - Statement Coverage (SC)
+==== MPC16 - Statement Coverage (SC)
 - *Formula*:
 $ "SC" = ("Linee eseguite") / "Linee totali" * 100 $
 - *Valore accettabile*: $>=90%$
 - *Valore ottimale*: $100%$
 - *Descrizione*: L'indice Statement Coverage misura la percentuale di istruzioni elementari eseguite dai test.
 
-==== MPC13 - Branch Coverage (BC)
+==== MPC17 - Branch Coverage (BC)
 - *Formula*:
 $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 - *Valore accettabile*: $>=70%$
@@ -888,7 +921,7 @@ $ "BC" = "Branch eseguiti"/ "Branch totali" * 100 $
 
 === Documentazione
 
-==== MPC14 - Correttezza ortografica
+==== MPC18 - Correttezza ortografica
 - *Formula*:
 $ "Correttezza ortografica" = "numero di errori ortografici" $
 - *Valore accettabile*: $0$
@@ -945,64 +978,29 @@ Nel contesto di _CodeGuardian_, l'uso di modelli LLM per l'analisi e il refactor
 
 === Manutenibilità
 
-==== MPD07 - Complessità Ciclomatica
-- *Formula*:
-$ v(G) = E - N + 2P $
-- *Valore accettabile*: $<= 15 $
-- *Valore ottimale*: $<= 10 $
-- *Descrizione*: Misura la complessità logica di un metodo calcolando il numero di cammini linearmente indipendenti attraverso il grafo di controllo del flusso.
-Un valore elevato indica che la funzione ha troppe logiche condizionali (if, loop) ed è quindi difficile da testare e soggetta a errori. Se il valore supera la soglia accettabile, è necessario suddividere il metodo in sotto-funzioni più semplici (Refactoring).
-- *Legenda*:
-  - $v(G)$: Numero ciclomatico del grafo $G$;
-  - $E$: Numero di archi (collegamenti) nel grafo di controllo;
-  - $N$: Numero di nodi (blocchi di istruzioni) nel grafo di controllo;
-  - $P$: Numero di componenti connesse (generalmente $P=1$ calcolando la metrica per singolo metodo).
-
 ==== MPD08 - Parametri per metodo
 
 - *Valore accettabile*: $<= 6 $
 - *Valore ottimale*: $<= 4 $
 - *Descrizione*: L'indice rappresenta il numero massimo di parametri che un metodo può accettare nella sua firma all'interno del codice sorgente. Un numero eccessivo di parametri riduce la leggibilità e aumenta la complessità di test.
 
-==== MPD09 - Linee di codice per metodo
 
-- *Valore accettabile*: $<= 35 $
-- *Valore ottimale*: $<= 20 $
-- *Descrizione*: L'indice rappresenta il numero massimo di righe di codice da cui può essere composto un singolo metodo. Metodi troppo lunghi violano il principio di "Single Responsibility".
-
-==== MPD10 - Linee di codice per file
+==== MPD09 - Linee di codice per file
 
 - *Valore accettabile*: $<= 120 $
 - *Valore ottimale*: $<= 80 $
 - *Descrizione*: L'indice rappresenta il numero massimo di righe di codice da cui può essere composto un singolo file sorgente nel progetto.
 
-==== MPD11 - Densità dei commenti (CD)
-
-- *Formula*:
-$ "CD" = ("CM" / "CL") dot 100 $
-- *Valore accettabile*: $>=10%$
-- *Valore ottimale*: $>=15%$
-- *Descrizione*:L'indice rappresenta il rapporto percentuale tra le righe di commento e il totale delle righe di codice presenti in un modulo. Misura quanto il codice è documentato inline.
-- *Legenda*:
-  - *CM*: Numero di righe di commento (Comment Lines);
-  - *CL*: Numero di righe di codice (Code Lines).
-
-==== MPD12 - Coefficient of Coupling (CoC)
-- *Formula*:
-$ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
-- *Valore accettabile*: $<= 0.4 $
-- *Valore ottimale*: $<= 0.2 $
-- *Descrizione*: L'indice misura il grado di accoppiamento medio tra i moduli del sistema. \ Si calcola dividendo il numero totale di dipendenze (import, chiamate tra classi) per il numero totale di componenti (classi o moduli). \ Un valore basso indica un'architettura modulare e disaccoppiata (migliore manutenibilità), mentre un valore superiore a 0.4 indica un accoppiamento eccessivo che rende difficile modificare una parte del sistema senza impattare le altre.
 
 
 === Usabilità
 
-====  MPD13 - Tempo di apprendimento
+====  MPD10 - Tempo di apprendimento
 - *Valore accettabile*: $<=10 "minuti"$
 - *Valore ottimale*: $<=5 "minuti"$
 - *Descrizione*: L'indice del tempo di apprendimento misura il tempo medio che un utente impiega per imparare l'utilizzo del programma in analisi, nel caso di questo progetto è _CodeGuardian_.
 
-==== MPD14 - Indice di Gulpease
+==== MPD11 - Indice di Gulpease
 - *Formula*:
  $ "Indice Gulpease" = 89 + (300 dot "numero di frasi"- 10 dot "numero delle lettere") / "numero di parole" $
 - *Valore $>=$80*: La complessità del testo è molto semplice e adatta a lettori che hanno completato la scuola primaria.  
@@ -1015,7 +1013,7 @@ $ "CoC" = "Numero di dipendenze" / "Numero di componenti" $
 
 === Affidabilità
 
-==== MPD15 - Test Failure Rate
+==== MPD12 - Test Failure Rate
 - *Formula*:
 $ "TFR" = "Test falliti"/"Test eseguiti" dot 100 $ 
 - *Valore accettabile*: $<= 15%$

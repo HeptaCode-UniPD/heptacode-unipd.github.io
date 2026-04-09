@@ -138,6 +138,7 @@ tfr
 creazionali
 istanziare
 linter
+args
 gantt
 nomedocumento
 nomegruppo
@@ -280,6 +281,7 @@ l'aggregatore
 microservizi
 fargate
 serverless
+tcr
 visualstudiocode
 wayofworking
 aggiungirepo
