@@ -976,31 +976,15 @@ $ "ROS" = "Requisiti opzionali soddisfatti"/"Requisiti opzionali totali" dot 100
 - *Descrizione*: Misura il tempo medio che il sistema impiega per restituire un risultato quando viene sollecitata una richiesta utente che coinvolge il motore di Intelligenza Artificiale.
 Nel contesto di _CodeGuardian_, l'uso di modelli LLM per l'analisi e il refactoring del codice nelle repository GitHub richiede un tempo di ragionamento computazionale più alto rispetto alle operazioni standard.
 
-=== Manutenibilità
-
-==== MPD08 - Parametri per metodo
-
-- *Valore accettabile*: $<= 6 $
-- *Valore ottimale*: $<= 4 $
-- *Descrizione*: L'indice rappresenta il numero massimo di parametri che un metodo può accettare nella sua firma all'interno del codice sorgente. Un numero eccessivo di parametri riduce la leggibilità e aumenta la complessità di test.
-
-
-==== MPD09 - Linee di codice per file
-
-- *Valore accettabile*: $<= 120 $
-- *Valore ottimale*: $<= 80 $
-- *Descrizione*: L'indice rappresenta il numero massimo di righe di codice da cui può essere composto un singolo file sorgente nel progetto.
-
-
 
 === Usabilità
 
-====  MPD10 - Tempo di apprendimento
+====  MPD07 - Tempo di apprendimento
 - *Valore accettabile*: $<=10 "minuti"$
 - *Valore ottimale*: $<=5 "minuti"$
 - *Descrizione*: L'indice del tempo di apprendimento misura il tempo medio che un utente impiega per imparare l'utilizzo del programma in analisi, nel caso di questo progetto è _CodeGuardian_.
 
-==== MPD11 - Indice di Gulpease
+==== MPD08 - Indice di Gulpease
 - *Formula*:
  $ "Indice Gulpease" = 89 + (300 dot "numero di frasi"- 10 dot "numero delle lettere") / "numero di parole" $
 - *Valore $>=$80*: La complessità del testo è molto semplice e adatta a lettori che hanno completato la scuola primaria.  
@@ -1013,7 +997,7 @@ Nel contesto di _CodeGuardian_, l'uso di modelli LLM per l'analisi e il refactor
 
 === Affidabilità
 
-==== MPD12 - Test Failure Rate
+==== MPD09 - Test Failure Rate
 - *Formula*:
 $ "TFR" = "Test falliti"/"Test eseguiti" dot 100 $ 
 - *Valore accettabile*: $<= 15%$

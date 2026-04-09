@@ -263,28 +263,6 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
   kind: table
 )
 
-== Manutenibilità
-#figure(
-  tabella-viola(
-    columns: (auto, 1.5fr, 1fr, 1fr),
-    inset: 9pt,
-    align: horizon,
-    table.header(
-      [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
-    ),
-    
-      "MPD08", 
-    "Parametri per metodo ",
-    "≤6",
-    "≤4",
-    "MPD09", 
-    "Linee di codice per file",
-    "≤120",
-    "≤80",
-  ),
-  caption: [Metriche di manutenibilità del prodotto],
-  kind: table
-)
 
 == Usabilità
 #figure(
@@ -296,11 +274,11 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPD13", 
+    "MPD07", 
     "Tempo di apprendimento",
     "≤10 minuti ",
     "≤5 minuti",
-    "MPD14", 
+    "MPD08", 
     "Indice di Gulpease",
     "≥50",
     "≥70"
@@ -319,7 +297,7 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
       [*Metrica*], [*Nome*], [*Valore accettabile*], [*valore ottimale*]
     ),
     
-    "MPD15", 
+    "MPD09", 
     "Test Failure Rate",
     "≤15%",
     "≤0%"
@@ -1390,7 +1368,7 @@ Come previsto durante la fase precedente, l'utilizzo di risorse meno costose ha 
 *Andamento RTB e PB* \
 Grazie all'implementazione di uno spellchecker prima della pianificazione degli sprint, il numero di errori ortografici all'interno dei documenti ufficiali è sempre stato 0.
 
-== MPD14 - Indice di Gulpease
+== MPD08 - Indice di Gulpease
 
 *Indice di Gulpease*: indice che misura la leggibilità di un testo, tarato specificatamente sulla lingua italiana. \ \
 *Indice di Gulpease durante la fase di RTB* \
@@ -2018,6 +1996,8 @@ A causa del fatto che lo sviluppo del codice backend è avvenuto esclusivamente 
 ]
 \ *Andamento PB* \
 Come per i requisiti obbligatori, anche i requisiti desiderabili e opzionali sono stati soddisfatti solamente durante l'ultimo sprint e a causa del poco tempo a disposizione per lo sviluppo del codice backend, solamente una piccola parte dei requisiti desiderabili e opzionali sono stati soddisfatti. 
+== Metriche di efficienza
+Tutte le metriche di efficienza, cioè tempo di caricamento (MPD04), tempo medio di risposta del sistema (MPD05) e tempo medio di risposta deglia agenti (MPD06), sono state misurate solo durante lo sprint finale e sono state rispettate.
 
 = Iniziative di miglioramento
 La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durante lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
