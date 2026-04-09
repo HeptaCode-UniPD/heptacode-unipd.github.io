@@ -344,48 +344,53 @@ Nel documento riguardante le #underline[#link("../documenti/Norme_di_progetto_v1
   columns: (2cm, auto, 3cm ,2cm),
   
   table.header([*Codice*], [*Descrizione*], [*Requisito di riferimento*], [*Stato del test*]),
-  [*T-1-S*], [Verificare che l'Utente Sconosciuto non autentificato possa accedere alla piattaforma], [R-1-F-O], [NI],
-  [*T-2-S*], [Verificare che l'Utente Sconosciuto abbia inserito il proprio username durante il processo di autenticazione], [R-2-F-O], [NI],
-  [*T-3-S*], [Verificare che l'Utente Sconosciuto abbia inserito la propria password durante il processo di autenticazione], [R-3-F-O], [NI],
-  [*T-4-S*], [Verificare che l'Utente Sconosciuto possa annullare la procedura di accesso alla piattaforma], [R-4-F-O], [NI],
-  [*T-5-S*], [Verificare che l'Utente Sconosciuto visualizzi un messaggio di errore nel caso di inserimento di credenziali errate durante il processo di autenticazione], [R-5-F-O], [NI],
-  [*T-16-S*], [Verificare che l'Utente Registrato possa aggiungere un repository pubblico al sistema], [R-16-F-O], [NI],
+  [*T-1-S*], [Verificare che l'Utente Sconosciuto non autentificato possa accedere alla piattaforma], [R-1-F-O], [S],
+  [*T-2-S*], [Verificare che l'Utente Sconosciuto abbia inserito la propria mail durante il processo di autenticazione], [R-2-F-O], [S],
+  [*T-3-S*], [Verificare che l'Utente Sconosciuto abbia inserito la propria password durante il processo di autenticazione], [R-3-F-O], [S],
+  [*T-4-S*], [Verificare che l'Utente Sconosciuto possa annullare la procedura di accesso alla piattaforma], [R-4-F-O], [S],
+  [*T-5-S*], [Verificare che l'Utente Sconosciuto visualizzi un messaggio di errore nel caso di inserimento di credenziali errate durante il processo di autenticazione], [R-5-F-O], [S],
+  [*T-16-S*], [Verificare che l'Utente Registrato possa aggiungere un repository pubblico al sistema], [R-16-F-O], [S],
   [*T-17-S*], [Verificare che l'Utente Registrato possa aggiungere un repository privato al sistema], [R-17-F-D], [NI],
   [*T-18-S*], [Verificare che l'Utente Registrato possa inserire il Personal Access Token collegato al suo account], [R-18-F-D], [NI],
   [*T-19-S*], [Verificare che l'Utente Registrato visualizzi un messaggio di errore in caso di inserimento di Personal Access Token non valido], [R-19-F-D], [NI],
-  [*T-20-S*], [Verificare che l'Utente Registrato possa annullare la procedura di inserimento di un repository nel sistema], [R-20-F-O], [NI],
-  [*T-21-S*], [Verificare che l'Utente Registrato possa inserire l'URL del repository da inserire nel sistema], [R-21-F-O], [NI],
-  [*T-22-S*], [Verificare che l'Utente Registrato visualizzi un messaggio di errore in caso di inserimento di URL non valido], [R-22-F-O], [NI],
-  [*T-23-S*], [Verificare che l'Utente Registrato possa visualizzare la lista dei repository personali], [R-23-F-O], [NI],
-  [*T-24-S*], [Verificare che l'Utente Registrato possa selezionare una preferenza sulla tipologia di repository visualizzata], [R-24-F-O], [NI],
-  [*T-25-S*], [Verificare che l'Utente Registrato possa visualizzare il nome di un repository], [R-25-F-O], [NI],
+  [*T-20-S*], [Verificare che l'Utente Registrato possa annullare la procedura di inserimento di un repository nel sistema], [R-20-F-O], [S],
+  [*T-21-S*], [Verificare che l'Utente Registrato possa inserire l'URL del repository da inserire nel sistema], [R-21-F-O], [S],
+  [*T-22-S*], [Verificare che l'Utente Registrato visualizzi un messaggio di errore in caso di inserimento di URL non valido], [R-22-F-O], [S],
+  [*T-23-S*], [Verificare che l'Utente Registrato possa visualizzare la lista dei repository personali], [R-23-F-O], [S],
+  [*T-24-S*], [Verificare che l'Utente Registrato possa selezionare una preferenza sulla tipologia di repository visualizzata], [R-24-F-O], [S],
+  [*T-25-S*], [Verificare che l'Utente Registrato possa visualizzare il nome di un repository], [R-25-F-O], [S],
   [*T-26-S*], [Verificare che l'Utente Registrato possa visualizzare il nome del progetto associato a un repository], [R-26-F-D], [NI],
-  [*T-27-S*], [Verificare che l'Utente Registrato possa visualizzare l'indicatore di visibilità di un repository], [R-27-F-O], [NI],
-  [*T-28-S*], [Verificare che l'Utente Registrato possa visualizzare la lista dei progetti ai quali contribuisce], [R-28-F-O], [NI],
-  [*T-29-S*], [Verificare che l'Utente Registrato possa visualizzare il nome di un progetto], [R-25-F-O], [NI],
-  [*T-30-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi sulla documentazione di un progetto], [R-30-F-O], [NI],
-  [*T-31-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi sui test di un progetto], [R-31-F-O], [NI],
-  [*T-32-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi OWASP di un progetto], [R-32-F-O], [NI],
-  [*T-33-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi sulla documentazione di un repository], [R-31-F-O], [NI],
-  [*T-34-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi sui test di un repository], [R-34-F-O], [NI],
-  [*T-35-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi OWASP di un repository], [R-35-F-O], [NI],
-  [*T-36-S*], [Verificare che l'Utente, dopo l'analisi sui test per un repository, visualizzi la lista dei file sui quali è stata proposta remediation], [R-36-F-O], [NI],  
-  [*T-9-S*], [Verificare che l'Utente Registrato visualizzi la propria area personale dopo essersi autentificato], [R-9-F-O], [NI],
-  [*T-10-S*], [Verificare che l'Utente Registrato possa visualizzare il proprio username], [R-10-F-O], [NI],
-  [*T-11-S*], [Verificare che l'Utente Registrato possa visualizzare la propria mail], [R-10-F-O], [NI],
-  [*T-12-S*], [Verificare che l'Utente Registrato possa visualizzare il proprio ruolo], [R-12-F-O], [NI],
-  [*T-13-S*], [Verificare che l'Utente Registrato possa eseguire il logout dalla piattaforma], [R-13-F-O], [NI],
-  [*T-14-S*], [Verificare che l'Utente Registrato possa annullare la procedura  di logout dalla piattaforma], [R-14-F-O], [NI],
-  [*T-15-S*], [Verificare che l'Utente Registrato visualizzi un messaggio di errore in caso si presenti un errore durante l'esecuzione di un'operazione], [R-15-F-D], [NI],
-  [*T-92-S*], [Verificare che l'Utente Registrato possa cercare un repository tramite barra di ricerca], [R-92-F-P], [NI],
-  [*T-85-S*], [Verificare che l'Utente Registrato possa visualizzare un repository sulla piattaforma esterna GitHub], [R-85-F-P], [NI],
-  [*T-78-S*], [Verificare che il Developer possa autenticarsi in maniera tale che gli venga assegnato il ruolo di "Developer"], [R-78-Q-P], [NI],
+  [*T-27-S*], [Verificare che l'Utente Registrato possa visualizzare l'indicatore di visibilità di un repository], [R-27-F-D], [NI],
+  [*T-28-S*], [Verificare che l'Utente Registrato possa visualizzare la lista dei progetti ai quali contribuisce], [R-28-F-D], [NI],
+  [*T-29-S*], [Verificare che l'Utente Registrato possa visualizzare il nome di un progetto], [R-29-F-D], [NI],
+  [*T-30-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi sulla documentazione di un progetto], [R-30-F-D], [NI],
+  [*T-31-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi sui test di un progetto], [R-31-F-D], [NI],
+  [*T-32-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi OWASP di un progetto], [R-32-F-D], [NI],
+  [*T-33-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi sulla documentazione di un repository], [R-33-F-O], [S],
+  [*T-34-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi sui test di un repository], [R-34-F-O], [S],
+  [*T-35-S*], [Verificare che l'Utente Registrato possa visualizzare le statistiche dell'analisi OWASP di un repository], [R-35-F-O], [S],
+  [*T-36-S*], [Verificare che l'Utente, dopo l'analisi sui test per un repository, visualizzi la lista dei file sui quali è stata proposta remediation], [R-36-F-O], [S],  
+  [*T-9-S*], [Verificare che l'Utente Registrato visualizzi la propria area personale dopo essersi autentificato], [R-9-F-D], [NI],
+  [*T-10-S*], [Verificare che l'Utente Registrato possa visualizzare il proprio username], [R-10-F-O], [S],
+  [*T-11-S*], [Verificare che l'Utente Registrato possa visualizzare la propria mail], [R-10-F-O], [S],
+  [*T-12-S*], [Verificare che l'Utente Registrato possa visualizzare il proprio ruolo], [R-12-F-D], [NI],
+  [*T-139-S*], [Verificare che l'Utente Registrato possa visualizzare la propria immagine del profilo], [R-139-F-D], [S],
+  [*T-140-S*], [Verificare che l'Utente Registrato possa visualizzare l'opzione di reindirizzamento al proprio profilo GitHub], [R-140-F-D], [NI],
+  [*T-141-S*], [Verificare che l'Utente Registrato possa visualizzare le proprie competenze registrate nella piattaforma], [R-141-F-D], [NI],
+  [*T-142-S*], [Verificare che l'Utente Registrato possa essere reindirizzato al proprio profilo GitHub], [R-142-F-D], [NI],
+  [*T-13-S*], [Verificare che l'Utente Registrato possa eseguire il logout dalla piattaforma], [R-13-F-O], [S],
+  [*T-14-S*], [Verificare che l'Utente Registrato possa annullare la procedura di logout dalla piattaforma], [R-14-F-O], [S],
+  [*T-15-S*], [Verificare che l'Utente Registrato visualizzi un messaggio di errore in caso si presenti un errore durante l'esecuzione di un'operazione], [R-15-F-O], [S],
+  [*T-92-S*], [Verificare che l'Utente Registrato possa cercare un repository tramite barra di ricerca], [R-92-F-P], [S],
+  [*T-85-S*], [Verificare che l'Utente Registrato possa visualizzare un repository sulla piattaforma esterna GitHub], [R-85-F-P], [S],
+  [*T-78-S*], [Verificare che il Developer possa autenticarsi in maniera tale che gli venga assegnato il ruolo di "Developer"], [R-78-Q-O ], [S],
+  ////////////////////////////////////////////////////////////////////////
   [*T-6-S*], [Verificare che il Developer possa sincronizzare il proprio account GitHub], [R-6-F-D], [NI],
   [*T-7-S*], [Verificare che il Developer possa annullare l'autenticazione con il provider esterno GitHub], [R-7-F-D], [NI],
   [*T-8-S*], [Verificare che il Developer, in caso abbia precedentemente sincronizzato il proprio account GitHub, possa annullare tale sincronizzazione], [R-8-F-D], [NI],
-  [*T-37-S*], [Verificare che il Developer, dopo l'analisi OWASP per un repository, visualizzi la lista dei file sui quali è stata proposta remediation], [R-37-F-O], [NI],
-  [*T-38-S*], [Verificare che il Developer, dopo l'analisi sulla documentazione per un repository, visualizzi la lista dei file sui quali è stata proposta remediation.], [R-38-F-O], [NI],
-  [*T-39-S*], [Verificare che il Developer possa visualizzare il dettaglio del file sul quale è stato proposto un cambiamento], [R-39-F-O], [NI],
+  [*T-37-S*], [Verificare che il Developer, dopo l'analisi OWASP per un repository, visualizzi la lista dei file sui quali è stata proposta remediation], [R-37-F-O], [S],
+  [*T-38-S*], [Verificare che il Developer, dopo l'analisi sulla documentazione per un repository, visualizzi la lista dei file sui quali è stata proposta remediation.], [R-38-F-O], [S],
+  [*T-39-S*], [Verificare che il Developer possa visualizzare il dettaglio del file sul quale è stato proposto un cambiamento], [R-39-F-O], [S],
   [*T-40-S*], [Verificare che il Developer possa cambiare il path di destinazione del file sul quale è stata proposta una remediation], [R-40-F-D], [NI],
   [*T-41-S*], [Verificare che il Developer, nel contesto di una proposta di remediation, possa inserire il nuovo path di destinazione all'interno del sistema in caso sia stato cambiato], [R-41-F-D], [NI],
   [*T-42-S*], [Verificare che il Developer, nel contesto di una proposta di remediation, possa annullare il cambio di path di destinazione del file], [R-42-F-D], [NI],
@@ -395,8 +400,8 @@ Nel documento riguardante le #underline[#link("../documenti/Norme_di_progetto_v1
   [*T-46-S*], [Verificare che il Developer possa annullare l'accettazione di una proposta di remediation], [R-46-F-D], [NI],
   [*T-47-S*], [Verificare che il Developer visualizzi un messaggio di errore in caso di fallimento dell'accettazione della remediation], [R-47-F-D], [NI],
   [*T-48-S*], [Verificare che il Developer venga informato in caso la remediation proposta non possa più essere effettuata in quanto non più coerente con lo stato del sistema], [R-48-F-D], [NI],
-  [*T-49-S*], [Verificare che il Developer possa eliminare un repository dal sistema], [R-49-F-O], [NI],
-  [*T-50-S*], [Verificare che il Developer possa annullare l'operazione di eliminazione di un repository dal sistema], [R-50-F-O], [NI],
+  [*T-49-S*], [Verificare che il Developer possa eliminare un repository dal sistema], [R-49-F-O], [S],
+  [*T-50-S*], [Verificare che il Developer possa annullare l'operazione di eliminazione di un repository dal sistema], [R-50-F-O], [S],
   [*T-51-S*], [Verificare che il Developer possa visualizzare la lista dei procedimenti in corso all'interno del sistema], [R-51-F-D], [NI],
   [*T-52-S*], [Verificare che il Developer possa visualizzare il nome del repository sul quale sta avvenendo il procedimento], [R-52-F-D], [NI],
   [*T-53-S*], [Verificare che il Developer possa visualizzare la data di di avvio di ogni elemento della lista delle remediation in corso], [R-53-F-D], [NI],
@@ -414,33 +419,33 @@ Nel documento riguardante le #underline[#link("../documenti/Norme_di_progetto_v1
   [*T-65-S*], [Verificare che il Developer possa visualizzare il grafico dell'analisi OWASP nel contesto della visualizzazione di un'analisi passata], [R-65-F-D], [NI],
   [*T-66-S*], [Verificare che il Developer possa visualizzare le proposte di remediation elaborate in seguito all'analisi nel contesto della visualizzazione di un'analisi passata], [R-66-F-D], [NI],
   [*T-67-S*], [Verificare che il Developer possa visualizzare ogni proposta di remediation specifica inerente a un singolo file nel contesto della visualizzazione di un'analisi passata], [R-67-F-D], [NI],
-  [*T-69-S*], [Verificare che il Developer possa consultare l'ultima analisi effettuata all'interno di un repository], [R-69-F-O], [NI],
+  [*T-69-S*], [Verificare che il Developer possa consultare l'ultima analisi effettuata all'interno di un repository], [R-69-F-D], [S],
   [*T-70-S*], [Verificare che il Developer possa visualizzare la data di fine di un'analisi all'interno della lista delle analisi passate relative ad un repository], [R-70-F-D], [NI],
   [*T-71-S*], [Verificare che il Developer possa visualizzare lo stato di un'analisi all'interno della lista delle analisi passate relative a un repository], [R-71-F-D], [NI],
-  [*T-72-S*], [Verificare che il Developer possa avviare un'analisi generale all'interno di un repository], [R-72-F-O], [NI],
-  [*T-73-S*], [Verificare che il Developer possa avviare un'analisi sui test all'interno di un repository], [R-73-F-O], [NI],
-  [*T-74-S*], [Verificare che il Developer possa avviare un'analisi sulla documentazione all'interno di un repository], [R-74-F-O], [NI],
-  [*T-75-S*], [Verificare che il Developer possa avviare un'analisi OWASP all'interno di un repository], [R-75-F-O], [NI],
-  [*T-76-S*], [Verificare che il Developer visualizzi un messaggio di errore all'avvio di un'analisi in caso di conflitto con un'altra analisi], [R-76-F-O], [NI],
-  [*T-77-S*], [Verificare che il Developer possa annullare l'operazione di avvio di un'analisi], [R-77-F-O], [NI],
-  [*T-79-S*], [Verificare che il Project Manager possa autenticarsi in maniera tale che gli venga assegnato il ruolo di "Project Manager"], [R-79-Q-O], [NI],
-  [*T-80-S*], [Verificare che il Project Manager possa visualizzare la lista dei propri progetti], [R-80-F-O], [NI],
+  [*T-72-S*], [Verificare che il Developer possa avviare un'analisi generale all'interno di un repository], [R-72-F-O], [S],
+  [*T-73-S*], [Verificare che il Developer possa avviare un'analisi sui test all'interno di un repository], [R-73-F-D], [NI],
+  [*T-74-S*], [Verificare che il Developer possa avviare un'analisi sulla documentazione all'interno di un repository], [R-74-F-D], [NI],
+  [*T-75-S*], [Verificare che il Developer possa avviare un'analisi OWASP all'interno di un repository], [R-75-F-D], [NI],
+  [*T-76-S*], [Verificare che il Developer visualizzi un messaggio di errore all'avvio di un'analisi in caso di conflitto con un'altra analisi], [R-76-F-D], [NI],
+  [*T-77-S*], [Verificare che il Developer possa annullare l'operazione di avvio di un'analisi], [R-77-F-O], [S],
+  [*T-79-S*], [Verificare che il Project Manager possa autenticarsi in maniera tale che gli venga assegnato il ruolo di "Project Manager"], [R-79-Q-D], [NI],
+  [*T-80-S*], [Verificare che il Project Manager possa visualizzare la lista dei propri progetti], [R-80-F-D], [NI],
   [*T-81-S*], [Verificare che il Project Manager possa visualizzare il widget sull'analisi della documentazione nella schermata di visualizzazione della lista dei progetti], [R-81-F-D], [NI],
   [*T-82-S*], [Verificare che il Project Manager possa visualizzare il widget sull'analisi della documentazione nella schermata di visualizzazione della lista dei progetti], [R-82-F-D], [NI],
   [*T-83-S*], [Verificare che il Project Manager possa visualizzare il widget sull'analisi della documentazione nella schermata di visualizzazione della lista dei progetti], [R-83-F-D], [NI],
-  [*T-84-S*], [Verificare che il Project Manager possa visualizzare i dettagli di un progetto selezionato dalla lista di progetti], [R-84-F-O], [NI],
-  [*T-86-S*], [Verificare che il Project Manager possa visualizzare l'elenco dei repository che lo compongono nei dettagli di un progetto], [R-86-F-O], [NI],
-  [*T-87-S*], [Verificare che il Project Manager possa creare un nuovo progetto], [R-87-F-O], [NI],
-  [*T-88-S*], [Verificare che il Project Manager possa inserire il nome del progetto durante la sua creazione], [R-88-F-O], [NI],
+  [*T-84-S*], [Verificare che il Project Manager possa visualizzare i dettagli di un progetto selezionato dalla lista di progetti], [R-84-F-D], [NI],
+  [*T-86-S*], [Verificare che il Project Manager possa visualizzare l'elenco dei repository che lo compongono nei dettagli di un progetto], [R-86-F-D], [NI],
+  [*T-87-S*], [Verificare che il Project Manager possa creare un nuovo progetto], [R-87-F-D], [NI],
+  [*T-88-S*], [Verificare che il Project Manager possa inserire il nome del progetto durante la sua creazione], [R-88-F-D], [NI],
   [*T-89-S*], [Verificare che il Project Manager possa modificare il nome di un progetto ], [R-89-F-D], [NI],
   [*T-90-S*], [Verificare che il Project Manager visualizzi un errore in seguito alla creazione di un progetto che ha un nome già presente fra i progetti di quel Project Manager], [R-90-F-D], [NI],
-  [*T-91-S*], [Verificare che il Project Manager possa aggiungere repository ai suoi progetti], [R-91-F-O], [NI],
-  [*T-93-S*], [Verificare che il Project Manager possa visualizzare una lista di repository disponibili per essere aggiunti a un suo progetto], [R-93-F-O], [NI],
-  [*T-94-S*], [Verificare che il Project Manager possa annullare l'operazione di aggiunta repository al progetto], [R-94-F-O], [NI],
-  [*T-95-S*], [Verificare che il Project Manager possa aggiungere developer ai suoi progetti], [R-95-F-O], [NI],
+  [*T-91-S*], [Verificare che il Project Manager possa aggiungere repository ai suoi progetti], [R-91-F-D], [NI],
+  [*T-93-S*], [Verificare che il Project Manager possa visualizzare una lista di repository disponibili per essere aggiunti a un suo progetto], [R-93-F-D], [NI],
+  [*T-94-S*], [Verificare che il Project Manager possa annullare l'operazione di aggiunta repository al progetto], [R-94-F-D], [NI],
+  [*T-95-S*], [Verificare che il Project Manager possa aggiungere developer ai suoi progetti], [R-95-F-D], [NI],
   [*T-96-S*], [Verificare che il Project Manager possa cercare il nome di un developer tramite una barra di ricerca], [R-96-F-D], [NI],
-  [*T-97-S*], [Verificare che il Project Manager possa visualizzare una lista di developer disponibili per essere aggiunti a un suo progetto], [R-97-F-O], [NI],
-  [*T-98-S*], [Verificare che il Project Manager possa annullare l'operazione di aggiunta developer al progetto], [R-98-F-O], [NI],
+  [*T-97-S*], [Verificare che il Project Manager possa visualizzare una lista di developer disponibili per essere aggiunti a un suo progetto], [R-97-F-D], [NI],
+  [*T-98-S*], [Verificare che il Project Manager possa annullare l'operazione di aggiunta developer al progetto], [R-98-F-D], [NI],
   [*T-99-S*], [Verificare che il Project Manager possa visualizzare il nome e la foto profilo di un developer], [R-99-F-D], [NI],
   [*T-100-S*], [Verificare che il Project Manager possa visualizzare e gestire gli attuali membri del team di un progetto], [R-100-F-D], [NI],
   [*T-101-S*], [Verificare che il Project Manager possa rimuovere un developer da un suo progetto], [R-101-F-D], [NI],
@@ -458,8 +463,8 @@ Nel documento riguardante le #underline[#link("../documenti/Norme_di_progetto_v1
   [*T-113-S*], [Verificare che il Project Manager possa visualizzare l'elenco dei framework e delle librerie utilizzate nello stack tecnologico di un progetto], [R-113-F-D], [NI],
   [*T-114-S*], [Verificare che il Project Manager possa visualizzare l'elenco delle segnalazioni di framework e librerie con rischi di sicurezza o deprecate che sono utilizzate nello stack tecnologico di un progetto], [R-113-F-D], [NI],
   [*T-115-S*], [Verificare che il Project Manager possa visualizzare i suggerimenti generati dall'IA per la sostituzione di framework e librerie utilizzate nello stack tecnologico di un progetto], [R-115-F-D], [NI],
-  [*T-139-S*], [Verificare che il Project Manager possa eliminare un suo progetto], [R-139-F-O], [NI],
-  [*T-140-S*], [Verificare che il Project Manager possa annullare l'operazione di eliminazione di un suo progetto], [R-140-F-O], [NI],
+  [*T-139-S*], [Verificare che il Project Manager possa eliminare un suo progetto], [R-139-F-D], [NI],
+  [*T-140-S*], [Verificare che il Project Manager possa annullare l'operazione di eliminazione di un suo progetto], [R-140-F-D], [NI],
   [*T-116-S*], [Verificare che il Business Owner possa visualizzare la lista dei propri progetti], [R-116-Q-P], [NI],
   [*T-117-S*], [Verificare che il Business Owner possa visualizzare il budget complessivo per il proprio progetto], [R-117-F-P], [NI],
   [*T-118-S*], [Verificare che il Business Owner possa visualizzare le spese effettuate di un progetto], [R-118-F-P], [NI],
@@ -550,7 +555,7 @@ In questa sezione sono riportate le misurazioni della qualità effettuate durant
 
 )
 
-== MPC01 e MPC02 - Schedule Variance
+== MPC01  - Schedule Variance
 *Schedule Variance*: indicatore che rappresenta il divario, espresso in termini monetari, tra il valore del lavoro effettivamente realizzato (Earned Value) e quello del lavoro che era stato pianificato (Planned Value) alla data corrente. \
  
 // schedule variance EV - PV
@@ -985,12 +990,91 @@ Non disponibile perché la metrica Time Efficiency è stata misurata solamente d
 Nel dodicesimo e tredicesimo sprint sono state dedicate molte ore allo studio della progettazione, causando così un basso livello di Time Efficiency, che però ha permesso di dedicare la maggior parte delle ore dei due sprint finali ad attività produttive.
 
 == MPC07 - Percentuale di metriche soddisfatte //per ultima
-*Descrizione*: \ // inserire la descrizione che verrà messa nel NdP
-//tabella
-//grafico 
+*Descrizione*: numero di metriche il cui valore è
+nel range accettabile rispetto al numero di metriche totali
+#let lista-metriche = (
+  (12, 86),
+  (13, 91),
+  (14, 91),
+  (15, 100)
+)
 
+// --- TABELLA metriche ---
+#figure(
+  caption: [Tabella per percentuale di metriche soddisfatte],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*],  [*Metriche soddisfatte (%)*]),
+      ..lista-metriche.map(riga => {
+        let (p, tcr) = riga
+        ([Sprint #p],[#tcr%])
+      }).flatten()
+    )
+  )
+]
+
+// --- GRAFICO TE ---
+#figure(
+  caption: [Grafico per periodo della percentuale di metriche soddisfatte],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (10, 9),
+        legend: "inner-south-west",
+        x-tick-step: 1,
+        y-tick-step: 10, 
+        y-min: 0,  
+        y-max: 110, 
+        x-min: 12, 
+        x-max: 15.1,
+        x-format: v => [S. #calc.round(v)],
+        y-grid: true,
+        y-label: [Percentuale di metriche soddisfatte (%)],
+        x-label: [Numero Sprint],
+        {
+          plot.add(
+            ((11.5, 100.0), (15.5, 100.0)),
+            label: [Target (100%)],
+            style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+           plot.add(
+            ((11.5, 60.0), (15.5, 60.0)),
+            label: [Valore accettabile (60%)],
+            style: (stroke: (paint: red, dash: "dashed", thickness: 1.5pt)),
+            line: "spline",
+          )
+
+          // Linea dell'andamento reale (TCR)
+          plot.add(
+            lista-metriche.map(it => {
+              let (p, tcr) = it
+              (p, tcr)
+            }),
+            label: [TCR],
+            style: (stroke: red),
+            mark: "o",
+            mark-style: (stroke: red, fill:red.lighten(80%)),
+            line: "linear",
+          )
+        }
+      )
+    })
+  )
+]
+*Andamento RTB* \
+Non disponibile perché la metrica percentuale di metriche soddisfatte è stata misurata solamente durante il PB. \
 *Andamento PB* \
-// descrizione andamento
+Durante la fase di PB c'è stato un graduale aumento delle metriche soddisfatte, segnale positivo che dimostra come il team sia riuscito a migliorare la qualità del lavoro svolto grazie anche al più tempo disponibile da dedicare al progetto. In particolare, durante l'ultimo sprint sono state soddisfatte tutte le metriche considerate.
 
 == MPC08 - Numero Rischi Non Previsti
 *Descrizione*: il numero di rischi non previsti che si verificano durante uno sprint.
@@ -1428,7 +1512,7 @@ Ogni documento presenza un indice di leggibilità superiore al limite inferiore 
       x-min: -0.5,
       x-max: 5.5,
       y-min: 0,
-      y-max: 100,
+      y-max: 104,
       {
         plot.add-bar(
           dati,
@@ -1452,28 +1536,488 @@ Ogni documento presenza un indice di leggibilità superiore al limite inferiore 
 
 *Andamento PB* \
 Ogni documento ha un indice di leggibilità superiore al limite inferiore di 50 e tutti i documenti a parte le NdP hanno un indice superiore al valore ottimale di 70. GLi indici di Gulpease dei documenti presenti anche nella fase di RTB non hanno subito particolari variazioni, dimostrando un certo livello di stabilità nella qualità dei documenti prodotti durante il progetto. 
+
+
+// ==========================================
+// FUNZIONI DI FORMATTAZIONE GLOBALI
+// ==========================================
+#let fmt-perc(val) = if val == none [N/D] else [#val%]
+
+// Preparazione Dati
+#let codecov = (
+  (14,  96.58, none, none, none),
+  (15, 98.17, 100, 73.66, 87.55)
+)
+
+#let statecov = (
+  (14,  96.81, none, none, none),
+  (15, 98.32, 100, 74.29, 86.39)
+)
+
+#let testsucc = (
+  (14, 100.0, none, none, none),
+  (15, 100.0, 100.0, 100.0, 100.0)
+)
+
+#let branchcov = (
+  (14, 93.7, none, none, none),
+  (15, 94.44, 75,  73.37, 71.11)
+)
+
+// Impostazioni comuni per le barre
+#let bar-width = 0.15
+
+
 == MPC14 - Code Coverage (CC)
-*Code Coverage*: indice che rappresenta quanto il codice è stato verificato dal processo di testing.
-//tabella
-//grafico
+*Code Coverage*: indice che rappresenta quanto il codice è stato verificato dal processo di testing per singolo servizio.
+
+// --- TABELLA CC ---
+#figure(
+  caption: [Tabella per il Code Coverage per Componente],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header(
+        [*Periodo*], 
+        [*Frontend*], 
+        [*Analysis Service*], 
+        [*Management Service*], 
+        [*Auth-Repo Service*]
+      ),
+      ..codecov.map(riga => {
+        let (p, front, anal, mngt, auth) = riga
+        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(auth))
+      }).flatten()
+    )
+  )
+]
+
+// --- ISTOGRAMMA CC ---
+#figure(
+  caption: [Istogramma Code Coverage per Componente],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+      plot.plot(
+        size: (16, 9),
+        legend: "inner-south-west",
+        x-tick-step: 1,
+        y-tick-step: 10, 
+        y-min: 0,  
+        y-max: 103, 
+        x-min: 13.2, 
+        x-max: 15.8,
+        x-format: v => [S. #calc.round(v)],
+        y-grid: true,
+        y-label: [Code Coverage (%)],
+        x-label: [Numero Sprint],
+        {
+          // 1. Linee Target
+          plot.add(((13.2, 90.0), (15.8, 90.0)), label: [Val. min. ottimale (90%)], style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)), line: "spline")
+          plot.add(((13.2, 70.0), (15.8, 70.0)), label: [Val. min. accettabile (70%)], style: (stroke: (paint: orange, dash: "dashed", thickness: 1.5pt)), line: "spline")
+
+          // 2. Voci "Fantasma" per generare la legenda
+          plot.add(((0, 0),), label: [Frontend], style: (stroke: (paint: blue.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Analysis Service], style: (stroke: (paint: red.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Management Service], style: (stroke: (paint: purple.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Auth-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
+
+          // 3. Barre (senza label)
+          plot.add-bar(codecov.filter(it => it.at(1) != none).map(it => { let (p, front, ..) = it; (p - 0.225, front) }), style: (stroke: blue, fill: blue.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(codecov.filter(it => it.at(2) != none).map(it => { let (p, f, anal, ..) = it; (p - 0.075, anal) }), style: (stroke: red, fill: red.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(codecov.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, auth) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(codecov.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, auth) = it; (p + 0.225, auth) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
+        }
+      )
+    })
+  )
+]
+
 \ *Andamento PB* \
+Lo sviluppo di test e di codice è iniziato a partire dal quattordicesimo sprint e in particolare quello del backend è stato prodotto solamente durante il quindicesimo sprint. Da quando è iniziato lo sviluppo sono stati introdotti i test automatici e grazie a ciò il code coverage è sempre stato superiore al valore minimo accettabile del 70% richiesto dall'azienda. Il frontend e il microservizio di Analysis Service hanno raggiunto il valore ottimale del 90% perché sono stati quelli a cui è stato dedicato più tempo. \
+
 
 == MPC15 - Test Success Rate (TSR)
 *Test Success Rate*: indice che misura la percentuale dei test superati rispetto a quelli totali. 
-//tabella
-//grafico
+
+// --- TABELLA TSR ---
+#figure(
+  caption: [Tabella per il Test Success Rate per Componente],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header(
+        [*Periodo*], 
+        [*Frontend*], 
+        [*Analysis Service*], 
+        [*Management Service*], 
+        [*Auth-Repo Service*]
+      ),
+      ..testsucc.map(riga => {
+        let (p, front, anal, mngt, auth) = riga
+        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(auth))
+      }).flatten()
+    )
+  )
+]
+
+// --- ISTOGRAMMA TSR ---
+#figure(
+  caption: [Istogramma Test Success Rate per Componente],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+      plot.plot(
+        size: (16, 9),
+        legend: "inner-south-west",
+        x-tick-step: 1,
+        y-tick-step: 10, 
+        y-min: 00,  
+        y-max: 105, 
+        x-min: 13.2, 
+        x-max: 15.8,
+        x-format: v => [S. #calc.round(v)],
+        y-grid: true,
+        y-label: [Test Success Rate (%)],
+        x-label: [Numero Sprint],
+        {
+          // 1. Linee Target
+          plot.add(((13.2, 100.0), (15.8, 100.0)), label: [Valore ottimale (100%)], style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)), line: "spline")
+           plot.add(((13.2, 90.0), (15.8, 90.0)), label: [Val. min. (90%)], style: (stroke: (paint: red, dash: "dashed", thickness: 1.5pt)), line: "spline")
+
+          // 2. Voci "Fantasma" per generare la legenda
+          plot.add(((0, 0),), label: [Frontend], style: (stroke: (paint: blue.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Analysis Service], style: (stroke: (paint: red.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Management Service], style: (stroke: (paint: purple.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Auth-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
+
+          // 3. Barre (senza label)
+          plot.add-bar(testsucc.filter(it => it.at(1) != none).map(it => { let (p, front, ..) = it; (p - 0.225, front) }), style: (stroke: blue, fill: blue.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(testsucc.filter(it => it.at(2) != none).map(it => { let (p, f, anal, ..) = it; (p - 0.075, anal) }), style: (stroke: red, fill: red.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(testsucc.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, auth) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(testsucc.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, auth) = it; (p + 0.225, auth) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
+        }
+      )
+    })
+  )
+]
+
 \ *Andamento PB* \
+Alla fine degli sprint in cui si sono sviluppati test e codice, i componenti architetturali (Frontend, Analysis Service, Management Service, Authentication and Repository Service) hanno passato tutti i test implementati, perché il team si è assicurato che nessuna parte di codice che non superasse tutti i test rimanesse nel progetto.
+
+
+== MPC16 - Statement Coverage
+*Statement Coverage*: indice che misura la percentuale di istruzioni elementari eseguite dai test.
+
+// --- TABELLA SC ---
+#figure(
+  caption: [Tabella per lo Statement Coverage per Componente],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header(
+        [*Periodo*], 
+        [*Frontend*], 
+        [*Analysis Service*], 
+        [*Management Service*], 
+        [*Auth-Repo Service*]
+      ),
+      ..statecov.map(riga => {
+        let (p, front, anal, mngt, auth) = riga
+        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(auth))
+      }).flatten()
+    )
+  )
+]
+
+// --- ISTOGRAMMA SC ---
+#figure(
+  caption: [Istogramma Statement Coverage per Componente],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+      plot.plot(
+        size: (16, 9),
+        legend: "inner-south-west",
+        x-tick-step: 1,
+        y-tick-step: 10, 
+        y-min: 0,  
+        y-max: 103, 
+        x-min: 13.2, 
+        x-max: 15.8,
+        x-format: v => [S. #calc.round(v)],
+        y-grid: true,
+        y-label: [Statement Coverage (%)],
+        x-label: [Numero Sprint],
+        {
+          // 1. Linee Target
+          plot.add(((13.2, 90.0), (15.8, 90.0)), label: [Valore ottimale (90%)], style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)), line: "spline")
+          plot.add(((13.2, 70.0), (15.8, 70.0)), label: [Val. min. accettabile (70%)], style: (stroke: (paint: orange, dash: "dashed", thickness: 1.5pt)), line: "spline")
+
+          // 2. Voci "Fantasma" per generare la legenda
+          plot.add(((0, 0),), label: [Frontend], style: (stroke: (paint: blue.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Analysis Service], style: (stroke: (paint: red.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Management Service], style: (stroke: (paint: purple.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Auth-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
+
+          // 3. Barre (senza label)
+          plot.add-bar(statecov.filter(it => it.at(1) != none).map(it => { let (p, front, ..) = it; (p - 0.225, front) }), style: (stroke: blue, fill: blue.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(statecov.filter(it => it.at(2) != none).map(it => { let (p, f, anal, ..) = it; (p - 0.075, anal) }), style: (stroke: red, fill: red.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(statecov.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, auth) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(statecov.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, auth) = it; (p + 0.225, auth) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
+        }
+      )
+    })
+  )
+]
+
+\ *Andamento PB* \
+Lo statement coverage è sempre stato superiore al valore minimo accettabile del 70% per ogni componente, raggiungendo il valore ottimale maggiore del 90% per il frontend e per il microservizio di Analysis. Invece, per il microservizio di Management ha raggiunto a malapena il valore minimo accettabile, a causa delle poche ore produttive rimaste a disposizione verso la fine del progetto.
+
+== MPC17 - Branch Coverage
+*Branch Coverage*: indice che misura la percentuale di rami decisionali esplorati dai test per singolo componente.
+
+// --- TABELLA BC ---
+#figure(
+  caption: [Tabella per il Branch Coverage per Componente],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header(
+        [*Periodo*], 
+        [*Frontend*], 
+        [*Analysis Service*], 
+        [*Management Service*], 
+        [*Auth-Repo Service*]
+      ),
+      ..branchcov.map(riga => {
+        let (p, front, anal, mngt, auth) = riga
+        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(auth))
+      }).flatten()
+    )
+  )
+]
+
+// --- ISTOGRAMMA BC ---
+#figure(
+  caption: [Istogramma Branch Coverage per Componente],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+      plot.plot(
+        size: (16, 9),
+        legend: "inner-south-west",
+        x-tick-step: 1,
+        y-tick-step: 10, 
+        y-min: 0,  
+        y-max: 100, 
+        x-min: 13.2, 
+        x-max: 15.8,
+        x-format: v => [S. #calc.round(v)],
+        y-grid: true,
+        y-label: [Branch Coverage (%)],
+        x-label: [Numero Sprint],
+        {
+          // 1. Linee Target
+          plot.add(((13.2, 80.0), (15.8, 80.0)), label: [Val. min. ottimale (80%)], style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)), line: "spline")
+          plot.add(((13.2, 70.0), (15.8, 70.0)), label: [Val. min. accettabile (70%)], style: (stroke: (paint: orange, dash: "dashed", thickness: 1.5pt)), line: "spline")
+
+          // 2. Voci "Fantasma" per generare la legenda
+          plot.add(((0, 0),), label: [Frontend], style: (stroke: (paint: blue.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Analysis Service], style: (stroke: (paint: red.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Management Service], style: (stroke: (paint: purple.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [Auth-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
+
+          // 3. Barre (senza label)
+          plot.add-bar(branchcov.filter(it => it.at(1) != none).map(it => { let (p, front, ..) = it; (p - 0.225, front) }), style: (stroke: blue, fill: blue.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(branchcov.filter(it => it.at(2) != none).map(it => { let (p, f, anal, ..) = it; (p - 0.075, anal) }), style: (stroke: red, fill: red.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(branchcov.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, auth) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(branchcov.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, auth) = it; (p + 0.225, auth) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
+        }
+      )
+    })
+  )
+]
+
+\ *Andamento PB* \
+Sempre a causa delle poche ore produttive rimaste a disposizione nell'ultimo sprint del progetto, il branch coverage supera di poco il valore minimo accettabile del 70% per tutti i microservizi. Il frontend invece riesce ad arrivare quasi al 95% grazie al tempo dedicato anche durante lo sprint 14.
 
 == MPD01 - Requisiti obbligatori soddisfatti (RS)
-//tabella
-//grafico
-\ *Andamento PB* \
+*Requisiti obbligatori soddisfatti*: indice che misura la percentuale di requisiti obbligatori soddisfatti rispetto al totale dei requisiti obbligatori previsti per il progetto. 
+#let lista-RS = (
+  (12, 0),
+  (13, 0),
+  (14, 0),
+  (15, 100)
+)
 
-== MPD02 - Requisiti desiderabili soddisfatti (RDS)
- //tabella
-  //grafico
-\ *Andamento PB* \
+// --- TABELLA RS ---
+#figure(
+  caption: [Tabella per periodo dei Requisiti obbligatori soddisfatti],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Requisiti obbligatori soddisfatti (%)*]),
+      ..lista-RS.map(riga => {
+        let (p, tcr) = riga
+        ([Sprint #p], [#tcr%])
+      }).flatten()
+    )
+  )
+]
 
+// --- GRAFICO RS ---
+#figure(
+  caption: [Grafico per periodo di Requisiti obbligatori soddisfatti],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (10, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 10, 
+        y-min: 0,  
+        y-max: 105, 
+        x-min: 12, 
+        x-max: 15.1,
+        x-format: v => [S. #calc.round(v)],
+        y-grid: true,
+        y-label: [Requisiti obbligatori soddisfatti (%)],
+        x-label: [Numero Sprint],
+        {
+        
+
+          plot.add(
+            lista-RS.map(it => {
+              let (p, tcr) = it
+              (p, tcr)
+            }),
+            label: [Requisiti obbligatori soddisfatti],
+            style: (stroke: red),
+            mark: "o",
+            mark-style: (stroke: red, fill: red.lighten(80%)),
+            line: "linear",
+          )
+        }
+      )
+    })
+  )
+]
+\ *Andamento PB* \
+A causa del fatto che lo sviluppo del codice backend è avvenuto esclusivamente durante l'ultimo sprint (di lunghezza maggiore rispetto agli sprint precedenti), i requisiti obbligatori sono stati soddisfatti solamente durante quest'ultimo sprint. Nonostante questo, il team è riuscito a soddisfare ogni requisito obbligatorio previsto, raggiungendo così il 100% di requisiti obbligatori soddisfatti.
+
+== MPD02 e MPD03 - Requisiti desiderabili soddisfatti (RDS) e requisiti opzionali soddisfatti (ROS)
+#let lista-RS = (
+  (12, 0, 0),
+  (13, 0, 0),
+  (14, 0, 0),
+  (15, 4.6, 7.4)
+)
+
+// --- TABELLA RS ---
+#figure(
+  caption: [Tabella per periodo dei requisiti desiderabili e opzionali soddisfatti],
+  kind: table,
+)[
+  #align(center,
+    tabella-viola(
+      columns: (auto, auto, auto),
+      inset: 10pt,
+      align: center + horizon,
+      table.header([*Periodo*], [*Requisiti desiderabili soddisfatti (%)*], [*Requisiti opzionali soddisfatti (%)*]),
+      ..lista-RS.map(riga => {
+        let (p, tcr, ros) = riga
+        ([Sprint #p], [#tcr%], [#ros%])
+      }).flatten()
+    )
+  )
+]
+
+// --- GRAFICO RS ---
+#figure(
+  caption: [Grafico per periodo di requisiti desiderabili e opzionali soddisfatti],
+  kind: image,
+)[
+  #align(center,
+    cetz.canvas({
+      import cetz-plot: *
+
+      plot.plot(
+        size: (10, 9),
+        legend: "inner-north-west",
+        x-tick-step: 1,
+        y-tick-step: 5, 
+        y-min: 0,  
+        y-max: 30, 
+        x-min: 12, 
+        x-max: 15.1,
+        x-format: v => [S. #calc.round(v)],
+        y-grid: true,
+        y-label: [Requisiti soddisfatti (%)],
+        x-label: [Numero Sprint],
+        {
+
+          plot.add(
+            lista-RS.map(it => {
+              let (p, tcr, ros) = it
+              (p, tcr)
+            }),
+            label: [Requisiti desiderabili soddisfatti],
+            style: (stroke: red),
+           mark: "o", 
+            mark-style: (stroke: red, fill: red.lighten(80%)),
+            line: "linear",
+          )
+          plot.add(
+            lista-RS.map(it => {
+              let (p, tcr, ros) = it
+              (p, ros)
+            }),
+            label: [Requisiti opzionali soddisfatti],
+            style: (stroke: blue, thickness: 2pt, dash: "dashed", ),
+            mark: "o", 
+            mark-style: (stroke: blue, fill: blue.lighten(80%)),
+            line: "linear",
+          )
+        }
+      )
+    })
+  )
+]
+\ *Andamento PB* \
+Come per i requisiti obbligatori, anche i requisiti desiderabili e opzionali sono stati soddisfatti solamente durante l'ultimo sprint e a causa del poco tempo a disposizione per lo sviluppo del codice backend, solamente una piccola parte dei requisiti desiderabili e opzionali sono stati soddisfatti. 
 
 = Iniziative di miglioramento
 La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durante lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
@@ -1504,7 +2048,8 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
     [Scarso coordinamento del team],
     [Sprint planning più dettagliati, con suddivisione dei compiti tramite issues assegnate dal responsabile di progetto],
     [Rallentamento dovuto ad altri impegni personali o universitari],
-    [Utilizzo di tempo di slack negli sprint successivi per recuperare eventuali ritardi; \ ridistribuzione interna dei compiti in maniera tale da riuscire a rispettare le scadenze]
+    [Utilizzo di tempo di slack negli sprint successivi per recuperare eventuali ritardi; \ ridistribuzione interna dei compiti in maniera tale da riuscire a rispettare le scadenze],
+    [Progettazione erronea dell'architettura software e conseguente necessità di modifiche sostanziali durante la fase di sviluppo],[Studio più approfondito della compatibilità fra tecnologie utilizzate e tipi di architettura]
 
   ),
   caption: [Contromisure adottate al fine di migliorare il lavoro],
@@ -1535,4 +2080,4 @@ La tempestiva risoluzione delle problematiche è fondamentale per garantire la c
   kind: table
 )
  == Considerazioni finali
-L'attività di monitoraggio svolta durante la fase di RTB ha confermato l'importanza del Piano di Qualifica come strumento decisionale e non solo documentale. Sebbene questa fase abbia comportato un assorbimento di risorse superiore alle attese a causa della sessione di esami, la stabilità dell'Estimate to Complete (ETC) conferma la sostenibilità complessiva del progetto. L'implementazione di contromisure tecnologiche e organizzative ha già prodotto risultati tangibili, come l'azzeramento degli errori ortografici e l'automazione della gestione dei termini del glossario. Il team riconosce le criticità emerse nelle fasi iniziali e si impegna a incrementare il rigore metodologico durante la fase di sviluppo, puntando a far convergere le stime di costo verso il budget inizialmente previsto. Questa consapevolezza dei propri limiti attuali guiderà il gruppo _Hepta Code_ verso il raggiungimento degli standard di qualità attesi per il prodotto _Code Guardian_.
+L'attività di monitoraggio svolta durante la fase di RTB ha confermato l'importanza del Piano di Qualifica come strumento decisionale e non solo documentale. Sebbene questa fase abbia comportato un assorbimento di risorse superiore alle attese a causa della sessione di esami, la stabilità dell'Estimate to Complete (ETC) ha confermato la sostenibilità complessiva del progetto. L'implementazione di contromisure tecnologiche e organizzative ha prodotto risultati tangibili, come l'azzeramento degli errori ortografici e l'automazione della gestione dei termini del glossario. Il team ha riconosciuto le criticità emerse nelle fasi iniziali e si è impegnato a incrementare il rigore metodologico durante la fase di sviluppo, puntando a far convergere le stime di costo verso il budget inizialmente previsto. Il team _HeptaCode_ è riuscito a raggiungere questo obiettivo durante la fase di PB e a produrre un software di qualità soddisfacente e in rispetto con le metriche stabilite senza sforare con il budget disponibile di 12845 euro.
