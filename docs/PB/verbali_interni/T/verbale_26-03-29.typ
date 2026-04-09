@@ -62,5 +62,5 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 #let decisione-azione = (
   ("Mostrare all'azienda il prodotto", "Azienda contattata tramite slack", "No ID",
   "Concludere le fasi di integrazione", "I programmatori di occuperanno delle integrazione tra i microservizi", "No ID",
-  "Concludere la redazione della documentazione ufficiale", "Responsabile, Amministratore e Verificatori si occupereranno della documentazione", "No ID")
+  "Concludere la redazione della documentazione ufficiale", "Responsabile, Amministratore e Verificatori si occuperanno della documentazione", "No ID")
 )
