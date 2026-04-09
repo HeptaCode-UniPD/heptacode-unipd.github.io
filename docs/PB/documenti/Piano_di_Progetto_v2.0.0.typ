@@ -2287,7 +2287,7 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [23 marzo 2026 - 7 marzo 2026],
+  [_Intervallo temporale_], [23 marzo 2026 - 7 aprile 2026],
 
   [_Giorni di sprint_], [14],
 
