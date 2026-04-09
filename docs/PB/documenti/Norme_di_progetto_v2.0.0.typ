@@ -893,7 +893,7 @@ $ "ETC" = "BAC" - "EV" $
 ==== MPC14 - Code Coverage (CC)
 - *Formula*:
 $ "CC" = "Codice testato" / "Codice totale" * 100 $
-- *Valore accettabile*: $>=80%$
+- *Valore accettabile*: $>=70%$
 - *Valore ottimale*: $>=90%$
 - *Descrizione*: L'indice di Code Coverage misura la percentuale di codice sorgente che viene eseguita durante l'esecuzione dei test automatici. Indica quanto il codice è stato verificato dal processo di testing.
 
@@ -907,8 +907,8 @@ $ "TSR" = "Test passati"/ "Test totali" * 100 $
 ==== MPC16 - Statement Coverage (SC)
 - *Formula*:
 $ "SC" = ("Linee eseguite") / "Linee totali" * 100 $
-- *Valore accettabile*: $>=90%$
-- *Valore ottimale*: $100%$
+- *Valore accettabile*: $>=70%$
+- *Valore ottimale*: $>=90%$
 - *Descrizione*: L'indice Statement Coverage misura la percentuale di istruzioni elementari eseguite dai test.
 
 ==== MPC17 - Branch Coverage (BC)

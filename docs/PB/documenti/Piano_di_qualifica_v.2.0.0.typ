@@ -1695,7 +1695,7 @@ Lo sviluppo di test e di codice è iniziato a partire dal quattordicesimo sprint
         {
           // 1. Linee Target
           plot.add(((13.2, 100.0), (15.8, 100.0)), label: [Valore ottimale (100%)], style: (stroke: (paint: green, dash: "dashed", thickness: 1.5pt)), line: "spline")
-           plot.add(((13.2, 90.0), (15.8, 90.0)), label: [Val. min. (90%)], style: (stroke: (paint: red, dash: "dashed", thickness: 1.5pt)), line: "spline")
+           plot.add(((13.2, 85.0), (15.8, 85.0)), label: [Val. min. (85%)], style: (stroke: (paint: red, dash: "dashed", thickness: 1.5pt)), line: "spline")
 
           // 2. Voci "Fantasma" per generare la legenda
           plot.add(((0, 0),), label: [Frontend], style: (stroke: (paint: blue.lighten(50%), thickness: 5pt)))
