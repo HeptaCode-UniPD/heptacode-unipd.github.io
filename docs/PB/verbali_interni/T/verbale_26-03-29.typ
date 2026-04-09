@@ -41,9 +41,9 @@ Gli argomenti discussi nell'incontro sono stati:
 
 = Svolgimento
 == Problematiche su test di integrazione
-Il gruppo ha dichiarta conclusa l'integrazione tra il frontend ed il MS3. \ Il prossimo passo saranno le integrazioni tra il frontend ed il microservizio di "Analysis Management", è stata calcolata una giornata di lavoro (quest'oggi) per completare questa fase. \ Successivamente si passerà all'integrazione tra MS2 ed MS1, che è stato anch'esso stimato in una giornata lavorativa. 
+Il gruppo ha dichiarato conclusa l'integrazione tra il frontend ed il MS3. \ Il prossimo passo saranno le integrazioni tra il frontend ed il microservizio di "Analysis Management", è stata calcolata una giornata di lavoro (quest'oggi) per completare questa fase. \ Successivamente si passerà all'integrazione tra MS2 ed MS1, che è stato anch'esso stimato in una giornata lavorativa. 
 == Redazione documentazione finale
-Il gruppo sta continuando con la redazione della documentazione ufficiale; il PdP è quasi ultimato mancano solo le ultime rifiniture (nonchè la conclusione dell'attuale sprint); NdP si trova anche in fase conclusiva. \ L'AdR è quasi terminata va solo effettuato il rilascio. Infine per la Specifica Tecnica si attende la fase di completamento delle integrazioni per poterla rilasciare. \ Il PdQ deve attendere la fine della fase di sviluppo per essere completato, quindi viene messo in pausa.
+Il gruppo sta continuando con la redazione della documentazione ufficiale; il PdP è quasi ultimato mancano solo le ultime rifiniture (nonché la conclusione dell'attuale sprint); NdP si trova anche in fase conclusiva. \ L’AdR è quasi terminata va solo effettuato il rilascio. Infine per la Specifica Tecnica si attende la fase di completamento delle integrazioni per poterla rilasciare. \ Il PdQ deve attendere la fine della fase di sviluppo per essere completato, quindi viene messo in pausa.
 == Contatto con azienda
 Il gruppo ha contattato l'azienda per comunicare lo stato di avanzamento del progetto ed ha richiesto un incontro per il giorno 1 aprile 2026.
 == Programmazione data di consegna
@@ -62,5 +62,5 @@ Il prossimo incontro è fissato per il giorno #next-meeting
 #let decisione-azione = (
   ("Mostrare all'azienda il prodotto", "Azienda contattata tramite slack", "No ID",
   "Concludere le fasi di integrazione", "I programmatori di occuperanno delle integrazione tra i microservizi", "No ID",
-  "Concludere la redazione della documentazione ufficiale", "Responsabile, Amministratore e Verificatori si occupernno della documentazione", "No ID")
+  "Concludere la redazione della documentazione ufficiale", "Responsabile, Amministratore e Verificatori si occupereranno della documentazione", "No ID")
 )

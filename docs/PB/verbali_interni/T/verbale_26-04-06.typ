@@ -2,7 +2,7 @@
 #let giorno = "2026-04-06"
 
 // data del prossimo incontro (es. "19 marzo 2026")
-#let next-meeting = "non ci saranno, auspucabilmente, più incontri ufficiali"
+#let next-meeting = "non ci saranno, auspicabilmente, più incontri ufficiali"
 
 // ordine del giorno 
 #let odg = "Conclusione attività di progetto, resoconto finale"
@@ -40,7 +40,7 @@ Gli argomenti discussi nell'incontro sono stati:
 
 = Svolgimento
 == Conclusioni finali attività progettuale
-Il gruppo ha concluso l'attività di verifica e di programmazione del profotto. \ 
+Il gruppo ha concluso l'attività di verifica e di programmazione del prodotto. \ 
 Mancano da redarre le conclusioni della documentazione strettamente dipendenti da queste attività (ST, PdP, PdQ).
 == Problematiche stesura verbali
 A seguito dei rallentamenti dovuti alle problematiche di integrazione ed alla pausa pasquale; il gruppo si è accorto di non aver proceduto in modo regolare nella stesura degli ultimi verbali interni. \ Il rilascio degli stessi avverrà nei giorni successivi. 
@@ -59,6 +59,6 @@ Il prossimo incontro è fissato per il giorno: #next-meeting
 // Inserire le coppie (Decisione, Azione)
 #let decisione-azione = (
   ("Concludere documentazione", "I vari membri si impegnano nella conclusione della documentazione alla consegna.", "No ID",
-  "Rilascio verbali interni", "Il gruppo rilascierà i verbali delle ultime 3 riunione alla consegna.", "No ID",
+  "Rilascio verbali interni", "Il gruppo rilascerà i verbali delle ultime 3 riunione alla consegna.", "No ID",
   "Consegna progetto", "Contattare il prof. Cardin", "No ID")
 )

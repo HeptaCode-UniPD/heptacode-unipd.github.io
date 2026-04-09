@@ -51,7 +51,7 @@ Il gruppo prende atto del fatto che non riuscirà a consegnare il progetto come 
 Il gruppo ha stabilito che nel corso della settimana avrebbe: 
 - Risolto i problemi di integrazione.
 - Proceduto con il rilascio di alcuni documenti.
-- Posticipato la data di incontro con l'azienda per la visione dell'MVP.
+- Posticipato la data di incontro con l'azienda per la visione dell’MVP.
 
 Il prossimo incontro è fissato per il giorno #next-meeting
 ]
