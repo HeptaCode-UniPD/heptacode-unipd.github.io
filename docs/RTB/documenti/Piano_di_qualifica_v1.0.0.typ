@@ -1151,7 +1151,7 @@ Grazie all'implementazione di uno spellchecker prima della pianificazione degli 
 
 == MPD14 - Indice di Gulpease
 
-#import "../../../scripts/lista_gulpease.typ" : listaGulpease
+//#import "../../../scripts/lista_gulpease.typ" : listaGulpease
 
 #figure(
   caption: [Tabella indice di Gulpease dei documenti],
