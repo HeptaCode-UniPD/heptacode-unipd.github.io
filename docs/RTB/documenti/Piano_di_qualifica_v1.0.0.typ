@@ -1153,23 +1153,23 @@ Grazie all'implementazione di uno spellchecker prima della pianificazione degli 
 
 //#import "../../../scripts/lista_gulpease.typ" : listaGulpease
 
-#figure(
-  caption: [Tabella indice di Gulpease dei documenti],
-  kind: table,
-)[
-  #align(center,
-    tabella-viola(
-      columns: (auto, auto),
-      inset: 10pt,
-      align: center + horizon,
-      table.header([*Documento*], [*Indice*]),
-      ..listaGulpease.map(riga => {
-        let (documento, indice) = riga
-        (documento, indice)
-      }).flatten()
-    )
-  )
-]
+//#figure(
+//  caption: [Tabella indice di Gulpease dei documenti],
+//  kind: table,
+//)[
+//  #align(center,
+//    tabella-viola(
+//      columns: (auto, auto),
+//      inset: 10pt,
+//      align: center + horizon,
+//      table.header([*Documento*], [*Indice*]),
+//      ..listaGulpease.map(riga => {
+//        let (documento, indice) = riga
+//        (documento, indice)
+//      }).flatten()
+//    )
+//  )
+//]
 
 #let dati = listaGulpease.enumerate().map(it => (it.at(0), float(it.at(1).at(1))))
 
