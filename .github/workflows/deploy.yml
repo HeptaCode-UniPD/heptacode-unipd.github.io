@@ -36,7 +36,8 @@ jobs:
         run: |
           find ./docs -name "*.typ" -type f \
           -not -path "*/templates/*" \
-          -not -path "*/T/*" | while read typ_file; do
+          -not -path "*/T/*" \
+          -not -path "*/RTB/*" | while read typ_file; do
             pdf_file="${typ_file%.typ}.pdf"
             echo "Compiling LEGACY: $typ_file to $pdf_file"
             typst compile --root . "$typ_file" "$pdf_file"

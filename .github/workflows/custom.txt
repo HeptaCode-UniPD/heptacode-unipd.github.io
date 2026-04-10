@@ -593,3 +593,12 @@ un'orchestratore
 upsert
 viewlastanalysis
 agentiche
+mngt
+perc
+statecov
+testsucc
+branchcov
+codecov
+compl
+completition
+fmt

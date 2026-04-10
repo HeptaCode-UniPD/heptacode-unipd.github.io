@@ -4,7 +4,8 @@
 #import "../../templates/glossario_termini.typ": applica-glossario
 
 #let storia_modifiche = (
-  ("2.0.0", "2026/04/06", "Laura Venturini", "Angela Favaro", "Aggiornamento del documento con l'andamento finale delle metriche"),
+  ("2.0.0", "2026/04/07", "Angela Favaro", "Riccardo Baldin", "Approvazione finale, rilascio ufficiale v2.0.0"),
+  ("1.2.0", "2026/04/06", "Laura Venturini", "Angela Favaro", "Aggiornamento del documento con l'andamento finale delle metriche"),
   ("1.1.0", "2026/03/20","Laura Venturini", "Angela Favaro", "Aggiunta nuove metriche" ),
   ("1.0.0", "2026/02/16", "Angela Canazza", "Angela Favaro",  "Aggiunto capitolo 6.2 e conclusioni"),
 
@@ -1237,10 +1238,10 @@ Il disallineamento tra valore pianificato e guadagnato è stato gradualmente ris
   )
 ]
 *Andamento RTB* \
-La spesa è cresciuta in maniera abbastanza lineare negli sprint del RTB, rimanendo in linea con quanto programmato poiché le spese maggiori erano previste per gli sprint successivi alla sessione di esami universitari. L'andamento della linea dell'ETC indica budget sufficiente a intensificare le attività produttive negli ultimi sprint, in quanto si dispone ancora di più metà del budget.
+La spesa è cresciuta in maniera abbastanza lineare negli sprint del RTB, rimanendo in linea con quanto programmato poiché le spese maggiori erano previste per gli sprint successivi alla sessione di esami universitari. L'andamento della linea dell’ETC indica budget sufficiente a intensificare le attività produttive negli ultimi sprint, in quanto si dispone ancora di più metà del budget.
 \
 \ *Andamento PB* \
-La rapida crescita dell'AC risulta essere direttamente proporzionale alla rapida decrescita dell'ETC: questo rispecchia il veloce utilizzo della metà di budget rimanente. L'intensificazione delle attività produttive negli ultimi sprint ha portato ad un rapido consumo del budget rimanente, ma è stato possibile concludere il progetto entro il budget previsto, come dimostrato dal fatto che l'AC finale coincide con il BAC di 12845 euro e che l'ETC finale vale 0 euro.
+La rapida crescita dell’AC risulta essere direttamente proporzionale alla rapida decrescita dell’ETC: questo rispecchia il veloce utilizzo della metà di budget rimanente. L'intensificazione delle attività produttive negli ultimi sprint ha portato ad un rapido consumo del budget rimanente, ma è stato possibile concludere il progetto entro il budget previsto, come dimostrato dal fatto che l’AC finale coincide con il BAC di 12845 euro e che l’ETC finale vale 0 euro.
 
 
 == MPC12 - Estimate at Completion
@@ -1320,9 +1321,9 @@ La rapida crescita dell'AC risulta essere direttamente proporzionale alla rapida
 ]
 *Andamento RTB* \
 Lo scostamento tra EAC e BAC è dovuto al fatto che il CPI è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, quindi la stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
-La curva dell'EAC inizia a convergere verso il valore del BAC a partire dal quarto sprint. Con il passaggio alla fase successiva e l'impiego di risorse con tariffe orarie inferiori, si era previsto un miglioramento del CPI e quindi un'ulteriore diminuzione progressiva del valore dell'EAC.\
+La curva dell’EAC inizia a convergere verso il valore del BAC a partire dal quarto sprint. Con il passaggio alla fase successiva e l'impiego di risorse con tariffe orarie inferiori, si era previsto un miglioramento del CPI e quindi un'ulteriore diminuzione progressiva del valore dell’EAC.\
 \ *Andamento PB* \
-Come previsto durante la fase precedente, l'utilizzo di risorse meno costose ha portato ad un miglioramento del CPI, che si è tradotto in una diminuzione progressiva dell'EAC. Questo è dovuto alla maggiore densità di ore dei ruoli di programmatore e verificatore, che hanno tariffe orarie più basse rispetto a quelle dei ruoli più costosi utilizzati durante la fase di RTB. L'EAC finale coincide con il BAC, dimostrando così che il progetto è stato completato entro il budget previsto.
+Come previsto durante la fase precedente, l'utilizzo di risorse meno costose ha portato ad un miglioramento del CPI, che si è tradotto in una diminuzione progressiva dell’EAC. Questo è dovuto alla maggiore densità di ore dei ruoli di programmatore e verificatore, che hanno tariffe orarie più basse rispetto a quelle dei ruoli più costosi utilizzati durante la fase di RTB. L’EAC finale coincide con il BAC, dimostrando così che il progetto è stato completato entro il budget previsto.
 == MPC18 - Correttezza ortografica
 
 #figure(
@@ -1997,7 +1998,7 @@ A causa del fatto che lo sviluppo del codice backend è avvenuto esclusivamente 
 \ *Andamento PB* \
 Come per i requisiti obbligatori, anche i requisiti desiderabili e opzionali sono stati soddisfatti solamente durante l'ultimo sprint e a causa del poco tempo a disposizione per lo sviluppo del codice backend, solamente una piccola parte dei requisiti desiderabili e opzionali sono stati soddisfatti. 
 == Metriche di efficienza
-Tutte le metriche di efficienza, cioè tempo di caricamento (MPD04), tempo medio di risposta del sistema (MPD05) e tempo medio di risposta deglia agenti (MPD06), sono state misurate solo durante lo sprint finale e sono state rispettate.
+Tutte le metriche di efficienza, cioè tempo di caricamento (MPD04), tempo medio di risposta del sistema (MPD05) e tempo medio di risposta degli agenti (MPD06), sono state misurate solo durante lo sprint finale e sono state rispettate.
 
 = Iniziative di miglioramento
 La tempestiva risoluzione delle problematiche è fondamentale per garantire la continuità del progetto e ottimizzarne sia l'efficienza che l'efficacia. In questa sezione vengono analizzate le criticità emerse durante lo sviluppo del progetto e descritte le relative contromisure adottate per garantire il rispetto degli standard qualitativi e delle tempistiche previste.
