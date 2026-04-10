@@ -1171,14 +1171,9 @@ Grazie all'implementazione di uno spellchecker prima della pianificazione degli 
 //  )
 //]
 
-#let dati = listaGulpease.enumerate().map(it => (it.at(0), float(it.at(1).at(1))))
+//#let dati = listaGulpease.enumerate().map(it => (it.at(0), float(it.at(1).at(1))))
 
-#let etichette = (
-  (0, "AdR"),
-  (1, "NdP"),
-  (2, "PdP"),
-  (3, "PdQ"),
-)
+//#let etichette = ((0, "AdR"),(1, "NdP"),(2, "PdP"),(3, "PdQ"),)
 
 #figure(
   caption: [Indice di Gulpease dei documenti],
