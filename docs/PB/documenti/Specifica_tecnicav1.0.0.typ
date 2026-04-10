@@ -366,7 +366,7 @@ Step Functions orchestra l'intero flusso agentico come macchina a stati: gestisc
 S3 svolge due ruoli distinti nella piattaforma: archivia il repository clonato come ZIP che gli agenti recuperano autonomamente per l'analisi, e funge da bus di stato asincrono tra gli agenti paralleli - ogni domain agent scrive il proprio report parziale su S3 al termine dell'elaborazione, e l'orchestratore aggregatore li recupera e cancella nella fase successiva. Questo disaccoppia i componenti paralleli senza richiedere comunicazione diretta tra Lambda. \
 S3 viene inoltre utilizzato per l'hosting degli asset statici del frontend (MS0): il bundle prodotto da Vite in fase di build viene caricato su un bucket S3 configurato per il website hosting statico.
 ==== AWS Fargate
-Fargate è il runtime serverless per container, utilizzato per hostare il frontend e il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalano automaticamente e il traffico è instradato tramite Application Load Balancer. È la scelta naturale per i componenti con ciclo di vita HTTP continuo, a differenza della logica agentica che per sua natura è event-driven e gestita da Lambda.
+Fargate è il runtime serverless per container, utilizzato per hostare il frontend e il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalando automaticamente. È la scelta naturale per i componenti con ciclo di vita HTTP continuo, a differenza della logica agentica che per sua natura è event-driven e gestita da Lambda.
 
 == Tecnologie per Continuous Integration
 === GitHub Actions
@@ -377,12 +377,21 @@ Il pipeline è strutturato in un job che esegue:
 + verifica delle metriche di qualità del codice, disponibili nel documento di #link("https://heptacode-unipd.github.io/docs/PB/Piano_di_Qualificav2.0.0.pdf")[Piano di Qualifica v2.0.0].
 
 = Architettura
-Il sistema è strutturato secondo un'architettura a microservizi, composta da tre componenti indipendenti che collaborano per fornire le funzionalità applicative ed una componente di frontend. \ Ciascun microservizio adotta internamente una Layered Architecture, suddividendo le responsabilità in strati distinti e garantendo separazione delle competenze (separation of concerns).
+Il sistema è strutturato secondo un'architettura a microservizi, composta da tre componenti indipendenti che collaborano per fornire le funzionalità applicative ed una componente di frontend. Ogni microservizio utilizza una diversa architettura logica. \
 == Architettura logica
-=== Layered Architecture
-Ogni microservizio è organizzato nei seguenti layer:\
 
-_Presentation Layer_ #pad(left: 0.5cm)[Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste o degli eventi in ingresso, della loro validazione e della trasformazione in strutture tipizzate prima che vengano propagate agli strati sottostanti. Nel contesto frontend, questo layer corrisponde ai componenti di interfaccia utente e alla gestione degli input dell'utente.]
+=== Component-based Architecture
+Utilizzata nel frontend\
+
+_Componenti_ #pad(left: 0.5cm)[Costituiscono le unità fondamentali dell'interfaccia utente. Ogni componente è autocontenuto e gestisce il proprio stato locale, occupandosi della resa visiva e dell'interazione con l'utente. I componenti possono essere composti tra loro tramite props e callback, e accedono direttamente ai service di cui hanno bisogno senza vincoli gerarchici imposti.]
+_Pagine_ #pad(left: 0.5cm)[Aggregano i componenti in viste complete associate a una route specifica. Coordinano il flusso dei dati tra i componenti figli tramite props e callback, e gestiscono lo stato condiviso all'interno della vista. Come i componenti, accedono direttamente ai service necessari.]
+_Service_ #pad(left: 0.5cm)[Costituiscono un livello di astrazione orizzontale che incapsula la logica di comunicazione con il backend e la gestione della sessione. Sono moduli stateless senza istanze, importabili direttamente da qualsiasi componente o pagina che ne abbia necessità, senza che sia richiesto il passaggio attraverso intermediari.]
+_HttpClient_ #pad(left: 0.5cm)[Astrae la comunicazione HTTP centralizzando la gestione degli errori.]
+
+=== Layered Architecture
+Utilizzata nel microservizio MS3\
+
+_Presentation Layer_ #pad(left: 0.5cm)[Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste o degli eventi in ingresso, della loro validazione e della trasformazione in strutture tipizzate prima che vengano propagate agli strati sottostanti.]
 _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con gli altri componenti del sistema. Questo layer è esposto tramite interfacce o contratti ben definiti, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta e dai dettagli tecnologici degli strati adiacenti.]
 _Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
 _Infrastructure Layer (MS1)_ #pad(left: 0.5cm)[Gestisce l'accesso alle API di servizi esterni (es. Github) o interni (es. Comunicazione fra MS1 e MS2).]
@@ -397,8 +406,6 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 #pad(left: 0.5cm)[Il deployment dei microservizi avviene in ambienti virtualizzati tramite Docker. Ogni microservizio è incapsulato in un container indipendente, operante in un ambiente isolato che previene conflitti di dipendenze e interferenze tra i servizi. Questa soluzione semplifica le fasi di test, rilascio e aggiornamento, assicurando che il software si comporti in modo identico in qualsiasi ambiente di esecuzione. La natura dei container permette infine di replicare i singoli servizi in modo rapido ed efficiente, consentendo al sistema di adattarsi dinamicamente a carichi di lavoro variabili.]
 
 === Microservizi
-
-*Microservizio Frontend - MS0* #pad(left: 0.5cm)[Costituisce il punto di accesso dell'utente al sistema. Espone le seguenti funzionalità: autenticazione e visualizzazione del profilo utente, inserimento dell’URL di un repository GitHub da analizzare, e consultazione dei risultati dell'analisi. Quest'ultima comprende tre aree distinte: copertura dei test, qualità della documentazione e vulnerabilità di sicurezza secondo le linee guida OWASP. Per ciascuna area vengono presentati i suggerimenti di modifica e le motivazioni per criticità rilevate.]
 
 *Microservizio di Analysis Management - MS1*  #pad(left: 0.5cm)[Ha il compito di verificare se, per un dato repository, sia già presente in memoria un'analisi relativa all'ultimo commit disponibile. Qualora l'analisi risulti assente o non aggiornata, il microservizio provvede ad inoltrare la richiesta di analisi al microservizio competente, evitando elaborazioni ridondanti e ottimizzando l'utilizzo delle risorse computazionali.]
 
@@ -762,18 +769,21 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
 - #text(font: "Courier New")[validate(url: string)] - interpreta l’URL GitHub fornito, estrae owner e nome del repository ed esegue una chiamata alle API di GitHub per verificarne l'esistenza e l'accessibilità pubblica. Restituisce un oggetto GitHubRepoData con i metadati del repository se la chiamata ha successo, null altrimenti.
 
 == Progettazione frontend
-Il frontend è sviluppato in React con TypeScript e Vite. L'architettura è organizzata in tre layer: Presentation, Business e Data. Il layer di presentazione comprende il sistema di routing, le pagine e i componenti riutilizzabili. Il layer di business raccoglie i service che incapsulano la logica applicativa e le chiamate HTTP. Il layer data contiene la configurazione degli endpoint e le interfacce TypeScript che definiscono il contratto con il backend.
-#figure( [#image("../../asset/diagr-architett/frontend/frontend-layered.png")], caption: [Layered Architecture - frontend])
+Il frontend è sviluppato in React con TypeScript e Vite. L'architettura adottata è component-based: ogni componente è autocontenuto e gestisce il proprio stato locale, potendo accedere direttamente ai service di cui ha bisogno senza vincoli gerarchici imposti. I service costituiscono un livello di astrazione orizzontale che incapsula la logica di comunicazione con il backend, importabile da qualsiasi componente o pagina. La configurazione degli endpoint e le interfacce TypeScript fungono da fondazione condivisa dell'intera applicazione.
+#figure( [#image("../../asset/diagr-architett/frontend/componentbased.png")], caption: [Component-based Architecture - frontend])
 
-=== Moduli MS0 - Presentation Layer
-==== Routing
+L'aggiornamento reattivo è gestito tramite lo hook #text(font: "Courier New")[useEffect] di React, che implementa implicitamente il pattern Observer: i componenti si iscrivono a cambiamenti di stato o di props e reagiscono automaticamente quando i valori osservati variano. Nel sistema sono presenti tre utilizzi rilevanti di questo pattern. In #text(font: "Courier New")[useIsLogged()] del SessionService, lo hook osserva userId e location.pathname, reagendo ai cambiamenti di sessione e di navigazione per gestire i redirect automatici. In DettagliRepo, lo hook osserva il parametro id dell'URL, rilanciano il fetch dei dati quando l'utente naviga verso un repository diverso. In StartAnalysisButton, lo hook osserva initialJobId, avviando automaticamente il polling quando viene rilevata un'analisi in corso.
+
+La comunicazione asincrona per il monitoraggio delle analisi è implementata tramite polling: al termine di ogni intervallo, il frontend interroga il backend per conoscere lo stato del job in corso. Questa scelta è motivata dai vincoli architetturali del deployment: il frontend è servito da S3 come applicazione statica, quindi non espone alcun endpoint HTTP raggiungibile dall'esterno. Soluzioni push come notify richiederebbero che il ricevente sia un server con IP pubblico fisso, condizione non soddisfatta. Alternative come SSE o WebSocket, pur realizzabili, implicherebbero una connessione persistente aperta per l'intera durata dell'analisi (fino a 15 minuti), con necessità di gestire keepalive e riconnessioni. L'intervallo di 3 secondi sul polling, rende il ritardo di notifica trascurabile rispetto al tempo totale.
+
+=== Routing
 #figure( [#image("../../asset/diagr-architett/frontend/app.png")] , caption: [Diagramma componenti, App - frontend])
 *App* \
-Punto di ingresso dell'applicazione. Configura il router tramite #text(font: "Courier New")[createBrowserRouter]  e definisce la struttura delle route. La route radice / utilizza RootLayout come elemento padre e reindirizza automaticamente a /repositories. Le route figlie sono /repositories, /repository/:id, /addRepository e /profile. La route /login è definita separatamente, al di fuori di RootLayout, in quanto non prevede la barra di navigazione.
+Punto di ingresso dell'applicazione. Configura il router tramite #text(font: "Courier New")[createBrowserRouter] e definisce la struttura delle route. La route radice / utilizza RootLayout come elemento padre e reindirizza automaticamente a /repositories. Le route figlie sono /repositories, /repository/:id, /addRepository e /profile. La route /login è definita separatamente, al di fuori di RootLayout, in quanto non prevede la barra di navigazione.
 
 - #text(font: "Courier New")[RootLayout] - Componente strutturale che avvolge tutte le pagine protette. Renderizza NavBar in cima e Outlet come contenitore per le pagine figlie iniettate dal router. Non contiene logica applicativa.
 
-==== Componenti
+=== Componenti
 *NavBar* \
 Barra di navigazione persistente presente in tutte le pagine protette. Composta internamente da Breadcrumbs e SmartNavLink.
 - #text(font: "Courier New")[Breadcrumbs] - Sottocomponente interno di NavBar. Legge i match correnti tramite useMatches e costruisce dinamicamente una lista di link basandosi sull'attributo _handle.label_ definito nelle route. L'ultimo elemento della lista è renderizzato come testo non cliccabile.
@@ -794,7 +804,7 @@ _Metodi privati:_
 - #text(font: "Courier New")[startPolling(jobId: string)] - avvia un _setInterval_ con cadenza di 3000ms. Ad ogni tick invoca _pollAnalysisStatus()_. Se lo status è "done" chiude l'intervallo e richiama onSuccess. Se è "error" chiude l'intervallo e mostra il dialog di errore. Se supera il timeout di 15 minuti chiude l'intervallo e mostra il messaggio di timeout.
 - #text(font: "Courier New")[handleConfirm()] - chiude il dialog di conferma e invoca _startNewAnalysis()_. Se la risposta ha status "done" richiama direttamente onSuccess senza polling. Se ha status "processing" avvia il polling con il jobId ricevuto.
 
-==== Pagine
+=== Pagine
 #figure( [#image("../../asset/diagr-architett/frontend/login.png")] , caption: [Diagramma componenti, Login - frontend])
 *Login* \ 
 Pagina di autenticazione, esterna al RootLayout. Invoca _useIsLogged()_ per reindirizzare automaticamente l'utente già autenticato. Gestisce lo stato locale per email, password, isPasswordVisible, isCredentialCorrect e loading. Al submit invoca _checkCredentials()_ del _UserService_, salva lo _userId_ tramite _saveUserID()_ del _SessionService_ e naviga a /repositories. In caso di errore imposta _isCredentialCorrect_ a false e mostra il messaggio di errore. 
@@ -822,7 +832,7 @@ _Sottocomponente interno:_
 *UserPage * \
 Pagina del profilo utente. Invoca _useIsLogged()_ e recupera lo userId dalla sessione. All'inizio invoca _getInfoUserByID()_ del _UserService_. Gestisce il caso in cui l'utente sia presente in localStorage ma non nel database: in tal caso mostra solo il pulsante di logout, senza un <dialog> di conferma, il quale è invece presente nel normale logout. Alla conferma del logout da <dialog>, viene invocato _logout()_ da _SessionService_ e naviga a /login.
 
-=== Moduli MS0 - Business Layer
+=== Service
 #figure( [#image("../../asset/diagr-architett/frontend/sessionService.png")] , caption: [Diagramma componenti, SessionService - frontend])
 *SessionService* \ 
 Gestisce la sessione utente tramite localStorage e la guardia di navigazione. Esporta le seguenti funzioni:
@@ -857,7 +867,6 @@ Gestisce l'integrazione con il managementService del backend, esponendo al layer
 - #text(font: "Courier New")[startNewAnalysis(repoUrl: string)] - contratto per l'avvio di una nuova analisi. Invoca _post\<StartAnalysisResponse\>()_ sull'endpoint /analysis/request con body { repoUrl }. Restituisce uno StartAnalysisResponse con status: "done" se l'analisi è già disponibile, oppure status: "processing" con un jobId da usare per il polling.
 - #text(font: "Courier New")[pollAnalysisStatus(jobId: string)] - contratto per il controllo dello stato di un'analisi in corso. Invoca _get\<{ status: AnalysisStatus }\>()_ sull'endpoint /analysis/status/{jobId} e restituisce il solo campo status.
 
-=== Moduli MS0 - Data Layer
 ==== HTTP Client
 *httpClient* \
 - #text(font: "Courier New")[HttpOptions] - Interfaccia di configurazione per le richieste HTTP.
@@ -891,7 +900,7 @@ Attributi: agentName?: string, summary?: string, report?: string.\
 
 *AnalysisReport*\
 Interfaccia TypeScript che rappresenta il report di un'analisi ricevuto dal backend.\
-Attributi: repoUrl?: string, jobId?: string, commitId?: string, status: AnalysisStatus, analysisDetails?: AnalysisDetails[], scores?: number[], date: Date, isLatest:boolean.\
+Attributi: repoUrl?: string, jobId?: string, commitId?: string, status: AnalysisStatus, analysisDetails?: AnalysisDetails[], scores?: number[], date: Date, isLatest:boolean, error:string.\
 
 *AnalysisStatus*\
 Tipo unione che rappresenta i possibili stati di un'analisi: "done" | "processing" | "error".\
