@@ -591,3 +591,9 @@ un'orchestratore
 upsert
 viewlastanalysis
 agentiche
+Orchestrator
+keepalive
+autocontenuto
+riconnessioni
+startexecutioncommand
+websocket
