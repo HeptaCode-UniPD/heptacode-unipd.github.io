@@ -495,11 +495,11 @@ _Metodi pubblici:_
 ==== MS1 - Workflow di Comunicazione
 Il servizio MS1 opera come un'orchestratore a stato. Di seguito la logica di interazione con MS2:
 
-1. **Inbound**: Ricezione richiesta via REST.
-2. **Pre-processing**: Risoluzione del Commit SHA via GitHub API.
-3. **Persistenza**: Creazione record con stato `processing`.
-4. **Outbound**: Chiamata HTTP asincrona verso AWS Step Functions (MS2).
-5. **Callback**: MS2 invia i risultati all'endpoint `/webhook`, portando lo stato a `done`.
+1. *Inbound*: Ricezione richiesta via REST.
+2. *Pre-processing*: Risoluzione del Commit SHA via GitHub API.
+3. *Persistenza*: Creazione record con stato `processing`.
+4. *Outbound*: Chiamata HTTP asincrona verso AWS Step Functions (MS2).
+5. *Callback*: MS2 invia i risultati all'endpoint `/webhook`, portando lo stato a `done`.
 
 #pagebreak()
 === Analisi dei Repository - MS2
