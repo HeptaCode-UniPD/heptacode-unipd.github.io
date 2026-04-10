@@ -601,3 +601,4 @@ branchcov
 codecov
 compl
 completition
+fmt

@@ -1240,7 +1240,7 @@ Il disallineamento tra valore pianificato e guadagnato è stato gradualmente ris
 La spesa è cresciuta in maniera abbastanza lineare negli sprint del RTB, rimanendo in linea con quanto programmato poiché le spese maggiori erano previste per gli sprint successivi alla sessione di esami universitari. L'andamento della linea dell’ETC indica budget sufficiente a intensificare le attività produttive negli ultimi sprint, in quanto si dispone ancora di più metà del budget.
 \
 \ *Andamento PB* \
-La rapida crescita dell’AC risulta essere direttamente proporzionale alla rapida decrescita dell'ETC: questo rispecchia il veloce utilizzo della metà di budget rimanente. L'intensificazione delle attività produttive negli ultimi sprint ha portato ad un rapido consumo del budget rimanente, ma è stato possibile concludere il progetto entro il budget previsto, come dimostrato dal fatto che l’AC finale coincide con il BAC di 12845 euro e che l'ETC finale vale 0 euro.
+La rapida crescita dell’AC risulta essere direttamente proporzionale alla rapida decrescita dell’ETC: questo rispecchia il veloce utilizzo della metà di budget rimanente. L'intensificazione delle attività produttive negli ultimi sprint ha portato ad un rapido consumo del budget rimanente, ma è stato possibile concludere il progetto entro il budget previsto, come dimostrato dal fatto che l’AC finale coincide con il BAC di 12845 euro e che l’ETC finale vale 0 euro.
 
 
 == MPC12 - Estimate at Completion
@@ -1320,9 +1320,9 @@ La rapida crescita dell’AC risulta essere direttamente proporzionale alla rapi
 ]
 *Andamento RTB* \
 Lo scostamento tra EAC e BAC è dovuto al fatto che il CPI è minore di 1 a causa dall'utilizzo frequente di figure costose nelle fasi iniziali, quindi la stima è da considerarsi sovrastimata rispetto alla realtà attesa.\
-La curva dell’EAC inizia a convergere verso il valore del BAC a partire dal quarto sprint. Con il passaggio alla fase successiva e l'impiego di risorse con tariffe orarie inferiori, si era previsto un miglioramento del CPI e quindi un'ulteriore diminuzione progressiva del valore dell'EAC.\
+La curva dell’EAC inizia a convergere verso il valore del BAC a partire dal quarto sprint. Con il passaggio alla fase successiva e l'impiego di risorse con tariffe orarie inferiori, si era previsto un miglioramento del CPI e quindi un'ulteriore diminuzione progressiva del valore dell’EAC.\
 \ *Andamento PB* \
-Come previsto durante la fase precedente, l'utilizzo di risorse meno costose ha portato ad un miglioramento del CPI, che si è tradotto in una diminuzione progressiva dell'EAC. Questo è dovuto alla maggiore densità di ore dei ruoli di programmatore e verificatore, che hanno tariffe orarie più basse rispetto a quelle dei ruoli più costosi utilizzati durante la fase di RTB. L'EAC finale coincide con il BAC, dimostrando così che il progetto è stato completato entro il budget previsto.
+Come previsto durante la fase precedente, l'utilizzo di risorse meno costose ha portato ad un miglioramento del CPI, che si è tradotto in una diminuzione progressiva dell’EAC. Questo è dovuto alla maggiore densità di ore dei ruoli di programmatore e verificatore, che hanno tariffe orarie più basse rispetto a quelle dei ruoli più costosi utilizzati durante la fase di RTB. L’EAC finale coincide con il BAC, dimostrando così che il progetto è stato completato entro il budget previsto.
 == MPC18 - Correttezza ortografica
 
 #figure(
