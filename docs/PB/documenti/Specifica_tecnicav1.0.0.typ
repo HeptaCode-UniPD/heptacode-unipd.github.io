@@ -504,100 +504,111 @@ Il servizio MS1 opera come un'orchestratore a stato. Di seguito la logica di int
 #pagebreak()
 === Analisi dei Repository - MS2
 
-L'architettura del microservizio di analisi (MS2) è progettata per gestire processi a lunga esecuzione in modo asincrono, separando la ricezione della richiesta dal workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura serverless su AWS, utilizzando Step Functions per il controllo del workflow, AWS Bedrock per l'analisi tramite LLM e S3 per la persistenza dei dati e dei report intermedi.
+L'architettura del microservizio di analisi (MS2) sfrutta un'architettura Event-Driven e Serverless. Il sistema è progettato per gestire processi a lunga esecuzione in modo asincrono, separando l'interfaccia di ricezione delle richieste dall'orchestrazione del workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura AWS, utilizzando Step Functions per la gestione degli stati e degli eventi, AWS Bedrock per l'elaborazione AI e S3 per lo storage degli artefatti.
 
-==== Classi MS2 - Presentation Layer
+==== Entry Point e Trigger degli Eventi
 
-*AppController* \
-Punto di ingresso HTTP (NestJS) per l'avvio delle pipeline di analisi. Riceve le richieste dal frontend o da MS1. \
-_Attributi privati:_
-  - #text(font: "Courier New")[appService: AppService] - istanza iniettata del service per l'analisi.
+Questo modulo funge da interfaccia di ingresso e ha l'unico scopo di ricevere le richieste sincrone, validarle e innescare in modo asincrono gli eventi che avvieranno la pipeline di analisi.
 
-_Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] - riceve l’URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente il messaggio di successo, un jobId e l’executionArn per il tracciamento.
+*AppController*\
+Punto di ingresso HTTP (NestJS) (Driving Adapter) per l'avvio delle pipeline di analisi. Riceve le richieste dal frontend o da MS1.
 
-*AppService* \
-Service di backend che coordina l'innesco dell'infrastruttura asincrona AWS. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] - coordina l'avvio della pipeline inoltrando il payload all’adapter Step Functions tramite startStepFunctionExecution().
+Attributi privati:
+- #text(font: "Courier New")[appService: AppService] - istanza iniettata del service per l'innesco dell'analisi.
 
-*AwsStepFunctionsAdapter* \
-Componente di adattamento per l'integrazione con AWS Step Functions. Isola il framework NestJS dall'utilizzo diretto dell'SDK AWS. \
-_Attributi privati:_
-  - #text(font: "Courier New")[sfnClient: SFNClient] — istanza del client AWS per l'invocazione dei servizi di orchestrazione.
+Metodi pubblici:
+- #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] - riceve l’URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente un jobId per il tracciamento asincrono.
 
-_Metodi pubblici:_
-  - #text(font: "Courier New")[startStepFunctionExecution(payload: any)] — riceve il payload di analisi, inizializza un `StartExecutionCommand` e invoca la State Machine configurata tramite l'ARN presente nelle variabili d'ambiente. Restituisce l'ARN dell'esecuzione avviata.
+*AppService*\
+Core applicativo che isola la logica di innesco, coordinando la preparazione dell'infrastruttura AWS.
 
-#figure( [#image("../../asset/diagr-architett/UML/AnalysisService.png")] , caption: [Presentation Layer MS2])
+Metodi pubblici:
+- #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] - coordina l'avvio della pipeline inoltrando il payload all’adapter Step Functions tramite startStepFunctionExecution().
 
-==== Classi MS2 - Business Layer
+*AwsStepFunctionsAdapter*\
+Componente adapter per l'integrazione con AWS Step Functions. Isola il framework NestJS dall'utilizzo diretto dell'SDK AWS.
 
-===== Orchestrazione e Workflow
+Attributi privati:
+- #text(font: "Courier New")[sfnClient: SFNClient] — istanza del client AWS per la pubblicazione degli eventi di orchestrazione.
 
-*OrchestratorLambda* \
-Componente centrale che gestisce il ciclo di vita dell'analisi in Step Functions, suddividendo il processo in fasi decisionali e di consolidamento. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[orchestratorHandler(event: any)] - punto di ingresso Lambda che esegue le azioni principali in base al parametro action. Se action è PLAN valuta i metadati per generare il piano di esecuzione; se è AGGREGATE preleva i report da S3, aggrega i risultati per area e invoca il Master Lead Agent per il polishing finale.
+Metodi pubblici:
+- #text(font: "Courier New")[startStepFunctionExecution(payload: any)] — riceve il payload di analisi, inizializza un StartExecutionCommand e invoca la State Machine configurata tramite l'ARN presente nelle variabili d'ambiente. Restituisce l'ARN dell'esecuzione avviata.
 
-===== Agenti di Analisi Tematica
+#figure( [#image("../../asset/diagr-architett/UML/AnalysisService.png")] , caption: [Entry Point e Adattatori MS2])
 
-*OwaspAgentLambda* \
-Funzione Lambda specializzata nell'esecuzione dell'analisi di sicurezza (OWASP) del codice sorgente. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[owaspAgentHandler(event: unknown)] - scarica il file ZIP da S3 tramite unzipRepoToTemp(), utilizza SmartBundler per creare i bundle, coordina i sotto-agenti Bedrock (Dependency, Credentials, Core) e salva il report JSON finale sul bucket S3.
+==== Orchestrazione degli Eventi e Workflow (AWS Step Functions)
 
+Poiché il core del sistema è implementato tramite funzioni Lambda serverless, prive di stato persistente e guidate dagli eventi, la loro esecuzione è regolata da un pattern Orchestrator: la State Machine definisce l'orchestrazione dei task, gestendo le transizioni di stato e l'invocazione sequenziale e parallela degli agenti specifici.
+
+#figure( [#image("../../asset/diagr-architett/UML/stepfunctions_graph.png", width: 40%)] , caption: [Workflow di orchestrazione degli eventi tramite AWS Step Functions])
+
+*PullRepoLambda*\
+Worker innescato all'inizio del workflow per l'acquisizione del contesto sorgente.
+
+Metodi pubblici:
+- #text(font: "Courier New")[handler(event: any)] - reagisce all'evento iniziale clonando il repository Git in una cartella temporanea, esegue il checkout sul commit specificato, estrae i metadati (tag, branch, changelog), comprime l'archivio in un file ZIP e lo carica su S3 emettendo un evento di completamento per le fasi successive.
+
+*OrchestratorLambda*\
+Componente centrale che gestisce il ciclo di vita dell'analisi instradando dinamicamente il flusso degli eventi.
+
+Metodi pubblici:
+- #text(font: "Courier New")[orchestratorHandler(event: any)] - punto di ingresso Lambda che esegue le azioni in base al payload dell'evento. Se action è PLAN valuta i metadati per generare il piano di esecuzione e attivare determinati agenti; se è AGGREGATE attende l'evento di completamento di tutti gli agenti, preleva i report parziali da S3, aggrega i risultati e cura la struttura finale del report.
+
+*WebhookSenderLambda*\
+Gestisce il completamento con successo della pipeline.
+
+Metodi pubblici:
+- #text(font: "Courier New")[handler(event: any)] — reagisce alla fine del workflow inviando all’URL configurato un payload JSON contenente il report Markdown, "repoUrl", "jobId", "commitId" e lo stato "done". La richiesta è protetta da API Key.
+
+*FailureHandlerLambda*\
+Gestisce gli eventi di errore della pipeline.
+
+Metodi pubblici:
+- #text(font: "Courier New")[handler(event: any)] - intercetta eventi di errore o crash non gestiti da AWS Step Functions e trasmette la tipologia dell'errore (errorType, cause) al sistema chiamante.
+
+==== Agenti di Analisi Tematica
+
+Le Lambda di analisi operano in reazione agli eventi diramati dal nodo dell'orchestratore, eseguendo task in parallelo sui dati condivisi su S3.
+
+*OwaspAgentLambda*\
+Funzione Lambda specializzata nell'esecuzione dell'analisi di sicurezza (OWASP).
+
+Metodi pubblici:
+- #text(font: "Courier New")[owaspAgentHandler(event: unknown)] - scarica il file ZIP da S3 tramite unzipRepoToTemp(), utilizza SmartBundler per creare i frammenti di codice da analizzare, coordina i sotto-agenti Bedrock (Dependency, Credentials, Core) e consolida i risultati salvando il report JSON finale sul bucket S3 (Gather).
 *TestAgentLambda* \
-Funzione Lambda specializzata nell'esecuzione dell'analisi di qualità e testing del codice sorgente. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[testAgentHandler(event: unknown)] - estrae e impacchetta il codice sorgente, invoca in parallelo i sub-agenti Bedrock (QA, Boilerplate, Code Quality), consolida la sintesi e salva il report JSON su S3.
+Funzione Lambda per l'analisi del testing.
+
+Metodi pubblici:
+- #text(font: "Courier New")[testAgentHandler(event: unknown)] - estrae e impacchetta il codice sorgente, invoca in parallelo i sub-agenti Bedrock (QA, Boilerplate, Code Quality), ne aggrega la sintesi e pubblica il report JSON su S3.
 
 *DocsAgentLambda* \
-Funzione Lambda specializzata nell'analisi della documentazione tecnica e degli standard legali/normativi del repository. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[docAgentHandler(event: unknown)] - estrae i sorgenti, delega a sub-agenti (Tech Reviewer, Compliance Officer) la revisione documentale e salva il report aggregato su S3.
+Funzione Lambda per la revisione della documentazione tecnica e degli standard legali/normativi.
 
-==== Classi MS2 - Data Layer
+Metodi pubblici:
+- #text(font: "Courier New")[docAgentHandler(event: unknown)] - estrae i sorgenti, delega ai sub-agenti (Tech Reviewer, Compliance Officer) la revisione documentale e deposita il report aggregato su S3.
 
-*DecompressioneZipTool* \
-Modulo di utilità per l'interazione con AWS S3 in fase di lettura. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo.
+==== Strumenti, Utility e Adattatori Dati
 
-==== MS2 - Workflow di Orchestrazione
-Poiché le componenti del Business Layer sono implementate come funzioni Lambda serverless, prive di stato persistente e non istanziabili come oggetti, la loro struttura non si presta a una rappresentazione tramite Class Diagram UML. Il workflow di orchestrazione e le dipendenze tra queste componenti sono pertanto illustrati mediante il grafico di esecuzione della AWS Step Functions State Machine riportato di seguito.
-
-  #figure( [#image("../../asset/diagr-architett/UML/stepfunctions_graph.png", width: 40%)] , caption: [Workflow di orchestrazione degli agenti tramite AWS Step Functions])
-
-===== Strumenti e Utility
+Queste classi forniscono supporto all'infrastruttura elaborativa agendo come strumenti ausiliari per le Lambda, garantendo accesso ai dati e integrazione con i modelli di intelligenza artificiale.
 
 *AgentInvoker* \
-Modulo responsabile della comunicazione resiliente con l'infrastruttura AWS Bedrock Agents. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] - gestisce l'invocazione dell'AI. Implementa il Tool-use denial per forzare l'output testuale e include logiche di retry esponenziale per gestire il throttling.
-  - #text(font: "Courier New")[extractFirstMeaningfulLine(report: string, emojiPattern: RegExp)] - estrae la sintesi dinamica dal report Markdown per il riepilogo globale.
+Modulo responsabile della comunicazione  con l'infrastruttura ad eventi di AWS Bedrock Agents.
 
-*SmartBundler* \
-Wrapper per l'impacchettamento del codice sorgente, ottimizzato per rientrare nei limiti di contesto dei LLM tramite la libreria repomix. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[createSourceChunks(extractPath: string)] — suddivide il sorgente in porzioni sequenziali (chunk) basate sulla costante `MAX_BUNDLE_CHARS` (150.000 caratteri) rispettando i confini dei file tramite analisi dei delimitatori repomix.
-  - #text(font: "Courier New")[createFullChunks(extractPath: string)] — suddivide l'intero contenuto del repository in chunk per analisi complete (es. scansione credenziali).
-  - #text(font: "Courier New")[extractImportedLibraries(sourceChunks: string | string[])] — esegue l'analisi statica tramite espressioni regolari per identificare le dipendenze dichiarate senza l'uso di modelli AI.
+Metodi pubblici:
+- #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] - gestisce l'invocazione dell'AI. Include logiche di retry per gestire ritardi o throttling.
 
-*PullRepoLambda* \
-Gestisce la fase di acquisizione iniziale del codice sorgente dal provider esterno. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] - clona il repository Git in una cartella temporanea, esegue il checkout sul commit specificato, estrae i metadati (tag, branch, changelog), comprime l'archivio in un file ZIP e lo carica su S3 per le fasi successive.
+*SmartBundler*\
+Componente chiave per l'implementazione della suddivisione del codice in chunk, ottimizzato per rientrare nei limiti di contesto dei LLM tramite la libreria repomix.
 
-*WebhookSenderLambda* \
-Gestisce la notifica di completamento della pipeline. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] — invia all’URL configurato un payload JSON contenente il report Markdown, "repoUrl", "jobId", "commitId" e lo stato "done". La richiesta è protetta da API Key.
+Metodi pubblici:
+- #text(font: "Courier New")[createSourceChunks(extractPath: string)] — suddivide il sorgente in porzioni sequenziali (chunk) basate sulla costante MAX_BUNDLE_CHARS (150.000 caratteri) rispettando i confini dei file tramite analisi dei delimitatori repomix.
+- #text(font: "Courier New")[createFullChunks(extractPath: string)] — suddivide l'intero contenuto del repository in chunk per analisi che richiedono visibilità globale.
 
-*FailureHandlerLambda* \
-Gestisce le notifiche in caso di fallimento della pipeline asincrona. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] - intercetta errori o crash non gestiti da AWS Step Functions e trasmette la tipologia dell'errore (errorType, cause) al sistema chiamante.
+*DecompressioneZipTool* \
+Modulo di utilità per l'interazione con il data repository centrale (AWS S3).
+
+Metodi pubblici:
+- #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo della Lambda.
 
 #pagebreak()
 
