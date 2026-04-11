@@ -20,6 +20,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Install Microsoft Fonts
+        run: |
+          sudo apt-get update
+          echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+          sudo apt-get install -y ttf-mscorefonts-installer
+          sudo fc-cache -f -v
       
       - name: Install typst
         run: sudo snap install typst
@@ -29,7 +36,8 @@ jobs:
         run: |
           find ./docs -name "*.typ" -type f \
           -not -path "*/templates/*" \
-          -not -path "*/T/*" | while read typ_file; do
+          -not -path "*/T/*" \
+          -not -path "*/RTB/*" | while read typ_file; do
             pdf_file="${typ_file%.typ}.pdf"
             echo "Compiling LEGACY: $typ_file to $pdf_file"
             typst compile --root . "$typ_file" "$pdf_file"

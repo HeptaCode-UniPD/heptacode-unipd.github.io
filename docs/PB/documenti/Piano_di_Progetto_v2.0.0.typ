@@ -5,8 +5,8 @@
 
 #let storia_modifiche = (
   ("2.0.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Approvazione finale, rilascio ufficiale v2.0.0"),
-  ("1.7.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Aggiunti resoconto PB e Consuntivo finale"),
-  ("1.6.0", "2026/04/03", "Angela Favaro", "Laura Venturini", "Aggiunto trascorso Sprint 15"),
+  ("1.7.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Aggiunti resoconto PB e Consuntivo finale"),
+  ("1.6.0", "2026/04/07", "Angela Favaro", "Laura Venturini", "Aggiunto trascorso Sprint 15"),
   ("1.5.0", "2026/03/24", "Angela Canazza", "Riccardo Baldin", "Trascorso Sprint 14"),
   ("1.4.0", "2026/03/17", "Laura Venturini", "Angela Canazza", "Trascorso Sprint 13"),
   ("1.3.0", "2026/03/12", "Laura Venturini", "Angela Favaro", "Aggiornamento a seguito di colloquio correttivo del paragrafo: Pianificazione RTB"),
@@ -2287,9 +2287,9 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
   columns: (auto, auto),
   align: horizon,
   stroke: 0.7pt,
-  [_Intervallo temporale_], [23 marzo 2026 - 7 marzo 2026],
+  [_Intervallo temporale_], [23 marzo 2026 - 7 aprile 2026],
 
-  [_Giorni di sprint_], [12],
+  [_Giorni di sprint_], [14],
 
   [_Attività previste_],
   [
@@ -2408,15 +2408,14 @@ Successivamente a questo paragrafo di pianificazione saranno presenti, per ognun
 #pagebreak()
 
 === Resoconto PB
-Rispetto a quanto originariamente pianificato, la conclusione della milestone PB *ha subito un ritardo di circa due giorni*; di conseguenza la data di consegna del progetto è stata spostata dal *30 marzo 2026* al *1 aprile 2026*. \ 
+Rispetto a quanto originariamente pianificato, la conclusione della milestone PB *ha subito un ritardo di circa otto giorni*; di conseguenza la data di consegna del progetto è stata spostata dal *30 marzo 2026* al *7 aprile 2026*. \ 
 Anche rispetto alla milestone interna si sono verificati ritardi corrispondenti ad uno sprint. Questo a causa della scarsa comprensione dell'architettura di deploy da adottare. \ \
 Il ritardo è stato accumulato durante la fase di progettazione. Le cause principali sono:
 - Scarsa comprensione di tecnologie serverless (AWS).
 - Scarsa comprensione delle architetture di deploy adottabili alle nostre tecnologie serverless (Lambda Function).
 - Sottovalutato il tempo da dedicare allo studio.
+Anche la fase di sviluppo ha subito dei rallentamenti a causa di problemi di integrazione tra i vari componenti del progetto. \
 Il gruppo ha scelto di svolgere ricevimenti con i prof. Cardin e Vardanega per avere pareri riguardo al lavoro in fase di svolgimento. Che sono serviti ad aggiustare errori ed incomprensioni su documentazione e teoria progettuale / architetturale.
-
-Inizialmente sono state sopravvalutate le ore utili alla programmazione e questo ha portato ad un calcolo preventivo erroneo del budget di progetto.
 
 In @tab:OreTotIndividualiPBResoconto vengono riportate le ore effettivamente svolte per ogni ruolo durante il periodo di PB. Ed in @fig:tortaPB è possibile visionare la percentuale di ore dedicate a ciascun ruolo durante la milestone RTB.
 

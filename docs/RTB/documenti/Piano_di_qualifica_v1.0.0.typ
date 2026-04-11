@@ -259,16 +259,16 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     
     "MPD07", 
     "Complessità Ciclomatica",
-    "≤15 ",
-    "≤10",
+    "≤10 ",
+    "≤5",
     "MPD08", 
     "Parametri per metodo ",
     "≤6",
     "≤4",
     "MPD09", 
     "Linee di codice per metodo",
-    "≤35",
-    "≤20",
+    "≤45",
+    "≤25",
     "MPD10", 
     "Linee di codice per file",
     "≤120",
@@ -278,9 +278,9 @@ Affinché le conformità vengano soddisfatte, al progetto vengono integrati tre 
     "≥10%",
     "≥15%",
     "MPD12",
-    "Coefficient of Coupling",
-    "≤0.4",
-    "≤0.2"
+    "Cognitive Complexity",
+    "≤20%",
+    "≤5%"
   ),
   caption: [Metriche di manutenibilità del prodotto],
   kind: table
@@ -1151,34 +1151,29 @@ Grazie all'implementazione di uno spellchecker prima della pianificazione degli 
 
 == MPD14 - Indice di Gulpease
 
-#import "../../../scripts/lista_gulpease.typ" : listaGulpease
+//#import "../../../scripts/lista_gulpease.typ" : listaGulpease
 
-#figure(
-  caption: [Tabella indice di Gulpease dei documenti],
-  kind: table,
-)[
-  #align(center,
-    tabella-viola(
-      columns: (auto, auto),
-      inset: 10pt,
-      align: center + horizon,
-      table.header([*Documento*], [*Indice*]),
-      ..listaGulpease.map(riga => {
-        let (documento, indice) = riga
-        (documento, indice)
-      }).flatten()
-    )
-  )
-]
+//#figure(
+//  caption: [Tabella indice di Gulpease dei documenti],
+//  kind: table,
+//)[
+//  #align(center,
+//    tabella-viola(
+//      columns: (auto, auto),
+//      inset: 10pt,
+//      align: center + horizon,
+//      table.header([*Documento*], [*Indice*]),
+//      ..listaGulpease.map(riga => {
+//        let (documento, indice) = riga
+//        (documento, indice)
+//      }).flatten()
+//    )
+//  )
+//]
 
-#let dati = listaGulpease.enumerate().map(it => (it.at(0), float(it.at(1).at(1))))
+//#let dati = listaGulpease.enumerate().map(it => (it.at(0), float(it.at(1).at(1))))
 
-#let etichette = (
-  (0, "AdR"),
-  (1, "NdP"),
-  (2, "PdP"),
-  (3, "PdQ"),
-)
+//#let etichette = ((0, "AdR"),(1, "NdP"),(2, "PdP"),(3, "PdQ"),)
 
 #figure(
   caption: [Indice di Gulpease dei documenti],
