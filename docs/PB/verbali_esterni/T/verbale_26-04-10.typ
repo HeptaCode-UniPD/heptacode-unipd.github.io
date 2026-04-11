@@ -60,7 +60,7 @@ Il gruppo può proseguire con il colloquio con il professor Cardin in seguito al
 
 
 #let decisione-azione = (
-  "-","-", "",
+  "-","-", "-",
   
 )
 )
