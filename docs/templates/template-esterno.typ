@@ -87,14 +87,6 @@
 
   [#testo]
 
-  table(
-    columns: (auto, auto, auto),
-    inset: 9pt,
-    align: horizon,
-    table.header([*Decisione*], [*Azione*], [*Project Board Issue ID* \ #link("https://github.com/orgs/HeptaCode-UniPD/projects/1")]),
-    ..lista_decisioni,
-  )
-
   pagebreak()
   v(0.1fr)
   align(center)[
