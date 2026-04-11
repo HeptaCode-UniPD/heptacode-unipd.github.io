@@ -379,6 +379,9 @@ Il pipeline è strutturato in un job che esegue:
 = Architettura
 Il sistema è strutturato secondo un'architettura a microservizi, composta da tre componenti indipendenti che collaborano per fornire le funzionalità applicative ed una componente di frontend. Ogni microservizio utilizza una diversa architettura logica. \
 == Architettura logica
+L'ecosistema del progetto si fonda su pattern architetturali differenziati per rispondere in modo ottimale alle specifiche responsabilità di ciascun modulo. Mentre i microservizi MS1 e MS3 mantengono un'architettura layered, il microservizio di analisi (MS2) adotta un paradigma Event-Driven.
+=== Layered Architecture
+I microservizi MS1 e MS3 sono organizzati nei seguenti layer:\
 
 === Component-based Architecture
 Utilizzata nel frontend\
@@ -396,6 +399,12 @@ _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservi
 _Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
 _Infrastructure Layer (MS1)_ #pad(left: 0.5cm)[Gestisce l'accesso alle API di servizi esterni (es. Github) o interni (es. Comunicazione fra MS1 e MS2).]
 
+=== Event-Driven Architecture
+A causa della necessità di gestire processi analitici a lunga esecuzione in modo scalabile e asincrono, MS2 adotta un'architettura Serverless basata su eventi (Event-Driven), organizzata nei seguenti domini operativi:\
+
+_Event Producers_ #pad(left: 0.5cm)[Modulo di ricezione che gestisce le richieste sincrone esterne. Valida il payload e agisce da generatore (producer), innescando l'evento iniziale verso il sistema di orchestrazione e restituendo immediatamente un riferimento di tracciamento al chiamante.]
+_Event Orchestrator_ #pad(left: 0.5cm)[Cuore dell'architettura. Gestito tramite macchine a stati finiti su cloud, coordina il ciclo di vita dell'analisi instradando dinamicamente gli eventi tra i vari worker. Decide il piano di esecuzione, supervisiona l'esecuzione parallela e intercetta gli eventi di completamento o errore.]
+_Event Consumers_ #pad(left: 0.5cm)[Unità elaborative indipendenti (funzioni serverless) che si attivano in reazione agli eventi diramati dall'orchestratore. Prelevano i dati sorgente da uno storage condiviso, eseguono l'analisi tramite modelli AI e generano eventi di completamento per consentire la prosecuzione del workflow.]
 
 == Architettura di deployment
 L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale garantisce elevata scalabilità, resilienza e una totale indipendenza nello sviluppo e nel rilascio dei singoli componenti software. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
