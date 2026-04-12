@@ -139,8 +139,9 @@ Una volta avviata l'analisi, l'utente dovrà attendere qualche minuto (in media 
   image("../../asset/analisi-in-corso.png", width: 50%),
   caption: [Messaggio di attesa durante l'analisi], 
 ) <analisi-in-corso>
-Attenzione: non è possibile avviare un'analisi in caso non ci siano stati nuovi commit nel repository dopo l'ultima analisi effettuata, in quanto non ci sarebbero cambiamenti da analizzare. In questo caso, il pulsante "Avvia Analisi" non sarà cliccabile e apparirà di un colore grigiastro.\
+Attenzione: *non è possibile avviare un'analisi in caso non ci siano stati nuovi commit nel repository dopo l'ultima analisi* effettuata, in quanto non ci sarebbero cambiamenti da analizzare. In questo caso, il pulsante "Avvia Analisi" non sarà cliccabile e apparirà di un colore grigiastro.\
 In caso durante l'analisi ci siano problemi che la portino a durare più di 15 minuti, apparirà un messaggio "L'analisi sta impiegando troppo tempo. Riprova più tardi". \
+*Non è possibile analizzare repository contenenti più di 65536 file*, in caso si tentasse di farlo apparirà un messaggio di errore. \
 Dopo la corretta conclusione dell'analisi, la pagina dei dettagli del repository fornirà la percentuale di copertura test del codice, della completezza della documentazione e della correttezza OWASP e la data dell'ultima analisi. Inoltre, sarà disponibile un report con i risultati dell'analisi, suddiviso in tre sezioni: OWASP, test e documentazione.
 #figure(
   image("../../asset/report1.png",),
