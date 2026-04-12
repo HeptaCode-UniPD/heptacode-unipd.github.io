@@ -198,7 +198,7 @@ def main():
     
     targets = [
         os.path.join(project_root, "docs", "CC"),
-        os.path.join(project_root, "docs", "RTB")
+        os.path.join(project_root, "docs", "PB")
     ]
     
     rtb_data = {} # Qui salviamo AdR, NdP, PdP, PdQ

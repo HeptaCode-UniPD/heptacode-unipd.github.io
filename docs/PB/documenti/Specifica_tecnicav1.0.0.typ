@@ -377,8 +377,9 @@ Il pipeline è strutturato in un job che esegue:
 + verifica delle metriche di qualità del codice, disponibili nel documento di #link("https://heptacode-unipd.github.io/docs/PB/Piano_di_Qualificav2.0.0.pdf")[Piano di Qualifica v2.0.0].
 
 = Architettura
-Il sistema è strutturato secondo un'architettura a microservizi, composta da tre componenti indipendenti che collaborano per fornire le funzionalità applicative ed una componente di frontend. Ogni microservizio utilizza una diversa architettura logica. \
+
 == Architettura logica
+L'ecosistema del progetto adotta pattern architetturali differenziati in funzione delle specifiche responsabilità di ciascun microservizio. \ MS1 e MS3 seguono un'architettura layered, scelta per la separazione chiara delle responsabilità, la semplicità strutturale e la coerenza con le convenzioni già consolidate nel progetto. \ MS2 adotta invece un paradigma Event-Driven, coerentemente con l'infrastruttura AWS su cui si basa: l'impiego di agenti Lambda orchestrati tramite Step Functions rende questo pattern non solo naturale, ma architetturalmente necessario. \ Il frontend adotta una Component-based Architecture, sfruttando il modello compositivo nativo di React.
 
 === Component-based Architecture
 Utilizzata nel frontend\
@@ -389,16 +390,22 @@ _Service_ #pad(left: 0.5cm)[Costituiscono un livello di astrazione orizzontale c
 _HttpClient_ #pad(left: 0.5cm)[Astrae la comunicazione HTTP centralizzando la gestione degli errori.]
 
 === Layered Architecture
-Utilizzata nel microservizio MS3\
+Utilizzata nei microservizi MS1 ed MS3; si suddivide nei seguenti livelli: \
 
 _Presentation Layer_ #pad(left: 0.5cm)[Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste o degli eventi in ingresso, della loro validazione e della trasformazione in strutture tipizzate prima che vengano propagate agli strati sottostanti.]
 _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con gli altri componenti del sistema. Questo layer è esposto tramite interfacce o contratti ben definiti, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta e dai dettagli tecnologici degli strati adiacenti.]
-_Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
 _Infrastructure Layer (MS1)_ #pad(left: 0.5cm)[Gestisce l'accesso alle API di servizi esterni (es. Github) o interni (es. Comunicazione fra MS1 e MS2).]
+_Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
 
+=== Event-Driven Architecture
+A causa della necessità di gestire processi analitici a lunga esecuzione in modo scalabile e asincrono, MS2 adotta un'architettura Serverless basata su eventi (Event-Driven), organizzata nei seguenti domini operativi:\
+
+_Event Producers_ #pad(left: 0.5cm)[Modulo di ricezione che gestisce le richieste sincrone esterne. Valida il payload e agisce da generatore (producer), innescando l'evento iniziale verso il sistema di orchestrazione e restituendo immediatamente un riferimento di tracciamento al chiamante.]
+_Event Orchestrator_ #pad(left: 0.5cm)[Cuore dell'architettura. Gestito tramite macchine a stati finiti su cloud, coordina il ciclo di vita dell'analisi instradando dinamicamente gli eventi tra i vari worker. Decide il piano di esecuzione, supervisiona l'esecuzione parallela e intercetta gli eventi di completamento o errore.]
+_Event Consumers_ #pad(left: 0.5cm)[Unità elaborative indipendenti (funzioni serverless) che si attivano in reazione agli eventi diramati dall'orchestratore. Prelevano i dati sorgente da uno storage condiviso, eseguono l'analisi tramite modelli AI e generano eventi di completamento per consentire la prosecuzione del workflow.]
 
 == Architettura di deployment
-L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale garantisce elevata scalabilità, resilienza e una totale indipendenza nello sviluppo e nel rilascio dei singoli componenti software. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
+L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale è motivata sia dalle esigenze tecniche del sistema — che combina componenti eterogenei, tra cui una parte serverless/agentica su AWS e servizi con architettura layered tradizionale — sia dai vantaggi intrinseci del paradigma: elevata scalabilità, resilienza e indipendenza nello sviluppo e nel rilascio dei singoli componenti. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
 
 *Comunicazione tra i servizi*
 #pad(left: 0.5cm)[A differenza dei sistemi basati su messaggistica asincrona, i microservizi comunicano tra loro tramite interfacce API REST (Representational State Transfer). L'adozione di questo protocollo garantisce una comunicazione chiara e ben definita tra i componenti, facilitando l'integrazione e le attività di debugging. Il modello sincrono consente inoltre un flusso di dati immediato, risultando particolarmente adatto alle operazioni agentiche che richiedono una risposta in tempo reale.]
@@ -426,9 +433,9 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 
 - *Adapter* \ Il pattern è utilizzato per isolare i microservizi dalle specificità delle librerie esterne e dei servizi cloud.
 
-- In MS3 (Authentication & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
-- In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
-- In MS1, traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di risolvere i commit senza dipendere direttamente dal formato del provider.
+  - In MS3 (Authentication & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
+  - In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
+  - In MS1, traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di risolvere i commit senza dipendere direttamente dal formato del provider.
 
 - *Remote Proxy* \
 Il componente #text(font: "Courier New")[AnalysisManagementInfrastructure] implementa il pattern Proxy. Esso fornisce un'interfaccia locale che rappresenta l'esecuzione di un processo remoto nel microservizio di analisi (MS2). Il proxy gestisce internamente la complessità della comunicazione HTTP e l'autenticazione tramite API Key, rendendo l'invocazione della pipeline asincrona trasparente al Service chiamante.
@@ -446,7 +453,7 @@ Il sistema utilizza il pattern Strategy definendo interfacce per la persistenza 
 
 L'architettura del microservizio di gestione (MS1) è progettata per fungere da gateway e orchestratore principale del sistema. Sviluppato in NestJS, espone le API REST per l'interazione con i client, gestisce la persistenza su MongoDB e coordina le chiamate asincrone verso il microservizio di analisi (MS2).
 
-#figure( [#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")] , caption: [Diagramma delle classi; Analisi Management Service - MS1])
+#figure([#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")], caption: [Diagramma delle classi; Analisi Management Service - MS1])
 
 ==== Classi MS1 - Presentation Layer
 
@@ -824,7 +831,7 @@ Pagina di autenticazione, esterna al RootLayout. Invoca _useIsLogged()_ per rein
 *Repositories* \ 
 Pagina principale dell'applicazione. Invoca _useIsLogged()_ e recupera lo _userId_ dalla sessione tramite _getUserID()_. All'inizio invoca _getRepositoriesByUser()_ e popola lo stato repositories. Filtra la lista in tempo reale tramite useMemo in base al valore della search bar. Renderizza ogni repository come elemento di lista con un link a /repository/:id e un _DeleteRepoButton_. Alla cancellazione riuscita, aggiorna lo stato locale rimuovendo l'elemento senza ricaricare la pagina.
 
-#figure( [#image("../../asset/diagr-architett/frontend/dettagliRepo.png")] , caption: [Diagramma componenti, DettagliRepo- frontend])
+#figure( [#image("../../asset/diagr-architett/frontend/dettaglirepo.png")] , caption: [Diagramma componenti, DettagliRepo- frontend])
 *DettagliRepo* \ 
 Pagina di dettaglio di un repository. Legge l'id dai parametri URL tramite useParams. All'inizio invoca in sequenza _getRepositoryById()_ e _getLastAnalysis()_. Espone la funzione fetchData passata come _onSuccess_ a _StartAnalysisButton_, così al termine del polling la pagina si ricarica automaticamente. Se _analysis.status_ è "processing" passa il _commitId_ come _initialJobId_ a _StartAnalysisButton_ per riprendere il polling. Composta internamente da InfoRepo. \
 
