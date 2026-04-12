@@ -366,7 +366,7 @@ Step Functions orchestra l'intero flusso agentico come macchina a stati: gestisc
 S3 svolge due ruoli distinti nella piattaforma: archivia il repository clonato come ZIP che gli agenti recuperano autonomamente per l'analisi, e funge da bus di stato asincrono tra gli agenti paralleli - ogni domain agent scrive il proprio report parziale su S3 al termine dell'elaborazione, e l'orchestratore aggregatore li recupera e cancella nella fase successiva. Questo disaccoppia i componenti paralleli senza richiedere comunicazione diretta tra Lambda. \
 S3 viene inoltre utilizzato per l'hosting degli asset statici del frontend (MS0): il bundle prodotto da Vite in fase di build viene caricato su un bucket S3 configurato per il website hosting statico.
 ==== AWS Fargate
-Fargate è il runtime serverless per container, utilizzato per hostare il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalano automaticamente e il traffico è instradato tramite Application Load Balancer. È la scelta naturale per i componenti con ciclo di vita HTTP continuo, a differenza della logica agentica che per sua natura è event-driven e gestita da Lambda.
+Fargate è il runtime serverless per container, utilizzato per hostare il frontend e il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalando automaticamente. È la scelta naturale per i componenti con ciclo di vita HTTP continuo, a differenza della logica agentica che per sua natura è event-driven e gestita da Lambda.
 
 == Tecnologie per Continuous Integration
 === GitHub Actions
@@ -377,19 +377,35 @@ Il pipeline è strutturato in un job che esegue:
 + verifica delle metriche di qualità del codice, disponibili nel documento di #link("https://heptacode-unipd.github.io/docs/PB/Piano_di_Qualificav2.0.0.pdf")[Piano di Qualifica v2.0.0].
 
 = Architettura
-Il sistema è strutturato secondo un'architettura a microservizi, composta da tre componenti indipendenti che collaborano per fornire le funzionalità applicative ed una componente di frontend. \ Ciascun microservizio adotta internamente una Layered Architecture, suddividendo le responsabilità in strati distinti e garantendo separazione delle competenze (separation of concerns).
+
 == Architettura logica
+L'ecosistema del progetto adotta pattern architetturali differenziati in funzione delle specifiche responsabilità di ciascun microservizio. \ MS1 e MS3 seguono un'architettura layered, scelta per la separazione chiara delle responsabilità, la semplicità strutturale e la coerenza con le convenzioni già consolidate nel progetto. \ MS2 adotta invece un paradigma Event-Driven, coerentemente con l'infrastruttura AWS su cui si basa: l'impiego di agenti Lambda orchestrati tramite Step Functions rende questo pattern non solo naturale, ma architetturalmente necessario. \ Il frontend adotta una Component-based Architecture, sfruttando il modello compositivo nativo di React.
+
+=== Component-based Architecture
+Utilizzata nel frontend\
+
+_Componenti_ #pad(left: 0.5cm)[Costituiscono le unità fondamentali dell'interfaccia utente. Ogni componente è autocontenuto e gestisce il proprio stato locale, occupandosi della resa visiva e dell'interazione con l'utente. I componenti possono essere composti tra loro tramite props e callback, e accedono direttamente ai service di cui hanno bisogno senza vincoli gerarchici imposti.]
+_Pagine_ #pad(left: 0.5cm)[Aggregano i componenti in viste complete associate a una route specifica. Coordinano il flusso dei dati tra i componenti figli tramite props e callback, e gestiscono lo stato condiviso all'interno della vista. Come i componenti, accedono direttamente ai service necessari.]
+_Service_ #pad(left: 0.5cm)[Costituiscono un livello di astrazione orizzontale che incapsula la logica di comunicazione con il backend e la gestione della sessione. Sono moduli stateless senza istanze, importabili direttamente da qualsiasi componente o pagina che ne abbia necessità, senza che sia richiesto il passaggio attraverso intermediari.]
+_HttpClient_ #pad(left: 0.5cm)[Astrae la comunicazione HTTP centralizzando la gestione degli errori.]
+
 === Layered Architecture
-Ogni microservizio è organizzato nei seguenti layer:\
+Utilizzata nei microservizi MS1 ed MS3; si suddivide nei seguenti livelli: \
 
-_Presentation Layer_ #pad(left: 0.5cm)[Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste o degli eventi in ingresso, della loro validazione e della trasformazione in strutture tipizzate prima che vengano propagate agli strati sottostanti. Nel contesto frontend, questo layer corrisponde ai componenti di interfaccia utente e alla gestione degli input dell'utente.]
+_Presentation Layer_ #pad(left: 0.5cm)[Costituisce il punto di ingresso del microservizio. Si occupa della ricezione delle richieste o degli eventi in ingresso, della loro validazione e della trasformazione in strutture tipizzate prima che vengano propagate agli strati sottostanti.]
 _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservizio, orchestrando le operazioni sui dati e coordinando le interazioni con gli altri componenti del sistema. Questo layer è esposto tramite interfacce o contratti ben definiti, in modo da disaccoppiare la logica applicativa dalla sua implementazione concreta e dai dettagli tecnologici degli strati adiacenti.]
-_Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
 _Infrastructure Layer (MS1)_ #pad(left: 0.5cm)[Gestisce l'accesso alle API di servizi esterni (es. Github) o interni (es. Comunicazione fra MS1 e MS2).]
+_Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
 
+=== Event-Driven Architecture
+A causa della necessità di gestire processi analitici a lunga esecuzione in modo scalabile e asincrono, MS2 adotta un'architettura Serverless basata su eventi (Event-Driven), organizzata nei seguenti domini operativi:\
+
+_Event Producers_ #pad(left: 0.5cm)[Modulo di ricezione che gestisce le richieste sincrone esterne. Valida il payload e agisce da generatore (producer), innescando l'evento iniziale verso il sistema di orchestrazione e restituendo immediatamente un riferimento di tracciamento al chiamante.]
+_Event Orchestrator_ #pad(left: 0.5cm)[Cuore dell'architettura. Gestito tramite macchine a stati finiti su cloud, coordina il ciclo di vita dell'analisi instradando dinamicamente gli eventi tra i vari worker. Decide il piano di esecuzione, supervisiona l'esecuzione parallela e intercetta gli eventi di completamento o errore.]
+_Event Consumers_ #pad(left: 0.5cm)[Unità elaborative indipendenti (funzioni serverless) che si attivano in reazione agli eventi diramati dall'orchestratore. Prelevano i dati sorgente da uno storage condiviso, eseguono l'analisi tramite modelli AI e generano eventi di completamento per consentire la prosecuzione del workflow.]
 
 == Architettura di deployment
-L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale garantisce elevata scalabilità, resilienza e una totale indipendenza nello sviluppo e nel rilascio dei singoli componenti software. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
+L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale è motivata sia dalle esigenze tecniche del sistema — che combina componenti eterogenei, tra cui una parte serverless/agentica su AWS e servizi con architettura layered tradizionale — sia dai vantaggi intrinseci del paradigma: elevata scalabilità, resilienza e indipendenza nello sviluppo e nel rilascio dei singoli componenti. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
 
 *Comunicazione tra i servizi*
 #pad(left: 0.5cm)[A differenza dei sistemi basati su messaggistica asincrona, i microservizi comunicano tra loro tramite interfacce API REST (Representational State Transfer). L'adozione di questo protocollo garantisce una comunicazione chiara e ben definita tra i componenti, facilitando l'integrazione e le attività di debugging. Il modello sincrono consente inoltre un flusso di dati immediato, risultando particolarmente adatto alle operazioni agentiche che richiedono una risposta in tempo reale.]
@@ -397,8 +413,6 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 #pad(left: 0.5cm)[Il deployment dei microservizi avviene in ambienti virtualizzati tramite Docker. Ogni microservizio è incapsulato in un container indipendente, operante in un ambiente isolato che previene conflitti di dipendenze e interferenze tra i servizi. Questa soluzione semplifica le fasi di test, rilascio e aggiornamento, assicurando che il software si comporti in modo identico in qualsiasi ambiente di esecuzione. La natura dei container permette infine di replicare i singoli servizi in modo rapido ed efficiente, consentendo al sistema di adattarsi dinamicamente a carichi di lavoro variabili.]
 
 === Microservizi
-
-*Microservizio Frontend - MS0* #pad(left: 0.5cm)[Costituisce il punto di accesso dell'utente al sistema. Espone le seguenti funzionalità: autenticazione e visualizzazione del profilo utente, inserimento dell’URL di un repository GitHub da analizzare, e consultazione dei risultati dell'analisi. Quest'ultima comprende tre aree distinte: copertura dei test, qualità della documentazione e vulnerabilità di sicurezza secondo le linee guida OWASP. Per ciascuna area vengono presentati i suggerimenti di modifica e le motivazioni per criticità rilevate.]
 
 *Microservizio di Analysis Management - MS1*  #pad(left: 0.5cm)[Ha il compito di verificare se, per un dato repository, sia già presente in memoria un'analisi relativa all'ultimo commit disponibile. Qualora l'analisi risulti assente o non aggiornata, il microservizio provvede ad inoltrare la richiesta di analisi al microservizio competente, evitando elaborazioni ridondanti e ottimizzando l'utilizzo delle risorse computazionali.]
 
@@ -421,16 +435,13 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 
   - In MS3 (Authentication & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
   - In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
-  - In MS1, traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di risolvere i commit senza dipendere direttamente dal formato del provider.
-
-- *Remote Proxy* \
-Il componente #text(font: "Courier New")[AnalysisManagementInfrastructure] implementa il pattern Proxy. Esso fornisce un'interfaccia locale che rappresenta l'esecuzione di un processo remoto nel microservizio di analisi (MS2). Il proxy gestisce internamente la complessità della comunicazione HTTP e l'autenticazione tramite API Key, rendendo l'invocazione della pipeline asincrona trasparente al Service chiamante.
+  - In MS1, #text(font: "Courier New")[GithubAdapter] traduce le richieste interne in chiamate conformi all'API di GitHub tramite Octokit, incapsulando il parsing dell'URL, la risoluzione del branch di default e la gestione degli errori specifici del provider.
 
 - *Facade* \
-Il layer #text(font: "Courier New")[AnalysisManagementPresentation] agisce come una Facade, fornendo un punto di ingresso semplificato verso l'esterno. Questo componente nasconde la complessità del workflow (che coinvolge GitHub per lo SHA, il DB per la cache e MS2 per l'analisi) dietro singoli endpoint REST, offrendo ai client un'interfaccia di alto livello per la gestione delle analisi.
+In MS1, ogni layer agisce come una Facade per il layer sottostante, esponendo un'interfaccia semplificata che nasconde la complessità della collaborazione tra più componenti. Il layer #text(font: "Courier New")[AnalysisManagementPresentation] espone singoli endpoint REST che celano al client l'intero workflow sottostante: la risoluzione del commit SHA tramite GitHub, la verifica della cache su MongoDB, l'avvio asincrono dell'analisi su MS2 e la gestione degli errori. Analogamente, #text(font: "Courier New")[AnalysisManagementService] presenta un'interfaccia coesa al layer di presentazione nascondendo l'orchestrazione tra persistenza e infrastruttura, e #text(font: "Courier New")[AnalysisManagementInfrastructure] espone metodi semplici verso il service celando la complessità della comunicazione con GitHub e con il gateway AWS Lambda.
 
 - *Strategy* \
-Il sistema utilizza il pattern Strategy definendo interfacce per la persistenza e l'infrastruttura. Questo permette al sistema di scambiare a runtime l'implementazione effettiva (ad esempio, passando da una strategia di persistenza reale a una di test/mock) senza che il service debba conoscere i dettagli implementativi del componente iniettato.
+Il sistema utilizza il pattern Strategy in modo pervasivo: ogni layer comunica esclusivamente attraverso interfacce astratte (#text(font: "Courier New")[AnalysisManagementServiceInterface], #text(font: "Courier New")[AnalysisManagementPersistenceInterface], #text(font: "Courier New")[AnalysisManagementInfrastructureInterface]), senza mai dipendere direttamente dalle implementazioni concrete. Le classi concrete appaiono solo nel composition root (#text(font: "Courier New")[AppModule]), dove il container IoC di NestJS le inietta tramite Dependency Injection. Questo permette di sostituire a runtime qualsiasi implementazione — ad esempio sostituendo la persistenza reale con un mock nei test — senza modificare il codice dei layer superiori.
 
 = Progettazione
 == Progettazione backend
@@ -444,153 +455,169 @@ L'architettura del microservizio di gestione (MS1) è progettata per fungere da 
 ==== Classi MS1 - Presentation Layer
 
 *AnalysisManagementPresentation* \
-Punto di ingresso HTTP (NestJS). Gestisce il ciclo di vita delle richieste e riceve i feedback dai sistemi esterni. \
+Punto di ingresso HTTP (NestJS). Gestisce il ciclo di vita delle richieste REST e riceve i risultati asincroni da MS2 tramite webhook. Implementa l'interfaccia #text(font: "Courier New")[AnalysisManagement] e dipende da #text(font: "Courier New")[AnalysisManagementServiceInterface], senza conoscere l'implementazione concreta del service. \
 _Attributi privati:_
-  - #text(font: "Courier New")[analysisService: AnalysisManagementServiceInterface] - istanza del service di dominio.
+  - #text(font: "Courier New")[analysisService: AnalysisManagementServiceInterface] - istanza del service di dominio, iniettata tramite DI.
 
 _Metodi pubblici:_
-  - #text(font: "Courier New")[requestAnalysis(payload: RequestDTO)] - Valida l'URL del repository, genera un jobId e avvia il workflow. Restituisce immediatamente un oggetto AnalysisResponseDTO con lo stato 'processing'.
-  - #text(font: "Courier New")[getStatus(jobId: string)] - Restituisce lo stato corrente di un'analisi specifica tramite polling.
-  - #text(font: "Courier New")[viewLastAnalysis(repoUrl: string)] - Recupera i dati dell'ultima analisi completata per un dato repository.
-  - #text(font: "Courier New")[handleWebhook(headers, payload)] - Endpoint critico per la ricezione dei risultati da MS2. Valida la MS1_API_KEY e aggiorna il record nel database.
+  - #text(font: "Courier New")[requestAnalysis(payload: RequestDTO)] - valida l'URL del repository e delega al service l'avvio del workflow. Restituisce immediatamente un #text(font: "Courier New")[AnalysisResponseDTO] con stato `processing` o `done` se l'analisi è già disponibile in cache.
+  - #text(font: "Courier New")[getStatus(jobId: string)] - restituisce lo stato corrente di un'analisi tramite polling sul jobId fornito.
+  - #text(font: "Courier New")[viewLastAnalysis(repoUrl: string)] - recupera i dati dell'ultima analisi disponibile per un dato repository, includendo il flag #text(font: "Courier New")[isLatest] che indica se il commit analizzato è ancora l'ultimo su GitHub.
+  - #text(font: "Courier New")[handleWebhook(headers, payload: AnalysisResponseDTO)] - endpoint per la ricezione dei risultati da MS2 al termine dell'analisi. Valida la #text(font: "Courier New")[MS1_API_KEY] nell'header #text(font: "Courier New")[x-ms1-key] e, se autenticata, persiste i risultati tramite il service. Lancia #text(font: "Courier New")[UnauthorizedException] in caso di chiave mancante o errata.
 
 ==== Classi MS1 - Business Layer
 
 *AnalysisManagementService* \
-Service principale che implementa la logica di business e il coordinamento tra persistenza e infrastruttura. \
+Service principale che implementa #text(font: "Courier New")[AnalysisManagementServiceInterface] e coordina la logica applicativa tra persistenza e infrastruttura. Dipende esclusivamente dalle interfacce astratte dei layer sottostanti. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - Verifica se il commit è già stato analizzato (cache logic). Se nuovo, salva lo stato iniziale nel DB e invoca il trigger su MS2.
-  - #text(font: "Courier New")[getAnalysisStatus(jobId: string)] - Interroga il DB per determinare se l'analisi è conclusa o ancora in corso.
-  - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - Conclude il processo salvando i dettagli dell'analisi (vulnerabilità, qualità, documentazione) ricevuti dal webhook.
+  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - recupera il commit SHA più recente tramite l'infrastruttura e verifica in persistenza se esiste già un'analisi per quel commit. Se presente e completata restituisce stato `done`; se in corso restituisce `processing`; se in errore o assente genera un nuovo #text(font: "Courier New")[jobId] (UUID), salva un record con stato `processing` e avvia l'analisi su MS2 in modo asincrono. I fallimenti asincroni dell'infrastruttura vengono intercettati e registrati tramite #text(font: "Courier New")[updateAnalysisToError].
+  - #text(font: "Courier New")[getAnalysisStatus(jobId: string)] - interroga la persistenza tramite #text(font: "Courier New")[getAnalysisByJob]. Restituisce `done` se #text(font: "Courier New")[analysisDetails] è popolato, `processing` se vuoto, `error` se il record non esiste o riporta uno stato di errore.
+  - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - persiste i risultati ricevuti via webhook, delegando direttamente alla persistenza.
+  - #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - recupera l'ultima analisi dalla persistenza e la arricchisce con il flag #text(font: "Courier New")[isLatest], confrontando il #text(font: "Courier New")[commitId] memorizzato con il commit SHA corrente su GitHub.
 
 ==== Classi MS1 - Infrastructure Layer
 
 *AnalysisManagementInfrastructure* \
-Gestisce le comunicazioni esterne verso GitHub e il Gateway di MS2. \
+Implementa #text(font: "Courier New")[AnalysisManagementInfrastructureInterface] e gestisce le comunicazioni verso i sistemi esterni: GitHub per la risoluzione dei commit e il gateway AWS per l'avvio delle analisi. Espone al service un'interfaccia semplice, celando la complessità delle chiamate HTTP e dell'autenticazione. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[getLatestCommitSha(repoUrl: string)] - Utilizza il GithubAdapter per ottenere l'hash dell'ultimo commit dal branch principale.
-  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - Esegue la chiamata HTTP POST verso l'endpoint AWS configurato (MS2_GATEWAY_URL), passando il payload necessario all'orchestrazione serverless.
+  - #text(font: "Courier New")[getLatestCommitSha(repoUrl: string)] - delega a #text(font: "Courier New")[GithubAdapter] per ottenere l'hash dell'ultimo commit del branch di default del repository.
+  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - esegue una chiamata HTTP POST verso il gateway AWS configurato tramite la variabile d'ambiente #text(font: "Courier New")[MS2_GATEWAY_URL], autenticata con #text(font: "Courier New")[MS2_API_KEY]. Il payload include #text(font: "Courier New")[repoUrl], #text(font: "Courier New")[jobId] e #text(font: "Courier New")[commitSha]. Lancia eccezione se le variabili d'ambiente non sono configurate o se la chiamata fallisce.
 
 *GithubAdapter* \
-Wrapper per le API di GitHub. \
+Wrapper per le API REST di GitHub tramite la libreria Octokit. Isola il resto del sistema dalle specificità del provider VCS. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[getLatestCommit(repoUrl: string)] - Interroga GitHub tramite Octokit per risolvere l'owner, il nome del repo e l'ultimo SHA del branch di default.
+  - #text(font: "Courier New")[getLatestCommit(repoUrl: string)] - effettua il parsing dell'URL per estrarre owner e nome del repository, interroga GitHub per risolvere il branch di default e ne recupera il commit SHA più recente. Gestisce e traduce gli errori specifici dell'API GitHub in #text(font: "Courier New")[HttpException].
 
 ==== Classi MS1 - Data Layer
 
 *AnalysisManagementPersistence* \
-Modulo di interazione con MongoDB tramite Mongoose. \
+Implementa #text(font: "Courier New")[AnalysisManagementPersistenceInterface] e gestisce le operazioni su MongoDB tramite Mongoose, traducendo tra il modello di dominio (DTO) e i documenti del database. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[getAnalysisByCommit(commitId: string)] - Cerca analisi pregresse basate sull'ID univoco del commit.
-  - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - Esegue operazioni di upsert (update or insert) per mantenere sincronizzato lo stato dell'analisi nel database.
-  - #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - Recupera l'ultimo documento inserito per un repository, ordinando per data di creazione.
+  - #text(font: "Courier New")[getAnalysisByCommit(commitId: string)] - recupera un'analisi esistente per #text(font: "Courier New")[commit_id]. Mappa il documento MongoDB in un #text(font: "Courier New")[AnalysisResponseDTO], impostando #text(font: "Courier New")[analysisDetails] a lista vuota se #text(font: "Courier New")[analysis_data] è assente.
+  - #text(font: "Courier New")[getAnalysisByJob(jobId: string)] - recupera un'analisi per #text(font: "Courier New")[job_id]. Estrae i punteggi numerici dai campi #text(font: "Courier New")[summary] e #text(font: "Courier New")[report] di ogni agente cercando il pattern "Global Maturity Score", e li popola nel campo #text(font: "Courier New")[scores] del DTO restituito.
+  - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - esegue un upsert su #text(font: "Courier New")[job_id]: crea il documento se non esiste, altrimenti lo aggiorna. Include #text(font: "Courier New")[analysis_data] nel #text(font: "Courier New")[set] solo se #text(font: "Courier New")[analysisDetails] è presente e non vuoto, evitando di sovrascrivere dati già presenti con liste vuote.
+  - #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - recupera il documento più recente per #text(font: "Courier New")[repository_url], ordinando per #text(font: "Courier New")[createdAt] decrescente. Estrae i punteggi con la stessa logica di #text(font: "Courier New")[getAnalysisByJob].
+  - #text(font: "Courier New")[updateAnalysisToError(jobId: string, errorMessage: string)] - aggiorna lo stato di un'analisi a `error` e registra il messaggio di errore, utilizzato per gestire i fallimenti asincroni dell'infrastruttura.
 
 ==== MS1 - Workflow di Comunicazione
-Il servizio MS1 opera come un'orchestratore a stato. Di seguito la logica di interazione con MS2:
+Il microservizio MS1 opera come orchestratore a stato. Di seguito la logica di interazione con MS2:
 
-1. *Inbound*: Ricezione richiesta via REST.
-2. *Pre-processing*: Risoluzione del Commit SHA via GitHub API.
-3. *Persistenza*: Creazione record con stato `processing`.
-4. *Outbound*: Chiamata HTTP asincrona verso AWS Step Functions (MS2).
-5. *Callback*: MS2 invia i risultati all'endpoint `/webhook`, portando lo stato a `done`.
+1. *Inbound*: Ricezione della richiesta via REST con l'URL del repository.
+2. *Pre-processing*: Risoluzione del commit SHA corrente tramite GitHub API (#text(font: "Courier New")[GithubAdapter]).
+3. *Cache check*: Verifica in MongoDB se esiste già un'analisi per quel commit. Se presente e completata, risposta immediata con stato `done`; se in corso, risposta con `processing` e il #text(font: "Courier New")[jobId] esistente.
+4. *Persistenza*: Creazione del record con stato `processing` e #text(font: "Courier New")[jobId] univoco (UUID).
+5. *Outbound*: Chiamata HTTP asincrona verso il gateway AWS (MS2), autenticata tramite API Key.
+6. *Error handling*: I fallimenti asincroni dell'infrastruttura aggiornano il record a stato `error` tramite #text(font: "Courier New")[updateAnalysisToError].
+7. *Callback*: MS2 invia i risultati all'endpoint `/analysis/webhook`, autenticato tramite #text(font: "Courier New")[x-ms1-key]. Il service persiste i dati e porta lo stato del record a `done`.
 
 #pagebreak()
 === Analisi dei Repository - MS2
 
-L'architettura del microservizio di analisi (MS2) è progettata per gestire processi a lunga esecuzione in modo asincrono, separando la ricezione della richiesta dal workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura serverless su AWS, utilizzando Step Functions per il controllo del workflow, AWS Bedrock per l'analisi tramite LLM e S3 per la persistenza dei dati e dei report intermedi.
+L'architettura del microservizio di analisi (MS2) sfrutta un'architettura Event-Driven e Serverless. Il sistema è progettato per gestire processi a lunga esecuzione in modo asincrono, separando l'interfaccia di ricezione delle richieste dall'orchestrazione del workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura AWS, utilizzando Step Functions per la gestione degli stati e degli eventi, AWS Bedrock per l'elaborazione AI e S3 per lo storage degli artefatti.
 
-==== Classi MS2 - Presentation Layer
+==== Entry Point e Trigger degli Eventi
 
-*AppController* \
-Punto di ingresso HTTP (NestJS) per l'avvio delle pipeline di analisi. Riceve le richieste dal frontend o da MS1. \
-_Attributi privati:_
-  - #text(font: "Courier New")[appService: AppService] - istanza iniettata del service per l'analisi.
+Questo modulo funge da interfaccia di ingresso e ha l'unico scopo di ricevere le richieste sincrone, validarle e innescare in modo asincrono gli eventi che avvieranno la pipeline di analisi.
 
-_Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] - riceve l’URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente il messaggio di successo, un jobId e l’executionArn per il tracciamento.
+*AppController*\
+Punto di ingresso HTTP (NestJS) (Driving Adapter) per l'avvio delle pipeline di analisi. Riceve le richieste dal frontend o da MS1.
 
-*AppService* \
-Service di backend che coordina l'innesco dell'infrastruttura asincrona AWS. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] - coordina l'avvio della pipeline inoltrando il payload all’adapter Step Functions tramite startStepFunctionExecution().
+Attributi privati:
+- #text(font: "Courier New")[appService: AppService] - istanza iniettata del service per l'innesco dell'analisi.
 
-*AwsStepFunctionsAdapter* \
-Componente di adattamento per l'integrazione con AWS Step Functions. Isola il framework NestJS dall'utilizzo diretto dell'SDK AWS. \
-_Attributi privati:_
-  - #text(font: "Courier New")[sfnClient: SFNClient] — istanza del client AWS per l'invocazione dei servizi di orchestrazione.
+Metodi pubblici:
+- #text(font: "Courier New")[startAnalysis(payload: AnalysisRequestDto)] - riceve l’URL del repository, valida il payload tramite DTO e invoca appService.triggerAnalysis(). Restituisce immediatamente una risposta contenente un jobId per il tracciamento asincrono.
 
-_Metodi pubblici:_
-  - #text(font: "Courier New")[startStepFunctionExecution(payload: any)] — riceve il payload di analisi, inizializza un `StartExecutionCommand` e invoca la State Machine configurata tramite l'ARN presente nelle variabili d'ambiente. Restituisce l'ARN dell'esecuzione avviata.
+*AppService*\
+Core applicativo che isola la logica di innesco, coordinando la preparazione dell'infrastruttura AWS.
 
-#figure( [#image("../../asset/diagr-architett/UML/AnalysisService.png")] , caption: [Presentation Layer MS2])
+Metodi pubblici:
+- #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] - coordina l'avvio della pipeline inoltrando il payload all’adapter Step Functions tramite startStepFunctionExecution().
 
-==== Classi MS2 - Business Layer
+*AwsStepFunctionsAdapter*\
+Componente adapter per l'integrazione con AWS Step Functions. Isola il framework NestJS dall'utilizzo diretto dell'SDK AWS.
 
-===== Orchestrazione e Workflow
+Attributi privati:
+- #text(font: "Courier New")[sfnClient: SFNClient] — istanza del client AWS per la pubblicazione degli eventi di orchestrazione.
 
-*OrchestratorLambda* \
-Componente centrale che gestisce il ciclo di vita dell'analisi in Step Functions, suddividendo il processo in fasi decisionali e di consolidamento. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[orchestratorHandler(event: any)] - punto di ingresso Lambda che esegue le azioni principali in base al parametro action. Se action è PLAN valuta i metadati per generare il piano di esecuzione; se è AGGREGATE preleva i report da S3, aggrega i risultati per area e invoca il Master Lead Agent per il polishing finale.
+Metodi pubblici:
+- #text(font: "Courier New")[startStepFunctionExecution(payload: any)] — riceve il payload di analisi, inizializza un StartExecutionCommand e invoca la State Machine configurata tramite l'ARN presente nelle variabili d'ambiente. Restituisce l'ARN dell'esecuzione avviata.
 
-===== Agenti di Analisi Tematica
+#figure( [#image("../../asset/diagr-architett/UML/AnalysisService.png")] , caption: [Entry Point e Adattatori MS2])
 
-*OwaspAgentLambda* \
-Funzione Lambda specializzata nell'esecuzione dell'analisi di sicurezza (OWASP) del codice sorgente. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[owaspAgentHandler(event: unknown)] - scarica il file ZIP da S3 tramite unzipRepoToTemp(), utilizza SmartBundler per creare i bundle, coordina i sotto-agenti Bedrock (Dependency, Credentials, Core) e salva il report JSON finale sul bucket S3.
+==== Orchestrazione degli Eventi e Workflow (AWS Step Functions)
 
+Poiché il core del sistema è implementato tramite funzioni Lambda serverless, prive di stato persistente e guidate dagli eventi, la loro esecuzione è regolata da un pattern Orchestrator: la State Machine definisce l'orchestrazione dei task, gestendo le transizioni di stato e l'invocazione sequenziale e parallela degli agenti specifici.
+
+#figure( [#image("../../asset/diagr-architett/UML/stepfunctions_graph.png", width: 40%)] , caption: [Workflow di orchestrazione degli eventi tramite AWS Step Functions])
+
+*PullRepoLambda*\
+Worker innescato all'inizio del workflow per l'acquisizione del contesto sorgente.
+
+Metodi pubblici:
+- #text(font: "Courier New")[handler(event: any)] - reagisce all'evento iniziale clonando il repository Git in una cartella temporanea, esegue il checkout sul commit specificato, estrae i metadati (tag, branch, changelog), comprime l'archivio in un file ZIP e lo carica su S3 emettendo un evento di completamento per le fasi successive.
+
+*OrchestratorLambda*\
+Componente centrale che gestisce il ciclo di vita dell'analisi instradando dinamicamente il flusso degli eventi.
+
+Metodi pubblici:
+- #text(font: "Courier New")[orchestratorHandler(event: any)] - punto di ingresso Lambda che esegue le azioni in base al payload dell'evento. Se action è PLAN valuta i metadati per generare il piano di esecuzione e attivare determinati agenti; se è AGGREGATE attende l'evento di completamento di tutti gli agenti, preleva i report parziali da S3, aggrega i risultati e cura la struttura finale del report.
+
+*WebhookSenderLambda*\
+Gestisce il completamento con successo della pipeline.
+
+Metodi pubblici:
+- #text(font: "Courier New")[handler(event: any)] — reagisce alla fine del workflow inviando all’URL configurato un payload JSON contenente il report Markdown, "repoUrl", "jobId", "commitId" e lo stato "done". La richiesta è protetta da API Key.
+
+*FailureHandlerLambda*\
+Gestisce gli eventi di errore della pipeline.
+
+Metodi pubblici:
+- #text(font: "Courier New")[handler(event: any)] - intercetta eventi di errore o crash non gestiti da AWS Step Functions e trasmette la tipologia dell'errore (errorType, cause) al sistema chiamante.
+
+==== Agenti di Analisi Tematica
+
+Le Lambda di analisi operano in reazione agli eventi diramati dal nodo dell'orchestratore, eseguendo task in parallelo sui dati condivisi su S3.
+
+*OwaspAgentLambda*\
+Funzione Lambda specializzata nell'esecuzione dell'analisi di sicurezza (OWASP).
+
+Metodi pubblici:
+- #text(font: "Courier New")[owaspAgentHandler(event: unknown)] - scarica il file ZIP da S3 tramite unzipRepoToTemp(), utilizza SmartBundler per creare i frammenti di codice da analizzare, coordina i sotto-agenti Bedrock (Dependency, Credentials, Core) e consolida i risultati salvando il report JSON finale sul bucket S3 (Gather).
 *TestAgentLambda* \
-Funzione Lambda specializzata nell'esecuzione dell'analisi di qualità e testing del codice sorgente. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[testAgentHandler(event: unknown)] - estrae e impacchetta il codice sorgente, invoca in parallelo i sub-agenti Bedrock (QA, Boilerplate, Code Quality), consolida la sintesi e salva il report JSON su S3.
+Funzione Lambda per l'analisi del testing.
+
+Metodi pubblici:
+- #text(font: "Courier New")[testAgentHandler(event: unknown)] - estrae e impacchetta il codice sorgente, invoca in parallelo i sub-agenti Bedrock (QA, Boilerplate, Code Quality), ne aggrega la sintesi e pubblica il report JSON su S3.
 
 *DocsAgentLambda* \
-Funzione Lambda specializzata nell'analisi della documentazione tecnica e degli standard legali/normativi del repository. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[docAgentHandler(event: unknown)] - estrae i sorgenti, delega a sub-agenti (Tech Reviewer, Compliance Officer) la revisione documentale e salva il report aggregato su S3.
+Funzione Lambda per la revisione della documentazione tecnica e degli standard legali/normativi.
 
-==== Classi MS2 - Data Layer
+Metodi pubblici:
+- #text(font: "Courier New")[docAgentHandler(event: unknown)] - estrae i sorgenti, delega ai sub-agenti (Tech Reviewer, Compliance Officer) la revisione documentale e deposita il report aggregato su S3.
 
-*DecompressioneZipTool* \
-Modulo di utilità per l'interazione con AWS S3 in fase di lettura. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo.
+==== Strumenti, Utility e Adattatori Dati
 
-==== MS2 - Workflow di Orchestrazione
-Poiché le componenti del Business Layer sono implementate come funzioni Lambda serverless, prive di stato persistente e non istanziabili come oggetti, la loro struttura non si presta a una rappresentazione tramite Class Diagram UML. Il workflow di orchestrazione e le dipendenze tra queste componenti sono pertanto illustrati mediante il grafico di esecuzione della AWS Step Functions State Machine riportato di seguito.
-
-  #figure( [#image("../../asset/diagr-architett/UML/stepfunctions_graph.png", width: 40%)] , caption: [Workflow di orchestrazione degli agenti tramite AWS Step Functions])
-
-===== Strumenti e Utility
+Queste classi forniscono supporto all'infrastruttura elaborativa agendo come strumenti ausiliari per le Lambda, garantendo accesso ai dati e integrazione con i modelli di intelligenza artificiale.
 
 *AgentInvoker* \
-Modulo responsabile della comunicazione resiliente con l'infrastruttura AWS Bedrock Agents. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] - gestisce l'invocazione dell'AI. Implementa il Tool-use denial per forzare l'output testuale e include logiche di retry esponenziale per gestire il throttling.
-  - #text(font: "Courier New")[extractFirstMeaningfulLine(report: string, emojiPattern: RegExp)] - estrae la sintesi dinamica dal report Markdown per il riepilogo globale.
+Modulo responsabile della comunicazione  con l'infrastruttura ad eventi di AWS Bedrock Agents.
 
-*SmartBundler* \
-Wrapper per l'impacchettamento del codice sorgente, ottimizzato per rientrare nei limiti di contesto dei LLM tramite la libreria repomix. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[createSourceChunks(extractPath: string)] — suddivide il sorgente in porzioni sequenziali (chunk) basate sulla costante `MAX_BUNDLE_CHARS` (150.000 caratteri) rispettando i confini dei file tramite analisi dei delimitatori repomix.
-  - #text(font: "Courier New")[createFullChunks(extractPath: string)] — suddivide l'intero contenuto del repository in chunk per analisi complete (es. scansione credenziali).
-  - #text(font: "Courier New")[extractImportedLibraries(sourceChunks: string | string[])] — esegue l'analisi statica tramite espressioni regolari per identificare le dipendenze dichiarate senza l'uso di modelli AI.
+Metodi pubblici:
+- #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] - gestisce l'invocazione dell'AI. Include logiche di retry per gestire ritardi o throttling.
 
-*PullRepoLambda* \
-Gestisce la fase di acquisizione iniziale del codice sorgente dal provider esterno. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] - clona il repository Git in una cartella temporanea, esegue il checkout sul commit specificato, estrae i metadati (tag, branch, changelog), comprime l'archivio in un file ZIP e lo carica su S3 per le fasi successive.
+*SmartBundler*\
+Componente chiave per l'implementazione della suddivisione del codice in chunk, ottimizzato per rientrare nei limiti di contesto dei LLM tramite la libreria repomix.
 
-*WebhookSenderLambda* \
-Gestisce la notifica di completamento della pipeline. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] — invia all’URL configurato un payload JSON contenente il report Markdown, "repoUrl", "jobId", "commitId" e lo stato "done". La richiesta è protetta da API Key.
+Metodi pubblici:
+- #text(font: "Courier New")[createSourceChunks(extractPath: string)] — suddivide il sorgente in porzioni sequenziali (chunk) basate sulla costante MAX_BUNDLE_CHARS (150.000 caratteri) rispettando i confini dei file tramite analisi dei delimitatori repomix.
+- #text(font: "Courier New")[createFullChunks(extractPath: string)] — suddivide l'intero contenuto del repository in chunk per analisi che richiedono visibilità globale.
 
-*FailureHandlerLambda* \
-Gestisce le notifiche in caso di fallimento della pipeline asincrona. \
-_Metodi pubblici:_
-  - #text(font: "Courier New")[handler(event: any)] - intercetta errori o crash non gestiti da AWS Step Functions e trasmette la tipologia dell'errore (errorType, cause) al sistema chiamante.
+*DecompressioneZipTool* \
+Modulo di utilità per l'interazione con il data repository centrale (AWS S3).
+
+Metodi pubblici:
+- #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo della Lambda.
 
 #pagebreak()
 
@@ -762,18 +789,21 @@ Implementa GitHubServiceInterface. Gestisce la comunicazione con le API pubblich
 - #text(font: "Courier New")[validate(url: string)] - interpreta l’URL GitHub fornito, estrae owner e nome del repository ed esegue una chiamata alle API di GitHub per verificarne l'esistenza e l'accessibilità pubblica. Restituisce un oggetto GitHubRepoData con i metadati del repository se la chiamata ha successo, null altrimenti.
 
 == Progettazione frontend
-Il frontend è sviluppato in React con TypeScript e Vite. L'architettura è organizzata in tre layer: Presentation, Business e Data. Il layer di presentazione comprende il sistema di routing, le pagine e i componenti riutilizzabili. Il layer di business raccoglie i service che incapsulano la logica applicativa e le chiamate HTTP. Il layer data contiene la configurazione degli endpoint e le interfacce TypeScript che definiscono il contratto con il backend.
-#figure( [#image("../../asset/diagr-architett/frontend/frontend-layered.png")], caption: [Layered Architecture - frontend])
+Il frontend è sviluppato in React con TypeScript e Vite. L'architettura adottata è component-based: ogni componente è autocontenuto e gestisce il proprio stato locale, potendo accedere direttamente ai service di cui ha bisogno senza vincoli gerarchici imposti. I service costituiscono un livello di astrazione orizzontale che incapsula la logica di comunicazione con il backend, importabile da qualsiasi componente o pagina. La configurazione degli endpoint e le interfacce TypeScript fungono da fondazione condivisa dell'intera applicazione.
+#figure( [#image("../../asset/diagr-architett/frontend/componentbased.png")], caption: [Component-based Architecture - frontend])
 
-=== Moduli MS0 - Presentation Layer
-==== Routing
+L'aggiornamento reattivo è gestito tramite lo hook #text(font: "Courier New")[useEffect] di React, che implementa implicitamente il pattern Observer: i componenti si iscrivono a cambiamenti di stato o di props e reagiscono automaticamente quando i valori osservati variano. Nel sistema sono presenti tre utilizzi rilevanti di questo pattern. In #text(font: "Courier New")[useIsLogged()] del SessionService, lo hook osserva userId e location.pathname, reagendo ai cambiamenti di sessione e di navigazione per gestire i redirect automatici. In DettagliRepo, lo hook osserva il parametro id dell'URL, rilanciano il fetch dei dati quando l'utente naviga verso un repository diverso. In StartAnalysisButton, lo hook osserva initialJobId, avviando automaticamente il polling quando viene rilevata un'analisi in corso.
+
+La comunicazione asincrona per il monitoraggio delle analisi è implementata tramite polling: al termine di ogni intervallo, il frontend interroga il backend per conoscere lo stato del job in corso. Questa scelta è motivata dai vincoli architetturali del deployment: il frontend è servito da S3 come applicazione statica, quindi non espone alcun endpoint HTTP raggiungibile dall'esterno. Soluzioni push come notify richiederebbero che il ricevente sia un server con IP pubblico fisso, condizione non soddisfatta. Alternative come SSE o WebSocket, pur realizzabili, implicherebbero una connessione persistente aperta per l'intera durata dell'analisi (fino a 15 minuti), con necessità di gestire keepalive e riconnessioni. L'intervallo di 3 secondi sul polling, rende il ritardo di notifica trascurabile rispetto al tempo totale.
+
+=== Routing
 #figure( [#image("../../asset/diagr-architett/frontend/app.png")] , caption: [Diagramma componenti, App - frontend])
 *App* \
-Punto di ingresso dell'applicazione. Configura il router tramite #text(font: "Courier New")[createBrowserRouter]  e definisce la struttura delle route. La route radice / utilizza RootLayout come elemento padre e reindirizza automaticamente a /repositories. Le route figlie sono /repositories, /repository/:id, /addRepository e /profile. La route /login è definita separatamente, al di fuori di RootLayout, in quanto non prevede la barra di navigazione.
+Punto di ingresso dell'applicazione. Configura il router tramite #text(font: "Courier New")[createBrowserRouter] e definisce la struttura delle route. La route radice / utilizza RootLayout come elemento padre e reindirizza automaticamente a /repositories. Le route figlie sono /repositories, /repository/:id, /addRepository e /profile. La route /login è definita separatamente, al di fuori di RootLayout, in quanto non prevede la barra di navigazione.
 
 - #text(font: "Courier New")[RootLayout] - Componente strutturale che avvolge tutte le pagine protette. Renderizza NavBar in cima e Outlet come contenitore per le pagine figlie iniettate dal router. Non contiene logica applicativa.
 
-==== Componenti
+=== Componenti
 *NavBar* \
 Barra di navigazione persistente presente in tutte le pagine protette. Composta internamente da Breadcrumbs e SmartNavLink.
 - #text(font: "Courier New")[Breadcrumbs] - Sottocomponente interno di NavBar. Legge i match correnti tramite useMatches e costruisce dinamicamente una lista di link basandosi sull'attributo _handle.label_ definito nelle route. L'ultimo elemento della lista è renderizzato come testo non cliccabile.
@@ -794,7 +824,7 @@ _Metodi privati:_
 - #text(font: "Courier New")[startPolling(jobId: string)] - avvia un _setInterval_ con cadenza di 3000ms. Ad ogni tick invoca _pollAnalysisStatus()_. Se lo status è "done" chiude l'intervallo e richiama onSuccess. Se è "error" chiude l'intervallo e mostra il dialog di errore. Se supera il timeout di 15 minuti chiude l'intervallo e mostra il messaggio di timeout.
 - #text(font: "Courier New")[handleConfirm()] - chiude il dialog di conferma e invoca _startNewAnalysis()_. Se la risposta ha status "done" richiama direttamente onSuccess senza polling. Se ha status "processing" avvia il polling con il jobId ricevuto.
 
-==== Pagine
+=== Pagine
 #figure( [#image("../../asset/diagr-architett/frontend/login.png")] , caption: [Diagramma componenti, Login - frontend])
 *Login* \ 
 Pagina di autenticazione, esterna al RootLayout. Invoca _useIsLogged()_ per reindirizzare automaticamente l'utente già autenticato. Gestisce lo stato locale per email, password, isPasswordVisible, isCredentialCorrect e loading. Al submit invoca _checkCredentials()_ del _UserService_, salva lo _userId_ tramite _saveUserID()_ del _SessionService_ e naviga a /repositories. In caso di errore imposta _isCredentialCorrect_ a false e mostra il messaggio di errore. 
@@ -822,7 +852,7 @@ _Sottocomponente interno:_
 *UserPage * \
 Pagina del profilo utente. Invoca _useIsLogged()_ e recupera lo userId dalla sessione. All'inizio invoca _getInfoUserByID()_ del _UserService_. Gestisce il caso in cui l'utente sia presente in localStorage ma non nel database: in tal caso mostra solo il pulsante di logout, senza un <dialog> di conferma, il quale è invece presente nel normale logout. Alla conferma del logout da <dialog>, viene invocato _logout()_ da _SessionService_ e naviga a /login.
 
-=== Moduli MS0 - Business Layer
+=== Service
 #figure( [#image("../../asset/diagr-architett/frontend/sessionService.png")] , caption: [Diagramma componenti, SessionService - frontend])
 *SessionService* \ 
 Gestisce la sessione utente tramite localStorage e la guardia di navigazione. Esporta le seguenti funzioni:
@@ -857,7 +887,6 @@ Gestisce l'integrazione con il managementService del backend, esponendo al layer
 - #text(font: "Courier New")[startNewAnalysis(repoUrl: string)] - contratto per l'avvio di una nuova analisi. Invoca _post\<StartAnalysisResponse\>()_ sull'endpoint /analysis/request con body { repoUrl }. Restituisce uno StartAnalysisResponse con status: "done" se l'analisi è già disponibile, oppure status: "processing" con un jobId da usare per il polling.
 - #text(font: "Courier New")[pollAnalysisStatus(jobId: string)] - contratto per il controllo dello stato di un'analisi in corso. Invoca _get\<{ status: AnalysisStatus }\>()_ sull'endpoint /analysis/status/{jobId} e restituisce il solo campo status.
 
-=== Moduli MS0 - Data Layer
 ==== HTTP Client
 *httpClient* \
 - #text(font: "Courier New")[HttpOptions] - Interfaccia di configurazione per le richieste HTTP.
@@ -891,7 +920,7 @@ Attributi: agentName?: string, summary?: string, report?: string.\
 
 *AnalysisReport*\
 Interfaccia TypeScript che rappresenta il report di un'analisi ricevuto dal backend.\
-Attributi: repoUrl?: string, jobId?: string, commitId?: string, status: AnalysisStatus, analysisDetails?: AnalysisDetails[], scores?: number[], date: Date, isLatest:boolean.\
+Attributi: repoUrl?: string, jobId?: string, commitId?: string, status: AnalysisStatus, analysisDetails?: AnalysisDetails[], scores?: number[], date: Date, isLatest:boolean, error:string.\
 
 *AnalysisStatus*\
 Tipo unione che rappresenta i possibili stati di un'analisi: "done" | "processing" | "error".\
