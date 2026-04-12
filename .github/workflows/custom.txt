@@ -610,3 +610,14 @@ autocontenuto
 riconnessioni
 startexecutioncommand
 websocket
+analysismanagement
+analysismanagementinfrastructureinterface
+analysismanagementpersistenceinterface
+appmodule
+commitsha
+createdat
+dell'api
+getanalysisbyjob
+httpexception
+nell'header
+updateanalysistoerror
