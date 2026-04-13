@@ -535,11 +535,17 @@ Core applicativo che isola la logica di innesco, coordinando la preparazione del
 Metodi pubblici:
 - #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] - coordina l'avvio della pipeline inoltrando il payload all’adapter Step Functions tramite startStepFunctionExecution().
 
+*ApiKeyGuard*\
+Guardia di sicurezza NestJS responsabile dell'autenticazione delle richieste in ingresso.
+
+Metodi pubblici:
+- #text(font: "Courier New")[canActivate(context: ExecutionContext)] - Estrae l'header x-api-key dalla richiesta HTTP e lo confronta con la variabile d'ambiente API_KEY del server. Se la chiave manca o non corrisponde, lancia un'eccezione UnauthorizedException, bloccando l'esecuzione.
+
 *AwsStepFunctionsAdapter*\
 Componente adapter per l'integrazione con AWS Step Functions. Isola il framework NestJS dall'utilizzo diretto dell'SDK AWS.
 
-Attributi privati:
-- #text(font: "Courier New")[sfnClient: SFNClient] — istanza del client AWS per la pubblicazione degli eventi di orchestrazione.
+Configurazione di Modulo:
+- #text(font: "Courier New")[sfnClient: SFNClient] — istanza singleton del client AWS inizializzata a livello di modulo per sfruttare il riutilizzo del contesto, utilizzata per la pubblicazione degli eventi.
 
 Metodi pubblici:
 - #text(font: "Courier New")[startStepFunctionExecution(payload: any)] — riceve il payload di analisi, inizializza un StartExecutionCommand e invoca la State Machine configurata tramite l'ARN presente nelle variabili d'ambiente. Restituisce l'ARN dell'esecuzione avviata.
@@ -605,7 +611,7 @@ Queste classi forniscono supporto all'infrastruttura elaborativa agendo come str
 Modulo responsabile della comunicazione  con l'infrastruttura ad eventi di AWS Bedrock Agents.
 
 Metodi pubblici:
-- #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] - gestisce l'invocazione dell'AI. Include logiche di retry per gestire ritardi o throttling.
+- #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] - gestisce l'invocazione dell'AI. Include logiche di backoff esponenziale per gestire ritardi o throttling (HTTP 429/503) e intercetta i tentativi di Tool Use da parte dell'LLM, negandone l'esecuzione per forzare l'aderenza al formato Markdown richiesto.
 
 *SmartBundler*\
 Componente chiave per l'implementazione della suddivisione del codice in chunk, ottimizzato per rientrare nei limiti di contesto dei LLM tramite la libreria repomix.
@@ -613,12 +619,37 @@ Componente chiave per l'implementazione della suddivisione del codice in chunk, 
 Metodi pubblici:
 - #text(font: "Courier New")[createSourceChunks(extractPath: string)] — suddivide il sorgente in porzioni sequenziali (chunk) basate sulla costante MAX_BUNDLE_CHARS (150.000 caratteri) rispettando i confini dei file tramite analisi dei delimitatori repomix.
 - #text(font: "Courier New")[createFullChunks(extractPath: string)] — suddivide l'intero contenuto del repository in chunk per analisi che richiedono visibilità globale.
-
+- #text(font: "Courier New")[createManifestBundle(extractPath: string)] — isola esclusivamente i file di configurazione delle dipendenze (es. package.json, pom.xml).
+- #text(font: "Courier New")[extractImportedLibraries(sourceChunks: string[])] — esegue parsing tramite espressioni regolari per estrarre staticamente le librerie esterne importate nel progetto.
 *DecompressioneZipTool* \
 Modulo di utilità per l'interazione con il data repository centrale (AWS S3).
 
 Metodi pubblici:
 - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo della Lambda.
+
+=== Infrastruttura e Deployment
+
+L'infrastruttura del microservizio è gestita interamente utilizzando il framework *Serverless*.
+
+*Risorse Cloud (AWS)*
+- *AWS S3 (Repository Bucket):* Storage temporaneo per gli archivi ZIP dei repository clonati e per i report JSON intermedi generati dagli agenti. È configurato con regole di ciclo di vita (LifecycleConfiguration) che eliminano automaticamente gli archivi vecchi di un giorno per ottimizzare i costi e garantire la privacy del codice analizzato.
+- *IAM Roles (Gestione dei permessi):* Il sistema adotta il principio del minimo privilegio. Al servizio sono garantiti permessi espliciti limitati alle sole azioni necessarie: scrittura/lettura/cancellazione sul bucket S3 dedicato, avvio delle macchine a stati (#text(font: "Courier New")[states:StartExecution]) e invocazione dei modelli di Intelligenza Artificiale (#text(font: "Courier New")[bedrock:InvokeModel], #text(font: "Courier New")[bedrock:InvokeAgent]).
+
+*CI/CD e Qualità del Codice*
+Il ciclo di vita del software è automatizzato tramite workflow di GitHub Actions (#text(font: "Courier New")[software-quality.yml]), che prevede pipeline di analisi statica (ESLint, Prettier), esecuzione dei test di unità (Jest) con verifica della copertura e validazione dell'integrità della build.
+
+=== Sicurezza e Autenticazione
+
+Il sistema implementa meccanismi di sicurezza zero-trust sia per le richieste in ingresso che per le comunicazioni in uscita:
+- *Protezione in Ingresso:* L'endpoint HTTP esposto dal Driving Adapter NestJS (#text(font: "Courier New")[/analyze]) è protetto da un livello di autorizzazione basato su API Key, implementato in modo restrittivo tramite l'#text(font: "Courier New")[ApiKeyGuard].
+- *Protezione in Uscita:* La comunicazione asincrona finale verso i sistemi esterni (gestita dalla #text(font: "Courier New")[WebhookSenderLambda]) avviene trasmettendo il payload protetto da un header personalizzato (#text(font: "Courier New")[x-ms1-key]), la cui chiave è conservata in modo sicuro nel Parameter Store (SSM) di AWS.
+
+=== Resilienza e Gestione degli Errori
+
+Trattandosi di un'architettura distribuita asincrona a lunga esecuzione, la tolleranza ai guasti è stratificata su più livelli:
+- *Resilienza AI:* Il modulo #text(font: "Courier New")[AgentInvoker] implementa un meccanismo di retry automatico con "backoff esponenziale e jitter". Questo garantisce che eventuali errori di rete temporanei o blocchi per rate limiting (Throttling HTTP 429/503) da parte dell'API di AWS Bedrock vengano riassorbiti senza far fallire l'analisi.
+- *Fallback dell'Orchestratore:* La State Machine di AWS Step Functions implementa un blocco "Catch" globale. Se un qualsiasi task del processo (dall'estrazione del repository all'orchestrazione degli agenti LLM) va in crash irreversibile, l'esecuzione viene immediatamente deviata alla #text(font: "Courier New")[FailureHandlerLambda].
+- *Notifica di Fallimento:* La #text(font: "Courier New")[FailureHandlerLambda] garantisce che il sistema chiamante non rimanga mai in uno stato di attesa indefinita ("appeso"), inviando proattivamente un webhook di errore contenente la diagnostica formattata in modo sicuro, prima di contrassegnare l'esecuzione come fallita (Fail Execution).
 
 #pagebreak()
 
