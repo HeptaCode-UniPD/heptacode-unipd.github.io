@@ -379,7 +379,7 @@ Il pipeline è strutturato in un job che esegue:
 = Architettura
 
 == Architettura logica
-L'ecosistema del progetto adotta pattern architetturali differenziati in funzione delle specifiche responsabilità di ciascun microservizio. \ MS1 e MS3 seguono un'architettura layered, scelta per la separazione chiara delle responsabilità, la semplicità strutturale e la coerenza con le convenzioni già consolidate nel progetto. \ MS2 adotta invece un paradigma Event-Driven, coerentemente con l'infrastruttura AWS su cui si basa: l'impiego di agenti Lambda orchestrati tramite Step Functions rende questo pattern non solo naturale, ma architetturalmente necessario. \ Il frontend adotta una Component-based Architecture, sfruttando il modello compositivo nativo di React.
+L'ecosistema del progetto adotta pattern architetturali differenziati in funzione delle specifiche responsabilità di ciascun microservizio. \ MS1 e MS3 seguono un'architettura layered, scelta per la separazione chiara delle responsabilità, la semplicità strutturale e la coerenza con le convenzioni già consolidate nel progetto. \ MS2 adotta invece un paradigma Command-Driven, coerentemente con l'infrastruttura AWS su cui si basa: l'impiego di agenti Lambda orchestrati tramite Step Functions rende questo pattern non solo naturale, ma architetturalmente necessario. \ Il frontend adotta una Component-based Architecture, sfruttando il modello compositivo nativo di React.
 
 === Component-based Architecture
 Utilizzata nel frontend\
@@ -397,12 +397,14 @@ _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservi
 _Infrastructure Layer (MS1)_ #pad(left: 0.5cm)[Gestisce l'accesso alle API di servizi esterni (es. Github) o interni (es. Comunicazione fra MS1 e MS2).]
 _Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
 
-=== Event-Driven Architecture
-A causa della necessità di gestire processi analitici a lunga esecuzione in modo scalabile e asincrono, MS2 adotta un'architettura Serverless basata su eventi (Event-Driven), organizzata nei seguenti domini operativi:\
+=== Command-Driven Architecture (Orchestration)
+A causa della necessità di gestire processi analitici a lunga esecuzione in modo scalabile e asincrono, MS2 adotta un'architettura Serverless basata sull'orchestrazione dei comandi (Command-Driven), organizzata nei seguenti domini operativi:\
 
-_Event Producers_ #pad(left: 0.5cm)[Modulo di ricezione che gestisce le richieste sincrone esterne. Valida il payload e agisce da generatore (producer), innescando l'evento iniziale verso il sistema di orchestrazione e restituendo immediatamente un riferimento di tracciamento al chiamante.]
-_Event Orchestrator_ #pad(left: 0.5cm)[Cuore dell'architettura. Gestito tramite macchine a stati finiti su cloud, coordina il ciclo di vita dell'analisi instradando dinamicamente gli eventi tra i vari worker. Decide il piano di esecuzione, supervisiona l'esecuzione parallela e intercetta gli eventi di completamento o errore.]
-_Event Consumers_ #pad(left: 0.5cm)[Unità elaborative indipendenti (funzioni serverless) che si attivano in reazione agli eventi diramati dall'orchestratore. Prelevano i dati sorgente da uno storage condiviso, eseguono l'analisi tramite modelli AI e generano eventi di completamento per consentire la prosecuzione del workflow.]
+_Command Initiator_ #pad(left: 0.5cm)[Modulo di ricezione che gestisce le richieste sincrone esterne. Valida il payload e agisce da innesco (trigger), inviando il comando di avvio al sistema di orchestrazione e restituendo immediatamente un riferimento di tracciamento al chiamante.]
+
+_Central Orchestrator_ #pad(left: 0.5cm)[Cuore dell'architettura. Gestito tramite macchine a stati finiti su cloud, coordina il ciclo di vita dell'analisi impartendo comandi diretti e sequenziali ai vari task. Decide il piano di esecuzione, supervisiona l'elaborazione parallela, gestisce i retry e intercetta eventuali fallimenti.]
+
+_Task Workers_ #pad(left: 0.5cm)[Unità elaborative indipendenti (funzioni serverless) eseguite su comando diretto dall'orchestratore. Prelevano i dati sorgente da uno storage condiviso, eseguono l'analisi tramite modelli AI e restituiscono l'esito della loro esecuzione all'orchestratore per consentire la prosecuzione del workflow.]
 
 == Architettura di deployment
 L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale è motivata sia dalle esigenze tecniche del sistema — che combina componenti eterogenei, tra cui una parte serverless/agentica su AWS e servizi con architettura layered tradizionale — sia dai vantaggi intrinseci del paradigma: elevata scalabilità, resilienza e indipendenza nello sviluppo e nel rilascio dei singoli componenti. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
@@ -514,7 +516,7 @@ Il microservizio MS1 opera come orchestratore a stato. Di seguito la logica di i
 #pagebreak()
 === Analisi dei Repository - MS2
 
-L'architettura del microservizio di analisi (MS2) sfrutta un'architettura Event-Driven e Serverless. Il sistema è progettato per gestire processi a lunga esecuzione in modo asincrono, separando l'interfaccia di ricezione delle richieste dall'orchestrazione del workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura AWS, utilizzando Step Functions per la gestione degli stati e degli eventi, AWS Bedrock per l'elaborazione AI e S3 per lo storage degli artefatti.
+L'architettura del microservizio di analisi (MS2) sfrutta un'architettura Command-Driven (basata su Orchestrazione) e Serverless. Il sistema è progettato per gestire processi a lunga esecuzione in modo asincrono, separando l'interfaccia di ricezione delle richieste dall'orchestrazione del workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura AWS, utilizzando Step Functions per la gestione degli stati e degli eventi, AWS Bedrock per l'elaborazione AI e S3 per lo storage degli artefatti.
 
 ==== Entry Point e Trigger degli Eventi
 
