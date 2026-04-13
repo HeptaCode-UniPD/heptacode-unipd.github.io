@@ -359,14 +359,14 @@ AWS è il provider cloud adottato per l'intera infrastruttura della piattaforma.
 ==== AWS Bedrock
 Bedrock fornisce accesso a modelli fondazionali LLM tramite un'unica API gestita. Ogni agente è configurato come Bedrock Agent con un proprio system prompt e invocato dalle Lambda tramite l'SDK BedrockAgentRuntimeClient. \ Il modello LLM sottostante è disaccoppiato dal codice: aggiornare versione o provider richiede solo una modifica all'alias Bedrock, senza toccare le Lambda.
 ==== AWS Lambda
-Lambda è il runtime di tutta la logica agentica: pull del repository, planning, esecuzione degli agenti (OWASP, Test, Docs), aggregazione, polishing e notifica webhook sono ciascuno una funzione Lambda distinta. Il modello serverless è adatto a questo workload perché i task sono asincroni, di durata variabile e attivati su eventi; inoltre il costo è strettamente proporzionale all'elaborazione effettiva.
+Lambda è il runtime di tutta la logica agentica: pull del repository, planning, esecuzione degli agenti (OWASP, Test, Docs), aggregazione, polishing e notifica webhook sono ciascuno una funzione Lambda distinta. Il modello serverless è adatto a questo workload perché i task sono asincroni, di durata variabile e attivati su comandi; inoltre il costo è strettamente proporzionale all'elaborazione effettiva.
 ==== AWS Step Functions
 Step Functions orchestra l'intero flusso agentico come macchina a stati: gestisce sequenza, parallelismo nativo (OWASP e Test Agent in contemporanea), branching condizionale sul flag runDocs, retry, timeout e propagazione degli errori verso il failure handler. Evita di dover implementare manualmente la logica di coordinamento tra Lambda e rende il flusso ispezionabile visivamente dalla console AWS.
 ==== AWS S3
 S3 svolge due ruoli distinti nella piattaforma: archivia il repository clonato come ZIP che gli agenti recuperano autonomamente per l'analisi, e funge da bus di stato asincrono tra gli agenti paralleli - ogni domain agent scrive il proprio report parziale su S3 al termine dell'elaborazione, e l'orchestratore aggregatore li recupera e cancella nella fase successiva. Questo disaccoppia i componenti paralleli senza richiedere comunicazione diretta tra Lambda. \
 S3 viene inoltre utilizzato per l'hosting degli asset statici del frontend: il bundle prodotto da Vite in fase di build viene caricato su un bucket S3 configurato per il website hosting statico.
 ==== AWS Fargate
-Fargate è il runtime serverless per container, utilizzato per hostare il frontend e il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalando automaticamente. È la scelta naturale per i componenti con ciclo di vita HTTP continuo, a differenza della logica agentica che per sua natura è event-driven e gestita da Lambda.
+Fargate è il runtime serverless per container, utilizzato per hostare il frontend e il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalando automaticamente. È la scelta naturale per i componenti con ciclo di vita HTTP continuo.
 
 == Tecnologie per Continuous Integration
 === GitHub Actions
@@ -379,7 +379,7 @@ Il pipeline è strutturato in un job che esegue:
 = Architettura
 
 == Architettura logica
-L'ecosistema del progetto adotta pattern architetturali differenziati in funzione delle specifiche responsabilità di ciascun microservizio. \ MS1 e MS3 seguono un'architettura layered, scelta per la separazione chiara delle responsabilità, la semplicità strutturale e la coerenza con le convenzioni già consolidate nel progetto. \ MS2 adotta invece un paradigma Event-Driven, coerentemente con l'infrastruttura AWS su cui si basa: l'impiego di agenti Lambda orchestrati tramite Step Functions rende questo pattern non solo naturale, ma architetturalmente necessario. \ Il frontend adotta una Component-based Architecture, sfruttando il modello compositivo nativo di React.
+L'ecosistema del progetto adotta pattern architetturali differenziati in funzione delle specifiche responsabilità di ciascun microservizio. \ MS1 e MS3 seguono un'architettura layered, scelta per la separazione chiara delle responsabilità, la semplicità strutturale e la coerenza con le convenzioni già consolidate nel progetto. \ MS2 adotta invece un paradigma Command-Driven: l'impiego di agenti Lambda orchestrati tramite Step Functions rende questo pattern non solo naturale, ma architetturalmente necessario. \ Il frontend adotta una Component-based Architecture, sfruttando il modello compositivo nativo di React.
 
 === Component-based Architecture
 Utilizzata nel frontend\
@@ -397,12 +397,12 @@ _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservi
 _Infrastructure Layer (MS1)_ #pad(left: 0.5cm)[Gestisce l'accesso alle API di servizi esterni (es. Github) o interni (es. Comunicazione fra MS1 e MS2).]
 _Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
 
-=== Event-Driven Architecture
-A causa della necessità di gestire processi analitici a lunga esecuzione in modo scalabile e asincrono, MS2 adotta un'architettura Serverless basata su eventi (Event-Driven), organizzata nei seguenti domini operativi:\
+=== Command-Driven Architecture
+A causa della necessità di gestire processi analitici a lunga esecuzione in modo scalabile e asincrono, MS2 adotta un'architettura Serverless basata su comandi (Command-Driven), organizzata nei seguenti domini operativi:\
 
 _Event Producers_ #pad(left: 0.5cm)[Modulo di ricezione che gestisce le richieste sincrone esterne. Valida il payload e agisce da generatore (producer), innescando l'evento iniziale verso il sistema di orchestrazione e restituendo immediatamente un riferimento di tracciamento al chiamante.]
 _Event Orchestrator_ #pad(left: 0.5cm)[Cuore dell'architettura. Gestito tramite macchine a stati finiti su cloud, coordina il ciclo di vita dell'analisi instradando dinamicamente gli eventi tra i vari worker. Decide il piano di esecuzione, supervisiona l'esecuzione parallela e intercetta gli eventi di completamento o errore.]
-_Event Consumers_ #pad(left: 0.5cm)[Unità elaborative indipendenti (funzioni serverless) che si attivano in reazione agli eventi diramati dall'orchestratore. Prelevano i dati sorgente da uno storage condiviso, eseguono l'analisi tramite modelli AI e generano eventi di completamento per consentire la prosecuzione del workflow.]
+_Event Consumers_ #pad(left: 0.5cm)[Unità elaborative indipendenti (funzioni serverless) che si attivano in reazione ai comandi diramati dall'orchestratore. Prelevano i dati sorgente da uno storage condiviso, eseguono l'analisi tramite modelli AI e generano eventi di completamento per consentire la prosecuzione del workflow.]
 
 == Architettura di deployment
 L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale è motivata sia dalle esigenze tecniche del sistema — che combina componenti eterogenei, tra cui una parte serverless/agentica su AWS e servizi con architettura layered tradizionale — sia dai vantaggi intrinseci del paradigma: elevata scalabilità, resilienza e indipendenza nello sviluppo e nel rilascio dei singoli componenti. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
@@ -418,9 +418,9 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 
 *Microservizio di Analisi dei Repository - MS2* #pad(left: 0.5cm)[Si occupa dell'analisi del codice sorgente delle repository mediante l'impiego di agenti software. Ricevuta una richiesta, il microservizio avvia il processo di analisi, delegando l'esecuzione a due o tre agenti specializzati e restituendo i risultati al chiamante.]
 
-*Microservizio di Autenticazione e Repository Management - MS3*:
+*Microservizio di User e Repository Management - MS3*:
 //#figure( [#image("../../asset/Diagr-architett/architett_authrepo.png")] , caption: [Layered architecture - MS3])
-#pad(left: 0.5cm)[Responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di registrazione e autenticazione degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell’API esterna.]
+#pad(left: 0.5cm)[Responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di login degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell’API esterna.]
 == Design pattern
 
 // USATI IN MS1
@@ -433,7 +433,7 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 
 - *Adapter* \ Il pattern è utilizzato per isolare i microservizi dalle specificità delle librerie esterne e dei servizi cloud.
 
-  - In MS3 (Authentication & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
+  - In MS3 (User & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
   - In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
   - In MS1, #text(font: "Courier New")[GithubAdapter] traduce le richieste interne in chiamate conformi all'API di GitHub tramite Octokit, incapsulando il parsing dell'URL, la risoluzione del branch di default e la gestione degli errori specifici del provider.
 
@@ -513,7 +513,7 @@ Il microservizio MS1 opera come orchestratore a stato. Di seguito la logica di i
 #pagebreak()
 === Analisi dei Repository - MS2
 
-L'architettura del microservizio di analisi (MS2) sfrutta un'architettura Event-Driven e Serverless. Il sistema è progettato per gestire processi a lunga esecuzione in modo asincrono, separando l'interfaccia di ricezione delle richieste dall'orchestrazione del workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura AWS, utilizzando Step Functions per la gestione degli stati e degli eventi, AWS Bedrock per l'elaborazione AI e S3 per lo storage degli artefatti.
+L'architettura del microservizio di analisi (MS2) sfrutta un'architettura Command-Driven e Serverless. Il sistema è progettato per gestire processi a lunga esecuzione in modo asincrono, separando l'interfaccia di ricezione delle richieste dall'orchestrazione del workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura AWS, utilizzando Step Functions per la gestione degli stati e dei comandi, AWS Bedrock per l'elaborazione AI e S3 per lo storage degli artefatti.
 
 ==== Entry Point e Trigger degli Eventi
 
@@ -621,10 +621,10 @@ Metodi pubblici:
 
 #pagebreak()
 
-=== Autenticazione e Repository Management - MS3
-Il diagramma è stato suddiviso in due figure per una questione di visibilità documentale. Il primo diagramma mostra le classi relative all'autenticazione, mentre il secondo mostra le classi relative alla gestione delle repository. 
-L'interfaccia _IngestionInterface_ e la classe _IngestionController_ sono presenti in entrambi i diagrammi perché espongono funzionalità sia per l'autenticazione che per la gestione delle repository, fungendo da punto di ingresso unificato per le richieste HTTP relative a entrambe le aree funzionali.
-#figure( [#image("../../asset/diagr-architett/UML/Auth_Diagram.png")] , caption: [Diagramma delle classi; Autenticazione - MS3])
+=== User e Repository Management - MS3
+Il diagramma è stato suddiviso in due figure per una questione di visibilità documentale. Il primo diagramma mostra le classi relative agli user, mentre il secondo mostra le classi relative alla gestione dei repository. 
+L'interfaccia _IngestionInterface_ e la classe _IngestionController_ sono presenti in entrambi i diagrammi perché espongono funzionalità sia per l'User che per la gestione delle repository, fungendo da punto di ingresso unificato per le richieste HTTP relative a entrambe le aree funzionali.
+#figure( [#image("../../asset/diagr-architett/UML/Auth_Diagram.png")] , caption: [Diagramma delle classi; User - MS3])
 #figure( [#image("../../asset/diagr-architett/UML/Repo_Diagram.png")] , caption: [Diagramma delle classi; Repository Management - MS3])
 ==== Classi MS3 - Presentation Layer
 *IngestionInterface* \
@@ -659,7 +659,7 @@ _Metodi privati:_
 *UserServiceLayerInterface* \
 Definisce il contratto del service utente esposto verso il layer di presentazione.
 
-- #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] - contratto per l'autenticazione di un utente a partire da credenziali validate.
+- #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] - contratto per il login di un utente a partire da credenziali validate.
 - #text(font: "Courier New")[getUser(userId: string)] - contratto per il recupero di un utente tramite il suo id.
 
 *RepoServiceLayerInterface* \
