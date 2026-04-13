@@ -438,7 +438,7 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
   - In MS1, #text(font: "Courier New")[GithubAdapter] traduce le richieste interne in chiamate conformi all'API di GitHub tramite Octokit, incapsulando il parsing dell'URL, la risoluzione del branch di default e la gestione degli errori specifici del provider.
 
 - *Facade* \
-In MS1, ogni layer agisce come una Facade per il layer sottostante, esponendo un'interfaccia semplificata che nasconde la complessità della collaborazione tra più componenti. Il layer #text(font: "Courier New")[AnalysisManagementPresentation] espone singoli endpoint REST che celano al client l'intero workflow sottostante: la risoluzione del commit SHA tramite GitHub, la verifica della cache su MongoDB, l'avvio asincrono dell'analisi su MS2 e la gestione degli errori. Analogamente, #text(font: "Courier New")[AnalysisManagementService] presenta un'interfaccia coesa al layer di presentazione nascondendo l'orchestrazione tra persistenza e infrastruttura, e #text(font: "Courier New")[AnalysisManagementInfrastructure] espone metodi semplici verso il service celando la complessità della comunicazione con GitHub e con il gateway AWS Lambda.
+In MS1, ogni layer agisce come una Facade per il layer sottostante, esponendo un'interfaccia semplificata che nasconde la complessità della collaborazione tra più componenti. Il layer #text(font: "Courier New")[AnalysisManagementPresentation] espone singoli endpoint REST che celano al client l'intero workflow sottostante: la risoluzione del commit SHA tramite GitHub, la verifica della cache su MongoDB, l'avvio  dell'analisi su MS2 e la gestione degli errori. Analogamente, #text(font: "Courier New")[AnalysisManagementService] presenta un'interfaccia coesa al layer di presentazione nascondendo l'orchestrazione tra persistenza e infrastruttura, e #text(font: "Courier New")[AnalysisManagementInfrastructure] espone metodi semplici verso il service celando la complessità della comunicazione con GitHub e con il gateway AWS Lambda.
 
 - *Strategy* \
 Il sistema utilizza il pattern Strategy in modo pervasivo: ogni layer comunica esclusivamente attraverso interfacce astratte (#text(font: "Courier New")[AnalysisManagementServiceInterface], #text(font: "Courier New")[AnalysisManagementPersistenceInterface], #text(font: "Courier New")[AnalysisManagementInfrastructureInterface]), senza mai dipendere direttamente dalle implementazioni concrete. Le classi concrete appaiono solo nel composition root (#text(font: "Courier New")[AppModule]), dove il container IoC di NestJS le inietta tramite Dependency Injection. Questo permette di sostituire a runtime qualsiasi implementazione — ad esempio sostituendo la persistenza reale con un mock nei test — senza modificare il codice dei layer superiori.
@@ -448,14 +448,14 @@ Il sistema utilizza il pattern Strategy in modo pervasivo: ogni layer comunica e
 
 === Analysis Management Service - MS1
 
-L'architettura del microservizio di gestione (MS1) è progettata per fungere da gateway e orchestratore principale del sistema. Sviluppato in NestJS, espone le API REST per l'interazione con i client, gestisce la persistenza su MongoDB e coordina le chiamate asincrone verso il microservizio di analisi (MS2).
+L'architettura del microservizio di gestione (MS1) è progettata per fungere da gateway e orchestratore principale del sistema. Sviluppato in NestJS, espone le API REST per l'interazione con i client, gestisce la persistenza su MongoDB e coordina le chiamate verso il microservizio di analisi (MS2).
 
 #figure([#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")], caption: [Diagramma delle classi; Analisi Management Service - MS1])
 
 ==== Classi MS1 - Presentation Layer
 
 *AnalysisManagementPresentation* \
-Punto di ingresso HTTP (NestJS). Gestisce il ciclo di vita delle richieste REST e riceve i risultati asincroni da MS2 tramite webhook. Implementa l'interfaccia #text(font: "Courier New")[AnalysisManagement] e dipende da #text(font: "Courier New")[AnalysisManagementServiceInterface], senza conoscere l'implementazione concreta del service. \
+Punto di ingresso HTTP (NestJS). Gestisce il ciclo di vita delle richieste REST e riceve i risultati da MS2 tramite webhook. Implementa l'interfaccia #text(font: "Courier New")[AnalysisManagement] e dipende da #text(font: "Courier New")[AnalysisManagementServiceInterface], senza conoscere l'implementazione concreta del service. \
 _Attributi privati:_
   - #text(font: "Courier New")[analysisService: AnalysisManagementServiceInterface] - istanza del service di dominio, iniettata tramite DI.
 
@@ -470,7 +470,7 @@ _Metodi pubblici:_
 *AnalysisManagementService* \
 Service principale che implementa #text(font: "Courier New")[AnalysisManagementServiceInterface] e coordina la logica applicativa tra persistenza e infrastruttura. Dipende esclusivamente dalle interfacce astratte dei layer sottostanti. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - recupera il commit SHA più recente tramite l'infrastruttura e verifica in persistenza se esiste già un'analisi per quel commit. Se presente e completata restituisce stato `done`; se in corso restituisce `processing`; se in errore o assente genera un nuovo #text(font: "Courier New")[jobId] (UUID), salva un record con stato `processing` e avvia l'analisi su MS2 in modo asincrono. I fallimenti asincroni dell'infrastruttura vengono intercettati e registrati tramite #text(font: "Courier New")[updateAnalysisToError].
+  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - recupera il commit SHA più recente tramite l'infrastruttura e verifica in persistenza se esiste già un'analisi per quel commit. Se presente e completata restituisce stato `done`; se in corso restituisce `processing`; se in errore o assente genera un nuovo #text(font: "Courier New")[jobId] (UUID), salva un record con stato `processing` e avvia l'analisi su MS2. I fallimenti dell'infrastruttura vengono intercettati e registrati tramite #text(font: "Courier New")[updateAnalysisToError].
   - #text(font: "Courier New")[getAnalysisStatus(jobId: string)] - interroga la persistenza tramite #text(font: "Courier New")[getAnalysisByJob]. Restituisce `done` se #text(font: "Courier New")[analysisDetails] è popolato, `processing` se vuoto, `error` se il record non esiste o riporta uno stato di errore.
   - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - persiste i risultati ricevuti via webhook, delegando direttamente alla persistenza.
   - #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - recupera l'ultima analisi dalla persistenza e la arricchisce con il flag #text(font: "Courier New")[isLatest], confrontando il #text(font: "Courier New")[commitId] memorizzato con il commit SHA corrente su GitHub.
@@ -497,7 +497,7 @@ _Metodi pubblici:_
   - #text(font: "Courier New")[getAnalysisByJob(jobId: string)] - recupera un'analisi per #text(font: "Courier New")[job_id]. Estrae i punteggi numerici dai campi #text(font: "Courier New")[summary] e #text(font: "Courier New")[report] di ogni agente cercando il pattern "Global Maturity Score", e li popola nel campo #text(font: "Courier New")[scores] del DTO restituito.
   - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - esegue un upsert su #text(font: "Courier New")[job_id]: crea il documento se non esiste, altrimenti lo aggiorna. Include #text(font: "Courier New")[analysis_data] nel #text(font: "Courier New")[set] solo se #text(font: "Courier New")[analysisDetails] è presente e non vuoto, evitando di sovrascrivere dati già presenti con liste vuote.
   - #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - recupera il documento più recente per #text(font: "Courier New")[repository_url], ordinando per #text(font: "Courier New")[createdAt] decrescente. Estrae i punteggi con la stessa logica di #text(font: "Courier New")[getAnalysisByJob].
-  - #text(font: "Courier New")[updateAnalysisToError(jobId: string, errorMessage: string)] - aggiorna lo stato di un'analisi a `error` e registra il messaggio di errore, utilizzato per gestire i fallimenti asincroni dell'infrastruttura.
+  - #text(font: "Courier New")[updateAnalysisToError(jobId: string, errorMessage: string)] - aggiorna lo stato di un'analisi a `error` e registra il messaggio di errore, utilizzato per gestire i fallimenti dell'infrastruttura.
 
 ==== MS1 - Workflow di Comunicazione
 Il microservizio MS1 opera come orchestratore a stato. Di seguito la logica di interazione con MS2:
@@ -506,8 +506,8 @@ Il microservizio MS1 opera come orchestratore a stato. Di seguito la logica di i
 2. *Pre-processing*: Risoluzione del commit SHA corrente tramite GitHub API (#text(font: "Courier New")[GithubAdapter]).
 3. *Cache check*: Verifica in MongoDB se esiste già un'analisi per quel commit. Se presente e completata, risposta immediata con stato `done`; se in corso, risposta con `processing` e il #text(font: "Courier New")[jobId] esistente.
 4. *Persistenza*: Creazione del record con stato `processing` e #text(font: "Courier New")[jobId] univoco (UUID).
-5. *Outbound*: Chiamata HTTP asincrona verso il gateway AWS (MS2), autenticata tramite API Key.
-6. *Error handling*: I fallimenti asincroni dell'infrastruttura aggiornano il record a stato `error` tramite #text(font: "Courier New")[updateAnalysisToError].
+5. *Outbound*: Chiamata HTTP sincrona verso il gateway AWS (MS2), autenticata tramite API Key.
+6. *Error handling*: I fallimenti dell'infrastruttura aggiornano il record a stato `error` tramite #text(font: "Courier New")[updateAnalysisToError].
 7. *Callback*: MS2 invia i risultati all'endpoint `/analysis/webhook`, autenticato tramite #text(font: "Courier New")[x-ms1-key]. Il service persiste i dati e porta lo stato del record a `done`.
 
 #pagebreak()
@@ -794,7 +794,7 @@ Il frontend è sviluppato in React con TypeScript e Vite. L'architettura adottat
 
 L'aggiornamento reattivo è gestito tramite lo hook #text(font: "Courier New")[useEffect] di React, che implementa implicitamente il pattern Observer: i componenti si iscrivono a cambiamenti di stato o di props e reagiscono automaticamente quando i valori osservati variano. Nel sistema sono presenti tre utilizzi rilevanti di questo pattern. In #text(font: "Courier New")[useIsLogged()] del SessionService, lo hook osserva userId e location.pathname, reagendo ai cambiamenti di sessione e di navigazione per gestire i redirect automatici. In DettagliRepo, lo hook osserva il parametro id dell'URL, rilanciano il fetch dei dati quando l'utente naviga verso un repository diverso. In StartAnalysisButton, lo hook osserva initialJobId, avviando automaticamente il polling quando viene rilevata un'analisi in corso.
 
-La comunicazione asincrona per il monitoraggio delle analisi è implementata tramite polling: al termine di ogni intervallo, il frontend interroga il backend per conoscere lo stato del job in corso. Questa scelta è motivata dai vincoli architetturali del deployment: il frontend è servito da S3 come applicazione statica, quindi non espone alcun endpoint HTTP raggiungibile dall'esterno. Soluzioni push come notify richiederebbero che il ricevente sia un server con IP pubblico fisso, condizione non soddisfatta. Alternative come SSE o WebSocket, pur realizzabili, implicherebbero una connessione persistente aperta per l'intera durata dell'analisi (fino a 15 minuti), con necessità di gestire keepalive e riconnessioni. L'intervallo di 3 secondi sul polling, rende il ritardo di notifica trascurabile rispetto al tempo totale.
+La comunicazione per il monitoraggio delle analisi è implementata tramite polling: al termine di ogni intervallo, il frontend interroga il backend per conoscere lo stato del job in corso. Questa scelta è motivata dai vincoli architetturali del deployment: il frontend è servito da S3 come applicazione statica, quindi non espone alcun endpoint HTTP raggiungibile dall'esterno. Soluzioni push come notify richiederebbero che il ricevente sia un server con IP pubblico fisso, condizione non soddisfatta. Alternative come SSE o WebSocket, pur realizzabili, implicherebbero una connessione persistente aperta per l'intera durata dell'analisi (fino a 15 minuti), con necessità di gestire keepalive e riconnessioni. L'intervallo di 3 secondi sul polling, rende il ritardo di notifica trascurabile rispetto al tempo totale.
 
 === Routing
 #figure( [#image("../../asset/diagr-architett/frontend/app.png")] , caption: [Diagramma componenti, App - frontend])
