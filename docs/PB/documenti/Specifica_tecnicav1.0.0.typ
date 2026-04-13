@@ -440,8 +440,13 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
 - *Facade* \
 In MS1, ogni layer agisce come una Facade per il layer sottostante, esponendo un'interfaccia semplificata che nasconde la complessità della collaborazione tra più componenti. Il layer #text(font: "Courier New")[AnalysisManagementPresentation] espone singoli endpoint REST che celano al client l'intero workflow sottostante: la risoluzione del commit SHA tramite GitHub, la verifica della cache su MongoDB, l'avvio asincrono dell'analisi su MS2 e la gestione degli errori. Analogamente, #text(font: "Courier New")[AnalysisManagementService] presenta un'interfaccia coesa al layer di presentazione nascondendo l'orchestrazione tra persistenza e infrastruttura, e #text(font: "Courier New")[AnalysisManagementInfrastructure] espone metodi semplici verso il service celando la complessità della comunicazione con GitHub e con il gateway AWS Lambda.
 
+Anche MS3 utilizza un Facade come unico endpoint per l'esterno in modo da creare un'unica interfaccia e per nascondere la complessità del sistema sottostante. #text(font: "Courier New")[InjestionController] unisce tutti i metodi di #text(font: "Courier New")[UserService] e #text(font: "Courier New")[RepoService] che rappresentano i due subsystem sottostanti, in questo modo il client o chiunque accede al servizio non conosce la presenza della struttura interna.
+
 - *Strategy* \
 Il sistema utilizza il pattern Strategy in modo pervasivo: ogni layer comunica esclusivamente attraverso interfacce astratte (#text(font: "Courier New")[AnalysisManagementServiceInterface], #text(font: "Courier New")[AnalysisManagementPersistenceInterface], #text(font: "Courier New")[AnalysisManagementInfrastructureInterface]), senza mai dipendere direttamente dalle implementazioni concrete. Le classi concrete appaiono solo nel composition root (#text(font: "Courier New")[AppModule]), dove il container IoC di NestJS le inietta tramite Dependency Injection. Questo permette di sostituire a runtime qualsiasi implementazione — ad esempio sostituendo la persistenza reale con un mock nei test — senza modificare il codice dei layer superiori.
+
+- *Data Mapper* \
+In MS3 viene implementato il Data Mapper Pattern per permettere la separazione tra il business layer e il persistence layer. Attraverso le classi #text(font: "Courier New")[UserMapper] e #text(font: "Courier New")[RepoMapper] tutti gli oggetti di dominio, ovvero #text(font: "Courier New")[UserEntity] e #text(font: "Courier New")[RepoEntity], vengono tradotti nella controparte interpretabile dalla libreria Mongoose, ovvero gli schema #text(font: "Courier New")[UserPersistence] e #text(font: "Courier New")[RepoPersistence].
 
 = Progettazione
 == Progettazione backend
