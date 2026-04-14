@@ -446,8 +446,7 @@ Anche MS3 utilizza un Facade come unico endpoint per l'esterno in modo da creare
 - *Data Mapper* \
 In MS3 viene implementato il Data Mapper Pattern per permettere la separazione tra il business layer e il persistence layer. Attraverso le classi #text(font: "Courier New")[UserMapper] e #text(font: "Courier New")[RepoMapper] tutti gli oggetti di dominio, ovvero #text(font: "Courier New")[UserEntity] e #text(font: "Courier New")[RepoEntity], vengono tradotti nella controparte interpretabile dalla libreria Mongoose, ovvero gli schema #text(font: "Courier New")[UserPersistence] e #text(font: "Courier New")[RepoPersistence].
 
-- *Data Mapper* \
-In MS3 viene implementato il Data Mapper Pattern per permettere la separazione tra il business layer e il persistence layer. Attraverso le classi #text(font: "Courier New")[UserMapper] e #text(font: "Courier New")[RepoMapper] tutti gli oggetti di dominio, ovvero #text(font: "Courier New")[UserEntity] e #text(font: "Courier New")[RepoEntity], vengono tradotti nella controparte interpretabile dalla libreria Mongoose, ovvero gli schema #text(font: "Courier New")[UserPersistence] e #text(font: "Courier New")[RepoPersistence].
+#pagebreak()
 
 = Progettazione
 == Progettazione backend
