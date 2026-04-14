@@ -68,11 +68,11 @@ Questa introduzione delinea il contesto e gli scopi del progetto.
 === Typescript v5.7.x
 Il progetto è sviluppato in Typescript, un superset di JavaScript che introduce tipizzazione statica opzionale. \  La *tipizzazione statica e riduzione degli errori a runtime* TypeScript consente di intercettare intere categorie di errori già in fase di compilazione, prima che il codice raggiunga l'ambiente di esecuzione. \ 
 In un'applicazione full-stack dove frontend e backend si scambiano dati via API, la definizione di interfacce e tipi condivisi elimina ambiguità sui contratti di dato, riducendo drasticamente i bug dovuti a proprietà mancanti, tipi inattesi o refactoring parziali. \ 
-Il supporto al completamento automatico, alla navigazione del codice e al refactoring assistito offerto dagli IDE come VS Code è notevolmente potenziato dalla presenza dei tipi. Questo si traduce in *cicli di sviluppo più rapidi e in un onboarding più agevole per nuovi membri del team*. \ 
+Il supporto al completamento automatico, alla navigazione del codice e al refactoring assistito offerto dagli IDE come VS Code è notevolmente potenziato dalla presenza dei tipi \ 
 Su tutti gli strati applicativi *è possibile condividere modelli di dominio, DTO (Data Transfer Object) e interfacce in un unico package condiviso*, garantendo coerenza tra le strutture dati prodotte dal backend e quelle consumate dal frontend, senza duplicazione del codice.
 == Framework 
 === NestJS v11.0.x
-NestJS è il framework applicativo scelto per strutturare il layer server.
+NestJS è il framework applicativo scelto per strutturare il server.
 
 - _Architettura modulare e scalabile_: organizza il codice in moduli, controller e service, imponendo una struttura chiara che facilita la separazione delle responsabilità e la crescita ordinata del progetto nel tempo.
 - _Dependency Injection nativa_: Il sistema di DI integrato rende i componenti disaccoppiati, testabili in isolamento e facilmente sostituibili, migliorando la qualità architetturale complessiva.
@@ -359,14 +359,14 @@ AWS è il provider cloud adottato per l'intera infrastruttura della piattaforma.
 ==== AWS Bedrock
 Bedrock fornisce accesso a modelli fondazionali LLM tramite un'unica API gestita. Ogni agente è configurato come Bedrock Agent con un proprio system prompt e invocato dalle Lambda tramite l'SDK BedrockAgentRuntimeClient. \ Il modello LLM sottostante è disaccoppiato dal codice: aggiornare versione o provider richiede solo una modifica all'alias Bedrock, senza toccare le Lambda.
 ==== AWS Lambda
-Lambda è il runtime di tutta la logica agentica: pull del repository, planning, esecuzione degli agenti (OWASP, Test, Docs), aggregazione, polishing e notifica webhook sono ciascuno una funzione Lambda distinta. Il modello serverless è adatto a questo workload perché i task sono asincroni, di durata variabile e attivati su eventi; inoltre il costo è strettamente proporzionale all'elaborazione effettiva.
+Lambda è il runtime di tutta la logica agentica: pull del repository, planning, esecuzione degli agenti (OWASP, Test, Docs), aggregazione, polishing e notifica webhook sono ciascuno una funzione Lambda distinta. Il modello serverless è adatto a questo workload perché i task sono asincroni, di durata variabile e attivati su comandi; inoltre il costo è strettamente proporzionale all'elaborazione effettiva.
 ==== AWS Step Functions
 Step Functions orchestra l'intero flusso agentico come macchina a stati: gestisce sequenza, parallelismo nativo (OWASP e Test Agent in contemporanea), branching condizionale sul flag runDocs, retry, timeout e propagazione degli errori verso il failure handler. Evita di dover implementare manualmente la logica di coordinamento tra Lambda e rende il flusso ispezionabile visivamente dalla console AWS.
 ==== AWS S3
 S3 svolge due ruoli distinti nella piattaforma: archivia il repository clonato come ZIP che gli agenti recuperano autonomamente per l'analisi, e funge da bus di stato asincrono tra gli agenti paralleli - ogni domain agent scrive il proprio report parziale su S3 al termine dell'elaborazione, e l'orchestratore aggregatore li recupera e cancella nella fase successiva. Questo disaccoppia i componenti paralleli senza richiedere comunicazione diretta tra Lambda. \
-S3 viene inoltre utilizzato per l'hosting degli asset statici del frontend (MS0): il bundle prodotto da Vite in fase di build viene caricato su un bucket S3 configurato per il website hosting statico.
+S3 viene inoltre utilizzato per l'hosting degli asset statici del frontend: il bundle prodotto da Vite in fase di build viene caricato su un bucket S3 configurato per il website hosting statico.
 ==== AWS Fargate
-Fargate è il runtime serverless per container, utilizzato per hostare il frontend e il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalando automaticamente. È la scelta naturale per i componenti con ciclo di vita HTTP continuo, a differenza della logica agentica che per sua natura è event-driven e gestita da Lambda.
+Fargate è il runtime serverless per container, utilizzato per hostare il backend NestJS. Elimina la gestione dei nodi del cluster: i container vengono deployati tramite immagini ECR, scalando automaticamente. È la scelta naturale per i componenti con ciclo di vita HTTP continuo.
 
 == Tecnologie per Continuous Integration
 === GitHub Actions
@@ -379,7 +379,7 @@ Il pipeline è strutturato in un job che esegue:
 = Architettura
 
 == Architettura logica
-L'ecosistema del progetto adotta pattern architetturali differenziati in funzione delle specifiche responsabilità di ciascun microservizio. \ MS1 e MS3 seguono un'architettura layered, scelta per la separazione chiara delle responsabilità, la semplicità strutturale e la coerenza con le convenzioni già consolidate nel progetto. \ MS2 adotta invece un paradigma Command-Driven, coerentemente con l'infrastruttura AWS su cui si basa: l'impiego di agenti Lambda orchestrati tramite Step Functions rende questo pattern non solo naturale, ma architetturalmente necessario. \ Il frontend adotta una Component-based Architecture, sfruttando il modello compositivo nativo di React.
+L'ecosistema del progetto adotta pattern architetturali differenziati in funzione delle specifiche responsabilità di ciascun microservizio. \ MS1 e MS3 seguono un'architettura layered, scelta per la separazione chiara delle responsabilità, la semplicità strutturale e la coerenza con le convenzioni già consolidate nel progetto. \ MS2 adotta invece un paradigma Command-Driven: l'impiego di agenti Lambda orchestrati tramite Step Functions rende questo pattern non solo naturale, ma architetturalmente necessario. \ Il frontend adotta una Component-based Architecture, sfruttando il modello compositivo nativo di React.
 
 === Component-based Architecture
 Utilizzata nel frontend\
@@ -397,23 +397,21 @@ _Business Layer_ #pad(left: 0.5cm)[Contiene la logica applicativa del microservi
 _Infrastructure Layer (MS1)_ #pad(left: 0.5cm)[Gestisce l'accesso alle API di servizi esterni (es. Github) o interni (es. Comunicazione fra MS1 e MS2).]
 _Data Layer_ #pad(left: 0.5cm)[Gestisce l'accesso alle sorgenti dati del microservizio, siano esse layer di persistenza, API esterne o store locali. Attraverso l'uso di pattern di astrazione dedicati, garantisce che il dominio applicativo rimanga indipendente dalla tecnologia di accesso ai dati sottostante.]
 
-=== Command-Driven Architecture (Orchestration)
-A causa della necessità di gestire processi analitici a lunga esecuzione in modo scalabile e asincrono, MS2 adotta un'architettura Serverless basata sull'orchestrazione dei comandi (Command-Driven), organizzata nei seguenti domini operativi:\
+=== Command-Driven Architecture
+A causa della necessità di gestire processi analitici a lunga esecuzione in modo scalabile e asincrono, MS2 adotta un'architettura Serverless basata su comandi (Command-Driven), organizzata nei seguenti domini operativi:\
 
-_Command Initiator_ #pad(left: 0.5cm)[Modulo di ricezione che gestisce le richieste sincrone esterne. Valida il payload e agisce da innesco (trigger), inviando il comando di avvio al sistema di orchestrazione e restituendo immediatamente un riferimento di tracciamento al chiamante.]
-
-_Central Orchestrator_ #pad(left: 0.5cm)[Cuore dell'architettura. Gestito tramite macchine a stati finiti su cloud, coordina il ciclo di vita dell'analisi impartendo comandi diretti e sequenziali ai vari task. Decide il piano di esecuzione, supervisiona l'elaborazione parallela, gestisce i retry e intercetta eventuali fallimenti.]
-
-_Task Workers_ #pad(left: 0.5cm)[Unità elaborative indipendenti (funzioni serverless) eseguite su comando diretto dall'orchestratore. Prelevano i dati sorgente da uno storage condiviso, eseguono l'analisi tramite modelli AI e restituiscono l'esito della loro esecuzione all'orchestratore per consentire la prosecuzione del workflow.]
+_Event Producers_ #pad(left: 0.5cm)[Modulo di ricezione che gestisce le richieste sincrone esterne. Valida il payload e agisce da generatore (producer), innescando l'evento iniziale verso il sistema di orchestrazione e restituendo immediatamente un riferimento di tracciamento al chiamante.]
+_Event Orchestrator_ #pad(left: 0.5cm)[Cuore dell'architettura. Gestito tramite macchine a stati finiti su cloud, coordina il ciclo di vita dell'analisi instradando dinamicamente gli eventi tra i vari worker. Decide il piano di esecuzione, supervisiona l'esecuzione parallela e intercetta gli eventi di completamento o errore.]
+_Event Consumers_ #pad(left: 0.5cm)[Unità elaborative indipendenti (funzioni serverless) che si attivano in reazione ai comandi diramati dall'orchestratore. Prelevano i dati sorgente da uno storage condiviso, eseguono l'analisi tramite modelli AI e generano eventi di completamento per consentire la prosecuzione del workflow.]
 
 == Architettura di deployment
-L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale è motivata sia dalle esigenze tecniche del sistema — che combina componenti eterogenei, tra cui una parte serverless/agentica su AWS e servizi con architettura layered tradizionale — sia dai vantaggi intrinseci del paradigma: elevata scalabilità, resilienza e indipendenza nello sviluppo e nel rilascio dei singoli componenti. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità.
+L'architettura di deployment adottata per il sistema è basata su microservizi. Questa scelta progettuale è motivata sia dalle esigenze tecniche del sistema — che combina componenti eterogenei, tra cui una parte serverless/agentica su AWS e servizi con architettura layered tradizionale — sia dai vantaggi intrinseci del paradigma: elevata scalabilità, resilienza e indipendenza nello sviluppo e nel rilascio dei singoli componenti. Ogni microservizio costituisce un'entità autonoma, responsabile di un insieme specifico e circoscritto di funzionalità. \ 
+Il frontend è una Single Page Application (SPA): un'unica applicazione React che gira nel browser e comunica col backend a microservizi tramite API REST. 
 
 *Comunicazione tra i servizi*
-#pad(left: 0.5cm)[Il sistema adotta un modello di comunicazione ibrido per far fronte alle diverse esigenze elaborative. Per le interazioni che richiedono una risposta immediata (come la gestione degli utenti e repository in MS3 o il coordinamento lato client in MS1), i microservizi comunicano tramite interfacce API REST sincrone, garantendo un flusso di dati rapido e ben definito. Al contrario, le operazioni agentiche di analisi del codice (MS2) richiedono tempi di esecuzione prolungati e incompatibili con i normali timeout HTTP. Per questo motivo, l'interazione con MS2 è asincrona e guidata dagli eventi: MS1 avvia il processo tramite una chiamata all'API Gateway di AWS e, al termine dell'elaborazione, MS2 notifica i risultati richiamando un Webhook esposto da MS1.]
-
+#pad(left: 0.5cm)[A differenza dei sistemi basati su messaggistica asincrona, i microservizi comunicano tra loro tramite interfacce API REST (Representational State Transfer). L'adozione di questo protocollo garantisce una comunicazione chiara e ben definita tra i componenti, facilitando l'integrazione e le attività di debugging. Il modello sincrono consente inoltre un flusso di dati immediato, risultando particolarmente adatto alle operazioni agentiche che richiedono una risposta in tempo reale.]
 *Containerizzazione e Deployment*
-#pad(left: 0.5cm)[Il deployment dell'ecosistema segue un duplice paradigma per ottimizzare scalabilità e costi. I microservizi tradizionali (MS1, MS3) e il frontend sono containerizzati tramite Docker. L'incapsulamento in container indipendenti previene conflitti di dipendenze, assicura che il software si comporti in modo identico in ogni ambiente. Il microservizio di analisi (MS2), data la sua natura architetturale, non fa invece uso di container persistenti, ma è interamente distribuito su un'infrastruttura Serverless (AWS Lambda orchestrate da Step Functions). Questa differenziazione permette alle risorse computazionali di adattarsi in modo elastico. I container gestiscono il traffico continuo degli utenti, mentre i worker serverless si accendono solo su richiesta, scalando durante le analisi in base alle necessità.]
+#pad(left: 0.5cm)[Il deployment dei microservizi avviene in ambienti virtualizzati tramite Docker. Ogni microservizio è incapsulato in un container indipendente, operante in un ambiente isolato che previene conflitti di dipendenze e interferenze tra i servizi. Questa soluzione semplifica le fasi di test, rilascio e aggiornamento, assicurando che il software si comporti in modo identico in qualsiasi ambiente di esecuzione. La natura dei container permette infine di replicare i singoli servizi in modo rapido ed efficiente, consentendo al sistema di adattarsi dinamicamente a carichi di lavoro variabili.]
 
 === Microservizi
 
@@ -421,9 +419,9 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 
 *Microservizio di Analisi dei Repository - MS2* #pad(left: 0.5cm)[Si occupa dell'analisi del codice sorgente delle repository mediante l'impiego di agenti software. Ricevuta una richiesta, il microservizio avvia il processo di analisi, delegando l'esecuzione a due o tre agenti specializzati e restituendo i risultati al chiamante.]
 
-*Microservizio di Autenticazione e Repository Management - MS3*:
+*Microservizio di User e Repository Management - MS3*:
 //#figure( [#image("../../asset/Diagr-architett/architett_authrepo.png")] , caption: [Layered architecture - MS3])
-#pad(left: 0.5cm)[Responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di registrazione e autenticazione degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell’API esterna.]
+#pad(left: 0.5cm)[Responsabile della gestione degli utenti e delle repository associate. Espone funzionalità di login degli utenti, nonché di aggiunta e rimozione di repository. L'interazione con il servizio esterno GitHub è mediata da un componente Adapter, che isola il sistema dalle specificità dell’API esterna.]
 == Design pattern
 
 // USATI IN MS1
@@ -432,30 +430,35 @@ L'architettura di deployment adottata per il sistema è basata su microservizi. 
 
 // USATI IN MS3
 - *Dependency Injection*
-Il sistema adotta il pattern Dependency Injection tramite il container IoC di NestJS. Ogni dipendenza viene dichiarata nel costruttore come interfaccia astratta e iniettata automaticamente a runtime, disaccoppiando la configurazione del sistema dalla sua logica. Questo garantisce due vantaggi concreti: i componenti sono intercambiabili, ovvero che cambiare tecnologia di persistenza richiede solo una nuova implementazione dell'interfaccia, e nei test ogni dipendenza può essere sostituita con un mock senza toccare il codice di produzione.
+Il sistema adotta il pattern Dependency Injection tramite il container IoC di NestJS. Le dipendenze tra i layer sono mediate da interfacce, garantendo disaccoppiamento e sostituibilità delle implementazioni concrete.
 
 - *Adapter* \ Il pattern è utilizzato per isolare i microservizi dalle specificità delle librerie esterne e dei servizi cloud.
 
-  - In MS3 (Authentication & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
+  - In MS3 (User & Repository Management) e MS1 (Analysis Management), un Adapter traduce le richieste interne in chiamate conformi all'API di GitHub, permettendo al sistema di interagire con i repository senza dipendere direttamente dal formato di GitHub.
   - In MS2 (Analysis Service), è stato implementato un Adapter per AWS Step Functions. Questo componente isola la logica di business di NestJS dalle specificità dell'SDK di AWS, fornendo un'interfaccia semplificata per l'avvio delle "State Machine" di analisi e gestendo internamente la conversione dei payload e degli ARN di esecuzione.
   - In MS1, #text(font: "Courier New")[GithubAdapter] traduce le richieste interne in chiamate conformi all'API di GitHub tramite Octokit, incapsulando il parsing dell'URL, la risoluzione del branch di default e la gestione degli errori specifici del provider.
 
 - *Facade* \
-In MS1, il layer #text(font: "Courier New")[AnalysisManagement] agisce come Facade verso i client esterni: espone endpoint REST semplici che nascondono un sottosistema composto da più componenti che collaborano — la risoluzione del commit SHA tramite GitHub, la verifica della cache su MongoDB e l'avvio asincrono dell'analisi su MS2. Il client ottiene una risposta immediata, ignaro della complessità del workflow sottostante.
+In MS1, #text(font: "Courier New")[AnalysisManagementPresentation] agisce come Facade verso i client esterni: espone endpoint REST semplici che nascondono un sottosistema composto da più componenti che collaborano, come ad esempio la risoluzione del commit SHA tramite GitHub, la verifica della cache su MongoDB e l'avvio asincrono dell'analisi su MS2. Il client ottiene una risposta immediata, ignaro della complessità del workflow sottostante. Non è stata definita un'interfaccia dedicata per la Presentation in quanto il disaccoppiamento rilevante avviene già tramite #text(font: "Courier New")[AnalysisManagementServiceInterface] a livello di Business layer.
+
+Anche MS3 utilizza un Facade come unico endpoint per l'esterno in modo da creare un'unica interfaccia e per nascondere la complessità del sistema sottostante. #text(font: "Courier New")[InjestionController] unisce tutti i metodi di #text(font: "Courier New")[UserService] e #text(font: "Courier New")[RepoService] che rappresentano i due subsystem sottostanti, in questo modo il client o chiunque accede al servizio non conosce la presenza della struttura interna.
+
+- *Data Mapper* \
+In MS3 viene implementato il Data Mapper Pattern per permettere la separazione tra il business layer e il persistence layer. Attraverso le classi #text(font: "Courier New")[UserMapper] e #text(font: "Courier New")[RepoMapper] tutti gli oggetti di dominio, ovvero #text(font: "Courier New")[UserEntity] e #text(font: "Courier New")[RepoEntity], vengono tradotti nella controparte interpretabile dalla libreria Mongoose, ovvero gli schema #text(font: "Courier New")[UserPersistence] e #text(font: "Courier New")[RepoPersistence].
 
 = Progettazione
 == Progettazione backend
 
 === Analysis Management Service - MS1
 
-L'architettura del microservizio di gestione (MS1) è progettata per fungere da gateway e orchestratore principale del sistema. Sviluppato in NestJS, espone le API REST per l'interazione con i client, gestisce la persistenza su MongoDB e coordina le chiamate asincrone verso il microservizio di analisi (MS2).
+L'architettura del microservizio di gestione (MS1) è progettata per fungere da gateway e orchestratore principale del sistema. Sviluppato in NestJS, espone le API REST per l'interazione con i client, gestisce la persistenza su MongoDB e coordina le chiamate verso il microservizio di analisi (MS2).
 
 #figure([#image("../../asset/diagr-architett/UML/AnalysisManagementService.png")], caption: [Diagramma delle classi; Analisi Management Service - MS1])
 
 ==== Classi MS1 - Presentation Layer
 
-*AnalysisManagement* \
-Punto di ingresso HTTP (NestJS). Gestisce il ciclo di vita delle richieste REST e riceve i risultati asincroni da MS2 tramite webhook. Implementa l'interfaccia #text(font: "Courier New")[AnalysisManagement] e dipende da #text(font: "Courier New")[AnalysisManagementServiceInterface], senza conoscere l'implementazione concreta del service. \
+*AnalysisManagementPresentation* \
+Punto di ingresso HTTP (NestJS). Gestisce il ciclo di vita delle richieste REST e riceve i risultati da MS2 tramite webhook. Dipende da #text(font: "Courier New")[AnalysisManagementServiceInterface], senza conoscere l'implementazione concreta del service. \
 _Attributi privati:_
   - #text(font: "Courier New")[analysisService: AnalysisManagementServiceInterface] - istanza del service di dominio, iniettata tramite Dependency Injection.
 
@@ -470,7 +473,7 @@ _Metodi pubblici:_
 *AnalysisManagementService* \
 Service principale che implementa #text(font: "Courier New")[AnalysisManagementServiceInterface] e coordina la logica applicativa tra persistenza e infrastruttura. Ogni dipendenza viene dichiarata nel costruttore come interfaccia astratta e iniettata dal container IoC tramite Dependency Injection, garantendo che il Business layer rimanga indipendente dalla tecnologia di persistenza e dalla comunicazione esterna. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - recupera il commit SHA più recente tramite l'infrastruttura e verifica in persistenza se esiste già un'analisi per quel commit. Se presente e completata restituisce stato `done`; se in corso restituisce `processing`; se in errore o assente genera un nuovo #text(font: "Courier New")[jobId] (UUID), salva un record con stato `processing` e avvia l'analisi su MS2 in modo asincrono. I fallimenti asincroni dell'infrastruttura vengono intercettati e registrati tramite #text(font: "Courier New")[updateAnalysisToError].
+  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - recupera il commit SHA più recente tramite l'infrastruttura e verifica in persistenza se esiste già un'analisi per quel commit. Se presente e completata restituisce stato `done`; se in corso restituisce `processing`; se in errore o assente genera un nuovo #text(font: "Courier New")[jobId] (UUID), salva un record con stato `processing` e avvia l'analisi su MS2 in modo asincrono. I fallimenti dell'infrastruttura vengono intercettati e registrati tramite #text(font: "Courier New")[updateAnalysisToError].
   - #text(font: "Courier New")[getAnalysisStatus(jobId: string)] - interroga la persistenza tramite #text(font: "Courier New")[getAnalysisByJob]. Restituisce `done` se #text(font: "Courier New")[analysisDetails] è popolato, `processing` se vuoto, `error` se il record non esiste o riporta uno stato di errore.
   - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - persiste i risultati ricevuti via webhook, delegando direttamente alla persistenza.
   - #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - recupera l'ultima analisi dalla persistenza e la arricchisce con il flag #text(font: "Courier New")[isLatest], confrontando il #text(font: "Courier New")[commitId] memorizzato con il commit SHA corrente su GitHub.
@@ -506,14 +509,14 @@ Il microservizio MS1 opera come orchestratore a stato. Di seguito la logica di i
 2. *Pre-processing*: Risoluzione del commit SHA corrente tramite GitHub API (#text(font: "Courier New")[GithubAdapter]).
 3. *Cache check*: Verifica in MongoDB se esiste già un'analisi per quel commit. Se presente e completata, risposta immediata con stato `done`; se in corso, risposta con `processing` e il #text(font: "Courier New")[jobId] esistente.
 4. *Persistenza*: Creazione del record con stato `processing` e #text(font: "Courier New")[jobId] univoco (UUID).
-5. *Outbound*: Chiamata HTTP asincrona fire-and-forget verso il gateway AWS (MS2), autenticata tramite API Key. MS1 ritorna immediatamente al client senza attendere il completamento dell'analisi.
+5. *Outbound*: Chiamata HTTP fire-and-forget verso il gateway AWS (MS2), autenticata tramite API Key. MS1 ritorna immediatamente al client senza attendere il completamento dell'analisi.
 6. *Error handling*: I fallimenti asincroni dell'infrastruttura aggiornano il record a stato `error` tramite #text(font: "Courier New")[updateAnalysisToError], garantendo la consistenza dello stato.
 7. *Callback*: MS2 invia i risultati all'endpoint `/analysis/webhook`, autenticato tramite #text(font: "Courier New")[x-ms1-key]. Il service persiste i dati e porta lo stato del record a `done`.
 
 #pagebreak()
 === Analisi dei Repository - MS2
 
-L'architettura del microservizio di analisi (MS2) sfrutta un'architettura Command-Driven (basata su Orchestrazione) e Serverless. Il sistema è progettato per gestire processi a lunga esecuzione in modo asincrono, separando l'interfaccia di ricezione delle richieste dall'orchestrazione del workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura AWS, utilizzando Step Functions per la gestione degli stati e degli eventi, AWS Bedrock per l'elaborazione AI e S3 per lo storage degli artefatti.
+L'architettura del microservizio di analisi (MS2) sfrutta un'architettura Command-Driven e Serverless. Il sistema è progettato per gestire processi a lunga esecuzione in modo asincrono, separando l'interfaccia di ricezione delle richieste dall'orchestrazione del workflow operativo. Il sistema si appoggia interamente ad un'infrastruttura AWS, utilizzando Step Functions per la gestione degli stati e dei comandi, AWS Bedrock per l'elaborazione AI e S3 per lo storage degli artefatti.
 
 ==== Entry Point e Trigger degli Eventi
 
@@ -534,17 +537,11 @@ Core applicativo che isola la logica di innesco, coordinando la preparazione del
 Metodi pubblici:
 - #text(font: "Courier New")[triggerAnalysis(payload: AnalysisRequestDto)] - coordina l'avvio della pipeline inoltrando il payload all’adapter Step Functions tramite startStepFunctionExecution().
 
-*ApiKeyGuard*\
-Guardia di sicurezza NestJS responsabile dell'autenticazione delle richieste in ingresso.
-
-Metodi pubblici:
-- #text(font: "Courier New")[canActivate(context: ExecutionContext)] - Estrae l'header x-api-key dalla richiesta HTTP e lo confronta con la variabile d'ambiente API_KEY del server. Se la chiave manca o non corrisponde, lancia un'eccezione UnauthorizedException, bloccando l'esecuzione.
-
 *AwsStepFunctionsAdapter*\
 Componente adapter per l'integrazione con AWS Step Functions. Isola il framework NestJS dall'utilizzo diretto dell'SDK AWS.
 
-Configurazione di Modulo:
-- #text(font: "Courier New")[sfnClient: SFNClient] — istanza singleton del client AWS inizializzata a livello di modulo per sfruttare il riutilizzo del contesto, utilizzata per la pubblicazione degli eventi.
+Attributi privati:
+- #text(font: "Courier New")[sfnClient: SFNClient] — istanza del client AWS per la pubblicazione degli eventi di orchestrazione.
 
 Metodi pubblici:
 - #text(font: "Courier New")[startStepFunctionExecution(payload: any)] — riceve il payload di analisi, inizializza un StartExecutionCommand e invoca la State Machine configurata tramite l'ARN presente nelle variabili d'ambiente. Restituisce l'ARN dell'esecuzione avviata.
@@ -610,7 +607,7 @@ Queste classi forniscono supporto all'infrastruttura elaborativa agendo come str
 Modulo responsabile della comunicazione  con l'infrastruttura ad eventi di AWS Bedrock Agents.
 
 Metodi pubblici:
-- #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] - gestisce l'invocazione dell'AI. Include logiche di backoff esponenziale per gestire ritardi o throttling (HTTP 429/503) e intercetta i tentativi di Tool Use da parte dell'LLM, negandone l'esecuzione per forzare l'aderenza al formato Markdown richiesto.
+- #text(font: "Courier New")[invokeSubAgent(agentId: string, agentAliasId: string, prompt: string, agentName: string, isLead: boolean)] - gestisce l'invocazione dell'AI. Include logiche di retry per gestire ritardi o throttling.
 
 *SmartBundler*\
 Componente chiave per l'implementazione della suddivisione del codice in chunk, ottimizzato per rientrare nei limiti di contesto dei LLM tramite la libreria repomix.
@@ -618,44 +615,19 @@ Componente chiave per l'implementazione della suddivisione del codice in chunk, 
 Metodi pubblici:
 - #text(font: "Courier New")[createSourceChunks(extractPath: string)] — suddivide il sorgente in porzioni sequenziali (chunk) basate sulla costante MAX_BUNDLE_CHARS (150.000 caratteri) rispettando i confini dei file tramite analisi dei delimitatori repomix.
 - #text(font: "Courier New")[createFullChunks(extractPath: string)] — suddivide l'intero contenuto del repository in chunk per analisi che richiedono visibilità globale.
-- #text(font: "Courier New")[createManifestBundle(extractPath: string)] — isola esclusivamente i file di configurazione delle dipendenze (es. package.json, pom.xml).
-- #text(font: "Courier New")[extractImportedLibraries(sourceChunks: string[])] — esegue parsing tramite espressioni regolari per estrarre staticamente le librerie esterne importate nel progetto.
+
 *DecompressioneZipTool* \
 Modulo di utilità per l'interazione con il data repository centrale (AWS S3).
 
 Metodi pubblici:
 - #text(font: "Courier New")[unzipRepoToTemp(bucket: string, zipKey: string)] — recupera l'archivio ZIP da S3 tramite GetObjectCommand, lo salva in locale e lo decomprime nel file system temporaneo della Lambda.
 
-=== Infrastruttura e Deployment
-
-L'infrastruttura del microservizio è gestita interamente utilizzando il framework *Serverless*.
-
-*Risorse Cloud (AWS)*
-- *AWS S3 (Repository Bucket):* Storage temporaneo per gli archivi ZIP dei repository clonati e per i report JSON intermedi generati dagli agenti. È configurato con regole di ciclo di vita (LifecycleConfiguration) che eliminano automaticamente gli archivi vecchi di un giorno per ottimizzare i costi e garantire la privacy del codice analizzato.
-- *IAM Roles (Gestione dei permessi):* Il sistema adotta il principio del minimo privilegio. Al servizio sono garantiti permessi espliciti limitati alle sole azioni necessarie: scrittura/lettura/cancellazione sul bucket S3 dedicato, avvio delle macchine a stati (#text(font: "Courier New")[states:StartExecution]) e invocazione dei modelli di Intelligenza Artificiale (#text(font: "Courier New")[bedrock:InvokeModel], #text(font: "Courier New")[bedrock:InvokeAgent]).
-
-*CI/CD e Qualità del Codice*
-Il ciclo di vita del software è automatizzato tramite workflow di GitHub Actions (#text(font: "Courier New")[software-quality.yml]), che prevede pipeline di analisi statica (ESLint, Prettier), esecuzione dei test di unità (Jest) con verifica della copertura e validazione dell'integrità della build.
-
-=== Sicurezza e Autenticazione
-
-Il sistema implementa meccanismi di sicurezza zero-trust sia per le richieste in ingresso che per le comunicazioni in uscita:
-- *Protezione in Ingresso:* L'endpoint HTTP esposto dal Driving Adapter NestJS (#text(font: "Courier New")[/analyze]) è protetto da un livello di autorizzazione basato su API Key, implementato in modo restrittivo tramite l'#text(font: "Courier New")[ApiKeyGuard].
-- *Protezione in Uscita:* La comunicazione asincrona finale verso i sistemi esterni (gestita dalla #text(font: "Courier New")[WebhookSenderLambda]) avviene trasmettendo il payload protetto da un header personalizzato (#text(font: "Courier New")[x-ms1-key]), la cui chiave è conservata in modo sicuro nel Parameter Store (SSM) di AWS.
-
-=== Resilienza e Gestione degli Errori
-
-Trattandosi di un'architettura distribuita asincrona a lunga esecuzione, la tolleranza ai guasti è stratificata su più livelli:
-- *Resilienza AI:* Il modulo #text(font: "Courier New")[AgentInvoker] implementa un meccanismo di retry automatico con "backoff esponenziale e jitter". Questo garantisce che eventuali errori di rete temporanei o blocchi per rate limiting (Throttling HTTP 429/503) da parte dell'API di AWS Bedrock vengano riassorbiti senza far fallire l'analisi.
-- *Fallback dell'Orchestratore:* La State Machine di AWS Step Functions implementa un blocco "Catch" globale. Se un qualsiasi task del processo (dall'estrazione del repository all'orchestrazione degli agenti LLM) va in crash irreversibile, l'esecuzione viene immediatamente deviata alla #text(font: "Courier New")[FailureHandlerLambda].
-- *Notifica di Fallimento:* La #text(font: "Courier New")[FailureHandlerLambda] garantisce che il sistema chiamante non rimanga mai in uno stato di attesa indefinita ("appeso"), inviando proattivamente un webhook di errore contenente la diagnostica formattata in modo sicuro, prima di contrassegnare l'esecuzione come fallita (Fail Execution).
-
 #pagebreak()
 
-=== Autenticazione e Repository Management - MS3
-Il diagramma è stato suddiviso in due figure per una questione di visibilità documentale. Il primo diagramma mostra le classi relative all'autenticazione, mentre il secondo mostra le classi relative alla gestione delle repository. 
-L'interfaccia _IngestionInterface_ e la classe _IngestionController_ sono presenti in entrambi i diagrammi perché espongono funzionalità sia per l'autenticazione che per la gestione delle repository, fungendo da punto di ingresso unificato per le richieste HTTP relative a entrambe le aree funzionali.
-#figure( [#image("../../asset/diagr-architett/UML/Auth_Diagram.png")] , caption: [Diagramma delle classi; Autenticazione - MS3])
+=== User e Repository Management - MS3
+Il diagramma è stato suddiviso in due figure per una questione di visibilità documentale. Il primo diagramma mostra le classi relative agli user, mentre il secondo mostra le classi relative alla gestione dei repository. 
+L'interfaccia _IngestionInterface_ e la classe _IngestionController_ sono presenti in entrambi i diagrammi perché espongono funzionalità sia per l'User che per la gestione delle repository, fungendo da punto di ingresso unificato per le richieste HTTP relative a entrambe le aree funzionali.
+#figure( [#image("../../asset/diagr-architett/UML/Auth_Diagram.png")] , caption: [Diagramma delle classi; User - MS3])
 #figure( [#image("../../asset/diagr-architett/UML/Repo_Diagram.png")] , caption: [Diagramma delle classi; Repository Management - MS3])
 ==== Classi MS3 - Presentation Layer
 *IngestionInterface* \
@@ -690,7 +662,7 @@ _Metodi privati:_
 *UserServiceLayerInterface* \
 Definisce il contratto del service utente esposto verso il layer di presentazione.
 
-- #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] - contratto per l'autenticazione di un utente a partire da credenziali validate.
+- #text(font: "Courier New")[login(data: ValidatedUserDataDTO)] - contratto per il login di un utente a partire da credenziali validate.
 - #text(font: "Courier New")[getUser(userId: string)] - contratto per il recupero di un utente tramite il suo id.
 
 *RepoServiceLayerInterface* \
@@ -825,7 +797,7 @@ Il frontend è sviluppato in React con TypeScript e Vite. L'architettura adottat
 
 L'aggiornamento reattivo è gestito tramite lo hook #text(font: "Courier New")[useEffect] di React, che implementa implicitamente il pattern Observer: i componenti si iscrivono a cambiamenti di stato o di props e reagiscono automaticamente quando i valori osservati variano. Nel sistema sono presenti tre utilizzi rilevanti di questo pattern. In #text(font: "Courier New")[useIsLogged()] del SessionService, lo hook osserva userId e location.pathname, reagendo ai cambiamenti di sessione e di navigazione per gestire i redirect automatici. In DettagliRepo, lo hook osserva il parametro id dell'URL, rilanciano il fetch dei dati quando l'utente naviga verso un repository diverso. In StartAnalysisButton, lo hook osserva initialJobId, avviando automaticamente il polling quando viene rilevata un'analisi in corso.
 
-La comunicazione asincrona per il monitoraggio delle analisi è implementata tramite polling: al termine di ogni intervallo, il frontend interroga il backend per conoscere lo stato del job in corso. Questa scelta è motivata dai vincoli architetturali del deployment: il frontend è servito da S3 come applicazione statica, quindi non espone alcun endpoint HTTP raggiungibile dall'esterno. Soluzioni push come notify richiederebbero che il ricevente sia un server con IP pubblico fisso, condizione non soddisfatta. Alternative come SSE o WebSocket, pur realizzabili, implicherebbero una connessione persistente aperta per l'intera durata dell'analisi (fino a 15 minuti), con necessità di gestire keepalive e riconnessioni. L'intervallo di 3 secondi sul polling, rende il ritardo di notifica trascurabile rispetto al tempo totale.
+La comunicazione per il monitoraggio delle analisi è implementata tramite polling: al termine di ogni intervallo, il frontend interroga il backend per conoscere lo stato del job in corso. Questa scelta è motivata dai vincoli architetturali del deployment: il frontend è servito da S3 come applicazione statica, quindi non espone alcun endpoint HTTP raggiungibile dall'esterno. Soluzioni push come notify richiederebbero che il ricevente sia un server con IP pubblico fisso, condizione non soddisfatta. Alternative come SSE o WebSocket, pur realizzabili, implicherebbero una connessione persistente aperta per l'intera durata dell'analisi (fino a 15 minuti), con necessità di gestire keepalive e riconnessioni. L'intervallo di 3 secondi sul polling, rende il ritardo di notifica trascurabile rispetto al tempo totale.
 
 === Routing
 #figure( [#image("../../asset/diagr-architett/frontend/app.png")] , caption: [Diagramma componenti, App - frontend])
