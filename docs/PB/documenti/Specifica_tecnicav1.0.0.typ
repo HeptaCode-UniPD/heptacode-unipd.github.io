@@ -446,6 +446,9 @@ Anche MS3 utilizza un Facade come unico endpoint per l'esterno in modo da creare
 - *Data Mapper* \
 In MS3 viene implementato il Data Mapper Pattern per permettere la separazione tra il business layer e il persistence layer. Attraverso le classi #text(font: "Courier New")[UserMapper] e #text(font: "Courier New")[RepoMapper] tutti gli oggetti di dominio, ovvero #text(font: "Courier New")[UserEntity] e #text(font: "Courier New")[RepoEntity], vengono tradotti nella controparte interpretabile dalla libreria Mongoose, ovvero gli schema #text(font: "Courier New")[UserPersistence] e #text(font: "Courier New")[RepoPersistence].
 
+- *Data Mapper* \
+In MS3 viene implementato il Data Mapper Pattern per permettere la separazione tra il business layer e il persistence layer. Attraverso le classi #text(font: "Courier New")[UserMapper] e #text(font: "Courier New")[RepoMapper] tutti gli oggetti di dominio, ovvero #text(font: "Courier New")[UserEntity] e #text(font: "Courier New")[RepoEntity], vengono tradotti nella controparte interpretabile dalla libreria Mongoose, ovvero gli schema #text(font: "Courier New")[UserPersistence] e #text(font: "Courier New")[RepoPersistence].
+
 = Progettazione
 == Progettazione backend
 
@@ -500,7 +503,7 @@ _Metodi pubblici:_
   - #text(font: "Courier New")[getAnalysisByJob(jobId: string)] - recupera un'analisi per #text(font: "Courier New")[job_id]. Estrae i punteggi numerici dai campi #text(font: "Courier New")[summary] e #text(font: "Courier New")[report] di ogni agente cercando il pattern "Global Maturity Score", e li popola nel campo #text(font: "Courier New")[scores] del DTO restituito.
   - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - esegue un upsert su #text(font: "Courier New")[job_id]: crea il documento se non esiste, altrimenti lo aggiorna. Include #text(font: "Courier New")[analysis_data] nel #text(font: "Courier New")[set] solo se #text(font: "Courier New")[analysisDetails] è presente e non vuoto, evitando di sovrascrivere dati già presenti con liste vuote.
   - #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - recupera il documento più recente per #text(font: "Courier New")[repository_url], ordinando per #text(font: "Courier New")[createdAt] decrescente. Estrae i punteggi con la stessa logica di #text(font: "Courier New")[getAnalysisByJob].
-  - #text(font: "Courier New")[updateAnalysisToError(jobId: string, errorMessage: string)] - aggiorna lo stato di un'analisi a `error` e registra il messaggio di errore, utilizzato per gestire i fallimenti asincroni dell'infrastruttura.
+  - #text(font: "Courier New")[updateAnalysisToError(jobId: string, errorMessage: string)] - aggiorna lo stato di un'analisi a `error` e registra il messaggio di errore, utilizzato per gestire i fallimenti dell'infrastruttura.
 
 ==== MS1 - Workflow di Comunicazione
 Il microservizio MS1 opera come orchestratore a stato. Di seguito la logica di interazione con MS2:

@@ -1565,11 +1565,11 @@ Ogni documento ha un indice di leggibilità superiore al limite inferiore di 50 
         [*Frontend*], 
         [*Analysis Service*], 
         [*Management Service*], 
-        [*Auth-Repo Service*]
+        [*User-Repo Service*]
       ),
       ..codecov.map(riga => {
-        let (p, front, anal, mngt, auth) = riga
-        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(auth))
+        let (p, front, anal, mngt, User) = riga
+        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(User))
       }).flatten()
     )
   )
@@ -1605,13 +1605,13 @@ Ogni documento ha un indice di leggibilità superiore al limite inferiore di 50 
           plot.add(((0, 0),), label: [Frontend], style: (stroke: (paint: blue.lighten(50%), thickness: 5pt)))
           plot.add(((0, 0),), label: [Analysis Service], style: (stroke: (paint: red.lighten(50%), thickness: 5pt)))
           plot.add(((0, 0),), label: [Management Service], style: (stroke: (paint: purple.lighten(50%), thickness: 5pt)))
-          plot.add(((0, 0),), label: [Auth-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [User-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
 
           // 3. Barre (senza label)
           plot.add-bar(codecov.filter(it => it.at(1) != none).map(it => { let (p, front, ..) = it; (p - 0.225, front) }), style: (stroke: blue, fill: blue.lighten(80%)), bar-width: bar-width)
           plot.add-bar(codecov.filter(it => it.at(2) != none).map(it => { let (p, f, anal, ..) = it; (p - 0.075, anal) }), style: (stroke: red, fill: red.lighten(80%)), bar-width: bar-width)
-          plot.add-bar(codecov.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, auth) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
-          plot.add-bar(codecov.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, auth) = it; (p + 0.225, auth) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(codecov.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, User) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(codecov.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, User) = it; (p + 0.225, User) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
         }
       )
     })
@@ -1640,11 +1640,11 @@ Lo sviluppo di test e di codice è iniziato a partire dal quattordicesimo sprint
         [*Frontend*], 
         [*Analysis Service*], 
         [*Management Service*], 
-        [*Auth-Repo Service*]
+        [*User-Repo Service*]
       ),
       ..testsucc.map(riga => {
-        let (p, front, anal, mngt, auth) = riga
-        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(auth))
+        let (p, front, anal, mngt, User) = riga
+        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(User))
       }).flatten()
     )
   )
@@ -1680,13 +1680,13 @@ Lo sviluppo di test e di codice è iniziato a partire dal quattordicesimo sprint
           plot.add(((0, 0),), label: [Frontend], style: (stroke: (paint: blue.lighten(50%), thickness: 5pt)))
           plot.add(((0, 0),), label: [Analysis Service], style: (stroke: (paint: red.lighten(50%), thickness: 5pt)))
           plot.add(((0, 0),), label: [Management Service], style: (stroke: (paint: purple.lighten(50%), thickness: 5pt)))
-          plot.add(((0, 0),), label: [Auth-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [User-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
 
           // 3. Barre (senza label)
           plot.add-bar(testsucc.filter(it => it.at(1) != none).map(it => { let (p, front, ..) = it; (p - 0.225, front) }), style: (stroke: blue, fill: blue.lighten(80%)), bar-width: bar-width)
           plot.add-bar(testsucc.filter(it => it.at(2) != none).map(it => { let (p, f, anal, ..) = it; (p - 0.075, anal) }), style: (stroke: red, fill: red.lighten(80%)), bar-width: bar-width)
-          plot.add-bar(testsucc.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, auth) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
-          plot.add-bar(testsucc.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, auth) = it; (p + 0.225, auth) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(testsucc.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, User) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(testsucc.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, User) = it; (p + 0.225, User) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
         }
       )
     })
@@ -1694,7 +1694,7 @@ Lo sviluppo di test e di codice è iniziato a partire dal quattordicesimo sprint
 ]
 
 \ *Andamento PB* \
-Alla fine degli sprint in cui si sono sviluppati test e codice, i componenti architetturali (Frontend, Analysis Service, Management Service, Authentication and Repository Service) hanno passato tutti i test implementati, perché il team si è assicurato che nessuna parte di codice che non superasse tutti i test rimanesse nel progetto.
+Alla fine degli sprint in cui si sono sviluppati test e codice, i componenti architetturali (Frontend, Analysis Service, Management Service, User and Repository Service) hanno passato tutti i test implementati, perché il team si è assicurato che nessuna parte di codice che non superasse tutti i test rimanesse nel progetto.
 
 
 == MPC16 - Statement Coverage
@@ -1715,11 +1715,11 @@ Alla fine degli sprint in cui si sono sviluppati test e codice, i componenti arc
         [*Frontend*], 
         [*Analysis Service*], 
         [*Management Service*], 
-        [*Auth-Repo Service*]
+        [*User-Repo Service*]
       ),
       ..statecov.map(riga => {
-        let (p, front, anal, mngt, auth) = riga
-        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(auth))
+        let (p, front, anal, mngt, User) = riga
+        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(User))
       }).flatten()
     )
   )
@@ -1755,13 +1755,13 @@ Alla fine degli sprint in cui si sono sviluppati test e codice, i componenti arc
           plot.add(((0, 0),), label: [Frontend], style: (stroke: (paint: blue.lighten(50%), thickness: 5pt)))
           plot.add(((0, 0),), label: [Analysis Service], style: (stroke: (paint: red.lighten(50%), thickness: 5pt)))
           plot.add(((0, 0),), label: [Management Service], style: (stroke: (paint: purple.lighten(50%), thickness: 5pt)))
-          plot.add(((0, 0),), label: [Auth-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [User-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
 
           // 3. Barre (senza label)
           plot.add-bar(statecov.filter(it => it.at(1) != none).map(it => { let (p, front, ..) = it; (p - 0.225, front) }), style: (stroke: blue, fill: blue.lighten(80%)), bar-width: bar-width)
           plot.add-bar(statecov.filter(it => it.at(2) != none).map(it => { let (p, f, anal, ..) = it; (p - 0.075, anal) }), style: (stroke: red, fill: red.lighten(80%)), bar-width: bar-width)
-          plot.add-bar(statecov.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, auth) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
-          plot.add-bar(statecov.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, auth) = it; (p + 0.225, auth) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(statecov.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, User) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(statecov.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, User) = it; (p + 0.225, User) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
         }
       )
     })
@@ -1789,11 +1789,11 @@ Lo statement coverage è sempre stato superiore al valore minimo accettabile del
         [*Frontend*], 
         [*Analysis Service*], 
         [*Management Service*], 
-        [*Auth-Repo Service*]
+        [*User-Repo Service*]
       ),
       ..branchcov.map(riga => {
-        let (p, front, anal, mngt, auth) = riga
-        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(auth))
+        let (p, front, anal, mngt, User) = riga
+        ([Sprint #p], fmt-perc(front), fmt-perc(anal), fmt-perc(mngt), fmt-perc(User))
       }).flatten()
     )
   )
@@ -1829,13 +1829,13 @@ Lo statement coverage è sempre stato superiore al valore minimo accettabile del
           plot.add(((0, 0),), label: [Frontend], style: (stroke: (paint: blue.lighten(50%), thickness: 5pt)))
           plot.add(((0, 0),), label: [Analysis Service], style: (stroke: (paint: red.lighten(50%), thickness: 5pt)))
           plot.add(((0, 0),), label: [Management Service], style: (stroke: (paint: purple.lighten(50%), thickness: 5pt)))
-          plot.add(((0, 0),), label: [Auth-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
+          plot.add(((0, 0),), label: [User-Repo Service], style: (stroke: (paint: teal.lighten(50%), thickness: 5pt)))
 
           // 3. Barre (senza label)
           plot.add-bar(branchcov.filter(it => it.at(1) != none).map(it => { let (p, front, ..) = it; (p - 0.225, front) }), style: (stroke: blue, fill: blue.lighten(80%)), bar-width: bar-width)
           plot.add-bar(branchcov.filter(it => it.at(2) != none).map(it => { let (p, f, anal, ..) = it; (p - 0.075, anal) }), style: (stroke: red, fill: red.lighten(80%)), bar-width: bar-width)
-          plot.add-bar(branchcov.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, auth) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
-          plot.add-bar(branchcov.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, auth) = it; (p + 0.225, auth) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(branchcov.filter(it => it.at(3) != none).map(it => { let (p, f, a, mngt, User) = it; (p + 0.075, mngt) }), style: (stroke: purple, fill: purple.lighten(80%)), bar-width: bar-width)
+          plot.add-bar(branchcov.filter(it => it.at(4) != none).map(it => { let (p, f, a, m, User) = it; (p + 0.225, User) }), style: (stroke: teal, fill: teal.lighten(80%)), bar-width: bar-width)
         }
       )
     })
