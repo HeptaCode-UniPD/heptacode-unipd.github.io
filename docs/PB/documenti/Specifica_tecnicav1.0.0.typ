@@ -439,10 +439,14 @@ Il sistema adotta il pattern Dependency Injection tramite il container IoC di Ne
   - In MS1, #text(font: "Courier New")[GithubAdapter] traduce le richieste interne in chiamate conformi all'API di GitHub tramite Octokit, incapsulando il parsing dell'URL, la risoluzione del branch di default e la gestione degli errori specifici del provider.
 
 - *Facade* \
-In MS1, ogni layer agisce come una Facade per il layer sottostante, esponendo un'interfaccia semplificata che nasconde la complessità della collaborazione tra più componenti. Il layer #text(font: "Courier New")[AnalysisManagementPresentation] espone singoli endpoint REST che celano al client l'intero workflow sottostante: la risoluzione del commit SHA tramite GitHub, la verifica della cache su MongoDB, l'avvio  dell'analisi su MS2 e la gestione degli errori. Analogamente, #text(font: "Courier New")[AnalysisManagementService] presenta un'interfaccia coesa al layer di presentazione nascondendo l'orchestrazione tra persistenza e infrastruttura, e #text(font: "Courier New")[AnalysisManagementInfrastructure] espone metodi semplici verso il service celando la complessità della comunicazione con GitHub e con il gateway AWS Lambda.
+In MS1, #text(font: "Courier New")[AnalysisManagementPresentation] agisce come Facade verso i client esterni: espone endpoint REST semplici che nascondono un sottosistema composto da più componenti che collaborano, come ad esempio la risoluzione del commit SHA tramite GitHub, la verifica della cache su MongoDB e l'avvio asincrono dell'analisi su MS2. Il client ottiene una risposta immediata, ignaro della complessità del workflow sottostante. Non è stata definita un'interfaccia dedicata per la Presentation in quanto il disaccoppiamento rilevante avviene già tramite #text(font: "Courier New")[AnalysisManagementServiceInterface] a livello di Business layer.
 
-- *Strategy* \
-Il sistema utilizza il pattern Strategy in modo pervasivo: ogni layer comunica esclusivamente attraverso interfacce astratte (#text(font: "Courier New")[AnalysisManagementServiceInterface], #text(font: "Courier New")[AnalysisManagementPersistenceInterface], #text(font: "Courier New")[AnalysisManagementInfrastructureInterface]), senza mai dipendere direttamente dalle implementazioni concrete. Le classi concrete appaiono solo nel composition root (#text(font: "Courier New")[AppModule]), dove il container IoC di NestJS le inietta tramite Dependency Injection. Questo permette di sostituire a runtime qualsiasi implementazione — ad esempio sostituendo la persistenza reale con un mock nei test — senza modificare il codice dei layer superiori.
+Anche MS3 utilizza un Facade come unico endpoint per l'esterno in modo da creare un'unica interfaccia e per nascondere la complessità del sistema sottostante. #text(font: "Courier New")[InjestionController] unisce tutti i metodi di #text(font: "Courier New")[UserService] e #text(font: "Courier New")[RepoService] che rappresentano i due subsystem sottostanti, in questo modo il client o chiunque accede al servizio non conosce la presenza della struttura interna.
+
+- *Data Mapper* \
+In MS3 viene implementato il Data Mapper Pattern per permettere la separazione tra il business layer e il persistence layer. Attraverso le classi #text(font: "Courier New")[UserMapper] e #text(font: "Courier New")[RepoMapper] tutti gli oggetti di dominio, ovvero #text(font: "Courier New")[UserEntity] e #text(font: "Courier New")[RepoEntity], vengono tradotti nella controparte interpretabile dalla libreria Mongoose, ovvero gli schema #text(font: "Courier New")[UserPersistence] e #text(font: "Courier New")[RepoPersistence].
+
+#pagebreak()
 
 = Progettazione
 == Progettazione backend
@@ -456,9 +460,9 @@ L'architettura del microservizio di gestione (MS1) è progettata per fungere da 
 ==== Classi MS1 - Presentation Layer
 
 *AnalysisManagementPresentation* \
-Punto di ingresso HTTP (NestJS). Gestisce il ciclo di vita delle richieste REST e riceve i risultati da MS2 tramite webhook. Implementa l'interfaccia #text(font: "Courier New")[AnalysisManagement] e dipende da #text(font: "Courier New")[AnalysisManagementServiceInterface], senza conoscere l'implementazione concreta del service. \
+Punto di ingresso HTTP (NestJS). Gestisce il ciclo di vita delle richieste REST e riceve i risultati da MS2 tramite webhook. Dipende da #text(font: "Courier New")[AnalysisManagementServiceInterface], senza conoscere l'implementazione concreta del service. \
 _Attributi privati:_
-  - #text(font: "Courier New")[analysisService: AnalysisManagementServiceInterface] - istanza del service di dominio, iniettata tramite DI.
+  - #text(font: "Courier New")[analysisService: AnalysisManagementServiceInterface] - istanza del service di dominio, iniettata tramite Dependency Injection.
 
 _Metodi pubblici:_
   - #text(font: "Courier New")[requestAnalysis(payload: RequestDTO)] - valida l'URL del repository e delega al service l'avvio del workflow. Restituisce immediatamente un #text(font: "Courier New")[AnalysisResponseDTO] con stato `processing` o `done` se l'analisi è già disponibile in cache.
@@ -469,9 +473,9 @@ _Metodi pubblici:_
 ==== Classi MS1 - Business Layer
 
 *AnalysisManagementService* \
-Service principale che implementa #text(font: "Courier New")[AnalysisManagementServiceInterface] e coordina la logica applicativa tra persistenza e infrastruttura. Dipende esclusivamente dalle interfacce astratte dei layer sottostanti. \
+Service principale che implementa #text(font: "Courier New")[AnalysisManagementServiceInterface] e coordina la logica applicativa tra persistenza e infrastruttura. Ogni dipendenza viene dichiarata nel costruttore come interfaccia astratta e iniettata dal container IoC tramite Dependency Injection, garantendo che il Business layer rimanga indipendente dalla tecnologia di persistenza e dalla comunicazione esterna. \
 _Metodi pubblici:_
-  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - recupera il commit SHA più recente tramite l'infrastruttura e verifica in persistenza se esiste già un'analisi per quel commit. Se presente e completata restituisce stato `done`; se in corso restituisce `processing`; se in errore o assente genera un nuovo #text(font: "Courier New")[jobId] (UUID), salva un record con stato `processing` e avvia l'analisi su MS2. I fallimenti dell'infrastruttura vengono intercettati e registrati tramite #text(font: "Courier New")[updateAnalysisToError].
+  - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - recupera il commit SHA più recente tramite l'infrastruttura e verifica in persistenza se esiste già un'analisi per quel commit. Se presente e completata restituisce stato `done`; se in corso restituisce `processing`; se in errore o assente genera un nuovo #text(font: "Courier New")[jobId] (UUID), salva un record con stato `processing` e avvia l'analisi su MS2 in modo asincrono. I fallimenti dell'infrastruttura vengono intercettati e registrati tramite #text(font: "Courier New")[updateAnalysisToError].
   - #text(font: "Courier New")[getAnalysisStatus(jobId: string)] - interroga la persistenza tramite #text(font: "Courier New")[getAnalysisByJob]. Restituisce `done` se #text(font: "Courier New")[analysisDetails] è popolato, `processing` se vuoto, `error` se il record non esiste o riporta uno stato di errore.
   - #text(font: "Courier New")[saveAnalysis(payload: AnalysisResponseDTO)] - persiste i risultati ricevuti via webhook, delegando direttamente alla persistenza.
   - #text(font: "Courier New")[getLastAnalysis(repoUrl: string)] - recupera l'ultima analisi dalla persistenza e la arricchisce con il flag #text(font: "Courier New")[isLatest], confrontando il #text(font: "Courier New")[commitId] memorizzato con il commit SHA corrente su GitHub.
@@ -479,13 +483,13 @@ _Metodi pubblici:_
 ==== Classi MS1 - Infrastructure Layer
 
 *AnalysisManagementInfrastructure* \
-Implementa #text(font: "Courier New")[AnalysisManagementInfrastructureInterface] e gestisce le comunicazioni verso i sistemi esterni: GitHub per la risoluzione dei commit e il gateway AWS per l'avvio delle analisi. Espone al service un'interfaccia semplice, celando la complessità delle chiamate HTTP e dell'autenticazione. \
+Implementa #text(font: "Courier New")[AnalysisManagementInfrastructureInterface] e gestisce le comunicazioni verso i sistemi esterni: GitHub per la risoluzione dei commit e il gateway AWS per l'avvio delle analisi. Espone al Business layer un'interfaccia semplice, celando la complessità delle chiamate HTTP e dell'autenticazione. \
 _Metodi pubblici:_
   - #text(font: "Courier New")[getLatestCommitSha(repoUrl: string)] - delega a #text(font: "Courier New")[GithubAdapter] per ottenere l'hash dell'ultimo commit del branch di default del repository.
   - #text(font: "Courier New")[startAnalysis(request: RequestDTO)] - esegue una chiamata HTTP POST verso il gateway AWS configurato tramite la variabile d'ambiente #text(font: "Courier New")[MS2_GATEWAY_URL], autenticata con #text(font: "Courier New")[MS2_API_KEY]. Il payload include #text(font: "Courier New")[repoUrl], #text(font: "Courier New")[jobId] e #text(font: "Courier New")[commitSha]. Lancia eccezione se le variabili d'ambiente non sono configurate o se la chiamata fallisce.
 
 *GithubAdapter* \
-Wrapper per le API REST di GitHub tramite la libreria Octokit. Isola il resto del sistema dalle specificità del provider VCS. \
+Wrapper per le API REST di GitHub tramite la libreria Octokit. Isola il resto del sistema dalle specificità del provider VCS, applicando il pattern Adapter. \
 _Metodi pubblici:_
   - #text(font: "Courier New")[getLatestCommit(repoUrl: string)] - effettua il parsing dell'URL per estrarre owner e nome del repository, interroga GitHub per risolvere il branch di default e ne recupera il commit SHA più recente. Gestisce e traduce gli errori specifici dell'API GitHub in #text(font: "Courier New")[HttpException].
 
@@ -507,8 +511,8 @@ Il microservizio MS1 opera come orchestratore a stato. Di seguito la logica di i
 2. *Pre-processing*: Risoluzione del commit SHA corrente tramite GitHub API (#text(font: "Courier New")[GithubAdapter]).
 3. *Cache check*: Verifica in MongoDB se esiste già un'analisi per quel commit. Se presente e completata, risposta immediata con stato `done`; se in corso, risposta con `processing` e il #text(font: "Courier New")[jobId] esistente.
 4. *Persistenza*: Creazione del record con stato `processing` e #text(font: "Courier New")[jobId] univoco (UUID).
-5. *Outbound*: Chiamata HTTP sincrona verso il gateway AWS (MS2), autenticata tramite API Key.
-6. *Error handling*: I fallimenti dell'infrastruttura aggiornano il record a stato `error` tramite #text(font: "Courier New")[updateAnalysisToError].
+5. *Outbound*: Chiamata HTTP fire-and-forget verso il gateway AWS (MS2), autenticata tramite API Key. MS1 ritorna immediatamente al client senza attendere il completamento dell'analisi.
+6. *Error handling*: I fallimenti asincroni dell'infrastruttura aggiornano il record a stato `error` tramite #text(font: "Courier New")[updateAnalysisToError], garantendo la consistenza dello stato.
 7. *Callback*: MS2 invia i risultati all'endpoint `/analysis/webhook`, autenticato tramite #text(font: "Courier New")[x-ms1-key]. Il service persiste i dati e porta lo stato del record a `done`.
 
 #pagebreak()
